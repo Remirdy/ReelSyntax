@@ -13,13 +13,14 @@ ReelSyntax ships only commands and engines verified in its runtime while maintai
 7. **WebGL2 shader path**: Capability-probed fixed-camera SDF sculpture inside the offline Chromium worker, deterministic seeks, Canvas/WebGL switching and driver evidence; no downloaded JavaScript framework.
 8. **Disk cache budgets**: Shared operation lock, dry-run LRU pruning, delivery/state reference protection, and optional post-delivery cache budget.
 9. **Native Blender editorial delivery**: Segmented flattened master in Video Sequencer, separately timed mix, markers, rational timing, `.blend` save/reopen and frame preview verification.
+10. **Remote regression matrix**: All eight GitHub Checks jobs passed on the published source: Linux/macOS/Windows core tests on Python 3.11/3.14, Linux FFmpeg media checks and submodule audits. Optional GUI/GPU engines are separate gates.
 
 ## Next engineering slices
 
 1. **Upstream first-party PRs (upon owner authorization)**: Apply the documented `runner.ts` 2027/`aerender` discovery and JSON sidecar patch in `Remirdy/AfterEffectsMCP`, and the Blender 5.x `AgX`/rational `fps_base`/sequence-render patch in `Remirdy/BlenderMCP`.
 2. **Richer editing and source support**: General nonlinear track/nested-composition model, retiming, advanced PSD masks/blend modes and HDR-to-SDR grading. Current ingest deliberately rejects unsupported compositing and HDR footage.
 3. **More rendering adapters**: Three.js scene authoring, user-configurable shaders, more native recipes and hardware-specific visual validation. The bundled WebGL2 path is implemented; custom WebGL/Three.js code is not yet accepted.
-4. **Cross-platform and application verification**: Live GitHub Actions matrix after source publication; long 4K disk/memory benchmarks; native Final Cut/Premiere/Resolve import checks. Blender's native editorial file does not certify those other editors.
+4. **Wider application/hardware verification**: Long 4K disk/memory benchmarks; native Final Cut/Premiere/Resolve import checks and optional engine tests across more drivers. Core cross-platform CI is verified; Blender's native editorial file does not certify other editors.
 5. **Interactive application bridges**: The latest local MCP probe could not reach Blender at `127.0.0.1:8765`; the After Effects project-info call timed out after 300 seconds. Headless render/export and static JSX validation remain independently verified. Desktop UI automation is excluded from this workflow.
 
 This is an active pre-release roadmap, not a claim that the complete master product specification has shipped. Publishing a source commit is separate from releasing a package or opening upstream pull requests.

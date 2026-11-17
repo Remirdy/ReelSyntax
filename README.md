@@ -17,7 +17,7 @@ ReelSyntax pairs a 517-skill specialist catalog with a zero-dependency Python 3.
 | Editorial delivery | OTIO/FCPXML, captions, SVG, native Blender Video Sequencer project and preview export | Native Final Cut/Premiere/Resolve import coverage and richer editable effects |
 | Cache management | Dry-run LRU pruning, optional render disk budget, delivery-reference protection and shared operation lock | Long-duration 4K resource benchmarks and broader cross-OS stress testing |
 | MCP integrations | Progressive gateway, live stdio discovery, schema/workspace boundaries and JSX static validation | Live interactive Blender bridge and After Effects execution; upstream compatibility patches |
-| Distribution | Wheel/sdist and CI workflow definitions | Remote CI matrix results after the first source push; release packaging and publishing |
+| Distribution | Wheel/sdist; Linux/macOS/Windows core CI on Python 3.11/3.14; Linux FFmpeg media tests and submodule audits | Release packaging/publishing and broader hardware/runtime coverage |
 
 See the [development evidence](docs/development-status.md) and [roadmap](docs/roadmap.md) for exact verification and external gates. PSD extraction reuses an existing optional AfterEffectsMCP Node runtime; it does not require the After Effects application. Interactive application checks remain separate from verified headless operation.
 

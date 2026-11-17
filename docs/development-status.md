@@ -30,6 +30,7 @@ Upstream `Remirdy/ReelSyntax` at `167d9c4787642b125eca35f84e0b5f9088124a31` cont
 
 ## Verification summary
 
+- Published-source GitHub Checks: **8/8 jobs passed**, including Linux/macOS/Windows on Python 3.11/3.14, Linux media and submodule audits. [Verified run](https://github.com/Remirdy/ReelSyntax/actions/runs/44093275389) at source commit `cc4076a4d4a366ff024edbbd620140cb46dc43f1`. Optional runtime skips remain explicit in remote job logs.
 - `REELSYNTAX_MEDIA_TESTS=1 REELSYNTAX_BROWSER_TESTS=1 .venv/bin/python -W error -m unittest discover -s tests -v`: **83 passed, 0 skipped, 0 warnings**. Includes source footage/layer/PSD/audio checks, cache LRU safety, actual WebGL2 rendering, native Blender editorial save/reopen/decoded-frame comparison, editorial boundary regressions, MCP workspace/framing/schema checks, FFmpeg QC/cache/resume, Chromium timeout recovery, live headless Blender, live first-party MCP stdio discovery and submodule audits. [Current extension evidence](evidence/production-extensions.json).
 - `.venv/bin/python -m unittest discover -s ReelSyntax_Skills/tests -v`: **7 passed**.
 - Clean installed core without Pillow/Playwright: **68 passed, 15 optional-runtime tests skipped, 0 failures**; media-only glyph checks are separated from core audio coverage.
