@@ -1,0 +1,21 @@
+name: Feature request
+description: Describe a production workflow or missing capability
+body:
+  - type: textarea
+    id: field-0
+    attributes:
+      label: "Workflow"
+    validations:
+      required: true
+  - type: textarea
+    id: field-1
+    attributes:
+      label: "Proposed behavior"
+    validations:
+      required: true
+  - type: textarea
+    id: field-2
+    attributes:
+      label: "Acceptance criteria"
+    validations:
+      required: true

@@ -1,0 +1,11 @@
+.git
+.venv
+.tools
+.reelsyntax
+**/.reelsyntax
+**/output
+**/review
+**/node_modules
+integrations
+dist
+build

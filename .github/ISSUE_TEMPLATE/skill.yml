@@ -1,0 +1,21 @@
+name: Skill proposal
+description: Propose a distinct routing intent
+body:
+  - type: textarea
+    id: field-0
+    attributes:
+      label: "Intent and aliases"
+    validations:
+      required: true
+  - type: textarea
+    id: field-1
+    attributes:
+      label: "Closest existing skill"
+    validations:
+      required: true
+  - type: textarea
+    id: field-2
+    attributes:
+      label: "Inputs, procedure and evidence"
+    validations:
+      required: true

@@ -1,0 +1,5 @@
+{
+  "name": "ReelSyntax media",
+  "build": {"dockerfile": "Dockerfile", "context": ".."},
+  "postCreateCommand": "python -m pip install --user -e ."
+}

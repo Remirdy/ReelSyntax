@@ -1,0 +1,21 @@
+name: Bug report
+description: Report a reproducible failure
+body:
+  - type: textarea
+    id: field-0
+    attributes:
+      label: "Environment and version"
+    validations:
+      required: true
+  - type: textarea
+    id: field-1
+    attributes:
+      label: "Steps to reproduce"
+    validations:
+      required: true
+  - type: textarea
+    id: field-2
+    attributes:
+      label: "Expected and observed result"
+    validations:
+      required: true
