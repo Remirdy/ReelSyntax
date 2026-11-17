@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-17",
+  "tests": {
+    "core_media_browser_passed": 81,
+    "original_pack_passed": 7,
+    "skipped": 0,
+    "warnings": 0,
+    "minimal_core": {
+      "passed": 66,
+      "optional_skipped": 15,
+      "failed": 0
+    }
+  },
+  "runs": [
+    {
+      "project": "examples/editorial-study",
+      "frames": 72,
+      "output_settings": {
+        "width": 640,
+        "height": 360,
+        "fps": "24/1"
+      },
+      "elapsed_seconds": 4.4653,
+      "cache_hits": [
+        false,
+        false,
+        false
+      ],
+      "artifact_sha256": "b271893cb8a67f5fba8cb79dcc731389dee2f867c0528f23acef72dd29738b86",
+      "technical_qc": "pass",
+      "webgl": null,
+      "source_assets": {
+        ".reelsyntax/inputs/frame.png": "b0d4c3f9d9f03c7c791fbc7af68bf30a1fe1ec82a88987dfa91ca28205658018",
+        ".reelsyntax/inputs/source.mp4": "0994f820bb86a9eb02cffd074bac787803cf9744eaaa33f1439f4af00fc9067d",
+        ".reelsyntax/inputs/still.png": "eb2ac4b9c844b383437e00ec299095f555c0d1c9dadbed91cf848f3d98634061"
+      }
+    },
+    {
+      "project": "examples/shader-study",
+      "frames": 48,
+      "output_settings": {
+        "width": 480,
+        "height": 270,
+        "fps": "24/1"
+      },
+      "elapsed_seconds": 6.0282,
+      "cache_hits": [
+        false
+      ],
+      "artifact_sha256": "77439193f36e1be147a75eaa1308183b1ecc2509a1fb02f1a6286bd7feb32172",
+      "technical_qc": "pass",
+      "webgl": {
+        "version": "WebGL 2.0 (OpenGL ES 3.0 Chromium)",
+        "shading_language": "WebGL GLSL ES 3.00 (OpenGL ES GLSL ES 3.0 Chromium)",
+        "renderer": "ANGLE (Google, Vulkan 1.3.0 (SwiftShader Device (LLVM 10.0.0) (0x0000C0DE)), SwiftShader driver)",
+        "max_texture_size": 8192
+      },
+      "source_assets": {}
+    }
+  ],
+  "native_editorial": {
+    "blender_version": "5.1.2",
+    "frames": 72,
+    "frame_start": 1,
+    "frame_end": 72,
+    "fps": "24/1",
+    "preview_frame": 48,
+    "clips": [
+      {
+        "name": "detail",
+        "source_in": 0.0,
+        "timeline_in": 0,
+        "duration_frames": 24
+      },
+      {
+        "name": "plate",
+        "source_in": 24.0,
+        "timeline_in": 24,
+        "duration_frames": 24
+      },
+      {
+        "name": "assembly",
+        "source_in": 48.0,
+        "timeline_in": 48,
+        "duration_frames": 24
+      }
+    ],
+    "preview": "examples/editorial-study/output/editorial-study-production.png"
+  },
+  "aperture_native_preview_vs_ffmpeg_mae_rgb8": 1.0205848524305556,
+  "external_gates": {
+    "blender_bridge": "127.0.0.1:8765 connection refused",
+    "after_effects_project_info": "MCP tool request timed out after 300 seconds",
+    "other_native_nle_imports": "not exercised"
+  },
+  "showcase": {
+    "video": "docs/media/aperture-study.mp4",
+    "sha256": "0994f820bb86a9eb02cffd074bac787803cf9744eaaa33f1439f4af00fc9067d"
+  }
+}

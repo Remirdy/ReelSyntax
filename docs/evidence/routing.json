@@ -1,0 +1,714 @@
+{
+  "dataset_version": "2.0.0",
+  "case_count": 50,
+  "registry_digest": "e2b97fff50194253fdd537c32833223fb35c49ce51af991919ce2706122167f3",
+  "precision_at_k_micro": 0.7444444444444445,
+  "recall_at_k_micro": 0.9436619718309859,
+  "top1_accuracy": 1.0,
+  "hard_constraint_violation_rate": 0.0,
+  "no_match_error_rate": 0.0,
+  "latency_ms_median": 18.20618750207359,
+  "latency_ms_max": 19.921917002648115,
+  "scope": "Local authored routing dataset; incomplete relevance labels can understate precision. No host activation or media correctness is measured.",
+  "cases": [
+    {
+      "id": "tr-inflection",
+      "selected": [
+        "asset-matching",
+        "psd-voiceover-matching",
+        "voiceover-alignment",
+        "after-effects-mcp",
+        "motionpilot-psd-pipeline"
+      ],
+      "relevant_found": [
+        "asset-matching",
+        "motionpilot-psd-pipeline",
+        "psd-voiceover-matching",
+        "voiceover-alignment"
+      ],
+      "missed": [
+        "psd-to-video"
+      ],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 5791
+    },
+    {
+      "id": "english-paraphrase",
+      "selected": [
+        "frame-clock",
+        "word-anchored-timeline"
+      ],
+      "relevant_found": [
+        "frame-clock",
+        "word-anchored-timeline"
+      ],
+      "missed": [
+        "voiceover-alignment"
+      ],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2229
+    },
+    {
+      "id": "mixed-language",
+      "selected": [
+        "beat-synced-editing",
+        "repository-to-video",
+        "terminal-animation"
+      ],
+      "relevant_found": [
+        "beat-synced-editing",
+        "repository-to-video",
+        "terminal-animation"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 3369
+    },
+    {
+      "id": "text-negation",
+      "selected": [
+        "textless-visual-design"
+      ],
+      "relevant_found": [
+        "textless-visual-design"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1152
+    },
+    {
+      "id": "camera-negation",
+      "selected": [
+        "locked-camera",
+        "camera-continuity"
+      ],
+      "relevant_found": [
+        "camera-continuity",
+        "locked-camera"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2253
+    },
+    {
+      "id": "no-audio",
+      "selected": [],
+      "relevant_found": [],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 0
+    },
+    {
+      "id": "unavailable-blender",
+      "selected": [],
+      "relevant_found": [],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 0
+    },
+    {
+      "id": "available-blender",
+      "selected": [
+        "blender-cycles"
+      ],
+      "relevant_found": [
+        "blender-cycles"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1107
+    },
+    {
+      "id": "stage-render",
+      "selected": [
+        "render-cache",
+        "resume-render"
+      ],
+      "relevant_found": [
+        "render-cache",
+        "resume-render"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2203
+    },
+    {
+      "id": "dependency",
+      "selected": [
+        "render-cache",
+        "partial-render"
+      ],
+      "relevant_found": [
+        "partial-render",
+        "render-cache"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2220
+    },
+    {
+      "id": "typo",
+      "selected": [
+        "kinetic-typography"
+      ],
+      "relevant_found": [
+        "kinetic-typography"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1125
+    },
+    {
+      "id": "suffix",
+      "selected": [
+        "render-cache",
+        "resume-render",
+        "partial-render"
+      ],
+      "relevant_found": [
+        "partial-render",
+        "render-cache",
+        "resume-render"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 3323
+    },
+    {
+      "id": "cue",
+      "selected": [
+        "voiceover-alignment",
+        "lip-sync",
+        "voiceover-to-video",
+        "voiceover-writing"
+      ],
+      "relevant_found": [
+        "voiceover-alignment"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 4446
+    },
+    {
+      "id": "region",
+      "selected": [
+        "locked-region-editing",
+        "locked-camera"
+      ],
+      "relevant_found": [
+        "locked-camera",
+        "locked-region-editing"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2240
+    },
+    {
+      "id": "unicode",
+      "selected": [
+        "turkish-glyph-audit",
+        "font-render-audit"
+      ],
+      "relevant_found": [
+        "font-render-audit",
+        "turkish-glyph-audit"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2236
+    },
+    {
+      "id": "black",
+      "selected": [
+        "black-frame-detection",
+        "freeze-detection"
+      ],
+      "relevant_found": [
+        "black-frame-detection"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2272
+    },
+    {
+      "id": "budget",
+      "selected": [],
+      "relevant_found": [],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 0
+    },
+    {
+      "id": "explicit",
+      "selected": [
+        "asset-matching"
+      ],
+      "relevant_found": [
+        "asset-matching"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1138
+    },
+    {
+      "id": "exclude",
+      "selected": [],
+      "relevant_found": [],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 0
+    },
+    {
+      "id": "unrelated",
+      "selected": [],
+      "relevant_found": [],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 0
+    },
+    {
+      "id": "generic",
+      "selected": [],
+      "relevant_found": [],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 0
+    },
+    {
+      "id": "transcode",
+      "selected": [
+        "ffmpeg-transcoding"
+      ],
+      "relevant_found": [
+        "ffmpeg-transcoding"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1096
+    },
+    {
+      "id": "export",
+      "selected": [
+        "frame-clock",
+        "fcpxml-export"
+      ],
+      "relevant_found": [
+        "fcpxml-export",
+        "frame-clock"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2207
+    },
+    {
+      "id": "math",
+      "selected": [
+        "linear-algebra-visualization"
+      ],
+      "relevant_found": [
+        "linear-algebra-visualization"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1105
+    },
+    {
+      "id": "foley",
+      "selected": [
+        "foley-design"
+      ],
+      "relevant_found": [
+        "foley-design"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1102
+    },
+    {
+      "id": "workflow",
+      "selected": [
+        "locked-camera",
+        "textless-visual-design",
+        "teacher-tribute",
+        "storyboard"
+      ],
+      "relevant_found": [
+        "locked-camera",
+        "storyboard",
+        "teacher-tribute",
+        "textless-visual-design"
+      ],
+      "missed": [
+        "creative-constraint-lock"
+      ],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 4523
+    },
+    {
+      "id": "browser-unavailable",
+      "selected": [],
+      "relevant_found": [],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 0
+    },
+    {
+      "id": "no-music",
+      "selected": [],
+      "relevant_found": [],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 0
+    },
+    {
+      "id": "sound-level",
+      "selected": [
+        "loudness-normalization"
+      ],
+      "relevant_found": [
+        "loudness-normalization"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1122
+    },
+    {
+      "id": "skill-system",
+      "selected": [
+        "skill-routing"
+      ],
+      "relevant_found": [
+        "skill-routing"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1142
+    },
+    {
+      "id": "first-party-ae-psd",
+      "selected": [
+        "after-effects-mcp",
+        "motionpilot-psd-pipeline",
+        "asset-matching",
+        "psd-to-video"
+      ],
+      "relevant_found": [
+        "after-effects-mcp",
+        "motionpilot-psd-pipeline"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 4663
+    },
+    {
+      "id": "first-party-ae-vfx",
+      "selected": [
+        "after-effects-mcp",
+        "motionpilot-vfx-flipbook",
+        "sprite-sheet-animation"
+      ],
+      "relevant_found": [
+        "after-effects-mcp",
+        "motionpilot-vfx-flipbook",
+        "sprite-sheet-animation"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 3356
+    },
+    {
+      "id": "first-party-blender-nodes",
+      "selected": [
+        "blender-mcp",
+        "remirdy-blender-nodes",
+        "geometry-proof-animation",
+        "shader-effects"
+      ],
+      "relevant_found": [
+        "blender-mcp",
+        "remirdy-blender-nodes"
+      ],
+      "missed": [
+        "blender-geometry-nodes"
+      ],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 4541
+    },
+    {
+      "id": "blender-ae-handoff",
+      "selected": [
+        "frame-clock",
+        "blender-ae-interchange",
+        "after-effects-mcp",
+        "motionpilot-psd-pipeline"
+      ],
+      "relevant_found": [
+        "blender-ae-interchange",
+        "frame-clock"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 4905
+    },
+    {
+      "id": "mcp-gateway",
+      "selected": [
+        "mcp-tool-contract",
+        "mcp-gateway-routing"
+      ],
+      "relevant_found": [
+        "mcp-gateway-routing",
+        "mcp-tool-contract"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2438
+    },
+    {
+      "id": "agx-tonemapping",
+      "selected": [
+        "agx-aces-tonemapping"
+      ],
+      "relevant_found": [
+        "agx-aces-tonemapping"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1150
+    },
+    {
+      "id": "camera-spring-rig",
+      "selected": [
+        "camera-inertia-rig",
+        "spring-motion",
+        "camera-continuity",
+        "orbit-camera",
+        "procedural-camera-shake"
+      ],
+      "relevant_found": [
+        "camera-inertia-rig"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 5517
+    },
+    {
+      "id": "camera-spring-blocked",
+      "selected": [
+        "locked-camera",
+        "character-rigging",
+        "spring-motion"
+      ],
+      "relevant_found": [
+        "locked-camera"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 3308
+    },
+    {
+      "id": "pan-judder",
+      "selected": [
+        "shutter-angle-judder",
+        "shot-reverse-shot"
+      ],
+      "relevant_found": [
+        "shutter-angle-judder"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2170
+    },
+    {
+      "id": "camera-trauma",
+      "selected": [
+        "procedural-camera-shake"
+      ],
+      "relevant_found": [
+        "procedural-camera-shake"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1014
+    },
+    {
+      "id": "sdf-boolean",
+      "selected": [
+        "signed-distance-fields"
+      ],
+      "relevant_found": [
+        "signed-distance-fields"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1088
+    },
+    {
+      "id": "verlet-rope",
+      "selected": [
+        "verlet-constraint-solver",
+        "physics-simulation-visualization"
+      ],
+      "relevant_found": [
+        "verlet-constraint-solver"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2128
+    },
+    {
+      "id": "variable-font",
+      "selected": [
+        "variable-font-animation"
+      ],
+      "relevant_found": [
+        "variable-font-animation"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1059
+    },
+    {
+      "id": "oklch-palette",
+      "selected": [
+        "oklch-perceptual-palettes",
+        "palette-design",
+        "color-match-transition"
+      ],
+      "relevant_found": [
+        "oklch-perceptual-palettes"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 3267
+    },
+    {
+      "id": "webcodecs",
+      "selected": [
+        "frame-clock",
+        "webcodecs-offscreen-canvas"
+      ],
+      "relevant_found": [
+        "frame-clock",
+        "webcodecs-offscreen-canvas"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2083
+    },
+    {
+      "id": "openusd",
+      "selected": [
+        "usd-scene-assembly"
+      ],
+      "relevant_found": [
+        "usd-scene-assembly"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1070
+    },
+    {
+      "id": "ebu-gating",
+      "selected": [
+        "ebu-r128-dialogue-gating"
+      ],
+      "relevant_found": [
+        "ebu-r128-dialogue-gating"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1107
+    },
+    {
+      "id": "flicker-qa",
+      "selected": [
+        "temporal-flicker-audit"
+      ],
+      "relevant_found": [
+        "temporal-flicker-audit"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 1008
+    },
+    {
+      "id": "otio-timeline",
+      "selected": [
+        "frame-clock",
+        "otio-export"
+      ],
+      "relevant_found": [
+        "frame-clock",
+        "otio-export"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 2196
+    },
+    {
+      "id": "antigravity-host",
+      "selected": [
+        "antigravity-integration",
+        "codex-integration",
+        "cursor-integration"
+      ],
+      "relevant_found": [
+        "antigravity-integration"
+      ],
+      "missed": [],
+      "forbidden_selected": [],
+      "body_reads": 0,
+      "estimated_tokens": 3443
+    }
+  ]
+}

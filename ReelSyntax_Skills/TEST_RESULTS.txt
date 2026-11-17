@@ -1,0 +1,11 @@
+ReelSyntax skill pack v2 — validation in Linux container with Python, Pillow 12.3.0, FFmpeg/ffprobe 7.1.5.
+
+7/7 original router tests passed: catalog, positive/negative queries, locks, capabilities, word budget/stage, explicit conflicts, determinism.
+500 unique skills; 25 categories, 20 each; 500 distinct added technical recipes. Metadata index rebuilt.
+PSD + narration + locked-region example: 3 selected, 0 specialist bodies read during routing, estimated 1197 words if loaded.
+
+Actual positive render: examples/hero-fixture/preview.mp4, 960x540, 30 fps, 180 frames, 6.0 seconds, H.264, AAC 48 kHz.
+14 technical checks passed: dimensions, frames, video codec, fps, duration, audio presence/sample rate, full decode, black/freeze/silence scan, loudness -14.11 LUFS, true peak -3.12 dBTP. Creative review remains open. One representative frame inspected visually; full aesthetic/audio review not performed.
+Actual negative render: 320x180, 2 seconds, black, silence. Audit exit 2; resolution/frames/duration failed and black/freeze/silence flagged for review. See both JSON reports.
+
+No claim of 500 tested render implementations, host integrations or AAA-level output. No Blender/After Effects/HyperFrames/Remotion end-to-end validation in this environment.

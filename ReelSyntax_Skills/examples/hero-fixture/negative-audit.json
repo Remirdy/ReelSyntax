@@ -1,0 +1,139 @@
+{
+  "file": "negative.mp4",
+  "checks": [
+    {
+      "id": "width",
+      "status": "fail",
+      "observed": 320,
+      "expected": 960
+    },
+    {
+      "id": "height",
+      "status": "fail",
+      "observed": 180,
+      "expected": 540
+    },
+    {
+      "id": "frames",
+      "status": "fail",
+      "observed": 60,
+      "expected": 180
+    },
+    {
+      "id": "codec",
+      "status": "pass",
+      "observed": "h264",
+      "expected": "h264"
+    },
+    {
+      "id": "fps",
+      "status": "pass",
+      "observed": "30",
+      "expected": "30"
+    },
+    {
+      "id": "duration",
+      "status": "fail",
+      "observed": 2.0,
+      "expected": {
+        "seconds": 6.0,
+        "tolerance": 0.03333333333333333
+      }
+    },
+    {
+      "id": "audio_stream",
+      "status": "pass",
+      "observed": true,
+      "expected": true
+    },
+    {
+      "id": "sample_rate",
+      "status": "pass",
+      "observed": 48000,
+      "expected": 48000
+    },
+    {
+      "id": "decode",
+      "status": "pass",
+      "observed": "decoded",
+      "expected": "no decode errors"
+    },
+    {
+      "id": "black",
+      "status": "review",
+      "observed": {
+        "intervals": [
+          [
+            0.0,
+            1.966667
+          ]
+        ],
+        "unexplained": [
+          [
+            0.0,
+            1.966667
+          ]
+        ]
+      },
+      "expected": "no unexplained intervals"
+    },
+    {
+      "id": "freeze",
+      "status": "review",
+      "observed": {
+        "intervals": [
+          [
+            0.0,
+            2.0
+          ]
+        ],
+        "unexplained": [
+          [
+            0.0,
+            2.0
+          ]
+        ]
+      },
+      "expected": "no unexplained intervals"
+    },
+    {
+      "id": "silence",
+      "status": "review",
+      "observed": {
+        "intervals": [
+          [
+            0.0,
+            2.005333
+          ]
+        ],
+        "unexplained": [
+          [
+            0.0,
+            2.005333
+          ]
+        ]
+      },
+      "expected": "no unexplained silence"
+    },
+    {
+      "id": "loudness",
+      "status": "review",
+      "observed": "-inf",
+      "expected": -14
+    },
+    {
+      "id": "true_peak",
+      "status": "review",
+      "observed": "-inf",
+      "expected": -1.0
+    },
+    {
+      "id": "creative_review",
+      "status": "review",
+      "observed": "not automatically measured",
+      "expected": "visual/audio reviewer required"
+    }
+  ],
+  "technical_status": "fail",
+  "release_status": "requires creative review"
+}

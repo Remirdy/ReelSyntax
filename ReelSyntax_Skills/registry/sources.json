@@ -1,0 +1,294 @@
+{
+  "sources": [
+    {
+      "id": "agent-skills",
+      "url": "https://agentskills.io/specification",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "codex",
+      "url": "https://developers.openai.com/codex/skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "claude",
+      "url": "https://code.claude.com/docs/en/skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "cursor",
+      "url": "https://cursor.com/docs/skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "cinecode",
+      "url": "https://github.com/sarpstar/cinecode",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "openmontage",
+      "url": "https://github.com/OpenMontageInc/OpenMontage",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "hyperframes",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "shotcraft",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "remotion-skills",
+      "url": "https://github.com/remotion-dev/skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "gsap",
+      "url": "https://github.com/greensock/gsap-skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "cinema-skills",
+      "url": "https://github.com/DenisHumen/cinema-skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "vidmoat",
+      "url": "https://github.com/vidmoat/skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "hypit",
+      "url": "https://github.com/hypit-ai/hypit",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "awesome-video",
+      "url": "https://github.com/ella-wang-opus/awesome-video-skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "awesome-agent-video",
+      "url": "https://github.com/clonn/awesome-agent-video-skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "awesome-editing",
+      "url": "https://github.com/devanasolver/awesome-video-editing",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "24fps",
+      "url": "https://24fps.dev/skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "motion-design",
+      "url": "https://github.com/podo/design-agent-skills",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "ffmpeg",
+      "url": "https://ffmpeg.org/ffmpeg-filters.html",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "threejs",
+      "url": "https://threejs.org/docs/",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "blender",
+      "url": "https://docs.blender.org/api/current/",
+      "status": "fetch-blocked; further verification required",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "web-audio",
+      "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "otio",
+      "url": "https://opentimelineio.readthedocs.io/en/latest/",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "manim",
+      "url": "https://docs.manim.community/en/stable/",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "playwright",
+      "url": "https://playwright.dev/docs/screenshots",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    },
+    {
+      "id": "wcag",
+      "url": "https://www.w3.org/TR/WCAG22/",
+      "status": "public source inspected",
+      "use": "research and API reference only; no upstream files copied"
+    }
+  ],
+  "domain_mapping": {
+    "direction": [
+      "cinecode",
+      "openmontage",
+      "shotcraft"
+    ],
+    "story": [
+      "cinecode",
+      "openmontage",
+      "cinema-skills"
+    ],
+    "camera": [
+      "shotcraft",
+      "cinema-skills",
+      "threejs"
+    ],
+    "art": [
+      "shotcraft",
+      "hyperframes",
+      "motion-design"
+    ],
+    "motion": [
+      "gsap",
+      "hyperframes",
+      "threejs"
+    ],
+    "typography": [
+      "hyperframes",
+      "remotion-skills",
+      "wcag"
+    ],
+    "graphics": [
+      "hyperframes",
+      "threejs",
+      "gsap"
+    ],
+    "modeling": [
+      "threejs",
+      "blender"
+    ],
+    "character": [
+      "threejs",
+      "blender",
+      "cinema-skills"
+    ],
+    "lighting": [
+      "threejs",
+      "blender"
+    ],
+    "vfx": [
+      "ffmpeg",
+      "threejs",
+      "blender"
+    ],
+    "editing": [
+      "ffmpeg",
+      "vidmoat",
+      "hypit"
+    ],
+    "transitions": [
+      "shotcraft",
+      "gsap",
+      "hyperframes"
+    ],
+    "audio": [
+      "ffmpeg",
+      "web-audio",
+      "vidmoat"
+    ],
+    "music": [
+      "web-audio",
+      "ffmpeg",
+      "cinecode"
+    ],
+    "engines": [
+      "ffmpeg",
+      "threejs",
+      "blender",
+      "hyperframes",
+      "remotion-skills",
+      "manim",
+      "gsap"
+    ],
+    "capture": [
+      "playwright",
+      "hyperframes",
+      "shotcraft"
+    ],
+    "data": [
+      "manim",
+      "threejs",
+      "wcag"
+    ],
+    "formats": [
+      "cinecode",
+      "openmontage",
+      "shotcraft"
+    ],
+    "ingest": [
+      "ffmpeg",
+      "openmontage",
+      "awesome-editing"
+    ],
+    "render": [
+      "ffmpeg",
+      "playwright",
+      "threejs",
+      "hyperframes"
+    ],
+    "delivery": [
+      "ffmpeg",
+      "otio",
+      "shotcraft"
+    ],
+    "qa": [
+      "ffmpeg",
+      "wcag",
+      "openmontage"
+    ],
+    "workflow": [
+      "openmontage",
+      "hypit",
+      "cinecode"
+    ],
+    "skills": [
+      "agent-skills",
+      "codex",
+      "claude",
+      "cursor",
+      "awesome-video",
+      "awesome-agent-video",
+      "24fps"
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "id": "aperture-film",
+  "seed": 108,
+  "output": {
+    "width": 1280,
+    "height": 720,
+    "fps": "24/1"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true,
+    "no_text": true,
+    "no_voice": true,
+    "camera_locked": false
+  },
+  "scenes": [
+    {
+      "id": "material",
+      "duration_frames": 24,
+      "recipe": "aperture",
+      "engine": "blender",
+      "camera": {
+        "preset": "dolly_in",
+        "focal_mm": 85
+      },
+      "params": {
+        "shot": "macro",
+        "background": "#181d21",
+        "foreground": "#20262a",
+        "accent": "#bd9a66",
+        "samples": 16
+      }
+    },
+    {
+      "id": "mechanism",
+      "duration_frames": 36,
+      "recipe": "aperture",
+      "engine": "blender",
+      "camera": {
+        "preset": "dolly_in",
+        "focal_mm": 91
+      },
+      "params": {
+        "shot": "iris",
+        "background": "#181d21",
+        "foreground": "#20262a",
+        "accent": "#bd9a66",
+        "samples": 16
+      }
+    },
+    {
+      "id": "assembly",
+      "duration_frames": 48,
+      "recipe": "aperture",
+      "engine": "blender",
+      "camera": {
+        "preset": "dolly_in",
+        "focal_mm": 53
+      },
+      "params": {
+        "shot": "assembly",
+        "background": "#181d21",
+        "foreground": "#20262a",
+        "accent": "#bd9a66",
+        "samples": 16
+      }
+    },
+    {
+      "id": "hero",
+      "duration_frames": 36,
+      "recipe": "aperture",
+      "engine": "blender",
+      "camera": {
+        "preset": "dolly_in",
+        "focal_mm": 57
+      },
+      "params": {
+        "shot": "hero",
+        "background": "#181d21",
+        "foreground": "#20262a",
+        "accent": "#bd9a66",
+        "samples": 16
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -15,
+    "export_stems": true,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 55,
+        "duration_frames": 144,
+        "instrument": "warm_pad",
+        "gain_offset_db": -12,
+        "pan": 0
+      },
+      {
+        "frame": 0,
+        "frequency": 62,
+        "duration_frames": 16,
+        "instrument": "sub_impact",
+        "gain_offset_db": -2,
+        "pan": 0
+      },
+      {
+        "frame": 20,
+        "frequency": 180,
+        "duration_frames": 12,
+        "instrument": "whoosh",
+        "gain_offset_db": -9,
+        "pan": -0.35
+      },
+      {
+        "frame": 28,
+        "frequency": 1400,
+        "duration_frames": 3,
+        "instrument": "click_transient",
+        "gain_offset_db": -8,
+        "pan": -0.2
+      },
+      {
+        "frame": 36,
+        "frequency": 1700,
+        "duration_frames": 3,
+        "instrument": "click_transient",
+        "gain_offset_db": -8,
+        "pan": 0.2
+      },
+      {
+        "frame": 44,
+        "frequency": 1300,
+        "duration_frames": 3,
+        "instrument": "click_transient",
+        "gain_offset_db": -9,
+        "pan": -0.1
+      },
+      {
+        "frame": 52,
+        "frequency": 1800,
+        "duration_frames": 3,
+        "instrument": "click_transient",
+        "gain_offset_db": -10,
+        "pan": 0.15
+      },
+      {
+        "frame": 60,
+        "frequency": 82,
+        "duration_frames": 16,
+        "instrument": "sub_impact",
+        "gain_offset_db": -4,
+        "pan": 0
+      },
+      {
+        "frame": 70,
+        "frequency": 660,
+        "duration_frames": 22,
+        "instrument": "harmonic_pluck",
+        "gain_offset_db": -11,
+        "pan": 0.3
+      },
+      {
+        "frame": 85,
+        "frequency": 240,
+        "duration_frames": 18,
+        "instrument": "whoosh",
+        "gain_offset_db": -10,
+        "pan": 0.25
+      },
+      {
+        "frame": 100,
+        "frequency": 1200,
+        "duration_frames": 4,
+        "instrument": "click_transient",
+        "gain_offset_db": -5,
+        "pan": 0
+      },
+      {
+        "frame": 108,
+        "frequency": 55,
+        "duration_frames": 20,
+        "instrument": "sub_impact",
+        "gain_offset_db": -3,
+        "pan": 0
+      },
+      {
+        "frame": 114,
+        "frequency": 330,
+        "duration_frames": 28,
+        "instrument": "harmonic_pluck",
+        "gain_offset_db": -13,
+        "pan": -0.25
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {}
+  }
+}

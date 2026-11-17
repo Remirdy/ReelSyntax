@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "id": "motion-study",
+  "seed": 42,
+  "output": {
+    "width": 960,
+    "height": 540,
+    "fps": "30/1"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true,
+    "camera_locked": true,
+    "no_voice": true,
+    "no_music": true
+  },
+  "scenes": [
+    {
+      "id": "form",
+      "duration_frames": 90,
+      "recipe": "assembly",
+      "engine": "pillow",
+      "params": {
+        "heading": "FORM",
+        "subheading": "Parts find their place.",
+        "accent": "#bb5537"
+      }
+    },
+    {
+      "id": "time",
+      "duration_frames": 90,
+      "recipe": "rings",
+      "engine": "pillow",
+      "params": {
+        "heading": "TIME",
+        "subheading": "Motion finds its rhythm.",
+        "accent": "#355f65"
+      }
+    },
+    {
+      "id": "signal",
+      "duration_frames": 60,
+      "recipe": "signal",
+      "engine": "pillow",
+      "params": {
+        "heading": "SIGNAL",
+        "subheading": "Every frame has a purpose.",
+        "accent": "#bb5537"
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 220,
+        "duration_frames": 15
+      },
+      {
+        "frame": 90,
+        "frequency": 330,
+        "duration_frames": 15
+      },
+      {
+        "frame": 180,
+        "frequency": 440,
+        "duration_frames": 15
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [
+        [
+          65,
+          90
+        ]
+      ],
+      "silence": [
+        [
+          15,
+          90
+        ],
+        [
+          105,
+          180
+        ],
+        [
+          195,
+          240
+        ]
+      ]
+    }
+  }
+}

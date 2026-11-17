@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "id": "shader-study",
+  "seed": 108,
+  "output": {"width": 960, "height": 540, "fps": "24/1"},
+  "constraints": {"offline": true, "no_paid_services": true, "no_text": true, "no_audio": true, "camera_locked": true},
+  "scenes": [{"id": "sculpture", "duration_frames": 48, "engine": "browser", "recipe": "shader-sculpture", "params": {"background": "#181e23", "foreground": "#526268", "accent": "#c3a16e"}}],
+  "audio": {"enabled": false, "gain_db": -14, "cues": []},
+  "quality": {"exceptions": {}}
+}

@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "id": "editorial-study",
+  "seed": 108,
+  "output": {"width": 640, "height": 360, "fps": "24/1"},
+  "constraints": {"offline": true, "no_paid_services": true, "no_voice": true, "no_music": true},
+  "scenes": [
+    {"id": "detail", "duration_frames": 24, "recipe": "footage", "engine": "ffmpeg", "params": {"source": ".reelsyntax/inputs/source.mp4", "in_frame": 24}},
+    {"id": "plate", "duration_frames": 24, "recipe": "layer-stack", "engine": "pillow", "params": {"background": "#181d21", "layers": [
+      {"source": ".reelsyntax/inputs/still.png", "name": "Optical study", "x": 80, "y": 45, "width": 480, "height": 270},
+      {"source": ".reelsyntax/inputs/frame.png", "name": "Frame", "opacity": 0.8}
+    ]}},
+    {"id": "assembly", "duration_frames": 24, "recipe": "footage", "engine": "ffmpeg", "params": {"source": ".reelsyntax/inputs/source.mp4", "in_frame": 72}, "transition": {"type": "cross_dissolve", "duration_frames": 6}}
+  ],
+  "audio": {"enabled": true, "gain_db": -6, "export_stems": true, "cues": [], "tracks": [
+    {"id": "detail-tail", "source": ".reelsyntax/inputs/source.mp4", "kind": "effects", "start_frame": 0, "in_frame": 24, "duration_frames": 32, "fade_out_frames": 4},
+    {"id": "assembly-lead", "source": ".reelsyntax/inputs/source.mp4", "kind": "effects", "start_frame": 40, "in_frame": 60, "duration_frames": 32, "fade_in_frames": 2, "fade_out_frames": 3}
+  ]},
+  "quality": {"exceptions": {"freeze": [[24, 48]], "silence": [[32, 40]]}}
+}

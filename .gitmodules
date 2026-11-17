@@ -1,0 +1,6 @@
+[submodule "integrations/BlenderMCP"]
+	path = integrations/BlenderMCP
+	url = https://github.com/Remirdy/BlenderMCP.git
+[submodule "integrations/AfterEffectsMCP"]
+	path = integrations/AfterEffectsMCP
+	url = https://github.com/Remirdy/AfterEffectsMCP.git

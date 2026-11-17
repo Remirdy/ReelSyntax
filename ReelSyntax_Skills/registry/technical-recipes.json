@@ -1,0 +1,2502 @@
+[
+  {
+    "id": "brief-decoding",
+    "category": "direction",
+    "recipe": "Turn brief into a requirement matrix with IDs, priority, source, verification method and explicit unknowns; separate delivery specs from aesthetic preferences."
+  },
+  {
+    "id": "creative-direction",
+    "category": "direction",
+    "recipe": "Write a single sentence visual promise; select one dominant motif, two supporting motifs and an explicit reject list; compare three hero frames at thumbnail size."
+  },
+  {
+    "id": "concept-divergence",
+    "category": "direction",
+    "recipe": "Vary storytelling mechanism (object transformation, observational scene, spatial metaphor), not merely palette; score feasibility and audience resonance independently."
+  },
+  {
+    "id": "audience-mapping",
+    "category": "direction",
+    "recipe": "Identify viewing device, prior knowledge, accessibility needs and decision point; validate the first five seconds with an unbriefed reviewer."
+  },
+  {
+    "id": "message-hierarchy",
+    "category": "direction",
+    "recipe": "Use a 1-primary/2-secondary message map; assign screen-time and visual salience separately; strip any item competing with the core claim."
+  },
+  {
+    "id": "reference-analysis",
+    "category": "direction",
+    "recipe": "Build a timecoded shot table with cut duration, focal subject, motion direction, light, palette and sound cues; distinguish measured evidence from interpretation."
+  },
+  {
+    "id": "visual-language-bible",
+    "category": "direction",
+    "recipe": "Specify palette in tagged color space, two type families at most unless justified, texture scale, edge treatment, motion curves and reference exclusions; compare hero and supporting shots."
+  },
+  {
+    "id": "style-selection",
+    "category": "direction",
+    "recipe": "Run one identical 2-second hero test per candidate style; evaluate readability, rendering cost and asset feasibility before committing."
+  },
+  {
+    "id": "tone-calibration",
+    "category": "direction",
+    "recipe": "Define emotional beats on a 0–5 intensity curve; map each turning point to a visible action and one sound or intentional silence."
+  },
+  {
+    "id": "creative-constraint-lock",
+    "category": "direction",
+    "recipe": "Record locks as machine-readable fields (camera matrix, text policy, immutable ROI, language, duration); validate before and after render."
+  },
+  {
+    "id": "production-scope",
+    "category": "direction",
+    "recipe": "Break work into dependency graph with asset-ready, animatic, lookdev, picture-lock and delivery gates; isolate optional experiments from critical path."
+  },
+  {
+    "id": "engine-selection",
+    "category": "direction",
+    "recipe": "Benchmark a representative frame or short clip for candidate engines; compare capabilities, licenses, RAM, failure modes and interoperability before selecting."
+  },
+  {
+    "id": "shot-budget",
+    "category": "direction",
+    "recipe": "Allocate integer frames per shot using rational FPS and transition overlap; reconcile final total, then estimate cost using measured p50/p95 frame time."
+  },
+  {
+    "id": "asset-feasibility",
+    "category": "direction",
+    "recipe": "Create asset register with dimensions, usable crop, rights, dependencies and fallback; test hero asset at final scale before designing around it."
+  },
+  {
+    "id": "creative-risk-review",
+    "category": "direction",
+    "recipe": "Use severity × likelihood matrix; require early probe for any high-impact risk (e.g. rig, font, adapter, color); define measurable exit condition."
+  },
+  {
+    "id": "reellab-variants",
+    "category": "direction",
+    "recipe": "Keep constraints and content identical across variants; change one major creative grammar per variant; score on same rubric and archive rejected options."
+  },
+  {
+    "id": "reeltaste-profile",
+    "category": "direction",
+    "recipe": "Record accepted or rejected preferences with scope, provenance, timestamp and opt-out; current brief always wins; do not retain raw sensitive source assets by default."
+  },
+  {
+    "id": "brand-brief",
+    "category": "direction",
+    "recipe": "Build tokens for brand colors, fonts, logo padding, forbidden treatments and mandatory copy; pixel-compare protected master assets rather than redrawing them."
+  },
+  {
+    "id": "series-planning",
+    "category": "direction",
+    "recipe": "Assign stable series asset IDs, reusable environments, character continuity states, episode-specific beats and an approval migration policy."
+  },
+  {
+    "id": "production-handoff",
+    "category": "direction",
+    "recipe": "Deliver project manifest, version hashes, reproducible render command, open risks, locked items and next steps; verify on a clean directory if possible."
+  },
+  {
+    "id": "screenwriting",
+    "category": "story",
+    "recipe": "Write a beat outline before dialogue; ensure each scene changes visible state; budget action, reading time and intentional silence in frames."
+  },
+  {
+    "id": "logline-writing",
+    "category": "story",
+    "recipe": "Use subject + goal + obstacle or promise + stakes in one sentence; verify the logline predicts the film rather than describing its genre."
+  },
+  {
+    "id": "three-act-structure",
+    "category": "story",
+    "recipe": "Place turning points using available runtime rather than fixed percentages; remove any act that repeats exposition; check payoff setup."
+  },
+  {
+    "id": "short-film-arc",
+    "category": "story",
+    "recipe": "Limit cast/locations for short format; establish a clear visual question early and answer it in a distinct final image."
+  },
+  {
+    "id": "visual-storytelling",
+    "category": "story",
+    "recipe": "Create a silent storyboard test; replace explanatory text with actions, reactions or object state where permitted; verify causal chain."
+  },
+  {
+    "id": "voiceover-writing",
+    "category": "story",
+    "recipe": "Draft in breath-length phrases; read at realistic pace, mark pauses and emphasized words; use actual recording length before picture lock."
+  },
+  {
+    "id": "dialogue-writing",
+    "category": "story",
+    "recipe": "Give each speaker an objective and distinctive rhythm; read alternating lines aloud and remove spoken explanations already visible."
+  },
+  {
+    "id": "opening-hook",
+    "category": "story",
+    "recipe": "Test opening without audio at thumbnail scale; require one unmistakable subject or action, without clickbait or an unsupported promise."
+  },
+  {
+    "id": "ending-payoff",
+    "category": "story",
+    "recipe": "Seed one visual motif or question early, then return with altered meaning; avoid repeating the entire summary in an end card."
+  },
+  {
+    "id": "story-beats",
+    "category": "story",
+    "recipe": "Map setup, reveal, reaction and transition to integer-frame intervals; ground each beat in an observable event and track overlap."
+  },
+  {
+    "id": "shot-list",
+    "category": "story",
+    "recipe": "Specify shot ID, in/out frame, lens/size, movement, blocking, light direction, audio cue, dependencies and protected regions."
+  },
+  {
+    "id": "storyboard",
+    "category": "story",
+    "recipe": "Draw or render the first, decisive and final pose per shot; add eyelines, axis, camera arrows and frame timing outside the deliverable."
+  },
+  {
+    "id": "animatic",
+    "category": "story",
+    "recipe": "Build low-cost timeline with scratch VO and motion placeholders; review once muted and once audio-only before detailed production."
+  },
+  {
+    "id": "blocking",
+    "category": "story",
+    "recipe": "Use floor plan with camera axis and eyeline vectors; test contact poses and entrances; preserve screen direction except intentional axis reset."
+  },
+  {
+    "id": "continuity-ledger",
+    "category": "story",
+    "recipe": "Track identity, wardrobe, positions, prop ownership, light vector and character state at every cut; flag mismatches before render."
+  },
+  {
+    "id": "research-script",
+    "category": "story",
+    "recipe": "Use claim IDs and source locators with publication date; distinguish quotes, paraphrases and unverified assertions; avoid fabricated archival footage."
+  },
+  {
+    "id": "shot-coverage",
+    "category": "story",
+    "recipe": "Build master and necessary cutaway coverage with matched action handles; verify edit has alternatives without bloating shot count."
+  },
+  {
+    "id": "script-localization",
+    "category": "story",
+    "recipe": "Localize meaning and natural rhythm; log terms that must remain unchanged; re-time visuals and captions from actual localized audio."
+  },
+  {
+    "id": "chapter-structure",
+    "category": "story",
+    "recipe": "Assign chapter question, resolution, starting time and transition; preview navigation and avoid repetitive introductions."
+  },
+  {
+    "id": "call-to-action-writing",
+    "category": "story",
+    "recipe": "Keep CTA actionable and truthful; test dwell time against copy length; ensure final crop and language variant retain offer terms."
+  },
+  {
+    "id": "shot-size",
+    "category": "camera",
+    "recipe": "Set subject-height fraction, eye line and crop bounds; compare wide/medium/close for information needs; preserve action handles."
+  },
+  {
+    "id": "lens-selection",
+    "category": "camera",
+    "recipe": "Derive horizontal or vertical FOV using 2 atan(sensor dimension/(2 focal length)); camera position controls perspective; match sensor-fit and aspect convention."
+  },
+  {
+    "id": "rule-of-thirds",
+    "category": "camera",
+    "recipe": "Overlay thirds only for composition review; place subject deliberately, then check balance, silhouettes and platform crops without guides."
+  },
+  {
+    "id": "leading-lines",
+    "category": "camera",
+    "recipe": "Plot vanishing directions and subject eye path; remove lines that pull attention out of frame; test in low-detail grayscale."
+  },
+  {
+    "id": "negative-space",
+    "category": "camera",
+    "recipe": "Reserve normalized empty rectangle for visual breathing room or text; test against per-platform overlays and moving foreground objects."
+  },
+  {
+    "id": "locked-camera",
+    "category": "camera",
+    "recipe": "Pin camera world transform, projection, focal length, shift and crop; compare matrices at every frame if available; do not fake motion with animated crop."
+  },
+  {
+    "id": "slow-dolly",
+    "category": "camera",
+    "recipe": "Animate position along explicit path with continuous velocity; choose ramp relative to shot length; test foreground parallax and clipping at extremes."
+  },
+  {
+    "id": "tracking-shot",
+    "category": "camera",
+    "recipe": "Use target-relative offset and filtered look-at with fixed up vector; inspect occlusion, acceleration and collision through full path."
+  },
+  {
+    "id": "orbit-camera",
+    "category": "camera",
+    "recipe": "Orbit explicit pivot using sin/cos angle, constant radius or designed easing; use stable up vector and inspect axis flip near poles."
+  },
+  {
+    "id": "crane-shot",
+    "category": "camera",
+    "recipe": "Animate height and horizontal travel separately; maintain sightline and horizon intent; check lens clearance and endpoint reveal."
+  },
+  {
+    "id": "whip-pan",
+    "category": "camera",
+    "recipe": "Match angular direction and exposure across cut; tune short shutter blur around rotation, not whole shot; inspect peak for unintended white flash."
+  },
+  {
+    "id": "handheld-motion",
+    "category": "camera",
+    "recipe": "Use seeded low-frequency positional/rotational drift with bounded amplitudes; avoid independent random noise each frame; review at real speed."
+  },
+  {
+    "id": "dolly-zoom",
+    "category": "camera",
+    "recipe": "Keep distance × tan(vertical FOV/2) constant for fixed subject height; derive new focal from sensor height; test projected size drift at start/mid/end (suggest ≤2%)."
+  },
+  {
+    "id": "rack-focus",
+    "category": "camera",
+    "recipe": "Animate focus distance between measured subject planes; inspect f-stop, circle of confusion and focus timing; avoid focus hunting or blur on protected text."
+  },
+  {
+    "id": "macro-cinematography",
+    "category": "camera",
+    "recipe": "Use physically plausible subject scale, working distance, shallow DOF and broad highlights; compare legibility of detail before adding blur."
+  },
+  {
+    "id": "aerial-shot",
+    "category": "camera",
+    "recipe": "Use world-scale altitude, smooth banking and planned route; check horizon, terrain clearance and scale cues over whole path."
+  },
+  {
+    "id": "pov-camera",
+    "category": "camera",
+    "recipe": "Place camera near character eye position with consistent handedness and eyeline; limit artificial roll unless narratively motivated."
+  },
+  {
+    "id": "shot-reverse-shot",
+    "category": "camera",
+    "recipe": "Set 180° axis, matched eyelines and shot sizes; add neutral reset shot if crossing intentionally; check eye trace at cut."
+  },
+  {
+    "id": "match-cut-design",
+    "category": "camera",
+    "recipe": "Align dominant shapes or movement between outgoing and incoming frames; compare overlay silhouettes, then check cut at playback speed."
+  },
+  {
+    "id": "camera-continuity",
+    "category": "camera",
+    "recipe": "Log focal length, sensor fit, horizon, heading, position and camera velocity at each edge; reconcile unless deliberate discontinuity documented."
+  },
+  {
+    "id": "palette-design",
+    "category": "art",
+    "recipe": "Choose dominant, supporting and accent colors with luminance separation; test graded swatches against actual background and skin/product colors."
+  },
+  {
+    "id": "shape-language",
+    "category": "art",
+    "recipe": "Choose geometry families by story role; compare silhouette-only frames and limit conflicting stylistic primitives."
+  },
+  {
+    "id": "visual-hierarchy",
+    "category": "art",
+    "recipe": "Measure hierarchy through grayscale, blur and thumbnail tests; suppress competing contrast or motion around the focal point."
+  },
+  {
+    "id": "layout-grid",
+    "category": "art",
+    "recipe": "Use grid, consistent gutters and baseline rhythm; define intentional grid breaks; check 9:16 and 16:9 separately, not auto-crop."
+  },
+  {
+    "id": "editorial-design",
+    "category": "art",
+    "recipe": "Design clear negative space, type scale and image cropping; use restrained editorial transitions and inspect actual reading holds."
+  },
+  {
+    "id": "minimal-commercial",
+    "category": "art",
+    "recipe": "Use one product hero, coherent light and material response, deliberate typography and controlled empty space; avoid generic gradients and ornamental particles."
+  },
+  {
+    "id": "film-noir",
+    "category": "art",
+    "recipe": "Use directional hard key, controlled fill and meaningful shadow shapes; retain essential face detail and check exposure after grade."
+  },
+  {
+    "id": "claymation-style",
+    "category": "art",
+    "recipe": "Create material imperfections at real object scale, pose cadence and soft contact shadows; avoid noisy surfaces masking readable silhouettes."
+  },
+  {
+    "id": "low-poly-style",
+    "category": "art",
+    "recipe": "Use purposeful flat facets, consistent vertex/color treatment and controlled silhouette complexity; avoid accidental smooth shading seams."
+  },
+  {
+    "id": "pixel-art-style",
+    "category": "art",
+    "recipe": "Choose native pixel grid and integer scaling, nearest-neighbor sampling and limited palette; test no subpixel shimmer."
+  },
+  {
+    "id": "paper-cut-style",
+    "category": "art",
+    "recipe": "Build layered paper silhouettes with coherent edge thickness, contact shadow and parallax; keep paper grain scale constant."
+  },
+  {
+    "id": "miniature-diorama",
+    "category": "art",
+    "recipe": "Set believable small-world scale, lens angle and depth cues; use selective focus only if readable details survive."
+  },
+  {
+    "id": "retro-vhs",
+    "category": "art",
+    "recipe": "Apply timebase/color bleed/grain selectively with protected text mask; avoid random noise or interlace that obscures action."
+  },
+  {
+    "id": "technical-blueprint",
+    "category": "art",
+    "recipe": "Use technical line weights, orthographic cues and logical annotation hierarchy; validate labels and scale rather than decorative pseudo-measurements."
+  },
+  {
+    "id": "anime-inspired-layout",
+    "category": "art",
+    "recipe": "Prioritize pose silhouette, purposeful perspective and selective detail; use line/color hierarchy without copying a specific artist or protected design."
+  },
+  {
+    "id": "photorealistic-material-direction",
+    "category": "art",
+    "recipe": "Use physically plausible roughness variation, surface-scale microdetails and real reference comparisons; inspect grazing angles under neutral and hero light."
+  },
+  {
+    "id": "collage-art",
+    "category": "art",
+    "recipe": "Unify collage with palette, edge logic, grain scale and contact shadows; track rights for every source fragment."
+  },
+  {
+    "id": "brand-consistency",
+    "category": "art",
+    "recipe": "Validate color tokens and exact logo aspect/clearspace throughout; compare locked master assets to final frames; preserve approved typography."
+  },
+  {
+    "id": "art-reference-board",
+    "category": "art",
+    "recipe": "Collect representative reference frames with rights and timecodes; annotate what to adopt and avoid; create original style rules, not a collage to reproduce."
+  },
+  {
+    "id": "anti-slideshow-design",
+    "category": "art",
+    "recipe": "Require a motivated internal visual change for each beat; distinguish intentional stillness from accidental stagnation; inspect motion and spatial continuity with muted playback."
+  },
+  {
+    "id": "keyframe-curves",
+    "category": "motion",
+    "recipe": "Define normalized t with explicit frame endpoints; set interpolation and tangent continuity; review velocity plots and intermediate poses."
+  },
+  {
+    "id": "easing-design",
+    "category": "motion",
+    "recipe": "Choose ease from desired acceleration/deceleration; keep direct manipulation linear where appropriate; match velocity at joins."
+  },
+  {
+    "id": "spring-motion",
+    "category": "motion",
+    "recipe": "Use damped spring with explicit damping ratio and natural frequency or bounded analytic equivalent; clamp overshoot only where contact/legibility requires."
+  },
+  {
+    "id": "anticipation",
+    "category": "motion",
+    "recipe": "Insert a preparatory pose with readable direction and small hold; tune duration to perceived mass; avoid needless delay on rapid UI actions."
+  },
+  {
+    "id": "follow-through",
+    "category": "motion",
+    "recipe": "Offset secondary parts after main stop; decay amplitude and preserve contact anchors; compare final settling pose with next cut."
+  },
+  {
+    "id": "squash-stretch",
+    "category": "motion",
+    "recipe": "Approximate volume preservation (e.g. scale x,z by 1/sqrt(y)); anchor contact and tune by material stiffness; inspect silhouette."
+  },
+  {
+    "id": "staggered-animation",
+    "category": "motion",
+    "recipe": "Use intentional delay hierarchy and common end alignment where appropriate; cap total stagger so reading hold survives."
+  },
+  {
+    "id": "secondary-motion",
+    "category": "motion",
+    "recipe": "Animate subordinate motion at lower amplitude and delayed phase; compare primary action in silhouette and remove competing movement."
+  },
+  {
+    "id": "pose-to-pose",
+    "category": "motion",
+    "recipe": "Block key poses in stepped mode; approve silhouette and spacing; then spline and polish contact, arcs and eye trace."
+  },
+  {
+    "id": "arc-motion",
+    "category": "motion",
+    "recipe": "Plot motion trajectories in world/screen coordinates; smooth corners for organic motion while preserving intended sharp impacts."
+  },
+  {
+    "id": "loop-design",
+    "category": "motion",
+    "recipe": "Match first and virtual end state including derivative; render frames 0..N−1; review two loops joined without duplicate endpoint."
+  },
+  {
+    "id": "stop-motion-cadence",
+    "category": "motion",
+    "recipe": "Quantize animation evaluation, not final video FPS; intentionally choose cadence per object; verify no unintended dropped frames."
+  },
+  {
+    "id": "parallax-motion",
+    "category": "motion",
+    "recipe": "Layer scene by depth and scale parallax by depth distance; extend overscan for maximum displacement and inspect outer frame edges."
+  },
+  {
+    "id": "2d-to-25d",
+    "category": "motion",
+    "recipe": "Separate foreground/midground/background, repair occluded regions, place virtual camera with modest depth travel; inspect edge tears and silhouettes."
+  },
+  {
+    "id": "path-animation",
+    "category": "motion",
+    "recipe": "Use arc-length parameterization for near-uniform speed; orient using tangent with stable up; inspect curvature discontinuities."
+  },
+  {
+    "id": "seamless-morph",
+    "category": "motion",
+    "recipe": "Match contour winding and vertex correspondence; add consistent samples and inspect mid-morph self-intersection and hole preservation."
+  },
+  {
+    "id": "physics-timing",
+    "category": "motion",
+    "recipe": "Choose acceleration and collision response with defined scale and gravity; evaluate contact frames, penetration, bounce interval and damping."
+  },
+  {
+    "id": "freeze-frame",
+    "category": "motion",
+    "recipe": "Pick a narratively strong frame; isolate frozen imagery from continuing audio/effect layers; guard against ambiguous freeze QA false positives."
+  },
+  {
+    "id": "speed-ramping-design",
+    "category": "motion",
+    "recipe": "Create monotonic time-remap curve and integrate source consumption; respect available source handles and avoid duplicated frames unintentionally."
+  },
+  {
+    "id": "motion-continuity",
+    "category": "motion",
+    "recipe": "Compare outgoing/incoming direction, phase and screen-space velocity; preserve intentional pauses; use a matched frame overlay before approving cut."
+  },
+  {
+    "id": "font-selection",
+    "category": "typography",
+    "recipe": "Check license, glyph repertoire, weight and optical-size variants; load fonts before frame capture; compare fallback glyph metrics."
+  },
+  {
+    "id": "type-scale",
+    "category": "typography",
+    "recipe": "Define output-pixel type scale and minimum size after target crop; review at actual playback size, including handheld or mobile target."
+  },
+  {
+    "id": "kerning-tracking",
+    "category": "typography",
+    "recipe": "Measure glyph advances with shaping engine; apply optical corrections only after script shaping; inspect difficult pairs and punctuation."
+  },
+  {
+    "id": "text-wrapping",
+    "category": "typography",
+    "recipe": "Use measured shaped bounds and semantic wrap points; reserve descender/diacritic padding; evaluate longest localized string and animated states."
+  },
+  {
+    "id": "kinetic-typography",
+    "category": "typography",
+    "recipe": "Time phrase groups to voice/beat with stable reading holds; keep typography anchored; avoid simultaneous multi-direction motion on every word."
+  },
+  {
+    "id": "word-reveal",
+    "category": "typography",
+    "recipe": "Pre-layout all words and reveal visibility without reflow; use timestamp anchors and check active word onset against audio."
+  },
+  {
+    "id": "character-reveal",
+    "category": "typography",
+    "recipe": "Segment grapheme clusters via Intl.Segmenter or equivalent; preserve combining marks and emoji sequences; premeasure full line."
+  },
+  {
+    "id": "text-mask-reveal",
+    "category": "typography",
+    "recipe": "Animate mask independent of text layout; expand mask for stroke, descenders and blur; inspect first/reveal/end frames."
+  },
+  {
+    "id": "text-on-path",
+    "category": "typography",
+    "recipe": "Shape text once and distribute glyphs along arc-length path with tangent orientation; avoid upside-down segments and tight curvature collisions."
+  },
+  {
+    "id": "extruded-type",
+    "category": "typography",
+    "recipe": "Use actual text outlines with modest bevel; keep counters clear, test key and reflection lighting at final projection size."
+  },
+  {
+    "id": "lower-thirds",
+    "category": "typography",
+    "recipe": "Reserve normalized safe rectangle and fixed anchors; test longest speaker name, face overlap and entry/exit at target aspect ratio."
+  },
+  {
+    "id": "end-card",
+    "category": "typography",
+    "recipe": "Use approved logo and CTA with separate hold; time based on actual reading length; test cropped exports and no silent added legal claims."
+  },
+  {
+    "id": "caption-segmentation",
+    "category": "typography",
+    "recipe": "Split at syntactic boundaries with target line count and reading speed defined by delivery; avoid splitting names and negations."
+  },
+  {
+    "id": "word-timed-captions",
+    "category": "typography",
+    "recipe": "Use real word-level timestamps with confidence and fallback phrase intervals; highlight without position changes; verify onset at several anchors."
+  },
+  {
+    "id": "subtitle-safe-area",
+    "category": "typography",
+    "recipe": "Define platform overlay exclusions independently of title-safe margin; test every caption bounding box against both."
+  },
+  {
+    "id": "turkish-glyph-audit",
+    "category": "typography",
+    "recipe": "Render sample İ ı Ş ş Ğ ğ Ü ü Ö ö Ç ç and punctuation in chosen font; ensure no tofu or fallback metric shifts."
+  },
+  {
+    "id": "rtl-text-layout",
+    "category": "typography",
+    "recipe": "Apply bidi algorithm and shaping with correct direction; do not reverse raw strings; inspect numerals, punctuation and mixed scripts."
+  },
+  {
+    "id": "caption-translation",
+    "category": "typography",
+    "recipe": "Translate by meaning, preserve terminology, then resegment for actual duration; check longer localized strings rather than shrinking blindly."
+  },
+  {
+    "id": "subtitle-format-export",
+    "category": "typography",
+    "recipe": "Export monotonic WebVTT/SRT cues with correct timestamp grammar, UTF-8 and no overlaps except required; round-trip in target player."
+  },
+  {
+    "id": "textless-visual-design",
+    "category": "typography",
+    "recipe": "Reject added titles/captions/logos unless explicitly permitted; inspect source layers, generated content and sampled renders; avoid changing required source assets without consent."
+  },
+  {
+    "id": "svg-authoring",
+    "category": "graphics",
+    "recipe": "Use explicit viewBox, named groups and deterministic IDs; expand filters bounds; inspect SVG renderer differences and external resource policy."
+  },
+  {
+    "id": "canvas-2d-rendering",
+    "category": "graphics",
+    "recipe": "Render by explicit frame/time, device pixel ratio and canvas size; reset state per frame; seed random draws and test repeatability."
+  },
+  {
+    "id": "vector-path-trimming",
+    "category": "graphics",
+    "recipe": "Compute getTotalLength or arc-length approximation; animate dashoffset or stroke trim without cap pop; inspect closed paths."
+  },
+  {
+    "id": "shape-booleans",
+    "category": "graphics",
+    "recipe": "Normalize fill rule and coordinate transforms; test union/intersection with holes and near-coincident edges; preserve topology."
+  },
+  {
+    "id": "icon-animation",
+    "category": "graphics",
+    "recipe": "Use consistent stroke/cap geometry and purposeful transform origin; verify recognizable silhouette at smallest intended size."
+  },
+  {
+    "id": "logo-animation",
+    "category": "graphics",
+    "recipe": "Use original logo vectors unchanged when protected; animate masks or surrounding elements; final silhouette must match approved source."
+  },
+  {
+    "id": "particle-2d",
+    "category": "graphics",
+    "recipe": "Use fixed seed and frame-time integration or analytic particle lifetimes; cap count/overdraw and avoid obscuring primary action."
+  },
+  {
+    "id": "sprite-sheet-animation",
+    "category": "graphics",
+    "recipe": "Define atlas cell size, pivot and frame order; sample integer UV bounds with padding; test loops and transparent borders."
+  },
+  {
+    "id": "isometric-graphics",
+    "category": "graphics",
+    "recipe": "Use consistent isometric projection and depth sorting; snap edges to common axes and check occlusion/labels."
+  },
+  {
+    "id": "procedural-patterns",
+    "category": "graphics",
+    "recipe": "Parameterize tile size, spacing and seed; test seamless repeat at edges and prevent distracting moiré at final resolution."
+  },
+  {
+    "id": "animated-infographic",
+    "category": "graphics",
+    "recipe": "Bind visuals to validated data values, units and label hierarchy; do not animate non-data decoration as if meaningful."
+  },
+  {
+    "id": "ui-card-animation",
+    "category": "graphics",
+    "recipe": "Keep UI card content real or clearly mock; animate depth and position with stable text; avoid unreadable perspective and exterior crop."
+  },
+  {
+    "id": "masking-2d",
+    "category": "graphics",
+    "recipe": "Use explicit fill rule and coordinate system for masks; test feather/stroke bounds and inverted alpha before animation."
+  },
+  {
+    "id": "alpha-compositing-2d",
+    "category": "graphics",
+    "recipe": "Choose straight vs premultiplied alpha explicitly; composite in suitable working color; inspect edge pixels over light/dark backgrounds."
+  },
+  {
+    "id": "procedural-illustration",
+    "category": "graphics",
+    "recipe": "Generate geometry from seed and named constraints; expose editable parameters; validate negative space and source provenance."
+  },
+  {
+    "id": "hand-drawn-line-style",
+    "category": "graphics",
+    "recipe": "Use controlled stroke perturbation at consistent scale and seed; keep silhouettes readable; avoid per-frame random jitter unless intended."
+  },
+  {
+    "id": "map-graphic",
+    "category": "graphics",
+    "recipe": "Use licensed basemap or original geometry; specify projection and route data provenance; avoid implying geographic accuracy without validation."
+  },
+  {
+    "id": "comic-panel-animation",
+    "category": "graphics",
+    "recipe": "Preserve panel order and gutters; animate focal panel with restrained parallax; test reading direction and caption positions."
+  },
+  {
+    "id": "vector-export",
+    "category": "graphics",
+    "recipe": "Embed or package approved fonts/assets, resolve external links, preserve vector geometry; round-trip with target renderer."
+  },
+  {
+    "id": "lottie-animation",
+    "category": "graphics",
+    "recipe": "Check supported Lottie features and assets; compare renderer output to source at keyframes; provide raster fallback when unsupported."
+  },
+  {
+    "id": "mesh-topology",
+    "category": "modeling",
+    "recipe": "Inspect non-manifold edges, flipped normals, poles and deformation loops; validate wireframe and subdivided silhouette at target camera."
+  },
+  {
+    "id": "procedural-modeling",
+    "category": "modeling",
+    "recipe": "Expose seed, dimensions and complexity caps; keep units and transforms consistent; compare repeated generation hashes or geometric stats."
+  },
+  {
+    "id": "bevel-workflow",
+    "category": "modeling",
+    "recipe": "Use real-scale bevel width smaller than adjacent features; set segments by silhouette and specular needs; inspect grazing highlights."
+  },
+  {
+    "id": "boolean-modeling",
+    "category": "modeling",
+    "recipe": "Apply or normalize transforms; use clean operand intersections; check coplanar faces, non-manifold output and shading before export."
+  },
+  {
+    "id": "subdivision-modeling",
+    "category": "modeling",
+    "recipe": "Use support loops or creases with stable topology; compare base and render subdivision silhouette; cap memory cost."
+  },
+  {
+    "id": "uv-unwrapping",
+    "category": "modeling",
+    "recipe": "Set seam strategy, texel density and island padding according to target resolution/mips; check overlap except deliberate mirroring."
+  },
+  {
+    "id": "texture-baking",
+    "category": "modeling",
+    "recipe": "Set cage/ray distance, tangent convention and color-space for each map; inspect normal seams and bake at final scale."
+  },
+  {
+    "id": "pbr-materials",
+    "category": "modeling",
+    "recipe": "Use metalness/roughness workflow with color maps tagged sRGB and data maps linear; test neutral light and hero environment."
+  },
+  {
+    "id": "procedural-texturing",
+    "category": "modeling",
+    "recipe": "Map noise in object/world space intentionally; set real-scale frequency and avoid animated seed flicker; inspect close and wide frames."
+  },
+  {
+    "id": "glass-material",
+    "category": "modeling",
+    "recipe": "Use physically coherent IOR, thickness, roughness and absorption; inspect refraction/caustic limitations and alternate renderer behavior."
+  },
+  {
+    "id": "metal-material",
+    "category": "modeling",
+    "recipe": "Use conductor-like response with meaningful roughness and reflected environment; avoid diffuse-looking fake chrome; inspect highlight widths."
+  },
+  {
+    "id": "cloth-material",
+    "category": "modeling",
+    "recipe": "Use fabric-scale weave, roughness and anisotropy; control displacement amplitude; inspect seam and silhouette at macro view."
+  },
+  {
+    "id": "product-modeling",
+    "category": "modeling",
+    "recipe": "Reference real dimensions, proportions and logo placement; inspect silhouette from orthographic and hero angles before detail pass."
+  },
+  {
+    "id": "prop-modeling",
+    "category": "modeling",
+    "recipe": "Define prop scale, anchor/pivot and contact geometry; prioritize visible details; check interaction and asset reuse boundaries."
+  },
+  {
+    "id": "environment-kitbash",
+    "category": "modeling",
+    "recipe": "Use modular dimensions, snapping and varied orientation/materials; enforce rights and avoid repeated obvious tiling in hero camera."
+  },
+  {
+    "id": "geometry-instancing",
+    "category": "modeling",
+    "recipe": "Instance shared mesh/material where possible; test per-instance transforms and visibility bounds; compare memory with duplicates."
+  },
+  {
+    "id": "level-of-detail",
+    "category": "modeling",
+    "recipe": "Set LOD thresholds based on projected screen size; avoid visible popping with hysteresis or cut-aware swaps; inspect silhouette."
+  },
+  {
+    "id": "gltf-interchange",
+    "category": "modeling",
+    "recipe": "Export supported glTF materials, tangent normals, axis and units; validate with independent load and compare hero frame."
+  },
+  {
+    "id": "fbx-interchange",
+    "category": "modeling",
+    "recipe": "Verify FBX exporter/importer versions and coordinate convention, baked animation and scale; round-trip rig and material limitations."
+  },
+  {
+    "id": "asset-origin-normalization",
+    "category": "modeling",
+    "recipe": "Define origin at meaningful pivot, apply correct units and orientation without breaking rig; compare world bounding box and contact points."
+  },
+  {
+    "id": "character-bible",
+    "category": "character",
+    "recipe": "Assign stable character ID, proportions, palette, wardrobe, scale, rig version and forbidden mutations; compare neutral front/side and hero pose."
+  },
+  {
+    "id": "character-turnaround",
+    "category": "character",
+    "recipe": "Create front/side/back/three-quarter views with consistent orthographic scale, landmarks and outfit; verify asymmetric details and pivot positions."
+  },
+  {
+    "id": "character-rigging",
+    "category": "character",
+    "recipe": "Specify bone hierarchy, naming, rest pose, constraints and control shapes; run extreme pose and deformation tests before animation."
+  },
+  {
+    "id": "skin-weighting",
+    "category": "character",
+    "recipe": "Normalize weights, inspect joints in flexion/twist and remove stray influences; preserve volume where possible; compare before/after."
+  },
+  {
+    "id": "ik-fk-switching",
+    "category": "character",
+    "recipe": "Match world transforms at IK/FK switch; key both systems on transition frame; test limb pop and planted contacts."
+  },
+  {
+    "id": "walk-cycle",
+    "category": "character",
+    "recipe": "Block contact/down/passing/up poses; lock planted feet in world space or root-relative loop; verify stride and loop phase."
+  },
+  {
+    "id": "run-cycle",
+    "category": "character",
+    "recipe": "Use flight phases and forward lean appropriate to speed; test foot contacts and consistent root displacement per cycle."
+  },
+  {
+    "id": "idle-animation",
+    "category": "character",
+    "recipe": "Build low-amplitude breath/weight shifts with asymmetrical timing; keep gaze and silhouette motivated; avoid synchronized repetitive loops."
+  },
+  {
+    "id": "facial-expression",
+    "category": "character",
+    "recipe": "Use expression shapes with controlled intensity and asymmetry; compare neutral and extreme poses; avoid unintended mesh intersection."
+  },
+  {
+    "id": "blink-animation",
+    "category": "character",
+    "recipe": "Use eyelid closure on curved path, varied timing and brief closures; avoid mechanical periodic blinking and eye penetration."
+  },
+  {
+    "id": "lip-sync",
+    "category": "character",
+    "recipe": "Align phoneme/viseme keyframes to audio with coarticulation; prioritize jaw and silhouette; review consonants and closure frames."
+  },
+  {
+    "id": "hand-gesture",
+    "category": "character",
+    "recipe": "Match gestures to words or action beats, with anticipation and relax phase; inspect fingers, wrists and hand silhouette."
+  },
+  {
+    "id": "look-at-animation",
+    "category": "character",
+    "recipe": "Use damped head/eye target constraints and angular limits; prefer eyes lead head on motivated turns; guard against axis flips."
+  },
+  {
+    "id": "object-interaction",
+    "category": "character",
+    "recipe": "Track hand/object transform and contact constraints; match attachment/detachment frame and avoid penetration or sudden velocity."
+  },
+  {
+    "id": "character-retargeting",
+    "category": "character",
+    "recipe": "Map joints, axes and scale between rigs; compare rest pose and root motion; fix foot sliding and extreme orientations."
+  },
+  {
+    "id": "root-motion",
+    "category": "character",
+    "recipe": "Separate locomotion translation from in-place animation; verify integrated displacement and orientation at cycle boundaries."
+  },
+  {
+    "id": "cloth-secondary-motion",
+    "category": "character",
+    "recipe": "Use pinned regions, collisions and fixed-step simulation; bake after approved poses; inspect clipping during rapid motions."
+  },
+  {
+    "id": "character-crowd",
+    "category": "character",
+    "recipe": "Use deterministic variations in timing, pose, scale and gaze; stage hero action clearly; test collisions and instancing budgets."
+  },
+  {
+    "id": "character-continuity",
+    "category": "character",
+    "recipe": "Compare silhouette, wardrobe, face proportions, accessories and rig identifiers across shots; flag intentional state changes explicitly."
+  },
+  {
+    "id": "character-performance",
+    "category": "character",
+    "recipe": "Layer intention, gaze, body weight and secondary gestures; review without sound and at normal speed; remove distracting motion."
+  },
+  {
+    "id": "three-point-lighting",
+    "category": "lighting",
+    "recipe": "Set key/fill/rim directions and relative exposure intentionally; disable each light to inspect contribution; preserve motivated shadow logic."
+  },
+  {
+    "id": "softbox-lighting",
+    "category": "lighting",
+    "recipe": "Size light relative to subject and distance; inspect penumbra and specular reflection; choose card positions based on hero angles."
+  },
+  {
+    "id": "practical-lighting",
+    "category": "lighting",
+    "recipe": "Place emissive practical and actual illuminating source coherently; expose highlights without flattening ambient contrast."
+  },
+  {
+    "id": "hdri-lighting",
+    "category": "lighting",
+    "recipe": "Use licensed HDRI, documented rotation and intensity; evaluate reflections and separate background visibility when appropriate."
+  },
+  {
+    "id": "volumetric-lighting",
+    "category": "lighting",
+    "recipe": "Control density, anisotropy and light path at world scale; check banding/noise and preserve subject contrast through fog."
+  },
+  {
+    "id": "night-lighting",
+    "category": "lighting",
+    "recipe": "Define motivated sources, moon/ambient ratios and highlight rolloff; preserve essential detail instead of lifting every shadow."
+  },
+  {
+    "id": "golden-hour-lighting",
+    "category": "lighting",
+    "recipe": "Use low-angle key and sky fill with coherent shadow direction; grade skin/products separately if needed without falsifying colors."
+  },
+  {
+    "id": "neon-lighting",
+    "category": "lighting",
+    "recipe": "Choose limited emissive colors and real bounce/area lights; check channel clipping, readable darks and controlled bloom."
+  },
+  {
+    "id": "product-lighting",
+    "category": "lighting",
+    "recipe": "Use large reflection cards and flags for surface shape; review raw material and polished hero; keep brand color calibrated."
+  },
+  {
+    "id": "shadow-design",
+    "category": "lighting",
+    "recipe": "Use contact shadows plus motivated cast shadows; inspect shadow bias, detached edges and inconsistent penumbra."
+  },
+  {
+    "id": "ambient-occlusion",
+    "category": "lighting",
+    "recipe": "Use AO as restrained contact support, not a substitute for lighting; test with and without; avoid dirty corners and double darkening."
+  },
+  {
+    "id": "exposure-planning",
+    "category": "lighting",
+    "recipe": "Set exposure with test chart or known neutral reference; inspect highlight clipping, shadow detail and target transfer function."
+  },
+  {
+    "id": "interior-staging",
+    "category": "lighting",
+    "recipe": "Block floor, walls, practical lights and furniture at real dimensions; inspect camera access and motivated depth layers."
+  },
+  {
+    "id": "exterior-staging",
+    "category": "lighting",
+    "recipe": "Use horizon, ground scale, atmospheric perspective and sun direction; test silhouettes and distant texture repetition."
+  },
+  {
+    "id": "weather-design",
+    "category": "lighting",
+    "recipe": "Define wind, rain/snow direction, density and wetness response; seed motion and avoid blocking subject continuity."
+  },
+  {
+    "id": "procedural-terrain",
+    "category": "lighting",
+    "recipe": "Generate terrain with unit scale, slope constraints and named seed; inspect collision and LOD at camera path."
+  },
+  {
+    "id": "background-depth",
+    "category": "lighting",
+    "recipe": "Use three depth planes with contrast and scale separation; inspect occlusion, silhouette tangencies and overscan."
+  },
+  {
+    "id": "set-dressing",
+    "category": "lighting",
+    "recipe": "Choose props that establish context and hierarchy; maintain plausible scale and placement; remove distracting repetition."
+  },
+  {
+    "id": "light-animation",
+    "category": "lighting",
+    "recipe": "Use time-indexed light power/color and smooth ramps; validate flicker, exposure continuity and intended safety."
+  },
+  {
+    "id": "render-lookdev",
+    "category": "lighting",
+    "recipe": "Build neutral reference and hero look frames; lock display transform and material assumptions before polishing animation."
+  },
+  {
+    "id": "compositing-pipeline",
+    "category": "vfx",
+    "recipe": "Define plate color/alpha conventions and layer order; use linear operations where needed; inspect final over dark and light references."
+  },
+  {
+    "id": "chroma-key",
+    "category": "vfx",
+    "recipe": "Sample key color and subject edges; tune matte separately from despill; preserve fine detail and restore edge light selectively."
+  },
+  {
+    "id": "luma-key",
+    "category": "vfx",
+    "recipe": "Use luminance threshold with soft knee and edge inspection; preserve intended highlights/shadows and test changing exposure."
+  },
+  {
+    "id": "rotoscoping",
+    "category": "vfx",
+    "recipe": "Track masks with keyframe anchors and feather based on edge sharpness; inspect fast motion, holes and occlusion changes."
+  },
+  {
+    "id": "planar-tracking",
+    "category": "vfx",
+    "recipe": "Track planar feature region, corner-pin consistently, reject poor confidence and review perspective across all frames."
+  },
+  {
+    "id": "point-tracking",
+    "category": "vfx",
+    "recipe": "Track stable features with forward/backward consistency; handle occlusion and reset track rather than extrapolating indefinitely."
+  },
+  {
+    "id": "screen-replacement",
+    "category": "vfx",
+    "recipe": "Match perspective, exposure, reflection, blur and occluders; retain original UI content and inspect corner pins frame by frame."
+  },
+  {
+    "id": "depth-compositing",
+    "category": "vfx",
+    "recipe": "Use depth pass with explicit units and near/far; sort transparent elements separately; inspect depth edges and halo artifacts."
+  },
+  {
+    "id": "shadow-catcher",
+    "category": "vfx",
+    "recipe": "Match receiver scale, orientation and contact softness; composite shadows with correct alpha/color; avoid double shadowing."
+  },
+  {
+    "id": "light-wrap",
+    "category": "vfx",
+    "recipe": "Sample plate color near edges and blend narrow wrap in linear light; avoid over-bright halos and retain matte detail."
+  },
+  {
+    "id": "film-grain",
+    "category": "vfx",
+    "recipe": "Use resolution-aware seeded temporal grain, preferably luminance-dependent; inspect flat areas and codec bitrate impact."
+  },
+  {
+    "id": "bloom-glow",
+    "category": "vfx",
+    "recipe": "Threshold bright sources in scene-linear space where possible; tune radius/intensity with restrained rolloff and protected text."
+  },
+  {
+    "id": "lens-distortion",
+    "category": "vfx",
+    "recipe": "Use calibrated radial distortion or explicit coefficients; overscan to avoid blank corners; avoid on typography unless intentional."
+  },
+  {
+    "id": "chromatic-aberration",
+    "category": "vfx",
+    "recipe": "Separate channel shifts at edges only when motivated; cap displacement in output pixels; inspect high-contrast text and logos."
+  },
+  {
+    "id": "motion-blur",
+    "category": "vfx",
+    "recipe": "Use shutter fraction (180° ≈ half frame interval) and motion vectors or subframe sampling; inspect contact edges and protected titles."
+  },
+  {
+    "id": "particle-3d",
+    "category": "vfx",
+    "recipe": "Set seeded emission, lifetime, scale, collision and max particle count; bake deterministic simulations or use analytic time evaluation."
+  },
+  {
+    "id": "smoke-fog",
+    "category": "vfx",
+    "recipe": "Set density, extinction, shape and turbulence at real scene scale; inspect temporal noise, edge visibility and depth interactions."
+  },
+  {
+    "id": "explosion-effects",
+    "category": "vfx",
+    "recipe": "Design silhouette, pressure timing, debris and dissipating smoke for fictional effect; use bounded simulation and avoid strobing."
+  },
+  {
+    "id": "shader-effects",
+    "category": "vfx",
+    "recipe": "Use stable uniforms for time/resolution, linear color handling, precision and bounded sampling; compile and test fallback path."
+  },
+  {
+    "id": "liquid-morph",
+    "category": "vfx",
+    "recipe": "Use matched topology or signed distance blending; preserve apparent volume if intended; inspect intersections and highlight response."
+  },
+  {
+    "id": "rough-cut",
+    "category": "editing",
+    "recipe": "Assemble best readable take for each story beat; retain handles and scratch audio; verify sequence timing before effects."
+  },
+  {
+    "id": "fine-cut",
+    "category": "editing",
+    "recipe": "Trim frame-accurate in/out points using reaction/action timing; review edit at real speed with/without audio and preserve approved story."
+  },
+  {
+    "id": "beat-synced-editing",
+    "category": "editing",
+    "recipe": "Detect beats or use cue sheet; snap selected impact cuts within permitted tolerance, not every beat; maintain natural reaction/read timing."
+  },
+  {
+    "id": "j-cut",
+    "category": "editing",
+    "recipe": "Lead incoming sound over prior picture using explicit overlap; keep incoming words intelligible and preserve silence if intentional."
+  },
+  {
+    "id": "l-cut",
+    "category": "editing",
+    "recipe": "Carry outgoing sound into incoming picture; choose exact decay or crossfade; avoid contradictory ambience and clipping."
+  },
+  {
+    "id": "match-on-action",
+    "category": "editing",
+    "recipe": "Cut at matched action phase and screen direction; inspect outgoing/incoming positions and motion velocity, not only pose."
+  },
+  {
+    "id": "montage-editing",
+    "category": "editing",
+    "recipe": "Choose sequence progression (spatial, temporal, conceptual) and vary shot duration with intent; remove redundant imagery."
+  },
+  {
+    "id": "b-roll-placement",
+    "category": "editing",
+    "recipe": "Tie inserts to specific narrated claims or actions; use appropriate rights and avoid deceptive illustration; keep original audio anchors."
+  },
+  {
+    "id": "silence-removal",
+    "category": "editing",
+    "recipe": "Detect low-level intervals with configurable threshold and min duration; protect breath, dramatic pause and room tone; preview edits with handles."
+  },
+  {
+    "id": "retake-detection",
+    "category": "editing",
+    "recipe": "Match transcript and timecodes across repeated phrases; rank takes with context, quality and intended delivery; do not auto-delete ambiguous alternatives."
+  },
+  {
+    "id": "transcript-editing",
+    "category": "editing",
+    "recipe": "Use word timestamps to map textual edits to source frame/sample ranges; preserve sentence continuity and room tone; round-trip EDL."
+  },
+  {
+    "id": "multicam-editing",
+    "category": "editing",
+    "recipe": "Sync cameras by timecode/audio correlation and check drift over duration; choose angles by story and eyeline; preserve original tracks."
+  },
+  {
+    "id": "reframing",
+    "category": "editing",
+    "recipe": "Use normalized subject safe regions and shot-specific crop path; avoid automatic zoom on locked shots; inspect edges in target ratio."
+  },
+  {
+    "id": "shot-detection",
+    "category": "editing",
+    "recipe": "Combine histogram/scene threshold with manual check for flashes and dissolves; report frame boundaries and confidence, not fabricated semantic labels."
+  },
+  {
+    "id": "footage-ranking",
+    "category": "editing",
+    "recipe": "Rank by relevance, focus, exposure, stability, duration, rights and crop suitability; use contact sheets and keep rejection reasons."
+  },
+  {
+    "id": "slow-motion",
+    "category": "editing",
+    "recipe": "Interpret source FPS and retime by exact ratio; avoid optical-flow artifacts at occlusions; preserve cadence with source handles."
+  },
+  {
+    "id": "time-lapse",
+    "category": "editing",
+    "recipe": "Use frame-index selection or interval capture; stabilize exposure and composition where permitted; avoid skipped key events."
+  },
+  {
+    "id": "transition-selection",
+    "category": "editing",
+    "recipe": "Select transition by continuity/story role and duration budget; default to cut when no reason for an effect; avoid repeated decorative presets."
+  },
+  {
+    "id": "video-stitching",
+    "category": "editing",
+    "recipe": "Normalize dimensions, pixel format, FPS/timebase, audio layout and color before concat; retain exact frame and sample counts."
+  },
+  {
+    "id": "locked-region-editing",
+    "category": "editing",
+    "recipe": "Define protected region normalized bounds and source image; composite protected pixels after transformations where appropriate; compare ROI at each frame."
+  },
+  {
+    "id": "cross-dissolve",
+    "category": "transitions",
+    "recipe": "Mix shots in suitable color space with explicit overlap; ensure endpoint weights are correct and no unintended luminance dip."
+  },
+  {
+    "id": "fade-through-black",
+    "category": "transitions",
+    "recipe": "Fade to/from black only when motivated; allocate handles and check intended black against QA allowlist; sync audio separately."
+  },
+  {
+    "id": "fade-through-white",
+    "category": "transitions",
+    "recipe": "Use controlled transition luminance and duration; avoid flashes and preserve legibility; whitelist only explicitly intended bright intervals."
+  },
+  {
+    "id": "slide-transition",
+    "category": "transitions",
+    "recipe": "Move outgoing/incoming layers along matching direction with easing and overscan; verify no gap at seam or crop of protected areas."
+  },
+  {
+    "id": "wipe-transition",
+    "category": "transitions",
+    "recipe": "Animate wipe boundary in normalized coordinates with intentional softness; test exact endpoint coverage and edge chatter."
+  },
+  {
+    "id": "radial-reveal",
+    "category": "transitions",
+    "recipe": "Use defined center/origin and radius sufficient to cover diagonal; ease radius and inspect aliasing at small values."
+  },
+  {
+    "id": "object-wipe",
+    "category": "transitions",
+    "recipe": "Use tracked foreground occluder as matte; ensure full frame coverage at seam and preserve believable perspective/blur."
+  },
+  {
+    "id": "match-zoom",
+    "category": "transitions",
+    "recipe": "Match focal target position, projected scale and velocity across edit; reserve overscan and avoid zoom where prohibited."
+  },
+  {
+    "id": "glitch-transition",
+    "category": "transitions",
+    "recipe": "Use brief seeded digital distortions and controlled displacement/channels; respect flash limits and keep mandated text readable."
+  },
+  {
+    "id": "luma-wipe",
+    "category": "transitions",
+    "recipe": "Use normalized animated luminance matte with soft threshold; inspect low/high endpoints and matte direction."
+  },
+  {
+    "id": "page-turn",
+    "category": "transitions",
+    "recipe": "Model page pivot, curl and backside with self-shadow if supported; maintain legibility and avoid intersecting layers."
+  },
+  {
+    "id": "film-burn-transition",
+    "category": "transitions",
+    "recipe": "Use original/licensed burn texture with bounded luminance and timed exposure; avoid unsafe rapid flashes and generic overlay clutter."
+  },
+  {
+    "id": "seamless-camera-bridge",
+    "category": "transitions",
+    "recipe": "Design outgoing/incoming camera paths with matched framing, direction, velocity and occlusion; prove seam with overlay and playback."
+  },
+  {
+    "id": "shape-match-transition",
+    "category": "transitions",
+    "recipe": "Match geometric contour, position and scale; transition during perceptual similarity while preserving intentional differences."
+  },
+  {
+    "id": "color-match-transition",
+    "category": "transitions",
+    "recipe": "Measure outgoing/incoming dominant colors and luminance; match grade at cut without distorting protected product/brand color."
+  },
+  {
+    "id": "exploded-view-shot",
+    "category": "transitions",
+    "recipe": "Assign stable part IDs, assembly anchors and ordered displacement along logical axes; preserve assembly constraints and show reassembly option."
+  },
+  {
+    "id": "product-turntable",
+    "category": "transitions",
+    "recipe": "Rotate around meaningful product pivot at constant or eased speed; use real proportions, stable reflections and loop closure if requested."
+  },
+  {
+    "id": "hero-reveal",
+    "category": "transitions",
+    "recipe": "Stage reveal via lighting, occlusion or camera only as allowed; time the decisive silhouette and reserve a clean hero hold."
+  },
+  {
+    "id": "macro-detail-reveal",
+    "category": "transitions",
+    "recipe": "Isolate one physical material/detail with macro scale and controlled depth of field; preserve context with matching wide shot."
+  },
+  {
+    "id": "floating-ui-reveal",
+    "category": "transitions",
+    "recipe": "Use real UI screenshots or declared mock, layered depth, readable text and restrained rotation; avoid parallax that hides functional content."
+  },
+  {
+    "id": "sound-spotting",
+    "category": "audio",
+    "recipe": "Build timecoded cue sheet with diegetic/non-diegetic role, source, start/end and gain; place silence intentionally."
+  },
+  {
+    "id": "voiceover-alignment",
+    "category": "audio",
+    "recipe": "Use authoritative recorded length and word/phrase timestamps; align frame anchors with confidence; correct structural drift rather than stretching speech blindly."
+  },
+  {
+    "id": "voice-cleanup",
+    "category": "audio",
+    "recipe": "Measure noise floor and identify hum/clips; use conservative denoise/high-pass and A/B with untouched reference; avoid metallic artifacts."
+  },
+  {
+    "id": "dialogue-editing",
+    "category": "audio",
+    "recipe": "Trim with room-tone handles, repair clicks and preserve speech rhythm; crossfade edits and listen on headphones at normal speed."
+  },
+  {
+    "id": "loudness-normalization",
+    "category": "audio",
+    "recipe": "Measure integrated LUFS, LRA and true peak; apply delivery profile (e.g. web −14 only if appropriate, broadcast −23 per spec); remeasure encoded output."
+  },
+  {
+    "id": "audio-ducking",
+    "category": "audio",
+    "recipe": "Use dialogue sidechain or authored gain automation, with attack/release tuned to syllables; compare speech intelligibility and pumping."
+  },
+  {
+    "id": "audio-equalization",
+    "category": "audio",
+    "recipe": "Identify masking with spectrum/listening, use narrow corrective EQ before broad tone changes; gain-match A/B; protect natural voice."
+  },
+  {
+    "id": "dynamic-compression",
+    "category": "audio",
+    "recipe": "Choose threshold, ratio, attack/release and makeup by measured dynamics; avoid flattening transients; compare gain reduction and true peak."
+  },
+  {
+    "id": "true-peak-limiting",
+    "category": "audio",
+    "recipe": "Use oversampled true-peak meter after limiter and encoding; preserve headroom and avoid excessive gain reduction."
+  },
+  {
+    "id": "room-tone",
+    "category": "audio",
+    "recipe": "Capture or synthesize coherent room tone with crossfades; match spectral character across dialogue edits and avoid audible loops."
+  },
+  {
+    "id": "foley-design",
+    "category": "audio",
+    "recipe": "Build cue layers for contact, body and environment; use frame-accurate onset, material variation, pitch and perspective; avoid repetitive identical samples."
+  },
+  {
+    "id": "ambience-design",
+    "category": "audio",
+    "recipe": "Create long non-obvious loops with environmental depth and stereo coherence; duck around key cues and verify seam."
+  },
+  {
+    "id": "spatial-audio",
+    "category": "audio",
+    "recipe": "Pan/attenuate by position and distance with stable listener frame; verify mono fold-down, phase and dialogue clarity."
+  },
+  {
+    "id": "audio-crossfades",
+    "category": "audio",
+    "recipe": "Select equal-power or equal-gain crossfade by correlation; align handles and test no click, phase dip or unintended doubling."
+  },
+  {
+    "id": "beat-detection",
+    "category": "audio",
+    "recipe": "Use onset/tempo estimation with beat confidence map; manually confirm downbeats on complex music and handle tempo changes."
+  },
+  {
+    "id": "audio-reactive-animation",
+    "category": "audio",
+    "recipe": "Map smoothed envelope or frequency bands to bounded visual parameters; use attack/release and avoid rapid flashes or jitter."
+  },
+  {
+    "id": "procedural-whoosh",
+    "category": "audio",
+    "recipe": "Design filtered noise sweep with shaped envelope, pitch motion and stereo width; align peak with transition and avoid clipping."
+  },
+  {
+    "id": "procedural-impact",
+    "category": "audio",
+    "recipe": "Layer low-frequency body, transient and texture with distinct envelopes; align phase and control sub-bass; use cue-level gain control."
+  },
+  {
+    "id": "procedural-weather-audio",
+    "category": "audio",
+    "recipe": "Use filtered noise and sparse seeded events for wind/rain, with slow modulation; test long loops and mono compatibility."
+  },
+  {
+    "id": "multitrack-mixing",
+    "category": "audio",
+    "recipe": "Route dialogue/music/FX/ambience to stems with headroom; automate balances, check phase and measure final encoded mix."
+  },
+  {
+    "id": "music-brief",
+    "category": "music",
+    "recipe": "Define mood, instrumentation, tempo range, cue duration and no-copy constraints; map sections to visual beats and dialogue gaps."
+  },
+  {
+    "id": "original-motif",
+    "category": "music",
+    "recipe": "Compose original 3–8 note contour and rhythm; vary register/orchestration without borrowing recognizable melodies; save MIDI or event data."
+  },
+  {
+    "id": "chord-progression",
+    "category": "music",
+    "recipe": "Choose harmonic progression and voice leading for story tone; check bass movement and dissonance resolution; retain original composition notes."
+  },
+  {
+    "id": "midi-sequencing",
+    "category": "music",
+    "recipe": "Store tempo map, tick resolution, note-on/off, channel and velocity; render through cleared instruments; verify no stuck notes."
+  },
+  {
+    "id": "procedural-percussion",
+    "category": "music",
+    "recipe": "Combine kick/snare/hat or custom percussive layers with variation; seed microtiming and keep transients below clipping."
+  },
+  {
+    "id": "bassline-design",
+    "category": "music",
+    "recipe": "Support harmonic roots and rhythmic intent; avoid masking speech or kick with sub frequencies; test on small speakers."
+  },
+  {
+    "id": "arpeggio-design",
+    "category": "music",
+    "recipe": "Define note pattern, gate, subdivision and accents; vary register deliberately; avoid conflict with dialogue and loop boundaries."
+  },
+  {
+    "id": "synth-envelope",
+    "category": "music",
+    "recipe": "Use ADSR or explicit envelope in seconds; avoid discontinuous amplitude at note edges; check release tail and polyphony."
+  },
+  {
+    "id": "oscillator-synthesis",
+    "category": "music",
+    "recipe": "Choose band-limited oscillator or oversampled synthesis where needed; avoid aliasing and use gain envelope on voices."
+  },
+  {
+    "id": "noise-synthesis",
+    "category": "music",
+    "recipe": "Use seeded white/pink noise, filter and envelope; test spectral balance, no DC offset and deterministic reproduction."
+  },
+  {
+    "id": "filter-sweep",
+    "category": "music",
+    "recipe": "Automate cutoff/resonance within safe bounds; smooth transitions and avoid self-oscillation clipping; inspect spectrum."
+  },
+  {
+    "id": "procedural-riser",
+    "category": "music",
+    "recipe": "Layer increasing pitch/noise/harmonic tension with envelope; time climax to cut and keep transition tail controlled."
+  },
+  {
+    "id": "cinematic-drone",
+    "category": "music",
+    "recipe": "Build evolving low texture with slow modulation and sparse harmonics; avoid masking speech; apply smooth loop boundaries."
+  },
+  {
+    "id": "leitmotif-continuity",
+    "category": "music",
+    "recipe": "Retain motif identity by contour/rhythm while changing harmony or orchestration; track usage by episode and avoid repetition fatigue."
+  },
+  {
+    "id": "cue-sheet",
+    "category": "music",
+    "recipe": "Store cue IDs, source/license, timecodes, duration, tempo and stem paths; validate exact timeline placement and rights."
+  },
+  {
+    "id": "music-looping",
+    "category": "music",
+    "recipe": "Choose musically sensible loop length and phase-aligned boundary; render extra tail and crossfade if needed; listen over two cycles."
+  },
+  {
+    "id": "music-editing",
+    "category": "music",
+    "recipe": "Edit at phrase/bar boundaries with appropriate handles; preserve downbeat and reverb tail; avoid abrupt harmonic jumps."
+  },
+  {
+    "id": "sidechain-music",
+    "category": "music",
+    "recipe": "Use musical ducking driven by dialogue or kick as appropriate; control release to tempo and A/B for pumping."
+  },
+  {
+    "id": "audio-stem-export",
+    "category": "music",
+    "recipe": "Export named stems with same start, duration, sample rate and bit depth; null/compare sum against mix where no master nonlinear effects."
+  },
+  {
+    "id": "procedural-score-review",
+    "category": "music",
+    "recipe": "Review melody originality, scene timing, dialogue masking, peak/loudness and loop seam; document source and instrument license."
+  },
+  {
+    "id": "ffmpeg-filtergraphs",
+    "category": "engines",
+    "recipe": "Build explicit named filter labels, timebases and end conditions; run ffmpeg on tiny synthetic fixture before full job; avoid shell interpolation."
+  },
+  {
+    "id": "ffmpeg-trimming",
+    "category": "engines",
+    "recipe": "Choose frame-accurate decode/reencode for precise cuts; distinguish input seek/stream copy, inspect PTS and duration after trim."
+  },
+  {
+    "id": "ffmpeg-overlays",
+    "category": "engines",
+    "recipe": "Normalize alpha, dimensions, coordinate anchors and duration; set overlay eof behavior; test first/last frames and transparent edge."
+  },
+  {
+    "id": "ffmpeg-transcoding",
+    "category": "engines",
+    "recipe": "Select codec/pixel format/rate control/container by target; explicitly manage color metadata and re-probe encoded output."
+  },
+  {
+    "id": "blender-python",
+    "category": "engines",
+    "recipe": "Use Blender background invocation with trusted script, named collections and frame argument; save .blend before render; log engine/version."
+  },
+  {
+    "id": "blender-mcp",
+    "category": "engines",
+    "recipe": "Discover actual MCP tools and permissions; check scene state, use small reversible edits and verify outputs from returned artifact paths."
+  },
+  {
+    "id": "blender-geometry-nodes",
+    "category": "engines",
+    "recipe": "Expose named geometry-node inputs, stable seed and unit scale; apply/bake only as needed; test evaluated geometry and memory."
+  },
+  {
+    "id": "blender-eevee",
+    "category": "engines",
+    "recipe": "Probe Eevee version-supported settings; tune shadow, transparency and temporal stability on representative frames; compare final settings."
+  },
+  {
+    "id": "blender-cycles",
+    "category": "engines",
+    "recipe": "Use Cycles adaptive sampling/denoise after device probe; render noisy hero frames and motion sequence; size samples by evidence, not arbitrary maximum."
+  },
+  {
+    "id": "threejs-scene",
+    "category": "engines",
+    "recipe": "Initialize explicit camera, renderer color space, resize and seeded assets; dispose resources; render using deterministic frame-time entry point."
+  },
+  {
+    "id": "threejs-animation",
+    "category": "engines",
+    "recipe": "Evaluate mixers at absolute time or fixed-step from reset; avoid wall-clock accumulation; compare frame reorder/resume output."
+  },
+  {
+    "id": "hyperframes-composition",
+    "category": "engines",
+    "recipe": "Use version-checked composition API and local assets; validate duration and deterministic browser capture, then inspect rendered frames."
+  },
+  {
+    "id": "remotion-composition",
+    "category": "engines",
+    "recipe": "Use current installed Remotion API/free license eligibility; use frame-driven composition and calculate dimensions/duration; smoke render without external fonts."
+  },
+  {
+    "id": "motion-canvas",
+    "category": "engines",
+    "recipe": "Use reproducible scene generator and deterministic timeline; check layout, text and render settings against actual installed API."
+  },
+  {
+    "id": "manim-animation",
+    "category": "engines",
+    "recipe": "Select Cairo/OpenGL based on features; define exact mathematical objects and source values; render at low quality before final."
+  },
+  {
+    "id": "gsap-timeline",
+    "category": "engines",
+    "recipe": "Set explicit timeline duration and seek by frame-normalized time; disable uncontrolled ticker during capture; validate start/end and dependency license."
+  },
+  {
+    "id": "p5-creative-coding",
+    "category": "engines",
+    "recipe": "Seed random/noise, isolate setup and draw from frame index; set pixel density and export exact frame count; avoid real-time frame drift."
+  },
+  {
+    "id": "pixi-rendering",
+    "category": "engines",
+    "recipe": "Use controlled ticker or explicit render, asset readiness and texture disposal; probe WebGL context/headless support; inspect alpha and color."
+  },
+  {
+    "id": "after-effects-mcp",
+    "category": "engines",
+    "recipe": "Discover installed After Effects/MCP commands; duplicate source comp and verify layer IDs, fps and render queue; never claim export without file evidence."
+  },
+  {
+    "id": "engine-compatibility",
+    "category": "engines",
+    "recipe": "Use engine feature matrix with fixture-level evidence, installed versions and licensing; select fallback only if it preserves explicit constraints."
+  },
+  {
+    "id": "website-to-video",
+    "category": "capture",
+    "recipe": "Use authorized URLs, controlled viewport, stable local captures or recorded actions; redact secrets and verify fonts/network idle before frame capture."
+  },
+  {
+    "id": "repository-to-video",
+    "category": "capture",
+    "recipe": "Inspect repo entrypoints, README and runnable demo; use real documented features/screens, isolated launch and licensed assets; never fabricate functionality."
+  },
+  {
+    "id": "figma-to-video",
+    "category": "capture",
+    "recipe": "Use authorized Figma exports or permitted API/plugin; retain layer order, fonts and sizes; flag unsupported vectors/effects and verify render against design."
+  },
+  {
+    "id": "psd-to-video",
+    "category": "capture",
+    "recipe": "Read layer metadata, groups, masks and blend modes; preserve fixed regions, compare source composite and animate duplicate project only."
+  },
+  {
+    "id": "slides-to-video",
+    "category": "capture",
+    "recipe": "Render slides faithfully first, then plan purposeful camera or layer motion where allowed; preserve speaker-note timing and content provenance."
+  },
+  {
+    "id": "pdf-to-video",
+    "category": "capture",
+    "recipe": "Extract page geometry/text/images with permissions, render verified pages, preserve formulas and citations; distinguish scan/OCR uncertainty."
+  },
+  {
+    "id": "screen-recording",
+    "category": "capture",
+    "recipe": "Set viewport, FPS, input/device state and recording privacy; use scripted interactions and frame capture where repeatability matters."
+  },
+  {
+    "id": "cursor-choreography",
+    "category": "capture",
+    "recipe": "Plan pointer paths with clear targets, acceleration and dwell; avoid hiding click state or fake interactions; remove distracting wiggle."
+  },
+  {
+    "id": "terminal-animation",
+    "category": "capture",
+    "recipe": "Use sanitized recorded or simulated terminal output clearly labeled if mock; preserve command semantics and line wrap; avoid exposing secrets."
+  },
+  {
+    "id": "code-highlighting",
+    "category": "capture",
+    "recipe": "Parse language tokens with known lexer; use accessible contrast and stable code layout; ensure highlighted lines match actual source."
+  },
+  {
+    "id": "ui-zoom-annotation",
+    "category": "capture",
+    "recipe": "Use localized focus box or magnification with preserved context and safe bounds; avoid misleading cropped states and locked-camera violations."
+  },
+  {
+    "id": "app-feature-demo",
+    "category": "capture",
+    "recipe": "Record deterministic feature task from initial state to verified outcome; maintain sequence and distinguish real capture from mockup."
+  },
+  {
+    "id": "changelog-video",
+    "category": "capture",
+    "recipe": "Use release notes/diff evidence, show user-visible improvements with before/after and version labels; avoid unverified claims."
+  },
+  {
+    "id": "git-history-film",
+    "category": "capture",
+    "recipe": "Derive timeline from actual commit timestamps and paths; clarify merges and authorship; omit private data and avoid exaggerating activity."
+  },
+  {
+    "id": "readme-showcase",
+    "category": "capture",
+    "recipe": "Use real repo screenshots, code excerpts and documented behavior; export README-friendly preview with concise truthful caption."
+  },
+  {
+    "id": "responsive-capture",
+    "category": "capture",
+    "recipe": "Capture each intended viewport separately, wait for responsive layout and assets; verify no clipping or hidden state before recording."
+  },
+  {
+    "id": "browser-frame-capture",
+    "category": "capture",
+    "recipe": "Pin viewport, DPR, fonts and animation time; await readiness; screenshot exact frame; block unauthorized external requests."
+  },
+  {
+    "id": "scroll-choreography",
+    "category": "capture",
+    "recipe": "Animate scroll using explicit document offsets and readable pauses; test sticky elements and final position at target viewport."
+  },
+  {
+    "id": "interface-redaction",
+    "category": "capture",
+    "recipe": "Redact secrets and identifiers at source or with opaque fixed masks; inspect all frames/audio/metadata, not only thumbnail."
+  },
+  {
+    "id": "product-interaction-story",
+    "category": "capture",
+    "recipe": "Define user goal, actions, state feedback and verified result; keep interface readable during moves and avoid fictional product promises."
+  },
+  {
+    "id": "chart-selection",
+    "category": "data",
+    "recipe": "Select chart by variable type, comparison and audience task; verify units, baseline and scale before aesthetic treatment."
+  },
+  {
+    "id": "bar-chart-animation",
+    "category": "data",
+    "recipe": "Use zero baseline for ordinary magnitude comparison, stable category order and labeled units; animate growth without changing perceived scale."
+  },
+  {
+    "id": "line-chart-animation",
+    "category": "data",
+    "recipe": "Use continuous axis and documented missing-value handling; animate time reveal with fixed ranges; avoid smoothing that changes claims."
+  },
+  {
+    "id": "scatterplot-animation",
+    "category": "data",
+    "recipe": "Encode x/y in consistent scale, size/opacity with explicit meaning; preserve outliers and disclose jitter or sampling."
+  },
+  {
+    "id": "pie-chart-animation",
+    "category": "data",
+    "recipe": "Use only meaningful part-to-whole data with consistent total and limited slices; verify proportions and avoid 3D distortion."
+  },
+  {
+    "id": "map-route-animation",
+    "category": "data",
+    "recipe": "Use sourced route and basemap, correct projection and time/distance units; clarify stylization vs geographic accuracy."
+  },
+  {
+    "id": "timeline-visualization",
+    "category": "data",
+    "recipe": "Map events to chronological scale or explicitly nonuniform timeline; preserve timezone and event ordering; avoid hiding gaps."
+  },
+  {
+    "id": "network-graph-animation",
+    "category": "data",
+    "recipe": "Choose stable layout or seeded solver, encode edge direction and weight explicitly; inspect overlaps and avoid implying causal links."
+  },
+  {
+    "id": "flowchart-animation",
+    "category": "data",
+    "recipe": "Use clearly labeled nodes/edges, consistent flow direction and decision branches; validate every path against underlying process."
+  },
+  {
+    "id": "algorithm-visualization",
+    "category": "data",
+    "recipe": "Map each animation beat to executable algorithm state and invariants; show actual step values and verify against reference implementation."
+  },
+  {
+    "id": "data-structure-animation",
+    "category": "data",
+    "recipe": "Animate memory/references and operations with stable IDs; distinguish logical pointers from physical storage; validate edge cases."
+  },
+  {
+    "id": "calculus-visualization",
+    "category": "data",
+    "recipe": "Render formulas from exact expressions, axes and domains; verify derivatives/integrals and visually explain limiting process without false values."
+  },
+  {
+    "id": "linear-algebra-visualization",
+    "category": "data",
+    "recipe": "Use exact vectors/matrices and coordinate conventions; verify transformations numerically and compare resulting geometry at key frames."
+  },
+  {
+    "id": "geometry-proof-animation",
+    "category": "data",
+    "recipe": "Separate assumptions from conclusions, label construction and preserve geometric invariants; do not infer proof from appearance."
+  },
+  {
+    "id": "physics-simulation-visualization",
+    "category": "data",
+    "recipe": "State model equations, units, initial conditions and numerical method; check conservation or expected limits and distinguish simulation from reality."
+  },
+  {
+    "id": "chemistry-diagram-animation",
+    "category": "data",
+    "recipe": "Verify atom counts, bonds, charges and reaction labels; distinguish schematic illustration from scale-accurate molecular structures."
+  },
+  {
+    "id": "engineering-exploded-diagram",
+    "category": "data",
+    "recipe": "Use real assembly units, meaningful part axes and constraints; label schematic approximations and test reassembly order."
+  },
+  {
+    "id": "statistical-uncertainty",
+    "category": "data",
+    "recipe": "Show intervals/distributions with stated interpretation and sample size; do not hide uncertainty or animate beyond sourced precision."
+  },
+  {
+    "id": "scientific-source-audit",
+    "category": "data",
+    "recipe": "Map claims, units and data transformations to original sources with dates; verify arithmetic and flag conflicts before render."
+  },
+  {
+    "id": "accessible-data-design",
+    "category": "data",
+    "recipe": "Use contrast, redundant shape/labels, readable legend and non-color encoding; provide textual data alternative when required."
+  },
+  {
+    "id": "product-commercial",
+    "category": "formats",
+    "recipe": "Use real product hero and 3–5 visual proof beats; preserve brand/model proportions and claims; reserve clear hero hold and CTA."
+  },
+  {
+    "id": "restaurant-commercial",
+    "category": "formats",
+    "recipe": "Use appetizing real footage, food-safe visual styling, verified offer/date copy and local brand asset locks; avoid misleading portions."
+  },
+  {
+    "id": "corporate-film",
+    "category": "formats",
+    "recipe": "Build audience-specific value narrative with documented evidence, consistent brand tokens and readable titles; avoid generic stock montage."
+  },
+  {
+    "id": "game-trailer",
+    "category": "formats",
+    "recipe": "Use actual gameplay or clearly labeled cinematic footage; establish gameplay loop, stakes and hook; sync cuts without hiding game mechanics."
+  },
+  {
+    "id": "indie-game-devlog",
+    "category": "formats",
+    "recipe": "Tie each milestone to real build footage or commit evidence; show before/after, design tradeoff and next step without invented progress."
+  },
+  {
+    "id": "educational-explainer",
+    "category": "formats",
+    "recipe": "Set one learning objective per sequence; show example, mechanism and retrieval beat; verify domain facts and caption readability."
+  },
+  {
+    "id": "research-documentary",
+    "category": "formats",
+    "recipe": "Build source ledger, timeline and documented claims; label reconstructions, preserve historical context and separate evidence from interpretation."
+  },
+  {
+    "id": "historical-animation",
+    "category": "formats",
+    "recipe": "Use period-correct asset/reference ledger; check costume, geography, dates and props; label illustrative scenes instead of implying archival authenticity."
+  },
+  {
+    "id": "social-media-reel",
+    "category": "formats",
+    "recipe": "Design directly for 9:16 and platform overlay masks; establish fast readable hook and purposeful ending; check mobile playback."
+  },
+  {
+    "id": "short-form-story",
+    "category": "formats",
+    "recipe": "Use a compact visual cause-and-effect chain with readable protagonist and payoff; keep locations/assets feasible and shots emotionally distinct."
+  },
+  {
+    "id": "long-form-youtube",
+    "category": "formats",
+    "recipe": "Build chapters and retention beats around real information; maintain sound consistency and navigation; inspect full pacing without artificial filler."
+  },
+  {
+    "id": "podcast-clip",
+    "category": "formats",
+    "recipe": "Select self-contained excerpt with intact meaning and context; use accurate captions and speaker reframing with verified sync."
+  },
+  {
+    "id": "lyric-video",
+    "category": "formats",
+    "recipe": "Use licensed lyrics and word timing; place captions with stable anchors and match phrasing; avoid unlicensed display of full lyrics."
+  },
+  {
+    "id": "music-visualizer",
+    "category": "formats",
+    "recipe": "Map tempo, section energy and frequency bands to controlled motion; preserve flash safety and avoid mechanically reacting every property."
+  },
+  {
+    "id": "memorial-tribute",
+    "category": "formats",
+    "recipe": "Use respectful visual pacing, approved likenesses and factual dates; avoid spectacle, fake archival appearance or unsupported biographical claims."
+  },
+  {
+    "id": "teacher-tribute",
+    "category": "formats",
+    "recipe": "Use culturally appropriate classroom, consistent teacher/student identity and approved imagery; preserve no-text/no-dialogue locks and dignified tone."
+  },
+  {
+    "id": "holiday-campaign",
+    "category": "formats",
+    "recipe": "Verify occasion, date, cultural symbols and offer terms; use coherent brand campaign variants and correct platform delivery."
+  },
+  {
+    "id": "real-estate-walkthrough",
+    "category": "formats",
+    "recipe": "Use actual property facts and footage; preserve spatial orientation, accurate dimensions and realistic exposure; label virtual staging."
+  },
+  {
+    "id": "event-promo",
+    "category": "formats",
+    "recipe": "Establish event purpose, date/time, venue and offer from verified inputs; prioritize legibility over moving text; preserve accurate CTA."
+  },
+  {
+    "id": "series-episode-workflow",
+    "category": "formats",
+    "recipe": "Maintain series bible, continuity ledger, assets and episode-specific story goals; compare delivery settings and approved style across episodes."
+  },
+  {
+    "id": "media-inventory",
+    "category": "ingest",
+    "recipe": "Enumerate allowed roots and file types, stable IDs, sizes, digests and probe state; do not follow unsafe symlinks or overwrite sources."
+  },
+  {
+    "id": "media-probing",
+    "category": "ingest",
+    "recipe": "Use ffprobe or format-specific parser for streams, frame rate, rotation, color and duration; report missing metadata rather than guess."
+  },
+  {
+    "id": "asset-deduplication",
+    "category": "ingest",
+    "recipe": "Hash exact duplicates; optional perceptual grouping must be reviewable and never delete originals automatically."
+  },
+  {
+    "id": "asset-matching",
+    "category": "ingest",
+    "recipe": "Combine name tokens, metadata and verified content tags; score candidates with reasons and flag ties/low confidence; preserve mapping manifest."
+  },
+  {
+    "id": "asset-tagging",
+    "category": "ingest",
+    "recipe": "Store tags with source (manual, probe, model), confidence and timestamps; support user corrections; avoid unsupported identity guesses."
+  },
+  {
+    "id": "contact-sheet",
+    "category": "ingest",
+    "recipe": "Sample deterministic timestamps, label source and timecode, respect orientation and privacy; use representative scene samples and document sampling."
+  },
+  {
+    "id": "reference-frame-extraction",
+    "category": "ingest",
+    "recipe": "Extract frames by exact or declared approximate time; preserve source aspect/color and label timestamp; distinguish reference from editable source."
+  },
+  {
+    "id": "local-stock-search",
+    "category": "ingest",
+    "recipe": "Search authorized local roots by tags and metadata; check quality, source permission and duplicate variants; do not disclose private paths externally."
+  },
+  {
+    "id": "external-stock-research",
+    "category": "ingest",
+    "recipe": "Search licensed repositories and official sources only as needed; save URL, license, attribution and restrictions; no download/run without permissions."
+  },
+  {
+    "id": "font-licensing",
+    "category": "ingest",
+    "recipe": "Record exact font file/version and license/embedding terms; test glyph coverage and avoid bundling restricted fonts."
+  },
+  {
+    "id": "asset-provenance",
+    "category": "ingest",
+    "recipe": "Record source URI, creator/license, hash, acquisition date and modifications; enforce approved provenance before shipping."
+  },
+  {
+    "id": "license-compatibility",
+    "category": "ingest",
+    "recipe": "Check actual dependency/asset license texts and distribution context; separate MIT core from optional adapters; stop on incompatible reuse."
+  },
+  {
+    "id": "archival-media-verification",
+    "category": "ingest",
+    "recipe": "Verify archive catalog identifier, date and creator with reliable records; flag restoration/reconstruction and uncertain context."
+  },
+  {
+    "id": "source-verification",
+    "category": "ingest",
+    "recipe": "Use primary sources where possible, corroborate material claims, record exact locators and distinguish unknowns from verified facts."
+  },
+  {
+    "id": "media-privacy-audit",
+    "category": "ingest",
+    "recipe": "Inspect media for secrets, faces/private identifiers, EXIF and audio; redact before sending externally and retain minimal local metadata."
+  },
+  {
+    "id": "asset-versioning",
+    "category": "ingest",
+    "recipe": "Content-hash immutable originals and store derived revisions with parent IDs and transformation notes; test rollback independently."
+  },
+  {
+    "id": "asset-portability",
+    "category": "ingest",
+    "recipe": "Use relative paths and checksums, package allowed assets and fonts/links; test extraction in clean directory without original absolute paths."
+  },
+  {
+    "id": "missing-asset-fallback",
+    "category": "ingest",
+    "recipe": "Use safe placeholders explicitly marked in drafts; do not silently ship missing required imagery, branding or licensed media."
+  },
+  {
+    "id": "image-preprocessing",
+    "category": "ingest",
+    "recipe": "Respect rotation, ICC/transfer and alpha; avoid destructive resize; store original and derivative metadata and inspect crop/edges."
+  },
+  {
+    "id": "proxy-media",
+    "category": "ingest",
+    "recipe": "Use lower-resolution proxies with matching timebase, duration and source ID; relink master and compare frame correspondence."
+  },
+  {
+    "id": "frame-clock",
+    "category": "render",
+    "recipe": "Use rational FPS and integer frame index; derive time as frame/rate, explicit half-open ranges, and sample audio according to project clock."
+  },
+  {
+    "id": "deterministic-seeding",
+    "category": "render",
+    "recipe": "Seed all random sources and simulations, pin asset/tool versions and time; verify repeat rendering within declared backend tolerance."
+  },
+  {
+    "id": "render-preflight",
+    "category": "render",
+    "recipe": "Check assets, fonts, dimensions, color, codec, disk/RAM, engine versions, locks and duration; render representative fixture before full job."
+  },
+  {
+    "id": "preview-render",
+    "category": "render",
+    "recipe": "Choose stratified keyframes and short high-risk motion segments, lower resolution/sample settings only where they preserve meaning."
+  },
+  {
+    "id": "final-render",
+    "category": "render",
+    "recipe": "Render approved timeline and look settings with exact frame range, versioned output and validation; avoid overwriting master."
+  },
+  {
+    "id": "partial-render",
+    "category": "render",
+    "recipe": "Resolve changed dependencies transitively; invalidate affected transitions/audio handles and composite caches; compare with clean render fixture."
+  },
+  {
+    "id": "render-cache",
+    "category": "render",
+    "recipe": "Key cache on content, frame range, settings, engine, dependencies and color; verify artifact digest and invalidate on changes."
+  },
+  {
+    "id": "resume-render",
+    "category": "render",
+    "recipe": "Write atomic per-frame/chunk outputs, verify checksums and contiguous ranges; resume compatible manifest only, never trust incomplete files."
+  },
+  {
+    "id": "render-queue",
+    "category": "render",
+    "recipe": "Schedule dependency-ready jobs with bounded workers, cancel/retry policy and logs; avoid conflicting writes and uncontrolled parallelism."
+  },
+  {
+    "id": "resource-budget",
+    "category": "render",
+    "recipe": "Estimate memory/disk/time from measured representative frames and concurrent jobs; reserve headroom and enforce limits before render."
+  },
+  {
+    "id": "gpu-selection",
+    "category": "render",
+    "recipe": "Enumerate devices and actual backend support, run probe, record VRAM and driver; fall back to CPU if approved and benchmark quality."
+  },
+  {
+    "id": "hardware-encoding",
+    "category": "render",
+    "recipe": "Probe encoder availability and accepted pixel formats; compare output with software baseline and verify actual codec/quality, not just command success."
+  },
+  {
+    "id": "frame-sequence-render",
+    "category": "render",
+    "recipe": "Render numbered lossless frames with fixed width, validated dimensions and contiguous IDs; use atomic writes and assemble by explicit rate."
+  },
+  {
+    "id": "headless-browser-render",
+    "category": "render",
+    "recipe": "Set viewport/DPR, disable wall-clock animation, wait for assets/fonts and pin browser; select frame explicitly and capture deterministic output."
+  },
+  {
+    "id": "render-engine-fallback",
+    "category": "render",
+    "recipe": "Choose alternate engine by required feature matrix; test representative frames and report deviations; never bypass hard locks."
+  },
+  {
+    "id": "render-worker-isolation",
+    "category": "render",
+    "recipe": "Use isolated working directory, controlled environment, argv without shell, bounded resource/time and network policy; collect logs safely."
+  },
+  {
+    "id": "remote-render",
+    "category": "render",
+    "recipe": "Use authorized remote host, content hashes, scoped transfer and no credentials in logs; verify returned artifacts and environment; optional only."
+  },
+  {
+    "id": "reeldoctor-diagnostics",
+    "category": "render",
+    "recipe": "Probe FFmpeg/ffprobe, installed adapters, OS, CPU/GPU, storage and versions; classify unavailable optional capabilities without auto-installing."
+  },
+  {
+    "id": "render-benchmark",
+    "category": "render",
+    "recipe": "Benchmark same fixture, settings, hardware and cold/warm cache; report wall-clock, frame-time distribution, memory and quality differences."
+  },
+  {
+    "id": "render-artifact-validation",
+    "category": "render",
+    "recipe": "Validate expected codec, dimensions, frame count, duration, streams, decode success, color tags and checksums before approving."
+  },
+  {
+    "id": "aspect-ratio-export",
+    "category": "delivery",
+    "recipe": "Define per-ratio layout and safe areas, reframe shot by shot; preserve protected zones and check all deliverables independently."
+  },
+  {
+    "id": "mp4-delivery",
+    "category": "delivery",
+    "recipe": "Encode target H.264/AAC or requested profile, supported pixel format, color tags and fast start; verify decoded frame count and audio."
+  },
+  {
+    "id": "mov-master",
+    "category": "delivery",
+    "recipe": "Select agreed mezzanine codec (e.g. ProRes variant when available), bit depth and audio PCM; verify target editor and alpha if needed."
+  },
+  {
+    "id": "transparent-video",
+    "category": "delivery",
+    "recipe": "Use alpha-capable codec/container and declared straight/premultiplied convention; test decoded RGBA over dark/light backgrounds."
+  },
+  {
+    "id": "webm-export",
+    "category": "delivery",
+    "recipe": "Choose VP9/AV1 or required supported codec, alpha compatibility and rate control; test target player and decoded timestamps."
+  },
+  {
+    "id": "gif-preview",
+    "category": "delivery",
+    "recipe": "Use purposeful short loop, palettegen/paletteuse if appropriate, controlled size/frame rate; verify seamless loop without duplicate endpoint."
+  },
+  {
+    "id": "poster-thumbnail",
+    "category": "delivery",
+    "recipe": "Select a meaningful sharp frame with intended crop, truthful content and readable title only if allowed; inspect at small thumbnail."
+  },
+  {
+    "id": "image-sequence-export",
+    "category": "delivery",
+    "recipe": "Export contiguous numbered PNG/EXR or requested format with alpha/color specification and frame-rate manifest; verify missing frames."
+  },
+  {
+    "id": "color-management-export",
+    "category": "delivery",
+    "recipe": "Specify source/working/output primaries, transfer, range and matrix, apply one correct view transform and tag output; inspect test chart."
+  },
+  {
+    "id": "hdr-delivery",
+    "category": "delivery",
+    "recipe": "Only export HDR with actual HDR-capable pipeline, source and target metadata; check clipping/tone map and provide SDR fallback if agreed."
+  },
+  {
+    "id": "platform-encoding",
+    "category": "delivery",
+    "recipe": "Use current platform requirements verified from official docs when requested; encode variant and probe actual constraints and playback."
+  },
+  {
+    "id": "otio-export",
+    "category": "delivery",
+    "recipe": "Map rational source ranges, tracks, transitions and asset references into OTIO; report feature loss and round-trip timeline duration."
+  },
+  {
+    "id": "fcpxml-export",
+    "category": "delivery",
+    "recipe": "Use actual target FCPXML version, asset IDs and rational times; validate XML and import in target application where available."
+  },
+  {
+    "id": "premiere-interchange",
+    "category": "delivery",
+    "recipe": "Pick supported interchange version and mapping for tracks/timecode/media; document unsupported effects and supply rendered substitutes."
+  },
+  {
+    "id": "resolve-interchange",
+    "category": "delivery",
+    "recipe": "Use Resolve-supported interchange and media relinking; verify timeline rate, audio channels, grades/effects limitations and actual import if available."
+  },
+  {
+    "id": "edl-export",
+    "category": "delivery",
+    "recipe": "Generate CMX/target EDL with reel IDs and source/record timecodes; handle drop-frame explicitly and note track/effect limits."
+  },
+  {
+    "id": "editable-source-package",
+    "category": "delivery",
+    "recipe": "Package editable project, dependency list, approved assets, scripts and manifest; test clean opening/render and flag missing proprietary adapters."
+  },
+  {
+    "id": "portable-delivery-bundle",
+    "category": "delivery",
+    "recipe": "Use relative paths, deterministic manifest/checksums, allowed licenses and README rerender steps; test archive extraction."
+  },
+  {
+    "id": "chapter-marker-export",
+    "category": "delivery",
+    "recipe": "Export chapter timestamps monotonic and within duration in target format; verify first/last marker and localized labels."
+  },
+  {
+    "id": "caption-delivery-package",
+    "category": "delivery",
+    "recipe": "Package UTF-8 caption tracks, language tags, safe cue timing and optional burned copy; verify player import and exact spoken content."
+  },
+  {
+    "id": "black-frame-detection",
+    "category": "qa",
+    "recipe": "Run blackdetect with declared duration/pixel threshold; compare detected intervals with exact intentional-black allowlist; inspect near-black content manually."
+  },
+  {
+    "id": "freeze-detection",
+    "category": "qa",
+    "recipe": "Run freezedetect with configurable duration/noise tolerance; compare intervals against intentional stillness; check motion per protected ROI where relevant."
+  },
+  {
+    "id": "dropped-frame-audit",
+    "category": "qa",
+    "recipe": "Compare decoded frame timestamps and expected rational cadence; identify missing/duplicate PTS and intended hold frames separately."
+  },
+  {
+    "id": "text-overflow-audit",
+    "category": "qa",
+    "recipe": "Measure rendered shaped bounding boxes including stroke/blur/diacritics across animation; assert against safe region and inspect longest localization."
+  },
+  {
+    "id": "font-render-audit",
+    "category": "qa",
+    "recipe": "Check expected font loaded and glyph coverage; inspect actual screenshot for fallback/tofu; use difficult script and punctuation fixtures."
+  },
+  {
+    "id": "contrast-audit",
+    "category": "qa",
+    "recipe": "Measure local text/background luminance contrast across frames where possible; use 4.5:1 normal/3:1 large as readability heuristics; flag moving backgrounds for review."
+  },
+  {
+    "id": "flash-safety",
+    "category": "qa",
+    "recipe": "Flag rapid luminance changes and strobing with conservative screening; require appropriate specialist check for high-risk material; do not certify safety by simple frame differencing."
+  },
+  {
+    "id": "audio-sync-audit",
+    "category": "qa",
+    "recipe": "Compare expected audio anchors vs video frame events and track start/end; report drift and tolerance in milliseconds; review lip sync by playback."
+  },
+  {
+    "id": "audio-clipping-audit",
+    "category": "qa",
+    "recipe": "Measure sample peak and true peak with appropriate meter after encoding; report overs and audible distortion; distinguish silence from absent stream."
+  },
+  {
+    "id": "silence-audit",
+    "category": "qa",
+    "recipe": "Detect long below-threshold audio ranges and compare intentional silence list; verify actual dialogue presence and avoid normalizing silence."
+  },
+  {
+    "id": "color-continuity",
+    "category": "qa",
+    "recipe": "Compare neighboring shots under consistent transform using waveform/color regions and visual review; preserve intentional lighting changes."
+  },
+  {
+    "id": "lut-application",
+    "category": "qa",
+    "recipe": "Verify LUT input/output color space and range; apply once and inspect skin/product colors, clipping and neutral chart."
+  },
+  {
+    "id": "video-denoising",
+    "category": "qa",
+    "recipe": "Compare temporal/spatial denoise on representative moving details; avoid waxy faces, ghosting and flicker; retain original and settings."
+  },
+  {
+    "id": "video-upscaling",
+    "category": "qa",
+    "recipe": "Scale using approved interpolation or optional tool; inspect aliasing, halos and perceived detail; never claim restored information not present."
+  },
+  {
+    "id": "video-stabilization",
+    "category": "qa",
+    "recipe": "Estimate motion with confidence, smooth intentional camera path while preserving crop; inspect rolling shutter and overscan; honor locks."
+  },
+  {
+    "id": "debanding",
+    "category": "qa",
+    "recipe": "Use higher-precision intermediate and targeted debanding/dither; inspect gradients before/after after final encoding; avoid destroying detail."
+  },
+  {
+    "id": "frame-comparison",
+    "category": "qa",
+    "recipe": "Compare aligned frames in same color/resolution using absolute diff plus perceptual metric if available; inspect meaningful regions and tolerances."
+  },
+  {
+    "id": "visual-continuity-audit",
+    "category": "qa",
+    "recipe": "Check identity, prop state, screen direction, lighting, scale and motion cut boundaries with a timecoded ledger and representative frames."
+  },
+  {
+    "id": "brief-compliance-audit",
+    "category": "qa",
+    "recipe": "Run requirement matrix against evidence from manifest, frames and audio; hard constraints fail release regardless of aesthetic score."
+  },
+  {
+    "id": "self-correction-loop",
+    "category": "qa",
+    "recipe": "Classify issues by severity, localize cause, patch smallest affected dependency, re-render and re-run gates; limit retries and escalate unresolved issues."
+  },
+  {
+    "id": "reelscript-authoring",
+    "category": "workflow",
+    "recipe": "Author versioned project with explicit FPS, dimensions, scenes, asset IDs, time ranges, locks and output profile; separate machine fields from creative notes."
+  },
+  {
+    "id": "reelscript-validation",
+    "category": "workflow",
+    "recipe": "Validate schema, unique IDs, references, ranges, overlaps, capability needs and cycles; reject unknown hard constraints and destructive paths."
+  },
+  {
+    "id": "scene-dependency-graph",
+    "category": "workflow",
+    "recipe": "Build DAG over assets/shots/transitions/audio/export; topologically schedule and invalidate descendants on changed hashes; detect cycles."
+  },
+  {
+    "id": "project-memory",
+    "category": "workflow",
+    "recipe": "Store scoped decisions, approved assets and user preferences with provenance; minimize private data, support deletion and conflict resolution."
+  },
+  {
+    "id": "revision-diff",
+    "category": "workflow",
+    "recipe": "Compare manifests and artifact hashes plus aligned frame differences; classify material vs metadata changes and list rerender set."
+  },
+  {
+    "id": "rollback-checkpoint",
+    "category": "workflow",
+    "recipe": "Create immutable checkpoint manifest with hashes, inputs and output versions; restore into separate working state and verify locks."
+  },
+  {
+    "id": "scene-locking",
+    "category": "workflow",
+    "recipe": "Attach lock scope (scene/region/camera/text/audio) and owner-approved version; enforce at plan, edit and QA; explicit authorization to unlock."
+  },
+  {
+    "id": "word-anchored-timeline",
+    "category": "workflow",
+    "recipe": "Map words to media sample timestamps with confidence and frame rounding; support fallback phrase anchors; verify sync after retiming."
+  },
+  {
+    "id": "voiceover-to-video",
+    "category": "workflow",
+    "recipe": "Use actual audio duration, transcript anchors and intentional holds; design visual beats around emphasis; retain separate audio stem."
+  },
+  {
+    "id": "batch-production",
+    "category": "workflow",
+    "recipe": "Define per-item mappings, shared style and per-item locks; isolate jobs and failures, limit concurrency, verify every export individually."
+  },
+  {
+    "id": "psd-voiceover-matching",
+    "category": "workflow",
+    "recipe": "Pair PSD and VO by normalized names/metadata and evidence; flag ambiguous pairs, preserve source and exact final duration/hold."
+  },
+  {
+    "id": "multilingual-variants",
+    "category": "workflow",
+    "recipe": "Generate locale-specific text and timing while maintaining brand/asset locks; test glyphs, longest copy and independent output duration."
+  },
+  {
+    "id": "brand-kit-workflow",
+    "category": "workflow",
+    "recipe": "Version logo/font/color/spacing tokens and required copy, enforce protected assets and validate variants against approved kit."
+  },
+  {
+    "id": "template-parameterization",
+    "category": "workflow",
+    "recipe": "Expose typed parameters with limits/defaults and layout invariants; test min/max and localized strings; avoid arbitrary code injection."
+  },
+  {
+    "id": "series-asset-reuse",
+    "category": "workflow",
+    "recipe": "Use stable asset IDs and version pinning across episodes; document migrations and verify dependent shots before replacing shared asset."
+  },
+  {
+    "id": "production-observability",
+    "category": "workflow",
+    "recipe": "Log structured stage, job, artifact, timing, warnings and version with secret redaction; make failures reproducible and understandable."
+  },
+  {
+    "id": "reellibrary-registry",
+    "category": "workflow",
+    "recipe": "Register each recipe with ID, tags, supported engines, examples, license, parameters and test status; detect duplicates and missing dependencies."
+  },
+  {
+    "id": "reelsound-workflow",
+    "category": "workflow",
+    "recipe": "Create cue/stem manifest and seeded audio recipes, align to frame clock; measure final mix and export editable stems."
+  },
+  {
+    "id": "reelguard-policy",
+    "category": "workflow",
+    "recipe": "Enforce local-first, safe path/command/network policy and explicit locks; fail closed for unknown permissions; record allowed exceptions."
+  },
+  {
+    "id": "production-cost-estimation",
+    "category": "workflow",
+    "recipe": "Estimate runtime from sample frame costs and encoding benchmark, account for parallelism/cache and uncertainty; update with measured actuals."
+  },
+  {
+    "id": "skill-discovery",
+    "category": "skills",
+    "recipe": "Index id, descriptions, aliases, stage, capabilities and cost without loading bodies into agent context; require explicit source/license checks for imports."
+  },
+  {
+    "id": "skill-authoring",
+    "category": "skills",
+    "recipe": "Write narrow instruction, trigger/nontrigger, inputs, concrete recipe, tests and evidence; split optional deep references; validate frontmatter and unique intent."
+  },
+  {
+    "id": "skill-routing",
+    "category": "skills",
+    "recipe": "Rank exact intent and aliases, decompose stages, filter capabilities/locks, budget body reads; report missing forced IDs and test false positives."
+  },
+  {
+    "id": "skill-deduplication",
+    "category": "skills",
+    "recipe": "Compare normalized intent and aliases, flag overlapping scopes and duplicate body hashes; merge or disambiguate only after review."
+  },
+  {
+    "id": "skill-evaluation",
+    "category": "skills",
+    "recipe": "Create positive, negative, mixed, multilingual and adversarial routing cases; test actual artifacts separately from instruction validity."
+  },
+  {
+    "id": "skill-token-budget",
+    "category": "skills",
+    "recipe": "Measure loaded bodies/estimated words, bound each stage and defer optional resources; record actual host token usage only when available."
+  },
+  {
+    "id": "skill-security-review",
+    "category": "skills",
+    "recipe": "Treat skills as untrusted input, scan external links/commands and permission escalation; deny arbitrary execution, check source/license."
+  },
+  {
+    "id": "skill-versioning",
+    "category": "skills",
+    "recipe": "Use semantic version and migration notes, hash bodies and rebuild index; preserve compatible IDs and test routing regressions."
+  },
+  {
+    "id": "codex-integration",
+    "category": "skills",
+    "recipe": "Verify current host-specific skill discovery rules and install router only; test activation and selective file reads in actual Codex workspace."
+  },
+  {
+    "id": "antigravity-integration",
+    "category": "skills",
+    "recipe": "Verify installed Antigravity version and supported discovery location; create adapter instructions without inventing host APIs; test router activation."
+  },
+  {
+    "id": "claude-code-integration",
+    "category": "skills",
+    "recipe": "Verify Claude Code skill discovery and invocation; expose only router, use allowed tools and test metadata context and selected reads."
+  },
+  {
+    "id": "cursor-integration",
+    "category": "skills",
+    "recipe": "Verify Cursor current rules/skills discovery, install only entry point, test prompt routing and fallback without pretending universal compatibility."
+  },
+  {
+    "id": "mcp-tool-contract",
+    "category": "skills",
+    "recipe": "Define typed MCP inputs/outputs, capability checks, timeouts and explicit side effects; use stable artifact references and tests."
+  },
+  {
+    "id": "plugin-sdk",
+    "category": "skills",
+    "recipe": "Design versioned plugin interface and capability declarations; isolate untrusted plugins, avoid automatic arbitrary installs and test compatibility."
+  },
+  {
+    "id": "engine-adapter-development",
+    "category": "skills",
+    "recipe": "Define lifecycle probe/validate/render/cancel/artifacts, deterministic fixtures and normalized errors; preserve engine-specific options and licenses."
+  },
+  {
+    "id": "license-audit-dependencies",
+    "category": "skills",
+    "recipe": "Inventory actual dependency licenses and versions, transitive notices and distribution requirements; keep MIT core independent and fail on conflict."
+  },
+  {
+    "id": "secure-local-execution",
+    "category": "skills",
+    "recipe": "Use argv subprocess without shell, validate paths, restrict output and network, limit resources; record exit status and redact secrets."
+  },
+  {
+    "id": "ci-render-smoke",
+    "category": "skills",
+    "recipe": "Render tiny deterministic fixture in CI, probe decoded artifact and run negative tests; mark optional backend skipped rather than passed."
+  },
+  {
+    "id": "release-documentation",
+    "category": "skills",
+    "recipe": "Document verified capabilities, setup, examples, supported versions, limitations and changes; avoid inflated feature counts or fake benchmarks."
+  },
+  {
+    "id": "competitor-gap-research",
+    "category": "skills",
+    "recipe": "Research current primary repo/docs and licenses; record feature gaps, evidence and priority, independently implement useful additions and test them."
+  }
+]

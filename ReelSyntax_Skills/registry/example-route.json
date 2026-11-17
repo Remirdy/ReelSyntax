@@ -1,0 +1,68 @@
+{
+  "query": "psd animasyon seslendirme senkronu alt bar sabit",
+  "selected": [
+    {
+      "id": "locked-region-editing",
+      "category": "editing",
+      "stage": "edit",
+      "score": 26.0,
+      "matched": [
+        "alt",
+        "bar",
+        "sabit"
+      ],
+      "phrases": [
+        "alt bar sabit"
+      ],
+      "path": "library/editing/locked-region-editing/SKILL.md",
+      "description": "Use for locked region editing. Protect locked regions and tracks while modifying only authorized layers.",
+      "requires": [],
+      "estimated_words": 277,
+      "status": "guidance"
+    },
+    {
+      "id": "voiceover-alignment",
+      "category": "audio",
+      "stage": "build",
+      "score": 20.0,
+      "matched": [
+        "senkronu",
+        "seslendirme"
+      ],
+      "phrases": [
+        "seslendirme senkronu"
+      ],
+      "path": "library/audio/voiceover-alignment/SKILL.md",
+      "description": "Use for voiceover alignment. Map narration timestamps to scene beats and handle unmatched words explicitly.",
+      "requires": [],
+      "estimated_words": 276,
+      "status": "guidance"
+    },
+    {
+      "id": "psd-to-video",
+      "category": "capture",
+      "stage": "ingest",
+      "score": 19.914,
+      "matched": [
+        "animasyon",
+        "psd"
+      ],
+      "phrases": [
+        "psd animasyon"
+      ],
+      "path": "library/capture/psd-to-video/SKILL.md",
+      "description": "Use for psd to video. Inspect PSD layer structure, groups, text and transparency; preserve immutable source.",
+      "requires": [],
+      "estimated_words": 279,
+      "status": "guidance"
+    }
+  ],
+  "locked_requirements": [],
+  "unavailable": [],
+  "unfulfilled_explicit_ids": [],
+  "estimated_loaded_words_if_all_selected": 832,
+  "catalog_size": 500,
+  "skill_bodies_read": 0,
+  "needs_refinement": false,
+  "method": "offline weighted intent/alias retrieval; agent must review results against brief"
+}

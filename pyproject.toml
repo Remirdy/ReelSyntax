@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools==84.2.1"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "reelsyntax"
+version = "0.1.0"
+description = "Local skill routing and deterministic headless motion production"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE"]
+dependencies = []
+
+[project.optional-dependencies]
+render = ["Pillow==12.2.0"]
+browser = ["Pillow==12.2.0", "playwright==1.65.2"]
+
+[project.scripts]
+reelsyntax = "reelsyntax.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["reelsyntax", "ReelSyntax_Skills", "ReelSyntax_Skills.tools"]
+namespaces = true
+
+[tool.setuptools.package-data]
+ReelSyntax_Skills = ["registry/index.json", "registry/relations.json", "library/*/*/SKILL.md", "library/*/*/references/*", ".agents/skills/reelsyntax-router/SKILL.md", "tests/routing-eval.json", "QUALITY_STANDARD.md", "SKILL_SYSTEM.md"]

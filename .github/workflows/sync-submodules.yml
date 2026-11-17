@@ -1,0 +1,215 @@
+name: Sync First-Party MCP Submodules
+
+on:
+  repository_dispatch:
+    types: [submodule-updated, release-published]
+  schedule:
+    - cron: '0 */6 * * *'
+  workflow_dispatch:
+    inputs:
+      target:
+        description: 'Integration submodule to synchronize'
+        required: false
+        default: 'all'
+        type: choice
+        options:
+          - all
+          - blender
+          - after-effects
+      rollback_sha:
+        description: 'Optional pinned commit SHA to roll a single target back to'
+        required: false
+        default: ''
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: first-party-mcp-sync-${{ github.event.client_payload.target || inputs.target || 'all' }}
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: >-
+      !endsWith(github.actor, '[bot]') ||
+      github.event_name == 'repository_dispatch' ||
+      github.event_name == 'schedule'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Mint GitHub App token if configured
+        id: app_token
+        if: ${{ secrets.SYNC_APP_ID != '' && secrets.SYNC_APP_PRIVATE_KEY != '' }}
+        uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e
+        with:
+          app-id: ${{ secrets.SYNC_APP_ID }}
+          private-key: ${{ secrets.SYNC_APP_PRIVATE_KEY }}
+
+      - name: Select effective token
+        id: auth
+        run: |
+          if [ -n "${{ steps.app_token.outputs.token }}" ]; then
+            echo "mode=github-app" >> "$GITHUB_OUTPUT"
+          elif [ -n "${{ secrets.SUBMODULE_SYNC_TOKEN }}" ]; then
+            echo "mode=scoped-pat" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=github-token" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout ReelSyntax with submodules
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          token: ${{ steps.app_token.outputs.token || secrets.SUBMODULE_SYNC_TOKEN || secrets.GITHUB_TOKEN }}
+
+      - name: Setup Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.13'
+
+      - name: Install ReelSyntax core
+        run: python -m pip install .
+
+      - name: Evaluate, validate, and open sync PRs
+        env:
+          GH_TOKEN: ${{ steps.app_token.outputs.token || secrets.SUBMODULE_SYNC_TOKEN || secrets.GITHUB_TOKEN }}
+          DISPATCH_TARGET: ${{ github.event.client_payload.target || inputs.target || 'all' }}
+          ROLLBACK_SHA: ${{ inputs.rollback_sha || '' }}
+        run: |
+          set -euo pipefail
+
+          retry() {
+            local n=1 max=3 delay=4
+            while true; do
+              "$@" && break || {
+                if [ "$n" -lt "$max" ]; then
+                  n=$((n + 1))
+                  sleep "$delay"
+                  delay=$((delay * 2))
+                else
+                  return 1
+                fi
+              }
+            done
+          }
+
+          report_failure_deduplicated() {
+            local target="$1" sha="$2" summary_file="$3"
+            local title="Submodule sync validation failed: ${target} (${sha:0:8})"
+            local existing
+            existing=$(gh issue list --state open --label "integration-sync-failure" --search "${target} in:title" --json number --jq '.[0].number // empty' || true)
+            if [ -n "$existing" ]; then
+              gh issue comment "$existing" --body-file "$summary_file"
+            else
+              gh label create "integration-sync-failure" --color "d93f0b" --description "Automated first-party MCP submodule sync failure" 2>/dev/null || true
+              gh issue create --title "$title" --label "integration-sync-failure" --body-file "$summary_file"
+            fi
+          }
+
+          if [ "$DISPATCH_TARGET" = "all" ]; then
+            TARGETS=("blender" "after-effects")
+          else
+            TARGETS=("$DISPATCH_TARGET")
+          fi
+
+          if [ "${#TARGETS[@]}" -gt 1 ] && [ -n "$ROLLBACK_SHA" ]; then
+            echo "rollback_sha requires a single target (blender or after-effects)" >&2
+            exit 2
+          fi
+
+          mkdir -p /tmp/rs-sync
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          for TARGET in "${TARGETS[@]}"; do
+            if [ "$TARGET" = "blender" ]; then
+              SUB_PATH="integrations/BlenderMCP"
+            else
+              SUB_PATH="integrations/AfterEffectsMCP"
+            fi
+
+            git checkout main
+            git submodule update --init "$SUB_PATH"
+            OLD_SHA=$(git -C "$SUB_PATH" rev-parse HEAD)
+            python -m reelsyntax.sync_audit --target "$TARGET" --write-snapshot "/tmp/rs-sync/${TARGET}-before.json" --commit-sha "$OLD_SHA" >/dev/null
+
+            if [ -n "$ROLLBACK_SHA" ]; then
+              retry git -C "$SUB_PATH" fetch origin
+              NEW_SHA="$ROLLBACK_SHA"
+            else
+              retry git -C "$SUB_PATH" fetch origin --tags
+              NEW_SHA=$(git -C "$SUB_PATH" rev-parse origin/main)
+            fi
+
+            LATEST_TAG=$(git -C "$SUB_PATH" tag --sort=-v:refname | head -n 1 || true)
+            if [ "$OLD_SHA" = "$NEW_SHA" ]; then
+              echo "${TARGET} already at ${OLD_SHA}"
+              continue
+            fi
+
+            git -C "$SUB_PATH" checkout "$NEW_SHA"
+            SUMMARY_MD="/tmp/rs-sync/${TARGET}-summary.md"
+            AUDIT_JSON="/tmp/rs-sync/${TARGET}-audit.json"
+
+            set +e
+            python -m reelsyntax.sync_audit \
+              --target "$TARGET" \
+              --baseline "/tmp/rs-sync/${TARGET}-before.json" \
+              --markdown-out "$SUMMARY_MD" \
+              --commit-sha "$NEW_SHA" \
+              --release-tag "$LATEST_TAG" > "$AUDIT_JSON"
+            AUDIT_RC=$?
+            python -m unittest discover -s tests -v >> "/tmp/rs-sync/${TARGET}-tests.log" 2>&1
+            TEST_RC=$?
+            python -m unittest discover -s ReelSyntax_Skills/tests -v >> "/tmp/rs-sync/${TARGET}-tests.log" 2>&1
+            SKILL_RC=$?
+            set -e
+
+            if [ "$AUDIT_RC" -ne 0 ] || [ "$TEST_RC" -ne 0 ] || [ "$SKILL_RC" -ne 0 ]; then
+              echo "Validation failed for ${TARGET}; preserving pinned commit ${OLD_SHA}"
+              git -C "$SUB_PATH" checkout "$OLD_SHA"
+              {
+                cat "$SUMMARY_MD" 2>/dev/null || echo "Audit failed for ${TARGET} at ${NEW_SHA}"
+                echo ""
+                echo "Pinned commit \`${OLD_SHA}\` was preserved."
+                echo "\`\`\`text"
+                tail -n 60 "/tmp/rs-sync/${TARGET}-tests.log" || true
+                echo "\`\`\`"
+              } > "/tmp/rs-sync/${TARGET}-failure.md"
+              report_failure_deduplicated "$TARGET" "$NEW_SHA" "/tmp/rs-sync/${TARGET}-failure.md"
+              continue
+            fi
+
+            SHORT_SHA="${NEW_SHA:0:8}"
+            BRANCH="chore/sync-${TARGET}-${SHORT_SHA}"
+            if git ls-remote --exit-code --heads origin "$BRANCH" >/dev/null 2>&1; then
+              echo "Sync branch ${BRANCH} already exists on origin"
+              git -C "$SUB_PATH" checkout "$OLD_SHA"
+              continue
+            fi
+
+            git checkout -B "$BRANCH"
+            git add "$SUB_PATH"
+            git commit -m "chore(integrations): update ${TARGET} submodule to ${SHORT_SHA} [skip-sync]"
+            retry git push -u origin "$BRANCH"
+
+            PR_URL=$(gh pr create \
+              --base main \
+              --head "$BRANCH" \
+              --title "chore(integrations): update ${TARGET} submodule to ${SHORT_SHA}" \
+              --body-file "$SUMMARY_MD")
+
+            COMPAT=$(python -c "import json; d=json.load(open('$AUDIT_JSON')); print(str((d.get('schema_diff') or {}).get('backward_compatible', True)).lower())")
+            if [ "$COMPAT" = "true" ]; then
+              gh pr merge "$PR_URL" --auto --squash --delete-branch || echo "Auto-merge requires repository 'Allow auto-merge' and branch protection checks enabled."
+            else
+              echo "Breaking MCP schema delta detected; leaving PR ${PR_URL} open for manual review."
+            fi
+
+            git checkout main
+            git -C "$SUB_PATH" checkout "$OLD_SHA"
+          done

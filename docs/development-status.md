@@ -1,0 +1,45 @@
+# Development status
+
+Updated 2026-11-17.
+
+## Baseline and preservation
+
+Upstream `Remirdy/ReelSyntax` at `167d9c4787642b125eca35f84e0b5f9088124a31` contained `LICENSE` only. Its MIT notice remains unchanged. All 500 supplied Production v2 specialist skill bodies, original tests, and supplied assets remain intact, and the catalog has been expanded to **517 specialist skills** (`schema_version` 2). First-party integrations `Remirdy/BlenderMCP` (`bbbd1128dc16937fb5cc8ce56669f472cbb5dd68`) and `Remirdy/AfterEffectsMCP` (`498711d538c220f34e11bed84a67f29bcaf2990f`) are mounted as independent Git submodules under `integrations/` without vendoring or modifying their repositories.
+
+## Completed and open slices
+
+| Slice | State | Evidence / remaining gate |
+| --- | --- | --- |
+| 517-skill catalog, integrity hashes, path safety, automatic freshness | verified | 500 original bodies preserved + 17 new specialist skills; schema, dependency-cycle, duplicate, traversal, content-drift, and 5,000+ scale tests pass |
+| Offline progressive Skill Router (`ReelSyntax_Skills/tools/route.py`) | verified within authored benchmark | 50-case evaluation: 100.0% top-1, 94.4% recall@k, 74.4% precision@k, 0% constraint violations, 0% no-match error rate, 18.2 ms median warm latency, 0 specialist body reads on search |
+| Host skill installer (`codex`, `claude`, `cursor`, `antigravity`) | verified locally | Install/update/remove, modified-file preservation, and `.agents/skills` layout tested in isolated directories |
+| Unified MCP Gateway (`reelsyntax mcp`), boundary enforcement & adapters | verified locally against live stdio servers | Constant 9-meta-tool surface; meta-tool schemas validated before dispatch; `mcp --workspace` boundary + bounded 1 MiB / 8 KiB stdio framing; live discovery indexes 573 tools (`154` `BlenderMCP` + `419` `AfterEffectsMCP`); live `after_effects:jsx_dry_run` handoff passes |
+| Submodule CI sync & compatibility gate (`sync_audit`, `.github/workflows/sync-submodules.yml`) | verified locally; remote status in Actions | Static AST/TS tool extractor, pinned-commit validator, breaking-schema detector, and PR/issue summary generator tested locally; [remote execution results](https://github.com/Remirdy/ReelSyntax/actions); upstream dispatch credentials remain optional setup |
+| Production math, 3D camera, lighting, AgX color, typography, multi-stem audio | verified | Linear RGB, OKLab, AgX highlight rolloff, WCAG 2.2 contrast, analytical 2nd-order spring-damper, stateless Verlet ribbon, `Camera3D`, three-point shading, `.notdef` Turkish/Unicode glyph audit, and stereo stem WAV export |
+| MP4 render, transitions, ROI pixel locks, selective cache, resume, and QC | verified locally | Real FFmpeg 9.0.2 H.264/AAC renders across `examples/foundation`, `examples/cinematic-study`, and `examples/aperture-film`; BT.709 VUI/container tags, loudness/true-peak, PCM cue onset alignment, intra-shot flicker check, and lossless `locked_regions` verification |
+| Headless browser capture & worker isolation (`reelsyntax/browser.py`) | verified locally | Dedicated process-group worker (`Playwright 1.65.2` + project-local Chromium), hard wall-clock hang recovery (`os.killpg`), offline network blocking, and `Hx0` font-ink canary |
+| Native Blender 5.1.2 Cycles optical film (`reelsyntax/blender_aperture.py`, `examples/aperture-film`) | verified locally | 4-shot procedural optical-mechanism study (`macro`, `iris`, `assembly`, `hero`), pole-capped AR meniscus lens with `Is Shadow Ray` Cycles light transport, quad-strip 11-blade iris, Metal GPU Cycles + OpenImageDenoise + AgX, 5 stereo WAV stems, Draft (`640x360`) and Hero (`1280x720`) MP4 renders, QC `pass`, decoded frame review |
+| Editorial interchange & cross-MCP handoff (`export`, `diff`, `handoff`) | verified locally | OTIO (`Timeline.1`), FCPXML (`1.10`), WebVTT, SRT, SVG storyboard (including `aperture` schematic), PSNR/MAE diff sheets, and multi-camera hold-keyframed 3D-to-AE JSX handoff packages |
+| Editorial master accuracy | verified against encoded media; other NLE imports pending | Draft dimensions, source-coordinate markers, fractional-rate precision, baked-transition metadata, absolute media URIs, embedded-audio fallback, stale-manifest rejection, and SVG frame bounds; [local verification](evidence/editorial-exports.json) |
+| Local footage, raster layers and PSD | verified locally within supported formats | Source-frame trim, normal-alpha layering, selective asset invalidation, bounded 8-bit RGB PSD extraction, layer order/opacity comparison, unsupported blend refusal, short-input rejection and local-only demuxing |
+| Source audio and J/L cuts | verified locally | Independent picture/audio anchors, 48 kHz stereo normalization, gain/pan/fades, source stems, exact fractional-rate endpoint samples, short-input and peak refusal; three-second editorial example QC pass |
+| WebGL2 SDF adapter | verified on local SwiftShader | Offline isolated browser, explicit driver probe, fixed studio camera, deterministic frame seek, mixed Canvas/WebGL operation and two-second encoded shader example QC pass; no cross-driver image identity claim |
+| Cache disk budget | verified locally | Dry-run/apply LRU, shared operation lock, delivery/state protection, unknown-file preservation, symlink refusal and optional post-delivery pruning; an unmet budget is reported when protected entries are too large |
+| Native Blender Video Sequencer interchange | verified on Blender 5.1.2 | Native `.blend` save/reopen, frame-range/source offsets and fractional timing, decoded preview comparison; Aperture frame 84 MAE 1.021 RGB8 against FFmpeg; Final Cut/Premiere/Resolve imports remain untested |
+| Interactive After Effects / Blender bridge execution | blocked by local application connection | Latest MCP probe: Blender `127.0.0.1:8765` connection refused; After Effects project-info tool timed out after 300 seconds. Headless CLI and JSX static checks remain verified. Desktop UI automation is excluded. |
+
+## Verification summary
+
+- `REELSYNTAX_MEDIA_TESTS=1 REELSYNTAX_BROWSER_TESTS=1 .venv/bin/python -W error -m unittest discover -s tests -v`: **81 passed, 0 skipped, 0 warnings**. Includes source footage/layer/PSD/audio checks, cache LRU safety, actual WebGL2 rendering, native Blender editorial save/reopen/decoded-frame comparison, editorial boundary regressions, MCP workspace/framing/schema checks, FFmpeg QC/cache/resume, Chromium timeout recovery, live headless Blender, live first-party MCP stdio discovery and submodule audits. [Current extension evidence](evidence/production-extensions.json).
+- `.venv/bin/python -m unittest discover -s ReelSyntax_Skills/tests -v`: **7 passed**.
+- Clean installed core without Pillow/Playwright: **66 passed, 15 optional-runtime tests skipped, 0 failures**; media-only glyph checks are separated from core audio coverage.
+- `.venv/bin/python -m compileall -q reelsyntax ReelSyntax_Skills/tools`: **passed**.
+- `.venv/bin/python -m reelsyntax skills validate`: **517 valid skills**, registry schema v2.
+- `.venv/bin/python -m reelsyntax skills test`: [50-case routing benchmark](evidence/routing.json) — top-1 accuracy **100.0%**, recall@k **94.4%**, precision@k **74.4%**, hard-constraint violations **0%**, no-match error rate **0%**, median latency **18.2 ms**.
+- Real rendered outputs and decoded QC ([benchmark measurements](evidence/frame-samples.json)):
+  - `examples/foundation`: Draft (`480x270`, 240f, `2.97s`) and Production (`960x540`, 2× SS, 240f, `9.64s` cold / `2.01s` warm mux) — `technical_status: pass`.
+  - `examples/cinematic-study`: Draft (`640x360`, 192f, `6.65s`) and Hero (`1280x720`, 3× SS `3840x2160` internal raster, AgX rolloff, 4 stereo WAV stems, `27.73s` cold) — `technical_status: pass`.
+  - `examples/aperture-film`: Native Blender 5.1.2 Metal GPU Cycles 4-shot optical mechanism film — Draft (`640x360`, 144f, `292.53s` cold) and Hero (`1280x720`, 144f, `1132.97s` cold / `7.87s/frame`, 5 stereo WAV stems, `2,880,753` bytes, PSNR `32.11–42.48 dB` vs Draft) — `technical_status: pass`, `hero-shot-study.png`, `hero-filmstrip.png`, `hero-motion-extrema.png`, and H.264-decoded frame `hero-decoded-000084.png` visually inspected; `handoff` validated via live `after_effects:jsx_dry_run` (`valid: true`).
+- `uv build --quiet`: wheel and sdist build cleanly with zero generated example state/outputs and zero submodule paths included (`MANIFEST.in`).
+
+The project remains an active `0.1.0` pre-release. The full master specification includes future nonlinear editing, retiming, nested compositions, advanced PSD/HDR workflows, more creative recipes and additional engine adapters. Those are not represented as implemented by the current tests. Native third-party editor imports, interactive application execution, broad hardware coverage and a package release remain separate gates; see [roadmap](roadmap.md).
