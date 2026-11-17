@@ -4,7 +4,7 @@ description: "Use for room tone. Fill dialogue gaps using compatible room tone a
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "oda sesi,room tone"
   requires: ""

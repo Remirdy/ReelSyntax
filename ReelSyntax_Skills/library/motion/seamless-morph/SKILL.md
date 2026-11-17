@@ -4,7 +4,7 @@ description: "Use for seamless morph. Normalize corresponding contours or topolo
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "şekil dönüşümü,morph"
   requires: ""

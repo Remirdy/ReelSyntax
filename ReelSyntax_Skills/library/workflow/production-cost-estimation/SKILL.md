@@ -4,7 +4,7 @@ description: "Use for production cost estimation. Estimate compute, storage and 
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "render maliyeti,iş süresi tahmini"
   requires: ""

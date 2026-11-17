@@ -4,7 +4,7 @@ description: "Use for multicam editing. Synchronize footage via timecodes or aud
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çok kamera,multicam"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for lip sync. Map approved phoneme or viseme timing to mouth p
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "dudak senkronu,lip sync"
   requires: ""

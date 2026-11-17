@@ -4,7 +4,7 @@ description: "Use for midi sequencing. Write note events, velocities, tempo and 
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "midi,midi üretimi"
   requires: ""

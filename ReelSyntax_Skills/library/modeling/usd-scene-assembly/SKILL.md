@@ -4,7 +4,7 @@ description: "Use for OpenUSD scene assembly. Structure non-destructive .usda su
 metadata:
   category: modeling
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "openusd,usda sahne,usd variant,universal scene description"
   requires: ""

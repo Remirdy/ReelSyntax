@@ -4,7 +4,7 @@ description: "Use for squash stretch. Deform along the action axis while conserv
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "esneme sıkışma,squash stretch"
   requires: ""

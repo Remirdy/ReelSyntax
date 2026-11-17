@@ -4,7 +4,7 @@ description: "Use for game trailer. Select authentic gameplay or clearly labeled
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "oyun fragmanı,game trailer"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for educational explainer. Define learning goal, example seque
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "eğitici video,konu anlatımı"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for image preprocessing. Normalize orientation and color, choo
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "görsel hazırlama,resim boyutlandırma"
   requires: ""

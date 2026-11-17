@@ -4,7 +4,7 @@ description: "Use for environment kitbash. Assemble licensed modular parts using
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kitbash,çevre assetleri"
   requires: ""

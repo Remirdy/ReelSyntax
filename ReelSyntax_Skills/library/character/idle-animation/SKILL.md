@@ -4,7 +4,7 @@ description: "Use for idle animation. Use subtle breathing, weight shift and int
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "idle,boşta animasyon"
   requires: ""

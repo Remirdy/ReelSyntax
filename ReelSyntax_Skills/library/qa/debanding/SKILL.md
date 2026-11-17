@@ -4,7 +4,7 @@ description: "Use for debanding. Apply suitable dithering/filtering at appropria
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "banding,renk bantları"
   requires: ""

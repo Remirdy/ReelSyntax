@@ -4,7 +4,7 @@ description: "Use for asset origin normalization. Normalize units, pivots, trans
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "pivot,model orijini"
   requires: ""

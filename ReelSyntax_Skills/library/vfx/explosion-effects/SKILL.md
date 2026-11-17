@@ -4,7 +4,7 @@ description: "Use for explosion effects. Build fictional visual expansion, debri
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "patlama efekti,explosion vfx"
   requires: ""

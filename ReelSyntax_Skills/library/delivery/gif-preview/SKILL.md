@@ -4,7 +4,7 @@ description: "Use for gif preview. Create compact palette-aware looping preview 
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "gif,readme gif"
   requires: ""

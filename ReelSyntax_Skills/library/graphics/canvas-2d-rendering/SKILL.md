@@ -4,7 +4,7 @@ description: "Use for canvas 2d rendering. Draw frame state from explicit time a
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "canvas 2d,tuval"
   requires: ""

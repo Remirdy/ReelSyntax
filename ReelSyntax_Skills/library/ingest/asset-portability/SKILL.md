@@ -4,7 +4,7 @@ description: "Use for asset portability. Use relative logical IDs and package on
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "taşınabilir asset,dosya taşıma"
   requires: ""

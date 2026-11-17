@@ -4,7 +4,7 @@ description: "Use for blender python. Build scene with named objects, explicit f
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "blender python,bpy"
   requires: "blender"

@@ -4,7 +4,7 @@ description: "Use for render benchmark. Run reproducible short fixtures and reco
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "benchmark,render performansı"
   requires: ""

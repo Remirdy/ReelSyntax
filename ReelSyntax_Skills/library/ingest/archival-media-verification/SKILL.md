@@ -4,7 +4,7 @@ description: "Use for archival media verification. Cross-check origin, date, cap
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "arşiv doğrulama,tarihi fotoğraf"
   requires: ""

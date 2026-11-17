@@ -4,7 +4,7 @@ description: "Use for footage ranking. Rank local footage by relevance, quality 
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "görüntü seçimi,medya eşleştirme"
   requires: ""

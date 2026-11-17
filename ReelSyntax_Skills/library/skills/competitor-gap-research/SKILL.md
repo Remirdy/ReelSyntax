@@ -4,7 +4,7 @@ description: "Use for competitor gap research. Compare current primary docs, iss
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "rakip araştırması,yeni özellik araştır"
   requires: ""

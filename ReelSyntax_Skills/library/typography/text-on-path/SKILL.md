@@ -4,7 +4,7 @@ description: "Use for text on path. Lay text along a path with stable tangents a
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çizgide yazı,text path"
   requires: ""

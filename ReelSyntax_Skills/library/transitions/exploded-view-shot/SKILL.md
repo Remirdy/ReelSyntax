@@ -4,7 +4,7 @@ description: "Use for exploded view shot. Separate product parts along logical a
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "patlatılmış görünüm,exploded view"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for logo animation. Preserve logo proportions; reveal with lic
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "logo animasyonu,logo reveal"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for template parameterization. Expose typed variables for safe
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "şablon değişkenleri,template"
   requires: ""

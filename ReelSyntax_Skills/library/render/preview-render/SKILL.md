@@ -4,7 +4,7 @@ description: "Use for preview render. Use reduced resolution, samples or represe
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "taslak render,preview"
   requires: ""

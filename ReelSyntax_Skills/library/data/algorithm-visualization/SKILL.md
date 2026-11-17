@@ -4,7 +4,7 @@ description: "Use for algorithm visualization. Animate recorded algorithm states
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "algoritma animasyonu,sorting"
   requires: ""

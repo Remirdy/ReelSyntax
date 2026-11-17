@@ -4,7 +4,7 @@ description: "Use for blender cycles. Set device, sampling and denoise options b
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "cycles,blender gerçekçi render"
   requires: "blender"

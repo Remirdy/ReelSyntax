@@ -4,7 +4,7 @@ description: "Use for fbx interchange. Test FBX axis, skeleton and animation con
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "fbx,model aktarımı"
   requires: ""

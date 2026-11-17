@@ -4,7 +4,7 @@ description: "Use for character crowd. Instance controlled variations and offset
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kalabalık,figüran"
   requires: ""

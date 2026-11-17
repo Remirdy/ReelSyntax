@@ -4,7 +4,7 @@ description: "Use for match cut design. Align shape, position, direction or conc
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "match cut,eşleşmeli kesme"
   requires: ""

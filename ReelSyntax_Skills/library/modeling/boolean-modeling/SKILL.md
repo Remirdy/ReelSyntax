@@ -4,7 +4,7 @@ description: "Use for boolean modeling. Apply Boolean cuts in a controlled order
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "3d boolean,kesme modelleme"
   requires: ""

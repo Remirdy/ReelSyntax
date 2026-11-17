@@ -4,7 +4,7 @@ description: "Use for brand consistency. Use verified brand assets and lock exac
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "marka tutarlılığı,logo renk"
   requires: ""

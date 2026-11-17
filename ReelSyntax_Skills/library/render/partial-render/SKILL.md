@@ -4,7 +4,7 @@ description: "Use for partial render. Identify affected shots and dependency edg
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kısmi render,sadece değişen sahne"
   requires: ""

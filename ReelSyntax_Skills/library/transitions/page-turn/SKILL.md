@@ -4,7 +4,7 @@ description: "Use for page turn. Animate crease and surface orientation with fro
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sayfa çevirme,page curl"
   requires: ""

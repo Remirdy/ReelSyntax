@@ -4,7 +4,7 @@ description: "Use for character rigging. Create named bone hierarchy, constraint
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "rig,iskelet"
   requires: ""

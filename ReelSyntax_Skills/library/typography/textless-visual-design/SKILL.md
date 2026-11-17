@@ -4,7 +4,7 @@ description: "Use for textless visual design. Replace explanatory text with visu
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yazısız,yazı olmasın,no text"
   requires: ""

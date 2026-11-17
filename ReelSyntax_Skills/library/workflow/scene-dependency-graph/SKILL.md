@@ -4,7 +4,7 @@ description: "Use for scene dependency graph. Map scenes, assets and outputs as 
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sahne bağımlılıkları,dag"
   requires: ""

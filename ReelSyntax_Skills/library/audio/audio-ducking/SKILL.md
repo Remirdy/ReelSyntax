@@ -4,7 +4,7 @@ description: "Use for audio ducking. Attenuate backing track during dialogue wit
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "müzik kısma,ducking"
   requires: ""

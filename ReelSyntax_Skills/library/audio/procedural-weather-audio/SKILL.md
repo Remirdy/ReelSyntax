@@ -4,7 +4,7 @@ description: "Use for procedural weather audio. Synthesize filtered seeded noise
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yağmur sesi,rüzgar sesi"
   requires: ""

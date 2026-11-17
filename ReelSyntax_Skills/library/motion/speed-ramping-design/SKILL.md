@@ -4,7 +4,7 @@ description: "Use for speed ramping design. Schedule speed changes around action
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hız rampası,speed ramp"
   requires: ""

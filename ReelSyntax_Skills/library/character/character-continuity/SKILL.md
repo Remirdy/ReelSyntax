@@ -4,7 +4,7 @@ description: "Use for character continuity. Compare character IDs and approved g
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "karakter devamlılığı,aynı karakter"
   requires: ""

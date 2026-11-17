@@ -4,7 +4,7 @@ description: "Use for shader effects. Write bounded shader uniforms driven by de
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "shader,glsl efekt"
   requires: ""

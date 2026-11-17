@@ -4,7 +4,7 @@ description: "Use for multilingual variants. Generate language-specific text, vo
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çok dilli video,çeviri varyantı"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for path animation. Parameterize movement by path length and o
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yol animasyonu,path animation"
   requires: ""

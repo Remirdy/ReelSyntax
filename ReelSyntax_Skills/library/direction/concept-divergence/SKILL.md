@@ -4,7 +4,7 @@ description: "Use for concept divergence. Draft three concepts with different vi
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yaratıcı fikir,alternatif konsept"
   requires: ""

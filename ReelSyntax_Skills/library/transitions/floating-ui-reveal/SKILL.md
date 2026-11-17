@@ -4,7 +4,7 @@ description: "Use for floating ui reveal. Stage UI panels with controlled depth,
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yüzen arayüz,floating ui"
   requires: ""

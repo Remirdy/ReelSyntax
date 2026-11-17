@@ -4,7 +4,7 @@ description: "Use for git history film. Read authorized commit metadata and visu
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "git geçmişi,commit animasyonu"
   requires: ""

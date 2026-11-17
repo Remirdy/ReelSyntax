@@ -4,7 +4,7 @@ description: "Use for retro vhs. Apply bounded chroma bleed, noise and scanline 
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "vhs,retro kaset"
   requires: ""

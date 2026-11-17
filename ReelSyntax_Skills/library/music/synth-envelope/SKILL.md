@@ -4,7 +4,7 @@ description: "Use for synth envelope. Shape attack, decay, sustain and release b
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "adsr,synth envelope"
   requires: ""

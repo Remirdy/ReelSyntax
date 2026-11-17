@@ -4,7 +4,7 @@ description: "Use for asset tagging. Assign content and technical tags from obse
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "asset etiketleme,medya etiket"
   requires: ""

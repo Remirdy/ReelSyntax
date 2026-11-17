@@ -4,7 +4,7 @@ description: "Use for shot list. Create shot IDs, framing, action, lens intent, 
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çekim listesi,shot list"
   requires: ""

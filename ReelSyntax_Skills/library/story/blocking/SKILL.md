@@ -4,7 +4,7 @@ description: "Use for blocking. Plot positions, eyelines and movement paths in a
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sahne konumlama,oyuncu yerleşimi"
   requires: ""

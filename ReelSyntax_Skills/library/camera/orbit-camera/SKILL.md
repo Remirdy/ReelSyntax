@@ -4,7 +4,7 @@ description: "Use for orbit camera. Orbit around an explicit pivot at controlled
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kamera çevresinde dönme,orbit"
   requires: ""

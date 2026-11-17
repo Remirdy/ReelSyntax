@@ -4,7 +4,7 @@ description: "Use for pixel art style. Use integer grid scaling, limited palette
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "piksel sanat,pixel art"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for font licensing. Check distribution, embedding and commerci
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "font lisansı,yazı tipi lisansı"
   requires: ""

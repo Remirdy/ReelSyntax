@@ -4,7 +4,7 @@ description: "Use for subdivision modeling. Use support loops and subdivision le
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "subdivision,yüzey yumuşatma"
   requires: ""

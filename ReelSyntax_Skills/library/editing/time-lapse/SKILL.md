@@ -4,7 +4,7 @@ description: "Use for time lapse. Sample source by interval and smooth exposure 
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hızlandırılmış video,timelapse"
   requires: ""

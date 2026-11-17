@@ -4,7 +4,7 @@ description: "Use for frame comparison. Compare same timestamp, dimensions and c
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kare karşılaştırma,before after"
   requires: ""

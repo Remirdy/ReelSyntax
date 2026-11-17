@@ -4,7 +4,7 @@ description: "Use for shadow design. Choose shadow softness and direction based 
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "gölge tasarımı,shadow"
   requires: ""

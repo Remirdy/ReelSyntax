@@ -4,7 +4,7 @@ description: "Use for line chart animation. Plot ordered values with explicit un
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çizgi grafik,line chart"
   requires: ""

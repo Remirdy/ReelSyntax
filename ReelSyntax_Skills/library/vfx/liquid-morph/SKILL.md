@@ -4,7 +4,7 @@ description: "Use for liquid morph. Blend implicit fields or animated surfaces u
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sıvı dönüşüm,liquid morph"
   requires: ""

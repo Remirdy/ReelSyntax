@@ -4,7 +4,7 @@ description: "Use for anticipation. Insert a short counter-move before the prima
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hazırlık hareketi,anticipation"
   requires: ""

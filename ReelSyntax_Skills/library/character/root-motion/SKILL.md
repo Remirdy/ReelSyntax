@@ -4,7 +4,7 @@ description: "Use for root motion. Separate root translation from local pose and
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "root motion,kök hareketi"
   requires: ""

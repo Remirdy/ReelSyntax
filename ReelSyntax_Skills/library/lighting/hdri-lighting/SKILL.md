@@ -4,7 +4,7 @@ description: "Use for hdri lighting. Use licensed environment map and tune rotat
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hdri,ortam ışığı"
   requires: ""

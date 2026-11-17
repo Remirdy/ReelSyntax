@@ -4,7 +4,7 @@ description: "Use for otio export. Map source ranges, tracks and markers into in
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "otio,opentimelineio"
   requires: "otio"

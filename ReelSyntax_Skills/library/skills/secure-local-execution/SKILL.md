@@ -4,7 +4,7 @@ description: "Use for secure local execution. Use canonical paths, subprocess ar
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "lokal güvenlik,sandbox"
   requires: ""

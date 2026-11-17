@@ -4,7 +4,7 @@ description: "Use for loudness normalization. Measure integrated loudness and tr
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "lufs,ses normalizasyonu"
   requires: ""

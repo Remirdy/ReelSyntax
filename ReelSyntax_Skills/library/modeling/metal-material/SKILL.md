@@ -4,7 +4,7 @@ description: "Use for metal material. Use conductor-like reflectance and environ
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "metal materyal,metalik"
   requires: ""

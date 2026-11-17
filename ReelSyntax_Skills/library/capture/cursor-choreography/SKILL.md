@@ -4,7 +4,7 @@ description: "Use for cursor choreography. Plan pointer paths and click events w
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "imleç animasyonu,cursor animation"
   requires: ""

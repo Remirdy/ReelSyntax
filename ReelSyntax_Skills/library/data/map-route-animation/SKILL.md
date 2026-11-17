@@ -4,7 +4,7 @@ description: "Use for map route animation. Animate verified or supplied geograph
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "rota animasyonu,harita rotası"
   requires: ""

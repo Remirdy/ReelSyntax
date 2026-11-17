@@ -4,7 +4,7 @@ description: "Use for film grain. Apply resolution-aware seeded grain appropriat
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "film greni,grain"
   requires: ""

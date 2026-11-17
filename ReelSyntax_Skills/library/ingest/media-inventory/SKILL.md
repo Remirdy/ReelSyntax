@@ -4,7 +4,7 @@ description: "Use for media inventory. List media with hashes, type, dimensions,
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "medya envanteri,dosya tarama"
   requires: ""

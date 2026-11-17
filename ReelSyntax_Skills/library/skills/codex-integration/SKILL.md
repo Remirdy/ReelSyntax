@@ -4,7 +4,7 @@ description: "Use for codex integration. Install only router entry in verified h
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "codex skill,codex entegrasyon"
   requires: ""

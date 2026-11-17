@@ -4,7 +4,7 @@ description: "Use for ambient occlusion. Use contact shading moderately and avoi
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ao,ambient occlusion"
   requires: ""

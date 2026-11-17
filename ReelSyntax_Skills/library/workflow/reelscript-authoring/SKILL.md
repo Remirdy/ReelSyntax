@@ -4,7 +4,7 @@ description: "Use for reelscript authoring. Represent project scenes, assets, au
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "reelscript,video yaml"
   requires: ""

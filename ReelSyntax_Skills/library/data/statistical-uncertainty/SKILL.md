@@ -4,7 +4,7 @@ description: "Use for statistical uncertainty. Represent uncertainty intervals, 
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "belirsizlik,hata çubuğu"
   requires: ""

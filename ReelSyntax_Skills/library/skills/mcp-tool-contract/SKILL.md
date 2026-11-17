@@ -4,7 +4,7 @@ description: "Use for mcp tool contract. Expose typed discovery, validation and 
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "mcp entegrasyonu,tool schema"
   requires: ""

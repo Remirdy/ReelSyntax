@@ -4,7 +4,7 @@ description: "Use for local stock search. Search local approved libraries first 
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "stok görsel,yerel asset arama"
   requires: ""

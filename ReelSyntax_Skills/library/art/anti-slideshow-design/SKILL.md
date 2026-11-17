@@ -4,7 +4,7 @@ description: "Use for anti slideshow design. Build motivated internal motion, sp
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "slayt gibi olmasın,powerpoint görünümü"
   requires: ""

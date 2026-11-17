@@ -4,7 +4,7 @@ description: "Use for skill authoring. Write a distinct use case with triggers, 
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "skill oluştur,skill yaz"
   requires: ""

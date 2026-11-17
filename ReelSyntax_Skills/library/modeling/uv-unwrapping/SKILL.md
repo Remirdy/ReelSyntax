@@ -4,7 +4,7 @@ description: "Use for uv unwrapping. Place seams in less visible regions and mai
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "uv açma,uv map"
   requires: ""

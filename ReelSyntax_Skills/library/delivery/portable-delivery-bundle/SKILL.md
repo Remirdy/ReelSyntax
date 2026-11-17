@@ -4,7 +4,7 @@ description: "Use for portable delivery bundle. Include final outputs, checksums
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "teslim paketi,zip çıktı"
   requires: ""

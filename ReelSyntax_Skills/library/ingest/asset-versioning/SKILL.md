@@ -4,7 +4,7 @@ description: "Use for asset versioning. Assign immutable version IDs and content
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "asset sürümü,dosya versiyon"
   requires: ""

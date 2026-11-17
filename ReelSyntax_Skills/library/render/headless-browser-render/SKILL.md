@@ -4,7 +4,7 @@ description: "Use for headless browser render. Freeze page time, wait for fonts/
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "headless render,tarayıcı render"
   requires: ""

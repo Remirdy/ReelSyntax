@@ -4,7 +4,7 @@ description: "Use for particle 2d. Use seeded emitters with bounded lifetime and
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "2d parçacık,particle system"
   requires: ""

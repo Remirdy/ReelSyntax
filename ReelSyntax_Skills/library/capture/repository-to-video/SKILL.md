@@ -4,7 +4,7 @@ description: "Use for repository to video. Inspect README, implemented features 
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "repodan video,github tanıtım"
   requires: ""

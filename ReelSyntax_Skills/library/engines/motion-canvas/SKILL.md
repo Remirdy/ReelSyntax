@@ -4,7 +4,7 @@ description: "Use for motion canvas. Compose generators and named scenes with ex
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "motion canvas,vektör video"
   requires: "motion-canvas"

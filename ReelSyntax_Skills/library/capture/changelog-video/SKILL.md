@@ -4,7 +4,7 @@ description: "Use for changelog video. Map verified release changes to short bef
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sürüm videosu,changelog"
   requires: ""

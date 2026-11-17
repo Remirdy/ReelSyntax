@@ -4,7 +4,7 @@ description: "Use for shape language. Assign recurring geometric forms and contr
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "şekil dili,form dili"
   requires: ""

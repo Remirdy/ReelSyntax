@@ -4,7 +4,7 @@ description: "Use for set dressing. Select props by story function and maintain 
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "dekor,sahne eşyaları"
   requires: ""

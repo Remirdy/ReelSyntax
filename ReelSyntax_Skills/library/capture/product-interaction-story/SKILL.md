@@ -4,7 +4,7 @@ description: "Use for product interaction story. Show problem, action and result
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ürün kullanım hikayesi,workflow demo"
   requires: ""

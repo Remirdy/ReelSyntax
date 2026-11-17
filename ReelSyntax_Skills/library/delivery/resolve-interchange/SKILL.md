@@ -4,7 +4,7 @@ description: "Use for resolve interchange. Use supported OTIO/XML workflow and p
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "davinci resolve,resolve aktarımı"
   requires: ""

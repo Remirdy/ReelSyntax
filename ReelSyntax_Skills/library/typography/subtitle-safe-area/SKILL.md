@@ -4,7 +4,7 @@ description: "Use for subtitle safe area. Reserve platform-appropriate regions a
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "altyazı güvenli alan,safe zone"
   requires: ""

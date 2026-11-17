@@ -4,7 +4,7 @@ description: "Use for ci render smoke. Run lightweight headless fixture through 
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "github actions,ci render"
   requires: ""

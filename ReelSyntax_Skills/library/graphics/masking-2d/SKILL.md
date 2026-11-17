@@ -4,7 +4,7 @@ description: "Use for masking 2d. Build alpha or geometric masks with stable coo
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "2d maskeleme,clipping path"
   requires: ""

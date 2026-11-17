@@ -4,7 +4,7 @@ description: "Use for rollback checkpoint. Save immutable references before chan
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "geri al,rollback"
   requires: ""

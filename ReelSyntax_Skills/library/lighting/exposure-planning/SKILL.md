@@ -4,7 +4,7 @@ description: "Use for exposure planning. Set rendering exposure and highlight ha
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "pozlama,exposure"
   requires: ""

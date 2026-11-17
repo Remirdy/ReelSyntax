@@ -4,7 +4,7 @@ description: "Use for render preflight. Validate scene references, frame ranges,
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "render öncesi kontrol,preflight"
   requires: ""

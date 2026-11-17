@@ -4,7 +4,7 @@ description: "Use for font render audit. Render coverage fixture using actual fo
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "font hatası,eksik glif"
   requires: ""

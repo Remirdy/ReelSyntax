@@ -4,7 +4,7 @@ description: "Use for slides to video. Extract slide assets and restructure stor
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sunumdan video,pptx video"
   requires: ""

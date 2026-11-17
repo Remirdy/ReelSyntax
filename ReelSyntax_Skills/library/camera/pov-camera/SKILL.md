@@ -4,7 +4,7 @@ description: "Use for pov camera. Align camera height and motion with character 
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "birinci şahıs,bakış açısı"
   requires: ""

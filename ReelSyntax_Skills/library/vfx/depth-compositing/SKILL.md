@@ -4,7 +4,7 @@ description: "Use for depth compositing. Use consistent depth units and edge tre
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "derinlik kompozit,z depth"
   requires: ""

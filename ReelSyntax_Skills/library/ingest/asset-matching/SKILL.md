@@ -4,7 +4,7 @@ description: "Use for asset matching. Rank candidates by stable identifier, file
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "asset eşleştirme,psd mp3 eşleştir"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for procedural patterns. Define repeat unit, seed and controll
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "desen üretimi,pattern"
   requires: ""

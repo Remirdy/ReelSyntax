@@ -4,7 +4,7 @@ description: "Use for reframing. Track subject bounds and reserve caption areas 
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yeniden kadraj,otomatik crop"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for claude code integration. Expose router in supported skill 
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "claude code skill,claude skill"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for research documentary. Develop source-grounded narrative wi
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "belgesel,araştırmadan belgesel"
   requires: ""

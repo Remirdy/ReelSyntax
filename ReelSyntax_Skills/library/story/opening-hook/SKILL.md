@@ -4,7 +4,7 @@ description: "Use for opening hook. Show the question, conflict or value through
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ilk saniyeler,açılış kancası"
   requires: ""

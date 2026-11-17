@@ -4,7 +4,7 @@ description: "Use for chord progression. Choose harmonic movement appropriate to
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "akor dizisi,chord progression"
   requires: ""

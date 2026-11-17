@@ -4,7 +4,7 @@ description: "Use for procedural modeling. Generate geometry from parameters wit
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "prosedürel modelleme,kodla 3d"
   requires: ""

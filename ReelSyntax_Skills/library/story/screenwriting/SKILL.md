@@ -4,7 +4,7 @@ description: "Use for screenwriting. Structure setup, development and payoff in 
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "senaryo,senaryo yaz"
   requires: ""

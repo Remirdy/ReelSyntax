@@ -4,7 +4,7 @@ description: "Use for chemistry diagram animation. Use validated molecular or re
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kimya molekül,molecular diagram"
   requires: ""

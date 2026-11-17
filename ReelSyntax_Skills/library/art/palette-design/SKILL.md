@@ -4,7 +4,7 @@ description: "Use for palette design. Choose limited base, accent and neutral ro
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "renk paleti,renk uyumu"
   requires: ""

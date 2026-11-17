@@ -4,7 +4,7 @@ description: "Use for ambience design. Layer location-appropriate textures with 
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ambiyans,ortam sesi"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for terminal animation. Use supplied real command outputs or c
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "terminal animasyonu,cli demo"
   requires: ""

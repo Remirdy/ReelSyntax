@@ -4,7 +4,7 @@ description: "Use for true peak limiting. Limit final mix to declared true-peak 
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "limiter,true peak"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for memorial tribute. Build respectful tone using verified arc
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "anma videosu,duygusal anma"
   requires: ""

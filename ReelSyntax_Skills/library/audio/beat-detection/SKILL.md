@@ -4,7 +4,7 @@ description: "Use for beat detection. Estimate tempo and transient positions or 
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "bpm,ritim tespiti"
   requires: ""

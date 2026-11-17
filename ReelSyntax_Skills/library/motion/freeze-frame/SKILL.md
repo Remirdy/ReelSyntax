@@ -4,7 +4,7 @@ description: "Use for freeze frame. Choose a meaningful pose and hold image whil
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "dondurma efekti,freeze frame"
   requires: ""

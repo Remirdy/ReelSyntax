@@ -4,7 +4,7 @@ description: "Use for spring motion. Set damping and stiffness by desired settle
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yay animasyonu,spring"
   requires: ""

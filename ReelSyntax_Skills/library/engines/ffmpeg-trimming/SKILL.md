@@ -4,7 +4,7 @@ description: "Use for ffmpeg trimming. Choose accurate or keyframe-aligned trimm
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ffmpeg kesme,trim"
   requires: "ffmpeg"

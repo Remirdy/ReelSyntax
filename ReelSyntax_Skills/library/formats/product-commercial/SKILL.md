@@ -4,7 +4,7 @@ description: "Use for product commercial. Plan benefit-driven visual shots, accu
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ürün reklamı,ticari reklam"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for skill routing. Query compact metadata index by task, stage
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "skill seçimi,otomatik skill"
   requires: ""

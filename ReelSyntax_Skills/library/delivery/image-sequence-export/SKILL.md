@@ -4,7 +4,7 @@ description: "Use for image sequence export. Export indexed frames with declared
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "image sequence,exr png"
   requires: ""

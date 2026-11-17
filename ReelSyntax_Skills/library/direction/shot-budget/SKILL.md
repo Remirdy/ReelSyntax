@@ -4,7 +4,7 @@ description: "Use for shot budget. Distribute frames over story beats and calcul
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sahne bütçesi,çekim sayısı"
   requires: ""

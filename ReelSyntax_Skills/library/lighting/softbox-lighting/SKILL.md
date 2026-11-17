@@ -4,7 +4,7 @@ description: "Use for softbox lighting. Use area light size relative to subject 
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "softbox,yumuşak ışık"
   requires: ""

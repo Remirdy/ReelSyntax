@@ -4,7 +4,7 @@ description: "Use for background depth. Layer foreground, midground and backgrou
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "arka plan derinliği,atmosferik perspektif"
   requires: ""

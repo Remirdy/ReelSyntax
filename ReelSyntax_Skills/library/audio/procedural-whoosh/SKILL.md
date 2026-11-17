@@ -4,7 +4,7 @@ description: "Use for procedural whoosh. Shape filtered noise and pitch envelope
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "whoosh,geçiş sesi"
   requires: ""

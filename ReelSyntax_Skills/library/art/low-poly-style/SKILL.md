@@ -4,7 +4,7 @@ description: "Use for low poly style. Use clear faceted silhouettes, limited mat
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "low poly,düşük poligon"
   requires: ""

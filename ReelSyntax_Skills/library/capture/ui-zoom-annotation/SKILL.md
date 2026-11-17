@@ -4,7 +4,7 @@ description: "Use for ui zoom annotation. Crop around relevant interface regions
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "arayüz zoom,ekran yakınlaştırma"
   requires: ""

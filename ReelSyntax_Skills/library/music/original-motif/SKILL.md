@@ -4,7 +4,7 @@ description: "Use for original motif. Compose a short original motif with define
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "özgün melodi,motif"
   requires: ""

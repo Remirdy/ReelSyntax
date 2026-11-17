@@ -4,7 +4,7 @@ description: "Use for self correction loop. Prioritize verified defects, edit sm
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "otomatik düzeltme,self correction"
   requires: ""

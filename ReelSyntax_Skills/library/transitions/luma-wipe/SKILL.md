@@ -4,7 +4,7 @@ description: "Use for luma wipe. Threshold a designed luminance texture over tim
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "luma wipe,parlaklık geçişi"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for ffmpeg transcoding. Choose codecs, rate control and pixel 
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ffmpeg dönüştürme,transcode"
   requires: "ffmpeg"

@@ -4,7 +4,7 @@ description: "Use for chart selection. Choose chart by comparison task, data typ
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "grafik seçimi,veri grafiği"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for accessible data design. Use labels, shape and contrast rat
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "erişilebilir grafik,renk körlüğü"
   requires: ""

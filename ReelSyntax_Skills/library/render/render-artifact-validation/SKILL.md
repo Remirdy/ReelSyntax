@@ -4,7 +4,7 @@ description: "Use for render artifact validation. Check expected file presence, 
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "render dosya kontrolü,artifact validation"
   requires: ""

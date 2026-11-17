@@ -4,7 +4,7 @@ description: "Use for motion blur. Use temporal samples or motion vectors with e
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hareket bulanıklığı,motion blur"
   requires: ""

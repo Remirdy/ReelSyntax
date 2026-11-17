@@ -4,7 +4,7 @@ description: "Use for engineering exploded diagram. Animate component separation
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "mühendislik şeması,teknik parça"
   requires: ""

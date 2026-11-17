@@ -4,7 +4,7 @@ description: "Use for threejs scene. Create renderer, camera, scene and explicit
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "three.js,threejs"
   requires: "threejs"

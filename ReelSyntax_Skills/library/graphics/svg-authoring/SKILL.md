@@ -4,7 +4,7 @@ description: "Use for svg authoring. Build scalable paths with viewBox, explicit
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "svg,vektör çizim"
   requires: ""

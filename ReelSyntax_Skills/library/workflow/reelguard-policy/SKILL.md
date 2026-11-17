@@ -4,7 +4,7 @@ description: "Use for reelguard policy. Enforce permissions, constraints, input 
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "reelguard,güvenlik kontrolü"
   requires: ""

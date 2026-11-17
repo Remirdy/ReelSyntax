@@ -4,7 +4,7 @@ description: "Use for shadow catcher. Render contact shadows separately and comp
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "gölge yakalayıcı,shadow catcher"
   requires: ""

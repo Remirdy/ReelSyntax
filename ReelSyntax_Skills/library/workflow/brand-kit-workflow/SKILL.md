@@ -4,7 +4,7 @@ description: "Use for brand kit workflow. Store approved fonts, logos, palette, 
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "brand kit,marka kiti"
   requires: ""

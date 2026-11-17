@@ -4,7 +4,7 @@ description: "Use for glass material. Set transmission, IOR and roughness with s
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "cam materyal,refraction"
   requires: ""

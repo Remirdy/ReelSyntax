@@ -4,7 +4,7 @@ description: "Use for lyric video. Use authorized lyrics and timed text hierarch
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "şarkı sözü videosu,lyric video"
   requires: ""

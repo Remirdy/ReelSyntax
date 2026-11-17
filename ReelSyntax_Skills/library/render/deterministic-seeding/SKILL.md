@@ -4,7 +4,7 @@ description: "Use for deterministic seeding. Derive stable seeds from project an
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "deterministik,random seed"
   requires: ""

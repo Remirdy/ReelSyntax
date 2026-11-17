@@ -4,7 +4,7 @@ description: "Use for scatterplot animation. Map coordinates and groups using cl
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "dağılım grafiği,scatterplot"
   requires: ""

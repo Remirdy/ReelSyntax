@@ -4,7 +4,7 @@ description: "Use for browser frame capture. Control viewport, font readiness, a
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "playwright,chromium kare"
   requires: ""

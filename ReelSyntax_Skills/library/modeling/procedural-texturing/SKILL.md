@@ -4,7 +4,7 @@ description: "Use for procedural texturing. Map coherent noise and pattern scale
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "prosedürel doku,noise texture"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for rtl text layout. Use proper bidirectional shaping and isol
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "arapça,sağdan sola,rtl"
   requires: ""

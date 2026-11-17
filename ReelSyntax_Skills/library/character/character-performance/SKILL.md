@@ -4,7 +4,7 @@ description: "Use for character performance. Stage gaze, gesture, posture and ti
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "oyunculuk,karakter performansı"
   requires: ""

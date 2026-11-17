@@ -4,7 +4,7 @@ description: "Use for calculus visualization. Plot functions and animate mathema
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "türev integral,calculus"
   requires: ""

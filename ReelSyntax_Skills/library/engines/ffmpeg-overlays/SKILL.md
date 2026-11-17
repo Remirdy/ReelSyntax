@@ -4,7 +4,7 @@ description: "Use for ffmpeg overlays. Set overlay coordinates, alpha and time w
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ffmpeg overlay,bindirme"
   requires: "ffmpeg"

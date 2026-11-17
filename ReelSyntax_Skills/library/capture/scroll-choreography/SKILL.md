@@ -4,7 +4,7 @@ description: "Use for scroll choreography. Animate scroll offsets along a planne
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "scroll animasyonu,kaydırma ekranı"
   requires: ""

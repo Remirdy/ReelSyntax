@@ -4,7 +4,7 @@ description: "Use for bevel workflow. Choose bevel width relative to object scal
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "bevel,kenar yuvarlama"
   requires: ""

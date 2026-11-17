@@ -4,7 +4,7 @@ description: "Use for remote render. Transfer approved manifest and artifacts to
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "uzak render,remote worker"
   requires: ""

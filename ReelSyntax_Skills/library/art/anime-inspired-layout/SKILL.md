@@ -4,7 +4,7 @@ description: "Use for anime inspired layout. Use strong staging, expressive silh
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "anime tarzı,çizgi film"
   requires: ""

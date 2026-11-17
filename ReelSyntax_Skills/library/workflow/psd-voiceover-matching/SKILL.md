@@ -4,7 +4,7 @@ description: "Use for psd voiceover matching. Pair layered design and narration 
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "psd ses eşleştir,psd mp3"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for stop motion cadence. Quantize poses deliberately to a lowe
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "stop motion,kareli hareket"
   requires: ""

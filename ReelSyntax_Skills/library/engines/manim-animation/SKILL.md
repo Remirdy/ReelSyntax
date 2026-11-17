@@ -4,7 +4,7 @@ description: "Use for manim animation. Construct mathematical mobjects and expli
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "manim,matematik animasyonu"
   requires: "manim"

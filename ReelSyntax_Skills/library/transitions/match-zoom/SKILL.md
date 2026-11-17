@@ -4,7 +4,7 @@ description: "Use for match zoom. Align focal content and scale velocity between
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "zoom geçişi,match zoom"
   requires: ""

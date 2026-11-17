@@ -4,7 +4,7 @@ description: "Use for code highlighting. Tokenize code with language-aware synta
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kod animasyonu,syntax highlight"
   requires: ""

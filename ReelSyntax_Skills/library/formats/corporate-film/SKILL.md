@@ -4,7 +4,7 @@ description: "Use for corporate film. Connect brand purpose, credible evidence a
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kurumsal video,firma tanıtımı"
   requires: ""

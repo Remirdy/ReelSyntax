@@ -4,7 +4,7 @@ description: "Use for subtitle format export. Convert cue times to selected form
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "srt,vtt,ass altyazı"
   requires: ""

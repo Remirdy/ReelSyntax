@@ -4,7 +4,7 @@ description: "Use for kinetic typography. Animate letter, word or phrase groups 
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kinetik tipografi,hareketli yazı"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for texture baking. Bake selected material channels to UV maps
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "texture bake,doku pişirme"
   requires: ""

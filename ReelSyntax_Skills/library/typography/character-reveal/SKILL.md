@@ -4,7 +4,7 @@ description: "Use for character reveal. Reveal grapheme clusters rather than spl
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "harf harf,typewriter"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for comic panel animation. Arrange sequential panels with orig
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çizgi roman,comic panels"
   requires: ""

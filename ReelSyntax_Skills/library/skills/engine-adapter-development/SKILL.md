@@ -4,7 +4,7 @@ description: "Use for engine adapter development. Implement capability probe, ty
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "motor geliştir,engine adapter"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for app feature demo. Capture a real end-to-end interaction us
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "uygulama tanıtımı,feature demo"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for cursor integration. Expose router-only project skill using
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "cursor skill,cursor entegrasyon"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for camera continuity. Compare focal range, height, axis and s
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kamera tutarlılığı,çekim tutarlılığı"
   requires: ""

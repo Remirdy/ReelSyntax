@@ -4,7 +4,7 @@ description: "Use for point tracking. Track stable features and reject outliers 
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "nokta takibi,motion tracking"
   requires: ""

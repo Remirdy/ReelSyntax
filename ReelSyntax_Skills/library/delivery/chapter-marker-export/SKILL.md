@@ -4,7 +4,7 @@ description: "Use for chapter marker export. Export chapter titles and timecodes
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "chapter markers,bölüm işaretleri"
   requires: ""

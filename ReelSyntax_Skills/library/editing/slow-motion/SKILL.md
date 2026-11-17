@@ -4,7 +4,7 @@ description: "Use for slow motion. Use source frame rate or explicit interpolati
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ağır çekim,slow motion"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for claymation style. Use handmade surface imperfections, tact
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kil animasyon,claymation"
   requires: ""

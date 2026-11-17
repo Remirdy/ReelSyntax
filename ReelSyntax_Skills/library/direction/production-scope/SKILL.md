@@ -4,7 +4,7 @@ description: "Use for production scope. Break work into deliverables, dependenci
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "iş kapsamı,prodüksiyon planı"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for mesh topology. Plan edge flow and polygon density around d
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "mesh topoloji,üç boyutlu model"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for skill discovery. Research official specs and reputable Git
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "skill arama,skills araştırma"
   requires: ""

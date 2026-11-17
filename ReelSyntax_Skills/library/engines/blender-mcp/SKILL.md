@@ -4,7 +4,7 @@ description: "Use for blender mcp. Discover available server tools and map typed
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "blender mcp"
   requires: "blender-mcp"

@@ -4,7 +4,7 @@ description: "Use for music editing. Shorten or extend supplied licensed tracks 
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "müzik kurgusu,music edit"
   requires: ""

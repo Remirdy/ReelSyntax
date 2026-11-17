@@ -4,7 +4,7 @@ description: "Use for light animation. Animate intensity and color on timeline w
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ışık animasyonu,ışık geçişi"
   requires: ""

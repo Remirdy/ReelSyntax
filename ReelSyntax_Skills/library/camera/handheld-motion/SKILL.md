@@ -4,7 +4,7 @@ description: "Use for handheld motion. Apply seeded low-frequency drift and rest
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "el kamerası,kamera sarsıntısı"
   requires: ""

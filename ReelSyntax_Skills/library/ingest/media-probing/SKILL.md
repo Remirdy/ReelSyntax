@@ -4,7 +4,7 @@ description: "Use for media probing. Read streams, timestamps, sample rates, pix
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ffprobe,medya bilgisi"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for hand drawn line style. Perturb strokes deterministically w
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "el çizimi,çizim efekti"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for batch production. Create per-item job manifests with expli
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "toplu video,batch production"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for music looping. Align loop to phrase boundary with compatib
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "müzik döngüsü,loop music"
   requires: ""

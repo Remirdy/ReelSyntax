@@ -4,7 +4,7 @@ description: "Use for turkish glyph audit. Verify font coverage and correct Turk
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "türkçe karakter,ş ğ ı"
   requires: ""

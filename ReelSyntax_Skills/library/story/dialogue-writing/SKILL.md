@@ -4,7 +4,7 @@ description: "Use for dialogue writing. Give speakers distinct intent and concis
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "diyalog,karakter konuşması"
   requires: ""

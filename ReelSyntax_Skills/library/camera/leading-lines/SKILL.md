@@ -4,7 +4,7 @@ description: "Use for leading lines. Orient geometry toward the focal subject an
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yönlendirici çizgiler,perspektif çizgileri"
   requires: ""

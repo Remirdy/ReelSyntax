@@ -4,7 +4,7 @@ description: "Use for film burn transition. Use short stylized light gradients a
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "film yanması,light leak"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for reellibrary registry. Index reusable recipes by capabiliti
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "reellibrary,animasyon kütüphanesi"
   requires: ""

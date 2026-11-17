@@ -4,7 +4,7 @@ description: "Use for fade through black. Fade down and up with purposeful black
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "siyaha geçiş,fade black"
   requires: ""

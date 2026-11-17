@@ -4,7 +4,7 @@ description: "Use for contrast audit. Measure contrast in representative text/ba
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kontrast kontrolü,okunabilirlik"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for continuity ledger. Track wardrobe, props, positions, light
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "süreklilik,devamlılık"
   requires: ""

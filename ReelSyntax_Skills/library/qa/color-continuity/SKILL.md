@@ -4,7 +4,7 @@ description: "Use for color continuity. Compare neighboring shots using referenc
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "renk tutarlılığı,color matching"
   requires: ""

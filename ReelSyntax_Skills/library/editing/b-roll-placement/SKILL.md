@@ -4,7 +4,7 @@ description: "Use for b roll placement. Place supporting footage over relevant s
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "b roll,ara görüntü"
   requires: ""

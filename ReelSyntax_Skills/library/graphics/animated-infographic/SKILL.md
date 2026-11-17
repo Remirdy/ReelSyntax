@@ -4,7 +4,7 @@ description: "Use for animated infographic. Convert facts to sequential visual c
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "infografik,animated infographic"
   requires: ""

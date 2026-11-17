@@ -4,7 +4,7 @@ description: "Use for missing asset fallback. Report missing assets, propose app
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "eksik asset,missing media"
   requires: ""

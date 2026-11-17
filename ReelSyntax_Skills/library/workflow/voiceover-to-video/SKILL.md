@@ -4,7 +4,7 @@ description: "Use for voiceover to video. Derive narration beats from supplied a
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sesten video,seslendirmeden video"
   requires: ""

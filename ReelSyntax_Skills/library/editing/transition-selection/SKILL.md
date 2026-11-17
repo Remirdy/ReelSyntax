@@ -4,7 +4,7 @@ description: "Use for transition selection. Use hard cuts by default and choose 
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "geçiş seçimi,transition"
   requires: ""

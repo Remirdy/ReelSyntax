@@ -4,7 +4,7 @@ description: "Use for text overflow audit. Measure text bounds over keyframes an
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yazı taşması,text overflow"
   requires: ""

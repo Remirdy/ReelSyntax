@@ -4,7 +4,7 @@ description: "Use for wipe transition. Animate geometric matte boundary across s
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "silme geçişi,wipe"
   requires: ""

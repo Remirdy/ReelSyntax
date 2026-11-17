@@ -4,7 +4,7 @@ description: "Use for fine cut. Refine cut frames for eye trace, action, dialogu
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ince kurgu,fine cut"
   requires: ""

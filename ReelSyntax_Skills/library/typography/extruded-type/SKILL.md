@@ -4,7 +4,7 @@ description: "Use for extruded type. Create beveled or extruded glyph geometry w
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "3d yazı,extruded typography"
   requires: ""

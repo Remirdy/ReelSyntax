@@ -4,9 +4,9 @@ description: "Use for black frame detection. Detect sustained near-black interva
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
-  aliases: "siyah kare,black frame"
+  aliases: "siyah kare,black frame,Schwarzbilder erkennen,detectar fotogramas negros,détecter les images noires,detectar quadros pretos"
   requires: ""
 ---
 

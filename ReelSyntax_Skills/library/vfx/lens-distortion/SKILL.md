@@ -4,7 +4,7 @@ description: "Use for lens distortion. Apply calibrated barrel or pincushion map
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "lens bozulması,distortion"
   requires: ""

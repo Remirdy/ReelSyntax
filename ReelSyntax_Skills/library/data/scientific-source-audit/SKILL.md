@@ -4,7 +4,7 @@ description: "Use for scientific source audit. Verify claims against primary res
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "bilimsel kaynak,akademik kontrol"
   requires: ""

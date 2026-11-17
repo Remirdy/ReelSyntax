@@ -4,7 +4,7 @@ description: "Use for glitch transition. Apply short seeded displacement or chan
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "glitch geçişi,dijital bozulma"
   requires: ""

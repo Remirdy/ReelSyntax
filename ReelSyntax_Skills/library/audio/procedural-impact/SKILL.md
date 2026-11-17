@@ -4,7 +4,7 @@ description: "Use for procedural impact. Combine low transient, shaped noise and
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "darbe sesi,impact sfx"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for flowchart animation. Construct process graph from actual s
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "akış şeması,flowchart"
   requires: ""

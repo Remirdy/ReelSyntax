@@ -4,7 +4,7 @@ description: "Use for audio sync audit. Compare expected cue times to observed a
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ses görüntü kontrolü,av sync"
   requires: ""

@@ -4,9 +4,9 @@ description: "Use for locked camera. Freeze camera transforms and focal paramete
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
-  aliases: "kamera sabit,kamerayı oynatma,no camera movement"
+  aliases: "kamera sabit,kamerayı oynatma,no camera movement,feste Kamera,cámara fija,caméra fixe,câmera fixa"
   requires: ""
 ---
 

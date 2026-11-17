@@ -4,7 +4,7 @@ description: "Use for pbr materials. Separate base color, roughness, metalness a
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "pbr,materyal"
   requires: ""

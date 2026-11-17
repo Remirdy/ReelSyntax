@@ -4,7 +4,7 @@ description: "Use for readme showcase. Create compact loopable demo or thumbnail
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "readme videosu,github demo"
   requires: ""

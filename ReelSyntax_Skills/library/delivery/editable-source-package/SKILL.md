@@ -4,7 +4,7 @@ description: "Use for editable source package. Package generated source, manifes
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kaynak proje,editable project"
   requires: ""

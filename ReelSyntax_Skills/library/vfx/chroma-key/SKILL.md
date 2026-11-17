@@ -4,7 +4,7 @@ description: "Use for chroma key. Key background using sampled colors, edge refi
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yeşil perde,green screen"
   requires: ""

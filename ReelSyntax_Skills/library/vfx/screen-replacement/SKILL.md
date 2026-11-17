@@ -4,7 +4,7 @@ description: "Use for screen replacement. Warp replacement to tracked corners an
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ekran değiştirme,screen replacement"
   requires: ""

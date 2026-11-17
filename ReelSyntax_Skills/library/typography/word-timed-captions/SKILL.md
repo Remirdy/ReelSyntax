@@ -4,7 +4,7 @@ description: "Use for word timed captions. Use word timestamps to highlight acti
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kelime zamanlı altyazı,karaoke"
   requires: ""

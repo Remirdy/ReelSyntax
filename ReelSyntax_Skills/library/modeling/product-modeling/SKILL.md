@@ -4,7 +4,7 @@ description: "Use for product modeling. Model to supplied dimensions and separat
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ürün modelleme,3d ürün"
   requires: ""

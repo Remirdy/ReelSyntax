@@ -7,7 +7,7 @@ import tempfile
 
 ROOT = Path(__file__).resolve().parents[1]
 STAGES = {"plan", "ingest", "build", "edit", "render", "review", "export", "operate"}
-STATUSES = {"guidance", "production-guidance", "implemented", "validated", "deprecated", "blocked"}
+STATUSES = {"guidance", "implemented", "validated", "deprecated", "blocked"}
 ID = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*\Z")
 MAX_SKILL_BYTES = 256_000
 
@@ -220,6 +220,8 @@ def rebuild(root=ROOT):
         if not isinstance(extra, dict) or set(extra) - {"dependencies", "conflicts", "asset_types", "recommended_next", "resources", "requires", "status"}:
             raise ValueError(f"Unknown relation fields: {row['id']}")
         row.update(extra)
+        if row['status'] == 'production-guidance':
+            row['status'] = 'guidance'
         row['resource_sha256'] = {relative: digest(contained_path(root, relative).read_bytes()) for relative in row.get('resources', [])}
         rows.append(row)
     unknown = set(relations) - {row["id"] for row in rows}

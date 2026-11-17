@@ -4,7 +4,7 @@ description: "Use for map graphic. Project geographic data consistently and cred
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "harita grafiği,rota haritası"
   requires: ""

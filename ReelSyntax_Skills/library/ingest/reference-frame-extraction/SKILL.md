@@ -4,7 +4,7 @@ description: "Use for reference frame extraction. Extract selected frames with s
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kare çıkarma,frame extraction"
   requires: ""

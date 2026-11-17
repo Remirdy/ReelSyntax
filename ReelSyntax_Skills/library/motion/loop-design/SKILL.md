@@ -4,7 +4,7 @@ description: "Use for loop design. Match initial and terminal state including ve
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "döngü animasyonu,seamless loop"
   requires: ""

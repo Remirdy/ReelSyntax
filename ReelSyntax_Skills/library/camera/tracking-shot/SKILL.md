@@ -4,7 +4,7 @@ description: "Use for tracking shot. Follow a moving subject with defined offset
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "takip çekimi,tracking camera"
   requires: ""

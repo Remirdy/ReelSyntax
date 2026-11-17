@@ -4,7 +4,7 @@ description: "Use for scene locking. Mark approved scenes or tracks immutable un
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sahne kilidi,scene lock"
   requires: ""

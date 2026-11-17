@@ -4,7 +4,7 @@ description: "Use for resource budget. Estimate memory, disk and time from sampl
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ram disk bütçesi,bellek optimizasyonu"
   requires: ""

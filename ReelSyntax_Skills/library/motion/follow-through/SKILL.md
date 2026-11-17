@@ -4,7 +4,7 @@ description: "Use for follow through. Offset secondary elements according to ine
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "takip hareketi,follow through"
   requires: ""

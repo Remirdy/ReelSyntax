@@ -4,7 +4,7 @@ description: "Use for macro detail reveal. Introduce close-up through focus, cro
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "detay gösterimi,detail reveal"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for creative direction. Define one visual thesis, three design
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yaratıcı yönetmenlik,sanat yönetimi"
   requires: ""

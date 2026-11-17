@@ -4,7 +4,7 @@ description: "Use for art reference board. Collect labeled references by composi
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "moodboard,referans panosu"
   requires: ""

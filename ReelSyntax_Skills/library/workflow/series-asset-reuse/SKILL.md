@@ -4,7 +4,7 @@ description: "Use for series asset reuse. Share immutable world and character as
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "seri asset,aynı dünya"
   requires: ""

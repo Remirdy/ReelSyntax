@@ -4,7 +4,7 @@ description: "Use for editorial design. Use measured type scale, image crops and
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "editoryal tasarım,dergi stili"
   requires: ""

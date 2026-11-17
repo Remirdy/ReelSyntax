@@ -4,7 +4,7 @@ description: "Use for voice cleanup. Analyze noise profile and apply conservativ
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ses temizleme,noise reduction"
   requires: ""

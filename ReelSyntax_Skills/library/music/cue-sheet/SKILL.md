@@ -4,7 +4,7 @@ description: "Use for cue sheet. Record music cues, timecodes, source, rights an
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "müzik çizelgesi,cue sheet"
   requires: ""

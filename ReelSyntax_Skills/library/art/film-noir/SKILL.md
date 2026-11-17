@@ -4,7 +4,7 @@ description: "Use for film noir. Build high-contrast monochrome lighting, occlus
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "film noir,siyah beyaz sinema"
   requires: ""

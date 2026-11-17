@@ -4,7 +4,7 @@ description: "Use for silence audit. Detect unexpected silent intervals and comp
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ses yok,silent audio"
   requires: ""

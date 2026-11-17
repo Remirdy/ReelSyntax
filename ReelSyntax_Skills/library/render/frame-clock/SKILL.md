@@ -4,9 +4,9 @@ description: "Use for frame clock. Use rational frame rate and integer frame ind
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
-  aliases: "kare saati,frame clock"
+  aliases: "kare saati,frame clock,Bildfrequenz,reloj de fotogramas,cadence des images,taxa de quadros"
   requires: ""
 ---
 

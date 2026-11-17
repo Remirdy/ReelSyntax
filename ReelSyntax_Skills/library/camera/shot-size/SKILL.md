@@ -4,7 +4,7 @@ description: "Use for shot size. Choose framing by information need and emotiona
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "plan ölçeği,yakın çekim"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for physics simulation visualization. Select model, units and 
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "fizik simülasyonu,physics"
   requires: ""

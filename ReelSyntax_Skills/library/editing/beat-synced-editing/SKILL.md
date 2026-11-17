@@ -4,7 +4,7 @@ description: "Use for beat synced editing. Extract or accept tempo markers; map 
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ritme göre kurgu,beat sync"
   requires: ""

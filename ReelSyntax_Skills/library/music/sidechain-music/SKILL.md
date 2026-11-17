@@ -4,7 +4,7 @@ description: "Use for sidechain music. Drive controlled gain reduction from appr
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sidechain,müzik kompresyon"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for procedural illustration. Construct reusable original shape
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kodla illüstrasyon,çizim üretimi"
   requires: ""

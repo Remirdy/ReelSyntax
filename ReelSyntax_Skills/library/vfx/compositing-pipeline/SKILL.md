@@ -4,7 +4,7 @@ description: "Use for compositing pipeline. Define layer order, color space, alp
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "compositing,kompozit"
   requires: ""

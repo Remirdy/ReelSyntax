@@ -4,7 +4,7 @@ description: "Use for asset feasibility. Inventory source availability, permissi
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "asset uygunluğu,varlık listesi"
   requires: ""

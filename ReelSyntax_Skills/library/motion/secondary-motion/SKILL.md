@@ -4,7 +4,7 @@ description: "Use for secondary motion. Add restrained accessory or environment 
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ikincil hareket,secondary motion"
   requires: ""

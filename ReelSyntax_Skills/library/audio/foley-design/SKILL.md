@@ -4,7 +4,7 @@ description: "Use for foley design. Design or use licensed synchronized physical
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "foley,ayak sesi"
   requires: ""

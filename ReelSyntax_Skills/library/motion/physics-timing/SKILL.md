@@ -4,7 +4,7 @@ description: "Use for physics timing. Use acceleration, impact spacing and rebou
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "fizik zamanlama,ağırlık hissi"
   requires: ""

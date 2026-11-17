@@ -4,7 +4,7 @@ description: "Use for short film arc. Build a compact visual setup, escalation a
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kısa film,hikaye kurgusu"
   requires: ""

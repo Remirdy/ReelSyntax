@@ -4,7 +4,7 @@ description: "Use for fade through white. Blend through a bounded white interval
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "beyaza geçiş,fade white"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for video upscaling. Choose lightweight resampling or approved
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "video upscale,çözünürlük yükseltme"
   requires: ""

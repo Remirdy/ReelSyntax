@@ -4,7 +4,7 @@ description: "Use for particle 3d. Seed emitters, define world-space velocities 
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "3d parçacık,3d particles"
   requires: ""

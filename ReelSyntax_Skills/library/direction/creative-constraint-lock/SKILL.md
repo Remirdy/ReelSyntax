@@ -4,7 +4,7 @@ description: "Use for creative constraint lock. Convert prohibitions and fixed p
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kısıtlar,kamera sabit,yazı olmasın"
   requires: ""

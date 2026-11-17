@@ -4,7 +4,7 @@ description: "Use for historical animation. Verify period setting, clothing, geo
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "tarihi animasyon,tarih videosu"
   requires: ""

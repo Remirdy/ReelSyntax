@@ -4,7 +4,7 @@ description: "Use for reelsound workflow. Orchestrate sound cue design, determin
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "reelsound,ses motoru"
   requires: ""

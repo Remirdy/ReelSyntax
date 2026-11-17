@@ -4,7 +4,7 @@ description: "Use for mp4 delivery. Select supported codec, pixel format and aud
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "mp4 çıktı,h264"
   requires: ""

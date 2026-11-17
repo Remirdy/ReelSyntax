@@ -4,7 +4,7 @@ description: "Use for hand gesture. Block gesture poses around intent, wrist arc
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "el hareketi,jest"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for license compatibility. Review code, assets, fonts and buil
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "mit uyumluluğu,telif lisans"
   requires: ""

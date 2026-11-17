@@ -4,7 +4,7 @@ description: "Use for mov master. Choose appropriate master codec, color metadat
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "mov,prores"
   requires: ""

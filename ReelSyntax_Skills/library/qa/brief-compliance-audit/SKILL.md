@@ -4,7 +4,7 @@ description: "Use for brief compliance audit. Recheck all hard constraints inclu
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "talimat kontrolü,reelguard"
   requires: ""

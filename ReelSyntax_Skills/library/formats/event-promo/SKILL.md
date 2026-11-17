@@ -4,7 +4,7 @@ description: "Use for event promo. Prioritize event identity, date, time, venue 
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "etkinlik tanıtımı,konser reklamı"
   requires: ""

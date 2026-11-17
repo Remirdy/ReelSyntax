@@ -4,7 +4,7 @@ description: "Use for series episode workflow. Apply series bible, episode conti
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "dizi bölümü,seri üretim"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for walk cycle. Block contact, down, passing and up poses; mat
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yürüme animasyonu,walk cycle"
   requires: ""

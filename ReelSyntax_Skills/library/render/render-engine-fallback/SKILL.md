@@ -4,7 +4,7 @@ description: "Use for render engine fallback. Select equivalent supported route 
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "render motoru alternatifi,fallback"
   requires: ""

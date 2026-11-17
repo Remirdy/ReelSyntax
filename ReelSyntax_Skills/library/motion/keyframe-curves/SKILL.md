@@ -4,7 +4,7 @@ description: "Use for keyframe curves. Set key poses and interpolate with explic
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "keyframe,eğri animasyonu"
   requires: ""

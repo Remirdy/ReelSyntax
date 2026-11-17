@@ -4,7 +4,7 @@ description: "Use for asset deduplication. Compare hashes and optional perceptua
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "asset tekrarları,duplicate files"
   requires: ""

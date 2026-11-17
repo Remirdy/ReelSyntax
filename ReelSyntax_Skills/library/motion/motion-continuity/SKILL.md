@@ -4,7 +4,7 @@ description: "Use for motion continuity. Compare screen direction, phase and spe
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hareket tutarlılığı,animasyon devamlılığı"
   requires: ""

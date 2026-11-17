@@ -4,7 +4,7 @@ description: "Use for website to video. Capture approved public or supplied loca
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "web sitesinden video,website to video"
   requires: ""

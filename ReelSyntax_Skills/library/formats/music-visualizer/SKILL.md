@@ -4,7 +4,7 @@ description: "Use for music visualizer. Map audio features to controlled visual 
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "müzik görselleştirme,visualizer"
   requires: ""

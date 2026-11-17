@@ -4,7 +4,7 @@ description: "Use for geometry proof animation. Stage construction steps and dis
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "geometri ispat,geometry"
   requires: ""

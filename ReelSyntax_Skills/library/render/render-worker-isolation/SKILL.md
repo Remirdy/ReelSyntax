@@ -4,7 +4,7 @@ description: "Use for render worker isolation. Run renderer in bounded workspace
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "render izolasyonu,worker"
   requires: ""

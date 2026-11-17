@@ -4,7 +4,7 @@ description: "Use for pie chart animation. Use only meaningful part-to-whole com
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "pasta grafik,pie chart"
   requires: ""

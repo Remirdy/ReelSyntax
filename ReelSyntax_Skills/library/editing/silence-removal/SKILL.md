@@ -4,7 +4,7 @@ description: "Use for silence removal. Detect candidate silence with thresholds 
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sessizlik temizleme,boşluk kesme"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for gsap timeline. Build paused seekable timeline with explici
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "gsap,timeline animasyonu"
   requires: "gsap"

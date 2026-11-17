@@ -4,7 +4,7 @@ description: "Use for pdf to video. Extract verified text, graphics and page ref
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "pdfden video,pdf to video"
   requires: ""

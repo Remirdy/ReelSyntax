@@ -4,7 +4,7 @@ description: "Use for caption delivery package. Deliver requested burned-in and 
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "altyazı teslimi,subtitle package"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for cloth secondary motion. Drive secondary cloth via rig or l
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kıyafet hareketi,cloth motion"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for exterior staging. Set horizon, terrain, vegetation and arc
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "dış mekan,çevre sahnesi"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for sprite sheet animation. Map frame rectangles and pivots to
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sprite sheet,kare animasyonu"
   requires: ""

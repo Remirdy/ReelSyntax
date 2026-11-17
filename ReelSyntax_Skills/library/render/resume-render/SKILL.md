@@ -4,7 +4,7 @@ description: "Use for resume render. Persist completed frame/job evidence and re
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "render devam,devam ettir"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for animatic. Assemble rough frames and temporary audio at pla
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "animatik,ön kurgu"
   requires: ""

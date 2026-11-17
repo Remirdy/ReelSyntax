@@ -4,7 +4,7 @@ description: "Use for media privacy audit. Inspect authorized assets for sensiti
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "medya gizlilik,kişisel veri"
   requires: ""

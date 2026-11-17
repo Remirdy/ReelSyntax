@@ -4,7 +4,7 @@ description: "Use for skin weighting. Distribute deformation weights smoothly an
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "weight paint,kemik ağırlığı"
   requires: ""

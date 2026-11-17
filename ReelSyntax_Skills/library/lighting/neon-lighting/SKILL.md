@@ -4,7 +4,7 @@ description: "Use for neon lighting. Use emissive colors selectively with plausi
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "neon ışık,cyberpunk"
   requires: ""

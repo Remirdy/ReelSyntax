@@ -4,7 +4,7 @@ description: "Use for contact sheet. Sample representative timestamped frames an
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "contact sheet,görsel özet"
   requires: ""

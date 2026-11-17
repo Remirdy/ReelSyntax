@@ -4,7 +4,7 @@ description: "Use for golden hour lighting. Set low-angle warm key, cooler fill 
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "altın saat,gün batımı"
   requires: ""

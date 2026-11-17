@@ -4,7 +4,7 @@ description: "Use for edl export. Represent supported cuts and reel identifiers 
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "edl,edit decision list"
   requires: ""

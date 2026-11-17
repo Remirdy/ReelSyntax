@@ -4,7 +4,7 @@ description: "Use for shot coverage. Plan master, inserts and reaction coverage 
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çekim kapsamı,alternatif açı"
   requires: ""

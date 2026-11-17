@@ -4,7 +4,7 @@ description: "Use for engine compatibility. Check version, capability, license a
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "motor uyumluluğu,adapter fallback"
   requires: ""

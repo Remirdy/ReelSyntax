@@ -4,7 +4,7 @@ description: "Use for voiceover alignment. Map narration timestamps to scene bea
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "seslendirme senkronu,voice over sync"
   requires: ""

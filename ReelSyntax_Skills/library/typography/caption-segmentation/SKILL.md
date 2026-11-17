@@ -4,7 +4,7 @@ description: "Use for caption segmentation. Segment transcript by phrase and lin
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "altyazı bölme,caption chunks"
   requires: ""

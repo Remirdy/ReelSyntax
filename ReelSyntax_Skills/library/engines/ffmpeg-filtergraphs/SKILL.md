@@ -4,7 +4,7 @@ description: "Use for ffmpeg filtergraphs. Construct typed filter inputs and lab
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ffmpeg filtre,filtergraph"
   requires: "ffmpeg"

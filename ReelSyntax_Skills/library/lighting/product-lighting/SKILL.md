@@ -4,7 +4,7 @@ description: "Use for product lighting. Shape reflections with area sources, fla
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ürün ışığı,stüdyo ışığı"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for slide transition. Move frames along shared axis with consi
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kaydırma geçişi,slide transition"
   requires: ""

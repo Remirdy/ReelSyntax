@@ -4,7 +4,7 @@ description: "Use for facial expression. Animate brows, eyelids and mouth shapes
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yüz ifadesi,mimik"
   requires: ""

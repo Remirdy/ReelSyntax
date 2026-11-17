@@ -4,7 +4,7 @@ description: "Use for ik fk switching. Set IK goals and FK controls with matched
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ik fk,ters kinematik"
   requires: ""

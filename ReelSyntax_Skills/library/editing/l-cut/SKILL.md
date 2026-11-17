@@ -4,7 +4,7 @@ description: "Use for l cut. Carry prior scene audio under the next picture whil
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "l cut,ses sonra bitsin"
   requires: ""

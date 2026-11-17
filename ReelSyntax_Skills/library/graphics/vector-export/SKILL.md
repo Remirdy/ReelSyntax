@@ -4,7 +4,7 @@ description: "Use for vector export. Flatten unsupported effects only when neces
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "vektör çıktı,svg export"
   requires: ""

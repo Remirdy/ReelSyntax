@@ -4,7 +4,7 @@ description: "Use for arpeggio design. Sequence chord tones with intentional dir
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "arpej,arpeggio"
   requires: ""

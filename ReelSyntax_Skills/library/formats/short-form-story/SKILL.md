@@ -4,7 +4,7 @@ description: "Use for short form story. Use one clear premise, concise escalatio
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "shorts,kısa hikaye"
   requires: ""

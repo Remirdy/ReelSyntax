@@ -4,7 +4,7 @@ description: "Use for arc motion. Plot natural curved trajectories with controll
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yay şeklinde hareket,arc motion"
   requires: ""

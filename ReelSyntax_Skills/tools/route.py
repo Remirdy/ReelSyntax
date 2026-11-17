@@ -33,6 +33,9 @@ TEXT_ADDITIONS = {
     'extruded-type', 'lower-thirds', 'word-timed-captions', 'end-card', 'variable-font-animation',
 }
 STEMS = {
+    'kameras': 'kamera', 'schwarzbildern': 'schwarzbilder', 'camaras': 'camara',
+    'fotogramas': 'fotograma', 'negras': 'negra', 'cameras': 'camera',
+    'fixes': 'fixe', 'cadences': 'cadence', 'quadros': 'quadro', 'taxas': 'taxa',
     'kamerayi': 'kamera', 'kameranin': 'kamera', 'kameralar': 'kamera',
     'sahneleri': 'sahne', 'sahneler': 'sahne', 'sahnenin': 'sahne', 'sahneyi': 'sahne',
     'yazilari': 'yazi', 'yazilar': 'yazi',

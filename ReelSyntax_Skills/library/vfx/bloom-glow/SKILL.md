@@ -4,7 +4,7 @@ description: "Use for bloom glow. Threshold highlights in suitable color space a
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "parlama,glow bloom"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for lut application. Verify LUT input/output color space befor
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "lut,renk düzenleme"
   requires: ""

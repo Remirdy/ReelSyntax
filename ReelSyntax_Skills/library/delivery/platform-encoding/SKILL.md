@@ -4,7 +4,7 @@ description: "Use for platform encoding. Check current platform requirements at 
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "platform çıktı,instagram youtube"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for audio equalization. Use targeted frequency adjustments for
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "eq,equalizer"
   requires: ""

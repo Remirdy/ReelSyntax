@@ -4,7 +4,7 @@ description: "Use for rough cut. Assemble selected footage by story beats before
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kaba kurgu,rough cut"
   requires: ""

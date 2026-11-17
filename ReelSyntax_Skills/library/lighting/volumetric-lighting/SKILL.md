@@ -4,7 +4,7 @@ description: "Use for volumetric lighting. Control participating medium density,
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hacimsel ışık,god rays"
   requires: ""

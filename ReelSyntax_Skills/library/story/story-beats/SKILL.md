@@ -4,7 +4,7 @@ description: "Use for story beats. Assign an observable change and frame allocat
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hikaye ritmi,beat sheet"
   requires: ""

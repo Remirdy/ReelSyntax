@@ -4,7 +4,7 @@ description: "Use for shot detection. Detect candidate cuts using frame differen
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sahne tespiti,shot detect"
   requires: ""

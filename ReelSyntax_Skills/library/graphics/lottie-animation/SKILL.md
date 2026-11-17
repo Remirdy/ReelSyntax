@@ -4,7 +4,7 @@ description: "Use for lottie animation. Use supported vector features and test p
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "lottie,bodymovin"
   requires: ""

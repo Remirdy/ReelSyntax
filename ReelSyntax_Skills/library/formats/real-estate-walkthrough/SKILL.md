@@ -4,7 +4,7 @@ description: "Use for real estate walkthrough. Sequence real property footage by
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "emlak turu,ev tanıtımı"
   requires: ""

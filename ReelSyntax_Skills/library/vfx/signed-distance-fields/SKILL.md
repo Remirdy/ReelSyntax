@@ -4,7 +4,7 @@ description: "Use for signed distance fields. Construct 2D and 3D procedural geo
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sdf raymarching,signed distance field,smooth boolean,analitik mesafe alanı"
   requires: ""

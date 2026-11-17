@@ -4,7 +4,7 @@ description: "Use for 2d to 25d. Separate flat artwork into depth layers and ani
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "2.5d,iki buçuk boyut"
   requires: ""

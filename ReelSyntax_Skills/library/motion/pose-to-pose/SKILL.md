@@ -4,7 +4,7 @@ description: "Use for pose to pose. Block extremes, breakdowns and in-betweens w
 metadata:
   category: motion
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "poz animasyonu,pose to pose"
   requires: ""

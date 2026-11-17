@@ -4,7 +4,7 @@ description: "Use for crane shot. Animate vertical and horizontal camera offsets
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "vinç çekimi,crane camera"
   requires: ""

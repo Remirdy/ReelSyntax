@@ -4,7 +4,7 @@ description: "Use for radial reveal. Expand or rotate a radial mask around motiv
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "dairesel geçiş,iris wipe"
   requires: ""

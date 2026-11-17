@@ -4,7 +4,7 @@ description: "Use for premiere interchange. Choose verified XML or supported int
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "premiere pro,kurgu aktarımı"
   requires: ""

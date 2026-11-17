@@ -4,7 +4,7 @@ description: "Use for color management export. Preserve or deliberately transfor
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "renk yönetimi,rec709"
   requires: ""

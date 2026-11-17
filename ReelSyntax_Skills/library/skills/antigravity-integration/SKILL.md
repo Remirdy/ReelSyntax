@@ -4,7 +4,7 @@ description: "Use for antigravity integration. Verify current host skill convent
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "antigravity skill,antigravity entegrasyon"
   requires: ""

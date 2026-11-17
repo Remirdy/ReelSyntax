@@ -4,7 +4,7 @@ description: "Use for cross dissolve. Blend adjacent shots over explicit shared 
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çapraz çözünme,dissolve"
   requires: ""

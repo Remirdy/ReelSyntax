@@ -4,7 +4,7 @@ description: "Use for visual language bible. Specify shape vocabulary, texture, 
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "görsel dil,stil rehberi"
   requires: ""

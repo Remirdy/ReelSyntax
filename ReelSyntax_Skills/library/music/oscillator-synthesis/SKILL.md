@@ -4,7 +4,7 @@ description: "Use for oscillator synthesis. Generate band-limited or suitably sa
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "osilatör,synthesis"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for ui card animation. Design card choreography using consiste
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "arayüz kartı,ui animation"
   requires: ""

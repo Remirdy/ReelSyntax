@@ -4,7 +4,7 @@ description: "Use for video denoising. Apply conservative spatial or temporal fi
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "video gürültü azaltma,denoise"
   requires: ""

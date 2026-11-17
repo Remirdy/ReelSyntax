@@ -4,7 +4,7 @@ description: "Use for j cut. Start outgoing scene's successor audio before its p
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "j cut,ses önce girsin"
   requires: ""

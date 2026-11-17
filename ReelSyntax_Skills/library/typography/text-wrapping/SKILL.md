@@ -4,7 +4,7 @@ description: "Use for text wrapping. Measure rendered glyph bounding boxes and w
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "satır kayması,yazı taşması"
   requires: ""

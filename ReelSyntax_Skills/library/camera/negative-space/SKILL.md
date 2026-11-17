@@ -4,7 +4,7 @@ description: "Use for negative space. Reserve meaningful breathing room or capti
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "negatif alan,boşluk"
   requires: ""

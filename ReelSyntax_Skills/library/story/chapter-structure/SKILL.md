@@ -4,7 +4,7 @@ description: "Use for chapter structure. Divide long material into chapters with
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "bölümler,uzun video"
   requires: ""

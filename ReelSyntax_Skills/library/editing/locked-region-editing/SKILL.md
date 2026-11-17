@@ -4,7 +4,7 @@ description: "Use for locked region editing. Protect locked regions and tracks w
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "alt bar sabit,sabit katman"
   requires: ""

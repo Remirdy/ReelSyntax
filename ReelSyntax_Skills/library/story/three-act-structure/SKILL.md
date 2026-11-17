@@ -4,7 +4,7 @@ description: "Use for three act structure. Map inciting event, turning points, c
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "üç perde,hikaye yapısı"
   requires: ""

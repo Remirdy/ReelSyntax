@@ -4,7 +4,7 @@ description: "Use for light wrap. Sample background edge colors and apply subtle
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ışık sarma,light wrap"
   requires: ""

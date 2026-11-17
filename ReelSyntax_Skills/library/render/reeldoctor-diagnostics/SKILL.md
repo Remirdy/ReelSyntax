@@ -4,7 +4,7 @@ description: "Use for reeldoctor diagnostics. Probe installed tools, versions, d
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "reeldoctor,sistem kontrolü"
   requires: ""

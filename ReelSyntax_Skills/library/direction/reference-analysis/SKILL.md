@@ -4,7 +4,7 @@ description: "Use for reference analysis. Sample shots, measure cuts, infer came
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "referans video,örnek video"
   requires: ""

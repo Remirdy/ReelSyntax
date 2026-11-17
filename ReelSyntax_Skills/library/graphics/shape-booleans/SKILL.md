@@ -4,7 +4,7 @@ description: "Use for shape booleans. Use union, difference and intersection on 
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "şekil birleşimi,boolean 2d"
   requires: ""

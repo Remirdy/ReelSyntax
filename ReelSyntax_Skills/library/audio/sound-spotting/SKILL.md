@@ -4,7 +4,7 @@ description: "Use for sound spotting. Mark dialogue, ambience, Foley, music and 
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ses planı,sound spotting"
   requires: ""

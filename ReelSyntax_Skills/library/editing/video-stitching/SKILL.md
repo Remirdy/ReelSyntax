@@ -4,7 +4,7 @@ description: "Use for video stitching. Normalize streams when necessary; preserv
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "video birleştir,concat"
   requires: ""

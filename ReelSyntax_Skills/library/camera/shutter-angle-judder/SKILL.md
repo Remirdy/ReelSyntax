@@ -4,7 +4,7 @@ description: "Use for shutter angle and pan judder validation. Enforce 180-degre
 metadata:
   category: camera
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "shutter angle,pan judder,180 derece obtüratör,titreme kontrolü"
   requires: ""

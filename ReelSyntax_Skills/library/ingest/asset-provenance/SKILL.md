@@ -4,7 +4,7 @@ description: "Use for asset provenance. Record source, creator, acquisition, mod
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kaynak takibi,asset provenance"
   requires: ""

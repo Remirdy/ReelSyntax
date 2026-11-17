@@ -4,7 +4,7 @@ description: "Use for music brief. Specify mood, tempo, instrumentation, density
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "müzik seçimi,fon müziği"
   requires: ""

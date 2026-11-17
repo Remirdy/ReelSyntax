@@ -4,7 +4,7 @@ description: "Use for figma to video. Use authorized exports or connector tools 
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "figmadan video,figma tasarım"
   requires: ""

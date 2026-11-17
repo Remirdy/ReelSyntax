@@ -4,7 +4,7 @@ description: "Use for procedural score review. Review original score against pic
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "müzik kontrolü,score review"
   requires: ""

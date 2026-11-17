@@ -4,7 +4,7 @@ description: "Use for leitmotif continuity. Reuse an original motif with variati
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "leitmotif,karakter teması"
   requires: ""

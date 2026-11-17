@@ -4,7 +4,7 @@ description: "Use for tone calibration. Define emotional start/end and beats; ma
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "duygu,video tonu"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for font selection. Select licensed typefaces by tone, script 
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "font seçimi,yazı tipi"
   requires: ""

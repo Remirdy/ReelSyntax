@@ -4,7 +4,7 @@ description: "Use for transcript editing. Map transcript word times to source ra
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "transkriptten kes,metinden kurgu"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for alpha compositing 2d. Choose compositing order and premult
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "alfa birleştirme,blend mode"
   requires: ""

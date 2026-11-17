@@ -4,7 +4,7 @@ description: "Use for project memory. Persist approved facts and decisions in sc
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "proje hafızası,checkpoint"
   requires: ""

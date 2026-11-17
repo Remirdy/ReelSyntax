@@ -4,7 +4,7 @@ description: "Use for hardware encoding. Check encoder capability and choose com
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "donanım encoder,nvenc videotoolbox"
   requires: ""

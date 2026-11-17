@@ -4,7 +4,7 @@ description: "Use for webm export. Encode using compatible VPx or AV1 options as
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "webm,vp9"
   requires: ""

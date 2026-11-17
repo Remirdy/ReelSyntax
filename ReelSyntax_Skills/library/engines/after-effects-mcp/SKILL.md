@@ -4,7 +4,7 @@ description: "Use for after effects mcp. Inspect actual tool schemas, project se
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "after effects mcp,ae mcp"
   requires: "after-effects-mcp"

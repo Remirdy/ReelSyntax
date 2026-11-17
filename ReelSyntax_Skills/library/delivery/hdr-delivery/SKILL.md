@@ -4,7 +4,7 @@ description: "Use for hdr delivery. Use verified HDR pipeline only when display,
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hdr,pq hlg"
   requires: ""

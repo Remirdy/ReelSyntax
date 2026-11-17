@@ -4,7 +4,7 @@ description: "Use for psd to video. Inspect PSD layer structure, groups, text an
 metadata:
   category: capture
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "psd animasyon,photoshop video"
   requires: ""

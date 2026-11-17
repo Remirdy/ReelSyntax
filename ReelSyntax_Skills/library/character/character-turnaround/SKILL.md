@@ -4,7 +4,7 @@ description: "Use for character turnaround. Produce aligned front, side, back an
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "karakter dönüş,turnaround"
   requires: ""

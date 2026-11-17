@@ -4,7 +4,7 @@ description: "Use for type scale. Define hierarchy with bounded sizes based on o
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yazı boyutu,tipografi ölçeği"
   requires: ""

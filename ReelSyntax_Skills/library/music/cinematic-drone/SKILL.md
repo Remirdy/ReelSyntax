@@ -4,7 +4,7 @@ description: "Use for cinematic drone. Layer slow evolving tones with dissonance
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "drone müzik,atmosferik pad"
   requires: ""

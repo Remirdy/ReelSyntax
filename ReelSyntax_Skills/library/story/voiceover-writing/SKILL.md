@@ -4,7 +4,7 @@ description: "Use for voiceover writing. Write spoken language with timed phrase
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "seslendirme metni,anlatıcı metni"
   requires: ""

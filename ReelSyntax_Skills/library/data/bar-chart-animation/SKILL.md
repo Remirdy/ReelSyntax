@@ -4,7 +4,7 @@ description: "Use for bar chart animation. Animate values from justified baselin
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çubuk grafik,bar chart"
   requires: ""

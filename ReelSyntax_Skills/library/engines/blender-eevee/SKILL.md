@@ -4,7 +4,7 @@ description: "Use for blender eevee. Configure installed Eevee version for fast 
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "eevee,blender hızlı render"
   requires: "blender"

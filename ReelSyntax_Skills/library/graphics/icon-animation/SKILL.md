@@ -4,7 +4,7 @@ description: "Use for icon animation. Animate symbolic states with optical align
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ikon animasyonu,icon motion"
   requires: ""

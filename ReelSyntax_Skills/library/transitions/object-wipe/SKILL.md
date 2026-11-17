@@ -4,7 +4,7 @@ description: "Use for object wipe. Use foreground object to cover seam between m
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "nesneyle geçiş,object wipe"
   requires: ""

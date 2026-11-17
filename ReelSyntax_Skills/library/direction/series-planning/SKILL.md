@@ -4,7 +4,7 @@ description: "Use for series planning. Create a reusable series bible, episode s
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "seri planı,bölüm planı"
   requires: ""

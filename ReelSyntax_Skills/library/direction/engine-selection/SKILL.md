@@ -4,7 +4,7 @@ description: "Use for engine selection. Score candidates by output type, install
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "motor seçimi,render motoru"
   requires: ""

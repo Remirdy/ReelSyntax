@@ -4,7 +4,7 @@ description: "Use for headless OffscreenCanvas and WebCodecs frame synthesis. Re
 metadata:
   category: engines
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "webcodecs render,offscreencanvas,tarayıcı kare sentezi"
   requires: "browser"

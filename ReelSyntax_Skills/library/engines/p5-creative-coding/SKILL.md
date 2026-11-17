@@ -4,7 +4,7 @@ description: "Use for p5 creative coding. Use seeded random and explicit frame s
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "p5.js,p5js"
   requires: "p5"

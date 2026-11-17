@@ -4,7 +4,7 @@ description: "Use for vector path trimming. Animate path stroke dash or measured
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "çizgi çizilme,stroke reveal"
   requires: ""

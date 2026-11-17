@@ -4,7 +4,7 @@ description: "Use for procedural riser. Build rising pitch, noise and intensity 
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "riser,yükselen ses"
   requires: ""

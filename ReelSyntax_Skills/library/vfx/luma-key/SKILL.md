@@ -4,7 +4,7 @@ description: "Use for luma key. Derive alpha from luminance with controlled thre
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "parlaklık maskesi,luma key"
   requires: ""

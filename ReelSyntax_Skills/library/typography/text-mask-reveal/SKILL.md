@@ -4,7 +4,7 @@ description: "Use for text mask reveal. Animate clipping geometry independently 
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "yazı maskesi,text mask"
   requires: ""

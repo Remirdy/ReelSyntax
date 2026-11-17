@@ -4,7 +4,7 @@ description: "Use for interior staging. Arrange room geometry, props and sightli
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "iç mekan,sınıf ortamı"
   requires: ""

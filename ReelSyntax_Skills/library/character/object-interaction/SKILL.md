@@ -4,7 +4,7 @@ description: "Use for object interaction. Use contact anchors and parent-switch 
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "nesne tutma,prop interaction"
   requires: ""

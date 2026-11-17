@@ -4,7 +4,7 @@ description: "Use for teacher tribute. Stage authentic school details, consisten
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "öğretmenler günü,öğretmen videosu"
   requires: ""

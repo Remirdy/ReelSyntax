@@ -4,7 +4,7 @@ description: "Use for skill token budget. Limit initial discovery and per-stage 
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "token optimizasyonu,context budget"
   requires: ""

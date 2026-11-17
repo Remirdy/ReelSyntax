@@ -4,7 +4,7 @@ description: "Use for reelscript validation. Validate required fields, reference
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "şema doğrulama,reelscript validation"
   requires: ""

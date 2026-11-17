@@ -4,7 +4,7 @@ description: "Use for video stabilization. Estimate motion and apply smoothed tr
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "video sabitleme,stabilize"
   requires: ""

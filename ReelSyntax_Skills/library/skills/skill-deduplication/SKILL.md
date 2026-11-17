@@ -4,7 +4,7 @@ description: "Use for skill deduplication. Compare task intent, operation and ou
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "skill tekrarları,benzer skill"
   requires: ""

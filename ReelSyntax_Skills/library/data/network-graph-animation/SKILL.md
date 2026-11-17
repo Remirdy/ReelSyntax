@@ -4,7 +4,7 @@ description: "Use for network graph animation. Lay out nodes and edges determini
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ağ grafiği,graph animation"
   requires: ""

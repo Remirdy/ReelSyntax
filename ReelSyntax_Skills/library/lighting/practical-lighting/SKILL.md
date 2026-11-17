@@ -4,7 +4,7 @@ description: "Use for practical lighting. Motivate light sources from visible fi
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "pratik ışık,mekan lambası"
   requires: ""

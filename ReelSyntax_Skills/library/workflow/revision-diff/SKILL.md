@@ -4,7 +4,7 @@ description: "Use for revision diff. Compare normalized manifests and assets; id
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "reeldiff,versiyon farkı"
   requires: ""

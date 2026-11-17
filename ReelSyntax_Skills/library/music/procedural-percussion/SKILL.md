@@ -4,7 +4,7 @@ description: "Use for procedural percussion. Build seeded rhythmic patterns with
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "davul ritmi,percussion"
   requires: ""

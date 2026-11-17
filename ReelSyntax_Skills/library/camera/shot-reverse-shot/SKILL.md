@@ -4,7 +4,7 @@ description: "Use for shot reverse shot. Establish action axis and keep opposing
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "karşı çekim,180 derece"
   requires: ""

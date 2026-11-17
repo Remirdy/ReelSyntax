@@ -4,7 +4,7 @@ description: "Use for linear algebra visualization. Animate vectors and transfor
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "lineer cebir,vektör matris"
   requires: ""

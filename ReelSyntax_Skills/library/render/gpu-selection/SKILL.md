@@ -4,7 +4,7 @@ description: "Use for gpu selection. Probe actual device and codec/engine suppor
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "gpu seçimi,ekran kartı"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for filter sweep. Animate filter cutoff and resonance within s
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "filtre sweep,lowpass sweep"
   requires: ""

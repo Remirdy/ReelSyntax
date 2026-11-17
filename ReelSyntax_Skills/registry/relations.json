@@ -18,7 +18,8 @@
     ],
     "status": "validated",
     "resources": [
-      "library/render/partial-render/references/selective-revision.md"
+      "library/render/partial-render/references/selective-revision.md",
+      "library/render/partial-render/references/project-check.md"
     ]
   },
   "resume-render": {
@@ -33,12 +34,14 @@
   "render-cache": {
     "status": "validated",
     "resources": [
-      "library/render/render-cache/references/disk-budget.md"
+      "library/render/render-cache/references/disk-budget.md",
+      "library/render/render-cache/references/project-check.md"
     ]
   },
   "frame-clock": {
     "resources": [
-      "library/render/frame-clock/references/exact-timing.md"
+      "library/render/frame-clock/references/exact-timing.md",
+      "library/render/frame-clock/references/project-check.md"
     ],
     "status": "validated"
   },
@@ -161,7 +164,10 @@
     "status": "validated"
   },
   "font-render-audit": {
-    "status": "validated"
+    "status": "validated",
+    "resources": [
+      "library/qa/font-render-audit/references/project-check.md"
+    ]
   },
   "contrast-audit": {
     "status": "validated"
@@ -173,7 +179,10 @@
     "requires": [
       "ffmpeg"
     ],
-    "status": "validated"
+    "status": "validated",
+    "resources": [
+      "library/qa/black-frame-detection/references/project-check.md"
+    ]
   },
   "freeze-detection": {
     "requires": [
@@ -195,7 +204,10 @@
       "ebu-r128-dialogue-gating",
       "true-peak-limiting"
     ],
-    "status": "validated"
+    "status": "validated",
+    "resources": [
+      "library/audio/loudness-normalization/references/project-check.md"
+    ]
   },
   "audio-sync-audit": {
     "requires": [
@@ -385,7 +397,8 @@
     ],
     "status": "validated",
     "resources": [
-      "library/delivery/otio-export/references/core-master-interchange.md"
+      "library/delivery/otio-export/references/core-master-interchange.md",
+      "library/delivery/otio-export/references/project-check.md"
     ],
     "requires": []
   },
@@ -399,7 +412,8 @@
     ],
     "status": "validated",
     "resources": [
-      "library/delivery/fcpxml-export/references/core-fcpxml.md"
+      "library/delivery/fcpxml-export/references/core-fcpxml.md",
+      "library/delivery/fcpxml-export/references/project-check.md"
     ]
   },
   "subtitle-format-export": {
@@ -466,12 +480,14 @@
   },
   "j-cut": {
     "resources": [
-      "library/editing/j-cut/references/core-source-audio.md"
+      "library/editing/j-cut/references/core-source-audio.md",
+      "library/editing/j-cut/references/project-check.md"
     ]
   },
   "l-cut": {
     "resources": [
-      "library/editing/l-cut/references/core-source-tail.md"
+      "library/editing/l-cut/references/core-source-tail.md",
+      "library/editing/l-cut/references/project-check.md"
     ]
   },
   "shader-effects": {
@@ -481,7 +497,103 @@
   },
   "ffmpeg-trimming": {
     "resources": [
-      "library/engines/ffmpeg-trimming/references/core-footage.md"
+      "library/engines/ffmpeg-trimming/references/core-footage.md",
+      "library/engines/ffmpeg-trimming/references/project-check.md"
+    ]
+  },
+  "aspect-ratio-export": {
+    "resources": [
+      "library/delivery/aspect-ratio-export/references/project-check.md"
+    ]
+  },
+  "platform-encoding": {
+    "resources": [
+      "library/delivery/platform-encoding/references/project-check.md"
+    ]
+  },
+  "word-timed-captions": {
+    "resources": [
+      "library/typography/word-timed-captions/references/project-check.md"
+    ]
+  },
+  "flash-safety": {
+    "resources": [
+      "library/qa/flash-safety/references/project-check.md"
+    ]
+  },
+  "beat-synced-editing": {
+    "resources": [
+      "library/editing/beat-synced-editing/references/project-check.md"
+    ]
+  },
+  "template-parameterization": {
+    "resources": [
+      "library/workflow/template-parameterization/references/project-check.md"
+    ]
+  },
+  "poster-thumbnail": {
+    "resources": [
+      "library/delivery/poster-thumbnail/references/project-check.md"
+    ]
+  },
+  "gif-preview": {
+    "resources": [
+      "library/delivery/gif-preview/references/project-check.md"
+    ]
+  },
+  "webm-export": {
+    "resources": [
+      "library/delivery/webm-export/references/project-check.md"
+    ]
+  },
+  "mp4-delivery": {
+    "resources": [
+      "library/delivery/mp4-delivery/references/project-check.md"
+    ]
+  },
+  "loop-design": {
+    "resources": [
+      "library/motion/loop-design/references/project-check.md"
+    ]
+  },
+  "batch-production": {
+    "resources": [
+      "library/workflow/batch-production/references/project-check.md"
+    ]
+  },
+  "render-queue": {
+    "resources": [
+      "library/render/render-queue/references/project-check.md"
+    ]
+  },
+  "audio-stem-export": {
+    "resources": [
+      "library/music/audio-stem-export/references/project-check.md"
+    ]
+  },
+  "caption-delivery-package": {
+    "resources": [
+      "library/delivery/caption-delivery-package/references/project-check.md"
+    ]
+  },
+  "multilingual-variants": {
+    "resources": [
+      "library/workflow/multilingual-variants/references/project-check.md"
+    ]
+  },
+  "brand-kit-workflow": {
+    "resources": [
+      "library/workflow/brand-kit-workflow/references/project-check.md"
+    ]
+  },
+  "resolve-interchange": {
+    "resources": [
+      "library/delivery/resolve-interchange/references/project-check.md"
+    ]
+  },
+  "premiere-interchange": {
+    "resources": [
+      "library/delivery/premiere-interchange/references/project-check.md"
     ]
   }
 }

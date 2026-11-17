@@ -4,7 +4,7 @@ description: "Use for night lighting. Separate motivated pools of light from dar
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "gece ışığı,gece sahnesi"
   requires: ""

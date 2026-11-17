@@ -4,7 +4,7 @@ description: "Use for cloth material. Use weave-scale texture, roughness and sub
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kumaş materyal,tekstil"
   requires: ""

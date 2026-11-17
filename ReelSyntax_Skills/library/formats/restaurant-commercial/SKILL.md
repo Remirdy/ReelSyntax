@@ -4,7 +4,7 @@ description: "Use for restaurant commercial. Build appetizing food coverage, cle
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "restoran reklamı,yemek videosu"
   requires: ""

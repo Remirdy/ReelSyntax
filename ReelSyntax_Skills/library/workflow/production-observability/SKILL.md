@@ -4,7 +4,7 @@ description: "Use for production observability. Record step IDs, timings, tool v
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "işlem kayıtları,production log"
   requires: ""

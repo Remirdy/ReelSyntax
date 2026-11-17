@@ -4,7 +4,7 @@ description: "Use for kerning tracking. Adjust glyph spacing and word spacing op
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "harf aralığı,kerning"
   requires: ""

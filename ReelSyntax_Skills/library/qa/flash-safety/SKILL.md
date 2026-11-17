@@ -4,7 +4,7 @@ description: "Use for flash safety. Analyze rapid luminance/color changes and li
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "flaş güvenliği,ışık çakması"
   requires: ""

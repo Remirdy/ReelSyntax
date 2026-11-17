@@ -4,7 +4,7 @@ description: "Use for holiday campaign. Design culturally accurate motifs and co
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "bayram videosu,özel gün kampanyası"
   requires: ""

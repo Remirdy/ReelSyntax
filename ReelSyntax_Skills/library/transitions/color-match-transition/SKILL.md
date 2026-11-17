@@ -4,7 +4,7 @@ description: "Use for color match transition. Use shared dominant hue or luminan
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "renkle geçiş,color match"
   requires: ""

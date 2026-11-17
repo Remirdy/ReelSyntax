@@ -4,7 +4,7 @@ description: "Use for threejs animation. Set animation mixer or explicit interpo
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "threejs animation,three.js animasyon"
   requires: "threejs"

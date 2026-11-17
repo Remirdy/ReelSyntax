@@ -4,7 +4,7 @@ description: "Use for freeze detection. Measure frame differences over windows a
 metadata:
   category: qa
   stage: review
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "donmuş kare,freeze detection"
   requires: ""

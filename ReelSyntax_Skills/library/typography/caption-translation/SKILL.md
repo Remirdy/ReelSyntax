@@ -4,7 +4,7 @@ description: "Use for caption translation. Translate meaning, then resegment for
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "altyazı çeviri,çok dilli altyazı"
   requires: ""

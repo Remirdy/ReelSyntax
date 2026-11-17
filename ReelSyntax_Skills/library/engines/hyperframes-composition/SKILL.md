@@ -4,7 +4,7 @@ description: "Use for hyperframes composition. Inspect installed version composi
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hyperframes,html video"
   requires: "hyperframes"

@@ -4,7 +4,7 @@ description: "Use for collage art. Layer licensed cutouts with deliberate scale,
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kolaj,arşiv kolaj"
   requires: ""

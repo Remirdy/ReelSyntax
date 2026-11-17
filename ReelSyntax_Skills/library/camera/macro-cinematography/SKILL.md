@@ -4,7 +4,7 @@ description: "Use for macro cinematography. Use shallow depth carefully, scale l
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "makro çekim,çok yakın"
   requires: ""

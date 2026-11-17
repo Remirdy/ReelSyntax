@@ -4,7 +4,7 @@ description: "Use for transparent video. Choose container and codec with verifie
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "şeffaf video,alpha video"
   requires: ""

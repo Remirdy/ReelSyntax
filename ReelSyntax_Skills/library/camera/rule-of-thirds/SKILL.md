@@ -4,7 +4,7 @@ description: "Use for rule of thirds. Place subject or horizon on intentional an
 metadata:
   category: camera
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "üçler kuralı,kompozisyon"
   requires: ""

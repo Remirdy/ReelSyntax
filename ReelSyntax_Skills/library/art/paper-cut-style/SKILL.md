@@ -4,7 +4,7 @@ description: "Use for paper cut style. Stage layered cutout silhouettes with sli
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kağıt kesme,paper cut"
   requires: ""

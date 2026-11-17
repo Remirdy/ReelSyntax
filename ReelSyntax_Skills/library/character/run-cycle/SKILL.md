@@ -4,7 +4,7 @@ description: "Use for run cycle. Plan flight phases, lean, cadence and root traj
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "koşma animasyonu,run cycle"
   requires: ""

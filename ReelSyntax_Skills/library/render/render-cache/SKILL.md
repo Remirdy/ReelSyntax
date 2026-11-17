@@ -4,7 +4,7 @@ description: "Use for render cache. Key artifacts by canonical inputs, versions,
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "render önbelleği,cache"
   requires: ""

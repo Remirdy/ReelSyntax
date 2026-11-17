@@ -4,7 +4,7 @@ description: "Use for blender geometry nodes. Construct version-compatible node 
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "geometry nodes,geometri düğümleri"
   requires: "blender"

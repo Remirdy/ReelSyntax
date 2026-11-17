@@ -4,7 +4,7 @@ description: "Use for technical blueprint. Use dimension lines, consistent strok
 metadata:
   category: art
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "teknik çizim,blueprint"
   requires: ""

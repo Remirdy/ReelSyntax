@@ -4,7 +4,7 @@ description: "Use for planar tracking. Track planar feature correspondences and 
 metadata:
   category: vfx
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "planar tracking,ekran takip"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for bassline design. Write bass movement in harmonic context a
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "bas çizgisi,bassline"
   requires: ""

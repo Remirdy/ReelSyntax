@@ -4,7 +4,7 @@ description: "Use for poster thumbnail. Select representative image and compose 
 metadata:
   category: delivery
   stage: export
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "thumbnail,video kapak"
   requires: ""

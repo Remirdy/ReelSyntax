@@ -4,7 +4,7 @@ description: "Use for social media reel. Compose vertical story with a strong op
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "reels,dikey sosyal medya"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for word reveal. Reveal words at timed anchors without shiftin
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kelime kelime,word reveal"
   requires: ""

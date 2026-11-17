@@ -4,7 +4,7 @@ description: "Use for release documentation. Document only verified features, se
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "readme,release dokümantasyon"
   requires: ""

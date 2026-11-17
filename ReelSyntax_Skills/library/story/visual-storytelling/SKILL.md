@@ -4,7 +4,7 @@ description: "Use for visual storytelling. Communicate through observable action
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "görsel hikaye,konuşmasız"
   requires: ""

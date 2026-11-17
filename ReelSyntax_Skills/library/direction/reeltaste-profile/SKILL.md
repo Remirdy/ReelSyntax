@@ -4,7 +4,7 @@ description: "Use for reeltaste profile. Store explicit approved/rejected prefer
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "tercih hafızası,kişisel stil"
   requires: ""

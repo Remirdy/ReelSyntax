@@ -4,7 +4,7 @@ description: "Use for audience mapping. Map audience knowledge, context, expecta
 metadata:
   category: direction
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "hedef kitle,izleyici"
   requires: ""

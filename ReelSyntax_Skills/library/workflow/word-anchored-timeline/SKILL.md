@@ -4,7 +4,7 @@ description: "Use for word anchored timeline. Resolve cue IDs against transcript
 metadata:
   category: workflow
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kelimeye bağlı animasyon,word anchored"
   requires: ""

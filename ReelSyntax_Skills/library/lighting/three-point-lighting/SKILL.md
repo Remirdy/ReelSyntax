@@ -4,7 +4,7 @@ description: "Use for three point lighting. Set key, fill and rim roles with mot
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "üç nokta ışık,key fill rim"
   requires: ""

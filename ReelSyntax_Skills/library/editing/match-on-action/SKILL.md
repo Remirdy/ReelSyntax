@@ -4,7 +4,7 @@ description: "Use for match on action. Cut at compatible action phases, screen d
 metadata:
   category: editing
   stage: edit
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "harekette kesme,match action"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for data structure animation. Render explicit node identities,
 metadata:
   category: data
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "veri yapıları,linked list bst"
   requires: ""

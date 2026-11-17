@@ -4,7 +4,7 @@ description: "Use for prop modeling. Build reusable prop with sensible origin, s
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "eşya modelleme,aksesuar"
   requires: ""

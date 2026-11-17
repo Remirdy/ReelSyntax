@@ -4,7 +4,7 @@ description: "Use for product turntable. Rotate product at constant or shaped an
 metadata:
   category: transitions
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "ürün döndürme,turntable"
   requires: ""

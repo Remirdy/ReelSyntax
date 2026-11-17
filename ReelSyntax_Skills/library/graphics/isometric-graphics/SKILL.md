@@ -4,7 +4,7 @@ description: "Use for isometric graphics. Construct consistent axes, scale and p
 metadata:
   category: graphics
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "izometrik,izometrik çizim"
   requires: ""

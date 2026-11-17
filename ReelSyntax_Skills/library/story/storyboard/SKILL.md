@@ -4,7 +4,7 @@ description: "Use for storyboard. Design key panels with framing, staging and mo
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "storyboard,sahne çizelgesi"
   requires: ""

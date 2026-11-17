@@ -4,7 +4,7 @@ description: "Use for skill versioning. Version metadata and behavior; migrate I
 metadata:
   category: skills
   stage: operate
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "skill sürümü,skill updates"
   requires: ""

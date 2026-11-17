@@ -4,7 +4,7 @@ description: "Use for source verification. Use primary sources where possible, r
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kaynak doğrulama,fact check"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for audio stem export. Export synchronized individual bus stem
 metadata:
   category: music
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "stem export,ses kanalı çıktı"
   requires: ""

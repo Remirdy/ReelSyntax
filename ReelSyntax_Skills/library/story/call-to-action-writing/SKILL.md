@@ -4,7 +4,7 @@ description: "Use for call to action writing. Write a specific feasible next act
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "harekete geçirici mesaj,cta"
   requires: ""

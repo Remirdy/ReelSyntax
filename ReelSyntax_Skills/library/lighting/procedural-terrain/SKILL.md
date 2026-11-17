@@ -4,7 +4,7 @@ description: "Use for procedural terrain. Generate terrain from seeded height da
 metadata:
   category: lighting
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "arazi,terrain"
   requires: ""

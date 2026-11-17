@@ -4,7 +4,7 @@ description: "Use for pixi rendering. Use texture atlases, explicit update clock
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "pixijs,pixi.js"
   requires: "pixi"

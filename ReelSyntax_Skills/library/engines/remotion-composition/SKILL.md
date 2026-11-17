@@ -4,7 +4,7 @@ description: "Use for remotion composition. Use installed Remotion APIs with fra
 metadata:
   category: engines
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "remotion,react video"
   requires: "remotion"

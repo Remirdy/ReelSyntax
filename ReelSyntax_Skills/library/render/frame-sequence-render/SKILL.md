@@ -4,7 +4,7 @@ description: "Use for frame sequence render. Render indexed lossless frames with
 metadata:
   category: render
   stage: render
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "png sequence,kare dizisi"
   requires: ""

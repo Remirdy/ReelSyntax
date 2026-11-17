@@ -4,7 +4,7 @@ description: "Use for audio reactive animation. Map measured bands or envelope t
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "sese duyarlı,audio reactive"
   requires: ""

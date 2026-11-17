@@ -4,7 +4,7 @@ description: "Use for blink animation. Place asymmetric or natural blink interva
 metadata:
   category: character
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "göz kırpma,blink"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for long form youtube. Structure chapters, narrative questions
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "youtube uzun video,youtube içerik"
   requires: ""

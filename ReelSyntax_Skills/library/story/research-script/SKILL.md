@@ -4,7 +4,7 @@ description: "Use for research script. Map factual claims to reliable sources an
 metadata:
   category: story
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kaynaklı senaryo,araştırma senaryosu"
   requires: ""

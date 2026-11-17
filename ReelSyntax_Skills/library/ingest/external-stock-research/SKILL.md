@@ -4,7 +4,7 @@ description: "Use for external stock research. Search public catalogs for useful
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "internetten stok,telifli stok"
   requires: ""

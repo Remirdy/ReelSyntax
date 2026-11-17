@@ -4,7 +4,7 @@ description: "Use for podcast clip. Select self-contained excerpt and preserve s
 metadata:
   category: formats
   stage: plan
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "podcast kesiti,podcast reel"
   requires: ""

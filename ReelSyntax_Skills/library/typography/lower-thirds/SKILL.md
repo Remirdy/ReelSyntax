@@ -4,7 +4,7 @@ description: "Use for lower thirds. Reserve speaker label area with consistent e
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "alt bant,lower third"
   requires: ""

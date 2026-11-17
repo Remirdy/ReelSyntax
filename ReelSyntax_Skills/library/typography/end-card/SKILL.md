@@ -4,7 +4,7 @@ description: "Use for end card. Compose logo, CTA and required copy in a restrai
 metadata:
   category: typography
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "kapanış kartı,end slate"
   requires: ""

@@ -4,7 +4,7 @@ description: "Use for proxy media. Generate lightweight edit proxies with preser
 metadata:
   category: ingest
   stage: ingest
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "proxy video,düşük çözünürlük kopya"
   requires: ""

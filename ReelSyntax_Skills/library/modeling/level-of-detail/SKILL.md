@@ -4,7 +4,7 @@ description: "Use for level of detail. Assign geometry tiers by screen size and 
 metadata:
   category: modeling
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "lod,detay seviyesi"
   requires: ""

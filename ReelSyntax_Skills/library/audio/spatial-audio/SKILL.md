@@ -4,7 +4,7 @@ description: "Use for spatial audio. Place sources by screen position and narrat
 metadata:
   category: audio
   stage: build
-  status: production-guidance
+  status: guidance
   version: "2.0.0"
   aliases: "mekansal ses,stereo pan"
   requires: ""
