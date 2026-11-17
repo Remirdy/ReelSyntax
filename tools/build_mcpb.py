@@ -1,9 +1,15 @@
 import argparse
 import json
+import tomllib
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def project_version():
+    with (ROOT / 'pyproject.toml').open('rb') as handle:
+        return tomllib.load(handle)['project']['version']
 
 
 def build(wheel, destination):
@@ -11,7 +17,7 @@ def build(wheel, destination):
         'manifest_version': '0.3',
         'name': 'reelsyntax',
         'display_name': 'ReelSyntax',
-        'version': '0.1.0',
+        'version': project_version(),
         'description': 'Local skill routing and project tools for video production.',
         'author': {'name': 'Remirdy', 'url': 'https://github.com/Remirdy'},
         'license': 'MIT',

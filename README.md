@@ -2,7 +2,7 @@
 
 Build and review a video from a local, frame-based project file.
 
-[![Checks](https://github.com/Remirdy/ReelSyntax/actions/workflows/check.yml/badge.svg?branch=feature%2Fproduction-delivery)](https://github.com/Remirdy/ReelSyntax/actions/workflows/check.yml)
+[![Checks](https://github.com/Remirdy/ReelSyntax/actions/workflows/check.yml/badge.svg?branch=main)](https://github.com/Remirdy/ReelSyntax/actions/workflows/check.yml)
 [![MIT license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](pyproject.toml)
 [![Version 0.1.0](https://img.shields.io/badge/version-0.1.0-blue)](CHANGELOG.md)
@@ -157,6 +157,8 @@ python3 -m reelsyntax skills install ./my-film --host cursor
 ```
 
 See [first-party MCP & submodule sync](docs/first-party-mcp.md), [CLI reference](docs/cli.md), [project format](docs/project-format.md), [quality](docs/quality.md), [competitive analysis](docs/research/competitive-analysis.md), [security](SECURITY.md), and [development status](docs/development-status.md).
+
+<!-- TODO: add an "MCP Registry" section after the first release and mcp-publisher publish. -->
 
 ## Documentation and contributions
 
