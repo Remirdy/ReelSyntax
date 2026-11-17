@@ -3,154 +3,113 @@
   "id": "cinematic-study",
   "seed": 108,
   "output": {
-    "width": 1280,
-    "height": 720,
+    "width": 1920,
+    "height": 1080,
     "fps": "24/1"
   },
   "constraints": {
-    "offline": true,
     "no_paid_services": true,
-    "camera_locked": false,
+    "offline": true,
     "no_voice": true,
     "no_music": true
   },
-  "camera": {
-    "preset": "dolly_in",
-    "focal_mm": 52.0,
-    "position": [1.85, -4.1, 1.42],
-    "target": [0.0, 0.0, 0.18]
-  },
   "scenes": [
     {
-      "id": "optics",
-      "duration_frames": 48,
-      "recipe": "prism-monolith",
-      "engine": "pillow",
-      "camera": {
-        "preset": "dolly_in",
-        "focal_mm": 52.0,
-        "position": [1.85, -4.1, 1.42],
-        "target": [0.0, 0.0, 0.18]
-      },
+      "id": "label",
+      "recipe": "cassette",
+      "engine": "blender",
+      "duration_frames": 32,
       "params": {
-        "kicker": "01 / SCENE-REFERRED LIGHT",
-        "heading": "OPTICS",
-        "subheading": "Linear shading, AgX rolloff, grounded contact.",
-        "background": "#14171c",
-        "foreground": "#ede8de",
-        "accent": "#c8643b"
+        "shot": "label",
+        "samples": 24
       }
     },
     {
-      "id": "kinetics",
-      "duration_frames": 48,
-      "recipe": "kinetic-type",
-      "engine": "pillow",
-      "transition": {
-        "type": "cross_dissolve",
-        "duration_frames": 8
-      },
+      "id": "drive",
+      "recipe": "cassette",
+      "engine": "blender",
+      "duration_frames": 28,
       "params": {
-        "kicker": "02 / VERLET DYNAMICS",
-        "heading": "RİTMİK YAPI",
-        "subheading": "ÇĞİÖŞÜ tam glif kapsamı ve fiziksel sarkaç.",
-        "background": "#eee9df",
-        "foreground": "#1f2326",
-        "accent": "#b84f33"
+        "shot": "drive",
+        "samples": 24
       }
     },
     {
-      "id": "telemetry",
-      "duration_frames": 48,
-      "recipe": "data-horizon",
-      "engine": "pillow",
-      "transition": {
-        "type": "cross_dissolve",
-        "duration_frames": 8
-      },
+      "id": "edge",
+      "recipe": "cassette",
+      "engine": "blender",
+      "duration_frames": 26,
       "params": {
-        "kicker": "03 / ROUTING PRECISION",
-        "heading": "SIGNAL",
-        "subheading": "Bounded context across 517 specialist skills.",
-        "background": "#f1ede4",
-        "foreground": "#1f2426",
-        "accent": "#2d646b",
-        "series": [24, 38, 46, 59, 71, 68, 86, 96]
+        "shot": "edge",
+        "samples": 24
       }
     },
     {
-      "id": "lockup",
-      "duration_frames": 48,
-      "recipe": "hud-lock",
-      "engine": "pillow",
-      "transition": {
-        "type": "cross_dissolve",
-        "duration_frames": 8
-      },
-      "locked_regions": [
-        [0, 605, 1280, 115]
-      ],
+      "id": "hero",
+      "recipe": "cassette",
+      "engine": "blender",
+      "duration_frames": 46,
       "params": {
-        "kicker": "04 / PROTECTED REGION",
-        "heading": "CONTINUITY",
-        "subheading": "Lossless ROI locks and editorial interchange.",
-        "background": "#ebe5da",
-        "foreground": "#1d2124",
-        "accent": "#c8643b"
+        "shot": "hero",
+        "samples": 24
       }
     }
   ],
   "audio": {
     "enabled": true,
-    "gain_db": -13.5,
-    "export_stems": true,
+    "gain_db": -15,
     "cues": [
       {
         "frame": 0,
-        "frequency": 72,
-        "duration_frames": 22,
-        "instrument": "sub_impact",
-        "pan": 0.0
-      },
-      {
-        "frame": 44,
-        "frequency": 180,
-        "duration_frames": 12,
-        "instrument": "whoosh",
-        "pan": -0.25,
-        "gain_offset_db": -3.0
-      },
-      {
-        "frame": 48,
-        "frequency": 294,
-        "duration_frames": 18,
-        "instrument": "harmonic_pluck",
-        "pan": 0.2
-      },
-      {
-        "frame": 96,
-        "frequency": 392,
-        "duration_frames": 20,
-        "instrument": "harmonic_pluck",
-        "pan": -0.2
-      },
-      {
-        "frame": 144,
-        "frequency": 110,
-        "duration_frames": 30,
+        "duration_frames": 132,
+        "frequency": 60,
         "instrument": "warm_pad",
-        "pan": 0.0
+        "pan": 0,
+        "gain_offset_db": -6
+      },
+      {
+        "frame": 0,
+        "duration_frames": 8,
+        "frequency": 210,
+        "instrument": "click_transient",
+        "pan": -0.35,
+        "gain_offset_db": -3
+      },
+      {
+        "frame": 32,
+        "duration_frames": 14,
+        "frequency": 85,
+        "instrument": "sub_impact",
+        "pan": 0.15,
+        "gain_offset_db": -1
+      },
+      {
+        "frame": 60,
+        "duration_frames": 14,
+        "frequency": 280,
+        "instrument": "whoosh",
+        "pan": -0.35,
+        "gain_offset_db": -6
+      },
+      {
+        "frame": 86,
+        "duration_frames": 24,
+        "frequency": 117,
+        "instrument": "harmonic_pluck",
+        "pan": 0.15,
+        "gain_offset_db": -3
+      },
+      {
+        "frame": 91,
+        "duration_frames": 30,
+        "frequency": 175,
+        "instrument": "harmonic_pluck",
+        "pan": -0.15,
+        "gain_offset_db": -5
       }
     ]
   },
   "quality": {
-    "exceptions": {
-      "silence": [
-        [22, 44],
-        [66, 96],
-        [116, 144],
-        [174, 192]
-      ]
-    }
+    "exceptions": {}
   }
 }

@@ -33,7 +33,7 @@ Together, `BlenderMCP` (~303 tools) and `AfterEffectsMCP` (~270 tools) expose mo
 
 ReelSyntax's Unified MCP Gateway exposes a constant 9-tool meta-surface:
 
-1. `reelsyntax_skills_search`, `reelsyntax_skills_get`, `reelsyntax_skills_explain` — progressive retrieval across 517+ production skills plus matching MCP tool summaries.
+1. `reelsyntax_skills_search`, `reelsyntax_skills_get`, `reelsyntax_skills_explain` — progressive retrieval across the indexed production skills plus matching MCP tool summaries.
 2. `gateway_search_tools` — progressive search returning concise `blender:<tool>` and `after_effects:<tool>` summaries without full JSON schemas.
 3. `gateway_describe_tool` — lazy second-phase fetch returning the full JSON `inputSchema`, schema SHA-256, and compatible ReelSyntax skill IDs for a single selected namespaced tool.
 4. `gateway_call_tool` — validates arguments against the discovered JSON schema and active project constraints (`offline`, `no_paid_services`, `no_text`), starts the target MCP server on demand, recovers automatically from transient child-process exits, and returns structured results.

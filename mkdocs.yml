@@ -1,0 +1,19 @@
+site_name: ReelSyntax
+site_url: https://remirdy.github.io/ReelSyntax/
+repo_url: https://github.com/Remirdy/ReelSyntax
+theme:
+  name: material
+plugins:
+  - search
+hooks:
+  - tools/docs_catalog.py
+nav:
+  - Start: index.md
+  - Installation: installation.md
+  - Project format: project-format.md
+  - Authoring and delivery: delivery.md
+  - CLI: cli.md
+  - Quality: quality.md
+  - Runtime coverage: runtime-coverage.md
+  - Skill catalog: catalog.md
+  - Troubleshooting: troubleshooting.md

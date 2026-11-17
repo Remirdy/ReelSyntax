@@ -1,5 +1,7 @@
 # Development status
 
+The measurements below describe earlier milestones. See the [current runtime matrix](runtime-coverage.md) and [generated catalog](../ReelSyntax_Skills/CATALOG.md) for the current release.
+
 Updated 2026-11-17.
 
 ## Baseline and preservation
@@ -44,7 +46,7 @@ Upstream `Remirdy/ReelSyntax` at `167d9c4787642b125eca35f84e0b5f9088124a31` cont
   - `examples/aperture-film`: Native Blender 5.1.2 Metal GPU Cycles 4-shot optical mechanism film — Draft (`640x360`, 144f, `292.53s` cold) and Hero (`1280x720`, 144f, `1132.97s` cold / `7.87s/frame`, 5 stereo WAV stems, `2,880,753` bytes, PSNR `32.11–42.48 dB` vs Draft) — `technical_status: pass`, `hero-shot-study.png`, `hero-filmstrip.png`, `hero-motion-extrema.png`, and H.264-decoded frame `hero-decoded-000084.png` visually inspected; `handoff` validated via live `after_effects:jsx_dry_run` (`valid: true`).
 - `uv build --quiet`: wheel and sdist build cleanly with zero generated example state/outputs and zero submodule paths included (`MANIFEST.in`).
 
-The project remains an active `0.1.0` pre-release. The full master specification includes future nonlinear editing, retiming, nested compositions, advanced PSD/HDR workflows, more creative recipes and additional engine adapters. Those are not represented as implemented by the current tests. Native third-party editor imports, interactive application execution, broad hardware coverage and a package release remain separate gates; see [roadmap](roadmap.md).
+At this earlier milestone the project was a `0.1.0` pre-release. The full master specification includes future nonlinear editing, retiming, nested compositions, advanced PSD/HDR workflows, more creative recipes and additional engine adapters. Those are not represented as implemented by the current tests. Native third-party editor imports, interactive application execution, broad hardware coverage and a package release remain separate gates; see [roadmap](roadmap.md).
 
 First remote CI execution exposed Windows CRLF frontmatter parsing, a missing FFmpeg package on the Ubuntu media runner, and an invalid direct secrets conditional in the sync workflow. Follow-up fixes preserve raw skill hashes, configure repository text line endings, make CLI output UTF-8 under non-UTF-8 defaults, install FFmpeg in the ephemeral media runner, and gate optional App credentials through job environment metadata. Official Actions are pinned to verified Node 24 revisions. Remote outcomes remain linked above.
 

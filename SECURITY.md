@@ -15,3 +15,7 @@ No telemetry, credentials, paid API calls or external publication is part of the
 The Unified MCP Gateway validates published meta-tool arguments before dispatch, including real boolean policy values, nested types, numeric bounds and nullability. `mcp --workspace PATH` restricts ReelSyntax project validate/plan/QC calls to an explicit existing root; relative paths resolve there, and outside paths, traversal and nested symlinks are refused. The default root is the launch directory. This project boundary does not sandbox downstream Blender/After Effects tools or their native script/path permissions.
 
 The stdio reader bounds messages to 1 MiB and compatibility headers to 8 KiB. Malformed JSON, duplicate object keys, non-finite constants and invalid frame lengths cannot become tool calls. Invalid complete JSON messages return protocol errors; unrecoverable framing closes the connection. The schema checker supports the documented subset in `docs/first-party-mcp.md`; it is not a replacement for the downstream server's complete validation.
+
+## Local extensions and authoring inputs
+
+An installed Python recipe runs with the caller's OS permissions when explicitly selected by `from-plugin --allow-plugin`. Review the package before enabling it. Keep this operation out of untrusted CI jobs. A `three-scene` browser bundle requires `--allow-browser-module` on every render or resume. Browser assets remain local and the worker has a per-operation timeout. The gateway does not enable either extension flag.

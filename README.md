@@ -1,45 +1,86 @@
 # ReelSyntax
 
-Local skill routing, a progressive Unified MCP Gateway, and deterministic headless video production for coding agents.
+Build and review a video from a local, frame-based project file.
 
-**Development status: active development, version 0.1.0, pre-release.** Interfaces and project formats may change. The implemented slices below have local test evidence; the full production roadmap is still in progress. Technical checks do not certify artistic quality or compatibility with every editor and platform.
+[![Checks](https://github.com/Remirdy/ReelSyntax/actions/workflows/check.yml/badge.svg?branch=feature%2Fproduction-delivery)](https://github.com/Remirdy/ReelSyntax/actions/workflows/check.yml)
+[![MIT license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)](pyproject.toml)
+[![Version 0.1.0](https://img.shields.io/badge/version-0.1.0-blue)](CHANGELOG.md)
 
-ReelSyntax pairs a 517-skill specialist catalog with a zero-dependency Python 3.11+ core, optional local renderers (Pillow raster composition and software 3D, isolated headless Chromium Canvas/WebGL2, FFmpeg source footage, and headless Blender), and first-party Git submodule integrations for [`Remirdy/BlenderMCP`](https://github.com/Remirdy/BlenderMCP) and [`Remirdy/AfterEffectsMCP`](https://github.com/Remirdy/AfterEffectsMCP). No mandatory model download, embedding service, paid API, ComfyUI/LTX/Wan stack, or graphical application is required.
+[![Six-second Blender Cycles aperture study](docs/media/aperture.gif)](docs/media/aperture-study.mp4)
 
-## Completed and remaining work
+## Who is it for?
 
-| Area | Completed locally | Remaining |
-| --- | --- | --- |
-| Skill routing | 517 indexed skills, bounded disclosure, multilingual ranking, constraints, integrity and host installers | Broader independent task evaluation and production feedback |
-| Render and review | Draft/Production/Hero, H.264/AAC, exact frame timing, technical QC, selective cache, recovery and approval locks | Broader creative examples, advanced animation and compositing |
-| Native 3D and shaders | Four-shot Blender Cycles optical film and an isolated WebGL2 sculpture recipe | More scene recipes, custom shader/Three.js adapters and GPU/platform coverage |
-| Source media | Local video trimming, normal-alpha raster layer composition, supported 8-bit RGB PSD layer extraction, independently timed source audio and J/L cuts | Advanced PSD blend modes/masks, HDR grading, retiming and a general nonlinear track model |
-| Editorial delivery | OTIO/FCPXML, captions, SVG, native Blender Video Sequencer project and preview export | Native Final Cut/Premiere/Resolve import coverage and richer editable effects |
-| Cache management | Dry-run LRU pruning, optional render disk budget, delivery-reference protection and shared operation lock | Long-duration 4K resource benchmarks and broader cross-OS stress testing |
-| MCP integrations | Progressive gateway, live stdio discovery, schema/workspace boundaries and JSX static validation | Live interactive Blender bridge and After Effects execution; upstream compatibility patches |
-| Distribution | Wheel/sdist; Linux/macOS/Windows core CI on Python 3.11/3.14; Linux FFmpeg media tests and submodule audits | Release packaging/publishing and broader hardware/runtime coverage |
+ReelSyntax is for developers scripting repeatable video deliveries, editors exchanging frame-accurate timelines, and teams using a coding agent with Blender or After Effects. Renderers run locally. The Python core has no required third-party dependencies.
 
-See the [development evidence](docs/development-status.md) and [roadmap](docs/roadmap.md) for exact verification and external gates. PSD extraction reuses an existing optional AfterEffectsMCP Node runtime; it does not require the After Effects application. Interactive application checks remain separate from verified headless operation.
+## Why ReelSyntax?
 
-The six-second [Aperture example video](docs/media/aperture-study.mp4) was rendered locally with native Blender Cycles. Its [editable source plan](examples/aperture-film/reel.json) and procedural scene implementation are included.
+| Starting point | What ReelSyntax adds |
+| --- | --- |
+| An FFmpeg command | A validated project, a frame plan, scene caches, source hashes and a QC report for the encoded master |
+| A Blender or After Effects project | A shared gateway that discovers downstream tools and loads the schema for the selected operation |
+| A library of production instructions | One router for 566 skills, 58 validated in the effective registry. Search reads metadata and loads a selected skill on demand. |
 
-[![Frame from the rendered Aperture optical mechanism study](docs/media/aperture.png)](docs/media/aperture-study.mp4)
+See the [catalog and status breakdown](ReelSyntax_Skills/CATALOG.md), [runtime coverage](docs/runtime-coverage.md) and [development history](docs/development-status.md).
+
+## How it works
+
+```mermaid
+flowchart LR
+    Host["Coding agent"] --> Router["Skill router"] --> Index["Local registry"]
+    Host --> Gateway["MCP gateway"]
+    Gateway --> CLI["Project commands"]
+    Gateway --> Blender["BlenderMCP"]
+    Gateway --> AE["AfterEffectsMCP"]
+```
+
+```mermaid
+flowchart LR
+    Project["reel.json"] --> Validate --> Plan --> Cache{"Cached scene?"}
+    Cache -->|Yes| Assemble
+    Cache -->|No| Render["Pillow / Chromium / Blender / FFmpeg"] --> Assemble
+    Assemble --> Master["H.264 / AAC"] --> QC
+    Master --> Export
+```
+
+## Requirements
+
+| Component | Used for |
+| --- | --- |
+| Python 3.11+ | Required for CLI, routing, validation and the gateway |
+| Pillow and FFmpeg/FFprobe | Raster frames, encoding and technical review |
+| Playwright and matching Chromium | Canvas and WebGL recipes |
+| Blender | Native 3D scenes and sequencer export. Aperture requires 5.1+ |
+| After Effects | Interactive Adobe handoff through the optional integration |
 
 ## Quick start
+
+From an activated environment in the checkout, install `python -m pip install '.[render]'` and put FFmpeg and FFprobe on PATH. Then run:
+
+```sh
+reelsyntax init ./my-film
+reelsyntax render ./my-film --profile draft
+reelsyntax qc ./my-film --profile draft --html
+```
+
+QC returns exit code 2 for findings that need review. In the recorded Draft run FFmpeg flagged a near-still interval in the opening assembly shot. Inspect the indicated frames in the report.
+
+![Local quick start session](docs/media/quick-start.gif)
+
+### Skill search
 
 ```sh
 python3 -m reelsyntax doctor --json
 python3 -m reelsyntax integrations --json
-python3 -m reelsyntax capabilities --refresh --limit 8
-python3 -m reelsyntax skills search "psd animasyon seslendirme senkronu" --json
-python3 -m reelsyntax skills explain "kamera sabit yazı olmasın" --stage plan
+python3 -m reelsyntax skills search "sync PSD layers with voiceover" --json
+python3 -m reelsyntax skills explain "keep the camera locked, no text" --stage plan
 python3 -m reelsyntax skills load frame-clock
 python3 -m reelsyntax skills validate
 ```
 
 Warm metadata searches read zero specialist instruction bodies. Ranking supports English and Turkish morphology, negative clause exclusions, audio-vs-camera disambiguation, dependency closure, conflict filtering, capability allowlists (`--available`), and cumulative session context budgets.
 
-Nine scoped production references connect existing skills to the implemented source-audio, footage, PSD raster, WebGL2, editorial and cache workflows. All 517 instruction files remain unchanged. References load only when requested, carry their own SHA-256 and budget charge, and reload in the same session when their content changes. Native OTIO export does not require an optional SDK. `skills reindex` refreshes both JSON metadata and the UTF-8 CSV catalog.
+Turkish queries such as `skills search "psd animasyon seslendirme senkronu"` use the same index. Selected aliases also cover German, Spanish, French and Portuguese. A reference loads only when requested and has its own SHA-256 and session budget charge.
 
 ```sh
 python3 -m reelsyntax skills load j-cut --resource library/editing/j-cut/references/core-source-audio.md --project ./my-film --session sound-review --context-budget 6000
@@ -77,7 +118,26 @@ python3 -m reelsyntax handoff ./my-film
 - **Profiles and caching**: Content-addressed per-scene caches including source asset hashes, `resume` recovery, `checkpoint`/`restore` revisions, whole-scene locks, and lossless pre-encode `locked_regions` pixel protection. `hero` uses recipe-appropriate refinement and emits look development or shot study sheets plus motion extrema. `cache --max-mib N` previews unused-cache removal; add `--apply` to perform it, or pass `render --cache-budget-mib N` for post-delivery pruning. Caches referenced by current deliveries remain protected even when they exceed the requested budget.
 - **Objective QC vs creative review**: `qc` verifies FFprobe stream contracts, full decode, 10-microsecond frame cadence, black/freeze/silence intervals, loudness and true peak, WCAG contrast ratios, `.notdef` glyph coverage (including Turkish `ÇĞİÖŞÜçğıöşü`), PCM cue-onset alignment, temporal continuity, and ROI locks. Technical pass never substitutes for human or host-agent visual and audio review.
 
-See [`examples/foundation`](examples/foundation/), [`examples/cinematic-study`](examples/cinematic-study/), [`examples/aperture-film`](examples/aperture-film/), [`examples/editorial-study`](examples/editorial-study/) and [`examples/shader-study`](examples/shader-study/).
+## Example gallery
+
+| Project | Preview | Poster |
+| --- | --- | --- |
+| [foundation](examples/foundation/) | ![foundation animation](docs/media/foundation.gif) | [Still frame](docs/media/foundation.png) |
+| [cinematic-study](examples/cinematic-study/) | ![cinematic-study animation](docs/media/cinematic-study.gif) | [Still frame](docs/media/cinematic-study.png) |
+| [editorial-study](examples/editorial-study/) | ![editorial-study animation](docs/media/editorial-study.gif) | [Still frame](docs/media/editorial-study.png) |
+| [shader-study](examples/shader-study/) | ![shader-study animation](docs/media/shader-study.gif) | [Still frame](docs/media/shader-study.png) |
+
+The [Aperture quality report](docs/quality.md) covers a 1280 × 720 master with 144 frames at 24 fps, H.264 video and a 48 kHz audio stream. Its frame cadence, decode and BT.709 metadata checks passed.
+
+## Editor interchange
+
+| Editor | Export | Verification |
+| --- | --- | --- |
+| Final Cut Pro | `export --format fcpxml` | XML structure, master reference and offsets tested. Import in Final Cut Pro is untested. |
+| Adobe Premiere Pro | `export --format premiere` | Final Cut Pro 7 XML (xmeml), video and audio ranges tested. Import in Premiere Pro is untested. |
+| DaVinci Resolve | `export --format fcpxml` | Frame rate and FCPXML timeline tested. Import in Resolve is untested. |
+
+Render the selected profile first and keep its master accessible to the editor. Clips refer to ranges in that master and include the baked transitions.
 
 ## Unified MCP Gateway and agent host setup
 
@@ -97,6 +157,10 @@ python3 -m reelsyntax skills install ./my-film --host cursor
 ```
 
 See [first-party MCP & submodule sync](docs/first-party-mcp.md), [CLI reference](docs/cli.md), [project format](docs/project-format.md), [quality](docs/quality.md), [competitive analysis](docs/research/competitive-analysis.md), [security](SECURITY.md), and [development status](docs/development-status.md).
+
+## Documentation and contributions
+
+[Documentation site](https://remirdy.github.io/ReelSyntax/) · [Delivery commands](docs/delivery.md) · [CLI](docs/cli.md) · [Troubleshooting](docs/troubleshooting.md) · [Roadmap](docs/roadmap.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md)
 
 ## Verification
 

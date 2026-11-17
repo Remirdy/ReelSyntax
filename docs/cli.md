@@ -25,7 +25,7 @@
 | `skills search`, `explain` | Bounded metadata routing with stage plans, conflict filtering, and optional score/stem diagnostics |
 | `skills load` | Explicit SHA-256 checked instruction or resource disclosure with optional cumulative `--session` budget |
 | `skills list --category NAME` | Bounded metadata listing (`1..20`) |
-| `skills validate`, `reindex`, `test` | Validate registry graph, rebuild `index.json` + `catalog.csv`, or evaluate the 50-case routing benchmark |
+| `skills validate`, `reindex`, `test` | Validate registry graph, rebuild `index.json` + `catalog.csv`, or evaluate the routing benchmark |
 | `skills install`, `uninstall` | Receipt-tracked router installation for `codex`, `antigravity`, `claude`, and `cursor` |
 | `skills record`, `effectiveness` | Caller-reported execution ledger backed by real artifact SHA-256 digests |
 
@@ -38,3 +38,9 @@ Editorial exports reference the flattened `output/<profile>.mp4` master, segment
 `render --cache-budget-mib N` optionally applies LRU cleanup after a verified delivery. Delivery/state-referenced caches remain protected, and the report's `within_budget` can be false if those caches alone exceed the requested size. Unknown cache entries, quarantine, source assets, output masters and history are excluded from pruning. `cache` is a dry-run unless `--apply` is supplied.
 
 FCPXML dimensions follow the render profile, including Draft downscaling. Marker positions use the clip's source timeline, following Apple's [timing attributes](https://developer.apple.com/documentation/professional-video-applications/timing-attributes) and OTIO's [time-range rules](https://github.com/AcademySoftwareFoundation/OpenTimelineIO/blob/main/docs/tutorials/time-ranges.md). OTIO rates retain double precision and include the original rational rate as metadata. If an existing render manifest differs from the current plan, OTIO/FCPXML export fails with a request to render the revised plan. Export before any render remains supported and references the planned master location. SVG `--frame N` must be an integer inside the project's frame range; it exports a source storyboard schematic at project resolution, not a decoded video frame.
+
+## Delivery and profile comparison
+
+See [delivery commands](delivery.md) for templates, formats, locale tables, queue jobs and caption burn-in. The Aperture Draft/Hero comparison includes matched frames with per-sample MAE and PSNR. For its opening sample the mean absolute RGB error was 1.1209 on an 8-bit scale and PSNR was 42.479 dB.
+
+![Draft and Hero frame differences](media/diff-draft-vs-hero.png)

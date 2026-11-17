@@ -9,3 +9,7 @@ Specialists belong in `ReelSyntax_Skills/library`, not native discovery. Keep on
 The frontmatter reader deliberately supports the pack's string metadata subset; it is not a general YAML parser. Do not introduce arbitrary YAML tags or new parser behavior without tests. Skill dependency depth is capped at 64; selection is capped at 20. Search metadata stays local; do not paste the full registry or catalog into a host session.
 
 Package builds use `uv build` or an equivalent PEP 517 frontend. No public package/release, Git commit/push, repository setting change or paid infrastructure is authorized by local development alone.
+
+## First contributions
+
+A small fixture for a translated label, a caption timing edge case, or a new routing alias makes a good first contribution. Document the expected frame range or ranked skill before changing the implementation. Browse [issues labeled good first issue](https://github.com/Remirdy/ReelSyntax/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22) for assigned scope.
