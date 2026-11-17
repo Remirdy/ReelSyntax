@@ -1,7 +1,7 @@
 import importlib.util,json,pathlib,re,unittest,contextlib,io
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 spec=importlib.util.spec_from_file_location('route', ROOT/'tools/route.py');m=importlib.util.module_from_spec(spec);spec.loader.exec_module(m)
-ROWS=json.loads((ROOT/'registry/index.json').read_text())['skills']
+ROWS=json.loads((ROOT/'registry/index.json').read_text(encoding='utf-8'))['skills']
 CASES=[('PS D',None),('psd animasyon','psd-to-video'),('seslendirme senkronu','voiceover-alignment'),('beat sync','beat-synced-editing'),('kamera sabit orbit','locked-camera'),('yazı olmasın kinetic typography','textless-visual-design'),('GitHub tanıtım','repository-to-video'),('word anchored','word-anchored-timeline'),('siyah kare','black-frame-detection'),('türkçe karakter','turkish-glyph-audit'),('blender geometry nodes','blender-geometry-nodes'),('web sitesinden video','website-to-video'),('render devam','resume-render'),('sadece değişen sahne','partial-render'),('alt bar sabit','locked-region-editing'),('loudness normalization','loudness-normalization'),('skill seçimi','skill-routing'),('lineer cebir','linear-algebra-visualization'),('no camera movement, dolly zoom','locked-camera'),('öğretmenler günü','teacher-tribute'),('fcpxml','fcpxml-export'),('foley','foley-design'),('glitch geçişi','glitch-transition'),('psd mp3 eşleştir','asset-matching'),('reeldiff','revision-diff'),('random unrecognized xqz','NONE')]
 class TestRouter(unittest.TestCase):
  def test_catalog(self):
@@ -9,7 +9,7 @@ class TestRouter(unittest.TestCase):
   self.assertEqual(len(list((ROOT/'library').glob('*/*/SKILL.md'))),len(ROWS))
   for r in ROWS:
    self.assertRegex(r['id'],r'^[a-z0-9]+(?:-[a-z0-9]+)*$');self.assertLessEqual(len(r['id']),64);self.assertLessEqual(len(r['description']),1024)
-   self.assertTrue(m.safe_path(r).read_text().startswith('---\nname: '+r['id']+'\n'))
+   self.assertTrue(m.safe_path(r).read_text(encoding='utf-8').startswith('---\nname: '+r['id']+'\n'))
  def test_queries(self):
   for query,expected in CASES:
    if expected is None:continue
