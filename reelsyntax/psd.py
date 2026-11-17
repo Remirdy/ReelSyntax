@@ -13,7 +13,7 @@ PSD_EXTRACT = r'''
 const fs = require('fs');
 const path = require('path');
 const {createRequire} = require('module');
-const [moduleRoot, source, output] = process.argv.slice(1);
+const [moduleRoot, source, output, advanced] = process.argv.slice(1);
 const localRequire = createRequire(path.join(moduleRoot, 'package.json'));
 const {readPsd, initializeCanvas} = localRequire('ag-psd');
 let allocatedPixels = 0;
@@ -33,7 +33,8 @@ async function main() {
     for (const layer of nodes || []) {
       if (layer.hidden || layer.opacity === 0) continue;
       const blend = layer.blendMode || 'normal';
-      if (!['normal','pass through'].includes(blend) || layer.mask || layer.realMask || layer.vectorMask || layer.effects || layer.adjustment || layer.clipping || (layer.fillOpacity !== undefined && layer.fillOpacity !== 1)) {
+      const modes = advanced === 'yes' && !layer.children ? ['normal','multiply','screen','overlay'] : ['normal','pass through'];
+      if (!modes.includes(blend) || (layer.mask && (advanced !== 'yes' || layer.children)) || layer.realMask || layer.vectorMask || layer.effects || layer.adjustment || layer.clipping || (layer.fillOpacity !== undefined && layer.fillOpacity !== 1)) {
         throw new Error(`Unsupported PSD compositing on layer '${layer.name || 'unnamed'}'; rasterize its appearance before ingest`);
       }
       if (layer.children) {
@@ -46,7 +47,18 @@ async function main() {
       pixels += data.width * data.height;
       if (pixels > 33554432 || layers.length >= 128) throw new Error('PSD exceeds decoded layer budget');
       if (data.data.length !== data.width * data.height * 4) throw new Error('PSD layer is not 8-bit RGBA');
-      layers.push({name:(layer.name || 'Layer').replace(/[\x00-\x1f]/g,' ').slice(0,120), x:layer.left || 0, y:layer.top || 0, width:data.width, height:data.height, opacity:layer.opacity === undefined ? 1 : layer.opacity, data});
+      if (layer.mask && !layer.mask.disabled) {
+        const mask = layer.mask;
+        if (!mask.imageData || mask.userMaskFeather || mask.userMaskDensity !== undefined && mask.userMaskDensity !== 1 || mask.positionRelativeToLayer) throw new Error('Unsupported PSD mask geometry');
+        const md = mask.imageData;
+        for (let y=0; y<data.height; y++) for (let x=0; x<data.width; x++) {
+          const mx=x+(layer.left||0)-(mask.left||0), my=y+(layer.top||0)-(mask.top||0);
+          const opacity=mx>=0 && my>=0 && mx<md.width && my<md.height ? md.data[(my*md.width+mx)*4] : (mask.defaultColor||0);
+          const offset=(y*data.width+x)*4+3;
+          data.data[offset]=Math.round(data.data[offset]*opacity/255);
+        }
+      }
+      layers.push({...(!['normal','pass through'].includes(blend) ? {blend} : {}),name:(layer.name || 'Layer').replace(/[\x00-\x1f]/g,' ').slice(0,120), x:layer.left || 0, y:layer.top || 0, width:data.width, height:data.height, opacity:layer.opacity === undefined ? 1 : layer.opacity, data});
     }
   }
   walk(psd.children);
@@ -64,7 +76,7 @@ main().catch(error => {process.stderr.write(error.message); process.exitCode=1;}
 '''
 
 
-def ingest_psd(project, source: str, destination: str, timeout=60):
+def ingest_psd(project, source: str, destination: str, timeout=60, composite=False):
     root, _, _ = load(project)
     src = contained_path(root, source)
     target = contained_path(root, destination, must_exist=False)
@@ -86,9 +98,9 @@ def ingest_psd(project, source: str, destination: str, timeout=60):
     module_root = Path(integration['env_overrides'].get('NODE_PATH', str(Path(integration['cwd']) / 'node_modules'))).parent
     target.parent.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix='psd-', dir=target.parent) as tmp:
-        payload = json.loads(run([command[0], '--max-old-space-size=512', '-e', PSD_EXTRACT, str(module_root), str(src), tmp], timeout=timeout).stdout)
+        payload = json.loads(run([command[0], '--max-old-space-size=512', '-e', PSD_EXTRACT, str(module_root), str(src), tmp, 'yes' if composite else 'no'], timeout=timeout).stdout)
         layers = [{**{k: v for k, v in layer.items() if k != 'file'}, 'source': (target / layer['file']).relative_to(root).as_posix()} for layer in payload['layers']]
-        report = {'source': source, 'dimensions': [payload['width'], payload['height']], 'order': payload['order'], 'params': {'layers': layers}, 'limitations': 'raster appearances and normal alpha compositing; masks, effects, adjustments and non-normal blend modes require explicit rasterization'}
+        report = {'source': source, 'dimensions': [payload['width'], payload['height']], 'order': payload['order'], 'params': {'layers': layers}, 'limitations': '8-bit raster layers; optional pixel masks and multiply, screen or overlay; vector masks, groups with opacity and adjustments require rasterization'}
         atomic_json(Path(tmp) / 'layers.json', report)
         staged = Path(tmp) / 'delivery'
         staged.mkdir()

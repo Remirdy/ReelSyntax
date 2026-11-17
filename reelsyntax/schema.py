@@ -1,0 +1,77 @@
+from typing import Literal, get_args, get_origin, get_type_hints, is_typeddict
+
+from .contracts import Project
+from .project import CAMERA_PRESETS, ENGINES, RECIPES, TRANSITIONS
+from .shapes import COLOR, SHAPES, shape_schema
+
+
+def object_schema(properties, required=()):
+    return {
+        'type': 'object',
+        'properties': properties,
+        'required': list(required),
+        'additionalProperties': False,
+    }
+
+
+def project_schema():
+    definitions = {}
+
+    def describe(annotation):
+        origin = get_origin(annotation)
+        if is_typeddict(annotation):
+            name = annotation.__name__
+            definitions[name] = object_schema(
+                {k: describe(v) for k, v in get_type_hints(annotation).items()},
+                sorted(annotation.__required_keys__),
+            )
+            return {'$ref': '#/$defs/' + name}
+        if origin is Literal:
+            return {'enum': list(get_args(annotation))}
+        if origin is list:
+            return {'type': 'array', 'items': describe(get_args(annotation)[0])}
+        if origin is dict:
+            from typing import Any
+
+            value = get_args(annotation)[1]
+            return {'type': 'object', 'additionalProperties': True if value is Any else describe(value)}
+        return {
+            'type': {int: 'integer', str: 'string', bool: 'boolean', float: 'number', dict: 'object'}[
+                annotation
+            ]
+        }
+
+    root = describe(Project)
+    project = definitions['Project']['properties']
+    project['$schema'] = {'type': 'string'}
+    project['seed'].update(minimum=0, maximum=2**32 - 1)
+    project['scenes'].update(minItems=1, maxItems=1000)
+    scene = definitions['Scene']['properties']
+    scene['recipe'] = {'enum': sorted(RECIPES)}
+    scene['engine'] = {'enum': sorted(ENGINES)}
+    scene['id'] = project['id'] = {'type': 'string', 'pattern': '^[a-z0-9]+(-[a-z0-9]+)*$', 'maxLength': 64}
+    scene['duration_frames'].update(minimum=1, maximum=10000000)
+    definitions['CameraConfig']['properties']['preset'] = {'enum': sorted(CAMERA_PRESETS)}
+    definitions['TransitionConfig']['required'] = ['type']
+    definitions['TransitionConfig']['properties']['type'] = {'enum': sorted(TRANSITIONS)}
+    output = definitions['OutputSettings']['properties']
+    for dimension in ('width', 'height'):
+        output[dimension].update(minimum=64, maximum=7680, multipleOf=2)
+    output['fps']['pattern'] = '^[1-9][0-9]*/[1-9][0-9]*$'
+    params = definitions['SceneParams']['properties']
+    for key in ('heading', 'subheading', 'kicker'):
+        params[key]['maxLength'] = 120
+    for key in ('background', 'foreground', 'accent'):
+        params[key] = COLOR
+    params['shapes'] = {
+        'type': 'array',
+        'minItems': 1,
+        'maxItems': 128,
+        'items': {'oneOf': [shape_schema(k) for k in SHAPES]},
+    }
+    return {
+        '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        'title': 'ReelSyntax project',
+        **root,
+        '$defs': definitions,
+    }

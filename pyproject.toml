@@ -26,3 +26,28 @@ namespaces = true
 
 [tool.setuptools.package-data]
 ReelSyntax_Skills = ["registry/index.json", "registry/relations.json", "registry/catalog.csv", "library/*/*/SKILL.md", "library/*/*/references/*", ".agents/skills/reelsyntax-router/SKILL.md", "tests/routing-eval.json", "QUALITY_STANDARD.md", "SKILL_SYSTEM.md"]
+reelsyntax = ["py.typed"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 110
+extend-exclude = ["integrations", "build", ".tools"]
+
+[tool.ruff.lint]
+select = ["E9", "F63", "F7", "F82"]
+
+[tool.ruff.format]
+quote-style = "preserve"
+
+[tool.mypy]
+python_version = "3.11"
+files = ["reelsyntax/contracts.py"]
+strict = true
+
+[tool.coverage.run]
+branch = true
+source = ["reelsyntax", "ReelSyntax_Skills.tools"]
+
+[tool.coverage.report]
+show_missing = true
+skip_empty = true

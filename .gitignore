@@ -14,3 +14,7 @@ review/
 *.mp4
 *.wav
 !docs/media/aperture-study.mp4
+.coverage
+.mypy_cache/
+.ruff_cache/
+site/

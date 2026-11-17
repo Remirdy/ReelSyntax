@@ -159,6 +159,9 @@ class BrowserRenderer:
         }
         return self._request(payload, stage=f'draw frame {frame}')['bounds']
 
+    def install_module(self, source):
+        self._request({'cmd': 'module', 'source': source}, stage='Three.js bundle setup')
+
     def require_webgl(self):
         return self._request({'cmd': 'probe_webgl'}, stage='WebGL capability probe')['info']
 
@@ -211,8 +214,11 @@ def _worker_main():
             try:
                 if cmd == 'draw':
                     page.set_viewport_size(req['viewport'])
-                    page.evaluate("shader => {const gl=document.querySelector('#rs-webgl');if(gl)gl.style.display=shader?'block':'none';document.querySelector('canvas:not(#rs-webgl)').style.display=shader?'none':'block';}", req['draw_arg']['recipe'] == 'shader-sculpture')
-                    if req['draw_arg']['recipe'] == 'shader-sculpture':
+                    page.evaluate("shader => {const gl=document.querySelector('#rs-webgl');if(gl)gl.style.display=shader?'block':'none';document.querySelector('canvas:not(#rs-webgl)').style.display=shader?'none':'block';}", req['draw_arg']['recipe'] in ('shader-sculpture', 'custom-shader', 'three-scene'))
+                    if req['draw_arg']['recipe'] == 'three-scene':
+                        page.evaluate("async (args) => {const canvas=document.querySelector('#rs-webgl');canvas.width=args.width;canvas.height=args.height;await window.renderReelFrame(canvas,args);}", req['draw_arg'])
+                        bounds, selector = [], '#rs-webgl'
+                    elif req['draw_arg']['recipe'] in ('shader-sculpture', 'custom-shader'):
                         from .webgl import DRAW as DRAW_WEBGL
                         bounds = page.evaluate(DRAW_WEBGL, req['draw_arg'])
                         selector = '#rs-webgl'
@@ -221,6 +227,12 @@ def _worker_main():
                         selector = 'canvas:not(#rs-webgl)'
                     page.locator(selector).screenshot(path=req['destination'], animations='disabled')
                     emit({'ok': True, 'bounds': bounds})
+                elif cmd == 'module':
+                    page.evaluate('() => { delete window.renderReelFrame; }')
+                    page.add_script_tag(content=req['source'])
+                    if not page.evaluate("typeof window.renderReelFrame === 'function'"):
+                        raise ValueError('Bundle must define window.renderReelFrame(canvas, args)')
+                    emit({'ok': True})
                 elif cmd == 'probe_webgl':
                     from .webgl import PROBE
                     info = page.evaluate(PROBE)

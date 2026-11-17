@@ -206,6 +206,9 @@ def build_fcpxml_string(root: Path, plan: dict, metadata: dict, profile: str = '
 def build_captions(plan: dict, srt: bool = False) -> str:
     fps = Fraction(plan['output']['fps'])
     blocks = [] if srt else ['WEBVTT', '']
+    language = plan.get('delivery', {}).get('language')
+    if language and not srt:
+        blocks.extend(['NOTE Language: ' + language, ''])
     cursor = 0
     index = 1
     for scene in plan['scenes']:
@@ -232,6 +235,15 @@ def build_svg_frame(plan: dict, scene_index: int = 0, frame: int = 0) -> str:
     bg = params.get('background', '#eee9df')
     fg = params.get('foreground', '#252925')
     ac = params.get('accent', '#bb5537')
+    if scene['recipe'] == 'shape-field':
+        import base64
+        import io
+        from .drawing import draw
+        image, _ = draw(scene, frame, plan['output'], plan['seed'])
+        buffer = io.BytesIO()
+        image.save(buffer, format='PNG')
+        encoded = base64.b64encode(buffer.getvalue()).decode('ascii')
+        return f'<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}"><image width="{width}" height="{height}" href="data:image/png;base64,{encoded}"/></svg>\n'
     shapes = scene_geometry(scene, frame, width, height, plan['seed'])
     unit = min(width / 960.0, height / 540.0)
     progress = frame / max(1, scene['duration_frames'] - 1)
@@ -259,19 +271,34 @@ def build_svg_frame(plan: dict, scene_index: int = 0, frame: int = 0) -> str:
 
 def export_project(project_dir: str | Path, fmt: str, profile: str = 'production', output_path: str | Path | None = None, frame: int = 0) -> dict:
     root, plan, metadata = load(project_dir)
-    ext_map = {'otio': 'otio', 'fcpxml': 'fcpxml', 'vtt': 'vtt', 'srt': 'srt', 'svg': 'svg', 'blender': 'blend'}
+    ext_map = {'otio': 'otio', 'fcpxml': 'fcpxml', 'vtt': 'vtt', 'srt': 'srt', 'svg': 'svg', 'blender': 'blend', 'premiere': 'xml', 'gif': 'gif', 'webm': 'webm', 'poster': 'png'}
     if fmt not in ext_map:
         raise ValueError(f'Unsupported export format: {fmt}')
     if profile not in {'draft', 'production', 'hero'}:
         raise ValueError('Unknown quality profile')
-    if fmt in {'svg', 'blender'} and (type(frame) is not int or not 0 <= frame < metadata['frames']):
+    if fmt in {'svg', 'blender', 'poster'} and (type(frame) is not int or not 0 <= frame < metadata['frames']):
         raise ValueError(f'frame: expected an integer in [0, {metadata["frames"]})')
-    default_rel = f'output/{plan["id"]}-{profile}.{ext_map[fmt]}'
+    language = plan.get('delivery', {}).get('language', '')
+    suffix = '.' + language if language and fmt in {'vtt', 'srt'} else ''
+    default_rel = f'output/{plan["id"]}-{profile}{suffix}.{ext_map[fmt]}'
     target = Path(output_path).resolve() if output_path else contained_path(root, default_rel, must_exist=False)
     target.parent.mkdir(parents=True, exist_ok=True)
 
     native = None
-    if fmt == 'blender':
+    if fmt in {'gif', 'webm', 'poster'}:
+        from .delivery import write_preview
+        from .skills import file_digest
+        _master_reference(root, plan, metadata, profile)
+        master = contained_path(root, f'output/{profile}.mp4')
+        record = read_json(contained_path(root, f'output/{profile}-manifest.json'))
+        if file_digest(master) != record['artifact_sha256']:
+            raise ValueError('Rendered master differs from the manifest')
+        write_preview(master, target, fmt, frame)
+    elif fmt == 'premiere':
+        from .delivery import premiere_timeline
+        uri, settings = _master_reference(root, plan, metadata, profile)
+        target.write_text(premiere_timeline(plan, metadata, uri, settings), encoding='utf-8')
+    elif fmt == 'blender':
         from .editorial import export_blender_timeline
         native = export_blender_timeline(target, build_otio_dict(root, plan, metadata, profile), frame)
     elif fmt == 'otio':

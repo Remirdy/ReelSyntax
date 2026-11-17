@@ -13,6 +13,35 @@ def parser():
     root.add_argument('--version', action='version', version=__version__)
     commands = root.add_subparsers(dest='command', required=True)
 
+    schema = commands.add_parser('schema', help='Print the editor JSON Schema')
+    schema.add_argument('--output', type=Path)
+
+    captions = commands.add_parser('captions').add_subparsers(dest='operation', required=True)
+    burn = captions.add_parser('burn')
+    burn.add_argument('project', type=Path)
+    burn.add_argument('--profile', choices=['draft', 'production', 'hero'], default='draft')
+    burn.add_argument('--style', choices=['plain', 'word-pop'], default='plain')
+    burn.add_argument('--words', help='Project-relative JSON word timing table')
+    glyphs = commands.add_parser('glyphs', help='Check glyph coverage for a locale sample')
+    glyphs.add_argument('locale')
+    glyphs.add_argument('--font', type=Path)
+    watch = commands.add_parser('watch')
+    watch.add_argument('project', type=Path)
+    watch.add_argument('--once', action='store_true')
+    watch.add_argument('--interval', type=float, default=1.0)
+    for kind in ('readme', 'outline', 'mermaid'):
+        source = commands.add_parser('from-' + kind)
+        source.add_argument('source', type=Path)
+        source.add_argument('--output', required=True, type=Path)
+    composition = commands.add_parser('compose', help='Nest rendered child projects into a new timeline')
+    composition.add_argument('children', type=Path, nargs='+')
+    composition.add_argument('--profile', choices=['draft', 'production', 'hero'], default='draft')
+    composition.add_argument('--output', type=Path, required=True)
+    plugin = commands.add_parser('from-plugin')
+    plugin.add_argument('name')
+    plugin.add_argument('--params', type=Path)
+    plugin.add_argument('--output', required=True, type=Path)
+    plugin.add_argument('--allow-plugin', action='store_true')
     doctor = commands.add_parser('doctor', help='Report installed media and first-party MCP dependencies without installing anything')
     doctor.add_argument('--json', action='store_true')
 
@@ -44,6 +73,7 @@ def parser():
 
     init = commands.add_parser('init', help='Create a procedural motion project in a new or empty directory')
     init.add_argument('project', type=Path)
+    init.add_argument('--template', choices=['foundation', 'promo'], default='foundation')
     init.add_argument('--json', action='store_true')
 
     for name in ['validate', 'plan', 'status']:
@@ -55,6 +85,15 @@ def parser():
         command = commands.add_parser(name)
         command.add_argument('project', type=Path)
         command.add_argument('--profile', choices=['draft', 'production', 'hero'], default='draft')
+        if name == 'render':
+            from .variants import TARGETS
+            command.add_argument('--aspect', help='Comma-separated width:height ratios')
+            command.add_argument('--target', choices=sorted(TARGETS))
+            command.add_argument('--locale')
+            command.add_argument('--set', action='append', default=[], metavar='SCENE.FIELD=TEXT')
+            command.add_argument('--brand', help='Project-relative brand kit JSON')
+            command.add_argument('--queue', help='Project-relative delivery jobs JSON')
+        command.add_argument('--allow-browser-module', action='store_true')
         command.add_argument('--max-frames', type=int, default=18000)
         command.add_argument('--timeout', type=int, default=180, help='Per media process timeout in seconds')
         command.add_argument('--fallback', choices=['pillow', 'browser'], help='Graceful fallback engine when optional Blender is absent')
@@ -63,6 +102,7 @@ def parser():
 
     psd_cmd = commands.add_parser('ingest-psd', help='Extract supported PSD raster layers through an existing optional local Node runtime')
     psd_cmd.add_argument('project', type=Path)
+    psd_cmd.add_argument('--composite', action='store_true', help='Import supported pixel masks and blend modes')
     psd_cmd.add_argument('--source', required=True)
     psd_cmd.add_argument('--destination', required=True)
 
@@ -74,6 +114,13 @@ def parser():
     qc = commands.add_parser('qc')
     qc.add_argument('project', type=Path)
     qc.add_argument('--profile', choices=['draft', 'production', 'hero'], default='draft')
+    qc.add_argument('--loop', action='store_true')
+    qc.add_argument('--html', action='store_true')
+    audio = commands.add_parser('audio').add_subparsers(dest='operation', required=True)
+    analyze = audio.add_parser('analyze', help='Find frame-aligned transients in a PCM WAV')
+    analyze.add_argument('source', type=Path)
+    analyze.add_argument('--fps', default='30/1')
+    analyze.add_argument('--emit-cues', action='store_true')
     qc.add_argument('--json', action='store_true')
 
     snapshot = commands.add_parser('snapshot', help='Decode an actual rendered frame')
@@ -99,7 +146,7 @@ def parser():
 
     export_cmd = commands.add_parser('export', help='Export OTIO, FCPXML, WebVTT, SRT, or SVG editorial artifacts')
     export_cmd.add_argument('project', type=Path)
-    export_cmd.add_argument('--format', required=True, choices=['otio', 'fcpxml', 'vtt', 'srt', 'svg', 'blender'])
+    export_cmd.add_argument('--format', required=True, choices=['otio', 'fcpxml', 'vtt', 'srt', 'svg', 'blender', 'premiere', 'gif', 'webm', 'poster'])
     export_cmd.add_argument('--profile', choices=['draft', 'production', 'hero'], default='production')
     export_cmd.add_argument('--output', type=Path)
     export_cmd.add_argument('--frame', type=int, default=0)
@@ -142,7 +189,7 @@ def parser():
     for name in ['install', 'uninstall']:
         action = actions.add_parser(name)
         action.add_argument('project', type=Path)
-        action.add_argument('--host', choices=['codex', 'antigravity', 'claude', 'cursor'], required=True)
+        action.add_argument('--host', choices=['codex', 'antigravity', 'claude', 'cursor', 'copilot'], required=True)
     record = actions.add_parser('record', help='Record a caller-reported outcome and hash real artifact evidence')
     record.add_argument('project', type=Path)
     record.add_argument('--skill', required=True)
@@ -208,6 +255,24 @@ def execute(args):
     from . import project
     if args.command == 'skills':
         return skill_command(args)
+    if args.command == 'captions':
+        from .captions import burn
+        return burn(args.project, args.profile, args.style, args.words)
+    if args.command == 'glyphs':
+        from .typography import glyph_audit
+        return glyph_audit(args.locale, args.font)
+    if args.command == 'watch':
+        from .authoring import watch
+        return watch(args.project, args.once, args.interval)
+    if args.command == 'compose':
+        from .authoring import compose
+        return compose(args.children, args.profile, args.output)
+    if args.command == 'from-plugin':
+        from .authoring import plugin_project
+        return plugin_project(args.name, args.params, args.output, args.allow_plugin)
+    if args.command.startswith('from-'):
+        from .authoring import from_source
+        return from_source(args.command[5:], args.source, args.output)
     if args.command == 'doctor':
         from .media import doctor
         return doctor()
@@ -242,7 +307,7 @@ def execute(args):
         from .gateway import update_integrations
         return update_integrations(args.target, check_only=(not args.apply and not args.rollback), rollback=args.rollback)
     if args.command == 'init':
-        return project.initialize(args.project)
+        return project.initialize(args.project, template=args.template)
     if args.command in {'validate', 'plan', 'status'}:
         root, plan, metadata = project.load(args.project)
         if args.command == 'validate':
@@ -260,7 +325,11 @@ def execute(args):
         if not 1 <= args.timeout <= 3600:
             raise ValueError('Timeout must be between 1 and 3600 seconds')
         budget = args.cache_budget_mib * 1024 * 1024 if args.cache_budget_mib is not None else None
-        return render(args.project, args.profile, args.max_frames, args.timeout, recover=args.command == 'resume', fallback_engine=args.fallback, cache_budget_bytes=budget)
+        if args.command == 'render' and any((args.aspect, args.target, args.locale, args.set, args.brand, args.queue)):
+            from .variants import render_variants
+            return render_variants(args, dict(profile=args.profile, max_frames=args.max_frames, timeout=args.timeout,
+                                              fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module))
+        return render(args.project, args.profile, args.max_frames, args.timeout, recover=args.command == 'resume', fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module)
 
     if args.command == 'cache':
         from .cache import prune_cache
@@ -268,10 +337,13 @@ def execute(args):
 
     if args.command == 'ingest-psd':
         from .psd import ingest_psd
-        return ingest_psd(args.project, args.source, args.destination)
+        return ingest_psd(args.project, args.source, args.destination, composite=args.composite)
+    if args.command == 'audio':
+        from .review import audio_onsets
+        return audio_onsets(args.source, args.fps, args.emit_cues)
     if args.command == 'qc':
         from .quality import check
-        return check(args.project, args.profile)
+        return check(args.project, args.profile, loop=args.loop, html=args.html)
     if args.command == 'lock':
         from .render import lock
         return lock(args.project, args.scene, roi_profile=args.roi_profile)
@@ -308,6 +380,14 @@ def main(argv=None):
             stream.reconfigure(encoding='utf-8')
     args = parser().parse_args(argv)
     try:
+        if args.command == 'schema':
+            from .schema import project_schema
+            document = json.dumps(project_schema(), indent=2, ensure_ascii=False)
+            if args.output:
+                args.output.write_text(document + '\n', encoding='utf-8')
+            else:
+                print(document)
+            return 0
         if args.command == 'mcp':
             from .mcp_server import serve_stdio
             return serve_stdio(workspace=args.workspace)
@@ -317,12 +397,17 @@ def main(argv=None):
             ok = False
         if args.command == 'skills' and args.action == 'test':
             ok = result['hard_constraint_violation_rate'] == 0
+        if args.command == 'doctor' and not args.json:
+            for name, tool in result['tools'].items():
+                detail = tool.get('version') or tool.get('diagnostic') or ('available' if tool['available'] else 'unavailable')
+                print(f'{name:15} {detail}')
+            return 0
         print(json.dumps({'ok': ok, 'command': args.command, 'result': result}, ensure_ascii=False, indent=2, allow_nan=False))
         return 0 if ok else 2
     except KeyboardInterrupt:
         print(json.dumps({'ok': False, 'command': args.command, 'errors': [{'code': 'interrupted', 'message': 'Operation interrupted; completed scene caches are retained.'}]}), file=sys.stderr)
         return 130
-    except (ValueError, OSError, KeyError, TypeError, RuntimeError, subprocess.TimeoutExpired) as error:
+    except (ValueError, OSError, KeyError, TypeError, RuntimeError, subprocess.TimeoutExpired, ZeroDivisionError) as error:
         print(json.dumps({'ok': False, 'command': args.command, 'errors': [{'code': 'operation_failed', 'message': str(error)}]}, ensure_ascii=False), file=sys.stderr)
         return 2
 

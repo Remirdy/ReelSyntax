@@ -177,6 +177,9 @@ def render_blender_scene(scene: dict, output: dict, profile: str, destination_di
         'out_dir': str(destination_dir),
         'shot': params.get('shot', 'hero'),
     }
+    if scene['recipe'] == 'cassette':
+        payload.update(samples=params.get('samples', 16 if profile == 'draft' else 36),
+                       background=params.get('background', '#2e383a'), accent=params.get('accent', '#d8371e'))
     if scene['recipe'] == 'aperture':
         payload['samples'] = params.get('samples', 20 if profile == 'draft' else 48)
         payload['focal_mm'] = cam_cfg.get('focal_mm', {'macro': 85, 'iris': 91, 'assembly': 53, 'hero': 57}[payload['shot']])
@@ -187,16 +190,16 @@ def render_blender_scene(scene: dict, output: dict, profile: str, destination_di
         tmp_path = Path(tmp)
         script_file = tmp_path / 'render_scene.py'
         cfg_file = tmp_path / 'config.json'
-        if scene['recipe'] == 'aperture':
-            script_file = Path(__file__).with_name('blender_aperture.py')
+        if scene['recipe'] in ('aperture', 'cassette'):
+            script_file = Path(__file__).with_name(f"blender_{scene['recipe']}.py")
         else:
             script_file.write_text(BLENDER_SCRIPT, encoding='utf-8')
         cfg_file.write_text(json.dumps(payload), encoding='utf-8')
         run([bl_info['binary'], '--background', '--factory-startup', '--python-exit-code', '1', '--python', str(script_file), '--', str(cfg_file)], timeout=timeout)
 
     evidence = {}
-    if scene['recipe'] == 'aperture':
-        evidence_file = destination_dir / 'aperture-render.json'
+    if scene['recipe'] in ('aperture', 'cassette'):
+        evidence_file = destination_dir / f"{scene['recipe']}-render.json"
         evidence = json.loads(evidence_file.read_text(encoding='utf-8'))
         evidence_file.unlink()
 
@@ -209,7 +212,7 @@ def render_blender_scene(scene: dict, output: dict, profile: str, destination_di
         with Image.open(frame_file) as im:
             rgb = im.convert('RGB')
         bounds = []
-        if scene['recipe'] != 'aperture':
+        if scene['recipe'] not in ('aperture', 'cassette'):
             canvas = ImageDraw.Draw(rgb)
             bounds = apply_typography_and_hud(canvas, scene, f, output['width'], output['height'], scale=1)
             rgb.save(frame_file)

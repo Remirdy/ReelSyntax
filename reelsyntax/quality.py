@@ -112,7 +112,7 @@ def _check_temporal_continuity(root, manifest: dict) -> dict:
     }
 
 
-def check(project, profile='draft'):
+def check(project, profile='draft', *, loop=False, html=False):
     root, plan, metadata = load(project)
     manifest = read_json(contained_path(root, f'output/{profile}-manifest.json'))
     if manifest['plan_sha256'] != metadata['plan_sha256']:
@@ -139,12 +139,20 @@ def check(project, profile='draft'):
     cadence = len(timestamps) == metadata['frames'] and all(abs(t - Fraction(i, 1) / fps) <= Fraction(1, 100000) for i, t in enumerate(timestamps))
     checks.append({'id': 'frame_cadence', 'status': 'pass' if cadence else 'fail', 'observed': len(timestamps), 'expected': f'{metadata["frames"]} timestamps at {fps} fps within 10 microseconds'})
 
-    contrast_check, glyph_cov_check = _check_typography_and_glyphs(plan)
+    from .typography import BRAND_FONT
+    font = plan.get('delivery', {}).get('font')
+    token = BRAND_FONT.set(contained_path(root, font) if font else None)
+    try:
+        contrast_check, glyph_cov_check = _check_typography_and_glyphs(plan)
+    finally:
+        BRAND_FONT.reset(token)
     checks.append(contrast_check)
     checks.append(glyph_cov_check)
     checks.append(_check_cue_onset_alignment(root, plan, profile, fps))
     checks.append(_check_temporal_continuity(root, manifest))
 
+    from .review import html_report, motion_checks
+    checks.extend(motion_checks(artifact, fps, metadata['frames'], loop))
     roi_results = verify_roi_locks(root, plan, manifest, profile)
     if roi_results:
         checks.append({
@@ -173,4 +181,9 @@ def check(project, profile='draft'):
         'checks': checks, 'technical_status': status, 'release_status': 'requires creative/audio review', 'profile': profile,
     }
     atomic_json(contained_path(root, f'review/{profile}-qc.json', must_exist=False), report)
+    if html:
+        target = contained_path(root, f'review/{profile}-qc.html', must_exist=False)
+        filmstrip = contained_path(root, f'review/{profile}-filmstrip.png')
+        target.write_text(html_report(report, filmstrip), encoding='utf-8')
+        report['html'] = target.relative_to(root).as_posix()
     return report

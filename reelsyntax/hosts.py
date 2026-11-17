@@ -7,6 +7,7 @@ HOST_PATHS = {
     'codex': '.agents/skills',
     'antigravity': '.agents/skills',
     'claude': '.claude/skills',
+    'copilot': '.github/skills',
     'cursor': '.cursor/skills',
 }
 

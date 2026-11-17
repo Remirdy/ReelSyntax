@@ -1,4 +1,4 @@
-from typing import Literal, NotRequired, TypedDict
+from typing import Any, Literal, NotRequired, TypedDict
 
 
 class OutputSettings(TypedDict):
@@ -16,11 +16,16 @@ class SceneParams(TypedDict, total=False):
     accent: str
     series: list[float]
     font_mode: Literal['default', 'system']
-    shot: Literal['macro', 'iris', 'assembly', 'hero']
+    shot: Literal['macro', 'iris', 'assembly', 'hero', 'label', 'drive', 'edge']
     samples: int
     source: str
+    fragment_file: str
+    module_file: str
+    speed: float
+    hdr_to_sdr: bool
     in_frame: int
-    layers: list[dict]
+    shapes: list[dict[str, Any]]
+    layers: list[dict[str, Any]]
 
 
 class CameraConfig(TypedDict, total=False):
@@ -31,14 +36,14 @@ class CameraConfig(TypedDict, total=False):
 
 
 class TransitionConfig(TypedDict, total=False):
-    type: Literal['cut', 'cross_dissolve', 'fade_black', 'wipe_left']
+    type: Literal['cut', 'cross_dissolve', 'fade_black', 'wipe_left', 'slide_left', 'slide_right', 'fade_white', 'radial', 'glitch']
     duration_frames: int
 
 
 class Scene(TypedDict):
     id: str
     duration_frames: int
-    recipe: Literal['assembly', 'rings', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'footage', 'layer-stack', 'shader-sculpture']
+    recipe: Literal['assembly', 'rings', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field']
     engine: Literal['pillow', 'browser', 'blender', 'ffmpeg']
     params: SceneParams
     camera: NotRequired[CameraConfig]
@@ -60,7 +65,7 @@ class AudioSettings(TypedDict):
     gain_db: float
     cues: list[AudioCue]
     export_stems: NotRequired[bool]
-    tracks: NotRequired[list[dict]]
+    tracks: NotRequired[list[dict[str, Any]]]
 
 
 class Constraints(TypedDict, total=False):
@@ -78,6 +83,7 @@ class QualitySettings(TypedDict, total=False):
 
 
 class Project(TypedDict):
+    delivery: NotRequired[dict[str, Any]]
     schema_version: Literal[1]
     id: str
     seed: int

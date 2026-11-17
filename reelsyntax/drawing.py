@@ -269,6 +269,12 @@ def draw(scene, frame, output, seed, supersampling=1, look_mode='agx'):
     canvas = ImageDraw.Draw(image)
     dither = (((frame * 73 + seed * 19) % 17) / 17.0 - 0.5) * 0.75 if scale >= 2 else 0.0
 
+    if recipe == 'shape-field':
+        from .shapes import paint_shapes
+        paint_shapes(image, params['shapes'], background, scene.get('locked_regions', []), output.get('original_size', (width, height)), frame, fps_val)
+        if scale > 1:
+            image = image.resize((width, height), Image.Resampling.LANCZOS)
+        return image, []
     if recipe in LEGACY_RECIPES:
         for kind, points, colored, thickness in scene_geometry(scene, frame, w, h, seed):
             fill = accent if colored else foreground

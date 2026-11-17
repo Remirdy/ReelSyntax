@@ -88,7 +88,10 @@ def check_locks(root, plan, update=False, ids=()):
     current = {}
     start = 0
     for scene in plan['scenes']:
-        current[scene['id']] = digest(canonical({'scene': scene, 'start_frame': start, 'output': plan['output'], 'seed': plan['seed'], 'constraints': plan.get('constraints', {})}))
+        contract = {'scene': scene, 'start_frame': start, 'output': plan['output'], 'seed': plan['seed'], 'constraints': plan.get('constraints', {})}
+        if plan.get('delivery'):
+            contract['delivery'] = plan['delivery']
+        current[scene['id']] = digest(canonical(contract))
         start += scene['duration_frames']
     for sid, expected in locked.items():
         if current.get(sid) != expected:
@@ -164,27 +167,18 @@ def _apply_transitions_and_encode(directories: list[Path], scenes: list[dict], o
         tr = scene.get('transition') if s_idx > 0 else None
         tr_type = tr.get('type', 'cut') if tr else 'cut'
         tr_len = min(tr.get('duration_frames', 10), len(all_sources), scene['duration_frames'] // 2) if tr and tr_type != 'cut' else 0
+        cut_index = len(all_sources)
         for f in range(scene['duration_frames']):
             src_png = d / f'{f:06d}.png'
             if f < tr_len and tr_type != 'cut':
                 alpha = (f + 1) / (tr_len + 1)
-                prev_idx = len(all_sources) - tr_len + f
+                prev_idx = cut_index - tr_len + f
                 prev_png = all_sources[prev_idx]
                 blended_path = merged_frames_dir / f'blend-{prev_idx:06d}.png'
                 with Image.open(prev_png) as im_a, Image.open(src_png) as im_b:
                     ra, rb = im_a.convert('RGB'), im_b.convert('RGB')
-                    if tr_type == 'cross_dissolve':
-                        mixed = Image.blend(ra, rb, alpha)
-                    elif tr_type == 'fade_black':
-                        blk = Image.new('RGB', ra.size, '#000000')
-                        mixed = Image.blend(ra, blk, alpha * 2.0) if alpha < 0.5 else Image.blend(blk, rb, (alpha - 0.5) * 2.0)
-                    elif tr_type == 'wipe_left':
-                        mixed = ra.copy()
-                        split_x = int(round(ra.width * alpha))
-                        if split_x > 0:
-                            mixed.paste(rb.crop((0, 0, split_x, rb.height)), (0, 0))
-                    else:
-                        mixed = rb
+                    from .transitions import blend
+                    mixed = blend(ra, rb, tr_type, alpha)
                     mixed.save(blended_path)
                 all_sources[prev_idx] = blended_path
             all_sources.append(src_png)
@@ -199,7 +193,7 @@ def _apply_transitions_and_encode(directories: list[Path], scenes: list[dict], o
     return [single_seg]
 
 
-def render(project, profile='draft', max_frames=18000, timeout=180, recover=False, fallback_engine=None, cache_budget_bytes=None):
+def render(project, profile='draft', max_frames=18000, timeout=180, recover=False, fallback_engine=None, cache_budget_bytes=None, allow_browser_module=False):
     if cache_budget_bytes is not None and (type(cache_budget_bytes) is not int or cache_budget_bytes < 0):
         raise ValueError('cache_budget_bytes must be a nonnegative integer')
     if profile not in {'draft', 'production', 'hero'}:
@@ -207,6 +201,8 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
     if fallback_engine is not None and fallback_engine not in {'pillow', 'browser'}:
         raise ValueError('Unsupported fallback engine')
     root, plan, metadata = load(project)
+    if any(s['recipe'] == 'three-scene' for s in plan['scenes']) and not allow_browser_module:
+        raise ValueError('A three-scene module runs user JavaScript. Review the bundle and supply --allow-browser-module.')
     if metadata['frames'] > max_frames or max_frames < 1:
         raise ValueError('Render exceeds max_frames budget; explicitly increase --max-frames after reviewing cost')
     output = output_settings(plan, profile)
@@ -262,8 +258,8 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
             for s in plan['scenes']:
                 eng = s['engine']
                 if eng == 'blender' and not blender_probe['available']:
-                    if s['recipe'] == 'aperture':
-                        raise ValueError(f"Scene '{s['id']}' requires native Blender optics; no compatible software fallback exists")
+                    if s['recipe'] in ('aperture', 'cassette'):
+                        raise ValueError(f"Scene '{s['id']}' requires native Blender optics or product geometry; no compatible software fallback exists")
                     if fallback_engine:
                         eng = fallback_engine
                         fallbacks_used.append({'scene': s['id'], 'requested': 'blender', 'used': fallback_engine, 'reason': 'Blender executable unavailable'})
@@ -277,13 +273,15 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                 browser = stack.enter_context(BrowserRenderer(timeout=min(timeout, 15)))
                 environment['browser'] = browser.version
                 environment['browser_source_sha256'] = file_digest(Path(__file__).with_name('browser.py'))
-                if any(s['recipe'] == 'shader-sculpture' for s in plan['scenes']):
+                if any(s['recipe'] in ('shader-sculpture', 'custom-shader', 'three-scene') for s in plan['scenes']):
                     environment['webgl'] = browser.require_webgl()
                     environment['webgl_source_sha256'] = file_digest(Path(__file__).with_name('webgl.py'))
             if 'blender' in resolved_engines.values():
                 environment['blender'] = blender_probe['version'] or blender_probe['binary']
                 environment['blender_source_sha256'] = file_digest(Path(__file__).with_name('blender_engine.py'))
-                if any(s['recipe'] == 'aperture' for s in plan['scenes']):
+                if any(s['recipe'] == 'cassette' for s in plan['scenes']):
+                    environment['cassette_source_sha256'] = file_digest(Path(__file__).with_name('blender_cassette.py'))
+                if any(s['recipe'] in ('aperture', 'cassette') for s in plan['scenes']):
                     environment['aperture_source_sha256'] = file_digest(Path(__file__).with_name('blender_aperture.py'))
             if resolved_engines:
                 try:
@@ -291,12 +289,26 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                 except importlib.metadata.PackageNotFoundError as error:
                     raise ValueError('Rendering review artifacts requires the optional Pillow package') from error
 
+            from .variants import TARGETS, apply_brand
+            from .typography import BRAND_FONT
+            delivery = plan.get('delivery', {})
+            if 'font' in delivery:
+                if any(s['engine'] != 'pillow' and any(s['params'].get(k) for k in ('heading', 'subheading', 'kicker')) for s in plan['scenes']):
+                    raise ValueError('A brand font requires Pillow for text scenes')
+                font_token = BRAND_FONT.set(contained_path(root, delivery['font']))
+                stack.callback(BRAND_FONT.reset, font_token)
             supersample = 1 if profile == 'draft' else (3 if profile == 'hero' else 2)
             directories = []
             for scene in plan['scenes']:
                 eng = resolved_engines[scene['id']]
                 effective_scene = dict(scene)
+                if scene['recipe'] == 'shape-field':
+                    effective_scene['shape_renderer'] = file_digest(Path(__file__).with_name('shapes.py'))
+                    effective_scene['coordinate_space'] = plan['output']
                 dependencies = scene_sources(scene)
+                if delivery:
+                    effective_scene['delivery'] = delivery
+                    dependencies.extend(delivery[k] for k in ('logo', 'font') if k in delivery)
                 if dependencies:
                     effective_scene['source_assets'] = {source: sources[source] for source in dependencies}
                 key = scene_hash(effective_scene, output, plan['seed'], profile, environment, engine_used=eng)
@@ -315,15 +327,27 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                         from .blender_engine import render_blender_scene
                         engine_evidence, layout = render_blender_scene(scene, output, profile, temporary, timeout=timeout)
                     else:
+                        browser_scene = scene
+                        if scene['recipe'] in ('custom-shader', 'three-scene'):
+                            key = 'fragment_file' if scene['recipe'] == 'custom-shader' else 'module_file'
+                            source = contained_path(root, scene['params'][key])
+                            if source.stat().st_size > (65536 if key == 'fragment_file' else 4*1024*1024):
+                                raise ValueError('Browser scene source exceeds its size budget')
+                            if key == 'fragment_file':
+                                browser_scene = dict(scene, params=dict(scene['params'], fragment=source.read_text(encoding='utf-8')))
+                            else:
+                                browser.install_module(source.read_text(encoding='utf-8'))
                         for frame in range(scene['duration_frames']):
                             destination = temporary / f'{frame:06d}.png'
                             if eng == 'browser':
-                                bounds = browser.draw(scene, frame, output, plan['seed'], destination)
+                                bounds = browser.draw(browser_scene, frame, output, plan['seed'], destination)
                             else:
-                                image, bounds = drawing.draw(scene, frame, output, plan['seed'], supersampling=supersample)
+                                image, bounds = drawing.draw(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height'])), plan['seed'], supersampling=supersample)
                                 image.save(destination)
                             if frame in {0, scene['duration_frames'] // 2, scene['duration_frames'] - 1}:
                                 layout.append({'frame': frame, 'text': bounds})
+                    if delivery:
+                        apply_brand(temporary, scene['duration_frames'], delivery, root)
                     encode_scene(temporary, scene['duration_frames'], output, timeout)
                     roi_digests = compute_roi_digests(temporary, scene, plan['output'], output)
                     artifacts = {p.name: file_digest(p) for p in temporary.iterdir() if p.is_file()}
@@ -360,8 +384,18 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                         from .audio_sources import mix_sources
                         sound = mix_sources(root, temp / 'mix.wav', plan, sound, stem_temp, timeout)
                     args += ['-i', 'mix.wav', '-map', '0:v:0', '-map', '1:a:0', '-c:a', 'aac', '-b:a', '192k', '-ar', '48000']
-                args += [
-                    '-c:v', 'copy', '-colorspace', 'bt709', '-color_primaries', 'bt709',
+                if 'target' in delivery:
+                    _, bitrate, loudness, _ = TARGETS[delivery['target']]
+                    if sound:
+                        args += ['-af', f'loudnorm=I={loudness}:TP=-1.5:LRA=11']
+                    args += ['-c:v', 'libx264', '-threads', '2', '-b:v', bitrate, '-pix_fmt', 'yuv420p']
+                else:
+                    args += ['-c:v', 'copy']
+                if 'language' in delivery:
+                    args += ['-metadata:s:v:0', 'language=' + delivery['language']]
+                    if sound:
+                        args += ['-metadata:s:a:0', 'language=' + delivery['language']]
+                args += [ '-colorspace', 'bt709', '-color_primaries', 'bt709',
                     '-color_trc', 'bt709', '-color_range', 'tv',
                     '-t', str(float(Fraction(metadata['duration']))), '-movflags', '+faststart', 'master.mp4',
                 ]

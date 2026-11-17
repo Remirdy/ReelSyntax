@@ -1,5 +1,9 @@
+from contextvars import ContextVar
 from pathlib import Path
 import sys
+
+
+BRAND_FONT = ContextVar("brand_font", default=None)
 
 
 SYSTEM_SANS_CANDIDATES = {
@@ -38,7 +42,8 @@ SYSTEM_BOLD_CANDIDATES = {
 def resolve_font(size: int, bold: bool = False, font_path: str | Path | None = None, prefer_default: bool = False):
     from PIL import ImageFont
     px = max(8 if prefer_default else 4, int(round(size)))
-    if prefer_default:
+    font_path = font_path or BRAND_FONT.get()
+    if prefer_default and not font_path:
         return ImageFont.load_default(size=px)
     if font_path:
         p = Path(font_path)
@@ -114,3 +119,19 @@ def draw_tracked_text(canvas, xy: tuple[float, float], text: str, font, fill, tr
     if top == float('inf'):
         top, bottom = y0, y0
     return [float(x0), top, cursor, bottom]
+
+
+GLYPH_SAMPLES = {
+    'de': 'ÄÖÜäöüß', 'es': 'ÁÉÍÓÚÜÑáéíóúüñ¿¡', 'tr': 'ÇĞİÖŞÜçğıöşü',
+    'pl': 'ĄĆĘŁŃÓŚŹŻąćęłńóśźż', 'vi': 'ĂÂĐÊÔƠƯăâđêôơưắằẵặấầẩẫậếềểễệốồổỗộớờởỡợứừửữự',
+    'ar': 'العَرَبِيَّة', 'zh': '简体中文繁體漢字', 'ja': '日本語かなカナ', 'ko': '한글',
+}
+
+
+def glyph_audit(locale, font_path=None):
+    if locale not in GLYPH_SAMPLES:
+        raise ValueError('No glyph sample for the requested locale')
+    font = resolve_font(28, font_path=font_path)
+    result = check_glyph_coverage(GLYPH_SAMPLES[locale], font)
+    return {'locale': locale, 'sample': GLYPH_SAMPLES[locale], **result,
+            'technical_status': 'pass' if result['ok'] else 'fail'}

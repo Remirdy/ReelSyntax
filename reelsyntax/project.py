@@ -7,11 +7,11 @@ from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_p
 
 from .contracts import Project, ProjectMetadata
 
-RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'footage', 'layer-stack', 'shader-sculpture'}
-RECIPES_3D = {'prism-monolith', 'aperture'}
+RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field'}
+RECIPES_3D = {'prism-monolith', 'aperture', 'cassette'}
 ENGINES = {'pillow', 'browser', 'blender', 'ffmpeg'}
 CAMERA_PRESETS = {'locked', 'dolly_in', 'orbit', 'crane_rise', 'dolly_zoom'}
-TRANSITIONS = {'cut', 'cross_dissolve', 'fade_black', 'wipe_left'}
+TRANSITIONS = {'cut', 'cross_dissolve', 'fade_black', 'wipe_left', 'slide_left', 'slide_right', 'fade_white', 'radial', 'glitch'}
 INSTRUMENTS = {'sine', 'sub_impact', 'harmonic_pluck', 'warm_pad', 'whoosh', 'click_transient'}
 CONSTRAINTS = {'no_text', 'no_audio', 'no_voice', 'no_music', 'camera_locked', 'offline', 'no_paid_services'}
 
@@ -72,10 +72,12 @@ def _validate_camera(cam, camera_locked: bool, location: str):
 def validate(plan: Project) -> ProjectMetadata:
     fields(
         plan,
-        {'schema_version', 'id', 'seed', 'output', 'constraints', 'camera', 'scenes', 'audio', 'quality'},
+        {'$schema', 'schema_version', 'id', 'seed', 'output', 'constraints', 'camera', 'scenes', 'audio', 'quality', 'delivery'},
         {'schema_version', 'id', 'seed', 'output', 'scenes', 'audio'},
         'project',
     )
+    if '$schema' in plan:
+        text(plan['$schema'], '$schema', 512)
     if type(plan['schema_version']) is not int or plan['schema_version'] != 1:
         raise ValueError('schema_version: only version 1 is supported')
     if not isinstance(plan['id'], str) or not re.fullmatch('[a-z0-9]+(?:-[a-z0-9]+)*', plan['id']) or len(plan['id']) > 64:
@@ -92,6 +94,18 @@ def validate(plan: Project) -> ProjectMetadata:
     fps = Fraction(output['fps'])
     if not 1 <= fps <= 120:
         raise ValueError('output.fps: supported range is 1–120')
+    delivery = plan.get('delivery', {})
+    fields(delivery, {'target', 'language', 'font', 'logo', 'margin'}, set(), 'delivery')
+    if 'target' in delivery:
+        from .variants import TARGETS
+        if delivery['target'] not in TARGETS:
+            raise ValueError('Unknown delivery target')
+    if 'language' in delivery and not re.fullmatch('[a-z]{3}', delivery['language']):
+        raise ValueError('delivery.language: expected a three-letter language code')
+    number(delivery.get('margin', 0), 0, 0.25, 'delivery.margin')
+    for key in ('font', 'logo'):
+        if key in delivery:
+            asset_path(delivery[key], 'delivery.' + key)
     constraints = plan.get('constraints', {})
     fields(constraints, CONSTRAINTS, set(), 'constraints')
     if any(type(v) is not bool for v in constraints.values()):
@@ -120,7 +134,7 @@ def validate(plan: Project) -> ProjectMetadata:
         if scene['engine'] == 'blender' and scene['recipe'] not in RECIPES_3D:
             raise ValueError(f'{sid}: blender engine requires a 3D recipe ({sorted(RECIPES_3D)})')
         params = scene['params']
-        fields(params, {'heading', 'subheading', 'kicker', 'background', 'foreground', 'accent', 'series', 'font_mode', 'shot', 'samples', 'source', 'in_frame', 'layers'}, set(), sid + '.params')
+        fields(params, {'heading', 'subheading', 'kicker', 'background', 'foreground', 'accent', 'series', 'font_mode', 'shot', 'samples', 'source', 'in_frame', 'layers', 'shapes', 'speed', 'hdr_to_sdr', 'fragment_file', 'module_file'}, set(), sid + '.params')
         for key, value in params.items():
             if key in {'heading', 'subheading', 'kicker'}:
                 text(value, sid + '.' + key)
@@ -136,24 +150,40 @@ def validate(plan: Project) -> ProjectMetadata:
             elif key == 'font_mode':
                 if value not in {'default', 'system'}:
                     raise ValueError(f'{sid}.font_mode: expected default or system')
-        if scene['recipe'] == 'aperture' and scene['engine'] != 'blender':
-            raise ValueError(f'{sid}: aperture requires the native Blender renderer')
-        if scene['recipe'] == 'aperture' and any(params.get(key) for key in ['heading', 'subheading', 'kicker']):
-            raise ValueError(f'{sid}: aperture is a native textless recipe; typography overlays are unsupported')
-        if 'shot' in params and (scene['recipe'] != 'aperture' or not isinstance(params['shot'], str) or params['shot'] not in {'macro', 'iris', 'assembly', 'hero'}):
-            raise ValueError(f'{sid}.shot: expected a native aperture shot')
+        native_shots = {'aperture': ('macro', 'iris', 'assembly', 'hero'), 'cassette': ('label', 'drive', 'edge', 'hero')}
+        recipe = scene['recipe']
+        if recipe in native_shots:
+            if scene['engine'] != 'blender':
+                raise ValueError(f'{sid}: {recipe} requires the native Blender renderer')
+            if any(params.get(key) for key in ('heading', 'subheading', 'kicker')):
+                raise ValueError(f'{sid}: {recipe} does not support typography overlays')
+            if recipe == 'cassette' and (constraints.get('no_text') or constraints.get('camera_locked') or scene.get('camera') or plan.get('camera')):
+                raise ValueError(f'{sid}: cassette uses printed labeling and authored camera paths')
+        if 'shot' in params and params['shot'] not in native_shots.get(recipe, ()):
+            raise ValueError(f'{sid}.shot: expected a native {recipe} shot')
         if 'samples' in params:
-            if scene['recipe'] != 'aperture':
-                raise ValueError(f'{sid}.samples: sample control is supported by the native aperture recipe')
+            if recipe not in native_shots:
+                raise ValueError(f'{sid}.samples: expected a native product recipe')
             integer(params['samples'], 8, 256, f'{sid}.samples')
         if scene['recipe'] == 'footage' or scene['engine'] == 'ffmpeg':
             if scene['recipe'] != 'footage' or scene['engine'] != 'ffmpeg':
                 raise ValueError(f'{sid}: footage requires engine ffmpeg')
-            fields(params, {'source', 'in_frame', 'background'}, {'source'}, f'{sid}.params')
+            fields(params, {'source', 'in_frame', 'background', 'speed', 'hdr_to_sdr'}, {'source'}, f'{sid}.params')
             asset_path(params['source'], f'{sid}.source')
+            number(params.get('speed', 1), 0.05, 16, sid + '.speed')
+            if type(params.get('hdr_to_sdr', False)) is not bool:
+                raise ValueError('hdr_to_sdr must be boolean')
             integer(params.get('in_frame', 0), 0, 10_000_000, f'{sid}.in_frame')
-        elif 'source' in params or 'in_frame' in params:
+        elif {'source', 'in_frame', 'speed', 'hdr_to_sdr'}.intersection(params):
             raise ValueError(f'{sid}: source/in_frame require the footage recipe')
+        if scene['recipe'] == 'shape-field':
+            from .shapes import validate_shapes
+            if scene['engine'] != 'pillow':
+                raise ValueError(f'{sid}: shape-field requires pillow')
+            fields(params, {'shapes', 'background'}, {'shapes'}, f'{sid}.params')
+            validate_shapes(params['shapes'])
+        elif 'shapes' in params:
+            raise ValueError(f'{sid}: shapes require the shape-field recipe')
         if scene['recipe'] == 'layer-stack':
             if scene['engine'] != 'pillow':
                 raise ValueError(f'{sid}: layer-stack requires engine pillow')
@@ -161,7 +191,9 @@ def validate(plan: Project) -> ProjectMetadata:
             if not isinstance(params['layers'], list) or not 1 <= len(params['layers']) <= 128:
                 raise ValueError(f'{sid}.layers: expected 1–128 raster layers')
             for layer in params['layers']:
-                fields(layer, {'source', 'name', 'x', 'y', 'width', 'height', 'opacity'}, {'source'}, f'{sid}.layer')
+                fields(layer, {'source', 'name', 'x', 'y', 'width', 'height', 'opacity', 'blend'}, {'source'}, f'{sid}.layer')
+                if layer.get('blend', 'normal') not in ('normal', 'multiply', 'screen', 'overlay'):
+                    raise ValueError('Unsupported raster blend mode')
                 asset_path(layer['source'], f'{sid}.layer.source')
                 for key in ('x', 'y'):
                     integer(layer.get(key, 0), -16384, 16384, f'{sid}.layer.{key}')
@@ -175,6 +207,15 @@ def validate(plan: Project) -> ProjectMetadata:
             raise ValueError(f'{sid}: layers require the layer-stack recipe')
         if scene['recipe'] in {'footage', 'layer-stack'} and scene.get('camera', plan.get('camera', {})):
             raise ValueError(f'{sid}: media recipes do not support camera configuration')
+        custom = {'custom-shader': 'fragment_file', 'three-scene': 'module_file'}
+        if scene['recipe'] in custom:
+            key = custom[scene['recipe']]
+            fields(params, {key, 'background', 'foreground', 'accent'}, {key}, f'{sid}.params')
+            asset_path(params[key], sid + '.' + key)
+            if scene['engine'] != 'browser':
+                raise ValueError(f'{sid}: a custom WebGL scene requires the browser')
+        elif {'fragment_file', 'module_file'}.intersection(params):
+            raise ValueError('WebGL source paths require a custom browser recipe')
         if scene['recipe'] == 'shader-sculpture':
             if scene['engine'] != 'browser':
                 raise ValueError(f'{sid}: shader-sculpture requires the browser WebGL2 renderer')
@@ -270,18 +311,24 @@ def load(project: str | Path) -> tuple[Path, Project, ProjectMetadata]:
     return root, plan, validate(plan)
 
 
-def initialize(project):
+def initialize(project, template='foundation'):
     root = Path(project).absolute()
     if root.is_symlink() or root.exists() and (not root.is_dir() or any(root.iterdir())):
         raise ValueError('init requires a new or empty directory')
     root.mkdir(parents=True, exist_ok=True)
+    from .schema import project_schema
     plan = starter()
+    if template == 'promo':
+        for scene, heading in zip(plan['scenes'], ['INTRO', 'DETAIL', 'CLOSE']):
+            scene['params'].update(heading=heading, subheading='')
+    atomic_json(root / 'reel.schema.json', project_schema())
     atomic_json(root / 'reel.json', plan)
     return {'project': str(root), **validate(plan)}
 
 
 def starter() -> Project:
     return {
+        '$schema': './reel.schema.json',
         'schema_version': 1,
         'id': 'motion-study',
         'seed': 42,
