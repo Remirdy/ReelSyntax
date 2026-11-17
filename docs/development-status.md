@@ -30,9 +30,9 @@ Upstream `Remirdy/ReelSyntax` at `167d9c4787642b125eca35f84e0b5f9088124a31` cont
 
 ## Verification summary
 
-- `REELSYNTAX_MEDIA_TESTS=1 REELSYNTAX_BROWSER_TESTS=1 .venv/bin/python -W error -m unittest discover -s tests -v`: **81 passed, 0 skipped, 0 warnings**. Includes source footage/layer/PSD/audio checks, cache LRU safety, actual WebGL2 rendering, native Blender editorial save/reopen/decoded-frame comparison, editorial boundary regressions, MCP workspace/framing/schema checks, FFmpeg QC/cache/resume, Chromium timeout recovery, live headless Blender, live first-party MCP stdio discovery and submodule audits. [Current extension evidence](evidence/production-extensions.json).
+- `REELSYNTAX_MEDIA_TESTS=1 REELSYNTAX_BROWSER_TESTS=1 .venv/bin/python -W error -m unittest discover -s tests -v`: **83 passed, 0 skipped, 0 warnings**. Includes source footage/layer/PSD/audio checks, cache LRU safety, actual WebGL2 rendering, native Blender editorial save/reopen/decoded-frame comparison, editorial boundary regressions, MCP workspace/framing/schema checks, FFmpeg QC/cache/resume, Chromium timeout recovery, live headless Blender, live first-party MCP stdio discovery and submodule audits. [Current extension evidence](evidence/production-extensions.json).
 - `.venv/bin/python -m unittest discover -s ReelSyntax_Skills/tests -v`: **7 passed**.
-- Clean installed core without Pillow/Playwright: **66 passed, 15 optional-runtime tests skipped, 0 failures**; media-only glyph checks are separated from core audio coverage.
+- Clean installed core without Pillow/Playwright: **68 passed, 15 optional-runtime tests skipped, 0 failures**; media-only glyph checks are separated from core audio coverage.
 - `.venv/bin/python -m compileall -q reelsyntax ReelSyntax_Skills/tools`: **passed**.
 - `.venv/bin/python -m reelsyntax skills validate`: **517 valid skills**, registry schema v2.
 - `.venv/bin/python -m reelsyntax skills test`: [50-case routing benchmark](evidence/routing.json) — top-1 accuracy **100.0%**, recall@k **94.4%**, precision@k **74.4%**, hard-constraint violations **0%**, no-match error rate **0%**, median latency **18.2 ms**.
@@ -43,3 +43,5 @@ Upstream `Remirdy/ReelSyntax` at `167d9c4787642b125eca35f84e0b5f9088124a31` cont
 - `uv build --quiet`: wheel and sdist build cleanly with zero generated example state/outputs and zero submodule paths included (`MANIFEST.in`).
 
 The project remains an active `0.1.0` pre-release. The full master specification includes future nonlinear editing, retiming, nested compositions, advanced PSD/HDR workflows, more creative recipes and additional engine adapters. Those are not represented as implemented by the current tests. Native third-party editor imports, interactive application execution, broad hardware coverage and a package release remain separate gates; see [roadmap](roadmap.md).
+
+First remote CI execution exposed Windows CRLF frontmatter parsing, a missing FFmpeg package on the Ubuntu media runner, and an invalid direct secrets conditional in the sync workflow. Follow-up fixes preserve raw skill hashes, configure repository text line endings, make CLI output UTF-8 under non-UTF-8 defaults, install FFmpeg in the ephemeral media runner, and gate optional App credentials through job environment metadata. Official Actions are pinned to verified Node 24 revisions. Remote outcomes remain linked above.

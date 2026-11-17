@@ -1,12 +1,12 @@
 {
   "date": "2026-11-17",
   "tests": {
-    "core_media_browser_passed": 81,
+    "core_media_browser_passed": 83,
     "original_pack_passed": 7,
     "skipped": 0,
     "warnings": 0,
     "minimal_core": {
-      "passed": 66,
+      "passed": 68,
       "optional_skipped": 15,
       "failed": 0
     }

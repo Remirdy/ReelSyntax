@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 
-from ReelSyntax_Skills.tools.registry import ROOT, atomic_json, contained_path, load_index, load_skill, read_json, rebuild, validate_rows
+from ReelSyntax_Skills.tools.registry import ROOT, atomic_json, contained_path, digest, load_index, load_skill, read_json, rebuild, validate_rows
 from ReelSyntax_Skills.tools.route import route, route_task
 from reelsyntax import hosts, skills
 
@@ -180,6 +180,21 @@ class RoutingTests(unittest.TestCase):
                 rebuild(root)
             duplicate.unlink()
             self.assertEqual(len(rebuild(root)['skills']), 1)
+
+    def test_crlf_skill_reindex_preserves_exact_bytes_and_integrity(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            path = root / BY_ID['frame-clock']['path']
+            path.parent.mkdir(parents=True)
+            raw = (ROOT / BY_ID['frame-clock']['path']).read_bytes().replace(b'\r\n', b'\n').replace(b'\n', b'\r\n')
+            path.write_bytes(raw)
+            row = rebuild(root)['skills'][0]
+            self.assertEqual(row['sha256'], digest(raw))
+            self.assertEqual(load_skill(row, root).encode('utf-8'), raw)
+            self.assertEqual(path.read_bytes(), raw)
+            path.write_bytes(raw + b'Changed\r\n')
+            with self.assertRaisesRegex(ValueError, 'content changed'):
+                load_skill(row, root)
 
     def test_scale_bounds(self):
         rows = copy.deepcopy(ROWS)

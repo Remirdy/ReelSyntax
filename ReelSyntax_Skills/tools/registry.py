@@ -157,7 +157,7 @@ def validate_rows(rows, root=ROOT, verify_files=True):
 
 
 def frontmatter(text):
-    parts = text.split("---\n", 2)
+    parts = re.split(r"(?m)^---\r?\n", text, maxsplit=2)
     if len(parts) != 3 or parts[0] != "":
         raise ValueError("Expected scalar YAML frontmatter")
     fields = {}

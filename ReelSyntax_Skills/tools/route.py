@@ -389,6 +389,9 @@ def route_task(task, rows, root=ROOT, include_diagnostics=False):
 
 
 def main():
+    for stream in (sys.stdout, sys.stderr):
+        if hasattr(stream, 'reconfigure'):
+            stream.reconfigure(encoding='utf-8')
     parser = argparse.ArgumentParser(description='Route a work item using local metadata; bodies load only with --load.')
     parser.add_argument('query', nargs='?', default='')
     parser.add_argument('--limit', type=int, default=6)

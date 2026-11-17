@@ -2,6 +2,8 @@
 
 ## 0.1.0 — Unreleased
 
+- Fix CRLF skill frontmatter parsing while retaining byte-exact integrity checks; stabilize checkout line endings and UTF-8 CLI output across operating systems.
+- Configure FFmpeg installation for the disposable CI media runner, correct optional App-token workflow conditions, and pin official Actions to Node 24 revisions.
 - Add local footage trimming, normal-alpha raster layer stacks, bounded optional PSD raster extraction, and independently timed source audio with J/L cuts, fades, pan and source stems.
 - Add source asset integrity checks, delivery-protected LRU cache pruning and optional post-delivery disk budgets.
 - Add capability-probed offline WebGL2 SDF rendering and native Blender Video Sequencer export with saved-project reopen and frame preview.

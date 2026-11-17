@@ -13,6 +13,14 @@ def command(*args,cwd=ROOT):
 
 
 class CliTests(unittest.TestCase):
+    def test_utf8_json_with_non_utf8_child_stream_defaults(self):
+        import os
+        env = dict(os.environ, PYTHONIOENCODING='ascii')
+        for command in ([sys.executable, '-m', 'reelsyntax', 'skills', 'explain', 'kamera sabit yazı olmasın', '--json'], [sys.executable, str(ROOT / 'ReelSyntax_Skills/tools/route.py'), 'kamera sabit yazı olmasın', '--json']):
+            result = subprocess.run(command, capture_output=True, encoding='utf-8', env=env, timeout=30)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            self.assertIsInstance(json.loads(result.stdout), dict)
+
     def test_json_and_help(self):
         self.assertEqual(command('--help').returncode,0)
         response=command('skills','search','siyah kare','--json')
