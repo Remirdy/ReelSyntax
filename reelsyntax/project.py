@@ -1,6 +1,10 @@
 from fractions import Fraction
+from contextlib import contextmanager
+import json
 import math
+import os
 from pathlib import Path
+import platform
 import re
 
 from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_path, digest, read_json
@@ -14,6 +18,21 @@ CAMERA_PRESETS = {'locked', 'dolly_in', 'orbit', 'crane_rise', 'dolly_zoom'}
 TRANSITIONS = {'cut', 'cross_dissolve', 'fade_black', 'wipe_left'}
 INSTRUMENTS = {'sine', 'sub_impact', 'harmonic_pluck', 'warm_pad', 'whoosh', 'click_transient'}
 CONSTRAINTS = {'no_text', 'no_audio', 'no_voice', 'no_music', 'camera_locked', 'offline', 'no_paid_services'}
+
+
+@contextmanager
+def project_mutex(root):
+    path = contained_path(root, '.reelsyntax/render.lock', must_exist=False)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    try:
+        with path.open('x', encoding='utf-8') as stream:
+            json.dump({'pid': os.getpid(), 'host': platform.node()}, stream)
+    except FileExistsError as error:
+        raise ValueError('A render/cache/edit/revision operation holds the project lock') from error
+    try:
+        yield
+    finally:
+        path.unlink(missing_ok=True)
 
 
 def fields(value, allowed, required, location):

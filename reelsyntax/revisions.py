@@ -4,7 +4,7 @@ import shutil
 import uuid
 
 from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_path, digest, read_json
-from .project import load, validate
+from .project import load, project_mutex, validate
 from .render import check_locks
 from .skills import file_digest
 
@@ -12,7 +12,13 @@ from .skills import file_digest
 def checkpoint(project, name):
     if not re.fullmatch('[a-z0-9]+(?:-[a-z0-9]+)*', name) or len(name) > 64:
         raise ValueError('Checkpoint name must be a lowercase hyphenated ID of at most 64 characters')
-    root, plan, metadata = load(project)
+    root = Path(project).resolve(strict=True)
+    with project_mutex(root):
+        return _checkpoint_locked(root, name)
+
+
+def _checkpoint_locked(root, name):
+    root, plan, metadata = load(root)
     path = contained_path(root, f'.reelsyntax/checkpoints/{name}.json', must_exist=False)
     if path.exists():
         raise ValueError('Checkpoint already exists; choose a new name')
@@ -24,6 +30,11 @@ def restore(project, name):
     if not re.fullmatch('[a-z0-9]+(?:-[a-z0-9]+)*', name) or len(name) > 64:
         raise ValueError('Invalid checkpoint name')
     root = Path(project).resolve(strict=True)
+    with project_mutex(root):
+        return _restore_locked(root, name)
+
+
+def _restore_locked(root, name):
     current = contained_path(root, 'reel.json')
     saved = read_json(contained_path(root, f'.reelsyntax/checkpoints/{name}.json'))
     validate(saved['plan'])

@@ -61,6 +61,19 @@ def parser():
         command.add_argument('--cache-budget-mib', type=int, help='Prune unused scene caches after delivery; current delivery caches stay protected')
         command.add_argument('--json', action='store_true')
 
+    edit_cmd = commands.add_parser('edit', help='Preview or apply an atomic scene edit transaction')
+    edit_cmd.add_argument('project', type=Path)
+    edit_cmd.add_argument('--operations', required=True, type=Path, help='JSON array of move/insert/duplicate/remove/update operations')
+    edit_cmd.add_argument('--audio-mode', choices=['absolute', 'follow-scenes'], default='absolute')
+    edit_cmd.add_argument('--expected-plan', help='Reject a stale preview by its before_sha256')
+    edit_cmd.add_argument('--apply', action='store_true')
+
+    undo_cmd = commands.add_parser('undo-edit', help='Preview or undo one applied transaction without overwriting later edits')
+    undo_cmd.add_argument('project', type=Path)
+    undo_cmd.add_argument('--revision', required=True)
+    undo_cmd.add_argument('--expected-plan')
+    undo_cmd.add_argument('--apply', action='store_true')
+
     psd_cmd = commands.add_parser('ingest-psd', help='Extract supported PSD raster layers through an existing optional local Node runtime')
     psd_cmd.add_argument('project', type=Path)
     psd_cmd.add_argument('--source', required=True)
@@ -261,6 +274,14 @@ def execute(args):
     if args.command == 'cache':
         from .cache import prune_cache
         return prune_cache(args.project, args.max_mib * 1024 * 1024, apply=args.apply)
+
+    if args.command == 'edit':
+        from .edits import edit_project
+        return edit_project(args.project, read_json(args.operations, max_bytes=1_000_000), args.apply, args.audio_mode, args.expected_plan)
+
+    if args.command == 'undo-edit':
+        from .edits import undo_edit
+        return undo_edit(args.project, args.revision, args.apply, args.expected_plan)
 
     if args.command == 'ingest-psd':
         from .psd import ingest_psd

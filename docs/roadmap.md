@@ -14,6 +14,7 @@ ReelSyntax ships only commands and engines verified in its runtime while maintai
 8. **Disk cache budgets**: Shared operation lock, dry-run LRU pruning, delivery/state reference protection, and optional post-delivery cache budget.
 9. **Native Blender editorial delivery**: Segmented flattened master in Video Sequencer, separately timed mix, markers, rational timing, `.blend` save/reopen and frame preview verification.
 10. **Remote regression matrix**: All eight GitHub Checks jobs passed on the published source: Linux/macOS/Windows core tests on Python 3.11/3.14, Linux FFmpeg media checks and submodule audits. Optional GUI/GPU engines are separate gates.
+11. **Scene edit transactions**: Preview/apply move/insert/duplicate/remove/update, explicit absolute or scene-following audio anchors, original-source backups, optimistic plan hashes and reversible snapshot undo. Render/cache/revision/approval operations share the project mutex. General split/slip/retiming and named picture/audio links remain deferred.
 
 ## Next engineering slices
 

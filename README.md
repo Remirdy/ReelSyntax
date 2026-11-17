@@ -14,6 +14,7 @@ ReelSyntax pairs a 517-skill specialist catalog with a zero-dependency Python 3.
 | Render and review | Draft/Production/Hero, H.264/AAC, exact frame timing, technical QC, selective cache, recovery and approval locks | Broader creative examples, advanced animation and compositing |
 | Native 3D and shaders | Four-shot Blender Cycles optical film and an isolated WebGL2 sculpture recipe | More scene recipes, custom shader/Three.js adapters and GPU/platform coverage |
 | Source media | Local video trimming, normal-alpha raster layer composition, supported 8-bit RGB PSD layer extraction, independently timed source audio and J/L cuts | Advanced PSD blend modes/masks, HDR grading, retiming and a general nonlinear track model |
+| Scene edits | Preview/apply move, insert, duplicate, remove and update transactions; explicit audio anchoring; source backups and reversible undo | Faithful split/slip/retiming and named picture/audio links |
 | Editorial delivery | OTIO/FCPXML, captions, SVG, native Blender Video Sequencer project and preview export | Native Final Cut/Premiere/Resolve import coverage and richer editable effects |
 | Cache management | Dry-run LRU pruning, optional render disk budget, delivery-reference protection and shared operation lock | Long-duration 4K resource benchmarks and broader cross-OS stress testing |
 | MCP integrations | Progressive gateway, live stdio discovery, schema/workspace boundaries and JSX static validation | Live interactive Blender bridge and After Effects execution; upstream compatibility patches |
@@ -64,6 +65,7 @@ python3 -m reelsyntax export ./my-film --format otio --profile hero
 python3 -m reelsyntax export ./my-film --format fcpxml --profile hero
 python3 -m reelsyntax export ./my-film --format blender --profile hero --frame 45
 python3 -m reelsyntax cache ./my-film --max-mib 1024
+python3 -m reelsyntax edit ./my-film --operations edits.json
 python3 -m reelsyntax handoff ./my-film
 ```
 
@@ -72,6 +74,8 @@ python3 -m reelsyntax handoff ./my-film
 - **Objective QC vs creative review**: `qc` verifies FFprobe stream contracts, full decode, 10-microsecond frame cadence, black/freeze/silence intervals, loudness and true peak, WCAG contrast ratios, `.notdef` glyph coverage (including Turkish `ÇĞİÖŞÜçğıöşü`), PCM cue-onset alignment, temporal continuity, and ROI locks. Technical pass never substitutes for human or host-agent visual and audio review.
 
 See [`examples/foundation`](examples/foundation/), [`examples/cinematic-study`](examples/cinematic-study/), [`examples/aperture-film`](examples/aperture-film/), [`examples/editorial-study`](examples/editorial-study/) and [`examples/shader-study`](examples/shader-study/).
+
+Scene edits are dry-run previews by default. See [edit transactions](docs/edit-transactions.md) for operation schemas, plan-hash checks, explicit audio policy, invalidated QC exceptions and undo. Applied edits preserve source files and earlier deliveries.
 
 ## Unified MCP Gateway and agent host setup
 

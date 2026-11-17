@@ -1,12 +1,9 @@
-import json
-import os
 from pathlib import Path
-import platform
 import re
 import shutil
 
 from ReelSyntax_Skills.tools.registry import contained_path, read_json
-from .project import load
+from .project import load, project_mutex
 
 
 def _cache_inventory(root):
@@ -79,14 +76,5 @@ def _prune_locked(root: Path, max_bytes: int, apply: bool = False) -> dict:
 
 def prune_cache(project, max_bytes: int, apply: bool = False) -> dict:
     root, _, _ = load(project)
-    mutex = contained_path(root, '.reelsyntax/render.lock', must_exist=False)
-    mutex.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        with mutex.open('x', encoding='utf-8') as stream:
-            json.dump({'pid': os.getpid(), 'host': platform.node()}, stream)
-    except FileExistsError as error:
-        raise ValueError('A render/cache operation holds the project lock; cache pruning refused') from error
-    try:
+    with project_mutex(root):
         return _prune_locked(root, max_bytes, apply)
-    finally:
-        mutex.unlink(missing_ok=True)

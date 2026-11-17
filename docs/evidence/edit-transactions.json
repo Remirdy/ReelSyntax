@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-17",
+  "scope": "sequential scene plan transactions; general nonlinear tracks and faithful source-range split/retiming remain deferred",
+  "full_suite_passed": 93,
+  "full_suite_skipped": 0,
+  "original_pack_passed": 7,
+  "minimal_core_passed": 77,
+  "minimal_core_optional_skipped": 16,
+  "transaction_regressions": 10,
+  "media_regression": "Edited plan reused two unchanged scene caches; changed scene rerendered; undo restored cache hits for all original scenes",
+  "test_source": "tests/test_edits.py"
+}

@@ -22,6 +22,8 @@
 | `handoff <project>` | Generate coordinated `BlenderMCP` + `AfterEffectsMCP` 3D camera/pass interchange manifest and dry-run validated `.jsx` |
 | `lock --scene ID` | Lock whole-scene timing/source or `--roi-profile <profile>` protected pixel regions |
 | `checkpoint`, `restore` | Save plan checkpoints and restore nondestructively with revision history |
+| `edit --operations FILE` | Preview scene move/insert/duplicate/remove/update transactions; `--apply` validates and journals the change |
+| `undo-edit --revision ID` | Preview or apply a snapshot undo while refusing later intervening plan changes |
 | `skills search`, `explain` | Bounded metadata routing with stage plans, conflict filtering, and optional score/stem diagnostics |
 | `skills load` | Explicit SHA-256 checked instruction or resource disclosure with optional cumulative `--session` budget |
 | `skills list --category NAME` | Bounded metadata listing (`1..20`) |
@@ -34,5 +36,7 @@ Editorial exports reference the flattened `output/<profile>.mp4` master, segment
 `export --format blender --profile hero --frame N` requires the rendered master and a separately installed Blender. It creates a native Video Sequencer `.blend`, reopens it headlessly and renders the selected frame to an adjacent PNG. It preserves the flattened picture cuts and mix; source effects and transitions stay baked. This is a ReelSyntax timeline adapter, not a general OTIO importer. Native Final Cut/Premiere/Resolve import remains a separate verification gate.
 
 `render --cache-budget-mib N` optionally applies LRU cleanup after a verified delivery. Delivery/state-referenced caches remain protected, and the report's `within_budget` can be false if those caches alone exceed the requested size. Unknown cache entries, quarantine, source assets, output masters and history are excluded from pruning. `cache` is a dry-run unless `--apply` is supplied.
+
+See [scene edit transactions](edit-transactions.md) for operation schemas, audio anchoring, optimistic plan hashes, undo and approval-lock behavior. Effective edits invalidate prior QC exception ranges; they require rerender and review.
 
 FCPXML dimensions follow the render profile, including Draft downscaling. Marker positions use the clip's source timeline, following Apple's [timing attributes](https://developer.apple.com/documentation/professional-video-applications/timing-attributes) and OTIO's [time-range rules](https://github.com/AcademySoftwareFoundation/OpenTimelineIO/blob/main/docs/tutorials/time-ranges.md). OTIO rates retain double precision and include the original rational rate as metadata. If an existing render manifest differs from the current plan, OTIO/FCPXML export fails with a request to render the revised plan. Export before any render remains supported and references the planned master location. SVG `--frame N` must be an integer inside the project's frame range; it exports a source storyboard schematic at project resolution, not a decoded video frame.

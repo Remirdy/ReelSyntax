@@ -140,10 +140,13 @@ def verify_roi_locks(root: Path, plan: dict, state_manifest: dict, profile: str)
 
 
 def lock(project, ids, roi_profile: str | None = None):
-    if roi_profile:
-        return {'roi_locked': [lock_roi(project, sid, roi_profile) for sid in ids]}
-    root, plan, _ = load(project)
-    return {'locked': check_locks(root, plan, update=True, ids=ids)}
+    from .project import project_mutex
+    root, _, _ = load(project)
+    with project_mutex(root):
+        if roi_profile:
+            return {'roi_locked': [lock_roi(root, sid, roi_profile) for sid in ids]}
+        _, plan, _ = load(root)
+        return {'locked': check_locks(root, plan, update=True, ids=ids)}
 
 
 def _apply_transitions_and_encode(directories: list[Path], scenes: list[dict], output: dict, temp_dir: Path, timeout: int) -> list[Path]:
