@@ -13,6 +13,82 @@ BY_ID = {r['id']: r for r in ROWS}
 
 
 class RoutingTests(unittest.TestCase):
+    def test_reindex_csv_reflects_relation_overrides_and_keeps_utf8(self):
+        import csv
+        from ReelSyntax_Skills.tools.reindex import rebuild as rebuild_catalog
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            source = root / BY_ID['frame-clock']['path']
+            source.parent.mkdir(parents=True)
+            source.write_bytes((ROOT / BY_ID['frame-clock']['path']).read_bytes())
+            atomic_json(root / 'registry/relations.json', {'frame-clock': {'requires': [], 'status': 'validated'}})
+            document = rebuild_catalog(quiet=True, root=root)
+            with (root / 'registry/catalog.csv').open(encoding='utf-8-sig', newline='') as stream:
+                rows = list(csv.DictReader(stream))
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]['status'], document['skills'][0]['status'])
+            self.assertEqual(rows[0]['aliases'], ', '.join(document['skills'][0]['aliases']))
+            self.assertEqual(rows[0]['requires'], '')
+
+    def test_production_workflow_resources_are_lazy_hashed_and_budgeted(self):
+        targets = ['j-cut', 'l-cut', 'psd-to-video', 'shader-effects', 'otio-export', 'fcpxml-export', 'render-cache', 'partial-render', 'ffmpeg-trimming']
+        load_index()
+        original = Path.read_bytes
+        original_text = Path.read_text
+        def no_instruction_reads(path, *args, **kwargs):
+            if path.name == 'SKILL.md' or 'references' in path.parts:
+                self.fail('Search read an instruction/reference body')
+            return original(path, *args, **kwargs)
+        def no_instruction_text(path, *args, **kwargs):
+            if path.name == 'SKILL.md' or 'references' in path.parts:
+                self.fail('Search read an instruction/reference body')
+            return original_text(path, *args, **kwargs)
+        with patch.object(Path, 'read_bytes', no_instruction_reads), patch.object(Path, 'read_text', no_instruction_text):
+            result = skills.search({'intent': 'j cut source audio', 'include': ['j-cut']})
+        self.assertEqual(result['skill_bodies_read'], 0)
+        for sid in targets:
+            row = BY_ID[sid]
+            self.assertTrue(row['resources'])
+            for resource in row['resources']:
+                result = skills.get_skill(sid, 6000, resource)
+                self.assertEqual(result['sha256'], row['resource_sha256'][resource])
+                self.assertEqual(result['skill_bodies_read'], 0)
+                self.assertFalse(result['executed'])
+                with self.assertRaisesRegex(ValueError, 'context budget'):
+                    skills.get_skill(sid, 1, resource)
+
+    def test_native_otio_export_does_not_require_an_optional_sdk(self):
+        result = route('', ROWS, available=[], include=['otio-export'])
+        self.assertIn('otio-export', [row['id'] for row in result['selected']])
+        self.assertFalse(result['unfulfilled_explicit_ids'])
+
+    def test_updated_resource_is_reloaded_and_charged_in_the_same_session(self):
+        with tempfile.TemporaryDirectory() as catalog, tempfile.TemporaryDirectory() as project:
+            root = Path(catalog)
+            row = BY_ID['frame-clock']
+            source = root / row['path']
+            source.parent.mkdir(parents=True)
+            source.write_bytes((ROOT / row['path']).read_bytes())
+            relative = 'library/render/frame-clock/references/session-resource.md'
+            resource = root / relative
+            resource.parent.mkdir()
+            resource.write_text('First frame timing reference.', encoding='utf-8')
+            atomic_json(root / 'registry/relations.json', {'frame-clock': {'resources': [relative]}})
+            first_digest = rebuild(root)['skills'][0]['sha256']
+            with patch.object(skills, 'ROOT', root), patch.object(skills, 'load_index', side_effect=lambda: load_index(root)):
+                first = skills.session_load(project, 'resource-review', 'frame-clock', 6000, relative)
+                duplicate = skills.session_load(project, 'resource-review', 'frame-clock', 6000, relative)
+                self.assertTrue(duplicate['already_loaded'])
+                resource.write_text('Updated exact frame timing reference with a different content hash.', encoding='utf-8')
+                revised = skills.session_load(project, 'resource-review', 'frame-clock', 6000, relative)
+                self.assertFalse(revised.get('already_loaded', False))
+                self.assertIn('Updated exact', revised['content'])
+                self.assertGreater(revised['charged_tokens'], first['charged_tokens'])
+                self.assertEqual(load_index(root)['skills'][0]['sha256'], first_digest)
+                atomic_json(root / 'registry/relations.json', {'frame-clock': {}})
+                with self.assertRaisesRegex(ValueError, 'not declared'):
+                    skills.session_load(project, 'resource-review', 'frame-clock', 6000, relative)
+
     def test_search_reads_no_specialist_bodies(self):
         original_text, original_bytes = Path.read_text, Path.read_bytes
         def text(path, *args, **kwargs):

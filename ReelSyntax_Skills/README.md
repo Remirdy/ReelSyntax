@@ -36,3 +36,11 @@ All 500 skills now contain individually authored technical production recipes, m
 ## Integrated runtime
 
 The repository now exposes this same router through `python3 -m reelsyntax skills` from the checkout root. See the root README and `docs/development-status.md` for actual implementation and verification status. The supplied instructions and all 500 specialist bodies are retained. Index v2 adds hashes, dependency/conflict/resource relations and separate index-maintenance accounting. Body loading remains explicit; the full catalog stays outside host context.
+
+## Scoped production references
+
+Nine optional references document the core's implemented subsets for `j-cut`, `l-cut`, `psd-to-video`, `shader-effects`, `otio-export`, `fcpxml-export`, `render-cache`, `partial-render` and `ffmpeg-trimming`. They cover actual parameters, capability boundaries, source/frame units, failure conditions and verification paths. They do not upgrade general guidance into a claim that every external-engine technique has been executed. All 517 current `SKILL.md` files remain byte-identical to the prior published catalog.
+
+Use `reelsyntax skills load ID` to discover a skill's declared resource paths, then request one explicitly with `--resource PATH`. Resource files stay inside their owning skill directories. Search reads metadata only; a resource read returns its verified `sha256`, consumes its own context budget and is never executed automatically. Session deduplication keys include the selected content hash, so changing a reference without changing `SKILL.md` correctly triggers a fresh budgeted load. Previously loaded reference versions retain their existing budget charge.
+
+`reelsyntax skills reindex` and `tools/reindex.py` now both refresh the index and CSV catalog from current relation overrides. CSV output preserves UTF-8 BOM/CRLF compatibility and is replaced atomically. The native core OTIO writer has no optional SDK requirement in its routing metadata; external OTIO adapters remain separate capabilities.

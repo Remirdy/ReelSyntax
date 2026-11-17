@@ -53,11 +53,12 @@ def get_skill(sid, token_budget=6000, resource=None):
     if resource not in row.get('resources', []):
         raise ValueError('Resource is not declared for this skill')
     data = contained_path(ROOT, resource).read_bytes()
-    if digest(data) != row.get('resource_sha256', {}).get(resource):
+    observed = digest(data)
+    if observed != row.get('resource_sha256', {}).get(resource):
         raise ValueError('Resource changed; validate and reindex before loading')
     if (len(data) + 2) // 3 > token_budget:
         raise ValueError('Resource exceeds context budget')
-    return {'id': sid, 'resource': resource, 'content': data.decode('utf-8'), 'skill_bodies_read': 0, 'executed': False}
+    return {'id': sid, 'resource': resource, 'sha256': observed, 'content': data.decode('utf-8'), 'skill_bodies_read': 0, 'executed': False}
 
 
 def session_load(project, session, sid, token_budget=6000, resource=None):
@@ -81,7 +82,14 @@ def session_load(project, session, sid, token_budget=6000, resource=None):
         row = next((r for r in document['skills'] if r['id'] == sid), None)
         if row is None:
             raise ValueError('Unknown skill ID: ' + sid)
-        version_key = f'{sid}:{row["sha256"]}:{resource or "body"}'
+        content_hash = row['sha256']
+        if resource is not None:
+            if resource not in row.get('resources', []):
+                raise ValueError('Resource is not declared for this skill')
+            content_hash = row.get('resource_sha256', {}).get(resource)
+            if not content_hash:
+                raise ValueError('Resource has no integrity digest; validate and reindex before loading')
+        version_key = f'{sid}:{content_hash}:{resource or "body"}'
         if version_key in state['loaded']:
             return {'id': sid, 'already_loaded': True, 'skill_bodies_read': 0, 'charged_tokens': state['charged_tokens'], 'remaining_tokens': token_budget - state['charged_tokens']}
         remaining = token_budget - state['charged_tokens']

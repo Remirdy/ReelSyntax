@@ -29,6 +29,8 @@
 | `skills install`, `uninstall` | Receipt-tracked router installation for `codex`, `antigravity`, `claude`, and `cursor` |
 | `skills record`, `effectiveness` | Caller-reported execution ledger backed by real artifact SHA-256 digests |
 
+`skills load ID --resource PATH` returns only a declared, integrity-checked reference, including its content `sha256`. With `--project PATH --session ID`, a changed reference hash triggers a new budgeted load even when its skill instruction body is unchanged; unchanged content is deduplicated. Resources are not read by a warm metadata search or executed by loading them. `skills reindex` refreshes both the JSON registry and the atomically replaced UTF-8 CSV catalog.
+
 Editorial exports reference the flattened `output/<profile>.mp4` master, segmented at scene boundaries. OTIO records baked transitions as clip metadata so an editor does not apply them twice. Its audio track uses the separate mix WAV when present and otherwise references the embedded master audio. Media URIs are absolute and percent-encoded; move or relink them when transferring the project to another workstation.
 
 `export --format blender --profile hero --frame N` requires the rendered master and a separately installed Blender. It creates a native Video Sequencer `.blend`, reopens it headlessly and renders the selected frame to an adjacent PNG. It preserves the flattened picture cuts and mix; source effects and transitions stay baked. This is a ReelSyntax timeline adapter, not a general OTIO importer. Native Final Cut/Premiere/Resolve import remains a separate verification gate.

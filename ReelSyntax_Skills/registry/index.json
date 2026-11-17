@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "e2b97fff50194253fdd537c32833223fb35c49ce51af991919ce2706122167f3",
+  "digest": "cd1bcedc1bfec3d8e46c1e93bd648c0a72ba8999485d9a1fec1a59868742f064",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -1501,7 +1501,12 @@
         "motionpilot-psd-pipeline",
         "locked-region-editing"
       ],
-      "resource_sha256": {}
+      "resources": [
+        "library/capture/psd-to-video/references/core-raster-ingest.md"
+      ],
+      "resource_sha256": {
+        "library/capture/psd-to-video/references/core-raster-ingest.md": "7cb9ea99a93e5621e599ced8d1cab2616e0ff2b1858b75c337b998204be19c68"
+      }
     },
     {
       "id": "readme-showcase",
@@ -2572,7 +2577,12 @@
       "dependencies": [
         "frame-clock"
       ],
-      "resource_sha256": {}
+      "resources": [
+        "library/delivery/fcpxml-export/references/core-fcpxml.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/fcpxml-export/references/core-fcpxml.md": "2514e733ed84fa000faafb676f38022a49b2b3bf3a76c1af8c5a88c6f68a8c6c"
+      }
     },
     {
       "id": "gif-preview",
@@ -2680,9 +2690,7 @@
         "otio",
         "opentimelineio"
       ],
-      "requires": [
-        "otio"
-      ],
+      "requires": [],
       "path": "library/delivery/otio-export/SKILL.md",
       "estimated_words": 381,
       "estimated_tokens": 983,
@@ -2694,7 +2702,12 @@
       "dependencies": [
         "frame-clock"
       ],
-      "resource_sha256": {}
+      "resources": [
+        "library/delivery/otio-export/references/core-master-interchange.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/otio-export/references/core-master-interchange.md": "758db84adf6db3c9f3c5798d2fe1d768556cad0316e10690a240d87aa673e684"
+      }
     },
     {
       "id": "platform-encoding",
@@ -3303,7 +3316,12 @@
       "estimated_tokens": 960,
       "sha256": "cee9788119f3a42b345587d0605ffc30eb05751d3f4389d7fd2d87d343c387d9",
       "body_sha256": "e1b01bb5559cfea0d5d0202ead1e2060681bab57a81b73dcfbd70e6135a764b2",
-      "resource_sha256": {}
+      "resources": [
+        "library/editing/j-cut/references/core-source-audio.md"
+      ],
+      "resource_sha256": {
+        "library/editing/j-cut/references/core-source-audio.md": "2f382a238e755d99a69376d0e74cba7e376fc87301f690eeebaf847d9be6da59"
+      }
     },
     {
       "id": "l-cut",
@@ -3322,7 +3340,12 @@
       "estimated_tokens": 950,
       "sha256": "21854330591d2cfee50b38b03e5d2bd9a4248e8a7dd37d03d0f811e4ee9deffc",
       "body_sha256": "54074dca06898038fcef0c6fffb935150b027910c9ff68b9600cd32971028b09",
-      "resource_sha256": {}
+      "resources": [
+        "library/editing/l-cut/references/core-source-tail.md"
+      ],
+      "resource_sha256": {
+        "library/editing/l-cut/references/core-source-tail.md": "2bc0a7c64d47865bbd2c1e940fb550f01ce82883047229f39c573a3249ff61fa"
+      }
     },
     {
       "id": "locked-region-editing",
@@ -3845,7 +3868,12 @@
       "estimated_tokens": 974,
       "sha256": "aab92acc253d1eb2ebc8e887078db6b9f19ae2615d9bad73e83b897a45b5d232",
       "body_sha256": "e0cc532c02f026ccc14cfc0cd6dbf7661a831bf2abe07ef0cdd612b62846f5a3",
-      "resource_sha256": {}
+      "resources": [
+        "library/engines/ffmpeg-trimming/references/core-footage.md"
+      ],
+      "resource_sha256": {
+        "library/engines/ffmpeg-trimming/references/core-footage.md": "a2da11fc40716ea5235f46448d443e7a31b4e58ba054946b51be07019617dcc6"
+      }
     },
     {
       "id": "gsap-timeline",
@@ -7498,7 +7526,12 @@
       "recommended_next": [
         "render-artifact-validation"
       ],
-      "resource_sha256": {}
+      "resources": [
+        "library/render/partial-render/references/selective-revision.md"
+      ],
+      "resource_sha256": {
+        "library/render/partial-render/references/selective-revision.md": "84237d197f2b9784738c6ff8fe8a7952ba1c1dde98b5d139cc1007261b576bfe"
+      }
     },
     {
       "id": "preview-render",
@@ -7614,7 +7647,12 @@
       "estimated_tokens": 980,
       "sha256": "b2b76c80fe261089107a3a45f9f6ebd4f811cbc51dcc699a63b0488e1fa784a8",
       "body_sha256": "937c2097df3b6a5b66e4096ab522da9f30061055ddacdc72a562d1f8e670aa26",
-      "resource_sha256": {}
+      "resources": [
+        "library/render/render-cache/references/disk-budget.md"
+      ],
+      "resource_sha256": {
+        "library/render/render-cache/references/disk-budget.md": "fbdb6eed4e61de94226bd0098dd0881e98f5162a0b439bd1753e95a7492dc25f"
+      }
     },
     {
       "id": "render-engine-fallback",
@@ -9677,7 +9715,12 @@
       "estimated_tokens": 986,
       "sha256": "a4c700f26439f9570bea6b89e547921a7800b6efe60fd1ee131ea9aa0986bbe5",
       "body_sha256": "a2da1f5913e712e7d7ecc956c22307eb87f1b01a8833b15fa7c426c3093b992f",
-      "resource_sha256": {}
+      "resources": [
+        "library/vfx/shader-effects/references/offline-webgl2.md"
+      ],
+      "resource_sha256": {
+        "library/vfx/shader-effects/references/offline-webgl2.md": "0ff3fbc1d5f028c0fc9af893e52f697ee854fd20118bb74cc7e362555be2fc69"
+      }
     },
     {
       "id": "shadow-catcher",

@@ -4,7 +4,7 @@ from pathlib import Path
 import subprocess
 import sys
 
-from ReelSyntax_Skills.tools.registry import STAGES, contained_path, load_index, read_json, rebuild
+from ReelSyntax_Skills.tools.registry import STAGES, contained_path, load_index, read_json
 from . import __version__
 
 
@@ -185,7 +185,11 @@ def skill_command(args):
         rows = [r for r in rows if r['category'] == args.category]
         return {'total': len(rows), 'skills': [{key: row[key] for key in ['id', 'description', 'stage', 'status', 'version']} for row in rows[args.offset:args.offset + args.limit]], 'skill_bodies_read': 0}
     if args.action in {'validate', 'reindex'}:
-        document = rebuild() if args.action == 'reindex' else load_index()
+        if args.action == 'reindex':
+            from ReelSyntax_Skills.tools.reindex import rebuild as rebuild_catalog
+            document = rebuild_catalog(quiet=True)
+        else:
+            document = load_index()
         return {'skills': len(document['skills']), 'digest': document['digest'], 'schema_version': document['schema_version']}
     if args.action == 'test':
         from .evaluation import evaluate

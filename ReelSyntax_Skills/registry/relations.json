@@ -1,24 +1,45 @@
 {
   "word-anchored-timeline": {
-    "dependencies": ["frame-clock"],
-    "recommended_next": ["voiceover-alignment", "word-timed-captions"],
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "voiceover-alignment",
+      "word-timed-captions"
+    ],
     "status": "validated"
   },
   "partial-render": {
-    "dependencies": ["render-cache"],
-    "recommended_next": ["render-artifact-validation"],
-    "status": "validated"
+    "dependencies": [
+      "render-cache"
+    ],
+    "recommended_next": [
+      "render-artifact-validation"
+    ],
+    "status": "validated",
+    "resources": [
+      "library/render/partial-render/references/selective-revision.md"
+    ]
   },
   "resume-render": {
-    "dependencies": ["render-cache"],
-    "recommended_next": ["render-artifact-validation"],
+    "dependencies": [
+      "render-cache"
+    ],
+    "recommended_next": [
+      "render-artifact-validation"
+    ],
     "status": "validated"
   },
   "render-cache": {
-    "status": "validated"
+    "status": "validated",
+    "resources": [
+      "library/render/render-cache/references/disk-budget.md"
+    ]
   },
   "frame-clock": {
-    "resources": ["library/render/frame-clock/references/exact-timing.md"],
+    "resources": [
+      "library/render/frame-clock/references/exact-timing.md"
+    ],
     "status": "validated"
   },
   "deterministic-seeding": {
@@ -28,26 +49,43 @@
     "status": "validated"
   },
   "render-artifact-validation": {
-    "requires": ["ffmpeg"],
+    "requires": [
+      "ffmpeg"
+    ],
     "status": "validated"
   },
   "headless-browser-render": {
-    "requires": ["browser"],
-    "recommended_next": ["render-artifact-validation", "font-render-audit"],
+    "requires": [
+      "browser"
+    ],
+    "recommended_next": [
+      "render-artifact-validation",
+      "font-render-audit"
+    ],
     "status": "validated"
   },
   "browser-frame-capture": {
-    "requires": ["browser"],
+    "requires": [
+      "browser"
+    ],
     "status": "validated"
   },
   "canvas-2d-rendering": {
-    "requires": ["browser"],
+    "requires": [
+      "browser"
+    ],
     "status": "validated"
   },
   "webcodecs-offscreen-canvas": {
-    "requires": ["browser"],
-    "dependencies": ["frame-clock"],
-    "recommended_next": ["render-artifact-validation"]
+    "requires": [
+      "browser"
+    ],
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "render-artifact-validation"
+    ]
   },
   "locked-camera": {
     "conflicts": [
@@ -61,17 +99,28 @@
     "status": "validated"
   },
   "camera-inertia-rig": {
-    "conflicts": ["locked-camera"],
-    "recommended_next": ["shutter-angle-judder", "camera-continuity"],
+    "conflicts": [
+      "locked-camera"
+    ],
+    "recommended_next": [
+      "shutter-angle-judder",
+      "camera-continuity"
+    ],
     "status": "validated"
   },
   "procedural-camera-shake": {
-    "conflicts": ["locked-camera"],
-    "recommended_next": ["subtitle-safe-area"],
+    "conflicts": [
+      "locked-camera"
+    ],
+    "recommended_next": [
+      "subtitle-safe-area"
+    ],
     "status": "validated"
   },
   "dolly-zoom": {
-    "conflicts": ["locked-camera"],
+    "conflicts": [
+      "locked-camera"
+    ],
     "status": "validated"
   },
   "textless-visual-design": {
@@ -85,17 +134,30 @@
     "status": "validated"
   },
   "kinetic-typography": {
-    "conflicts": ["textless-visual-design"],
-    "recommended_next": ["contrast-audit", "turkish-glyph-audit"],
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "contrast-audit",
+      "turkish-glyph-audit"
+    ],
     "status": "validated"
   },
   "lower-thirds": {
-    "conflicts": ["textless-visual-design"],
-    "recommended_next": ["locked-region-editing", "contrast-audit"],
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "locked-region-editing",
+      "contrast-audit"
+    ],
     "status": "validated"
   },
   "turkish-glyph-audit": {
-    "recommended_next": ["font-render-audit", "contrast-audit"],
+    "recommended_next": [
+      "font-render-audit",
+      "contrast-audit"
+    ],
     "status": "validated"
   },
   "font-render-audit": {
@@ -108,28 +170,43 @@
     "status": "validated"
   },
   "black-frame-detection": {
-    "requires": ["ffmpeg"],
+    "requires": [
+      "ffmpeg"
+    ],
     "status": "validated"
   },
   "freeze-detection": {
-    "requires": ["ffmpeg"],
+    "requires": [
+      "ffmpeg"
+    ],
     "status": "validated"
   },
   "silence-audit": {
-    "requires": ["ffmpeg"],
+    "requires": [
+      "ffmpeg"
+    ],
     "status": "validated"
   },
   "loudness-normalization": {
-    "requires": ["ffmpeg"],
-    "recommended_next": ["ebu-r128-dialogue-gating", "true-peak-limiting"],
+    "requires": [
+      "ffmpeg"
+    ],
+    "recommended_next": [
+      "ebu-r128-dialogue-gating",
+      "true-peak-limiting"
+    ],
     "status": "validated"
   },
   "audio-sync-audit": {
-    "requires": ["ffmpeg"],
+    "requires": [
+      "ffmpeg"
+    ],
     "status": "validated"
   },
   "frame-comparison": {
-    "recommended_next": ["revision-diff"],
+    "recommended_next": [
+      "revision-diff"
+    ],
     "status": "validated"
   },
   "revision-diff": {
@@ -142,55 +219,134 @@
     "status": "validated"
   },
   "locked-region-editing": {
-    "recommended_next": ["frame-comparison"],
+    "recommended_next": [
+      "frame-comparison"
+    ],
     "status": "validated"
   },
   "psd-to-video": {
-    "asset_types": ["psd", "psb"],
-    "recommended_next": ["motionpilot-psd-pipeline", "locked-region-editing"]
+    "asset_types": [
+      "psd",
+      "psb"
+    ],
+    "recommended_next": [
+      "motionpilot-psd-pipeline",
+      "locked-region-editing"
+    ],
+    "resources": [
+      "library/capture/psd-to-video/references/core-raster-ingest.md"
+    ]
   },
   "motionpilot-psd-pipeline": {
-    "asset_types": ["psd", "psb", "aep"],
-    "requires": ["after-effects-mcp"],
-    "dependencies": ["after-effects-mcp"],
-    "recommended_next": ["locked-region-editing", "render-artifact-validation"],
+    "asset_types": [
+      "psd",
+      "psb",
+      "aep"
+    ],
+    "requires": [
+      "after-effects-mcp"
+    ],
+    "dependencies": [
+      "after-effects-mcp"
+    ],
+    "recommended_next": [
+      "locked-region-editing",
+      "render-artifact-validation"
+    ],
     "status": "validated"
   },
   "motionpilot-vfx-flipbook": {
-    "asset_types": ["aep", "png"],
-    "requires": ["after-effects-mcp"],
-    "dependencies": ["after-effects-mcp"],
-    "recommended_next": ["sprite-sheet-animation", "alpha-compositing-2d"],
+    "asset_types": [
+      "aep",
+      "png"
+    ],
+    "requires": [
+      "after-effects-mcp"
+    ],
+    "dependencies": [
+      "after-effects-mcp"
+    ],
+    "recommended_next": [
+      "sprite-sheet-animation",
+      "alpha-compositing-2d"
+    ],
     "status": "validated"
   },
   "after-effects-mcp": {
-    "asset_types": ["aep", "psd", "jsx"],
-    "requires": ["after-effects-mcp"],
-    "recommended_next": ["motionpilot-psd-pipeline", "blender-ae-interchange"],
+    "asset_types": [
+      "aep",
+      "psd",
+      "jsx"
+    ],
+    "requires": [
+      "after-effects-mcp"
+    ],
+    "recommended_next": [
+      "motionpilot-psd-pipeline",
+      "blender-ae-interchange"
+    ],
     "status": "validated"
   },
   "blender-mcp": {
-    "asset_types": ["blend", "glb", "fbx"],
-    "requires": ["blender-mcp"],
-    "recommended_next": ["remirdy-blender-nodes", "blender-ae-interchange"],
+    "asset_types": [
+      "blend",
+      "glb",
+      "fbx"
+    ],
+    "requires": [
+      "blender-mcp"
+    ],
+    "recommended_next": [
+      "remirdy-blender-nodes",
+      "blender-ae-interchange"
+    ],
     "status": "validated"
   },
   "remirdy-blender-nodes": {
-    "asset_types": ["blend", "glb", "fbx"],
-    "requires": ["blender-mcp"],
-    "dependencies": ["blender-mcp"],
-    "recommended_next": ["agx-aces-tonemapping", "blender-ae-interchange"],
+    "asset_types": [
+      "blend",
+      "glb",
+      "fbx"
+    ],
+    "requires": [
+      "blender-mcp"
+    ],
+    "dependencies": [
+      "blender-mcp"
+    ],
+    "recommended_next": [
+      "agx-aces-tonemapping",
+      "blender-ae-interchange"
+    ],
     "status": "validated"
   },
   "blender-ae-interchange": {
-    "asset_types": ["blend", "glb", "fbx", "aep", "png", "exr", "wav"],
-    "dependencies": ["frame-clock"],
-    "recommended_next": ["otio-export", "render-artifact-validation"],
+    "asset_types": [
+      "blend",
+      "glb",
+      "fbx",
+      "aep",
+      "png",
+      "exr",
+      "wav"
+    ],
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "otio-export",
+      "render-artifact-validation"
+    ],
     "status": "validated"
   },
   "mcp-gateway-routing": {
-    "dependencies": ["mcp-tool-contract"],
-    "recommended_next": ["skill-routing", "skill-token-budget"],
+    "dependencies": [
+      "mcp-tool-contract"
+    ],
+    "recommended_next": [
+      "skill-routing",
+      "skill-token-budget"
+    ],
     "status": "validated"
   },
   "mcp-tool-contract": {
@@ -221,43 +377,111 @@
     "status": "validated"
   },
   "otio-export": {
-    "asset_types": ["otio"],
-    "dependencies": ["frame-clock"],
-    "status": "validated"
+    "asset_types": [
+      "otio"
+    ],
+    "dependencies": [
+      "frame-clock"
+    ],
+    "status": "validated",
+    "resources": [
+      "library/delivery/otio-export/references/core-master-interchange.md"
+    ],
+    "requires": []
   },
   "fcpxml-export": {
-    "asset_types": ["fcpxml", "xml"],
-    "dependencies": ["frame-clock"],
-    "status": "validated"
+    "asset_types": [
+      "fcpxml",
+      "xml"
+    ],
+    "dependencies": [
+      "frame-clock"
+    ],
+    "status": "validated",
+    "resources": [
+      "library/delivery/fcpxml-export/references/core-fcpxml.md"
+    ]
   },
   "subtitle-format-export": {
-    "asset_types": ["srt", "vtt"],
+    "asset_types": [
+      "srt",
+      "vtt"
+    ],
     "status": "validated"
   },
   "svg-authoring": {
-    "asset_types": ["svg"],
+    "asset_types": [
+      "svg"
+    ],
     "status": "validated"
   },
   "asset-matching": {
-    "asset_types": ["psd", "wav", "mp3", "mp4", "glb"]
+    "asset_types": [
+      "psd",
+      "wav",
+      "mp3",
+      "mp4",
+      "glb"
+    ]
   },
   "voiceover-alignment": {
-    "asset_types": ["wav", "mp3"]
+    "asset_types": [
+      "wav",
+      "mp3"
+    ]
   },
   "reference-frame-extraction": {
-    "asset_types": ["mp4", "mov"]
+    "asset_types": [
+      "mp4",
+      "mov"
+    ]
   },
   "ffmpeg-transcoding": {
-    "asset_types": ["mp4", "mov", "webm"],
-    "recommended_next": ["render-artifact-validation"]
+    "asset_types": [
+      "mp4",
+      "mov",
+      "webm"
+    ],
+    "recommended_next": [
+      "render-artifact-validation"
+    ]
   },
   "gltf-interchange": {
-    "asset_types": ["glb", "gltf"]
+    "asset_types": [
+      "glb",
+      "gltf"
+    ]
   },
   "fbx-interchange": {
-    "asset_types": ["fbx"]
+    "asset_types": [
+      "fbx"
+    ]
   },
   "usd-scene-assembly": {
-    "asset_types": ["usd", "usda", "usdc"]
+    "asset_types": [
+      "usd",
+      "usda",
+      "usdc"
+    ]
+  },
+  "j-cut": {
+    "resources": [
+      "library/editing/j-cut/references/core-source-audio.md"
+    ]
+  },
+  "l-cut": {
+    "resources": [
+      "library/editing/l-cut/references/core-source-tail.md"
+    ]
+  },
+  "shader-effects": {
+    "resources": [
+      "library/vfx/shader-effects/references/offline-webgl2.md"
+    ]
+  },
+  "ffmpeg-trimming": {
+    "resources": [
+      "library/engines/ffmpeg-trimming/references/core-footage.md"
+    ]
   }
 }

@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-17",
+  "instruction_files_preserved_byte_exact": 517,
+  "new_lazy_references": [
+    {
+      "id": "j-cut",
+      "path": "library/editing/j-cut/references/core-source-audio.md",
+      "sha256": "2f382a238e755d99a69376d0e74cba7e376fc87301f690eeebaf847d9be6da59"
+    },
+    {
+      "id": "l-cut",
+      "path": "library/editing/l-cut/references/core-source-tail.md",
+      "sha256": "2bc0a7c64d47865bbd2c1e940fb550f01ce82883047229f39c573a3249ff61fa"
+    },
+    {
+      "id": "psd-to-video",
+      "path": "library/capture/psd-to-video/references/core-raster-ingest.md",
+      "sha256": "7cb9ea99a93e5621e599ced8d1cab2616e0ff2b1858b75c337b998204be19c68"
+    },
+    {
+      "id": "shader-effects",
+      "path": "library/vfx/shader-effects/references/offline-webgl2.md",
+      "sha256": "0ff3fbc1d5f028c0fc9af893e52f697ee854fd20118bb74cc7e362555be2fc69"
+    },
+    {
+      "id": "otio-export",
+      "path": "library/delivery/otio-export/references/core-master-interchange.md",
+      "sha256": "758db84adf6db3c9f3c5798d2fe1d768556cad0316e10690a240d87aa673e684"
+    },
+    {
+      "id": "fcpxml-export",
+      "path": "library/delivery/fcpxml-export/references/core-fcpxml.md",
+      "sha256": "2514e733ed84fa000faafb676f38022a49b2b3bf3a76c1af8c5a88c6f68a8c6c"
+    },
+    {
+      "id": "render-cache",
+      "path": "library/render/render-cache/references/disk-budget.md",
+      "sha256": "fbdb6eed4e61de94226bd0098dd0881e98f5162a0b439bd1753e95a7492dc25f"
+    },
+    {
+      "id": "partial-render",
+      "path": "library/render/partial-render/references/selective-revision.md",
+      "sha256": "84237d197f2b9784738c6ff8fe8a7952ba1c1dde98b5d139cc1007261b576bfe"
+    },
+    {
+      "id": "ffmpeg-trimming",
+      "path": "library/engines/ffmpeg-trimming/references/core-footage.md",
+      "sha256": "a2da11fc40716ea5235f46448d443e7a31b4e58ba054946b51be07019617dcc6"
+    }
+  ],
+  "local_full_tests_passed": 87,
+  "original_pack_tests_passed": 7,
+  "minimal_core_passed": 72,
+  "minimal_core_optional_skipped": 15,
+  "routing": {
+    "dataset_version": "2.0.0",
+    "case_count": 50,
+    "registry_digest": "cd1bcedc1bfec3d8e46c1e93bd648c0a72ba8999485d9a1fec1a59868742f064",
+    "precision_at_k_micro": 0.7444444444444445,
+    "recall_at_k_micro": 0.9436619718309859,
+    "top1_accuracy": 1.0,
+    "hard_constraint_violation_rate": 0.0,
+    "no_match_error_rate": 0.0,
+    "latency_ms_median": 18.369333498412743,
+    "latency_ms_max": 30.823458000668325,
+    "scope": "Local authored routing dataset; incomplete relevance labels can understate precision. No host activation or media correctness is measured."
+  },
+  "scope": "Guides describe implemented core subsets; broader external-engine instruction bodies and validation claims are unchanged. Same-session reference updates, removed-resource refusal, lazy reads, digests, budgets and CSV metadata overrides have regression coverage."
+}

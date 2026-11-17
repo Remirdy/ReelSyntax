@@ -39,6 +39,12 @@ python3 -m reelsyntax skills validate
 
 Warm metadata searches read zero specialist instruction bodies. Ranking supports English and Turkish morphology, negative clause exclusions, audio-vs-camera disambiguation, dependency closure, conflict filtering, capability allowlists (`--available`), and cumulative session context budgets.
 
+Nine scoped production references connect existing skills to the implemented source-audio, footage, PSD raster, WebGL2, editorial and cache workflows. All 517 instruction files remain unchanged. References load only when requested, carry their own SHA-256 and budget charge, and reload in the same session when their content changes. Native OTIO export does not require an optional SDK. `skills reindex` refreshes both JSON metadata and the UTF-8 CSV catalog.
+
+```sh
+python3 -m reelsyntax skills load j-cut --resource library/editing/j-cut/references/core-source-audio.md --project ./my-film --session sound-review --context-budget 6000
+```
+
 To install in an isolated virtual environment:
 
 ```sh
