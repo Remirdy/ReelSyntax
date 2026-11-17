@@ -1,0 +1,15 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.Remirdy/reelsyntax",
+  "description": "Local skill routing and project tools for video production.",
+  "repository": {"url": "https://github.com/Remirdy/ReelSyntax", "source": "github"},
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "mcpb",
+      "identifier": "https://github.com/Remirdy/ReelSyntax/releases/download/v0.1.0/reelsyntax.mcpb",
+      "fileSha256": "REPLACE_WITH_SHA256_OF_RELEASED_MCPB",
+      "transport": {"type": "stdio"}
+    }
+  ]
+}
