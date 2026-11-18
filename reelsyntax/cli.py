@@ -16,7 +16,14 @@ def parser():
 
     schema = commands.add_parser('schema', help='Print the editor JSON Schema')
     schema.add_argument('--kind', choices=['reel', 'config'], default='reel')
+    schema.add_argument('--schema-version', type=int, default=1)
     schema.add_argument('--output', type=Path)
+
+    migrate = commands.add_parser('migrate', help='Upgrade a legacy or unversioned reel.json to the current schema version')
+    migrate.add_argument('project', type=Path)
+    migrate.add_argument('--dry-run', action='store_true')
+    migrate.add_argument('--remote-schema', action='store_true')
+    migrate.add_argument('--json', action='store_true')
 
     cfg_cmd = commands.add_parser('config', help='Inspect, initialize, or validate reelsyntax.toml configuration')
     cfg_sub = cfg_cmd.add_subparsers(dest='action', required=True)
@@ -313,6 +320,9 @@ def _execute_with_config(args, load_config):
     from . import project
     if args.command == 'config':
         return config_command(args)
+    if args.command == 'migrate':
+        from .migration import migrate_project
+        return migrate_project(args.project, dry_run=args.dry_run, remote_schema=args.remote_schema)
     if args.command == 'skills':
         return skill_command(args)
     if args.command == 'captions':
@@ -448,10 +458,11 @@ def main(argv=None):
     args = parser().parse_args(argv)
     try:
         if args.command == 'schema':
-            from .schema import config_schema, project_schema
-            payload = config_schema() if args.kind == 'config' else project_schema()
+            from .schema import schema_for
+            payload = schema_for(args.kind, args.schema_version)
             document = json.dumps(payload, indent=2, ensure_ascii=False)
             if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
                 args.output.write_text(document + '\n', encoding='utf-8')
             else:
                 print(document)

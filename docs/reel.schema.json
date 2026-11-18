@@ -1,5 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://remirdy.github.io/ReelSyntax/schemas/reel.v1.schema.json",
   "title": "ReelSyntax project",
   "$ref": "#/$defs/Project",
   "$defs": {

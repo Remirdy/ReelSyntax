@@ -4,6 +4,10 @@ from .contracts import Project
 from .project import CAMERA_PRESETS, ENGINES, RECIPES, TRANSITIONS
 from .shapes import COLOR, SHAPES, shape_schema
 
+REEL_V1_SCHEMA_URL = 'https://remirdy.github.io/ReelSyntax/schemas/reel.v1.schema.json'
+CONFIG_V1_SCHEMA_URL = 'https://remirdy.github.io/ReelSyntax/schemas/config.v1.schema.json'
+SUPPORTED_SCHEMA_VERSIONS = (1,)
+
 
 def object_schema(properties, required=()):
     return {
@@ -71,6 +75,7 @@ def project_schema():
     }
     return {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        '$id': REEL_V1_SCHEMA_URL,
         'title': 'ReelSyntax project',
         **root,
         '$defs': definitions,
@@ -89,6 +94,7 @@ def config_schema():
     }
     return {
         '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        '$id': CONFIG_V1_SCHEMA_URL,
         'title': 'ReelSyntax configuration',
         **object_schema(
             {
@@ -128,3 +134,13 @@ def config_schema():
             }
         ),
     }
+
+
+def schema_for(kind: str = 'reel', schema_version: int = 1) -> dict:
+    if type(schema_version) is not int or schema_version not in SUPPORTED_SCHEMA_VERSIONS:
+        raise ValueError(f'Unsupported schema version {schema_version}; supported versions: {list(SUPPORTED_SCHEMA_VERSIONS)}')
+    if kind == 'reel':
+        return project_schema()
+    if kind == 'config':
+        return config_schema()
+    raise ValueError(f'Unknown schema kind: {kind}')
