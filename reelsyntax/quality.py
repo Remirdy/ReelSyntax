@@ -142,7 +142,7 @@ def _check_temporal_continuity(root, manifest: dict) -> dict:
 QUANTITATIVE_CLAIM_RE = re.compile(r'(?:\b\d+(?:[.,]\d+)?\s*(?:%|x\b|times\b|kat\b|fach\b)|#\s*1\b)', re.IGNORECASE)
 
 
-def check_reading_speed(plan: dict) -> dict:
+def check_reading_speed(plan: dict, rules: set[str] | None = None) -> dict:
     from .lang.profiles import load_profile
 
     fps_val = float(Fraction(plan['output']['fps']))
@@ -173,7 +173,9 @@ def check_reading_speed(plan: dict) -> dict:
         })
     if not observations:
         return {'id': 'reading_speed', 'status': 'not-applicable', 'observed': [], 'expected': 'no timed text'}
-    if any(x['severe'] for x in observations):
+    if rules is not None and 'reading-speed' not in rules:
+        st = 'pass' if all(x['ok'] for x in observations) else 'measured'
+    elif any(x['severe'] for x in observations):
         st = 'fail'
     elif any(not x['ok'] for x in observations):
         st = 'review'
@@ -351,7 +353,7 @@ def check(project, profile='draft', *, loop=False, html=False, rules=None):
     checks.append(_check_cue_onset_alignment(root, plan, profile, fps))
     checks.append(_check_temporal_continuity(root, manifest))
     active_rules = _resolve_active_qc_rules(root, rules)
-    checks.append(check_reading_speed(plan))
+    checks.append(check_reading_speed(plan, active_rules))
     checks.append(check_vertical_safe_zones(root, plan, manifest))
     checks.append(check_opening_hook_window(plan, active_rules))
     checks.append(check_claims_sourced(root, plan, active_rules))
