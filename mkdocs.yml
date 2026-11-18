@@ -65,6 +65,9 @@ nav:
   - Installation: installation.md
   - Project format: project-format.md
   - Authoring and delivery: delivery.md
+  - Localization:
+      - Glossary: i18n/glossary.md
+      - Language guide: i18n/CONTRIBUTING.md
   - CLI: cli.md
   - Quality: quality.md
   - Runtime coverage: runtime-coverage.md

@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add internationalization foundation (`locales/` with `status.json`, `lang-profiles/` for `en`/`tr`/`de`, `reelsyntax.lang` offline language detection and locale-aware Turkish/German casing, `reelsyntax lang` CLI commands, multilingual negative routing patterns, and Tier 1 golden routing suites).
 - Add community format and language issue templates, Discussions and private security advisory routing (`.github/ISSUE_TEMPLATE/config.yml`), and repository label taxonomy (`.github/labels.json`, `tools/sync_labels.py`).
 - Add automated security scanning workflow (`.github/workflows/security.yml` with CodeQL, `pip-audit`, and license/CVE dependency review) and grouped Dependabot updates.
 - Add PyPI package metadata and subpackage inclusion in `pyproject.toml`, automated release verification/notes/MCPB SHA-256 stamping (`tools/release_prepare.py`), PyPI OIDC Trusted Publishing workflow, and `docs/releasing.md`.

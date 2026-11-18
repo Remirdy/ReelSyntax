@@ -1,0 +1,27 @@
+{
+  "app.title": "ReelSyntax",
+  "app.tagline": "Local, deterministic prompt-to-video production.",
+  "i18n.draft_notice": "Draft translation — awaiting owner verification.",
+  "cli.error.operation_failed": "Operation failed: {message}",
+  "cli.error.interrupted": "Operation interrupted; completed scene caches are retained.",
+  "gate.prompt": "Review step '{step}': approve, edit, or go back.",
+  "gate.action.approve": "Approve",
+  "gate.action.edit": "Edit",
+  "gate.action.back": "Back",
+  "make.step.idea": "Idea and angle",
+  "make.step.script": "Script and beats",
+  "make.step.look": "Visual look",
+  "make.step.frames": "Keyframe preview",
+  "make.step.pilot": "Pilot render",
+  "make.step.full": "Full draft render",
+  "make.step.hero": "Hero master render",
+  "make.step.qc": "Quality control",
+  "make.scenes_planned": {
+    "one": "{count} scene planned ({frames} frames).",
+    "other": "{count} scenes planned ({frames} frames)."
+  },
+  "audio.tts_fallback": "Local speech synthesis is unavailable for '{lang}'; falling back to captions and music.",
+  "qc.status.pass": "Technical checks passed; creative review required.",
+  "qc.status.review": "Technical review findings require inspection.",
+  "qc.status.fail": "Quality gate failed."
+}

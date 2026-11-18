@@ -128,10 +128,21 @@ GLYPH_SAMPLES = {
 }
 
 
+def glyph_sample_for_locale(locale: str) -> str:
+    try:
+        from .lang.profiles import load_profile
+
+        return str(load_profile(locale)['required_glyphs'])
+    except ValueError:
+        pass
+    if locale in GLYPH_SAMPLES:
+        return GLYPH_SAMPLES[locale]
+    raise ValueError('No glyph sample for the requested locale')
+
+
 def glyph_audit(locale, font_path=None):
-    if locale not in GLYPH_SAMPLES:
-        raise ValueError('No glyph sample for the requested locale')
+    sample = glyph_sample_for_locale(locale)
     font = resolve_font(28, font_path=font_path)
-    result = check_glyph_coverage(GLYPH_SAMPLES[locale], font)
-    return {'locale': locale, 'sample': GLYPH_SAMPLES[locale], **result,
+    result = check_glyph_coverage(sample, font)
+    return {'locale': locale, 'sample': sample, **result,
             'technical_status': 'pass' if result['ok'] else 'fail'}

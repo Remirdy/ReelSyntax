@@ -1,0 +1,27 @@
+{
+  "app.title": "ReelSyntax",
+  "app.tagline": "Yerel ve deterministik istemden videoya üretim aracı.",
+  "i18n.draft_notice": "Taslak çeviri — depo sahibi doğrulaması bekleniyor.",
+  "cli.error.operation_failed": "İşlem başarısız oldu: {message}",
+  "cli.error.interrupted": "İşlem kesildi; tamamlanan sahne önbellekleri korundu.",
+  "gate.prompt": "'{step}' adımını inceleyin: onaylayın, düzenleyin veya geri dönün.",
+  "gate.action.approve": "Onayla",
+  "gate.action.edit": "Düzenle",
+  "gate.action.back": "Geri dön",
+  "make.step.idea": "Fikir ve açı",
+  "make.step.script": "Senaryo ve vuruşlar",
+  "make.step.look": "Görsel görünüm",
+  "make.step.frames": "Anahtar kare önizlemesi",
+  "make.step.pilot": "Pilot kesit",
+  "make.step.full": "Tam taslak render",
+  "make.step.hero": "Final yüksek kalite render",
+  "make.step.qc": "Kalite kontrol",
+  "make.scenes_planned": {
+    "one": "{count} sahne planlandı ({frames} kare).",
+    "other": "{count} sahne planlandı ({frames} kare)."
+  },
+  "audio.tts_fallback": "'{lang}' dili için yerel seslendirme bulunamadı; altyazı ve müzik moduna geçiliyor.",
+  "qc.status.pass": "Teknik kontroller geçti; yaratıcı inceleme gereklidir.",
+  "qc.status.review": "Teknik inceleme bulguları gözden geçirilmelidir.",
+  "qc.status.fail": "Kalite kapısı başarısız oldu."
+}

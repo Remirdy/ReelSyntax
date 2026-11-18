@@ -21,8 +21,13 @@ STOP = set(
 LOCK_CAMERA = (
     'no camera movement', 'locked camera', 'camera locked', 'static camera',
     'kamera sabit', 'kamera hareket etmesin', 'kamera hareketi olmasın', 'kamerayı oynatma', 'no zoom',
+    'feste kamera', 'keine kamerabewegung', 'statische kamera',
+    'camara fija', 'camera fixe', 'camera fixa',
 )
-LOCK_TEXT = ('no text', 'without text', 'textless', 'yazı olmasın', 'yazısız', 'metin olmasın', 'metinsiz')
+LOCK_TEXT = (
+    'no text', 'without text', 'textless', 'yazı olmasın', 'yazısız', 'metin olmasın', 'metinsiz',
+    'ohne text', 'kein text', 'textfrei', 'sin texto', 'sans texte', 'sem texto',
+)
 CAMERA_MOVES = {
     'slow-dolly', 'tracking-shot', 'orbit-camera', 'crane-shot', 'whip-pan', 'handheld-motion',
     'dolly-zoom', 'aerial-shot', 'pov-camera', 'match-zoom', 'seamless-camera-bridge',
@@ -110,12 +115,12 @@ def terms(value):
 
 
 def extract_negated_phrases(query):
-    clean = unicodedata.normalize('NFKD', query.casefold().replace('ı', 'i'))
+    clean = unicodedata.normalize('NFKD', query.casefold().replace('ı', 'i').replace('ß', 'ss'))
     clean = ''.join(c for c in clean if not unicodedata.combining(c))
     negated = []
     patterns = [
-        r'\b([a-z0-9]+(?:\s+[a-z0-9]+){0,2})\s+(?:is\s+forbidden|forbidden|yasak|istemiyorum|olmasin|haric)\b',
-        r'\b(?:without|no|exclude)\s+([a-z0-9]+(?:\s+[a-z0-9]+){0,2})(?:[.,;]|$|\band\b)',
+        r'\b([a-z0-9]+(?:\s+[a-z0-9]+){0,2})\s+(?:is\s+forbidden|forbidden|yasak|istemiyorum|olmasin|haric|verboten)\b',
+        r'\b(?:without|no|exclude|ohne|kein|keine|sin|sans|sem)\s+([a-z0-9]+(?:\s+[a-z0-9]+){0,2})(?:[.,;]|$|\band\b|\bund\b)',
     ]
     for pat in patterns:
         for match in re.finditer(pat, clean):
@@ -179,9 +184,9 @@ def route(query, rows, limit=6, stage=None, categories=(), available=None, exclu
     if any(contains(normalized, norm(p)) for p in LOCK_TEXT):
         locks['no_text'] = True
     for key, phrases in {
-        'no_audio': ('no audio', 'silent video', 'sessiz video', 'ses olmasın'),
-        'no_voice': ('no voice', 'no narration', 'seslendirme olmasın'),
-        'no_music': ('no music', 'müzik olmasın', 'müziksiz'),
+        'no_audio': ('no audio', 'silent video', 'sessiz video', 'ses olmasın', 'ohne ton', 'stummes video', 'sin audio', 'sans audio', 'sem audio'),
+        'no_voice': ('no voice', 'no narration', 'seslendirme olmasın', 'ohne sprache', 'ohne sprecher', 'sin voz', 'sans voix', 'sem voz'),
+        'no_music': ('no music', 'müzik olmasın', 'müziksiz', 'ohne musik', 'keine musik', 'sin musica', 'sans musique', 'sem musica'),
     }.items():
         if any(contains(normalized, norm(p)) for p in phrases):
             locks[key] = True

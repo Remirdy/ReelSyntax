@@ -1,5 +1,8 @@
 include ReelSyntax_Skills/CATALOG.md CONTRIBUTING.md CODE_OF_CONDUCT.md
 include LICENSE README.md CHANGELOG.md SECURITY.md pyproject.toml uv.lock
+recursive-include locales *.json
+recursive-include lang-profiles *.json
+recursive-include reelsyntax/data *.json
 recursive-include docs *.md *.json
 recursive-include examples *.md *.json *.py
 recursive-include tests *.py

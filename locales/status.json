@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "source_locale": "en",
+  "locales": {
+    "en": {
+      "tier": 1,
+      "name": "English",
+      "native_name": "English",
+      "maintainer": "Remirdy",
+      "verified_by_owner": false,
+      "verified_at": null
+    },
+    "tr": {
+      "tier": 1,
+      "name": "Turkish",
+      "native_name": "Türkçe",
+      "maintainer": "Remirdy",
+      "verified_by_owner": false,
+      "verified_at": null
+    },
+    "de": {
+      "tier": 1,
+      "name": "German",
+      "native_name": "Deutsch",
+      "maintainer": "Remirdy",
+      "verified_by_owner": false,
+      "verified_at": null
+    }
+  }
+}

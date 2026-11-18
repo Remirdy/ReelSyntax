@@ -12,6 +12,7 @@ def parser():
     root = argparse.ArgumentParser(prog='reelsyntax', description='Local skill routing, unified MCP gateway, and deterministic video production.')
     root.add_argument('--version', action='version', version=__version__)
     root.add_argument('--config', type=Path, help='Explicit reelsyntax.toml configuration file')
+    root.add_argument('--ui-lang', help='Interface locale code (for example en, tr, de)')
     commands = root.add_subparsers(dest='command', required=True)
 
     schema = commands.add_parser('schema', help='Print the editor JSON Schema')
@@ -24,6 +25,22 @@ def parser():
     migrate.add_argument('--dry-run', action='store_true')
     migrate.add_argument('--remote-schema', action='store_true')
     migrate.add_argument('--json', action='store_true')
+
+    lang_cmd = commands.add_parser('lang', help='Inspect, scaffold, or validate language profiles and UI locale catalogs')
+    lang_sub = lang_cmd.add_subparsers(dest='action', required=True)
+    lang_list = lang_sub.add_parser('list')
+    lang_list.add_argument('--json', action='store_true')
+    lang_show = lang_sub.add_parser('show')
+    lang_show.add_argument('locale')
+    lang_show.add_argument('--json', action='store_true')
+    lang_new = lang_sub.add_parser('new')
+    lang_new.add_argument('locale')
+    lang_new.add_argument('--root', type=Path)
+    lang_new.add_argument('--json', action='store_true')
+    lang_val = lang_sub.add_parser('validate')
+    lang_val.add_argument('locale', nargs='?')
+    lang_val.add_argument('--root', type=Path)
+    lang_val.add_argument('--json', action='store_true')
 
     cfg_cmd = commands.add_parser('config', help='Inspect, initialize, or validate reelsyntax.toml configuration')
     cfg_sub = cfg_cmd.add_subparsers(dest='action', required=True)
@@ -316,10 +333,48 @@ def execute(args):
         return _execute_with_config(args, load_config)
 
 
+def lang_command(args):
+    from .lang import list_profiles, load_locale_status, load_profile, scaffold_language, validate_language
+
+    if args.action == 'list':
+        status = load_locale_status()
+        profiles = set(list_profiles())
+        items = []
+        for code, meta in sorted(status['locales'].items()):
+            items.append({
+                'locale': code,
+                'tier': meta['tier'],
+                'name': meta['name'],
+                'native_name': meta['native_name'],
+                'maintainer': meta['maintainer'],
+                'verified_by_owner': meta['verified_by_owner'],
+                'draft_translation': not meta['verified_by_owner'] and code != status.get('source_locale', 'en'),
+                'has_profile': code in profiles,
+            })
+        return {'source_locale': status['source_locale'], 'locales': items}
+    if args.action == 'show':
+        status = load_locale_status()
+        prof = load_profile(args.locale)
+        meta = status['locales'].get(prof['id'], {})
+        return {'profile': prof, 'status': meta}
+    if args.action == 'new':
+        target_root = args.root if args.root is not None else Path.cwd()
+        return scaffold_language(args.locale, root=target_root)
+    if args.action == 'validate':
+        if args.locale:
+            return validate_language(args.locale, root=args.root)
+        status = load_locale_status(root=args.root)
+        checked = [validate_language(code, root=args.root) for code in sorted(status['locales'])]
+        return {'validated_count': len(checked), 'locales': checked}
+    raise ValueError('Unsupported lang action')
+
+
 def _execute_with_config(args, load_config):
     from . import project
     if args.command == 'config':
         return config_command(args)
+    if args.command == 'lang':
+        return lang_command(args)
     if args.command == 'migrate':
         from .migration import migrate_project
         return migrate_project(args.project, dry_run=args.dry_run, remote_schema=args.remote_schema)

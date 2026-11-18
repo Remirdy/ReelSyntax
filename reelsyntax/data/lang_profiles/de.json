@@ -1,0 +1,33 @@
+{
+  "id": "de",
+  "tier": 1,
+  "maintainer": "Remirdy",
+  "script": "Latn",
+  "direction": "ltr",
+  "quotes": {
+    "open": "„",
+    "close": "“"
+  },
+  "decimal": ",",
+  "thousands": ".",
+  "caption": {
+    "max_chars_per_line": 38,
+    "max_lines": 2,
+    "max_cps": 17
+  },
+  "line_break": {
+    "hyphenation": true,
+    "compound_split": true
+  },
+  "case": {
+    "upper": "locale",
+    "special": ["ß→SS"]
+  },
+  "required_glyphs": "ÄÖÜäöüß",
+  "formality_default": "Sie",
+  "formality_options": ["du", "Sie"],
+  "tts": {
+    "preferred_locales": ["de-DE", "de-AT", "de-CH"]
+  },
+  "fonts": ["Noto Sans", "Noto Serif"]
+}

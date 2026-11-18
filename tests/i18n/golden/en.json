@@ -1,0 +1,24 @@
+{
+  "locale": "en",
+  "min_accuracy": 1.0,
+  "cases": [
+    {
+      "id": "en-kinetic-no-camera-move",
+      "query": "kinetic typography with locked camera",
+      "expected_any": ["kinetic-typography", "locked-camera"],
+      "forbidden": ["orbit-camera", "dolly-zoom"]
+    },
+    {
+      "id": "en-no-text-lock",
+      "query": "without text, orbit camera",
+      "expected_any": ["textless-visual-design", "orbit-camera"],
+      "forbidden": ["kinetic-typography", "lower-thirds"]
+    },
+    {
+      "id": "en-black-frames",
+      "query": "black frame detection on output",
+      "expected_any": ["black-frame-detection"],
+      "forbidden": []
+    }
+  ]
+}

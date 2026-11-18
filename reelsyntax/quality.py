@@ -11,7 +11,22 @@ from .palette import contrast_ratio, hex_to_rgb, relative_luminance
 from .project import load
 from .render import verify_roi_locks
 from .skills import file_digest
-from .typography import check_glyph_coverage, resolve_font
+from .typography import check_glyph_coverage, glyph_sample_for_locale, resolve_font
+
+ISO3_TO_LOCALE = {
+    'eng': 'en',
+    'tur': 'tr',
+    'deu': 'de',
+    'spa': 'es',
+    'fra': 'fr',
+    'por': 'pt',
+    'pol': 'pl',
+    'vie': 'vi',
+    'ara': 'ar',
+    'zho': 'zh',
+    'jpn': 'ja',
+    'kor': 'ko',
+}
 
 
 def _check_typography_and_glyphs(plan: dict) -> tuple[dict, dict]:
@@ -49,6 +64,16 @@ def _check_typography_and_glyphs(plan: dict) -> tuple[dict, dict]:
             {'id': 'typography_contrast', 'status': 'not-applicable', 'observed': [], 'expected': 'no scene text'},
             {'id': 'glyph_coverage', 'status': 'not-applicable', 'observed': {}, 'expected': 'no scene text'},
         )
+    iso_lang = plan.get('delivery', {}).get('language')
+    mapped_locale = ISO3_TO_LOCALE.get(iso_lang) if iso_lang else None
+    if mapped_locale:
+        try:
+            req_sample = glyph_sample_for_locale(mapped_locale)
+            prof_cov = check_glyph_coverage(req_sample, resolve_font(24))
+            if not prof_cov['ok']:
+                missing_glyphs[f'lang_profile.{mapped_locale}'] = prof_cov['missing_chars']
+        except ValueError:
+            pass
     contrast_ok = all(x['ok'] for x in contrast_observations)
     glyph_ok = len(missing_glyphs) == 0
     return (
