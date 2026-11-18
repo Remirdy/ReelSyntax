@@ -34,7 +34,18 @@ line-length = 110
 extend-exclude = ["integrations", "build", ".tools"]
 
 [tool.ruff.lint]
-select = ["E9", "F63", "F7", "F82"]
+select = ["E9", "F63", "F7", "F82", "F401", "F841", "B006"]
+
+[tool.ruff.lint.per-file-ignores]
+"reelsyntax/blender_aperture.py" = ["F841"]
+"reelsyntax/blender_cassette.py" = ["F401"]
+"reelsyntax/drawing.py" = ["F401", "F841"]
+"reelsyntax/gateway.py" = ["F401"]
+"reelsyntax/ingest.py" = ["F401"]
+"reelsyntax/sync_audit.py" = ["F401"]
+"tests/test_gateway_and_mcp.py" = ["F401"]
+"tests/test_production_features.py" = ["F401", "F841"]
+"tests/test_skills.py" = ["F401"]
 
 [tool.ruff.format]
 quote-style = "preserve"
