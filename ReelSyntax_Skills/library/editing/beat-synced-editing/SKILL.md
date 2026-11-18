@@ -6,7 +6,7 @@ metadata:
   stage: edit
   status: guidance
   version: "2.0.0"
-  aliases: "ritme göre kurgu,beat sync"
+  aliases: "ritme göre kurgu,beat sync,beat synced editing,Taktsynchroner Schnitt,Beat-Schnitt"
   requires: ""
 ---
 

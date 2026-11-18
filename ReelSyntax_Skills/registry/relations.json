@@ -519,12 +519,14 @@
   "flash-safety": {
     "resources": [
       "library/qa/flash-safety/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "beat-synced-editing": {
     "resources": [
       "library/editing/beat-synced-editing/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "template-parameterization": {
     "resources": [
@@ -584,7 +586,8 @@
   "brand-kit-workflow": {
     "resources": [
       "library/workflow/brand-kit-workflow/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "resolve-interchange": {
     "resources": [
@@ -1215,6 +1218,93 @@
     ],
     "resources": [
       "library/direction/brand-sting-remirdy/references/attribution-flag-and-sting-spec.md"
+    ]
+  },
+  "opening-hook": {
+    "status": "validated",
+    "resources": [
+      "library/story/opening-hook/references/project-check.md"
+    ]
+  },
+  "ending-payoff": {
+    "status": "validated",
+    "resources": [
+      "library/story/ending-payoff/references/project-check.md"
+    ]
+  },
+  "storyboard": {
+    "status": "validated",
+    "resources": [
+      "library/story/storyboard/references/project-check.md"
+    ]
+  },
+  "shot-list": {
+    "status": "validated",
+    "resources": [
+      "library/story/shot-list/references/project-check.md"
+    ]
+  },
+  "end-card": {
+    "status": "validated",
+    "resources": [
+      "library/typography/end-card/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "font-fallback-chain": {
+    "status": "validated",
+    "resources": [
+      "library/typography/font-fallback-chain/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "rtl-text-layout": {
+    "status": "validated",
+    "resources": [
+      "library/typography/rtl-text-layout/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "cjk-typography": {
+    "status": "validated",
+    "resources": [
+      "library/typography/cjk-typography/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "text-expansion-layout": {
+    "status": "validated",
+    "resources": [
+      "library/typography/text-expansion-layout/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "vertical-safe-zones": {
+    "status": "validated",
+    "resources": [
+      "library/delivery/vertical-safe-zones/references/project-check.md"
+    ]
+  },
+  "easing-design": {
+    "status": "validated",
+    "resources": [
+      "library/motion/easing-design/references/project-check.md"
+    ]
+  },
+  "render-lookdev": {
+    "status": "validated",
+    "resources": [
+      "library/lighting/render-lookdev/references/project-check.md"
     ]
   }
 }

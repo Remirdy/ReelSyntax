@@ -3586,6 +3586,591 @@
       "forbidden": [
         "brand-sting-remirdy"
       ]
+    },
+    {
+      "id": "val-en-opening-hook",
+      "task": {
+        "intent": "opening hook"
+      },
+      "relevant": [
+        "opening-hook"
+      ]
+    },
+    {
+      "id": "val-tr-opening-hook",
+      "task": {
+        "intent": "ilk saniyeler"
+      },
+      "relevant": [
+        "opening-hook"
+      ]
+    },
+    {
+      "id": "val-de-opening-hook",
+      "task": {
+        "intent": "Eröffnungs-Hook"
+      },
+      "relevant": [
+        "opening-hook"
+      ]
+    },
+    {
+      "id": "val-neg-opening-hook",
+      "task": {
+        "intent": "frame clock; opening hook is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "opening-hook"
+      ]
+    },
+    {
+      "id": "val-en-ending-payoff",
+      "task": {
+        "intent": "ending payoff"
+      },
+      "relevant": [
+        "ending-payoff"
+      ]
+    },
+    {
+      "id": "val-tr-ending-payoff",
+      "task": {
+        "intent": "kapanış"
+      },
+      "relevant": [
+        "ending-payoff"
+      ]
+    },
+    {
+      "id": "val-de-ending-payoff",
+      "task": {
+        "intent": "Abschluss-Pointe"
+      },
+      "relevant": [
+        "ending-payoff"
+      ]
+    },
+    {
+      "id": "val-neg-ending-payoff",
+      "task": {
+        "intent": "frame clock; ending payoff is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "ending-payoff"
+      ]
+    },
+    {
+      "id": "val-en-storyboard",
+      "task": {
+        "intent": "storyboard"
+      },
+      "relevant": [
+        "storyboard"
+      ]
+    },
+    {
+      "id": "val-tr-storyboard",
+      "task": {
+        "intent": "sahne çizelgesi"
+      },
+      "relevant": [
+        "storyboard"
+      ]
+    },
+    {
+      "id": "val-de-storyboard",
+      "task": {
+        "intent": "Szenenboard"
+      },
+      "relevant": [
+        "storyboard"
+      ]
+    },
+    {
+      "id": "val-neg-storyboard",
+      "task": {
+        "intent": "frame clock; storyboard is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "storyboard"
+      ]
+    },
+    {
+      "id": "val-en-shot-list",
+      "task": {
+        "intent": "shot list"
+      },
+      "relevant": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "val-tr-shot-list",
+      "task": {
+        "intent": "çekim listesi"
+      },
+      "relevant": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "val-de-shot-list",
+      "task": {
+        "intent": "Einstellungsliste"
+      },
+      "relevant": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "val-neg-shot-list",
+      "task": {
+        "intent": "frame clock; shot list is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "val-en-end-card",
+      "task": {
+        "intent": "end card"
+      },
+      "relevant": [
+        "end-card"
+      ]
+    },
+    {
+      "id": "val-tr-end-card",
+      "task": {
+        "intent": "kapanış kartı"
+      },
+      "relevant": [
+        "end-card"
+      ]
+    },
+    {
+      "id": "val-de-end-card",
+      "task": {
+        "intent": "Abspannkarte"
+      },
+      "relevant": [
+        "end-card"
+      ]
+    },
+    {
+      "id": "val-neg-end-card",
+      "task": {
+        "intent": "frame clock; end card is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "end-card"
+      ]
+    },
+    {
+      "id": "val-en-font-fallback-chain",
+      "task": {
+        "intent": "font fallback chain"
+      },
+      "relevant": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "val-tr-font-fallback-chain",
+      "task": {
+        "intent": "font fallback"
+      },
+      "relevant": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "val-de-font-fallback-chain",
+      "task": {
+        "intent": "Schrift-Fallback-Kette"
+      },
+      "relevant": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "val-neg-font-fallback-chain",
+      "task": {
+        "intent": "frame clock; font fallback chain is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "val-en-rtl-text-layout",
+      "task": {
+        "intent": "rtl text layout"
+      },
+      "relevant": [
+        "rtl-text-layout"
+      ]
+    },
+    {
+      "id": "val-tr-rtl-text-layout",
+      "task": {
+        "intent": "arapça"
+      },
+      "relevant": [
+        "rtl-text-layout"
+      ]
+    },
+    {
+      "id": "val-de-rtl-text-layout",
+      "task": {
+        "intent": "Rechts-nach-links-Satz"
+      },
+      "relevant": [
+        "rtl-text-layout"
+      ]
+    },
+    {
+      "id": "val-neg-rtl-text-layout",
+      "task": {
+        "intent": "frame clock; rtl text layout is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "rtl-text-layout"
+      ]
+    },
+    {
+      "id": "val-en-cjk-typography",
+      "task": {
+        "intent": "cjk typography"
+      },
+      "relevant": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "val-tr-cjk-typography",
+      "task": {
+        "intent": "CJK tipografi"
+      },
+      "relevant": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "val-de-cjk-typography",
+      "task": {
+        "intent": "CJK-Typografie"
+      },
+      "relevant": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "val-neg-cjk-typography",
+      "task": {
+        "intent": "frame clock; cjk typography is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "val-en-text-expansion-layout",
+      "task": {
+        "intent": "text expansion layout"
+      },
+      "relevant": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "val-tr-text-expansion-layout",
+      "task": {
+        "intent": "text expansion"
+      },
+      "relevant": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "val-de-text-expansion-layout",
+      "task": {
+        "intent": "Textausdehnung-Layout"
+      },
+      "relevant": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "val-neg-text-expansion-layout",
+      "task": {
+        "intent": "frame clock; text expansion layout is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "val-en-vertical-safe-zones",
+      "task": {
+        "intent": "vertical safe zones"
+      },
+      "relevant": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "val-tr-vertical-safe-zones",
+      "task": {
+        "intent": "safe zones"
+      },
+      "relevant": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "val-de-vertical-safe-zones",
+      "task": {
+        "intent": "vertikale Sicherheitszonen"
+      },
+      "relevant": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "val-neg-vertical-safe-zones",
+      "task": {
+        "intent": "frame clock; vertical safe zones is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "val-en-beat-synced-editing",
+      "task": {
+        "intent": "beat synced editing"
+      },
+      "relevant": [
+        "beat-synced-editing"
+      ]
+    },
+    {
+      "id": "val-tr-beat-synced-editing",
+      "task": {
+        "intent": "ritme göre kurgu"
+      },
+      "relevant": [
+        "beat-synced-editing"
+      ]
+    },
+    {
+      "id": "val-de-beat-synced-editing",
+      "task": {
+        "intent": "Taktsynchroner Schnitt"
+      },
+      "relevant": [
+        "beat-synced-editing"
+      ]
+    },
+    {
+      "id": "val-neg-beat-synced-editing",
+      "task": {
+        "intent": "frame clock; beat synced editing is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "beat-synced-editing"
+      ]
+    },
+    {
+      "id": "val-en-easing-design",
+      "task": {
+        "intent": "easing design"
+      },
+      "relevant": [
+        "easing-design"
+      ]
+    },
+    {
+      "id": "val-tr-easing-design",
+      "task": {
+        "intent": "easing"
+      },
+      "relevant": [
+        "easing-design"
+      ]
+    },
+    {
+      "id": "val-de-easing-design",
+      "task": {
+        "intent": "Easing-Kurven"
+      },
+      "relevant": [
+        "easing-design"
+      ]
+    },
+    {
+      "id": "val-neg-easing-design",
+      "task": {
+        "intent": "frame clock; easing design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "easing-design"
+      ]
+    },
+    {
+      "id": "val-en-render-lookdev",
+      "task": {
+        "intent": "render lookdev"
+      },
+      "relevant": [
+        "render-lookdev"
+      ]
+    },
+    {
+      "id": "val-tr-render-lookdev",
+      "task": {
+        "intent": "lookdev"
+      },
+      "relevant": [
+        "render-lookdev"
+      ]
+    },
+    {
+      "id": "val-de-render-lookdev",
+      "task": {
+        "intent": "Render-Lookentwicklung"
+      },
+      "relevant": [
+        "render-lookdev"
+      ]
+    },
+    {
+      "id": "val-neg-render-lookdev",
+      "task": {
+        "intent": "frame clock; render lookdev is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "render-lookdev"
+      ]
+    },
+    {
+      "id": "val-en-brand-kit-workflow",
+      "task": {
+        "intent": "brand kit workflow"
+      },
+      "relevant": [
+        "brand-kit-workflow"
+      ]
+    },
+    {
+      "id": "val-tr-brand-kit-workflow",
+      "task": {
+        "intent": "brand kit"
+      },
+      "relevant": [
+        "brand-kit-workflow"
+      ]
+    },
+    {
+      "id": "val-de-brand-kit-workflow",
+      "task": {
+        "intent": "Markenpaket-Workflow"
+      },
+      "relevant": [
+        "brand-kit-workflow"
+      ]
+    },
+    {
+      "id": "val-neg-brand-kit-workflow",
+      "task": {
+        "intent": "frame clock; brand kit workflow is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "brand-kit-workflow"
+      ]
+    },
+    {
+      "id": "val-en-flash-safety",
+      "task": {
+        "intent": "flash safety"
+      },
+      "relevant": [
+        "flash-safety"
+      ]
+    },
+    {
+      "id": "val-tr-flash-safety",
+      "task": {
+        "intent": "flaş güvenliği"
+      },
+      "relevant": [
+        "flash-safety"
+      ]
+    },
+    {
+      "id": "val-de-flash-safety",
+      "task": {
+        "intent": "Blitzschutz-Prüfung"
+      },
+      "relevant": [
+        "flash-safety"
+      ]
+    },
+    {
+      "id": "val-neg-flash-safety",
+      "task": {
+        "intent": "frame clock; flash safety is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "flash-safety"
+      ]
     }
   ]
 }

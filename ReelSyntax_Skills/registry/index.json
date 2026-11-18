@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "b7eb378dc7c59eaa0238018cdccf057bcb07820573b49da077ec16db1422fe3c",
+  "digest": "ff28996f0fa8bdc7d91a73084a755dadeab838da3c2bf22796c04f68b70184b0",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -3584,19 +3584,27 @@
       "description": "Keep vertical-video labels clear of player controls.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "safe zones",
-        "güvenli alanlar"
+        "güvenli alanlar",
+        "vertical safe zones",
+        "vertikale Sicherheitszonen",
+        "Hochformat-Schutzbereich"
       ],
       "requires": [],
       "path": "library/delivery/vertical-safe-zones/SKILL.md",
-      "estimated_words": 71,
-      "estimated_tokens": 174,
-      "sha256": "c79fed6fa09f54a219eb3c0b9a4e7f40ef1fd0461665325e562f69954a67d058",
+      "estimated_words": 73,
+      "estimated_tokens": 198,
+      "sha256": "2c274dcd755a855c81a0ed008cbd446672e4ecd6053f20219d800e7b56cf4170",
       "body_sha256": "7145f67d78c88dfcaac486a4491aaa3706f78bd513e36e8e5e444c529be85599",
-      "resource_sha256": {}
+      "resources": [
+        "library/delivery/vertical-safe-zones/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/vertical-safe-zones/references/project-check.md": "7b8d0df9a631f30b48f68756457adc429c68af39bc1ddac340b3f25d6d58529d"
+      }
     },
     {
       "id": "webm-export",
@@ -4173,17 +4181,20 @@
       "description": "Use for beat synced editing. Extract or accept tempo markers; map key cuts to beats and phrases selectively.",
       "category": "editing",
       "stage": "edit",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "ritme göre kurgu",
-        "beat sync"
+        "beat sync",
+        "beat synced editing",
+        "Taktsynchroner Schnitt",
+        "Beat-Schnitt"
       ],
       "requires": [],
       "path": "library/editing/beat-synced-editing/SKILL.md",
-      "estimated_words": 402,
-      "estimated_tokens": 974,
-      "sha256": "5c54d2733eeea19f689fe96bed602fe5f51c204af3368f39735dd8a2521ac896",
+      "estimated_words": 405,
+      "estimated_tokens": 993,
+      "sha256": "adf32d68fa375c113c0a3318f7b98d0b43cf6806571ab1d8ff68c96d4496b0df",
       "body_sha256": "11146f4ba1c6a302e1b5b682311071b5688adce92457a5d746aa159d47188ce6",
       "resources": [
         "library/editing/beat-synced-editing/references/project-check.md"
@@ -7153,19 +7164,27 @@
       "description": "Use for render lookdev. Render a small material and lighting test under representative final camera conditions.",
       "category": "lighting",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "lookdev",
-        "test ışığı"
+        "test ışığı",
+        "render lookdev",
+        "Render-Lookentwicklung",
+        "Licht- und Material-Lookdev"
       ],
       "requires": [],
       "path": "library/lighting/render-lookdev/SKILL.md",
-      "estimated_words": 388,
-      "estimated_tokens": 962,
-      "sha256": "1a02991528f58596de8cf940c6ed16699ad9ae3805f35e7600b9926f98aae334",
+      "estimated_words": 391,
+      "estimated_tokens": 984,
+      "sha256": "1987a70e873e97c15af113a4f136b9bdf56d5db310deeb48b81154997618480b",
       "body_sha256": "e8df1aece1e5e6c9f048e3de258173614d7590989450a44105cc3549b6a5d255",
-      "resource_sha256": {}
+      "resources": [
+        "library/lighting/render-lookdev/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/lighting/render-lookdev/references/project-check.md": "313e1d9083c4189a478e52a03e4bd24d21a12e6b25e95cbf62d50502d95ad2e7"
+      }
     },
     {
       "id": "set-dressing",
@@ -7796,19 +7815,28 @@
       "description": "Use for easing design. Choose acceleration curves matching mass and narrative intent.",
       "category": "motion",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "easing",
-        "yumuşak geçiş"
+        "yumuşak geçiş",
+        "easing design",
+        "Easing-Kurven",
+        "Beschleunigungskurve",
+        "ivme eğrisi"
       ],
       "requires": [],
       "path": "library/motion/easing-design/SKILL.md",
-      "estimated_words": 375,
-      "estimated_tokens": 945,
-      "sha256": "b4f3052dfd21d81b2e0ec6e770cc2dfe329e1b2270494893d58db9282868102d",
+      "estimated_words": 377,
+      "estimated_tokens": 966,
+      "sha256": "c6b76592632cc53adc544c807a1cc47c42aa0cf0e15b573deb4fc199cae52913",
       "body_sha256": "dea742ff57f228aaa7fc5a0c892b62fb294a30b32046d6cabbcc73f1981fcb3f",
-      "resource_sha256": {}
+      "resources": [
+        "library/motion/easing-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/motion/easing-design/references/project-check.md": "3719d4b5b99287e4cdb594311274af835b1d285544757c274b91ab2a1879ce7f"
+      }
     },
     {
       "id": "follow-through",
@@ -8985,17 +9013,20 @@
       "description": "Use for flash safety. Analyze rapid luminance/color changes and limit hazardous patterns; use conservative review when uncertain.",
       "category": "qa",
       "stage": "review",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "flaş güvenliği",
-        "ışık çakması"
+        "ışık çakması",
+        "flash safety",
+        "Blitzschutz-Prüfung",
+        "Photosensitivitäts-Schutz"
       ],
       "requires": [],
       "path": "library/qa/flash-safety/SKILL.md",
-      "estimated_words": 408,
-      "estimated_tokens": 1039,
-      "sha256": "c3a96c3cf7f0780e36e7922c3a2f348221cbf91de6464b0b0e59b092ef46a06b",
+      "estimated_words": 409,
+      "estimated_tokens": 1059,
+      "sha256": "37ae5e811f0aa92087982070cf4be1fb6a76f05ab3697bcd3a98ed9de022f823",
       "body_sha256": "50e621f93ad93bc68dd220d54f5b97c68f595b82ac93c729dfcb24880e0990e6",
       "resources": [
         "library/qa/flash-safety/references/project-check.md"
@@ -10514,19 +10545,27 @@
       "description": "Use for ending payoff. Resolve the central promise with a visual callback or decisive action.",
       "category": "story",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kapanış",
-        "final sahne"
+        "final sahne",
+        "ending payoff",
+        "Abschluss-Pointe",
+        "Schlussauflösung"
       ],
       "requires": [],
       "path": "library/story/ending-payoff/SKILL.md",
-      "estimated_words": 392,
-      "estimated_tokens": 959,
-      "sha256": "1b428a6787f1134fd1b7aecb34391e1ec511a3b44f4cc7e42acf792a3b2687f7",
+      "estimated_words": 393,
+      "estimated_tokens": 976,
+      "sha256": "d906940392b342456b55a017f8e20782b9169cb73594bf7762d3bb7f7a60b3bd",
       "body_sha256": "7bec3f481a710b334a4dc96b2d6270c60ebe787fe9d587274e9c33ccdd93786d",
-      "resource_sha256": {}
+      "resources": [
+        "library/story/ending-payoff/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/story/ending-payoff/references/project-check.md": "5c7856e9882e58e7152db66cc93b631bc1d44217c829fd5c29b1da48f9e04dc9"
+      }
     },
     {
       "id": "logline-writing",
@@ -10621,19 +10660,27 @@
       "description": "Use for opening hook. Show the question, conflict or value through a concrete opening image before explanation.",
       "category": "story",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "ilk saniyeler",
-        "açılış kancası"
+        "açılış kancası",
+        "opening hook",
+        "Eröffnungs-Hook",
+        "erste Sekunden"
       ],
       "requires": [],
       "path": "library/story/opening-hook/SKILL.md",
-      "estimated_words": 396,
-      "estimated_tokens": 979,
-      "sha256": "e43347a07f1851c71ab67d78ec15f6a4ec6af5025e1cdbb386413ca46f9830bb",
+      "estimated_words": 398,
+      "estimated_tokens": 994,
+      "sha256": "0994e7dfdaf0ef49ca6e2e90658a2b0f3e5fb66b989e3a7656f3c58965948ec1",
       "body_sha256": "2be1f5566cc971b15918b4a7f10f988b6ce1e04ab095574171500f90fbd9eff9",
-      "resource_sha256": {}
+      "resources": [
+        "library/story/opening-hook/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/story/opening-hook/references/project-check.md": "3183b9ed1e72aefacc7d44a342eb6ddf04f762cce2e461314fa1e0c1be48110f"
+      }
     },
     {
       "id": "prompt-to-storyboard",
@@ -10773,19 +10820,26 @@
       "description": "Use for shot list. Create shot IDs, framing, action, lens intent, duration, asset requirements and continuity notes.",
       "category": "story",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "çekim listesi",
-        "shot list"
+        "shot list",
+        "Einstellungsliste",
+        "Kameraliste"
       ],
       "requires": [],
       "path": "library/story/shot-list/SKILL.md",
       "estimated_words": 393,
-      "estimated_tokens": 969,
-      "sha256": "98661c1e6fa9dc5c4685c352e32326c428167b56a95f595f35998b64dff53b5e",
+      "estimated_tokens": 979,
+      "sha256": "e1a189d5190fd3e835d25eb122b818fd2a64dfda98aacff0429672d7b4dba51d",
       "body_sha256": "e84267c0a5e8da56010bb83cbcee91d6b7557b382a7e72e995749cd62cffae46",
-      "resource_sha256": {}
+      "resources": [
+        "library/story/shot-list/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/story/shot-list/references/project-check.md": "c4efd7226d7f7045372a6402f7abe59c33f1f374267a8c6cd325da2d18574b95"
+      }
     },
     {
       "id": "story-beats",
@@ -10811,19 +10865,27 @@
       "description": "Use for storyboard. Design key panels with framing, staging and motion arrows or notes per shot.",
       "category": "story",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "storyboard",
-        "sahne çizelgesi"
+        "sahne çizelgesi",
+        "Szenenboard",
+        "Storyboard-Planung",
+        "öykü panosu"
       ],
       "requires": [],
       "path": "library/story/storyboard/SKILL.md",
-      "estimated_words": 393,
-      "estimated_tokens": 968,
-      "sha256": "3d373d9cfe212d29893fbfea3a9aae5e55b168cc7b3b70f4d2fe34b804e893f0",
+      "estimated_words": 394,
+      "estimated_tokens": 983,
+      "sha256": "4f0c44addb7208660e83f028929e85b24590bfed912c7e04241897576915325b",
       "body_sha256": "1c5f4ec529f3dca290ef77e35ecdd86cb2e3957e86827baba5259c9d89676697",
-      "resource_sha256": {}
+      "resources": [
+        "library/story/storyboard/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/story/storyboard/references/project-check.md": "70d57f4892fa11cc2e20a80e6d321e7d5119aea2d6011d51f2729549fdf93383"
+      }
     },
     {
       "id": "three-act-structure",
@@ -11435,19 +11497,29 @@
       "description": "Lay out Chinese, Japanese or Korean text.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "CJK typography",
-        "CJK tipografi"
+        "CJK tipografi",
+        "CJK-Typografie",
+        "ostasiatischer Satz"
       ],
       "requires": [],
       "path": "library/typography/cjk-typography/SKILL.md",
       "estimated_words": 64,
-      "estimated_tokens": 155,
-      "sha256": "15bbc37b0ec5efcf53d75e757340a9f2917ccc5d0105d07163aeed998a7556c1",
+      "estimated_tokens": 166,
+      "sha256": "4f3fa0164a4b66d83ced55ed3a62b5a99e44216e4b26544eca89416c0df7fa5e",
       "body_sha256": "09790ec89c0a9ffb50fb803b8c6954c763c95f33423e692024da79c4c7aac518",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/cjk-typography/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/cjk-typography/references/project-check.md": "3cab222e87d368cf0a084b9c27ba078c8d7e7c32e821cc241c1e487628f4d43e"
+      }
     },
     {
       "id": "complex-script-shaping",
@@ -11492,19 +11564,30 @@
       "description": "Use for end card. Compose logo, CTA and required copy in a restrained hierarchy with a reading hold.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kapanış kartı",
-        "end slate"
+        "end slate",
+        "end card",
+        "Abspannkarte",
+        "Endkarte"
       ],
       "requires": [],
       "path": "library/typography/end-card/SKILL.md",
-      "estimated_words": 413,
-      "estimated_tokens": 981,
-      "sha256": "ac632de47409b2a36ad592631af77b37e49ba4b73a89ea6162cf4ff45acf1068",
+      "estimated_words": 414,
+      "estimated_tokens": 991,
+      "sha256": "46f257005a32b01de3799a25bafcd53ee0ed061636ddbe5c79acdd4594c9457c",
       "body_sha256": "f04f0f942ba1f072e115c1ffaf52a1ec3b12c425b91e518eb2ea3d26ccd9fb9b",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/end-card/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/end-card/references/project-check.md": "90049d01889cf45934a6399ec4b7f38293ccfec29703cfd646f84a4d75ee5fa9"
+      }
     },
     {
       "id": "extruded-type",
@@ -11530,19 +11613,30 @@
       "description": "Choose fallback fonts for missing script coverage.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "font fallback",
-        "yedek font zinciri"
+        "yedek font zinciri",
+        "font fallback chain",
+        "Schrift-Fallback-Kette",
+        "Ersatzschrift"
       ],
       "requires": [],
       "path": "library/typography/font-fallback-chain/SKILL.md",
-      "estimated_words": 69,
-      "estimated_tokens": 166,
-      "sha256": "ac7cb321de2d6aa11a913ac953fe01823e70234d4698a3915729584484c38a55",
+      "estimated_words": 70,
+      "estimated_tokens": 185,
+      "sha256": "dcb0bd82edf49bb05563209c5ecb15b9d065fc766f605a76a1ba6c7e7035b2f5",
       "body_sha256": "51bdf37dcce1340290752906466e833a9a68397f089f521cf7fc9bf48057a42f",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/font-fallback-chain/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/font-fallback-chain/references/project-check.md": "2f721a20926162f11ce1df0b36586890dda0a56fbad752c0c1dc7f6d769bb07c"
+      }
     },
     {
       "id": "font-selection",
@@ -11865,20 +11959,32 @@
       "description": "Use for rtl text layout. Use proper bidirectional shaping and isolate mixed-direction tokens.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "arapça",
         "sağdan sola",
-        "rtl"
+        "rtl",
+        "rtl text layout",
+        "Rechts-nach-links-Satz",
+        "RTL-Layout",
+        "sağdan sola metin"
       ],
       "requires": [],
       "path": "library/typography/rtl-text-layout/SKILL.md",
-      "estimated_words": 398,
-      "estimated_tokens": 978,
-      "sha256": "8dbdbb76a20ee45388419655db66962c5286a0148af5e4dc710c74323b648bdf",
+      "estimated_words": 402,
+      "estimated_tokens": 1001,
+      "sha256": "b6853b1e966f48379e3253675043f485864daa5aad7d285084597c716b2965ae",
       "body_sha256": "b3d17706c9d0fda7639f3c1aa00b2bc9b30b82d709346f2ca8202a4f64302c22",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/rtl-text-layout/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/rtl-text-layout/references/project-check.md": "64b31f3a1a119adaed72d22ec32866ecb3d3e4e1003c9f3bb5ae0fb21634432d"
+      }
     },
     {
       "id": "subtitle-format-export",
@@ -11928,19 +12034,30 @@
       "description": "Test translated copy against its allocated region.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "text expansion",
-        "metin genişlemesi"
+        "metin genişlemesi",
+        "text expansion layout",
+        "Textausdehnung-Layout",
+        "Sprachexpansion"
       ],
       "requires": [],
       "path": "library/typography/text-expansion-layout/SKILL.md",
-      "estimated_words": 71,
-      "estimated_tokens": 174,
-      "sha256": "b5978292451e82f7e6954c2c512ee1f852b79d98b5f1a24c5fae1fcfe0e98790",
+      "estimated_words": 72,
+      "estimated_tokens": 194,
+      "sha256": "f0f749646b0faf5d5d00b4bee0a23b7570638e8da3a9ef141be8dc70913875ce",
       "body_sha256": "8467aa38620100ab938418ff4117bb6921827e6d6c60336d8422568dc8602f57",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/text-expansion-layout/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/text-expansion-layout/references/project-check.md": "bb6872e311cb277dba19575fae566ccd111a62815ddbba610f57b1b83885faef"
+      }
     },
     {
       "id": "text-mask-reveal",
@@ -12677,17 +12794,20 @@
       "description": "Use for brand kit workflow. Store approved fonts, logos, palette, layout locks and legal text in reusable manifest.",
       "category": "workflow",
       "stage": "operate",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "brand kit",
-        "marka kiti"
+        "marka kiti",
+        "brand kit workflow",
+        "Markenpaket-Workflow",
+        "Brand-Kit-Anwendung"
       ],
       "requires": [],
       "path": "library/workflow/brand-kit-workflow/SKILL.md",
-      "estimated_words": 400,
-      "estimated_tokens": 991,
-      "sha256": "f48726f83645ebe6bf8dedc97046906d21f64fcb886a17f34abbc3e38b0571fe",
+      "estimated_words": 402,
+      "estimated_tokens": 1011,
+      "sha256": "042e0280938843fbabf881ffd0a0bd8b65d2fd90d3483cd25a22210ea9a19ce0",
       "body_sha256": "fa640db0d8e1e574a27abbf67f9a687c292b5f3affebe7c94150dad1257e66c0",
       "resources": [
         "library/workflow/brand-kit-workflow/references/project-check.md"

@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "storyboard,sahne çizelgesi"
+  aliases: "storyboard,sahne çizelgesi,Szenenboard,Storyboard-Planung,öykü panosu"
   requires: ""
 ---
 

@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "1.0.0"
-  aliases: "font fallback, yedek font zinciri"
+  aliases: "font fallback,yedek font zinciri,font fallback chain,Schrift-Fallback-Kette,Ersatzschrift"
   requires: ""
 ---
 

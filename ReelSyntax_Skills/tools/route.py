@@ -120,7 +120,7 @@ def extract_negated_phrases(query):
     clean = ''.join(c for c in clean if not unicodedata.combining(c))
     negated = []
     patterns = [
-        r'\b([a-z0-9]+(?:\s+[a-z0-9]+){0,3})\s+(?:is\s+forbidden|forbidden|yasak|istemiyorum|olmasin|haric|verboten)\b',
+        r'\b([a-z0-9]+(?:\s+[a-z0-9]+){0,3}?)\s+(?:is\s+forbidden|forbidden|yasak|istemiyorum|olmasin|haric|verboten)\b',
         r'\b(?:without|no|exclude|ohne|kein|keine|sin|sans|sem)\s+([a-z0-9]+(?:\s+[a-z0-9]+){0,3})(?:[.,;]|$|\band\b|\bund\b)',
     ]
     for pat in patterns:
@@ -214,7 +214,7 @@ def route(query, rows, limit=6, stage=None, categories=(), available=None, exclu
         if sid in forced or sid in required_locks:
             continue
         row_phrases = [norm(sid), *(norm(a) for a in row['aliases'])]
-        if any(p and len(p.split()) >= 2 and any(contains(neg, p) or neg == p for neg in negated_phrases) for p in row_phrases):
+        if any(p and ((len(p.split()) >= 2 and any(contains(neg, p) or neg == p for neg in negated_phrases)) or (p == norm(sid) and any(contains(neg, p) or neg == p for neg in negated_phrases))) for p in row_phrases):
             excluded.add(sid)
     audio_drone_context = any(contains(normalized, p) for p in AUDIO_DRONE_PHRASES) and not (q & AERIAL_CUES)
     if audio_drone_context:

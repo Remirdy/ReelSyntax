@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "çekim listesi,shot list"
+  aliases: "çekim listesi,shot list,Einstellungsliste,Kameraliste"
   requires: ""
 ---
 

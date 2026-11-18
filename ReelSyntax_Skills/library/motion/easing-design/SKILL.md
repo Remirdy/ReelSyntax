@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "easing,yumuşak geçiş"
+  aliases: "easing,yumuşak geçiş,easing design,Easing-Kurven,Beschleunigungskurve,ivme eğrisi"
   requires: ""
 ---
 

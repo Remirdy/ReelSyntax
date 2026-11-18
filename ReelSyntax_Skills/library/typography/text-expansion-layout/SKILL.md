@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "1.0.0"
-  aliases: "text expansion, metin genişlemesi"
+  aliases: "text expansion,metin genişlemesi,text expansion layout,Textausdehnung-Layout,Sprachexpansion"
   requires: ""
 ---
 
