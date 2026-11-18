@@ -16,6 +16,16 @@ BATCH_SKILLS = (
     "schema-json-repair",
     "lang-detect-and-route",
     "cross-shot-grade-consistency",
+    "pattern-interrupt-cadence",
+    "silence-as-punctuation",
+    "rhythm-density-map",
+    "scene-duration-floor-ceiling",
+    "eyeline-headroom-grammar",
+    "depth-of-field-budget",
+    "ken-burns-photo-choreography",
+    "kinetic-layout-choreography",
+    "color-script-progression",
+    "optical-vignette-halation",
 )
 
 FORBIDDEN_TERMS_RE = re.compile(

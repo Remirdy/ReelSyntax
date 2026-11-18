@@ -19,6 +19,9 @@
   "optional": ["hook_style", "tone", "palette", "cta_text"],
   "skills": [
     "opening-hook",
+    "pattern-interrupt-cadence",
+    "silence-as-punctuation",
+    "scene-duration-floor-ceiling",
     "idea-angle-framing",
     "open-loop-retention",
     "procedural-broll-planner",

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "6a7750a3af366445100a6460fe507dbdb3630e7b6a0a79c8fac32e45c827881d",
+  "digest": "6f6ba8364f118448eb6fd4207b5d117ec584ea739f8d6200509e3a6f496026af",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -1059,6 +1059,40 @@
       "resource_sha256": {}
     },
     {
+      "id": "depth-of-field-budget",
+      "description": "Calibrate focal distance, f-stop circle-of-confusion blur, and sample counts so background separation stays clean without blurring legible planes or stalling renders.",
+      "category": "camera",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "depth of field budget",
+        "dof blur budget",
+        "alan derinliği bütçesi",
+        "odak bulanıklığı sınırı",
+        "Schärfentiefe-Budget",
+        "Unschärfekreis planen",
+        "presupuesto de profundidad de campo",
+        "budget de profondeur de champ"
+      ],
+      "requires": [],
+      "path": "library/camera/depth-of-field-budget/SKILL.md",
+      "estimated_words": 692,
+      "estimated_tokens": 1619,
+      "sha256": "dbbb190750723f157262cd106e7f024ef2a72233afd03dc1b3810e427392b927",
+      "body_sha256": "c61f718bc0433cc403295b3b964ecf2d58f8e9058041f2ce8c0ce4e845a2f36e",
+      "recommended_next": [
+        "lens-selection",
+        "rack-focus"
+      ],
+      "resources": [
+        "library/camera/depth-of-field-budget/references/coc-and-sample-table.md"
+      ],
+      "resource_sha256": {
+        "library/camera/depth-of-field-budget/references/coc-and-sample-table.md": "3abed35fc0b4e5604e36e5fd9665f73c5f0f57dce0b5a1f7da2b3c5b89463ea6"
+      }
+    },
+    {
       "id": "dolly-zoom",
       "description": "Use for dolly zoom. Couple camera distance and field of view to approximately preserve subject size.",
       "category": "camera",
@@ -1079,6 +1113,41 @@
         "locked-camera"
       ],
       "resource_sha256": {}
+    },
+    {
+      "id": "eyeline-headroom-grammar",
+      "description": "Position subject eyelines, proportional headroom, directional look space, and 180-degree screen vectors across portrait and widescreen frames.",
+      "category": "camera",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "eyeline headroom",
+        "headroom and lead room",
+        "bakış çizgisi ve baş boşluğu",
+        "kadraj bakış boşluğu",
+        "Augenhöhe und Kopffreiheit",
+        "Blickraum im Bild",
+        "línea de mirada y aire",
+        "ligne de regard et air"
+      ],
+      "requires": [],
+      "path": "library/camera/eyeline-headroom-grammar/SKILL.md",
+      "estimated_words": 659,
+      "estimated_tokens": 1565,
+      "sha256": "428c3862f3e5cefe86e7847e6a2efb4a8488e1a54822574eab55c224ed4c021c",
+      "body_sha256": "6dbd22acdc5669c21092f27bffcc5558f169fc628542ae43df1897427d44d12f",
+      "recommended_next": [
+        "vertical-safe-zones",
+        "shot-reverse-shot",
+        "camera-continuity"
+      ],
+      "resources": [
+        "library/camera/eyeline-headroom-grammar/references/aspect-eyeline-coordinates.md"
+      ],
+      "resource_sha256": {
+        "library/camera/eyeline-headroom-grammar/references/aspect-eyeline-coordinates.md": "07104b2d8f38ed8734aff6e924fd9bf45e8ea5536c186e515f3c4b270f50d87b"
+      }
     },
     {
       "id": "handheld-motion",
@@ -4039,6 +4108,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "pattern-interrupt-cadence",
+      "description": "Schedule motivated visual, spatial, or sonic pattern interrupts every 3.5 to 6.0 seconds to prevent viewer habituation without frantic cutting.",
+      "category": "editing",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "pattern interrupt",
+        "interrupt cadence",
+        "örüntü kırıcı ritim",
+        "dikkat tazeleme kesmesi",
+        "Musterunterbrechung",
+        "Aufmerksamkeitswechsel",
+        "interrupción de patrón",
+        "rupture de rythme"
+      ],
+      "requires": [],
+      "path": "library/editing/pattern-interrupt-cadence/SKILL.md",
+      "estimated_words": 555,
+      "estimated_tokens": 1418,
+      "sha256": "1237a0b25fa85d956e3f23a90bb58aa10f1ff77b0064ab956857a11bfd6d214a",
+      "body_sha256": "3dcf677cd0e9b2182bd3153a12c1635eaa03c27acbb86edc145f6dd6926f1e4c",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "open-loop-retention",
+        "j-cut"
+      ],
+      "resources": [
+        "library/editing/pattern-interrupt-cadence/references/interrupt-taxonomy.md"
+      ],
+      "resource_sha256": {
+        "library/editing/pattern-interrupt-cadence/references/interrupt-taxonomy.md": "b8125a98569f830381135c6c1af250a678a30aa32263c60920c02f010bff8583"
+      }
+    },
+    {
       "id": "reframing",
       "description": "Use for reframing. Track subject bounds and reserve caption areas when changing aspect ratio.",
       "category": "editing",
@@ -4077,6 +4183,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "rhythm-density-map",
+      "description": "Chart shot-length and information-rate waves across timeline quarters so fast bursts alternate with comprehension holds.",
+      "category": "editing",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "rhythm density map",
+        "pacing wave map",
+        "ritim yoğunluk haritası",
+        "kurgu tempo eğrisi",
+        "Rhythmusdichte-Karte",
+        "Tempowellen planen",
+        "mapa de ritmo",
+        "carte de densité rythmique"
+      ],
+      "requires": [],
+      "path": "library/editing/rhythm-density-map/SKILL.md",
+      "estimated_words": 575,
+      "estimated_tokens": 1356,
+      "sha256": "71cbe9ed197e4968c8f31593f4758bab600cbfa58f9d4fec62fb78e6d29d183b",
+      "body_sha256": "2d600f14401976f24477a437d601b05465289d7d76c2f77fbecdce71029ec23a",
+      "recommended_next": [
+        "beat-synced-editing",
+        "frame-clock",
+        "scene-duration-floor-ceiling"
+      ],
+      "resources": [
+        "library/editing/rhythm-density-map/references/quarter-tempo-curves.md"
+      ],
+      "resource_sha256": {
+        "library/editing/rhythm-density-map/references/quarter-tempo-curves.md": "016b5218c6f81a5c07535d60ce8d7d888ff05c3b152a99ef40a94794c6f4095b"
+      }
+    },
+    {
       "id": "rough-cut",
       "description": "Use for rough cut. Assemble selected footage by story beats before detailed transitions and effects.",
       "category": "editing",
@@ -4096,6 +4237,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "scene-duration-floor-ceiling",
+      "description": "Enforce shot-type minimum readability floors and maximum static-hold ceilings so cuts never flash unreadably or trigger unintended freeze warnings.",
+      "category": "editing",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "scene duration bounds",
+        "shot length floor ceiling",
+        "sahne süresi alt üst sınırı",
+        "çekim süresi limitleri",
+        "Szenendauer-Grenzen",
+        "Einstellungslänge begrenzen",
+        "límites de duración de escena",
+        "bornes de durée de scène"
+      ],
+      "requires": [],
+      "path": "library/editing/scene-duration-floor-ceiling/SKILL.md",
+      "estimated_words": 570,
+      "estimated_tokens": 1415,
+      "sha256": "15f07a568456531fee6d5f228e1882b9e37ba1bebf48b9213bfc02ea513952df",
+      "body_sha256": "3c35206fe6afc5153850b54c60c9e841f879c76caa6f12cf5ef8f9df81d55aa6",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "reading-speed-audit",
+        "freeze-detection"
+      ],
+      "resources": [
+        "library/editing/scene-duration-floor-ceiling/references/shot-bound-table.md"
+      ],
+      "resource_sha256": {
+        "library/editing/scene-duration-floor-ceiling/references/shot-bound-table.md": "5a513264ee2d24314623b96cbd04954593964de09a995cf8fb0b76c68385fd82"
+      }
+    },
+    {
       "id": "shot-detection",
       "description": "Use for shot detection. Detect candidate cuts using frame differences and manual review for fades.",
       "category": "editing",
@@ -4113,6 +4291,43 @@
       "sha256": "e93221aa57bb2c4bfa91511b5750c40f83c7a112e3d4da955b0bdf100e3f26e1",
       "body_sha256": "486250e9368077147861b3f649a7eefb244770c3321f7c76a125e6b4abe81b87",
       "resource_sha256": {}
+    },
+    {
+      "id": "silence-as-punctuation",
+      "description": "Shape deliberate 8-to-36-frame acoustic pauses before thesis turns or reveals while registering intentional silence windows in QC exceptions.",
+      "category": "editing",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "silence as punctuation",
+        "dramatic audio pause",
+        "noktalama olarak sessizlik",
+        "bilinçli ses boşluğu",
+        "Stille als Satzzeichen",
+        "gezielte Sprechpause",
+        "silencio como puntuación",
+        "silence de ponctuation"
+      ],
+      "requires": [],
+      "path": "library/editing/silence-as-punctuation/SKILL.md",
+      "estimated_words": 569,
+      "estimated_tokens": 1402,
+      "sha256": "353732b917d614c420a8dc782aa4aec405168189c0acf0df3db050bc2b6b4884",
+      "body_sha256": "e8ae1b281b677ba0d2c37073a5de099dd6b275d2f114f4283c18f415475670dc",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "silence-audit",
+        "comedic-timing-beats"
+      ],
+      "resources": [
+        "library/editing/silence-as-punctuation/references/pause-envelope-spec.md"
+      ],
+      "resource_sha256": {
+        "library/editing/silence-as-punctuation/references/pause-envelope-spec.md": "ba9f37268641f31192f2839370fc494a3888ae9a73e97c13864fda5728ba8d4d"
+      }
     },
     {
       "id": "silence-removal",
@@ -6254,6 +6469,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "color-script-progression",
+      "description": "Design a timeline-wide perceptual OKLCH lightness, chroma, and hue arc so visual mood evolves coherently from opening tension to closing resolution.",
+      "category": "lighting",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "color script",
+        "color script progression",
+        "renk senaryosu akışı",
+        "duygusal renk yayılımı",
+        "Farbdramaturgie",
+        "Farbskript-Verlauf",
+        "guion de color",
+        "script colorimétrique"
+      ],
+      "requires": [],
+      "path": "library/lighting/color-script-progression/SKILL.md",
+      "estimated_words": 682,
+      "estimated_tokens": 1633,
+      "sha256": "23fa5dd7ab7f90eca8eaedabcac9407f977429a3862dae5cf410ff4759696982",
+      "body_sha256": "ead3e31fd5fd426fc571ead90f77213cdc3f42a04280826de2d1570cff91e34d",
+      "recommended_next": [
+        "oklch-perceptual-palettes",
+        "cross-shot-grade-consistency",
+        "contrast-audit"
+      ],
+      "resources": [
+        "library/lighting/color-script-progression/references/oklch-story-arcs.md"
+      ],
+      "resource_sha256": {
+        "library/lighting/color-script-progression/references/oklch-story-arcs.md": "219d9ba01cb009901b7605b771678575fa774677a173c3caa7e29b8114cb967e"
+      }
+    },
+    {
       "id": "cross-shot-grade-consistency",
       "description": "Match black floor, neutral white balance, highlight shoulder, and perceptual chroma across consecutive shots so cuts never pop.",
       "category": "lighting",
@@ -7157,6 +7407,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "ken-burns-photo-choreography",
+      "description": "Animate sub-pixel pan-and-scale trajectories over still photographs with overscan resolution checks, focal-point protection, and alternating motion vectors.",
+      "category": "motion",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "ken burns photo",
+        "photo pan zoom",
+        "fotoğraf kaydırma yakınlaştırma",
+        "hareketli fotoğraf kurgusu",
+        "Ken-Burns-Kamerafahrt",
+        "Foto-Zoomfahrt",
+        "efecto ken burns",
+        "mouvement ken burns"
+      ],
+      "requires": [],
+      "path": "library/motion/ken-burns-photo-choreography/SKILL.md",
+      "estimated_words": 662,
+      "estimated_tokens": 1664,
+      "sha256": "bf2de9676e8c55f5b5905ab87790bb22e8c93f7212f8764c252ad5000d2331b2",
+      "body_sha256": "3a340d239604ea6927a978613a6cd3d7c5e0b7021a5ea46336a6b63be0071e87",
+      "conflicts": [
+        "locked-camera"
+      ],
+      "recommended_next": [
+        "cross-shot-grade-consistency",
+        "shutter-angle-judder"
+      ],
+      "resources": [
+        "library/motion/ken-burns-photo-choreography/references/subpixel-pan-math.md"
+      ],
+      "resource_sha256": {
+        "library/motion/ken-burns-photo-choreography/references/subpixel-pan-math.md": "0feb502b0cc85c0a29ac3f3c1170fccdfe1768de128a152ac6510565e854d4b1"
+      }
+    },
+    {
       "id": "keyframe-curves",
       "description": "Use for keyframe curves. Set key poses and interpolate with explicit easing and frame indices.",
       "category": "motion",
@@ -7174,6 +7461,44 @@
       "sha256": "43943469841dfb0248d2cfbb5d67b2ce2e09d5bf3259fa1770f73af380080c75",
       "body_sha256": "6a0a4e9d5d643f7690f475aa93721383bc8f723ae3a43ff8458865d9922fea5d",
       "resource_sha256": {}
+    },
+    {
+      "id": "kinetic-layout-choreography",
+      "description": "Coordinate multi-element grid entrances, shared alignment rails, 3-to-5-frame stagger offsets, and clean simultaneous exits for typographic and diagram cards.",
+      "category": "motion",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "kinetic layout",
+        "staggered grid choreography",
+        "kinetik yerleşim koreografisi",
+        "kademeli ızgara hareketi",
+        "kinetisches Layout",
+        "gestaffelte Raster-Choreografie",
+        "coreografía de diseño cinético",
+        "chorégraphie de grille cinétique"
+      ],
+      "requires": [],
+      "path": "library/motion/kinetic-layout-choreography/SKILL.md",
+      "estimated_words": 636,
+      "estimated_tokens": 1512,
+      "sha256": "42811c34243bc3c6329a5afbfd63eca6c9747c58ed96738b5ddae221884e8046",
+      "body_sha256": "3f854dc2223dca7a656257fd76a11e7bb9d4e8e906ae119177a2e238a2ff6498",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "kinetic-typography",
+        "easing-design",
+        "swiss-grid-motion"
+      ],
+      "resources": [
+        "library/motion/kinetic-layout-choreography/references/stagger-timing-sheet.md"
+      ],
+      "resource_sha256": {
+        "library/motion/kinetic-layout-choreography/references/stagger-timing-sheet.md": "630090576d778b62ab7f2e8a4636c3aa2f65937b86ef12cd3cedbca5dec6a70d"
+      }
     },
     {
       "id": "loop-design",
@@ -11005,6 +11330,41 @@
       "sha256": "f128075bd4ea4c72cd2c025120009eaf6ad68e21385757fe2dd201ec8a203830",
       "body_sha256": "757e33bdd1e6ac9cf61ae3aa240e1b017fbae92470e95efc0b20bb8151cc0ec1",
       "resource_sha256": {}
+    },
+    {
+      "id": "optical-vignette-halation",
+      "description": "Apply subtle natural-lens peripheral falloff and thresholded warm highlight halation in linear light without crushing corners or reducing caption contrast.",
+      "category": "vfx",
+      "stage": "render",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "optical vignette",
+        "halation and vignette",
+        "optik vinyet ve halasyon",
+        "kenar karartma ve ışık halesi",
+        "optische Vignettierung",
+        "Lichtsaum und Randabfall",
+        "viñeteo óptico y halación",
+        "vignettage optique et halation"
+      ],
+      "requires": [],
+      "path": "library/vfx/optical-vignette-halation/SKILL.md",
+      "estimated_words": 673,
+      "estimated_tokens": 1656,
+      "sha256": "d3f2c047c0cc65e6533e3414806ed7642ed2da3e96eb263f23e6b121f4174d02",
+      "body_sha256": "d9513a3a769042c08de8f04214c79745d042b6b7a7514ccdcb2f6b975e0c7f97",
+      "recommended_next": [
+        "contrast-audit",
+        "agx-aces-tonemapping",
+        "debanding"
+      ],
+      "resources": [
+        "library/vfx/optical-vignette-halation/references/cos4-and-halation-shader.md"
+      ],
+      "resource_sha256": {
+        "library/vfx/optical-vignette-halation/references/cos4-and-halation-shader.md": "c9aa7a65725b3019f0520ccd237c0c38cbc1dcdbf2e6535b5bfee178d8faee7c"
+      }
     },
     {
       "id": "particle-3d",

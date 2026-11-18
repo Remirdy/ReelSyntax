@@ -19,6 +19,9 @@
   "optional": ["captions", "tone", "palette", "music_bed"],
   "skills": [
     "frame-clock",
+    "ken-burns-photo-choreography",
+    "eyeline-headroom-grammar",
+    "optical-vignette-halation",
     "prompt-to-storyboard",
     "cross-shot-grade-consistency",
     "contrast-audit",

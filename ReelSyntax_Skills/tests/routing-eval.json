@@ -1958,6 +1958,409 @@
       "forbidden": [
         "cross-shot-grade-consistency"
       ]
+    },
+    {
+      "id": "en-pattern-interrupt-cadence",
+      "task": {
+        "intent": "pattern interrupt cadence every four seconds"
+      },
+      "relevant": [
+        "pattern-interrupt-cadence",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-pattern-interrupt-cadence",
+      "task": {
+        "intent": "örüntü kırıcı ritim ve dikkat tazeleme kesmesi"
+      },
+      "relevant": [
+        "pattern-interrupt-cadence",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-pattern-interrupt-cadence",
+      "task": {
+        "intent": "Musterunterbrechung und Aufmerksamkeitswechsel im Schnitt"
+      },
+      "relevant": [
+        "pattern-interrupt-cadence",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-pattern-interrupt-cadence",
+      "task": {
+        "intent": "locked camera; pattern interrupt is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "pattern-interrupt-cadence"
+      ]
+    },
+    {
+      "id": "en-silence-as-punctuation",
+      "task": {
+        "intent": "silence as punctuation and dramatic audio pause"
+      },
+      "relevant": [
+        "silence-as-punctuation",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-silence-as-punctuation",
+      "task": {
+        "intent": "noktalama olarak sessizlik ve bilinçli ses boşluğu"
+      },
+      "relevant": [
+        "silence-as-punctuation",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-silence-as-punctuation",
+      "task": {
+        "intent": "Stille als Satzzeichen und gezielte Sprechpause"
+      },
+      "relevant": [
+        "silence-as-punctuation",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-silence-as-punctuation",
+      "task": {
+        "intent": "silent video, silence as punctuation",
+        "constraints": {
+          "no_audio": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "silence-as-punctuation"
+      ]
+    },
+    {
+      "id": "en-rhythm-density-map",
+      "task": {
+        "intent": "rhythm density map and pacing wave map"
+      },
+      "relevant": [
+        "rhythm-density-map"
+      ]
+    },
+    {
+      "id": "tr-rhythm-density-map",
+      "task": {
+        "intent": "ritim yoğunluk haritası ve kurgu tempo eğrisi"
+      },
+      "relevant": [
+        "rhythm-density-map"
+      ]
+    },
+    {
+      "id": "de-rhythm-density-map",
+      "task": {
+        "intent": "Rhythmusdichte-Karte und Tempowellen planen"
+      },
+      "relevant": [
+        "rhythm-density-map"
+      ]
+    },
+    {
+      "id": "neg-rhythm-density-map",
+      "task": {
+        "intent": "contrast audit; without rhythm density map"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "rhythm-density-map"
+      ]
+    },
+    {
+      "id": "en-scene-duration-floor-ceiling",
+      "task": {
+        "intent": "scene duration bounds and shot length floor ceiling"
+      },
+      "relevant": [
+        "scene-duration-floor-ceiling",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-scene-duration-floor-ceiling",
+      "task": {
+        "intent": "sahne süresi alt üst sınırı ve çekim süresi limitleri"
+      },
+      "relevant": [
+        "scene-duration-floor-ceiling",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-scene-duration-floor-ceiling",
+      "task": {
+        "intent": "Szenendauer-Grenzen und Einstellungslänge begrenzen"
+      },
+      "relevant": [
+        "scene-duration-floor-ceiling",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-scene-duration-floor-ceiling",
+      "task": {
+        "intent": "locked camera; without scene duration bounds"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "scene-duration-floor-ceiling"
+      ]
+    },
+    {
+      "id": "en-eyeline-headroom-grammar",
+      "task": {
+        "intent": "eyeline headroom and lead room framing"
+      },
+      "relevant": [
+        "eyeline-headroom-grammar"
+      ]
+    },
+    {
+      "id": "tr-eyeline-headroom-grammar",
+      "task": {
+        "intent": "bakış çizgisi ve baş boşluğu kadraj bakış boşluğu"
+      },
+      "relevant": [
+        "eyeline-headroom-grammar"
+      ]
+    },
+    {
+      "id": "de-eyeline-headroom-grammar",
+      "task": {
+        "intent": "Augenhöhe und Kopffreiheit sowie Blickraum im Bild"
+      },
+      "relevant": [
+        "eyeline-headroom-grammar"
+      ]
+    },
+    {
+      "id": "neg-eyeline-headroom-grammar",
+      "task": {
+        "intent": "contrast audit; eyeline headroom is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "eyeline-headroom-grammar"
+      ]
+    },
+    {
+      "id": "en-depth-of-field-budget",
+      "task": {
+        "intent": "depth of field budget and dof blur budget"
+      },
+      "relevant": [
+        "depth-of-field-budget"
+      ]
+    },
+    {
+      "id": "tr-depth-of-field-budget",
+      "task": {
+        "intent": "alan derinliği bütçesi ve odak bulanıklığı sınırı"
+      },
+      "relevant": [
+        "depth-of-field-budget"
+      ]
+    },
+    {
+      "id": "de-depth-of-field-budget",
+      "task": {
+        "intent": "Schärfentiefe-Budget und Unschärfekreis planen"
+      },
+      "relevant": [
+        "depth-of-field-budget"
+      ]
+    },
+    {
+      "id": "neg-depth-of-field-budget",
+      "task": {
+        "intent": "frame clock; without depth of field budget"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "depth-of-field-budget"
+      ]
+    },
+    {
+      "id": "en-ken-burns-photo-choreography",
+      "task": {
+        "intent": "ken burns photo pan zoom choreography"
+      },
+      "relevant": [
+        "ken-burns-photo-choreography"
+      ]
+    },
+    {
+      "id": "tr-ken-burns-photo-choreography",
+      "task": {
+        "intent": "fotoğraf kaydırma yakınlaştırma ve hareketli fotoğraf kurgusu"
+      },
+      "relevant": [
+        "ken-burns-photo-choreography"
+      ]
+    },
+    {
+      "id": "de-ken-burns-photo-choreography",
+      "task": {
+        "intent": "Ken-Burns-Kamerafahrt und Foto-Zoomfahrt"
+      },
+      "relevant": [
+        "ken-burns-photo-choreography"
+      ]
+    },
+    {
+      "id": "neg-ken-burns-photo-choreography",
+      "task": {
+        "intent": "ken burns photo pan zoom",
+        "constraints": {
+          "camera_locked": true
+        }
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "ken-burns-photo-choreography"
+      ]
+    },
+    {
+      "id": "en-kinetic-layout-choreography",
+      "task": {
+        "intent": "kinetic layout and staggered grid choreography"
+      },
+      "relevant": [
+        "kinetic-layout-choreography"
+      ]
+    },
+    {
+      "id": "tr-kinetic-layout-choreography",
+      "task": {
+        "intent": "kinetik yerleşim koreografisi ve kademeli ızgara hareketi"
+      },
+      "relevant": [
+        "kinetic-layout-choreography"
+      ]
+    },
+    {
+      "id": "de-kinetic-layout-choreography",
+      "task": {
+        "intent": "kinetisches Layout und gestaffelte Raster-Choreografie"
+      },
+      "relevant": [
+        "kinetic-layout-choreography"
+      ]
+    },
+    {
+      "id": "neg-kinetic-layout-choreography",
+      "task": {
+        "intent": "no text, kinetic layout choreography"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "kinetic-layout-choreography"
+      ]
+    },
+    {
+      "id": "en-color-script-progression",
+      "task": {
+        "intent": "color script progression across story acts"
+      },
+      "relevant": [
+        "color-script-progression"
+      ]
+    },
+    {
+      "id": "tr-color-script-progression",
+      "task": {
+        "intent": "renk senaryosu akışı ve duygusal renk yayılımı"
+      },
+      "relevant": [
+        "color-script-progression"
+      ]
+    },
+    {
+      "id": "de-color-script-progression",
+      "task": {
+        "intent": "Farbdramaturgie und Farbskript-Verlauf planen"
+      },
+      "relevant": [
+        "color-script-progression"
+      ]
+    },
+    {
+      "id": "neg-color-script-progression",
+      "task": {
+        "intent": "frame clock; color script is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "color-script-progression"
+      ]
+    },
+    {
+      "id": "en-optical-vignette-halation",
+      "task": {
+        "intent": "optical vignette and halation lens falloff"
+      },
+      "relevant": [
+        "optical-vignette-halation"
+      ]
+    },
+    {
+      "id": "tr-optical-vignette-halation",
+      "task": {
+        "intent": "optik vinyet ve halasyon kenar karartma ve ışık halesi"
+      },
+      "relevant": [
+        "optical-vignette-halation"
+      ]
+    },
+    {
+      "id": "de-optical-vignette-halation",
+      "task": {
+        "intent": "optische Vignettierung sowie Lichtsaum und Randabfall"
+      },
+      "relevant": [
+        "optical-vignette-halation"
+      ]
+    },
+    {
+      "id": "neg-optical-vignette-halation",
+      "task": {
+        "intent": "contrast audit; without optical vignette"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "optical-vignette-halation"
+      ]
     }
   ]
 }

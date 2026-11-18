@@ -27,6 +27,10 @@ Treat the values below as adjustable defaults and tune per audience and language
 ## Wired skills
 
 - `kinetic-typography` — Statement hierarchy, entrance damping, and hold pacing.
+- `kinetic-layout-choreography` — Shared alignment rails and tight multi-element stagger builds.
+- `rhythm-density-map` — Alternating brisk burst cuts with comprehension holds.
+- `scene-duration-floor-ceiling` — Net readability floors accounting for transition overlaps.
+- `color-script-progression` — Perceptual OKLCH lightness and accent trajectory across acts.
 - `idea-angle-framing` — Single sharp editorial angle and scope boundary before scripting.
 - `prompt-to-storyboard` — Frame-quantized card breakdown from natural-language briefs.
 - `lang-detect-and-route` — Independent UI and target video language resolution.

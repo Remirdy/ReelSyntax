@@ -708,5 +708,125 @@
     "resources": [
       "library/lighting/cross-shot-grade-consistency/references/bt709-matching-tolerances.md"
     ]
+  },
+  "pattern-interrupt-cadence": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "open-loop-retention",
+      "j-cut"
+    ],
+    "resources": [
+      "library/editing/pattern-interrupt-cadence/references/interrupt-taxonomy.md"
+    ]
+  },
+  "silence-as-punctuation": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "silence-audit",
+      "comedic-timing-beats"
+    ],
+    "resources": [
+      "library/editing/silence-as-punctuation/references/pause-envelope-spec.md"
+    ]
+  },
+  "rhythm-density-map": {
+    "status": "validated",
+    "recommended_next": [
+      "beat-synced-editing",
+      "frame-clock",
+      "scene-duration-floor-ceiling"
+    ],
+    "resources": [
+      "library/editing/rhythm-density-map/references/quarter-tempo-curves.md"
+    ]
+  },
+  "scene-duration-floor-ceiling": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "reading-speed-audit",
+      "freeze-detection"
+    ],
+    "resources": [
+      "library/editing/scene-duration-floor-ceiling/references/shot-bound-table.md"
+    ]
+  },
+  "eyeline-headroom-grammar": {
+    "status": "validated",
+    "recommended_next": [
+      "vertical-safe-zones",
+      "shot-reverse-shot",
+      "camera-continuity"
+    ],
+    "resources": [
+      "library/camera/eyeline-headroom-grammar/references/aspect-eyeline-coordinates.md"
+    ]
+  },
+  "depth-of-field-budget": {
+    "status": "validated",
+    "recommended_next": [
+      "lens-selection",
+      "rack-focus"
+    ],
+    "resources": [
+      "library/camera/depth-of-field-budget/references/coc-and-sample-table.md"
+    ]
+  },
+  "ken-burns-photo-choreography": {
+    "status": "validated",
+    "conflicts": [
+      "locked-camera"
+    ],
+    "recommended_next": [
+      "cross-shot-grade-consistency",
+      "shutter-angle-judder"
+    ],
+    "resources": [
+      "library/motion/ken-burns-photo-choreography/references/subpixel-pan-math.md"
+    ]
+  },
+  "kinetic-layout-choreography": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "kinetic-typography",
+      "easing-design",
+      "swiss-grid-motion"
+    ],
+    "resources": [
+      "library/motion/kinetic-layout-choreography/references/stagger-timing-sheet.md"
+    ]
+  },
+  "color-script-progression": {
+    "status": "validated",
+    "recommended_next": [
+      "oklch-perceptual-palettes",
+      "cross-shot-grade-consistency",
+      "contrast-audit"
+    ],
+    "resources": [
+      "library/lighting/color-script-progression/references/oklch-story-arcs.md"
+    ]
+  },
+  "optical-vignette-halation": {
+    "status": "validated",
+    "recommended_next": [
+      "contrast-audit",
+      "agx-aces-tonemapping",
+      "debanding"
+    ],
+    "resources": [
+      "library/vfx/optical-vignette-halation/references/cos4-and-halation-shader.md"
+    ]
   }
 }

@@ -31,11 +31,12 @@ LOCK_TEXT = (
 CAMERA_MOVES = {
     'slow-dolly', 'tracking-shot', 'orbit-camera', 'crane-shot', 'whip-pan', 'handheld-motion',
     'dolly-zoom', 'aerial-shot', 'pov-camera', 'match-zoom', 'seamless-camera-bridge',
-    'camera-inertia-rig', 'procedural-camera-shake',
+    'camera-inertia-rig', 'procedural-camera-shake', 'ken-burns-photo-choreography',
 }
 TEXT_ADDITIONS = {
     'kinetic-typography', 'word-reveal', 'character-reveal', 'text-mask-reveal', 'text-on-path',
     'extruded-type', 'lower-thirds', 'word-timed-captions', 'end-card', 'variable-font-animation',
+    'kinetic-layout-choreography',
 }
 STEMS = {
     'kameras': 'kamera', 'schwarzbildern': 'schwarzbilder', 'camaras': 'camara',
@@ -119,8 +120,8 @@ def extract_negated_phrases(query):
     clean = ''.join(c for c in clean if not unicodedata.combining(c))
     negated = []
     patterns = [
-        r'\b([a-z0-9]+(?:\s+[a-z0-9]+){0,2})\s+(?:is\s+forbidden|forbidden|yasak|istemiyorum|olmasin|haric|verboten)\b',
-        r'\b(?:without|no|exclude|ohne|kein|keine|sin|sans|sem)\s+([a-z0-9]+(?:\s+[a-z0-9]+){0,2})(?:[.,;]|$|\band\b|\bund\b)',
+        r'\b([a-z0-9]+(?:\s+[a-z0-9]+){0,3})\s+(?:is\s+forbidden|forbidden|yasak|istemiyorum|olmasin|haric|verboten)\b',
+        r'\b(?:without|no|exclude|ohne|kein|keine|sin|sans|sem)\s+([a-z0-9]+(?:\s+[a-z0-9]+){0,3})(?:[.,;]|$|\band\b|\bund\b)',
     ]
     for pat in patterns:
         for match in re.finditer(pat, clean):
@@ -200,6 +201,7 @@ def route(query, rows, limit=6, stage=None, categories=(), available=None, exclu
         excluded.update(r['id'] for r in rows if r['category'] == 'typography' and r['id'] != 'textless-visual-design')
     if locks.get('no_audio'):
         excluded.update(r['id'] for r in rows if r['category'] in {'audio', 'music'})
+        excluded.add('silence-as-punctuation')
         if not (q & AUDIT_CUES):
             excluded.add('silence-audit')
     elif locks.get('no_music'):

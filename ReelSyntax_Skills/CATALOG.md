@@ -1,25 +1,25 @@
 # ReelSyntax skill catalog
 
-576 skills across 25 categories. 508 guidance, 68 validated.
+586 skills across 25 categories. 508 guidance, 78 validated.
 
 | Category | Skills |
 | --- | ---: |
 | art | 27 |
 | audio | 23 |
-| camera | 23 |
+| camera | 25 |
 | capture | 20 |
 | character | 20 |
 | data | 29 |
 | delivery | 28 |
 | direction | 22 |
-| editing | 20 |
+| editing | 24 |
 | engines | 24 |
 | formats | 32 |
 | graphics | 20 |
 | ingest | 20 |
-| lighting | 22 |
+| lighting | 23 |
 | modeling | 21 |
-| motion | 21 |
+| motion | 23 |
 | music | 20 |
 | qa | 21 |
 | render | 20 |
@@ -27,7 +27,7 @@
 | story | 24 |
 | transitions | 20 |
 | typography | 28 |
-| vfx | 21 |
+| vfx | 22 |
 | workflow | 21 |
 
 ## Art direction, composition and design (`art`, 27)
@@ -90,7 +90,7 @@
 | [voice-cleanup](library/audio/voice-cleanup/SKILL.md) | guidance | ses temizleme, noise reduction | Use for voice cleanup. Analyze noise profile and apply conservative cleanup without changing meaning. |
 | [voiceover-alignment](library/audio/voiceover-alignment/SKILL.md) | guidance | seslendirme senkronu, voice over sync | Use for voiceover alignment. Map narration timestamps to scene beats and handle unmatched words explicitly. |
 
-## Camera and cinematography (`camera`, 23)
+## Camera and cinematography (`camera`, 25)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -98,7 +98,9 @@
 | [camera-continuity](library/camera/camera-continuity/SKILL.md) | guidance | kamera tutarlılığı, çekim tutarlılığı | Use for camera continuity. Compare focal range, height, axis and speed across neighboring shots. |
 | [camera-inertia-rig](library/camera/camera-inertia-rig/SKILL.md) | validated | kamera ataleti, spring damper camera, inertial camera rig, fiziksel kamera | Use for physical camera rig inertia. Drive virtual dolly, crane, and Steadicam transforms through analytical second-order mass-spring-damper dynamics. |
 | [crane-shot](library/camera/crane-shot/SKILL.md) | guidance | vinç çekimi, crane camera | Use for crane shot. Animate vertical and horizontal camera offsets with purposeful reveal timing. |
+| [depth-of-field-budget](library/camera/depth-of-field-budget/SKILL.md) | validated | depth of field budget, dof blur budget, alan derinliği bütçesi, odak bulanıklığı sınırı, Schärfentiefe-Budget, Unschärfekreis planen, presupuesto de profundidad de campo, budget de profondeur de champ | Calibrate focal distance, f-stop circle-of-confusion blur, and sample counts so background separation stays clean without blurring legible planes or stalling renders. |
 | [dolly-zoom](library/camera/dolly-zoom/SKILL.md) | validated | vertigo, dolly zoom | Use for dolly zoom. Couple camera distance and field of view to approximately preserve subject size. |
+| [eyeline-headroom-grammar](library/camera/eyeline-headroom-grammar/SKILL.md) | validated | eyeline headroom, headroom and lead room, bakış çizgisi ve baş boşluğu, kadraj bakış boşluğu, Augenhöhe und Kopffreiheit, Blickraum im Bild, línea de mirada y aire, ligne de regard et air | Position subject eyelines, proportional headroom, directional look space, and 180-degree screen vectors across portrait and widescreen frames. |
 | [handheld-motion](library/camera/handheld-motion/SKILL.md) | guidance | el kamerası, kamera sarsıntısı | Use for handheld motion. Apply seeded low-frequency drift and restrained high-frequency jitter in camera space. |
 | [leading-lines](library/camera/leading-lines/SKILL.md) | guidance | yönlendirici çizgiler, perspektif çizgileri | Use for leading lines. Orient geometry toward the focal subject and control competing vanishing points. |
 | [lens-selection](library/camera/lens-selection/SKILL.md) | guidance | lens seçimi, odak uzaklığı | Use for lens selection. Choose field of view and camera distance together; distinguish perspective from focal length. |
@@ -262,7 +264,7 @@
 | [tone-calibration](library/direction/tone-calibration/SKILL.md) | guidance | duygu, video tonu | Use for tone calibration. Define emotional start/end and beats; map intensity to motion, music and color. |
 | [visual-language-bible](library/direction/visual-language-bible/SKILL.md) | guidance | görsel dil, stil rehberi | Use for visual language bible. Specify shape vocabulary, texture, contrast, typography, movement and forbidden motifs. |
 
-## Editing and temporal assembly (`editing`, 20)
+## Editing and temporal assembly (`editing`, 24)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -276,10 +278,14 @@
 | [match-on-action](library/editing/match-on-action/SKILL.md) | guidance | harekette kesme, match action | Use for match on action. Cut at compatible action phases, screen direction and subject location. |
 | [montage-editing](library/editing/montage-editing/SKILL.md) | guidance | montaj, kolaj video | Use for montage editing. Sequence distinct shots by thematic progression rather than random transitions. |
 | [multicam-editing](library/editing/multicam-editing/SKILL.md) | guidance | çok kamera, multicam | Use for multicam editing. Synchronize footage via timecodes or audio; switch on motivated moments. |
+| [pattern-interrupt-cadence](library/editing/pattern-interrupt-cadence/SKILL.md) | validated | pattern interrupt, interrupt cadence, örüntü kırıcı ritim, dikkat tazeleme kesmesi, Musterunterbrechung, Aufmerksamkeitswechsel, interrupción de patrón, rupture de rythme | Schedule motivated visual, spatial, or sonic pattern interrupts every 3.5 to 6.0 seconds to prevent viewer habituation without frantic cutting. |
 | [reframing](library/editing/reframing/SKILL.md) | guidance | yeniden kadraj, otomatik crop | Use for reframing. Track subject bounds and reserve caption areas when changing aspect ratio. |
 | [retake-detection](library/editing/retake-detection/SKILL.md) | guidance | tekrar çekim, yanlış tekrar | Use for retake detection. Find transcript repeats and alternate takes; choose complete version with handles. |
+| [rhythm-density-map](library/editing/rhythm-density-map/SKILL.md) | validated | rhythm density map, pacing wave map, ritim yoğunluk haritası, kurgu tempo eğrisi, Rhythmusdichte-Karte, Tempowellen planen, mapa de ritmo, carte de densité rythmique | Chart shot-length and information-rate waves across timeline quarters so fast bursts alternate with comprehension holds. |
 | [rough-cut](library/editing/rough-cut/SKILL.md) | guidance | kaba kurgu, rough cut | Use for rough cut. Assemble selected footage by story beats before detailed transitions and effects. |
+| [scene-duration-floor-ceiling](library/editing/scene-duration-floor-ceiling/SKILL.md) | validated | scene duration bounds, shot length floor ceiling, sahne süresi alt üst sınırı, çekim süresi limitleri, Szenendauer-Grenzen, Einstellungslänge begrenzen, límites de duración de escena, bornes de durée de scène | Enforce shot-type minimum readability floors and maximum static-hold ceilings so cuts never flash unreadably or trigger unintended freeze warnings. |
 | [shot-detection](library/editing/shot-detection/SKILL.md) | guidance | sahne tespiti, shot detect | Use for shot detection. Detect candidate cuts using frame differences and manual review for fades. |
+| [silence-as-punctuation](library/editing/silence-as-punctuation/SKILL.md) | validated | silence as punctuation, dramatic audio pause, noktalama olarak sessizlik, bilinçli ses boşluğu, Stille als Satzzeichen, gezielte Sprechpause, silencio como puntuación, silence de ponctuation | Shape deliberate 8-to-36-frame acoustic pauses before thesis turns or reveals while registering intentional silence windows in QC exceptions. |
 | [silence-removal](library/editing/silence-removal/SKILL.md) | guidance | sessizlik temizleme, boşluk kesme | Use for silence removal. Detect candidate silence with thresholds and handles; preserve intentional pauses. |
 | [slow-motion](library/editing/slow-motion/SKILL.md) | guidance | ağır çekim, slow motion | Use for slow motion. Use source frame rate or explicit interpolation method with retime metadata. |
 | [time-lapse](library/editing/time-lapse/SKILL.md) | guidance | hızlandırılmış video, timelapse | Use for time lapse. Sample source by interval and smooth exposure variation if appropriate. |
@@ -403,13 +409,14 @@
 | [reference-frame-extraction](library/ingest/reference-frame-extraction/SKILL.md) | guidance | kare çıkarma, frame extraction | Use for reference frame extraction. Extract selected frames with source timestamp and consistent color conversion. |
 | [source-verification](library/ingest/source-verification/SKILL.md) | guidance | kaynak doğrulama, fact check | Use for source verification. Use primary sources where possible, record exact claim and evidence links. |
 
-## Lighting, staging and environment (`lighting`, 22)
+## Lighting, staging and environment (`lighting`, 23)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [agx-aces-tonemapping](library/lighting/agx-aces-tonemapping/SKILL.md) | validated | agx tonemapping, aces output transform, filmic highlight rolloff, renk sıkıştırma | Use for AgX and ACES tone mapping. Evaluate lighting in unbounded scene-referred linear RGB and apply gamut-preserving highlight desaturation exactly once. |
 | [ambient-occlusion](library/lighting/ambient-occlusion/SKILL.md) | guidance | ao, ambient occlusion | Use for ambient occlusion. Use contact shading moderately and avoid duplicating physically rendered occlusion. |
 | [background-depth](library/lighting/background-depth/SKILL.md) | guidance | arka plan derinliği, atmosferik perspektif | Use for background depth. Layer foreground, midground and background with consistent occlusion and depth cues. |
+| [color-script-progression](library/lighting/color-script-progression/SKILL.md) | validated | color script, color script progression, renk senaryosu akışı, duygusal renk yayılımı, Farbdramaturgie, Farbskript-Verlauf, guion de color, script colorimétrique | Design a timeline-wide perceptual OKLCH lightness, chroma, and hue arc so visual mood evolves coherently from opening tension to closing resolution. |
 | [cross-shot-grade-consistency](library/lighting/cross-shot-grade-consistency/SKILL.md) | validated | shot grade consistency, grade consistency, çekim renk tutarlılığı, sahneler arası renk uyumu, Schnitt-Farbkonsistenz, Farbabgleich zwischen Szenen, consistencia de etalonaje, cohérence colorimétrique | Match black floor, neutral white balance, highlight shoulder, and perceptual chroma across consecutive shots so cuts never pop. |
 | [exposure-planning](library/lighting/exposure-planning/SKILL.md) | guidance | pozlama, exposure | Use for exposure planning. Set rendering exposure and highlight handling using reference test charts. |
 | [exterior-staging](library/lighting/exterior-staging/SKILL.md) | guidance | dış mekan, çevre sahnesi | Use for exterior staging. Set horizon, terrain, vegetation and architecture by world scale. |
@@ -456,7 +463,7 @@
 | [usd-scene-assembly](library/modeling/usd-scene-assembly/SKILL.md) | guidance | openusd, usda sahne, usd variant, universal scene description | Use for OpenUSD scene assembly. Structure non-destructive .usda sublayers, asset payloads, lookdev VariantSets, and rational timeSamples for 3D cinematic pipelines. |
 | [uv-unwrapping](library/modeling/uv-unwrapping/SKILL.md) | guidance | uv açma, uv map | Use for uv unwrapping. Place seams in less visible regions and maintain texel density. |
 
-## Motion principles and temporal design (`motion`, 21)
+## Motion principles and temporal design (`motion`, 23)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -466,7 +473,9 @@
 | [easing-design](library/motion/easing-design/SKILL.md) | guidance | easing, yumuşak geçiş | Use for easing design. Choose acceleration curves matching mass and narrative intent. |
 | [follow-through](library/motion/follow-through/SKILL.md) | guidance | takip hareketi, follow through | Use for follow through. Offset secondary elements according to inertia after the main movement. |
 | [freeze-frame](library/motion/freeze-frame/SKILL.md) | guidance | dondurma efekti, freeze frame | Use for freeze frame. Choose a meaningful pose and hold image while selectively continuing other layers if appropriate. |
+| [ken-burns-photo-choreography](library/motion/ken-burns-photo-choreography/SKILL.md) | validated | ken burns photo, photo pan zoom, fotoğraf kaydırma yakınlaştırma, hareketli fotoğraf kurgusu, Ken-Burns-Kamerafahrt, Foto-Zoomfahrt, efecto ken burns, mouvement ken burns | Animate sub-pixel pan-and-scale trajectories over still photographs with overscan resolution checks, focal-point protection, and alternating motion vectors. |
 | [keyframe-curves](library/motion/keyframe-curves/SKILL.md) | guidance | keyframe, eğri animasyonu | Use for keyframe curves. Set key poses and interpolate with explicit easing and frame indices. |
+| [kinetic-layout-choreography](library/motion/kinetic-layout-choreography/SKILL.md) | validated | kinetic layout, staggered grid choreography, kinetik yerleşim koreografisi, kademeli ızgara hareketi, kinetisches Layout, gestaffelte Raster-Choreografie, coreografía de diseño cinético, chorégraphie de grille cinétique | Coordinate multi-element grid entrances, shared alignment rails, 3-to-5-frame stagger offsets, and clean simultaneous exits for typographic and diagram cards. |
 | [loop-design](library/motion/loop-design/SKILL.md) | guidance | döngü animasyonu, seamless loop | Use for loop design. Match initial and terminal state including velocity where relevant; omit duplicate endpoint frame. |
 | [motion-continuity](library/motion/motion-continuity/SKILL.md) | guidance | hareket tutarlılığı, animasyon devamlılığı | Use for motion continuity. Compare screen direction, phase and speed at scene boundaries. |
 | [parallax-motion](library/motion/parallax-motion/SKILL.md) | guidance | paralaks, katman derinliği | Use for parallax motion. Move depth planes proportionally and extend artwork beyond visible crop. |
@@ -679,7 +688,7 @@
 | [word-reveal](library/typography/word-reveal/SKILL.md) | guidance | kelime kelime, word reveal | Use for word reveal. Reveal words at timed anchors without shifting already-read text unnecessarily. |
 | [word-timed-captions](library/typography/word-timed-captions/SKILL.md) | guidance | kelime zamanlı altyazı, karaoke | Use for word timed captions. Use word timestamps to highlight active words with stable layout. |
 
-## Visual effects and compositing (`vfx`, 21)
+## Visual effects and compositing (`vfx`, 22)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -695,6 +704,7 @@
 | [liquid-morph](library/vfx/liquid-morph/SKILL.md) | guidance | sıvı dönüşüm, liquid morph | Use for liquid morph. Blend implicit fields or animated surfaces using coherent topology and lighting. |
 | [luma-key](library/vfx/luma-key/SKILL.md) | guidance | parlaklık maskesi, luma key | Use for luma key. Derive alpha from luminance with controlled thresholds and softness. |
 | [motion-blur](library/vfx/motion-blur/SKILL.md) | guidance | hareket bulanıklığı, motion blur | Use for motion blur. Use temporal samples or motion vectors with explicit shutter fraction. |
+| [optical-vignette-halation](library/vfx/optical-vignette-halation/SKILL.md) | validated | optical vignette, halation and vignette, optik vinyet ve halasyon, kenar karartma ve ışık halesi, optische Vignettierung, Lichtsaum und Randabfall, viñeteo óptico y halación, vignettage optique et halation | Apply subtle natural-lens peripheral falloff and thresholded warm highlight halation in linear light without crushing corners or reducing caption contrast. |
 | [particle-3d](library/vfx/particle-3d/SKILL.md) | guidance | 3d parçacık, 3d particles | Use for particle 3d. Seed emitters, define world-space velocities and cap count and lifetime. |
 | [planar-tracking](library/vfx/planar-tracking/SKILL.md) | guidance | planar tracking, ekran takip | Use for planar tracking. Track planar feature correspondences and compute perspective transform. |
 | [point-tracking](library/vfx/point-tracking/SKILL.md) | guidance | nokta takibi, motion tracking | Use for point tracking. Track stable features and reject outliers before applying translation or stabilization. |

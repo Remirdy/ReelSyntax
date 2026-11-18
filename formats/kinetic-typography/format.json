@@ -19,6 +19,10 @@
   "optional": ["tone", "formality", "palette", "music_bed"],
   "skills": [
     "kinetic-typography",
+    "kinetic-layout-choreography",
+    "rhythm-density-map",
+    "scene-duration-floor-ceiling",
+    "color-script-progression",
     "idea-angle-framing",
     "prompt-to-storyboard",
     "lang-detect-and-route",

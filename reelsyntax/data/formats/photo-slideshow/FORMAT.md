@@ -21,6 +21,9 @@ Treat the values below as adjustable defaults:
 ## Wired skills
 
 - `frame-clock` — Exact slide durations aligned to harmonic beat cues.
+- `ken-burns-photo-choreography` — Sub-pixel logarithmic pan-and-zoom with overscan guards.
+- `eyeline-headroom-grammar` — Subject eyeline and look-room framing across aspect ratios.
+- `optical-vignette-halation` — Subtle linear-light peripheral falloff below caption layers.
 - `prompt-to-storyboard` — Chapter and slide allocation across exact rational frame totals.
 - `cross-shot-grade-consistency` — Matched shadow floors, white balance, and perceptual chroma across consecutive photos.
 - `contrast-audit` — Accessible matte and caption contrast.
