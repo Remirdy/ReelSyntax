@@ -332,6 +332,8 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                 if scene['recipe'] == 'shape-field':
                     effective_scene['shape_renderer'] = file_digest(Path(__file__).with_name('shapes.py'))
                     effective_scene['coordinate_space'] = plan['output']
+                elif scene['recipe'] == 'brand-sting':
+                    effective_scene['brand_renderer'] = file_digest(Path(__file__).with_name('brand.py'))
                 dependencies = scene_sources(scene)
                 if delivery:
                     effective_scene['delivery'] = delivery
@@ -372,11 +374,11 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                                 image, bounds = art_recipes.draw_art_scene(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height'])), plan['seed'], supersampling=supersample, reduced_motion=bool(reduced_motion))
                                 image.save(destination)
                             else:
-                                image, bounds = drawing.draw(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height']), reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=supersample)
+                                image, bounds = drawing.draw(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height']), reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=supersample, reduced_motion=bool(reduced_motion))
                                 image.save(destination)
                             if frame in {0, scene['duration_frames'] // 2, scene['duration_frames'] - 1}:
                                 layout.append({'frame': frame, 'text': bounds})
-                    if delivery:
+                    if delivery and scene['recipe'] != 'brand-sting':
                         apply_brand(temporary, scene['duration_frames'], delivery, root)
                     encode_scene(temporary, scene['duration_frames'], output, timeout)
                     roi_digests = compute_roi_digests(temporary, scene, plan['output'], output)
@@ -531,6 +533,8 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
             'creative_review': 'required',
             'profile_note': f"Hero generated {', '.join(sorted(hero_artifacts))} sheets; human/host visual and playback review remain mandatory." if profile == 'hero' else None,
         })
+        if 'attribution' in delivery:
+            state['attribution'] = delivery['attribution']
         atomic_json(state_path, state)
         atomic_json(contained_path(root, f'output/{profile}-manifest.json', must_exist=False), state)
         if cache_budget_bytes is not None:

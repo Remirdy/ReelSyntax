@@ -4,12 +4,13 @@
 
 | Command | Behavior |
 | --- | --- |
-| `make <prompt> [--format ID] [--out DIR] [--yes] [--dry-run]` | Compile a natural-language prompt into a stateful format project (`prompt.json` + `.formats/state.json`), estimate render budget (`--dry-run`), or run approval-gated video production |
+| `make <prompt> [--format ID] [--out DIR] [--yes] [--dry-run] [--attribution [on\|off]] [--loop] [--brand PATH]` | Compile a natural-language prompt into a stateful format project (`prompt.json` + `.formats/state.json`), estimate render budget (`--dry-run`), optionally apply a brand kit or closing attribution sting, or run approval-gated video production |
 | `step <project> <step_id> [--approve\|--edit TEXT\|--back]` | Inspect, approve, revise, or step back an approval-gated format workflow step |
 | `revise <project> <instruction> [--scene ID] [--render]` | Apply a targeted, checkpointed edit to unlocked scenes while preserving locked scenes and unaffected scene caches |
 | `ui [--host HOST] [--port PORT] [--project DIR] [--no-open] [--allow-non-loopback]` | Launch the zero-dependency localhost web studio (`127.0.0.1:8765` by default, CSRF-protected) to browse formats, inspect timelines/snapshots/videos/QC, approve or edit steps, revise scenes, and preview or create projects |
 | `completion <bash\|zsh\|fish\|powershell>` | Generate shell tab-completion scripts dynamically from registered CLI commands and flags |
 | `config <show\|path\|init\|validate>` | Inspect merged `reelsyntax.toml` settings, print user/project config paths, create a starter TOML, or validate syntax and bounds |
+| `brand <init\|validate\|apply>` | Initialize a starter `brand.json` kit, verify WCAG `>= 4.5:1` contrast and relative assets, or apply validated brand styling to a project |
 | `formats <list\|show\|new\|validate\|install\|uninstall\|installed>` | Browse available formats, scaffold or validate data-only format packages, or install/remove community formats from local paths, `.zip` archives, or git URLs (`--allow-network`) |
 | `assets <list\|materialize\|register\|licenses>` | Browse CC0/MIT starter music beds, SFX, palettes, and graphics; materialize starter `.wav`/`.png` packs; register local assets; or audit SPDX licenses and emit `LICENSES.md` |
 | `lang <list\|show\|new\|validate>` | List supported locales and owner-verification flags, inspect a language profile, scaffold a new locale, or validate key/placeholder parity |

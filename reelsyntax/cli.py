@@ -37,7 +37,9 @@ def parser():
     make_cmd.add_argument('-y', '--yes', action='store_true')
     make_cmd.add_argument('--dry-run', action='store_true')
     make_cmd.add_argument('--allow-network', action='store_true')
-    make_cmd.add_argument('--attribution', action='store_true')
+    make_cmd.add_argument('--attribution', nargs='?', const='on', default=None, choices=['on', 'off'])
+    make_cmd.add_argument('--loop', action='store_true')
+    make_cmd.add_argument('--brand', type=Path)
     make_cmd.add_argument('--json', action='store_true')
 
     step_cmd = commands.add_parser('step', help='Inspect, approve, edit, or step back a format workflow step')
@@ -153,6 +155,28 @@ def parser():
     cfg_val = cfg_sub.add_parser('validate')
     cfg_val.add_argument('path', nargs='?', type=Path)
     cfg_val.add_argument('--json', action='store_true')
+
+    brand_cmd = commands.add_parser('brand', help='Initialize, validate, or apply a brand kit')
+    brand_sub = brand_cmd.add_subparsers(dest='action', required=True)
+    brand_init = brand_sub.add_parser('init')
+    brand_init.add_argument('target', nargs='?', type=Path, default=Path('brand.json'))
+    brand_init.add_argument('--name', default='Studio')
+    brand_init.add_argument('--background', default='#1f2430')
+    brand_init.add_argument('--foreground', default='#f8fafc')
+    brand_init.add_argument('--accent', default='#38bdf8')
+    brand_init.add_argument('--font')
+    brand_init.add_argument('--logo')
+    brand_init.add_argument('--margin', type=float, default=0.0)
+    brand_init.add_argument('--force', action='store_true')
+    brand_init.add_argument('--json', action='store_true')
+    brand_val = brand_sub.add_parser('validate')
+    brand_val.add_argument('path', nargs='?', type=Path, default=Path('brand.json'))
+    brand_val.add_argument('--project', type=Path)
+    brand_val.add_argument('--json', action='store_true')
+    brand_apply = brand_sub.add_parser('apply')
+    brand_apply.add_argument('project', type=Path)
+    brand_apply.add_argument('brand', type=Path)
+    brand_apply.add_argument('--json', action='store_true')
 
     captions = commands.add_parser('captions').add_subparsers(dest='operation', required=True)
     burn = captions.add_parser('burn')
@@ -439,6 +463,39 @@ def config_command(args):
     raise ValueError('Unsupported config action')
 
 
+def brand_command(args):
+    from .brand import apply_brand_kit_to_project, init_brand_kit, load_brand_kit
+    from .palette import contrast_ratio, hex_to_rgb
+
+    if args.action == 'init':
+        return init_brand_kit(
+            args.target,
+            name=args.name,
+            background=args.background,
+            foreground=args.foreground,
+            accent=args.accent,
+            font=args.font,
+            logo=args.logo,
+            margin=args.margin,
+            force=args.force,
+        )
+    if args.action == 'validate':
+        proj_root = Path(args.project).resolve(strict=True) if args.project is not None else None
+        kit = load_brand_kit(args.path, project_root=proj_root)
+        return {
+            'path': str((proj_root / args.path if proj_root is not None and not Path(args.path).is_absolute() else Path(args.path)).resolve()),
+            'valid': True,
+            'brand_kit': kit.to_dict(),
+            'contrast': {
+                'foreground_ratio': round(contrast_ratio(hex_to_rgb(kit.foreground), hex_to_rgb(kit.background)), 2),
+                'accent_ratio': round(contrast_ratio(hex_to_rgb(kit.accent), hex_to_rgb(kit.background)), 2),
+            },
+        }
+    if args.action == 'apply':
+        return apply_brand_kit_to_project(args.project, args.brand)
+    raise ValueError('Unsupported brand action')
+
+
 def execute(args):
     from .config import config_context, load_config
 
@@ -578,6 +635,8 @@ def _execute_with_config(args, load_config):
     from . import project
     if args.command == 'config':
         return config_command(args)
+    if args.command == 'brand':
+        return brand_command(args)
     if args.command == 'lang':
         return lang_command(args)
     if args.command == 'formats':
@@ -601,6 +660,8 @@ def _execute_with_config(args, load_config):
             dry_run=args.dry_run,
             allow_network=args.allow_network,
             attribution=args.attribution,
+            loop=args.loop,
+            brand=args.brand,
         )
     if args.command == 'step':
         from .make import step_project

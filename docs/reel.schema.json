@@ -1060,6 +1060,7 @@
           "enum": [
             "aperture",
             "assembly",
+            "brand-sting",
             "cassette",
             "character-stage",
             "cinematic-3d",
