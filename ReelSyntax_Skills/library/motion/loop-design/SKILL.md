@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "döngü animasyonu,seamless loop"
+  aliases: "döngü animasyonu,seamless loop,loop design,Schleifen-Design,Endlosschleifen-Konzept"
   requires: ""
 ---
 

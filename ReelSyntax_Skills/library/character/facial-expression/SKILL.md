@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "yüz ifadesi,mimik"
+  aliases: "yüz ifadesi,mimik,facial expression,Gesichtsausdruck,Mimik-Steuerung"
   requires: ""
 ---
 

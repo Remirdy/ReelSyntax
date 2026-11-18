@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "hız rampası,speed ramp"
+  aliases: "hız rampası,speed ramp,speed ramping design,Geschwindigkeitsrampe,Zeitlupen-Rampe"
   requires: ""
 ---
 

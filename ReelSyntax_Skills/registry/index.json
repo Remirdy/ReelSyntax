@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "ff28996f0fa8bdc7d91a73084a755dadeab838da3c2bf22796c04f68b70184b0",
+  "digest": "cacb6909c998541aa003bb28194e5ff9d0240f189703b43ba5c3a12dd4180d84",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -560,19 +560,27 @@
       "description": "Use for audio ducking. Attenuate backing track during dialogue with attack and release adjusted to phrases.",
       "category": "audio",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "müzik kısma",
-        "ducking"
+        "ducking",
+        "audio ducking",
+        "Audio-Ducking",
+        "Musikabsenkung unter Sprache"
       ],
       "requires": [],
       "path": "library/audio/audio-ducking/SKILL.md",
-      "estimated_words": 397,
-      "estimated_tokens": 980,
-      "sha256": "ca2bfd082beb14596f892dcd9d2214e1518b932289b883a4cd19eb55890926b0",
+      "estimated_words": 400,
+      "estimated_tokens": 999,
+      "sha256": "9337e4fe556980369bbf7f6ec05fb7b5b999ff55f1ec79df6495c97aa9c9753f",
       "body_sha256": "ac41b7baa3604ceb3e649f7feb6570112ae6b8f1c2fedf19d98d7108d9e77cdb",
-      "resource_sha256": {}
+      "resources": [
+        "library/audio/audio-ducking/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/audio/audio-ducking/references/project-check.md": "769388b7301daf57a26c57db028b1020097292df91233b59c8b664583373fa6a"
+      }
     },
     {
       "id": "audio-equalization",
@@ -716,38 +724,54 @@
       "description": "Align a transcript from a user-provided local recognizer.",
       "category": "audio",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "local transcription",
-        "yerel yazıya dökme"
+        "yerel yazıya dökme",
+        "local speech to text",
+        "lokale Spracherkennung",
+        "Offline-Transkription"
       ],
       "requires": [],
       "path": "library/audio/local-speech-to-text/SKILL.md",
-      "estimated_words": 75,
-      "estimated_tokens": 178,
-      "sha256": "6e6aed2bdd9576b907d1b62229dc8010fecbf6e287265ebc5cb140b5b5794ff3",
+      "estimated_words": 78,
+      "estimated_tokens": 200,
+      "sha256": "dd6473c52a5c6b90c87a82e6603ef3a8f587a3616b6830e28998793a558ffd2e",
       "body_sha256": "3eef28ea60d39eb1b013515f8b7846353740f93ef61c3d43346097500331ed95",
-      "resource_sha256": {}
+      "resources": [
+        "library/audio/local-speech-to-text/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/audio/local-speech-to-text/references/project-check.md": "30679e97a8499e0de9a1343ef1f89fc64fb918f26a8df484241a699a7a61b651"
+      }
     },
     {
       "id": "local-text-to-speech",
       "description": "Prepare narration from an installed local synthesizer.",
       "category": "audio",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "local TTS",
-        "yerel seslendirme"
+        "yerel seslendirme",
+        "local text to speech",
+        "lokale Sprachsynthese",
+        "Offline-TTS"
       ],
       "requires": [],
       "path": "library/audio/local-text-to-speech/SKILL.md",
-      "estimated_words": 67,
-      "estimated_tokens": 172,
-      "sha256": "7f72164359197ea5092e6d7e72f443c54c0d6f3f2e8dd3d73fcab2de862c8510",
+      "estimated_words": 70,
+      "estimated_tokens": 190,
+      "sha256": "eaebd6abf9c3d018a64ea3e072812d9f4022199a1224601077692a3814fdaa22",
       "body_sha256": "5dab43d5001daf8ac2f7075442e5a90976fecbaaec4bed1eb2a26eebd8de3224",
-      "resource_sha256": {}
+      "resources": [
+        "library/audio/local-text-to-speech/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/audio/local-text-to-speech/references/project-check.md": "167e2cabc933679d40349ed6a691aa659c1ad3f1331b18df26016102b39912c4"
+      }
     },
     {
       "id": "loudness-normalization",
@@ -989,19 +1013,27 @@
       "description": "Use for true peak limiting. Limit final mix to declared true-peak ceiling with headroom.",
       "category": "audio",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "limiter",
-        "true peak"
+        "true peak",
+        "true peak limiting",
+        "True-Peak-Begrenzung",
+        "Spitzenpegel-Limiter"
       ],
       "requires": [],
       "path": "library/audio/true-peak-limiting/SKILL.md",
-      "estimated_words": 393,
-      "estimated_tokens": 963,
-      "sha256": "f662d6f8a14cc9e48c315d00ae45763769ee1708a0876028cc6a8a7776e61819",
+      "estimated_words": 395,
+      "estimated_tokens": 983,
+      "sha256": "12fb35620ed55b83200a2c7a3cd89bdc0e9fdd2391ab17ed8d69f52e8a16fdcf",
       "body_sha256": "902891ee04aa360a58f580deee5c81b49e9ff7b22fb2d44b3a6ef6778ba1b218",
-      "resource_sha256": {}
+      "resources": [
+        "library/audio/true-peak-limiting/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/audio/true-peak-limiting/references/project-check.md": "b3da40e323312bca770c46e2c8aa5fa177c0276ccd8e7965d5b0bff85a8bd92d"
+      }
     },
     {
       "id": "tts-phonetic-pronunciation",
@@ -1403,19 +1435,27 @@
       "description": "Use for match cut design. Align shape, position, direction or concept across adjacent shot boundaries.",
       "category": "camera",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "match cut",
-        "eşleşmeli kesme"
+        "eşleşmeli kesme",
+        "match cut design",
+        "Match-Cut-Gestaltung",
+        "Formübergang-Schnitt"
       ],
       "requires": [],
       "path": "library/camera/match-cut-design/SKILL.md",
-      "estimated_words": 397,
-      "estimated_tokens": 988,
-      "sha256": "642951cd51f0877d5d6472473f06a16834e46e5806f7c19728958ca439d1d9fd",
+      "estimated_words": 399,
+      "estimated_tokens": 1008,
+      "sha256": "a440dd955f24f92fcfc6ea5219ba2e78435799077d1b14d95136c3d73ad010ba",
       "body_sha256": "ac120c502fff82070c43d15a025b6a11324941356ce64c970f2245bdb2622971",
-      "resource_sha256": {}
+      "resources": [
+        "library/camera/match-cut-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/camera/match-cut-design/references/project-check.md": "a1fbb54c159c5d12215fe1e8963f39262ccbad1440d0ab4d5fb6e47b9fabfad9"
+      }
     },
     {
       "id": "negative-space",
@@ -1563,19 +1603,27 @@
       "description": "Use for shot size. Choose framing by information need and emotional distance; specify subject occupancy.",
       "category": "camera",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "plan ölçeği",
-        "yakın çekim"
+        "yakın çekim",
+        "shot size",
+        "Einstellungsgröße",
+        "Kamera-Einstellungsgröße"
       ],
       "requires": [],
       "path": "library/camera/shot-size/SKILL.md",
-      "estimated_words": 392,
-      "estimated_tokens": 973,
-      "sha256": "5a39a1425574c9a661a4695d901a6fd23d9b78b9957f777322504a19a83810df",
+      "estimated_words": 393,
+      "estimated_tokens": 992,
+      "sha256": "f9321fe0c7755ebbc2d73a7625b8d5216b82e0ca8950424a20b64511ac60cb00",
       "body_sha256": "3dc2aaf7fef0930d262c1736543b0a67fb8faefc6a30122bcb22b2b1532d9a81",
-      "resource_sha256": {}
+      "resources": [
+        "library/camera/shot-size/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/camera/shot-size/references/project-check.md": "e48c112ae8f857aca73b3fc0c81888896fbdf4cf449a3e5ad7ced3f75d96be8c"
+      }
     },
     {
       "id": "shutter-angle-judder",
@@ -2093,19 +2141,27 @@
       "description": "Use for character continuity. Compare character IDs and approved geometry, palette, outfit and props by shot.",
       "category": "character",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "karakter devamlılığı",
-        "aynı karakter"
+        "aynı karakter",
+        "character continuity",
+        "Charakter-Kontinuität",
+        "Figuren-Konsistenz"
       ],
       "requires": [],
       "path": "library/character/character-continuity/SKILL.md",
-      "estimated_words": 395,
-      "estimated_tokens": 990,
-      "sha256": "e38e16ff0f8a59f7cbda2ec8b011b1ee7bfa6143f7952fcd81e687d8f107e3ca",
+      "estimated_words": 396,
+      "estimated_tokens": 1011,
+      "sha256": "f34639aee9b67485eac68a3ef7ae5b5204d6812fc1a25b35f128360c7fc5ccf6",
       "body_sha256": "8b1f6de622771e31b13631546c38f1b4d3dfbfb901aa88787689d6dcb040feba",
-      "resource_sha256": {}
+      "resources": [
+        "library/character/character-continuity/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/character/character-continuity/references/project-check.md": "5ea7a9f244827f6c09d8a590c4a82c5b2a49d7645a33dfb435d3feeafe74b392"
+      }
     },
     {
       "id": "character-crowd",
@@ -2226,19 +2282,27 @@
       "description": "Use for facial expression. Animate brows, eyelids and mouth shapes using character-specific expression limits.",
       "category": "character",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "yüz ifadesi",
-        "mimik"
+        "mimik",
+        "facial expression",
+        "Gesichtsausdruck",
+        "Mimik-Steuerung"
       ],
       "requires": [],
       "path": "library/character/facial-expression/SKILL.md",
-      "estimated_words": 391,
-      "estimated_tokens": 978,
-      "sha256": "0bb8b569908257001c7c20d628e848555618408d256b6693e1d66238388a8621",
+      "estimated_words": 392,
+      "estimated_tokens": 995,
+      "sha256": "1458c143f354cc70b0d6687d4b112c2af804cdd357a1650d1e6ca3e0e989fb9f",
       "body_sha256": "875c8dc0311ea653984c35cf821a927bf7427c349318ad05766e260031b2bae1",
-      "resource_sha256": {}
+      "resources": [
+        "library/character/facial-expression/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/character/facial-expression/references/project-check.md": "939b8cc859467a741f9448638325a3bd513a28af3c309de0ce7cf7c371d7ef31"
+      }
     },
     {
       "id": "hand-gesture",
@@ -2264,19 +2328,27 @@
       "description": "Use for idle animation. Use subtle breathing, weight shift and intermittent micro-actions with seeded timing.",
       "category": "character",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "idle",
-        "boşta animasyon"
+        "boşta animasyon",
+        "idle animation",
+        "Ruheanimation",
+        "Idle-Bewegung"
       ],
       "requires": [],
       "path": "library/character/idle-animation/SKILL.md",
-      "estimated_words": 394,
-      "estimated_tokens": 977,
-      "sha256": "6d2d6b367c79e06dc70b7815e82ef046308e99a98a6c135dfb45abbe77884ca2",
+      "estimated_words": 395,
+      "estimated_tokens": 992,
+      "sha256": "44fa558c5a692171735ba249735af9f09aade293e80f082f7bfc26e66c999c51",
       "body_sha256": "22de2a0826315a25ccefe3a0463bcca1c830d1372713e5025a1416956f6dda88",
-      "resource_sha256": {}
+      "resources": [
+        "library/character/idle-animation/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/character/idle-animation/references/project-check.md": "02ac6541aad18671e9c5fb07b41e48643a86e1f9efba3fa1e404167ca42e458f"
+      }
     },
     {
       "id": "ik-fk-switching",
@@ -2302,19 +2374,26 @@
       "description": "Use for lip sync. Map approved phoneme or viseme timing to mouth poses with coarticulation.",
       "category": "character",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "dudak senkronu",
-        "lip sync"
+        "lip sync",
+        "Lippensynchronisation",
+        "Mundbewegungs-Sync"
       ],
       "requires": [],
       "path": "library/character/lip-sync/SKILL.md",
       "estimated_words": 393,
-      "estimated_tokens": 957,
-      "sha256": "8369ee077aa08e6cb506d4bb216410a45da077a0a9c4c997a6257a18116e77b9",
+      "estimated_tokens": 971,
+      "sha256": "d5298774d90e41582cc2c935f2f67bc484e614f18686916d90b4cfdd9cecc1b3",
       "body_sha256": "320eb3b0823435f90d97f80f7cb00d679f3489226ed0c08366a6496191053fef",
-      "resource_sha256": {}
+      "resources": [
+        "library/character/lip-sync/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/character/lip-sync/references/project-check.md": "b763aa83cbc8c946d4b6eaef285fd22131d12efe1add12cf126dab2104c0f699"
+      }
     },
     {
       "id": "look-at-animation",
@@ -7975,17 +8054,20 @@
       "description": "Use for loop design. Match initial and terminal state including velocity where relevant; omit duplicate endpoint frame.",
       "category": "motion",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "döngü animasyonu",
-        "seamless loop"
+        "seamless loop",
+        "loop design",
+        "Schleifen-Design",
+        "Endlosschleifen-Konzept"
       ],
       "requires": [],
       "path": "library/motion/loop-design/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 967,
-      "sha256": "322740c0a809a7ba0c69b29cb22533a611412c566cc7ce66d5ba47210bf9d223",
+      "estimated_words": 388,
+      "estimated_tokens": 985,
+      "sha256": "5af4b5ccba87de58817f84dd8bc8188a58085fab80cad93f00cd76238060c607",
       "body_sha256": "fc148f3be877279b460c300d05bf35ae6c25e899e05c173164d9606ef519c00f",
       "resources": [
         "library/motion/loop-design/references/project-check.md"
@@ -8132,19 +8214,27 @@
       "description": "Use for speed ramping design. Schedule speed changes around action peaks and smooth curve joins.",
       "category": "motion",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "hız rampası",
-        "speed ramp"
+        "speed ramp",
+        "speed ramping design",
+        "Geschwindigkeitsrampe",
+        "Zeitlupen-Rampe"
       ],
       "requires": [],
       "path": "library/motion/speed-ramping-design/SKILL.md",
-      "estimated_words": 385,
-      "estimated_tokens": 961,
-      "sha256": "5202ec20fd0c63f241cc8f705fa8a1747f36e8bd4265a4e7a603931a180a7b4b",
+      "estimated_words": 387,
+      "estimated_tokens": 980,
+      "sha256": "457792758153945e5cb6153b6c6ddee3a47c7a14bd6577e5b1a2e1dc9ba3bcab",
       "body_sha256": "d114cdca5e19aab6f3d87bf9457f0f3b2f3e5f26c10ae769992b0eadb64abc79",
-      "resource_sha256": {}
+      "resources": [
+        "library/motion/speed-ramping-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/motion/speed-ramping-design/references/project-check.md": "e55477d293f2706b115b38f817382b641ce54842fe85db65a94f84fbe4489f84"
+      }
     },
     {
       "id": "spring-motion",
@@ -8189,19 +8279,27 @@
       "description": "Use for staggered animation. Offset entrances by semantic groups and tune overlaps to reading order.",
       "category": "motion",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "sıralı animasyon",
-        "stagger"
+        "stagger",
+        "staggered animation",
+        "gestaffelte Animation",
+        "versetztes Einblenden"
       ],
       "requires": [],
       "path": "library/motion/staggered-animation/SKILL.md",
-      "estimated_words": 381,
-      "estimated_tokens": 955,
-      "sha256": "5ea4b1fa2b0b419d08d8cb39c25c9502100bc2b3291169dc7636d5d165767d16",
+      "estimated_words": 384,
+      "estimated_tokens": 976,
+      "sha256": "058c0e8e2c2f973820a1d76003feefd7c4d87032575fb3098013815dfc96a076",
       "body_sha256": "05eec630d9ce383d9e1079a631250874fcecdb8e45ca02efceb0c18915cc7e94",
-      "resource_sha256": {}
+      "resources": [
+        "library/motion/staggered-animation/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/motion/staggered-animation/references/project-check.md": "707ab799c52572222e626dcdd6baf5f53d44a6ac1a20bcf96290491940a41c37"
+      }
     },
     {
       "id": "stop-motion-cadence",
@@ -8267,17 +8365,20 @@
       "description": "Use for audio stem export. Export synchronized individual bus stems with explicit channel format and length.",
       "category": "music",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "stem export",
-        "ses kanalı çıktı"
+        "ses kanalı çıktı",
+        "audio stem export",
+        "Audio-Stem-Export",
+        "Einzelspuren exportieren"
       ],
       "requires": [],
       "path": "library/music/audio-stem-export/SKILL.md",
-      "estimated_words": 400,
-      "estimated_tokens": 994,
-      "sha256": "7404e2c7b55dadeab6e69829bc7aa9a84311ffa835d314f4a2a8253387a2234b",
+      "estimated_words": 403,
+      "estimated_tokens": 1014,
+      "sha256": "c4a8154c09438d473e8d8b72bc08ffe120a59c06f3bd26e433c2bed99e204f3f",
       "body_sha256": "462178e330e77659b6dfaa8020f698f361f8ad775efc9c4d95916035da3ab270",
       "resources": [
         "library/music/audio-stem-export/references/project-check.md"
@@ -8499,19 +8600,27 @@
       "description": "Use for music looping. Align loop to phrase boundary with compatible tail and crossfade.",
       "category": "music",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "müzik döngüsü",
-        "loop music"
+        "loop music",
+        "music looping",
+        "Musik-Schleife",
+        "nahtloser Musik-Loop"
       ],
       "requires": [],
       "path": "library/music/music-looping/SKILL.md",
-      "estimated_words": 392,
-      "estimated_tokens": 971,
-      "sha256": "b0b4fdf80539b0053682d6491d6bd5f912aadbc5984103130be2840295297202",
+      "estimated_words": 394,
+      "estimated_tokens": 988,
+      "sha256": "cd96643374cdcc34951e7c56740bec83ce6282e530b8e22b41da772352852863",
       "body_sha256": "8effffd7210fccb4c1e1249407582f6c8df16e719074937d5b1d74dca30cfc56",
-      "resource_sha256": {}
+      "resources": [
+        "library/music/music-looping/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/music/music-looping/references/project-check.md": "998aee59828b6d17692064911cb523cee10812544927e067674fdeddb27ed5b4"
+      }
     },
     {
       "id": "noise-synthesis",

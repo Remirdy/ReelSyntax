@@ -1,6 +1,6 @@
 # ReelSyntax skill catalog
 
-616 skills across 25 categories. 493 guidance, 123 validated.
+616 skills across 25 categories. 478 guidance, 138 validated.
 
 | Category | Skills |
 | --- | ---: |
@@ -68,7 +68,7 @@
 | --- | --- | --- | --- |
 | [ambience-design](library/audio/ambience-design/SKILL.md) | guidance | ambiyans, ortam sesi | Use for ambience design. Layer location-appropriate textures with controlled loop points and distance. |
 | [audio-crossfades](library/audio/audio-crossfades/SKILL.md) | guidance | ses geçişi, crossfade audio | Use for audio crossfades. Select appropriate gain curve and fade length per material. |
-| [audio-ducking](library/audio/audio-ducking/SKILL.md) | guidance | müzik kısma, ducking | Use for audio ducking. Attenuate backing track during dialogue with attack and release adjusted to phrases. |
+| [audio-ducking](library/audio/audio-ducking/SKILL.md) | validated | müzik kısma, ducking, audio ducking, Audio-Ducking, Musikabsenkung unter Sprache | Use for audio ducking. Attenuate backing track during dialogue with attack and release adjusted to phrases. |
 | [audio-equalization](library/audio/audio-equalization/SKILL.md) | guidance | eq, equalizer | Use for audio equalization. Use targeted frequency adjustments for clarity and tonal balance. |
 | [audio-reactive-animation](library/audio/audio-reactive-animation/SKILL.md) | guidance | sese duyarlı, audio reactive | Use for audio reactive animation. Map measured bands or envelope to bounded smoothed visual parameters. |
 | [beat-detection](library/audio/beat-detection/SKILL.md) | guidance | bpm, ritim tespiti | Use for beat detection. Estimate tempo and transient positions or accept authoritative markers. |
@@ -76,8 +76,8 @@
 | [dynamic-compression](library/audio/dynamic-compression/SKILL.md) | guidance | compressor, dinamik sıkıştırma | Use for dynamic compression. Set threshold, ratio and time constants based on source dynamics. |
 | [ebu-r128-dialogue-gating](library/audio/ebu-r128-dialogue-gating/SKILL.md) | validated | ebu r128, dialogue gating, lufs ölçümü, kısa video ses seviyesi | Use for EBU R128 loudness gating and short-form dynamics. Validate gated LUFS, loudness range (LRA), and oversampled true-peak headroom across sparse cues and short bumpers. |
 | [foley-design](library/audio/foley-design/SKILL.md) | guidance | foley, ayak sesi | Use for foley design. Design or use licensed synchronized physical sounds matching material and action. |
-| [local-speech-to-text](library/audio/local-speech-to-text/SKILL.md) | guidance | local transcription, yerel yazıya dökme | Align a transcript from a user-provided local recognizer. |
-| [local-text-to-speech](library/audio/local-text-to-speech/SKILL.md) | guidance | local TTS, yerel seslendirme | Prepare narration from an installed local synthesizer. |
+| [local-speech-to-text](library/audio/local-speech-to-text/SKILL.md) | validated | local transcription, yerel yazıya dökme, local speech to text, lokale Spracherkennung, Offline-Transkription | Align a transcript from a user-provided local recognizer. |
+| [local-text-to-speech](library/audio/local-text-to-speech/SKILL.md) | validated | local TTS, yerel seslendirme, local text to speech, lokale Sprachsynthese, Offline-TTS | Prepare narration from an installed local synthesizer. |
 | [loudness-normalization](library/audio/loudness-normalization/SKILL.md) | validated | lufs, ses normalizasyonu | Use for loudness normalization. Measure integrated loudness and true peak; normalize to destination specification. |
 | [multitrack-mixing](library/audio/multitrack-mixing/SKILL.md) | guidance | çok kanallı ses, mix | Use for multitrack mixing. Balance dialogue, music, effects and ambience as separate stems with master headroom. |
 | [platform-loudness-targets](library/audio/platform-loudness-targets/SKILL.md) | validated | platform loudness targets, lufs true peak mastering, platform ses yüksekliği hedefleri, LUFS ve tavan seviye ayarı, Plattform-Lautheitsziele, LUFS und True-Peak-Mastering, objetivos de sonoridad por plataforma, cibles de sonie et crête vraie | Master integrated program loudness, short-term dynamics, loudness range, and true-peak ceilings using adjustable delivery presets and dual-pass measurement. |
@@ -88,7 +88,7 @@
 | [sfx-layering-transient-tail](library/audio/sfx-layering-transient-tail/SKILL.md) | validated | sfx transient tail layering, layered sound effects, katmanlı ses efekti tasarımı, atak gövde kuyruk katmanlama, SFX-Schichtung Attack und Tail, Klangschichten für Übergänge, capas de efectos de sonido, superposition d'effets sonores | Synthesize or layer clean UI, transition, and impact sound effects across non-overlapping sub-body, mid-transient, and airy-tail bands locked to exact frame onsets. |
 | [sound-spotting](library/audio/sound-spotting/SKILL.md) | guidance | ses planı, sound spotting | Use for sound spotting. Mark dialogue, ambience, Foley, music and effects cues on the timeline. |
 | [spatial-audio](library/audio/spatial-audio/SKILL.md) | guidance | mekansal ses, stereo pan | Use for spatial audio. Place sources by screen position and narrative relevance with safe stereo width. |
-| [true-peak-limiting](library/audio/true-peak-limiting/SKILL.md) | guidance | limiter, true peak | Use for true peak limiting. Limit final mix to declared true-peak ceiling with headroom. |
+| [true-peak-limiting](library/audio/true-peak-limiting/SKILL.md) | validated | limiter, true peak, true peak limiting, True-Peak-Begrenzung, Spitzenpegel-Limiter | Use for true peak limiting. Limit final mix to declared true-peak ceiling with headroom. |
 | [tts-phonetic-pronunciation](library/audio/tts-phonetic-pronunciation/SKILL.md) | validated | tts phonetic pronunciation, speech pronunciation lexicon, seslendirme telaffuz sözlüğü, kısaltma okunuş düzeltme, Aussprache-Lexikon für Sprachsynthese, Phonetische Aussprache steuern, pronunciación fonética de síntesis, prononciation phonétique vocale | Normalize acronyms, version strings, SI units, numbers, and cross-language loanwords into spoken pronunciation lexicons for local speech synthesis without altering visible captions. |
 | [voice-cleanup](library/audio/voice-cleanup/SKILL.md) | guidance | ses temizleme, noise reduction | Use for voice cleanup. Analyze noise profile and apply conservative cleanup without changing meaning. |
 | [voice-fx-flat-synth](library/audio/voice-fx-flat-synth/SKILL.md) | validated | voice fx synth, stylized radio robot voice, stilize telsiz robot sesi, retro oyun ses efekti, stilisierte Funk- und Roboterstimme, Synthetische Stimmcharakteristik, efectos de voz sintética, effets de voix synthétique | Shape stylized radio, intercom, retro-console chatter, or dry synthetic robot voices with controlled bandpass, subtle bit quantization, and intelligibility protection. |
@@ -110,7 +110,7 @@
 | [lens-selection](library/camera/lens-selection/SKILL.md) | guidance | lens seçimi, odak uzaklığı | Use for lens selection. Choose field of view and camera distance together; distinguish perspective from focal length. |
 | [locked-camera](library/camera/locked-camera/SKILL.md) | validated | kamera sabit, kamerayı oynatma, no camera movement, feste Kamera, cámara fija, caméra fixe, câmera fixa | Use for locked camera. Freeze camera transforms and focal parameters; animate subject or light only if allowed. |
 | [macro-cinematography](library/camera/macro-cinematography/SKILL.md) | guidance | makro çekim, çok yakın | Use for macro cinematography. Use shallow depth carefully, scale lighting and stage details to reveal texture. |
-| [match-cut-design](library/camera/match-cut-design/SKILL.md) | guidance | match cut, eşleşmeli kesme | Use for match cut design. Align shape, position, direction or concept across adjacent shot boundaries. |
+| [match-cut-design](library/camera/match-cut-design/SKILL.md) | validated | match cut, eşleşmeli kesme, match cut design, Match-Cut-Gestaltung, Formübergang-Schnitt | Use for match cut design. Align shape, position, direction or concept across adjacent shot boundaries. |
 | [negative-space](library/camera/negative-space/SKILL.md) | guidance | negatif alan, boşluk | Use for negative space. Reserve meaningful breathing room or caption space and compose subject against it. |
 | [orbit-camera](library/camera/orbit-camera/SKILL.md) | guidance | kamera çevresinde dönme, orbit | Use for orbit camera. Orbit around an explicit pivot at controlled radius and target height. |
 | [pov-camera](library/camera/pov-camera/SKILL.md) | guidance | birinci şahıs, bakış açısı | Use for pov camera. Align camera height and motion with character intent; distinguish subjective vs objective shots. |
@@ -118,7 +118,7 @@
 | [rack-focus](library/camera/rack-focus/SKILL.md) | guidance | netlik geçişi, rack focus | Use for rack focus. Animate focus target between motivated depth planes with controlled depth of field. |
 | [rule-of-thirds](library/camera/rule-of-thirds/SKILL.md) | guidance | üçler kuralı, kompozisyon | Use for rule of thirds. Place subject or horizon on intentional anchors, breaking alignment only with reason. |
 | [shot-reverse-shot](library/camera/shot-reverse-shot/SKILL.md) | guidance | karşı çekim, 180 derece | Use for shot reverse shot. Establish action axis and keep opposing eyelines consistent unless intentionally crossing. |
-| [shot-size](library/camera/shot-size/SKILL.md) | guidance | plan ölçeği, yakın çekim | Use for shot size. Choose framing by information need and emotional distance; specify subject occupancy. |
+| [shot-size](library/camera/shot-size/SKILL.md) | validated | plan ölçeği, yakın çekim, shot size, Einstellungsgröße, Kamera-Einstellungsgröße | Use for shot size. Choose framing by information need and emotional distance; specify subject occupancy. |
 | [shutter-angle-judder](library/camera/shutter-angle-judder/SKILL.md) | guidance | shutter angle, pan judder, 180 derece obtüratör, titreme kontrolü | Use for shutter angle and pan judder validation. Enforce 180-degree shutter exposure math and maximum per-frame screen displacement at 24/25/30 fps. |
 | [slow-dolly](library/camera/slow-dolly/SKILL.md) | guidance | dolly, kamera yaklaşma | Use for slow dolly. Translate camera along a planned path with eased endpoints and parallax control. |
 | [tracking-shot](library/camera/tracking-shot/SKILL.md) | guidance | takip çekimi, tracking camera | Use for tracking shot. Follow a moving subject with defined offset, look-at target and collision clearance. |
@@ -155,18 +155,18 @@
 | --- | --- | --- | --- |
 | [blink-animation](library/character/blink-animation/SKILL.md) | guidance | göz kırpma, blink | Use for blink animation. Place asymmetric or natural blink intervals avoiding key expressive holds. |
 | [character-bible](library/character/character-bible/SKILL.md) | guidance | karakter tutarlılığı, karakter rehberi | Use for character bible. Define proportions, silhouette, palette, wardrobe and immutable identifiers. |
-| [character-continuity](library/character/character-continuity/SKILL.md) | guidance | karakter devamlılığı, aynı karakter | Use for character continuity. Compare character IDs and approved geometry, palette, outfit and props by shot. |
+| [character-continuity](library/character/character-continuity/SKILL.md) | validated | karakter devamlılığı, aynı karakter, character continuity, Charakter-Kontinuität, Figuren-Konsistenz | Use for character continuity. Compare character IDs and approved geometry, palette, outfit and props by shot. |
 | [character-crowd](library/character/character-crowd/SKILL.md) | guidance | kalabalık, figüran | Use for character crowd. Instance controlled variations and offset cycles without changing main character identity. |
 | [character-performance](library/character/character-performance/SKILL.md) | guidance | oyunculuk, karakter performansı | Use for character performance. Stage gaze, gesture, posture and timing around emotional objectives. |
 | [character-retargeting](library/character/character-retargeting/SKILL.md) | guidance | retarget, mixamo | Use for character retargeting. Map source and target skeleton with rest-pose correction and scale handling. |
 | [character-rigging](library/character/character-rigging/SKILL.md) | guidance | rig, iskelet | Use for character rigging. Create named bone hierarchy, constraints and deformation-friendly rest pose. |
 | [character-turnaround](library/character/character-turnaround/SKILL.md) | guidance | karakter dönüş, turnaround | Use for character turnaround. Produce aligned front, side, back and three-quarter reference views. |
 | [cloth-secondary-motion](library/character/cloth-secondary-motion/SKILL.md) | guidance | kıyafet hareketi, cloth motion | Use for cloth secondary motion. Drive secondary cloth via rig or lightweight simulation with collision checks. |
-| [facial-expression](library/character/facial-expression/SKILL.md) | guidance | yüz ifadesi, mimik | Use for facial expression. Animate brows, eyelids and mouth shapes using character-specific expression limits. |
+| [facial-expression](library/character/facial-expression/SKILL.md) | validated | yüz ifadesi, mimik, facial expression, Gesichtsausdruck, Mimik-Steuerung | Use for facial expression. Animate brows, eyelids and mouth shapes using character-specific expression limits. |
 | [hand-gesture](library/character/hand-gesture/SKILL.md) | guidance | el hareketi, jest | Use for hand gesture. Block gesture poses around intent, wrist arcs and finger contact. |
-| [idle-animation](library/character/idle-animation/SKILL.md) | guidance | idle, boşta animasyon | Use for idle animation. Use subtle breathing, weight shift and intermittent micro-actions with seeded timing. |
+| [idle-animation](library/character/idle-animation/SKILL.md) | validated | idle, boşta animasyon, idle animation, Ruheanimation, Idle-Bewegung | Use for idle animation. Use subtle breathing, weight shift and intermittent micro-actions with seeded timing. |
 | [ik-fk-switching](library/character/ik-fk-switching/SKILL.md) | guidance | ik fk, ters kinematik | Use for ik fk switching. Set IK goals and FK controls with matched switch transforms. |
-| [lip-sync](library/character/lip-sync/SKILL.md) | guidance | dudak senkronu, lip sync | Use for lip sync. Map approved phoneme or viseme timing to mouth poses with coarticulation. |
+| [lip-sync](library/character/lip-sync/SKILL.md) | validated | dudak senkronu, lip sync, Lippensynchronisation, Mundbewegungs-Sync | Use for lip sync. Map approved phoneme or viseme timing to mouth poses with coarticulation. |
 | [look-at-animation](library/character/look-at-animation/SKILL.md) | guidance | bakış yönü, eye target | Use for look at animation. Coordinate eye target, head turn and lead-lag timing. |
 | [object-interaction](library/character/object-interaction/SKILL.md) | guidance | nesne tutma, prop interaction | Use for object interaction. Use contact anchors and parent-switch constraints for grabbing or releasing objects. |
 | [root-motion](library/character/root-motion/SKILL.md) | guidance | root motion, kök hareketi | Use for root motion. Separate root translation from local pose and reconcile with world path. |
@@ -488,7 +488,7 @@
 | [ken-burns-photo-choreography](library/motion/ken-burns-photo-choreography/SKILL.md) | validated | ken burns photo, photo pan zoom, fotoğraf kaydırma yakınlaştırma, hareketli fotoğraf kurgusu, Ken-Burns-Kamerafahrt, Foto-Zoomfahrt, efecto ken burns, mouvement ken burns | Animate sub-pixel pan-and-scale trajectories over still photographs with overscan resolution checks, focal-point protection, and alternating motion vectors. |
 | [keyframe-curves](library/motion/keyframe-curves/SKILL.md) | guidance | keyframe, eğri animasyonu | Use for keyframe curves. Set key poses and interpolate with explicit easing and frame indices. |
 | [kinetic-layout-choreography](library/motion/kinetic-layout-choreography/SKILL.md) | validated | kinetic layout, staggered grid choreography, kinetik yerleşim koreografisi, kademeli ızgara hareketi, kinetisches Layout, gestaffelte Raster-Choreografie, coreografía de diseño cinético, chorégraphie de grille cinétique | Coordinate multi-element grid entrances, shared alignment rails, 3-to-5-frame stagger offsets, and clean simultaneous exits for typographic and diagram cards. |
-| [loop-design](library/motion/loop-design/SKILL.md) | guidance | döngü animasyonu, seamless loop | Use for loop design. Match initial and terminal state including velocity where relevant; omit duplicate endpoint frame. |
+| [loop-design](library/motion/loop-design/SKILL.md) | validated | döngü animasyonu, seamless loop, loop design, Schleifen-Design, Endlosschleifen-Konzept | Use for loop design. Match initial and terminal state including velocity where relevant; omit duplicate endpoint frame. |
 | [motion-continuity](library/motion/motion-continuity/SKILL.md) | guidance | hareket tutarlılığı, animasyon devamlılığı | Use for motion continuity. Compare screen direction, phase and speed at scene boundaries. |
 | [parallax-motion](library/motion/parallax-motion/SKILL.md) | guidance | paralaks, katman derinliği | Use for parallax motion. Move depth planes proportionally and extend artwork beyond visible crop. |
 | [path-animation](library/motion/path-animation/SKILL.md) | guidance | yol animasyonu, path animation | Use for path animation. Parameterize movement by path length and orient objects using tangent where needed. |
@@ -496,10 +496,10 @@
 | [pose-to-pose](library/motion/pose-to-pose/SKILL.md) | guidance | poz animasyonu, pose to pose | Use for pose to pose. Block extremes, breakdowns and in-betweens with readable silhouettes. |
 | [seamless-morph](library/motion/seamless-morph/SKILL.md) | guidance | şekil dönüşümü, morph | Use for seamless morph. Normalize corresponding contours or topology before interpolation. |
 | [secondary-motion](library/motion/secondary-motion/SKILL.md) | guidance | ikincil hareket, secondary motion | Use for secondary motion. Add restrained accessory or environment response driven by primary action. |
-| [speed-ramping-design](library/motion/speed-ramping-design/SKILL.md) | guidance | hız rampası, speed ramp | Use for speed ramping design. Schedule speed changes around action peaks and smooth curve joins. |
+| [speed-ramping-design](library/motion/speed-ramping-design/SKILL.md) | validated | hız rampası, speed ramp, speed ramping design, Geschwindigkeitsrampe, Zeitlupen-Rampe | Use for speed ramping design. Schedule speed changes around action peaks and smooth curve joins. |
 | [spring-motion](library/motion/spring-motion/SKILL.md) | guidance | yay animasyonu, spring | Use for spring motion. Set damping and stiffness by desired settle time; sample deterministically. |
 | [squash-stretch](library/motion/squash-stretch/SKILL.md) | guidance | esneme sıkışma, squash stretch | Use for squash stretch. Deform along the action axis while conserving approximate volume where appropriate. |
-| [staggered-animation](library/motion/staggered-animation/SKILL.md) | guidance | sıralı animasyon, stagger | Use for staggered animation. Offset entrances by semantic groups and tune overlaps to reading order. |
+| [staggered-animation](library/motion/staggered-animation/SKILL.md) | validated | sıralı animasyon, stagger, staggered animation, gestaffelte Animation, versetztes Einblenden | Use for staggered animation. Offset entrances by semantic groups and tune overlaps to reading order. |
 | [stop-motion-cadence](library/motion/stop-motion-cadence/SKILL.md) | guidance | stop motion, kareli hareket | Use for stop motion cadence. Quantize poses deliberately to a lower cadence while preserving output frame rate. |
 | [verlet-constraint-solver](library/motion/verlet-constraint-solver/SKILL.md) | validated | verlet physics, ip simülasyonu, position based dynamics, kablo fiziği | Use for Verlet constraint physics. Simulate deterministic ropes, cables, ribbons, and secondary pendulums from canonical frame indices using fixed-substep Verlet projection. |
 
@@ -508,7 +508,7 @@
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [arpeggio-design](library/music/arpeggio-design/SKILL.md) | guidance | arpej, arpeggio | Use for arpeggio design. Sequence chord tones with intentional direction, rhythmic subdivision and accents. |
-| [audio-stem-export](library/music/audio-stem-export/SKILL.md) | guidance | stem export, ses kanalı çıktı | Use for audio stem export. Export synchronized individual bus stems with explicit channel format and length. |
+| [audio-stem-export](library/music/audio-stem-export/SKILL.md) | validated | stem export, ses kanalı çıktı, audio stem export, Audio-Stem-Export, Einzelspuren exportieren | Use for audio stem export. Export synchronized individual bus stems with explicit channel format and length. |
 | [bar-grid-music-alignment](library/music/bar-grid-music-alignment/SKILL.md) | validated | bar grid music alignment, tempo to frame grid, müzik ölçü ızgarası hizalama, BPM kare senkronu, Taktraster-Musikausrichtung, BPM auf Bildraster abstimmen, alineación musical por compases, alignement musical sur grille de mesures | Quantize musical tempo, bar/beat frame boundaries, harmonic loop seams, and final cadence resolves onto exact integer project frames. |
 | [bassline-design](library/music/bassline-design/SKILL.md) | guidance | bas çizgisi, bassline | Use for bassline design. Write bass movement in harmonic context and control sub-frequency energy. |
 | [chord-progression](library/music/chord-progression/SKILL.md) | guidance | akor dizisi, chord progression | Use for chord progression. Choose harmonic movement appropriate to mood and phrase length. |
@@ -519,7 +519,7 @@
 | [midi-sequencing](library/music/midi-sequencing/SKILL.md) | guidance | midi, midi üretimi | Use for midi sequencing. Write note events, velocities, tempo and track channels with valid timing. |
 | [music-brief](library/music/music-brief/SKILL.md) | guidance | müzik seçimi, fon müziği | Use for music brief. Specify mood, tempo, instrumentation, density, cue points and licensing constraints. |
 | [music-editing](library/music/music-editing/SKILL.md) | guidance | müzik kurgusu, music edit | Use for music editing. Shorten or extend supplied licensed tracks using musically coherent phrase edits. |
-| [music-looping](library/music/music-looping/SKILL.md) | guidance | müzik döngüsü, loop music | Use for music looping. Align loop to phrase boundary with compatible tail and crossfade. |
+| [music-looping](library/music/music-looping/SKILL.md) | validated | müzik döngüsü, loop music, music looping, Musik-Schleife, nahtloser Musik-Loop | Use for music looping. Align loop to phrase boundary with compatible tail and crossfade. |
 | [noise-synthesis](library/music/noise-synthesis/SKILL.md) | guidance | gürültü sentezi, noise synth | Use for noise synthesis. Generate seeded noise and shape spectrum and amplitude for intended sound. |
 | [original-motif](library/music/original-motif/SKILL.md) | guidance | özgün melodi, motif | Use for original motif. Compose a short original motif with defined rhythmic and interval identity. |
 | [oscillator-synthesis](library/music/oscillator-synthesis/SKILL.md) | guidance | osilatör, synthesis | Use for oscillator synthesis. Generate band-limited or suitably sampled tones with controlled amplitude and phase. |

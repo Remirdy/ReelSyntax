@@ -19,7 +19,7 @@ ReelSyntax is for developers scripting repeatable video deliveries, editors exch
 | --- | --- |
 | An FFmpeg command | A validated project, a frame plan, scene caches, source hashes and a QC report for the encoded master |
 | A Blender or After Effects project | A shared gateway that discovers downstream tools and loads the schema for the selected operation |
-| A library of production instructions | One router for 616 skills, 123 validated in the effective registry. Search reads metadata and loads a selected skill on demand. |
+| A library of production instructions | One router for 616 skills, 138 validated in the effective registry. Search reads metadata and loads a selected skill on demand. |
 
 See the [catalog and status breakdown](ReelSyntax_Skills/CATALOG.md), [runtime coverage](docs/runtime-coverage.md) and [development history](docs/development-status.md).
 

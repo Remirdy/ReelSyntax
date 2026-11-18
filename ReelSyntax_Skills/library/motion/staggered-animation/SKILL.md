@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "sıralı animasyon,stagger"
+  aliases: "sıralı animasyon,stagger,staggered animation,gestaffelte Animation,versetztes Einblenden"
   requires: ""
 ---
 

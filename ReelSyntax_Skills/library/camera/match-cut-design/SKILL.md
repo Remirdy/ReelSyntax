@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "match cut,eşleşmeli kesme"
+  aliases: "match cut,eşleşmeli kesme,match cut design,Match-Cut-Gestaltung,Formübergang-Schnitt"
   requires: ""
 ---
 

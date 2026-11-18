@@ -6,7 +6,7 @@ metadata:
   stage: ingest
   status: guidance
   version: "1.0.0"
-  aliases: "local TTS, yerel seslendirme"
+  aliases: "local TTS,yerel seslendirme,local text to speech,lokale Sprachsynthese,Offline-TTS"
   requires: ""
 ---
 

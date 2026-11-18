@@ -6,7 +6,7 @@ metadata:
   stage: ingest
   status: guidance
   version: "1.0.0"
-  aliases: "local transcription, yerel yazıya dökme"
+  aliases: "local transcription,yerel yazıya dökme,local speech to text,lokale Spracherkennung,Offline-Transkription"
   requires: ""
 ---
 

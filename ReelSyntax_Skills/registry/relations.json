@@ -556,7 +556,8 @@
   "loop-design": {
     "resources": [
       "library/motion/loop-design/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "batch-production": {
     "resources": [
@@ -571,7 +572,8 @@
   "audio-stem-export": {
     "resources": [
       "library/music/audio-stem-export/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "caption-delivery-package": {
     "resources": [
@@ -1305,6 +1307,84 @@
     "status": "validated",
     "resources": [
       "library/lighting/render-lookdev/references/project-check.md"
+    ]
+  },
+  "audio-ducking": {
+    "status": "validated",
+    "resources": [
+      "library/audio/audio-ducking/references/project-check.md"
+    ]
+  },
+  "local-text-to-speech": {
+    "status": "validated",
+    "resources": [
+      "library/audio/local-text-to-speech/references/project-check.md"
+    ]
+  },
+  "local-speech-to-text": {
+    "status": "validated",
+    "resources": [
+      "library/audio/local-speech-to-text/references/project-check.md"
+    ]
+  },
+  "true-peak-limiting": {
+    "status": "validated",
+    "resources": [
+      "library/audio/true-peak-limiting/references/project-check.md"
+    ]
+  },
+  "music-looping": {
+    "status": "validated",
+    "resources": [
+      "library/music/music-looping/references/project-check.md"
+    ]
+  },
+  "lip-sync": {
+    "status": "validated",
+    "resources": [
+      "library/character/lip-sync/references/project-check.md"
+    ]
+  },
+  "facial-expression": {
+    "status": "validated",
+    "resources": [
+      "library/character/facial-expression/references/project-check.md"
+    ]
+  },
+  "character-continuity": {
+    "status": "validated",
+    "resources": [
+      "library/character/character-continuity/references/project-check.md"
+    ]
+  },
+  "idle-animation": {
+    "status": "validated",
+    "resources": [
+      "library/character/idle-animation/references/project-check.md"
+    ]
+  },
+  "shot-size": {
+    "status": "validated",
+    "resources": [
+      "library/camera/shot-size/references/project-check.md"
+    ]
+  },
+  "match-cut-design": {
+    "status": "validated",
+    "resources": [
+      "library/camera/match-cut-design/references/project-check.md"
+    ]
+  },
+  "speed-ramping-design": {
+    "status": "validated",
+    "resources": [
+      "library/motion/speed-ramping-design/references/project-check.md"
+    ]
+  },
+  "staggered-animation": {
+    "status": "validated",
+    "resources": [
+      "library/motion/staggered-animation/references/project-check.md"
     ]
   }
 }

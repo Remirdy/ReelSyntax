@@ -4171,6 +4171,591 @@
       "forbidden": [
         "flash-safety"
       ]
+    },
+    {
+      "id": "val-en-audio-ducking",
+      "task": {
+        "intent": "audio ducking"
+      },
+      "relevant": [
+        "audio-ducking"
+      ]
+    },
+    {
+      "id": "val-tr-audio-ducking",
+      "task": {
+        "intent": "müzik kısma"
+      },
+      "relevant": [
+        "audio-ducking"
+      ]
+    },
+    {
+      "id": "val-de-audio-ducking",
+      "task": {
+        "intent": "Audio-Ducking"
+      },
+      "relevant": [
+        "audio-ducking"
+      ]
+    },
+    {
+      "id": "val-neg-audio-ducking",
+      "task": {
+        "intent": "frame clock; audio ducking is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "audio-ducking"
+      ]
+    },
+    {
+      "id": "val-en-local-text-to-speech",
+      "task": {
+        "intent": "local text to speech"
+      },
+      "relevant": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "val-tr-local-text-to-speech",
+      "task": {
+        "intent": "local TTS"
+      },
+      "relevant": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "val-de-local-text-to-speech",
+      "task": {
+        "intent": "lokale Sprachsynthese"
+      },
+      "relevant": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "val-neg-local-text-to-speech",
+      "task": {
+        "intent": "frame clock; local text to speech is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "val-en-local-speech-to-text",
+      "task": {
+        "intent": "local speech to text"
+      },
+      "relevant": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "val-tr-local-speech-to-text",
+      "task": {
+        "intent": "local transcription"
+      },
+      "relevant": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "val-de-local-speech-to-text",
+      "task": {
+        "intent": "lokale Spracherkennung"
+      },
+      "relevant": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "val-neg-local-speech-to-text",
+      "task": {
+        "intent": "frame clock; local speech to text is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "val-en-true-peak-limiting",
+      "task": {
+        "intent": "true peak limiting"
+      },
+      "relevant": [
+        "true-peak-limiting"
+      ]
+    },
+    {
+      "id": "val-tr-true-peak-limiting",
+      "task": {
+        "intent": "limiter"
+      },
+      "relevant": [
+        "true-peak-limiting"
+      ]
+    },
+    {
+      "id": "val-de-true-peak-limiting",
+      "task": {
+        "intent": "True-Peak-Begrenzung"
+      },
+      "relevant": [
+        "true-peak-limiting"
+      ]
+    },
+    {
+      "id": "val-neg-true-peak-limiting",
+      "task": {
+        "intent": "frame clock; true peak limiting is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "true-peak-limiting"
+      ]
+    },
+    {
+      "id": "val-en-audio-stem-export",
+      "task": {
+        "intent": "audio stem export"
+      },
+      "relevant": [
+        "audio-stem-export"
+      ]
+    },
+    {
+      "id": "val-tr-audio-stem-export",
+      "task": {
+        "intent": "stem export"
+      },
+      "relevant": [
+        "audio-stem-export"
+      ]
+    },
+    {
+      "id": "val-de-audio-stem-export",
+      "task": {
+        "intent": "Audio-Stem-Export"
+      },
+      "relevant": [
+        "audio-stem-export"
+      ]
+    },
+    {
+      "id": "val-neg-audio-stem-export",
+      "task": {
+        "intent": "frame clock; audio stem export is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "audio-stem-export"
+      ]
+    },
+    {
+      "id": "val-en-music-looping",
+      "task": {
+        "intent": "music looping"
+      },
+      "relevant": [
+        "music-looping"
+      ]
+    },
+    {
+      "id": "val-tr-music-looping",
+      "task": {
+        "intent": "müzik döngüsü"
+      },
+      "relevant": [
+        "music-looping"
+      ]
+    },
+    {
+      "id": "val-de-music-looping",
+      "task": {
+        "intent": "Musik-Schleife"
+      },
+      "relevant": [
+        "music-looping"
+      ]
+    },
+    {
+      "id": "val-neg-music-looping",
+      "task": {
+        "intent": "frame clock; music looping is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "music-looping"
+      ]
+    },
+    {
+      "id": "val-en-lip-sync",
+      "task": {
+        "intent": "lip sync"
+      },
+      "relevant": [
+        "lip-sync"
+      ]
+    },
+    {
+      "id": "val-tr-lip-sync",
+      "task": {
+        "intent": "dudak senkronu"
+      },
+      "relevant": [
+        "lip-sync"
+      ]
+    },
+    {
+      "id": "val-de-lip-sync",
+      "task": {
+        "intent": "Lippensynchronisation"
+      },
+      "relevant": [
+        "lip-sync"
+      ]
+    },
+    {
+      "id": "val-neg-lip-sync",
+      "task": {
+        "intent": "frame clock; lip sync is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "lip-sync"
+      ]
+    },
+    {
+      "id": "val-en-facial-expression",
+      "task": {
+        "intent": "facial expression"
+      },
+      "relevant": [
+        "facial-expression"
+      ]
+    },
+    {
+      "id": "val-tr-facial-expression",
+      "task": {
+        "intent": "yüz ifadesi"
+      },
+      "relevant": [
+        "facial-expression"
+      ]
+    },
+    {
+      "id": "val-de-facial-expression",
+      "task": {
+        "intent": "Gesichtsausdruck"
+      },
+      "relevant": [
+        "facial-expression"
+      ]
+    },
+    {
+      "id": "val-neg-facial-expression",
+      "task": {
+        "intent": "frame clock; facial expression is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "facial-expression"
+      ]
+    },
+    {
+      "id": "val-en-character-continuity",
+      "task": {
+        "intent": "character continuity"
+      },
+      "relevant": [
+        "character-continuity"
+      ]
+    },
+    {
+      "id": "val-tr-character-continuity",
+      "task": {
+        "intent": "karakter devamlılığı"
+      },
+      "relevant": [
+        "character-continuity"
+      ]
+    },
+    {
+      "id": "val-de-character-continuity",
+      "task": {
+        "intent": "Charakter-Kontinuität"
+      },
+      "relevant": [
+        "character-continuity"
+      ]
+    },
+    {
+      "id": "val-neg-character-continuity",
+      "task": {
+        "intent": "frame clock; character continuity is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "character-continuity"
+      ]
+    },
+    {
+      "id": "val-en-idle-animation",
+      "task": {
+        "intent": "idle animation"
+      },
+      "relevant": [
+        "idle-animation"
+      ]
+    },
+    {
+      "id": "val-tr-idle-animation",
+      "task": {
+        "intent": "idle"
+      },
+      "relevant": [
+        "idle-animation"
+      ]
+    },
+    {
+      "id": "val-de-idle-animation",
+      "task": {
+        "intent": "Ruheanimation"
+      },
+      "relevant": [
+        "idle-animation"
+      ]
+    },
+    {
+      "id": "val-neg-idle-animation",
+      "task": {
+        "intent": "frame clock; idle animation is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "idle-animation"
+      ]
+    },
+    {
+      "id": "val-en-shot-size",
+      "task": {
+        "intent": "shot size"
+      },
+      "relevant": [
+        "shot-size"
+      ]
+    },
+    {
+      "id": "val-tr-shot-size",
+      "task": {
+        "intent": "plan ölçeği"
+      },
+      "relevant": [
+        "shot-size"
+      ]
+    },
+    {
+      "id": "val-de-shot-size",
+      "task": {
+        "intent": "Einstellungsgröße"
+      },
+      "relevant": [
+        "shot-size"
+      ]
+    },
+    {
+      "id": "val-neg-shot-size",
+      "task": {
+        "intent": "frame clock; shot size is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "shot-size"
+      ]
+    },
+    {
+      "id": "val-en-match-cut-design",
+      "task": {
+        "intent": "match cut design"
+      },
+      "relevant": [
+        "match-cut-design"
+      ]
+    },
+    {
+      "id": "val-tr-match-cut-design",
+      "task": {
+        "intent": "match cut"
+      },
+      "relevant": [
+        "match-cut-design"
+      ]
+    },
+    {
+      "id": "val-de-match-cut-design",
+      "task": {
+        "intent": "Match-Cut-Gestaltung"
+      },
+      "relevant": [
+        "match-cut-design"
+      ]
+    },
+    {
+      "id": "val-neg-match-cut-design",
+      "task": {
+        "intent": "frame clock; match cut design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "match-cut-design"
+      ]
+    },
+    {
+      "id": "val-en-loop-design",
+      "task": {
+        "intent": "loop design"
+      },
+      "relevant": [
+        "loop-design"
+      ]
+    },
+    {
+      "id": "val-tr-loop-design",
+      "task": {
+        "intent": "döngü animasyonu"
+      },
+      "relevant": [
+        "loop-design"
+      ]
+    },
+    {
+      "id": "val-de-loop-design",
+      "task": {
+        "intent": "Schleifen-Design"
+      },
+      "relevant": [
+        "loop-design"
+      ]
+    },
+    {
+      "id": "val-neg-loop-design",
+      "task": {
+        "intent": "frame clock; loop design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "loop-design"
+      ]
+    },
+    {
+      "id": "val-en-speed-ramping-design",
+      "task": {
+        "intent": "speed ramping design"
+      },
+      "relevant": [
+        "speed-ramping-design"
+      ]
+    },
+    {
+      "id": "val-tr-speed-ramping-design",
+      "task": {
+        "intent": "hız rampası"
+      },
+      "relevant": [
+        "speed-ramping-design"
+      ]
+    },
+    {
+      "id": "val-de-speed-ramping-design",
+      "task": {
+        "intent": "Geschwindigkeitsrampe"
+      },
+      "relevant": [
+        "speed-ramping-design"
+      ]
+    },
+    {
+      "id": "val-neg-speed-ramping-design",
+      "task": {
+        "intent": "frame clock; speed ramping design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "speed-ramping-design"
+      ]
+    },
+    {
+      "id": "val-en-staggered-animation",
+      "task": {
+        "intent": "staggered animation"
+      },
+      "relevant": [
+        "staggered-animation"
+      ]
+    },
+    {
+      "id": "val-tr-staggered-animation",
+      "task": {
+        "intent": "sıralı animasyon"
+      },
+      "relevant": [
+        "staggered-animation"
+      ]
+    },
+    {
+      "id": "val-de-staggered-animation",
+      "task": {
+        "intent": "gestaffelte Animation"
+      },
+      "relevant": [
+        "staggered-animation"
+      ]
+    },
+    {
+      "id": "val-neg-staggered-animation",
+      "task": {
+        "intent": "frame clock; staggered animation is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "staggered-animation"
+      ]
     }
   ]
 }

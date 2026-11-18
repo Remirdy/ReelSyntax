@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "stem export,ses kanalı çıktı"
+  aliases: "stem export,ses kanalı çıktı,audio stem export,Audio-Stem-Export,Einzelspuren exportieren"
   requires: ""
 ---
 
