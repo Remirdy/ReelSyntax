@@ -36,8 +36,8 @@ Issues = "https://github.com/Remirdy/ReelSyntax/issues"
 Changelog = "https://github.com/Remirdy/ReelSyntax/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
-render = ["Pillow==12.2.0"]
-browser = ["Pillow==12.2.0", "playwright==1.65.2"]
+render = ["Pillow==13.0.0"]
+browser = ["Pillow==13.0.0", "playwright==1.65.2"]
 
 [project.scripts]
 reelsyntax = "reelsyntax.cli:main"
