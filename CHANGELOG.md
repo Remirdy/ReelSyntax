@@ -2,6 +2,11 @@
 
 ## [Unreleased]
 
+### Added
+
+- Add `tests/test_code_style.py` to enforce zero comments and zero docstrings across new and modified Python, JavaScript, TypeScript, CSS, HTML, and shell source files.
+- Expand `ruff` lint checks (`F401`, `F841`, `B006`) and align `.github/PULL_REQUEST_TEMPLATE.md` with the review template.
+
 ## [0.1.0] — 2026-11-18
 
 ### Added
