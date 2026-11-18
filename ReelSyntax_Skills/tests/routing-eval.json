@@ -4756,6 +4756,591 @@
       "forbidden": [
         "staggered-animation"
       ]
+    },
+    {
+      "id": "val-en-social-media-reel",
+      "task": {
+        "intent": "social media reel"
+      },
+      "relevant": [
+        "social-media-reel"
+      ]
+    },
+    {
+      "id": "val-tr-social-media-reel",
+      "task": {
+        "intent": "reels"
+      },
+      "relevant": [
+        "social-media-reel"
+      ]
+    },
+    {
+      "id": "val-de-social-media-reel",
+      "task": {
+        "intent": "Social-Media-Kurzvideo"
+      },
+      "relevant": [
+        "social-media-reel"
+      ]
+    },
+    {
+      "id": "val-neg-social-media-reel",
+      "task": {
+        "intent": "frame clock; social media reel is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "social-media-reel"
+      ]
+    },
+    {
+      "id": "val-en-educational-explainer",
+      "task": {
+        "intent": "educational explainer"
+      },
+      "relevant": [
+        "educational-explainer"
+      ]
+    },
+    {
+      "id": "val-tr-educational-explainer",
+      "task": {
+        "intent": "eğitici video"
+      },
+      "relevant": [
+        "educational-explainer"
+      ]
+    },
+    {
+      "id": "val-de-educational-explainer",
+      "task": {
+        "intent": "Lehrvideo-Erklärfilm"
+      },
+      "relevant": [
+        "educational-explainer"
+      ]
+    },
+    {
+      "id": "val-neg-educational-explainer",
+      "task": {
+        "intent": "frame clock; educational explainer is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "educational-explainer"
+      ]
+    },
+    {
+      "id": "val-en-lyric-video",
+      "task": {
+        "intent": "lyric video"
+      },
+      "relevant": [
+        "lyric-video"
+      ]
+    },
+    {
+      "id": "val-tr-lyric-video",
+      "task": {
+        "intent": "şarkı sözü videosu"
+      },
+      "relevant": [
+        "lyric-video"
+      ]
+    },
+    {
+      "id": "val-de-lyric-video",
+      "task": {
+        "intent": "Lyrik-Video"
+      },
+      "relevant": [
+        "lyric-video"
+      ]
+    },
+    {
+      "id": "val-neg-lyric-video",
+      "task": {
+        "intent": "frame clock; lyric video is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "lyric-video"
+      ]
+    },
+    {
+      "id": "val-en-music-visualizer",
+      "task": {
+        "intent": "music visualizer"
+      },
+      "relevant": [
+        "music-visualizer"
+      ]
+    },
+    {
+      "id": "val-tr-music-visualizer",
+      "task": {
+        "intent": "müzik görselleştirme"
+      },
+      "relevant": [
+        "music-visualizer"
+      ]
+    },
+    {
+      "id": "val-de-music-visualizer",
+      "task": {
+        "intent": "Musik-Visualizer"
+      },
+      "relevant": [
+        "music-visualizer"
+      ]
+    },
+    {
+      "id": "val-neg-music-visualizer",
+      "task": {
+        "intent": "frame clock; music visualizer is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "music-visualizer"
+      ]
+    },
+    {
+      "id": "val-en-product-commercial",
+      "task": {
+        "intent": "product commercial"
+      },
+      "relevant": [
+        "product-commercial"
+      ]
+    },
+    {
+      "id": "val-tr-product-commercial",
+      "task": {
+        "intent": "ürün reklamı"
+      },
+      "relevant": [
+        "product-commercial"
+      ]
+    },
+    {
+      "id": "val-de-product-commercial",
+      "task": {
+        "intent": "Produktwerbespot"
+      },
+      "relevant": [
+        "product-commercial"
+      ]
+    },
+    {
+      "id": "val-neg-product-commercial",
+      "task": {
+        "intent": "frame clock; product commercial is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "product-commercial"
+      ]
+    },
+    {
+      "id": "val-en-bar-chart-animation",
+      "task": {
+        "intent": "bar chart animation"
+      },
+      "relevant": [
+        "bar-chart-animation"
+      ]
+    },
+    {
+      "id": "val-tr-bar-chart-animation",
+      "task": {
+        "intent": "çubuk grafik"
+      },
+      "relevant": [
+        "bar-chart-animation"
+      ]
+    },
+    {
+      "id": "val-de-bar-chart-animation",
+      "task": {
+        "intent": "Balkendiagramm-Animation"
+      },
+      "relevant": [
+        "bar-chart-animation"
+      ]
+    },
+    {
+      "id": "val-neg-bar-chart-animation",
+      "task": {
+        "intent": "frame clock; bar chart animation is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "bar-chart-animation"
+      ]
+    },
+    {
+      "id": "val-en-line-chart-animation",
+      "task": {
+        "intent": "line chart animation"
+      },
+      "relevant": [
+        "line-chart-animation"
+      ]
+    },
+    {
+      "id": "val-tr-line-chart-animation",
+      "task": {
+        "intent": "çizgi grafik"
+      },
+      "relevant": [
+        "line-chart-animation"
+      ]
+    },
+    {
+      "id": "val-de-line-chart-animation",
+      "task": {
+        "intent": "Liniendiagramm-Animation"
+      },
+      "relevant": [
+        "line-chart-animation"
+      ]
+    },
+    {
+      "id": "val-neg-line-chart-animation",
+      "task": {
+        "intent": "frame clock; line chart animation is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "line-chart-animation"
+      ]
+    },
+    {
+      "id": "val-en-accessible-data-design",
+      "task": {
+        "intent": "accessible data design"
+      },
+      "relevant": [
+        "accessible-data-design"
+      ]
+    },
+    {
+      "id": "val-tr-accessible-data-design",
+      "task": {
+        "intent": "erişilebilir grafik"
+      },
+      "relevant": [
+        "accessible-data-design"
+      ]
+    },
+    {
+      "id": "val-de-accessible-data-design",
+      "task": {
+        "intent": "barrierefreies Datendesign"
+      },
+      "relevant": [
+        "accessible-data-design"
+      ]
+    },
+    {
+      "id": "val-neg-accessible-data-design",
+      "task": {
+        "intent": "frame clock; accessible data design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "accessible-data-design"
+      ]
+    },
+    {
+      "id": "val-en-palette-design",
+      "task": {
+        "intent": "palette design"
+      },
+      "relevant": [
+        "palette-design"
+      ]
+    },
+    {
+      "id": "val-tr-palette-design",
+      "task": {
+        "intent": "renk paleti"
+      },
+      "relevant": [
+        "palette-design"
+      ]
+    },
+    {
+      "id": "val-de-palette-design",
+      "task": {
+        "intent": "Farbpaletten-Design"
+      },
+      "relevant": [
+        "palette-design"
+      ]
+    },
+    {
+      "id": "val-neg-palette-design",
+      "task": {
+        "intent": "frame clock; palette design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "palette-design"
+      ]
+    },
+    {
+      "id": "val-en-visual-hierarchy",
+      "task": {
+        "intent": "visual hierarchy"
+      },
+      "relevant": [
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "val-tr-visual-hierarchy",
+      "task": {
+        "intent": "görsel hiyerarşi"
+      },
+      "relevant": [
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "val-de-visual-hierarchy",
+      "task": {
+        "intent": "visuelle Hierarchie"
+      },
+      "relevant": [
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "val-neg-visual-hierarchy",
+      "task": {
+        "intent": "frame clock; visual hierarchy is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "val-en-low-poly-style",
+      "task": {
+        "intent": "low poly style"
+      },
+      "relevant": [
+        "low-poly-style"
+      ]
+    },
+    {
+      "id": "val-tr-low-poly-style",
+      "task": {
+        "intent": "low poly"
+      },
+      "relevant": [
+        "low-poly-style"
+      ]
+    },
+    {
+      "id": "val-de-low-poly-style",
+      "task": {
+        "intent": "Low-Poly-Stil"
+      },
+      "relevant": [
+        "low-poly-style"
+      ]
+    },
+    {
+      "id": "val-neg-low-poly-style",
+      "task": {
+        "intent": "frame clock; low poly style is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "low-poly-style"
+      ]
+    },
+    {
+      "id": "val-en-claymation-style",
+      "task": {
+        "intent": "claymation style"
+      },
+      "relevant": [
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "val-tr-claymation-style",
+      "task": {
+        "intent": "kil animasyon"
+      },
+      "relevant": [
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "val-de-claymation-style",
+      "task": {
+        "intent": "Knetanimations-Stil"
+      },
+      "relevant": [
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "val-neg-claymation-style",
+      "task": {
+        "intent": "frame clock; claymation style is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "val-en-paper-cut-style",
+      "task": {
+        "intent": "paper cut style"
+      },
+      "relevant": [
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "val-tr-paper-cut-style",
+      "task": {
+        "intent": "kağıt kesme"
+      },
+      "relevant": [
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "val-de-paper-cut-style",
+      "task": {
+        "intent": "Scherenschnitt-Stil"
+      },
+      "relevant": [
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "val-neg-paper-cut-style",
+      "task": {
+        "intent": "frame clock; paper cut style is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "val-en-cross-dissolve",
+      "task": {
+        "intent": "cross dissolve"
+      },
+      "relevant": [
+        "cross-dissolve"
+      ]
+    },
+    {
+      "id": "val-tr-cross-dissolve",
+      "task": {
+        "intent": "çapraz çözünme"
+      },
+      "relevant": [
+        "cross-dissolve"
+      ]
+    },
+    {
+      "id": "val-de-cross-dissolve",
+      "task": {
+        "intent": "Kreuzblende"
+      },
+      "relevant": [
+        "cross-dissolve"
+      ]
+    },
+    {
+      "id": "val-neg-cross-dissolve",
+      "task": {
+        "intent": "frame clock; cross dissolve is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "cross-dissolve"
+      ]
+    },
+    {
+      "id": "val-en-wipe-transition",
+      "task": {
+        "intent": "wipe transition"
+      },
+      "relevant": [
+        "wipe-transition"
+      ]
+    },
+    {
+      "id": "val-tr-wipe-transition",
+      "task": {
+        "intent": "silme geçişi"
+      },
+      "relevant": [
+        "wipe-transition"
+      ]
+    },
+    {
+      "id": "val-de-wipe-transition",
+      "task": {
+        "intent": "Wischblende"
+      },
+      "relevant": [
+        "wipe-transition"
+      ]
+    },
+    {
+      "id": "val-neg-wipe-transition",
+      "task": {
+        "intent": "frame clock; wipe transition is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "wipe-transition"
+      ]
     }
   ]
 }

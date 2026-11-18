@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "reels,dikey sosyal medya"
+  aliases: "reels,dikey sosyal medya,social media reel,Social-Media-Kurzvideo,Hochformat-Reel"
   requires: ""
 ---
 

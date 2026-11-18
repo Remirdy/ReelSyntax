@@ -1,6 +1,6 @@
 # ReelSyntax skill catalog
 
-616 skills across 25 categories. 478 guidance, 138 validated.
+616 skills across 25 categories. 463 guidance, 153 validated.
 
 | Category | Skills |
 | --- | ---: |
@@ -39,19 +39,19 @@
 | [art-reference-board](library/art/art-reference-board/SKILL.md) | guidance | moodboard, referans panosu | Use for art reference board. Collect labeled references by composition, material, light and movement rather than copying whole scenes. |
 | [brand-consistency](library/art/brand-consistency/SKILL.md) | guidance | marka tutarlılığı, logo renk | Use for brand consistency. Use verified brand assets and lock exact colors, spacing and logo geometry. |
 | [brutalist-motion](library/art/brutalist-motion/SKILL.md) | guidance | brutalist design, brütalist tasarım | Build a typographic sequence around hard cuts and exposed structure. |
-| [claymation-style](library/art/claymation-style/SKILL.md) | guidance | kil animasyon, claymation | Use for claymation style. Use handmade surface imperfections, tactile shapes and discrete motion cadence. |
+| [claymation-style](library/art/claymation-style/SKILL.md) | validated | kil animasyon, claymation, claymation style, Knetanimations-Stil, Stop-Motion-Tonstil | Use for claymation style. Use handmade surface imperfections, tactile shapes and discrete motion cadence. |
 | [collage-art](library/art/collage-art/SKILL.md) | guidance | kolaj, arşiv kolaj | Use for collage art. Layer licensed cutouts with deliberate scale, edge treatment and graphic accents. |
 | [editorial-design](library/art/editorial-design/SKILL.md) | guidance | editoryal tasarım, dergi stili | Use for editorial design. Use measured type scale, image crops and asymmetric grid rhythm. |
 | [film-noir](library/art/film-noir/SKILL.md) | guidance | film noir, siyah beyaz sinema | Use for film noir. Build high-contrast monochrome lighting, occlusion and motivated silhouettes. |
 | [glassmorphism-motion](library/art/glassmorphism-motion/SKILL.md) | guidance | glassmorphism, cam efekti | Keep translucent panels legible over moving footage. |
 | [halftone-risograph-style](library/art/halftone-risograph-style/SKILL.md) | guidance | halftone, risograph baskı | Simulate screened spot-color layers. |
 | [layout-grid](library/art/layout-grid/SKILL.md) | guidance | ızgara düzeni, grid | Use for layout grid. Set baseline, gutters, alignment anchors and responsive bounds in scene coordinates. |
-| [low-poly-style](library/art/low-poly-style/SKILL.md) | guidance | low poly, düşük poligon | Use for low poly style. Use clear faceted silhouettes, limited materials and deliberate hard edges. |
+| [low-poly-style](library/art/low-poly-style/SKILL.md) | validated | low poly, düşük poligon, low poly style, Low-Poly-Stil, kantiger Polygon-Look | Use for low poly style. Use clear faceted silhouettes, limited materials and deliberate hard edges. |
 | [miniature-diorama](library/art/miniature-diorama/SKILL.md) | guidance | minyatür, diorama | Use for miniature diorama. Design scaled props, shallow focus and consistent environmental detail. |
 | [minimal-commercial](library/art/minimal-commercial/SKILL.md) | guidance | minimal reklam, sade premium | Use for minimal commercial. Limit objects and materials; assign each move and accent a purpose. |
 | [oklch-perceptual-palettes](library/art/oklch-perceptual-palettes/SKILL.md) | validated | oklch renk paleti, oklab gradient, perceptual color space, algısal renk geçişi | Use for perceptual OKLab and OKLCH color palettes. Interpolate gradients, lighting tints, and data series with uniform perceived lightness and preserved chroma. |
-| [palette-design](library/art/palette-design/SKILL.md) | guidance | renk paleti, renk uyumu | Use for palette design. Choose limited base, accent and neutral roles with luminance separation. |
-| [paper-cut-style](library/art/paper-cut-style/SKILL.md) | guidance | kağıt kesme, paper cut | Use for paper cut style. Stage layered cutout silhouettes with slight depth offsets and coherent shadow direction. |
+| [palette-design](library/art/palette-design/SKILL.md) | validated | renk paleti, renk uyumu, palette design, Farbpaletten-Design, Farbschema entwerfen | Use for palette design. Choose limited base, accent and neutral roles with luminance separation. |
+| [paper-cut-style](library/art/paper-cut-style/SKILL.md) | validated | kağıt kesme, paper cut, paper cut style, Scherenschnitt-Stil, Papierschnitt-Optik | Use for paper cut style. Stage layered cutout silhouettes with slight depth offsets and coherent shadow direction. |
 | [photorealistic-material-direction](library/art/photorealistic-material-direction/SKILL.md) | guidance | gerçekçi materyal, fotogerçekçi | Use for photorealistic material direction. Match scale, roughness, microdetail and plausible light response to references. |
 | [pixel-art-style](library/art/pixel-art-style/SKILL.md) | guidance | piksel sanat, pixel art | Use for pixel art style. Use integer grid scaling, limited palette and nearest-neighbor transforms. |
 | [retro-vhs](library/art/retro-vhs/SKILL.md) | guidance | vhs, retro kaset | Use for retro vhs. Apply bounded chroma bleed, noise and scanline artifacts only where stylistically useful. |
@@ -60,7 +60,7 @@
 | [technical-blueprint](library/art/technical-blueprint/SKILL.md) | guidance | teknik çizim, blueprint | Use for technical blueprint. Use dimension lines, consistent stroke widths and schematic hierarchy. |
 | [toon-shading-npr](library/art/toon-shading-npr/SKILL.md) | guidance | toon shading, çizgi film gölgelendirme | Build stepped lighting and contour lines. |
 | [vaporwave-synthwave-style](library/art/vaporwave-synthwave-style/SKILL.md) | guidance | synthwave, retro gelecek | Compose a retro-futurist grid and horizon palette. |
-| [visual-hierarchy](library/art/visual-hierarchy/SKILL.md) | guidance | görsel hiyerarşi, tasarım hiyerarşisi | Use for visual hierarchy. Prioritize scale, contrast, position and motion to produce an intended reading order. |
+| [visual-hierarchy](library/art/visual-hierarchy/SKILL.md) | validated | görsel hiyerarşi, tasarım hiyerarşisi, visual hierarchy, visuelle Hierarchie, Blickführung gestalten | Use for visual hierarchy. Prioritize scale, contrast, position and motion to produce an intended reading order. |
 
 ## Sound design, recording and mixing (`audio`, 27)
 
@@ -178,10 +178,10 @@
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
-| [accessible-data-design](library/data/accessible-data-design/SKILL.md) | guidance | erişilebilir grafik, renk körlüğü | Use for accessible data design. Use labels, shape and contrast rather than color alone to distinguish data. |
+| [accessible-data-design](library/data/accessible-data-design/SKILL.md) | validated | erişilebilir grafik, renk körlüğü, accessible data design, barrierefreies Datendesign, zugängliche Diagramme | Use for accessible data design. Use labels, shape and contrast rather than color alone to distinguish data. |
 | [algorithm-visualization](library/data/algorithm-visualization/SKILL.md) | guidance | algoritma animasyonu, sorting | Use for algorithm visualization. Animate recorded algorithm states and distinguish comparisons, swaps and final values. |
 | [architecture-diagram-animation](library/data/architecture-diagram-animation/SKILL.md) | guidance | architecture diagram, mimari diyagram | Explain a system through one data path at a time. |
-| [bar-chart-animation](library/data/bar-chart-animation/SKILL.md) | guidance | çubuk grafik, bar chart | Use for bar chart animation. Animate values from justified baseline with fixed or disclosed scale. |
+| [bar-chart-animation](library/data/bar-chart-animation/SKILL.md) | validated | çubuk grafik, bar chart, bar chart animation, Balkendiagramm-Animation, animiertes Säulendiagramm | Use for bar chart animation. Animate values from justified baseline with fixed or disclosed scale. |
 | [benchmark-results-video](library/data/benchmark-results-video/SKILL.md) | guidance | benchmark video, performans sonuçları | Animate comparable benchmark measurements. |
 | [calculus-visualization](library/data/calculus-visualization/SKILL.md) | guidance | türev integral, calculus | Use for calculus visualization. Plot functions and animate mathematical relationships with defined domains and units. |
 | [candlestick-finance-chart](library/data/candlestick-finance-chart/SKILL.md) | guidance | candlestick, mum grafik | Plot time-ordered OHLC candles and volume. |
@@ -194,7 +194,7 @@
 | [flowchart-animation](library/data/flowchart-animation/SKILL.md) | guidance | akış şeması, flowchart | Use for flowchart animation. Construct process graph from actual steps and decision conditions. |
 | [geometry-proof-animation](library/data/geometry-proof-animation/SKILL.md) | guidance | geometri ispat, geometry | Use for geometry proof animation. Stage construction steps and distinguish proof from illustrative example. |
 | [heatmap-animation](library/data/heatmap-animation/SKILL.md) | guidance | heatmap, ısı haritası | Animate a series of comparable heatmaps. |
-| [line-chart-animation](library/data/line-chart-animation/SKILL.md) | guidance | çizgi grafik, line chart | Use for line chart animation. Plot ordered values with explicit units and missing-data gaps. |
+| [line-chart-animation](library/data/line-chart-animation/SKILL.md) | validated | çizgi grafik, line chart, line chart animation, Liniendiagramm-Animation, Kurvendiagramm-Animation | Use for line chart animation. Plot ordered values with explicit units and missing-data gaps. |
 | [linear-algebra-visualization](library/data/linear-algebra-visualization/SKILL.md) | guidance | lineer cebir, vektör matris | Use for linear algebra visualization. Animate vectors and transformations using explicit matrix conventions. |
 | [map-route-animation](library/data/map-route-animation/SKILL.md) | guidance | rota animasyonu, harita rotası | Use for map route animation. Animate verified or supplied geographic route with distance-aware timing and attribution. |
 | [mermaid-to-video](library/data/mermaid-to-video/SKILL.md) | guidance | mermaid animation, mermaid videosu | Turn diagram edges into a timed reading sequence. |
@@ -339,7 +339,7 @@
 | [corporate-film](library/formats/corporate-film/SKILL.md) | guidance | kurumsal video, firma tanıtımı | Use for corporate film. Connect brand purpose, credible evidence and human or operational visuals. |
 | [countdown-timer-video](library/formats/countdown-timer-video/SKILL.md) | guidance | countdown, geri sayım videosu | Drive a countdown from integer frame indices. |
 | [customer-testimonial](library/formats/customer-testimonial/SKILL.md) | guidance | testimonial, müşteri yorumu videosu | Edit a consented interview into an attributed testimonial. |
-| [educational-explainer](library/formats/educational-explainer/SKILL.md) | guidance | eğitici video, konu anlatımı | Use for educational explainer. Define learning goal, example sequence and visual explanation with recap as appropriate. |
+| [educational-explainer](library/formats/educational-explainer/SKILL.md) | validated | eğitici video, konu anlatımı, educational explainer, Lehrvideo-Erklärfilm, Wissen-Erklärvideo | Use for educational explainer. Define learning goal, example sequence and visual explanation with recap as appropriate. |
 | [event-promo](library/formats/event-promo/SKILL.md) | guidance | etkinlik tanıtımı, konser reklamı | Use for event promo. Prioritize event identity, date, time, venue and booking instructions. |
 | [game-trailer](library/formats/game-trailer/SKILL.md) | guidance | oyun fragmanı, game trailer | Use for game trailer. Select authentic gameplay or clearly labeled cinematics; pace around mechanics and payoff. |
 | [gaming-highlight-montage](library/formats/gaming-highlight-montage/SKILL.md) | guidance | gaming highlight, oyun özet montajı | Cut gameplay around recorded events. |
@@ -348,13 +348,13 @@
 | [indie-game-devlog](library/formats/indie-game-devlog/SKILL.md) | guidance | devlog, geliştirme günlüğü | Use for indie game devlog. Show verified milestones and before-after demonstrations with honest status. |
 | [livestream-overlay](library/formats/livestream-overlay/SKILL.md) | guidance | stream overlay, yayın katmanı | Prepare a transparent overlay for a broadcast layout. |
 | [long-form-youtube](library/formats/long-form-youtube/SKILL.md) | guidance | youtube uzun video, youtube içerik | Use for long form youtube. Structure chapters, narrative questions, pacing changes and sourced visuals. |
-| [lyric-video](library/formats/lyric-video/SKILL.md) | guidance | şarkı sözü videosu, lyric video | Use for lyric video. Use authorized lyrics and timed text hierarchy; avoid unlicensed material. |
+| [lyric-video](library/formats/lyric-video/SKILL.md) | validated | şarkı sözü videosu, lyric video, Lyrik-Video, Songtext-Animation | Use for lyric video. Use authorized lyrics and timed text hierarchy; avoid unlicensed material. |
 | [memorial-tribute](library/formats/memorial-tribute/SKILL.md) | guidance | anma videosu, duygusal anma | Use for memorial tribute. Build respectful tone using verified archival or supplied material with restrained effects. |
-| [music-visualizer](library/formats/music-visualizer/SKILL.md) | guidance | müzik görselleştirme, visualizer | Use for music visualizer. Map audio features to controlled visual motifs with repeatable timing. |
+| [music-visualizer](library/formats/music-visualizer/SKILL.md) | validated | müzik görselleştirme, visualizer, music visualizer, Musik-Visualizer, Audio-Spektrum-Video | Use for music visualizer. Map audio features to controlled visual motifs with repeatable timing. |
 | [news-explainer](library/formats/news-explainer/SKILL.md) | guidance | news explainer, haber açıklayıcı | Build a sourced chronology for a short news segment. |
 | [news-ticker-hierarchy](library/formats/news-ticker-hierarchy/SKILL.md) | validated | news ticker hierarchy, broadcast ticker crawl, haber bandı hiyerarşisi, kayan alt bant düzeni, Nachrichtenticker-Hierarchie, Laufband-Layout gestalten, jerarquía de cintillo informativo, hiérarchie de bandeau d'actualité | Design structured news-brief layouts with clear primary-headline dominance, judder-free integer-pixel ticker crawls, source badges, and zero dual-reading overload. |
 | [podcast-clip](library/formats/podcast-clip/SKILL.md) | guidance | podcast kesiti, podcast reel | Use for podcast clip. Select self-contained excerpt and preserve speaker context while trimming. |
-| [product-commercial](library/formats/product-commercial/SKILL.md) | guidance | ürün reklamı, ticari reklam | Use for product commercial. Plan benefit-driven visual shots, accurate product assets and a clear end card. |
+| [product-commercial](library/formats/product-commercial/SKILL.md) | validated | ürün reklamı, ticari reklam, product commercial, Produktwerbespot, Produkt-Spot | Use for product commercial. Plan benefit-driven visual shots, accurate product assets and a clear end card. |
 | [quote-card-motion](library/formats/quote-card-motion/SKILL.md) | guidance | quote card, alıntı kartı animasyonu | Time a quote reveal against a recorded reading. |
 | [real-estate-walkthrough](library/formats/real-estate-walkthrough/SKILL.md) | guidance | emlak turu, ev tanıtımı | Use for real estate walkthrough. Sequence real property footage by spatial path and distinguish virtual staging. |
 | [recipe-cooking-video](library/formats/recipe-cooking-video/SKILL.md) | guidance | recipe video, yemek tarifi videosu | Build an overhead cooking sequence with measured ingredients. |
@@ -363,7 +363,7 @@
 | [retro-cutscene-directing](library/formats/retro-cutscene-directing/SKILL.md) | validated | retro cutscene directing, lowpoly cutscene staging, retro ara sahne yönetimi, düşük poligonlu diyalog sahnesi, Retro-Zwischensequenz-Regie, Low-Poly-Dialogszene inszenieren, dirección de cinemática retro, mise en scène de cinématique rétro | Direct original 22-to-30-second low-poly 3D character cutscenes with crisp faceted lighting, 180-degree dialogue staging, mouth-envelope lip sync, and HUD dialogue boxes. |
 | [series-episode-workflow](library/formats/series-episode-workflow/SKILL.md) | guidance | dizi bölümü, seri üretim | Use for series episode workflow. Apply series bible, episode continuity and reusable asset versions while preserving new story beats. |
 | [short-form-story](library/formats/short-form-story/SKILL.md) | guidance | shorts, kısa hikaye | Use for short form story. Use one clear premise, concise escalation and satisfying final beat. |
-| [social-media-reel](library/formats/social-media-reel/SKILL.md) | guidance | reels, dikey sosyal medya | Use for social media reel. Compose vertical story with a strong opening, safe areas and mobile reading cadence. |
+| [social-media-reel](library/formats/social-media-reel/SKILL.md) | validated | reels, dikey sosyal medya, social media reel, Social-Media-Kurzvideo, Hochformat-Reel | Use for social media reel. Compose vertical story with a strong opening, safe areas and mobile reading cadence. |
 | [social-thread-to-video](library/formats/social-thread-to-video/SKILL.md) | guidance | thread to video, konu dizisini videoya çevir | Adapt a thread into a sequence of readable cards. |
 | [teacher-tribute](library/formats/teacher-tribute/SKILL.md) | guidance | öğretmenler günü, öğretmen videosu | Use for teacher tribute. Stage authentic school details, consistent cast and respectful narrative aligned to requested culture. |
 | [tutorial-how-to](library/formats/tutorial-how-to/SKILL.md) | guidance | how-to video, nasıl yapılır videosu | Show one observable action per step. |
@@ -656,7 +656,7 @@
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [color-match-transition](library/transitions/color-match-transition/SKILL.md) | guidance | renkle geçiş, color match | Use for color match transition. Use shared dominant hue or luminance as a visual bridge across shots. |
-| [cross-dissolve](library/transitions/cross-dissolve/SKILL.md) | guidance | çapraz çözünme, dissolve | Use for cross dissolve. Blend adjacent shots over explicit shared interval in appropriate color space. |
+| [cross-dissolve](library/transitions/cross-dissolve/SKILL.md) | validated | çapraz çözünme, dissolve, cross dissolve, Kreuzblende, weiche Überblendung | Use for cross dissolve. Blend adjacent shots over explicit shared interval in appropriate color space. |
 | [exploded-view-shot](library/transitions/exploded-view-shot/SKILL.md) | guidance | patlatılmış görünüm, exploded view | Use for exploded view shot. Separate product parts along logical assembly axes with delayed reveal and labels if allowed. |
 | [fade-through-black](library/transitions/fade-through-black/SKILL.md) | guidance | siyaha geçiş, fade black | Use for fade through black. Fade down and up with purposeful black hold if requested. |
 | [fade-through-white](library/transitions/fade-through-white/SKILL.md) | guidance | beyaza geçiş, fade white | Use for fade through white. Blend through a bounded white interval without abrupt flashing. |
@@ -674,7 +674,7 @@
 | [seamless-camera-bridge](library/transitions/seamless-camera-bridge/SKILL.md) | guidance | kesintisiz kamera geçişi, one take | Use for seamless camera bridge. Match camera transforms, exposure and velocity at designed seam. |
 | [shape-match-transition](library/transitions/shape-match-transition/SKILL.md) | guidance | şekille geçiş, shape match | Use for shape match transition. Select similar geometry at scene endpoints and align size and position. |
 | [slide-transition](library/transitions/slide-transition/SKILL.md) | guidance | kaydırma geçişi, slide transition | Use for slide transition. Move frames along shared axis with consistent easing and overscan. |
-| [wipe-transition](library/transitions/wipe-transition/SKILL.md) | guidance | silme geçişi, wipe | Use for wipe transition. Animate geometric matte boundary across source and target layers. |
+| [wipe-transition](library/transitions/wipe-transition/SKILL.md) | validated | silme geçişi, wipe, wipe transition, Wischblende, Wipe-Übergang | Use for wipe transition. Animate geometric matte boundary across source and target layers. |
 
 ## Typography, captions and visual text (`typography`, 35)
 

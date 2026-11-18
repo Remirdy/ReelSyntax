@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "ürün reklamı,ticari reklam"
+  aliases: "ürün reklamı,ticari reklam,product commercial,Produktwerbespot,Produkt-Spot"
   requires: ""
 ---
 

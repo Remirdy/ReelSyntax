@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "cacb6909c998541aa003bb28194e5ff9d0240f189703b43ba5c3a12dd4180d84",
+  "digest": "99ca8cd7cbb81dcbf4fdd84ce18f6bded9b062213baf1108a86b8cc2d429ce60",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -102,19 +102,27 @@
       "description": "Use for claymation style. Use handmade surface imperfections, tactile shapes and discrete motion cadence.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kil animasyon",
-        "claymation"
+        "claymation",
+        "claymation style",
+        "Knetanimations-Stil",
+        "Stop-Motion-Tonstil"
       ],
       "requires": [],
       "path": "library/art/claymation-style/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 996,
-      "sha256": "262aa4be16200ae5ec3f9d744e54091a56ae3f756475a71a7717c906bbcdf635",
+      "estimated_words": 388,
+      "estimated_tokens": 1015,
+      "sha256": "e312970b6cc43b5a22efb63d8816dfb24fa158756022cc0213ba1d6b6db47388",
       "body_sha256": "d6fa9fbac1e6b858c9a27a2bad88f8a3bb323db109c57a4b13017d50c0b4770e",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/claymation-style/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/claymation-style/references/project-check.md": "4feff96fbc5567293b80995e3206b6c07f5d73aac7010f61538f885ed1538942"
+      }
     },
     {
       "id": "collage-art",
@@ -235,19 +243,27 @@
       "description": "Use for low poly style. Use clear faceted silhouettes, limited materials and deliberate hard edges.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "low poly",
-        "düşük poligon"
+        "düşük poligon",
+        "low poly style",
+        "Low-Poly-Stil",
+        "kantiger Polygon-Look"
       ],
       "requires": [],
       "path": "library/art/low-poly-style/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 987,
-      "sha256": "805963c191e5e78bb92cc1e233c8fe3fdfdf70b77c02c35822df6f2069f00e38",
+      "estimated_words": 390,
+      "estimated_tokens": 1004,
+      "sha256": "14f56c0217cf6029e9db5b7cc25cddea90ff788ab404369d368bf653041b8d2c",
       "body_sha256": "d1632df6099c69fd1d3cb56aa8a30d68fd0b3b018b7aa7a109e74b8a332c9b50",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/low-poly-style/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/low-poly-style/references/project-check.md": "806ded7092a9a9a6957f179a4ea58389adaa3708c6b1f0e8e03c4a1700a0ef9d"
+      }
     },
     {
       "id": "miniature-diorama",
@@ -313,38 +329,54 @@
       "description": "Use for palette design. Choose limited base, accent and neutral roles with luminance separation.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "renk paleti",
-        "renk uyumu"
+        "renk uyumu",
+        "palette design",
+        "Farbpaletten-Design",
+        "Farbschema entwerfen"
       ],
       "requires": [],
       "path": "library/art/palette-design/SKILL.md",
-      "estimated_words": 386,
-      "estimated_tokens": 982,
-      "sha256": "cad685adc80d65a565e70e23cbd0d68b70f53cee60883a0f9bbfea547c373537",
+      "estimated_words": 388,
+      "estimated_tokens": 1001,
+      "sha256": "6c394f064088ff5e9c6f96065d0e391ff5a5eff8efe780ca9a5fd443068e5585",
       "body_sha256": "ca42fa94c447fe8b7561954e84f812bf7065ce906f0c8686cb7474987a740cc8",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/palette-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/palette-design/references/project-check.md": "5c425841cce1751ab687ea05946a3a3c5f75c163af1b46f585990f2460e9f8ad"
+      }
     },
     {
       "id": "paper-cut-style",
       "description": "Use for paper cut style. Stage layered cutout silhouettes with slight depth offsets and coherent shadow direction.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kağıt kesme",
-        "paper cut"
+        "paper cut",
+        "paper cut style",
+        "Scherenschnitt-Stil",
+        "Papierschnitt-Optik"
       ],
       "requires": [],
       "path": "library/art/paper-cut-style/SKILL.md",
-      "estimated_words": 393,
-      "estimated_tokens": 993,
-      "sha256": "e15f66662249863def622f296bf0a31efe56860965f5118f8820e9431f8c5237",
+      "estimated_words": 395,
+      "estimated_tokens": 1012,
+      "sha256": "84873511e71951d5358416a9a12e2705969e93057505e408e4f5c3c0825d521f",
       "body_sha256": "6b9a7c011b674e7e09f76f705419702ed808bb794bff93e3a673c26203ba441a",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/paper-cut-style/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/paper-cut-style/references/project-check.md": "4d4657e856b1139239d799b72f723dad5ffd5698ff17be6f9c96c9d64b30d629"
+      }
     },
     {
       "id": "photorealistic-material-direction",
@@ -503,19 +535,27 @@
       "description": "Use for visual hierarchy. Prioritize scale, contrast, position and motion to produce an intended reading order.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "görsel hiyerarşi",
-        "tasarım hiyerarşisi"
+        "tasarım hiyerarşisi",
+        "visual hierarchy",
+        "visuelle Hierarchie",
+        "Blickführung gestalten"
       ],
       "requires": [],
       "path": "library/art/visual-hierarchy/SKILL.md",
-      "estimated_words": 389,
-      "estimated_tokens": 998,
-      "sha256": "574c7a4001c5158d40ae32278bbccab3374131bb2ff141eb7f3de8b46a9304cb",
+      "estimated_words": 392,
+      "estimated_tokens": 1019,
+      "sha256": "a0cfb2dbeb15afefecc08ff6d8f5e416f6d573cbeb7309bebc35d2430debaf45",
       "body_sha256": "dc08b4114fdf0578588f32175a4031ca771307b2f8ae794592e3031bb6f2a589",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/visual-hierarchy/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/visual-hierarchy/references/project-check.md": "f89e810869d20d2494b137d4ce846357aa25b29b7197f01cc224b155c90d0e8d"
+      }
     },
     {
       "id": "ambience-design",
@@ -2514,19 +2554,27 @@
       "description": "Use for accessible data design. Use labels, shape and contrast rather than color alone to distinguish data.",
       "category": "data",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "erişilebilir grafik",
-        "renk körlüğü"
+        "renk körlüğü",
+        "accessible data design",
+        "barrierefreies Datendesign",
+        "zugängliche Diagramme"
       ],
       "requires": [],
       "path": "library/data/accessible-data-design/SKILL.md",
-      "estimated_words": 394,
-      "estimated_tokens": 982,
-      "sha256": "e500ffa1fb014d0eefac74e4511bd3228a95480405302978ec079388774ebe5c",
+      "estimated_words": 398,
+      "estimated_tokens": 1006,
+      "sha256": "a57f54ff93a3d9d92fba6f71994e2536d188a97612c221a0003c59ff16e2a4e9",
       "body_sha256": "aac311c5ad7d3903c04abc08df06dd17edf8f7b4ea5f2c6fccc7e48123c785eb",
-      "resource_sha256": {}
+      "resources": [
+        "library/data/accessible-data-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/data/accessible-data-design/references/project-check.md": "ca6f7ae861c52bb715883e98dfc3b30c38c375b41a08d47b58d17d2aecc19242"
+      }
     },
     {
       "id": "algorithm-visualization",
@@ -2571,19 +2619,27 @@
       "description": "Use for bar chart animation. Animate values from justified baseline with fixed or disclosed scale.",
       "category": "data",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "çubuk grafik",
-        "bar chart"
+        "bar chart",
+        "bar chart animation",
+        "Balkendiagramm-Animation",
+        "animiertes Säulendiagramm"
       ],
       "requires": [],
       "path": "library/data/bar-chart-animation/SKILL.md",
-      "estimated_words": 396,
-      "estimated_tokens": 976,
-      "sha256": "bdd24c052d7ec7b43b62e35783e40bf13edb52c3a5dd09d19081b01a05d5607d",
+      "estimated_words": 399,
+      "estimated_tokens": 1000,
+      "sha256": "e5ea3f10182820f49d9d7e6f9e27d31d523106c489409aca866369ccb18722bd",
       "body_sha256": "2f4945b21fae7c2e931694fd1b99af40d93c1e147d9d3ae5128a94c4df7ad0a7",
-      "resource_sha256": {}
+      "resources": [
+        "library/data/bar-chart-animation/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/data/bar-chart-animation/references/project-check.md": "a29a66063ae2a6be58887e05d1dd4fd0b47ce5f2e670a393262f726c66810c6b"
+      }
     },
     {
       "id": "benchmark-results-video",
@@ -2818,19 +2874,27 @@
       "description": "Use for line chart animation. Plot ordered values with explicit units and missing-data gaps.",
       "category": "data",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "çizgi grafik",
-        "line chart"
+        "line chart",
+        "line chart animation",
+        "Liniendiagramm-Animation",
+        "Kurvendiagramm-Animation"
       ],
       "requires": [],
       "path": "library/data/line-chart-animation/SKILL.md",
-      "estimated_words": 391,
-      "estimated_tokens": 966,
-      "sha256": "5cbec120ccecc3f07016e9c6f791e30efa9ba80638844daeb5cc48a842923521",
+      "estimated_words": 393,
+      "estimated_tokens": 990,
+      "sha256": "b17498357cd31267d8308b7b12b47b84143a36978da1c291a29ebd89d08d631d",
       "body_sha256": "cca55591419768edf482547974dcd511d12af25477272ae1337272903a04196c",
-      "resource_sha256": {}
+      "resources": [
+        "library/data/line-chart-animation/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/data/line-chart-animation/references/project-check.md": "a48c8c9e84e9afd4821e8f1e203ffcaeb9aef5f3fab523db0c491df1104a5736"
+      }
     },
     {
       "id": "linear-algebra-visualization",
@@ -5488,19 +5552,27 @@
       "description": "Use for educational explainer. Define learning goal, example sequence and visual explanation with recap as appropriate.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "eğitici video",
-        "konu anlatımı"
+        "konu anlatımı",
+        "educational explainer",
+        "Lehrvideo-Erklärfilm",
+        "Wissen-Erklärvideo"
       ],
       "requires": [],
       "path": "library/formats/educational-explainer/SKILL.md",
-      "estimated_words": 393,
-      "estimated_tokens": 1001,
-      "sha256": "eed029bdc55a3860f7337126525b0abd29f0a1aef0ab43de0b44c34fe96fa261",
+      "estimated_words": 394,
+      "estimated_tokens": 1022,
+      "sha256": "a7064852e56800eca2df440d405abca371701b9795bf631b466e27681261e6e0",
       "body_sha256": "2f52a39dc73ad1aac1fdac9e438297fe3b7ff8f9328318a5a2161e6f7d389ed1",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/educational-explainer/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/formats/educational-explainer/references/project-check.md": "db8d439a9d53d1500150f698c358e21968ab27e7c95d8c761b2432663c5ce92d"
+      }
     },
     {
       "id": "event-promo",
@@ -5659,19 +5731,29 @@
       "description": "Use for lyric video. Use authorized lyrics and timed text hierarchy; avoid unlicensed material.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "şarkı sözü videosu",
-        "lyric video"
+        "lyric video",
+        "Lyrik-Video",
+        "Songtext-Animation"
       ],
       "requires": [],
       "path": "library/formats/lyric-video/SKILL.md",
       "estimated_words": 396,
-      "estimated_tokens": 985,
-      "sha256": "55cefa00da6e637cf6862392891b7d9c1b9db448d3bde9882e9cf4d53d9356a3",
+      "estimated_tokens": 995,
+      "sha256": "b4ac747053981322979269df20a1f200b9333f9ed5b9a29e6dc7dbfc59c849a2",
       "body_sha256": "d9daa40c0047054ecc8f3c59e79afbe8a5f7e313f4105bebe4634843f7650881",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/lyric-video/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/formats/lyric-video/references/project-check.md": "aa565e0b9b43415c5c8413c3a83e61b473c2912effc3cf39cd71951de7b2389d"
+      }
     },
     {
       "id": "memorial-tribute",
@@ -5697,19 +5779,27 @@
       "description": "Use for music visualizer. Map audio features to controlled visual motifs with repeatable timing.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "müzik görselleştirme",
-        "visualizer"
+        "visualizer",
+        "music visualizer",
+        "Musik-Visualizer",
+        "Audio-Spektrum-Video"
       ],
       "requires": [],
       "path": "library/formats/music-visualizer/SKILL.md",
-      "estimated_words": 389,
-      "estimated_tokens": 990,
-      "sha256": "44012501adf566af43ad06ece57d5bd958ed0b70a486a959162905d809a9a5ae",
+      "estimated_words": 390,
+      "estimated_tokens": 1009,
+      "sha256": "c5c7f53165188657bf87f668f0cb08b4d97859e1bed23da5d231234088da368d",
       "body_sha256": "c84ed8ca57d14bd872b39d27e5c7982ec3dddf45e1743f872623b6ed1dc1a4ea",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/music-visualizer/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/formats/music-visualizer/references/project-check.md": "ccf41edc072287cd5620e38d72f78c8acf580d37487afc32f796c913b15ba8e9"
+      }
     },
     {
       "id": "news-explainer",
@@ -5793,19 +5883,27 @@
       "description": "Use for product commercial. Plan benefit-driven visual shots, accurate product assets and a clear end card.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "ürün reklamı",
-        "ticari reklam"
+        "ticari reklam",
+        "product commercial",
+        "Produktwerbespot",
+        "Produkt-Spot"
       ],
       "requires": [],
       "path": "library/formats/product-commercial/SKILL.md",
-      "estimated_words": 396,
-      "estimated_tokens": 992,
-      "sha256": "7078e98133d346fcd51209990302250c18c3bc3e9786c9c9953936d4a2dcf9a1",
+      "estimated_words": 397,
+      "estimated_tokens": 1009,
+      "sha256": "a2cd53a8dd0b04e687d06f25a504bfc51ba781d7de13994a4ab9f3fd1c0dace8",
       "body_sha256": "e4b1ab28273241a3104f7aab15bccf115622b7c6d1f6a53c50178b0b4ce56722",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/product-commercial/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/formats/product-commercial/references/project-check.md": "2e1a06af1ab14a7ff1d3f892294e64f5de13e47c76d68e69cfd3f0573b8ffd97"
+      }
     },
     {
       "id": "quote-card-motion",
@@ -5981,19 +6079,27 @@
       "description": "Use for social media reel. Compose vertical story with a strong opening, safe areas and mobile reading cadence.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "reels",
-        "dikey sosyal medya"
+        "dikey sosyal medya",
+        "social media reel",
+        "Social-Media-Kurzvideo",
+        "Hochformat-Reel"
       ],
       "requires": [],
       "path": "library/formats/social-media-reel/SKILL.md",
-      "estimated_words": 398,
-      "estimated_tokens": 989,
-      "sha256": "2285673ded93a05a46573434c9ea33f1c67eb567fe532fca7f365dac9ab364cf",
+      "estimated_words": 400,
+      "estimated_tokens": 1008,
+      "sha256": "d5364892863aef8ec182b8e3c3232b5999d86abfafad9fd7ef0b749309e6bea3",
       "body_sha256": "9b8983685fa3a5df0b1f20b87f28797b2a9216098b7ccd4cac25cac17ac39b59",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/social-media-reel/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/formats/social-media-reel/references/project-check.md": "9d5e378c205e13ea1850f656daf74557e47806c7ba521d350a3997320d8c403a"
+      }
     },
     {
       "id": "social-thread-to-video",
@@ -11112,19 +11218,27 @@
       "description": "Use for cross dissolve. Blend adjacent shots over explicit shared interval in appropriate color space.",
       "category": "transitions",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "çapraz çözünme",
-        "dissolve"
+        "dissolve",
+        "cross dissolve",
+        "Kreuzblende",
+        "weiche Überblendung"
       ],
       "requires": [],
       "path": "library/transitions/cross-dissolve/SKILL.md",
-      "estimated_words": 399,
-      "estimated_tokens": 987,
-      "sha256": "759a8d5459cc9b6ac04235f689819955d3eb5130e8cd699f92e6370d6135acdd",
+      "estimated_words": 401,
+      "estimated_tokens": 1003,
+      "sha256": "dda6a4b3050da64f70925e8ceaf5cb819139a960e521bbe6426e94da43a8acf5",
       "body_sha256": "f6e1228f52b2aaee62ed6069e8f67a2d0fc306fb696d0cfa850ab0ee242c6b42",
-      "resource_sha256": {}
+      "resources": [
+        "library/transitions/cross-dissolve/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/transitions/cross-dissolve/references/project-check.md": "5d7a3c7e5d4a477cc6253d7256bf65a8b43fb5ab7a415991055c5715aa10b2d1"
+      }
     },
     {
       "id": "exploded-view-shot",
@@ -11454,19 +11568,27 @@
       "description": "Use for wipe transition. Animate geometric matte boundary across source and target layers.",
       "category": "transitions",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "silme geçişi",
-        "wipe"
+        "wipe",
+        "wipe transition",
+        "Wischblende",
+        "Wipe-Übergang"
       ],
       "requires": [],
       "path": "library/transitions/wipe-transition/SKILL.md",
-      "estimated_words": 391,
-      "estimated_tokens": 970,
-      "sha256": "6690dd07b7fa8ab27ca825264da055a7006a9ae29fbe685fa91e21fbf4cceecb",
+      "estimated_words": 392,
+      "estimated_tokens": 985,
+      "sha256": "557974984a9091178db21bd1034fc0ef966d5bce1165d944052f64b69a7c809b",
       "body_sha256": "f2c6140bf84a0dc267f264b3962c0785b23f9c1faa13356a0f20db410fd9a1b2",
-      "resource_sha256": {}
+      "resources": [
+        "library/transitions/wipe-transition/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/transitions/wipe-transition/references/project-check.md": "7f54ae9130a553b00f0ee5bde17f3654b0c74802c78258bb55830fcf67fc5773"
+      }
     },
     {
       "id": "bilingual-dual-subtitles",

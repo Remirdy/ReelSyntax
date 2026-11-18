@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "low poly,düşük poligon"
+  aliases: "low poly,düşük poligon,low poly style,Low-Poly-Stil,kantiger Polygon-Look"
   requires: ""
 ---
 

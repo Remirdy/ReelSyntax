@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "çapraz çözünme,dissolve"
+  aliases: "çapraz çözünme,dissolve,cross dissolve,Kreuzblende,weiche Überblendung"
   requires: ""
 ---
 

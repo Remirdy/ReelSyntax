@@ -1386,5 +1386,98 @@
     "resources": [
       "library/motion/staggered-animation/references/project-check.md"
     ]
+  },
+  "social-media-reel": {
+    "status": "validated",
+    "resources": [
+      "library/formats/social-media-reel/references/project-check.md"
+    ]
+  },
+  "educational-explainer": {
+    "status": "validated",
+    "resources": [
+      "library/formats/educational-explainer/references/project-check.md"
+    ]
+  },
+  "lyric-video": {
+    "status": "validated",
+    "resources": [
+      "library/formats/lyric-video/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "music-visualizer": {
+    "status": "validated",
+    "resources": [
+      "library/formats/music-visualizer/references/project-check.md"
+    ]
+  },
+  "product-commercial": {
+    "status": "validated",
+    "resources": [
+      "library/formats/product-commercial/references/project-check.md"
+    ]
+  },
+  "bar-chart-animation": {
+    "status": "validated",
+    "resources": [
+      "library/data/bar-chart-animation/references/project-check.md"
+    ]
+  },
+  "line-chart-animation": {
+    "status": "validated",
+    "resources": [
+      "library/data/line-chart-animation/references/project-check.md"
+    ]
+  },
+  "accessible-data-design": {
+    "status": "validated",
+    "resources": [
+      "library/data/accessible-data-design/references/project-check.md"
+    ]
+  },
+  "palette-design": {
+    "status": "validated",
+    "resources": [
+      "library/art/palette-design/references/project-check.md"
+    ]
+  },
+  "visual-hierarchy": {
+    "status": "validated",
+    "resources": [
+      "library/art/visual-hierarchy/references/project-check.md"
+    ]
+  },
+  "low-poly-style": {
+    "status": "validated",
+    "resources": [
+      "library/art/low-poly-style/references/project-check.md"
+    ]
+  },
+  "claymation-style": {
+    "status": "validated",
+    "resources": [
+      "library/art/claymation-style/references/project-check.md"
+    ]
+  },
+  "paper-cut-style": {
+    "status": "validated",
+    "resources": [
+      "library/art/paper-cut-style/references/project-check.md"
+    ]
+  },
+  "cross-dissolve": {
+    "status": "validated",
+    "resources": [
+      "library/transitions/cross-dissolve/references/project-check.md"
+    ]
+  },
+  "wipe-transition": {
+    "status": "validated",
+    "resources": [
+      "library/transitions/wipe-transition/references/project-check.md"
+    ]
   }
 }

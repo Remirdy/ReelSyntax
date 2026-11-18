@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "renk paleti,renk uyumu"
+  aliases: "renk paleti,renk uyumu,palette design,Farbpaletten-Design,Farbschema entwerfen"
   requires: ""
 ---
 

@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "erişilebilir grafik,renk körlüğü"
+  aliases: "erişilebilir grafik,renk körlüğü,accessible data design,barrierefreies Datendesign,zugängliche Diagramme"
   requires: ""
 ---
 

@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "çizgi grafik,line chart"
+  aliases: "çizgi grafik,line chart,line chart animation,Liniendiagramm-Animation,Kurvendiagramm-Animation"
   requires: ""
 ---
 

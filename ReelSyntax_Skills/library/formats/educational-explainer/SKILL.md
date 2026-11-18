@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "eğitici video,konu anlatımı"
+  aliases: "eğitici video,konu anlatımı,educational explainer,Lehrvideo-Erklärfilm,Wissen-Erklärvideo"
   requires: ""
 ---
 
