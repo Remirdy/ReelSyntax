@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add audio pipeline (`reelsyntax.audio`: measured per-language `tts` + `stt` probes, caption+music fallback, beat-grid and sidechain ducking `music`, transition `sfx`, non-lexical retro `voice_fx` + lip-sync mouth envelope, language-profile `captions`) and `doctor --tts --stt`.
 - Add official `social-hook-reel` format package (`formats/social-hook-reel/`, `<= 2.0s` opening hook enforcement, localized EN/TR/DE kickers, mirrored to `reelsyntax/data/formats/`) and golden-frame visual regression suite (`tests/test_visual_regression.py`).
 - Add official `photo-slideshow` format package (`formats/photo-slideshow/`, automatic starter/user `layer-stack` plate provisioning, localized EN/TR/DE references and examples, mirrored to `reelsyntax/data/formats/`).
 - Add official `kinetic-typography` format package (`formats/kinetic-typography/`, localized EN/TR/DE references and examples, mirrored to `reelsyntax/data/formats/`).

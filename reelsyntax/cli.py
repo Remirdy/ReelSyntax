@@ -183,6 +183,8 @@ def parser():
     doctor = commands.add_parser('doctor', help='Report installed media and first-party MCP dependencies without installing anything')
     doctor.add_argument('--providers', action='store_true', help='Include local and configured LLM provider diagnostics')
     doctor.add_argument('--blender', action='store_true', help='Run headless Blender runtime probe when binary is present')
+    doctor.add_argument('--tts', action='store_true', help='Measure per-language local speech synthesis availability')
+    doctor.add_argument('--stt', action='store_true', help='Measure local speech-to-text runtime availability')
     doctor.add_argument('--report', action='store_true', help='Emit a path-redacted diagnostic report suitable for bug reports')
     doctor.add_argument('--json', action='store_true')
 
@@ -645,6 +647,12 @@ def _execute_with_config(args, load_config):
         if getattr(args, 'providers', False) or getattr(args, 'report', False):
             from .prompt.providers import probe_providers
             report['providers'] = probe_providers()
+        if getattr(args, 'tts', False) or getattr(args, 'report', False):
+            from .audio.tts import probe_tts_status
+            report['tts'] = probe_tts_status()
+        if getattr(args, 'stt', False) or getattr(args, 'report', False):
+            from .audio.tts import probe_stt_status
+            report['stt'] = probe_stt_status()
         if getattr(args, 'report', False):
             report = redact_diagnostic_payload(report)
             report['redacted'] = True
