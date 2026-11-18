@@ -1,0 +1,10 @@
+{
+  "locale": "tr",
+  "max_cps": 14,
+  "kicker_style": "numeric_two_digit",
+  "beat_templates": [
+    {"role": "hook", "heading": "NET ODAK", "subheading": "İlk kareden itibaren sade anlatım."},
+    {"role": "point", "heading": "ÖLÇÜLÜ RİTİM", "subheading": "Her satıra okuma payı bırakın."},
+    {"role": "payoff", "heading": "TEMİZ SONUÇ", "subheading": "Her çalışmada aynı kesin çıktı."}
+  ]
+}

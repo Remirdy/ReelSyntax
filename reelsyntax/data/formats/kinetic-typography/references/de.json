@@ -1,0 +1,10 @@
+{
+  "locale": "de",
+  "max_cps": 13,
+  "kicker_style": "numeric_two_digit",
+  "beat_templates": [
+    {"role": "hook", "heading": "KLARER FOKUS", "subheading": "Präzise Aussage ab Bild eins."},
+    {"role": "point", "heading": "RUHIGER TAKT", "subheading": "Genug Lesezeit für jede Zeile."},
+    {"role": "payoff", "heading": "SAUBERES ZIEL", "subheading": "Verlässliches Ergebnis bei jedem Lauf."}
+  ]
+}

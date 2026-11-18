@@ -33,6 +33,7 @@ def _fits_at_sizes(
     *,
     is_heading: bool,
     is_legacy: bool,
+    use_default_font: bool,
     sizes: list[tuple[int, int]],
 ) -> bool:
     if not text:
@@ -42,7 +43,7 @@ def _fits_at_sizes(
     right_frac = 0.43 if is_legacy else 0.50
     for w, h in sizes:
         unit = min(w / 960.0, h / 540.0)
-        font = resolve_font(round(base_pt * unit), bold=is_heading, prefer_default=is_legacy)
+        font = resolve_font(round(base_pt * unit), bold=is_heading, prefer_default=use_default_font)
         max_w = w * (right_frac - 0.07) * 0.96
         if is_legacy:
             box = canvas.textbbox((w * 0.07, h * (0.39 if is_heading else 0.55)), text, font=font)
@@ -61,24 +62,25 @@ def _trim_to_fit(
     *,
     is_heading: bool,
     is_legacy: bool,
+    use_default_font: bool,
     sizes: list[tuple[int, int]],
 ) -> tuple[str, str]:
     cleaned = " ".join(text.split())
     if not cleaned:
         return "", ""
-    if _fits_at_sizes(canvas, cleaned, is_heading=is_heading, is_legacy=is_legacy, sizes=sizes):
+    if _fits_at_sizes(canvas, cleaned, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes):
         return cleaned, ""
     words = cleaned.split(" ")
     for take in range(len(words) - 1, 0, -1):
         prefix = " ".join(words[:take])
-        if _fits_at_sizes(canvas, prefix, is_heading=is_heading, is_legacy=is_legacy, sizes=sizes):
+        if _fits_at_sizes(canvas, prefix, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes):
             remainder = " ".join(words[take:])
             return prefix, remainder
     first_word = words[0]
     remainder_words = " ".join(words[1:])
     for char_len in range(len(first_word), 0, -1):
         candidate = first_word[:char_len]
-        if _fits_at_sizes(canvas, candidate, is_heading=is_heading, is_legacy=is_legacy, sizes=sizes):
+        if _fits_at_sizes(canvas, candidate, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes):
             leftover = (first_word[char_len:] + (" " + remainder_words if remainder_words else "")).strip()
             return candidate, leftover
     return "", cleaned
@@ -92,12 +94,14 @@ def fit_scene_text_fields(
     width: int,
     height: int,
     spill_heading_to_subheading: bool = True,
+    use_system_font: bool = True,
 ) -> tuple[str, str]:
     from PIL import Image, ImageDraw
 
     probe_img = Image.new("RGB", (64, 64))
     canvas = ImageDraw.Draw(probe_img)
     is_legacy = recipe in LEGACY_DRAWING_RECIPES
+    use_default = is_legacy and not use_system_font
     snap_size = (480, 270) if width >= height else (360, 640)
     draft_size = (max(128, width // 2), max(128, height // 2))
     sizes = [(width, height), draft_size, snap_size, (width * 2, height * 2)]
@@ -107,6 +111,7 @@ def fit_scene_text_fields(
         heading[:120],
         is_heading=True,
         is_legacy=is_legacy,
+        use_default_font=use_default,
         sizes=sizes,
     )
     combined_sub = subheading[:120]
@@ -120,6 +125,7 @@ def fit_scene_text_fields(
         combined_sub,
         is_heading=False,
         is_legacy=is_legacy,
+        use_default_font=use_default,
         sizes=sizes,
     )
     return fitted_h, fitted_sub
@@ -191,17 +197,27 @@ def compile_storyboard_to_project(
     cursor = 0
     note_frequencies = (220, 277, 330, 392, 440, 523)
 
+    is_kinetic_fmt = intent.format_hint == "kinetic-typography"
+    total_beats = len(storyboard.beats)
+
     for idx, beat in enumerate(storyboard.beats):
+        chosen_recipe = beat.recipe
+        if is_kinetic_fmt:
+            chosen_recipe = "signal" if (idx == total_beats - 1 and total_beats >= 3) else "kinetic-type"
         params: dict[str, Any] = {
             "background": bg_hex,
             "foreground": fg_hex,
             "accent": ac_hex,
         }
+        if chosen_recipe in LEGACY_DRAWING_RECIPES:
+            params["font_mode"] = "system"
         if not no_text:
+            if is_kinetic_fmt:
+                params["kicker"] = f"{idx + 1:02d}"
             fitted_h, fitted_sub = fit_scene_text_fields(
                 beat.heading or "",
                 beat.subheading or "",
-                recipe=beat.recipe,
+                recipe=chosen_recipe,
                 width=width,
                 height=height,
             )
@@ -209,22 +225,23 @@ def compile_storyboard_to_project(
                 params["heading"] = fitted_h
             if fitted_sub:
                 params["subheading"] = fitted_sub
-        if beat.recipe == "data-horizon":
+        if chosen_recipe == "data-horizon":
             params["series"] = [24.0, 42.0, 68.0, 91.0]
 
         scene_entry: dict[str, Any] = {
             "id": sanitize_project_id(beat.id),
             "duration_frames": beat.duration_frames,
-            "recipe": beat.recipe,
+            "recipe": chosen_recipe,
             "engine": "pillow",
             "params": params,
         }
         if idx > 0 and beat.duration_frames >= 24:
+            trans_type = "slide_left" if (is_kinetic_fmt and idx < total_beats - 1) else "cross_dissolve"
             scene_entry["transition"] = {
-                "type": "cross_dissolve",
-                "duration_frames": min(8, beat.duration_frames // 4),
+                "type": trans_type,
+                "duration_frames": min(6 if trans_type == "slide_left" else 8, beat.duration_frames // 4),
             }
-        if not camera_locked and beat.recipe == "prism-monolith":
+        if not camera_locked and chosen_recipe == "prism-monolith":
             scene_entry["camera"] = {"preset": "dolly_in", "focal_mm": 50.0}
         scenes.append(scene_entry)
 

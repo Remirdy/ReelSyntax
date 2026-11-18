@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add official `kinetic-typography` format package (`formats/kinetic-typography/`, localized EN/TR/DE references and examples, mirrored to `reelsyntax/data/formats/`).
 - Add starter asset pack (`reelsyntax.data.starter_assets`), SPDX license ledger (`reelsyntax.assets`, `.reelsyntax/asset-licenses.json`, `LICENSES.md` generator), and `reelsyntax assets list|materialize|register|licenses`.
 - Add first-time setup guide (`docs/getting-started.md`) and `reelsyntax doctor` enhancements (`--blender` headless probe, `--report` path/credential redaction, and setup-guide remediation links).
 - Add `reelsyntax make`, `step`, `revise`, format-aware `resume`, `prompt.json` provenance ledger, `--dry-run` render-budget estimator, and `completion <bash|zsh|fish|powershell>` tab-completion generator.

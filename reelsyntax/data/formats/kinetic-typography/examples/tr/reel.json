@@ -1,0 +1,71 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "kinetic-typography-tr",
+  "seed": 42,
+  "output": {"width": 1080, "height": 1920, "fps": "30/1"},
+  "delivery": {"language": "tur"},
+  "constraints": {"offline": true, "no_paid_services": true, "camera_locked": true},
+  "scenes": [
+    {
+      "id": "kanca",
+      "duration_frames": 60,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "params": {
+        "kicker": "01",
+        "heading": "NET ODAK",
+        "subheading": "İlk kareden sade ve güçlü anlatım.",
+        "background": "#efeae1",
+        "foreground": "#202421",
+        "accent": "#b85236"
+      }
+    },
+    {
+      "id": "ritim",
+      "duration_frames": 60,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "transition": {"type": "slide_left", "duration_frames": 6},
+      "params": {
+        "kicker": "02",
+        "heading": "ÖLÇÜLÜ HIZ",
+        "subheading": "Her satıra rahat okuma payı.",
+        "background": "#efeae1",
+        "foreground": "#202421",
+        "accent": "#b85236"
+      }
+    },
+    {
+      "id": "sonuc",
+      "duration_frames": 60,
+      "recipe": "signal",
+      "engine": "pillow",
+      "transition": {"type": "cross_dissolve", "duration_frames": 8},
+      "params": {
+        "font_mode": "system",
+        "kicker": "03",
+        "heading": "TEMİZ ÇIKTI",
+        "subheading": "Her çalışmada aynı kesin sonuç.",
+        "background": "#efeae1",
+        "foreground": "#202421",
+        "accent": "#b85236"
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {"frame": 0, "frequency": 294, "duration_frames": 16, "instrument": "harmonic_pluck"},
+      {"frame": 60, "frequency": 349, "duration_frames": 16, "instrument": "harmonic_pluck"},
+      {"frame": 120, "frequency": 440, "duration_frames": 18, "instrument": "warm_pad"}
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [[0, 180]],
+      "silence": [[16, 60], [76, 120], [138, 180]]
+    }
+  }
+}
