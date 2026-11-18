@@ -32,7 +32,7 @@ jobs:
       - run: python tools/release_prepare.py stamp-mcpb --mcpb dist/reelsyntax.mcpb --server-json server.json --output dist/server.json
       - run: python tools/release_prepare.py notes --version "$GITHUB_REF_NAME" --output dist/RELEASE_NOTES.md
       - run: cd dist && sha256sum *.whl *.tar.gz reelsyntax.mcpb server.json > SHA256SUMS.txt
-      - uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517eb71b
+      - uses: actions/attest-build-provenance@e8998f949152b193b063cb0ec769d69d929409be
         with:
           subject-path: 'dist/*'
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -65,4 +65,4 @@ jobs:
         with:
           name: pypi-distributions
           path: dist
-      - uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc
+      - uses: pypa/gh-action-pypi-publish@7245906fb61fa33a13554f9d5fb856fe61758086
