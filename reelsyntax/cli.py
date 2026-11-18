@@ -211,6 +211,13 @@ def parser():
     update_cmd.add_argument('--rollback', action='store_true', help='Roll submodule back to last known working commit')
     update_cmd.add_argument('--json', action='store_true')
 
+    ui_cmd = commands.add_parser('ui', help='Start the offline localhost web studio for formats, projects, approvals, and revisions')
+    ui_cmd.add_argument('--host', default='127.0.0.1', help='Bind address; loopback only unless --allow-non-loopback is given')
+    ui_cmd.add_argument('--port', type=int, default=8765, help='TCP port (0 picks a free ephemeral port)')
+    ui_cmd.add_argument('--project', type=Path, help='Project or workspace directory to browse; defaults to the current directory')
+    ui_cmd.add_argument('--no-open', action='store_true', help='Do not open a browser window')
+    ui_cmd.add_argument('--allow-non-loopback', action='store_true', help='Explicitly allow binding a non-loopback address')
+
     mcp = commands.add_parser('mcp', help='Start the Unified MCP Gateway stdio server')
     mcp.add_argument('--workspace', type=Path, default=Path.cwd(), help='Authorized project root; defaults to the current directory')
 
@@ -801,6 +808,19 @@ def main(argv=None):
             else:
                 sys.stdout.write(script)
             return 0
+        if args.command == 'ui':
+            from .config import config_context
+            from .ui import serve
+            with config_context(args.config, args.project):
+                return serve(
+                    args.project,
+                    host=args.host,
+                    port=args.port,
+                    open_browser=not args.no_open,
+                    allow_non_loopback=args.allow_non_loopback,
+                    locale=args.ui_lang,
+                    config_file=args.config,
+                )
         if args.command == 'mcp':
             from .config import config_context
             from .mcp_server import serve_stdio
