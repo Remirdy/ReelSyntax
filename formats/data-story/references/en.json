@@ -1,0 +1,7 @@
+{
+  "locale": "en",
+  "kicker": "DATA",
+  "decimal": ".",
+  "thousands": ",",
+  "qualitative_default": "Baseline vs cached run"
+}

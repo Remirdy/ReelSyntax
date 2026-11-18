@@ -366,7 +366,7 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                             if eng == 'browser':
                                 bounds = browser.draw(browser_scene, frame, output, plan['seed'], destination)
                             else:
-                                image, bounds = drawing.draw(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height'])), plan['seed'], supersampling=supersample)
+                                image, bounds = drawing.draw(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height']), reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=supersample)
                                 image.save(destination)
                             if frame in {0, scene['duration_frames'] // 2, scene['duration_frames'] - 1}:
                                 layout.append({'frame': frame, 'text': bounds})
@@ -466,8 +466,8 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                 hero_scene = next((s for s in plan['scenes'] if resolved_engines[s['id']] == 'pillow' and s['recipe'] != 'layer-stack'), plan['scenes'][0])
                 mid_f = hero_scene['duration_frames'] // 2
                 if resolved_engines[hero_scene['id']] == 'pillow' and hero_scene['recipe'] != 'layer-stack':
-                    neutral_img, _ = drawing.draw(hero_scene, mid_f, output, plan['seed'], supersampling=2, look_mode='neutral')
-                    graded_img, _ = drawing.draw(hero_scene, mid_f, output, plan['seed'], supersampling=3, look_mode='agx')
+                    neutral_img, _ = drawing.draw(hero_scene, mid_f, dict(output, reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=2, look_mode='neutral')
+                    graded_img, _ = drawing.draw(hero_scene, mid_f, dict(output, reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=3, look_mode='agx')
                     ab_sheet = Image.new('RGB', (960, 270), '#14171c')
                     ab_sheet.paste(ImageOps.contain(neutral_img.convert('RGB'), (480, 270)), (0, 0))
                     ab_sheet.paste(ImageOps.contain(graded_img.convert('RGB'), (480, 270)), (480, 0))

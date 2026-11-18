@@ -43,7 +43,7 @@ class TransitionConfig(TypedDict, total=False):
 class Scene(TypedDict):
     id: str
     duration_frames: int
-    recipe: Literal['assembly', 'rings', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field']
+    recipe: Literal['assembly', 'rings', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art']
     engine: Literal['pillow', 'browser', 'blender', 'ffmpeg']
     params: SceneParams
     camera: NotRequired[CameraConfig]

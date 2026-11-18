@@ -97,19 +97,25 @@ def _fits_at_sizes(
     is_legacy: bool,
     use_default_font: bool,
     sizes: list[tuple[int, int]],
+    wide_banner: bool = False,
 ) -> bool:
     if not text:
         return True
-    base_pt = (56 if is_legacy else 48) if is_heading else 19
-    track = 0.8 if is_heading else 0.2
-    right_frac = 0.43 if is_legacy else 0.50
+    if wide_banner:
+        base_pt = 32 if is_heading else 16
+        track = 0.5 if is_heading else 0.2
+        max_frac = 0.80
+    else:
+        base_pt = (56 if is_legacy else 48) if is_heading else 19
+        track = 0.8 if is_heading else 0.2
+        max_frac = (0.43 if is_legacy else 0.50) - 0.07
     for w, h in sizes:
         unit = min(w / 960.0, h / 540.0)
         font = resolve_font(round(base_pt * unit), bold=is_heading, prefer_default=use_default_font)
-        max_w = w * (right_frac - 0.07) * 0.90
+        max_w = w * max_frac * 0.90
         if is_legacy:
             box = canvas.textbbox((w * 0.07, h * (0.39 if is_heading else 0.55)), text, font=font)
-            if box[2] > w * right_frac * 0.98:
+            if box[2] > w * (max_frac + 0.07) * 0.98:
                 return False
         else:
             tw, _ = measure_tracked_text(canvas, text, font, tracking_px=track * unit)
@@ -126,23 +132,24 @@ def _trim_to_fit(
     is_legacy: bool,
     use_default_font: bool,
     sizes: list[tuple[int, int]],
+    wide_banner: bool = False,
 ) -> tuple[str, str]:
     cleaned = " ".join(text.split())
     if not cleaned:
         return "", ""
-    if _fits_at_sizes(canvas, cleaned, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes):
+    if _fits_at_sizes(canvas, cleaned, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes, wide_banner=wide_banner):
         return cleaned, ""
     words = cleaned.split(" ")
     for take in range(len(words) - 1, 0, -1):
         prefix = " ".join(words[:take])
-        if _fits_at_sizes(canvas, prefix, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes):
+        if _fits_at_sizes(canvas, prefix, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes, wide_banner=wide_banner):
             remainder = " ".join(words[take:])
             return prefix, remainder
     first_word = words[0]
     remainder_words = " ".join(words[1:])
     for char_len in range(len(first_word), 0, -1):
         candidate = first_word[:char_len]
-        if _fits_at_sizes(canvas, candidate, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes):
+        if _fits_at_sizes(canvas, candidate, is_heading=is_heading, is_legacy=is_legacy, use_default_font=use_default_font, sizes=sizes, wide_banner=wide_banner):
             leftover = (first_word[char_len:] + (" " + remainder_words if remainder_words else "")).strip()
             return candidate, leftover
     return "", cleaned
@@ -170,10 +177,11 @@ def fit_scene_text_fields(
     spill_heading_to_subheading: bool = True,
     use_system_font: bool = True,
 ) -> tuple[str, str]:
+    wide_banner = recipe in {"news-ticker", "loop-art"}
     if importlib.util.find_spec("PIL") is None:
         scale_ratio = max(0.6, width / 1080.0)
-        h_budget = max(8, int(round(12 * scale_ratio)))
-        sub_budget = max(16, int(round(32 * scale_ratio)))
+        h_budget = max(14, int(round(26 * scale_ratio))) if wide_banner else max(8, int(round(12 * scale_ratio)))
+        sub_budget = 44 if wide_banner else max(16, int(round(32 * scale_ratio)))
         fh, over = _trim_by_char_budget(heading[:120], h_budget)
         c_sub = subheading[:120]
         if spill_heading_to_subheading and over and not c_sub:
@@ -200,6 +208,7 @@ def fit_scene_text_fields(
         is_legacy=is_legacy,
         use_default_font=use_default,
         sizes=sizes,
+        wide_banner=wide_banner,
     )
     combined_sub = subheading[:120]
     if spill_heading_to_subheading and overflow_h and not combined_sub:
@@ -214,7 +223,10 @@ def fit_scene_text_fields(
         is_legacy=is_legacy,
         use_default_font=use_default,
         sizes=sizes,
+        wide_banner=wide_banner,
     )
+    if wide_banner and len(fitted_sub) > 46:
+        fitted_sub, _ = _trim_by_char_budget(fitted_sub, 46)
     return fitted_h, fitted_sub
 
 
@@ -290,6 +302,10 @@ def compile_storyboard_to_project(
     is_lyric_fmt = intent.format_hint == "lyric-video"
     is_visualizer_fmt = intent.format_hint == "music-visualizer"
     is_intro_fmt = intent.format_hint == "channel-intro"
+    is_data_story_fmt = intent.format_hint == "data-story"
+    is_news_fmt = intent.format_hint == "news-ticker"
+    is_promo_fmt = intent.format_hint == "product-promo"
+    is_loop_fmt = intent.format_hint == "loop-art"
     lang_primary = intent.video_lang.split("-", 1)[0].lower()
     total_beats = len(storyboard.beats)
     fps_float = float(Fraction(storyboard.fps))
@@ -297,7 +313,7 @@ def compile_storyboard_to_project(
     grid_beat, grid_bar = music_grid_frames(storyboard.fps)
 
     beat_durations = [int(b.duration_frames) for b in storyboard.beats]
-    if is_hook_fmt and total_beats >= 2 and beat_durations[0] > max_hook_frames:
+    if (is_hook_fmt or is_promo_fmt) and total_beats >= 2 and beat_durations[0] > max_hook_frames:
         excess = beat_durations[0] - max_hook_frames
         beat_durations[0] = max_hook_frames
         beat_durations[-1] += excess
@@ -316,138 +332,209 @@ def compile_storyboard_to_project(
 
     hook_kickers = {"tr": "DİKKAT", "de": "STOPP", "en": "HOOK"}
     payoff_kickers = {"tr": "SONUÇ", "de": "FAZIT", "en": "PAYOFF"}
+    data_kickers = {"tr": "VERİ", "de": "DATEN", "en": "DATA"}
+    news_kickers = {"tr": "HABER", "de": "MELDUNG", "en": "BRIEFING"}
+    news_sub_kickers = {"tr": "GÜNCEL", "de": "AKTUELL", "en": "UPDATE"}
+    promo_problem_kickers = {"tr": "SORUN", "de": "PROBLEM", "en": "PROBLEM"}
+    promo_proof_kickers = {"tr": "KANIT", "de": "BELEG", "en": "PROOF"}
+    promo_cta_kickers = {"tr": "HEMEN", "de": "JETZT", "en": "START NOW"}
+    loop_kickers = {"tr": "DÖNGÜ", "de": "LOOP", "en": "LOOP"}
+    data_series_presets = (
+        [28.0, 44.0, 62.0, 80.0],
+        [34.0, 62.0, 48.0, 91.0],
+        [42.0, 58.0, 74.0, 94.0],
+    )
 
-    for idx, beat in enumerate(storyboard.beats):
-        dur_frames = beat_durations[idx]
-        chosen_recipe = beat.recipe
-        is_last = idx == total_beats - 1
-        if is_kinetic_fmt:
-            chosen_recipe = "signal" if (is_last and total_beats >= 3) else "kinetic-type"
-        elif is_hook_fmt:
-            if idx == 0:
-                chosen_recipe = "prism-monolith"
-            elif is_last:
-                chosen_recipe = "kinetic-type"
-        elif is_explainer_fmt:
-            chosen_recipe = "kinetic-type" if (idx == 0 or is_last) else "assembly"
-        elif is_lyric_fmt:
-            chosen_recipe = "kinetic-type"
-        elif is_visualizer_fmt:
-            chosen_recipe = "signal" if idx % 2 == 0 else "rings"
-        elif is_intro_fmt:
-            chosen_recipe = "prism-monolith" if idx == 0 else "kinetic-type"
-        params: dict[str, Any] = {
+    if is_loop_fmt:
+        total_loop_frames = sum(beat_durations)
+        lead_beat = storyboard.beats[0]
+        loop_params: dict[str, Any] = {
             "background": bg_hex,
             "foreground": fg_hex,
             "accent": ac_hex,
         }
-        if chosen_recipe in LEGACY_DRAWING_RECIPES:
-            params["font_mode"] = "system"
         if not no_text:
-            if is_kinetic_fmt:
-                params["kicker"] = f"{idx + 1:02d}"
-            elif is_hook_fmt:
-                if idx == 0:
-                    params["kicker"] = hook_kickers.get(lang_primary, "HOOK")
-                elif is_last:
-                    params["kicker"] = payoff_kickers.get(lang_primary, "PAYOFF")
-                else:
-                    params["kicker"] = f"{idx + 1:02d}"
-            elif is_explainer_fmt:
-                if is_last and total_beats >= 3:
-                    params["kicker"] = _wave_kicker("explainer-slides", "recap", lang_primary)
-                else:
-                    params["kicker"] = f"{_wave_kicker('explainer-slides', 'chapter', lang_primary)} {idx + 1:02d}/{total_beats:02d}"
-            elif is_lyric_fmt:
-                params["kicker"] = f"{_wave_kicker('lyric-video', 'line', lang_primary)} {idx + 1:02d}"
-            elif is_visualizer_fmt:
-                bar_aligned = sum(beat_durations[:idx]) % grid_bar == 0 and dur_frames >= grid_bar
-                start_bar = sum(beat_durations[:idx]) // grid_bar + 1 if bar_aligned else idx + 1
-                params["kicker"] = f"{_wave_kicker('music-visualizer', 'bar', lang_primary)} {start_bar:02d}"
-            elif is_intro_fmt:
-                role = "open" if idx == 0 else ("close" if is_last and total_beats >= 3 else "body")
-                params["kicker"] = _wave_kicker("channel-intro", role, lang_primary)
-            intro_card_only = is_intro_fmt and (idx == 0 or (is_last and total_beats >= 3))
+            loop_params["kicker"] = loop_kickers.get(lang_primary, "LOOP")
             fitted_h, fitted_sub = fit_scene_text_fields(
-                beat.heading or "",
-                "" if intro_card_only else (beat.subheading or ""),
-                recipe=chosen_recipe,
+                lead_beat.heading or "",
+                lead_beat.subheading or "",
+                recipe="loop-art",
                 width=width,
                 height=height,
-                spill_heading_to_subheading=not intro_card_only,
             )
             if fitted_h:
-                params["heading"] = fitted_h
+                loop_params["heading"] = fitted_h
             if fitted_sub:
-                params["subheading"] = fitted_sub
-        if chosen_recipe == "data-horizon":
-            params["series"] = [24.0, 42.0, 68.0, 91.0]
-
-        scene_entry: dict[str, Any] = {
-            "id": sanitize_project_id(beat.id),
-            "duration_frames": dur_frames,
-            "recipe": chosen_recipe,
+                loop_params["subheading"] = fitted_sub
+        scenes.append({
+            "id": "loop-cycle",
+            "duration_frames": total_loop_frames,
+            "recipe": "loop-art",
             "engine": "pillow",
-            "params": params,
-        }
-        if idx > 0 and dur_frames >= 24:
-            if is_hook_fmt and idx == 1:
-                trans_type = "wipe_left"
-            elif (is_kinetic_fmt or is_hook_fmt or is_explainer_fmt) and idx < total_beats - 1:
-                trans_type = "slide_left"
-            else:
-                trans_type = "cross_dissolve"
-            scene_entry["transition"] = {
-                "type": trans_type,
-                "duration_frames": min(6 if trans_type in {"slide_left", "wipe_left"} else 8, dur_frames // 4),
-            }
-        if not camera_locked and chosen_recipe == "prism-monolith":
-            scene_entry["camera"] = {"preset": "dolly_in", "focal_mm": 50.0}
-        scenes.append(scene_entry)
-
+            "params": loop_params,
+        })
         if not no_audio:
-            cue_dur = min(18, dur_frames)
-            if is_hook_fmt and idx == 0:
-                cues.append({
-                    "frame": cursor,
-                    "frequency": 68,
-                    "duration_frames": cue_dur,
-                    "instrument": "sub_impact",
-                })
+            cues.append({
+                "frame": 0,
+                "frequency": 220,
+                "duration_frames": total_loop_frames,
+                "instrument": "warm_pad",
+            })
+        cursor = total_loop_frames
+    else:
+        for idx, beat in enumerate(storyboard.beats):
+            dur_frames = beat_durations[idx]
+            chosen_recipe = beat.recipe
+            is_last = idx == total_beats - 1
+            if is_kinetic_fmt:
+                chosen_recipe = "signal" if (is_last and total_beats >= 3) else "kinetic-type"
+            elif is_hook_fmt:
+                if idx == 0:
+                    chosen_recipe = "prism-monolith"
+                elif is_last:
+                    chosen_recipe = "kinetic-type"
+            elif is_explainer_fmt:
+                chosen_recipe = "kinetic-type" if (idx == 0 or is_last) else "assembly"
+            elif is_lyric_fmt:
+                chosen_recipe = "kinetic-type"
             elif is_visualizer_fmt:
-                for bar_offset in range(0, dur_frames, grid_bar):
-                    remaining = dur_frames - bar_offset
-                    if remaining < 6 and bar_offset > 0:
-                        continue
-                    bar_index = (cursor + bar_offset) // grid_bar
+                chosen_recipe = "signal" if idx % 2 == 0 else "rings"
+            elif is_intro_fmt:
+                chosen_recipe = "prism-monolith" if idx == 0 else "kinetic-type"
+            elif is_data_story_fmt:
+                chosen_recipe = "kinetic-type" if (is_last and total_beats >= 3) else "data-horizon"
+            elif is_news_fmt:
+                chosen_recipe = "news-ticker"
+            elif is_promo_fmt:
+                if idx == 0:
+                    chosen_recipe = "prism-monolith"
+                elif is_last:
+                    chosen_recipe = "kinetic-type"
+                else:
+                    chosen_recipe = "data-horizon"
+            params: dict[str, Any] = {
+                "background": bg_hex,
+                "foreground": fg_hex,
+                "accent": ac_hex,
+            }
+            if chosen_recipe in LEGACY_DRAWING_RECIPES:
+                params["font_mode"] = "system"
+            if not no_text:
+                if is_kinetic_fmt:
+                    params["kicker"] = f"{idx + 1:02d}"
+                elif is_hook_fmt:
+                    if idx == 0:
+                        params["kicker"] = hook_kickers.get(lang_primary, "HOOK")
+                    elif is_last:
+                        params["kicker"] = payoff_kickers.get(lang_primary, "PAYOFF")
+                    else:
+                        params["kicker"] = f"{idx + 1:02d}"
+                elif is_explainer_fmt:
+                    if is_last and total_beats >= 3:
+                        params["kicker"] = _wave_kicker("explainer-slides", "recap", lang_primary)
+                    else:
+                        params["kicker"] = f"{_wave_kicker('explainer-slides', 'chapter', lang_primary)} {idx + 1:02d}/{total_beats:02d}"
+                elif is_lyric_fmt:
+                    params["kicker"] = f"{_wave_kicker('lyric-video', 'line', lang_primary)} {idx + 1:02d}"
+                elif is_visualizer_fmt:
+                    bar_aligned = sum(beat_durations[:idx]) % grid_bar == 0 and dur_frames >= grid_bar
+                    start_bar = sum(beat_durations[:idx]) // grid_bar + 1 if bar_aligned else idx + 1
+                    params["kicker"] = f"{_wave_kicker('music-visualizer', 'bar', lang_primary)} {start_bar:02d}"
+                elif is_intro_fmt:
+                    role = "open" if idx == 0 else ("close" if is_last and total_beats >= 3 else "body")
+                    params["kicker"] = _wave_kicker("channel-intro", role, lang_primary)
+                elif is_data_story_fmt:
+                    params["kicker"] = data_kickers.get(lang_primary, "DATA") if idx == 0 else f"{idx + 1:02d}"
+                elif is_news_fmt:
+                    params["kicker"] = news_kickers.get(lang_primary, "BRIEFING") if idx == 0 else news_sub_kickers.get(lang_primary, "UPDATE")
+                elif is_promo_fmt:
+                    if idx == 0:
+                        params["kicker"] = promo_problem_kickers.get(lang_primary, "PROBLEM")
+                    elif is_last:
+                        params["kicker"] = promo_cta_kickers.get(lang_primary, "START NOW")
+                    else:
+                        params["kicker"] = promo_proof_kickers.get(lang_primary, "PROOF")
+                intro_card_only = is_intro_fmt and (idx == 0 or (is_last and total_beats >= 3))
+                fitted_h, fitted_sub = fit_scene_text_fields(
+                    beat.heading or "",
+                    "" if intro_card_only else (beat.subheading or ""),
+                    recipe=chosen_recipe,
+                    width=width,
+                    height=height,
+                    spill_heading_to_subheading=not intro_card_only,
+                )
+                if fitted_h:
+                    params["heading"] = fitted_h
+                if fitted_sub:
+                    params["subheading"] = fitted_sub
+            if chosen_recipe == "data-horizon":
+                params["series"] = list(data_series_presets[idx % len(data_series_presets)])
+
+            scene_entry: dict[str, Any] = {
+                "id": sanitize_project_id(beat.id),
+                "duration_frames": dur_frames,
+                "recipe": chosen_recipe,
+                "engine": "pillow",
+                "params": params,
+            }
+            if idx > 0 and dur_frames >= 24 and not is_news_fmt:
+                if (is_hook_fmt or is_promo_fmt) and idx == 1:
+                    trans_type = "wipe_left"
+                elif (is_kinetic_fmt or is_hook_fmt or is_explainer_fmt or is_data_story_fmt or is_promo_fmt) and idx < total_beats - 1:
+                    trans_type = "slide_left"
+                else:
+                    trans_type = "cross_dissolve"
+                scene_entry["transition"] = {
+                    "type": trans_type,
+                    "duration_frames": min(6 if trans_type in {"slide_left", "wipe_left"} else 8, dur_frames // 4),
+                }
+            if not camera_locked and chosen_recipe == "prism-monolith":
+                scene_entry["camera"] = {"preset": "dolly_in", "focal_mm": 50.0}
+            scenes.append(scene_entry)
+
+            if not no_audio:
+                cue_dur = min(18, dur_frames)
+                if (is_hook_fmt or is_promo_fmt) and idx == 0:
                     cues.append({
-                        "frame": cursor + bar_offset,
-                        "frequency": PENTATONIC_HZ[bar_index % len(PENTATONIC_HZ)],
-                        "duration_frames": min(18, remaining),
+                        "frame": cursor,
+                        "frequency": 68,
+                        "duration_frames": cue_dur,
+                        "instrument": "sub_impact",
+                    })
+                elif is_visualizer_fmt:
+                    for bar_offset in range(0, dur_frames, grid_bar):
+                        remaining = dur_frames - bar_offset
+                        if remaining < 6 and bar_offset > 0:
+                            continue
+                        bar_index = (cursor + bar_offset) // grid_bar
+                        cues.append({
+                            "frame": cursor + bar_offset,
+                            "frequency": PENTATONIC_HZ[bar_index % len(PENTATONIC_HZ)],
+                            "duration_frames": min(18, remaining),
+                            "instrument": "harmonic_pluck",
+                        })
+                elif is_lyric_fmt:
+                    cues.append({
+                        "frame": cursor,
+                        "frequency": PENTATONIC_HZ[idx % len(PENTATONIC_HZ)],
+                        "duration_frames": cue_dur,
                         "instrument": "harmonic_pluck",
                     })
-            elif is_lyric_fmt:
-                cues.append({
-                    "frame": cursor,
-                    "frequency": PENTATONIC_HZ[idx % len(PENTATONIC_HZ)],
-                    "duration_frames": cue_dur,
-                    "instrument": "harmonic_pluck",
-                })
-            elif is_intro_fmt:
-                cues.append({
-                    "frame": cursor,
-                    "frequency": 262 if (is_last and total_beats >= 3) else (392 if idx == 0 else 523),
-                    "duration_frames": cue_dur,
-                    "instrument": "warm_pad" if (is_last and total_beats >= 3) else "harmonic_pluck",
-                })
-            else:
-                cues.append({
-                    "frame": cursor,
-                    "frequency": note_frequencies[idx % len(note_frequencies)],
-                    "duration_frames": cue_dur,
-                    "instrument": "harmonic_pluck" if idx % 2 == 0 else "warm_pad",
-                })
-        cursor += dur_frames
+                elif is_intro_fmt:
+                    cues.append({
+                        "frame": cursor,
+                        "frequency": 262 if (is_last and total_beats >= 3) else (392 if idx == 0 else 523),
+                        "duration_frames": cue_dur,
+                        "instrument": "warm_pad" if (is_last and total_beats >= 3) else "harmonic_pluck",
+                    })
+                else:
+                    cues.append({
+                        "frame": cursor,
+                        "frequency": note_frequencies[idx % len(note_frequencies)],
+                        "duration_frames": cue_dur,
+                        "instrument": "harmonic_pluck" if idx % 2 == 0 else "warm_pad",
+                    })
+            cursor += dur_frames
 
     if not no_audio:
         ordered_cues = sorted(cues, key=lambda c: int(c["frame"]))

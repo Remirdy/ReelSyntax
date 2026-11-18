@@ -21,7 +21,7 @@ FORMAT_KEYWORD_HINTS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("product-promo", ("product", "promo", "launch", "ürün tanıtımı", "produkt")),
     ("explainer-slides", ("explainer", "lesson", "konu anlatımı", "eğitici", "erklärvideo")),
     ("channel-intro", ("channel intro", "kanal girişi", "kanal intro", "kanal-intro", "kanalintro", "vorspann")),
-    ("loop-art", ("shader", "abstract loop", "soyut döngü", "endlosschleife")),
+    ("loop-art", ("shader", "abstract loop", "loop art", "seamless loop", "soyut döngü", "endlosschleife")),
     ("kinetic-typography", ("kinetic", "quote", "tips", "ipucu", "alıntı", "typografie", "zitat")),
 )
 

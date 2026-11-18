@@ -1,0 +1,57 @@
+{
+  "$schema": "../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "loop-art-template",
+  "seed": 42,
+  "output": {
+    "width": 1080,
+    "height": 1080,
+    "fps": "30/1"
+  },
+  "delivery": {
+    "language": "eng"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true,
+    "camera_locked": true
+  },
+  "scenes": [
+    {
+      "id": "loop-cycle",
+      "duration_frames": 180,
+      "recipe": "loop-art",
+      "engine": "pillow",
+      "params": {
+        "kicker": "LOOP",
+        "heading": "HARMONIC ORBIT",
+        "subheading": "Seamless periodic cycle.",
+        "background": "#1e2430",
+        "foreground": "#f4f6f9",
+        "accent": "#5aa6b0"
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 220,
+        "duration_frames": 180,
+        "instrument": "warm_pad"
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [
+        [
+          0,
+          180
+        ]
+      ]
+    }
+  }
+}

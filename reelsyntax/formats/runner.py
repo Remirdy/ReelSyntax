@@ -268,6 +268,90 @@ def _attach_slideshow_plates(root: Path, plan: dict[str, Any], seed: int) -> dic
     return updated
 
 
+def _attach_product_promo_assets(root: Path, plan: dict[str, Any]) -> dict[str, Any]:
+    from ..assets import load_license_ledger, record_asset_license, write_licenses_markdown
+    from ..assets.license import ledger_path
+
+    assets_dir = root / "assets"
+    user_photos: list[str] = []
+    ledger = load_license_ledger(root)
+    recorded = ledger.get("assets", {})
+    if assets_dir.is_dir():
+        for img_path in sorted(assets_dir.rglob("*")):
+            if img_path.is_file() and img_path.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}:
+                rel = img_path.relative_to(root).as_posix()
+                if not rel.startswith("assets/starter/"):
+                    user_photos.append(rel)
+                    if rel not in recorded:
+                        record_asset_license(root, rel, spdx="User-Provided", author="Project Owner")
+
+    if not ledger_path(root).is_file():
+        atomic_json(ledger_path(root), load_license_ledger(root))
+    write_licenses_markdown(root)
+
+    if not user_photos or len(plan["scenes"]) < 2:
+        return plan
+
+    out_w = int(plan["output"]["width"])
+    out_h = int(plan["output"]["height"])
+    box_side = int(round(min(out_w, out_h) * 0.82))
+    box_x = (out_w - box_side) // 2
+    box_y = (out_h - box_side) // 2
+
+    updated = copy.deepcopy(plan)
+    proof_scene = updated["scenes"][1]
+    bg_col = proof_scene.get("params", {}).get("background", "#2b303a")
+    proof_scene.pop("camera", None)
+    proof_scene["recipe"] = "layer-stack"
+    proof_scene["engine"] = "pillow"
+    proof_scene["params"] = {
+        "background": bg_col,
+        "layers": [
+            {
+                "source": user_photos[0],
+                "name": "product-proof",
+                "x": box_x,
+                "y": box_y,
+                "width": box_side,
+                "height": box_side,
+                "opacity": 1.0,
+                "blend": "normal",
+            }
+        ],
+    }
+    validate(updated)
+    return updated
+
+
+def _record_brief_derived_sources(root: Path, plan: dict[str, Any], format_id: str, qc_rules: list[str]) -> None:
+    if "claims-must-be-sourced" not in qc_rules:
+        return
+    if contained_path(root, "sources.json", must_exist=False).is_file():
+        return
+    from ..quality import QUANTITATIVE_CLAIM_RE
+
+    claims: list[dict[str, Any]] = []
+    for scene in plan.get("scenes", []):
+        params = scene.get("params", {})
+        for field in ("heading", "subheading", "kicker"):
+            val = str(params.get(field, ""))
+            for m in QUANTITATIVE_CLAIM_RE.finditer(val):
+                claims.append({
+                    "claim": m.group(0),
+                    "source": f"Brief input ({format_id})",
+                    "derived_from_brief": True,
+                })
+    if not claims:
+        return
+    prov_path = contained_path(root, "prompt.json", must_exist=False)
+    doc: dict[str, Any] = read_json(prov_path) if prov_path.is_file() else {"schema_version": 1}
+    if not isinstance(doc, dict):
+        doc = {"schema_version": 1}
+    if not doc.get("sources"):
+        doc["sources"] = claims
+        atomic_json(prov_path, doc)
+
+
 def invalidate_from_step(state: dict[str, Any], manifest: dict[str, Any], step_id: str) -> int:
     step_ids = [s["id"] for s in manifest["steps"]]
     if step_id not in step_ids:
@@ -581,6 +665,9 @@ class FormatRunner:
             )
             if self.manifest["id"] == "photo-slideshow":
                 compiled = _attach_slideshow_plates(root, compiled, state["seed"])
+            elif self.manifest["id"] == "product-promo":
+                compiled = _attach_product_promo_assets(root, compiled)
+            _record_brief_derived_sources(root, compiled, self.manifest["id"], list(self.manifest.get("qc_rules", [])))
             atomic_json(root / "reel.json", compiled)
             return {
                 "scene_count": len(compiled["scenes"]),
@@ -592,6 +679,11 @@ class FormatRunner:
             if not (root / "reel.json").is_file():
                 storyboard = build_storyboard(step_intent, self.provider, seed=step_seed, max_attempts=self.max_attempts)
                 compiled = compile_storyboard_to_project(storyboard, step_intent, project_id=root.name, seed=state["seed"])
+                if self.manifest["id"] == "photo-slideshow":
+                    compiled = _attach_slideshow_plates(root, compiled, state["seed"])
+                elif self.manifest["id"] == "product-promo":
+                    compiled = _attach_product_promo_assets(root, compiled)
+                _record_brief_derived_sources(root, compiled, self.manifest["id"], list(self.manifest.get("qc_rules", [])))
                 atomic_json(root / "reel.json", compiled)
             return _execute_render_step(root, step, dry_run_render=self.dry_run_render)
 
@@ -603,7 +695,8 @@ class FormatRunner:
             from ..quality import check
 
             target_prof = "hero" if (root / "output/hero-manifest.json").is_file() else "draft"
-            qc_res = check(root, profile=target_prof)
+            is_loop = self.manifest["id"] == "loop-art" or "loop-seam" in self.manifest.get("qc_rules", [])
+            qc_res = check(root, profile=target_prof, loop=is_loop)
             return {
                 "profile": target_prof,
                 "technical_status": qc_res["technical_status"],

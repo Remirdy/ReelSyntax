@@ -7,7 +7,7 @@ from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_p
 
 from .contracts import Project, ProjectMetadata
 
-RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field'}
+RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art'}
 RECIPES_3D = {'prism-monolith', 'aperture', 'cassette'}
 ENGINES = {'pillow', 'browser', 'blender', 'ffmpeg'}
 CAMERA_PRESETS = {'locked', 'dolly_in', 'orbit', 'crane_rise', 'dolly_zoom'}

@@ -1,0 +1,109 @@
+{
+  "$schema": "https://remirdy.github.io/ReelSyntax/schemas/format.v1.schema.json",
+  "id": "news-ticker",
+  "version": "1.0.0",
+  "title": {
+    "en": "News Ticker Briefing",
+    "tr": "Haber Bandı Özeti",
+    "de": "Nachrichten-Ticker"
+  },
+  "category": "business",
+  "aspect": [
+    "9:16",
+    "16:9",
+    "1:1",
+    "4:5"
+  ],
+  "duration_sec": {
+    "min": 6,
+    "max": 90
+  },
+  "languages": [
+    "en",
+    "tr",
+    "de",
+    "es",
+    "fr",
+    "pt"
+  ],
+  "engines": [
+    "pillow",
+    "ffmpeg"
+  ],
+  "needs": [
+    "headline_and_bullets"
+  ],
+  "optional": [
+    "sources_json",
+    "kicker_label",
+    "palette"
+  ],
+  "skills": [
+    "news-ticker-hierarchy",
+    "lower-thirds",
+    "claims-must-be-sourced",
+    "contrast-audit",
+    "reading-speed-audit",
+    "frame-clock",
+    "vertical-safe-zones",
+    "locale-aware-casing",
+    "format-runner-protocol",
+    "platform-loudness-targets",
+    "chroma-subsampling-text-guard",
+    "prompt-to-storyboard",
+    "font-fallback-chain"
+  ],
+  "steps": [
+    {
+      "id": "idea",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "script",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "look",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "frames",
+      "type": "render",
+      "profile": "snapshot",
+      "gate": "approve"
+    },
+    {
+      "id": "pilot",
+      "type": "render",
+      "scope": "first_5s",
+      "profile": "draft",
+      "gate": "approve"
+    },
+    {
+      "id": "full",
+      "type": "render",
+      "profile": "draft",
+      "gate": "approve"
+    },
+    {
+      "id": "hero",
+      "type": "render",
+      "profile": "hero"
+    },
+    {
+      "id": "qc",
+      "type": "qc"
+    }
+  ],
+  "qc_rules": [
+    "claims-must-be-sourced",
+    "contrast",
+    "safe-area",
+    "required-glyphs",
+    "reading-speed",
+    "loudness"
+  ]
+}
