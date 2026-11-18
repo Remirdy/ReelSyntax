@@ -21,6 +21,9 @@ Treat the values below as adjustable defaults:
 ## Wired skills
 
 - `frame-clock` — Exact slide durations aligned to harmonic beat cues.
+- `locale-aware-casing` — Locale-accurate chapter kickers and titles.
+- `orphan-widow-line-balance` — Optically balanced two-line photo captions.
+- `cultural-adaptation-audit` — Unambiguous localized dates and regional conventions.
 - `ken-burns-photo-choreography` — Sub-pixel logarithmic pan-and-zoom with overscan guards.
 - `eyeline-headroom-grammar` — Subject eyeline and look-room framing across aspect ratios.
 - `optical-vignette-halation` — Subtle linear-light peripheral falloff below caption layers.

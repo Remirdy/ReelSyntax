@@ -27,6 +27,11 @@ Treat the values below as adjustable defaults and tune per audience and language
 ## Wired skills
 
 - `kinetic-typography` — Statement hierarchy, entrance damping, and hold pacing.
+- `locale-aware-casing` — Turkish `İ`/`ı` and German `ß -> SS` display casing before width measurement.
+- `german-compound-linebreak` — Morphological constituent hyphenation for long compound nouns.
+- `orphan-widow-line-balance` — Balanced multi-line wrapping free of single-word trailing orphans.
+- `numeric-unit-typography` — Tabular figures and locale-accurate percentage/unit formatting.
+- `transcreation-tone` — Consistent formality register (`sen`/`siz`, `du`/`Sie`) across localized beats.
 - `kinetic-layout-choreography` — Shared alignment rails and tight multi-element stagger builds.
 - `rhythm-density-map` — Alternating brisk burst cuts with comprehension holds.
 - `scene-duration-floor-ceiling` — Net readability floors accounting for transition overlaps.

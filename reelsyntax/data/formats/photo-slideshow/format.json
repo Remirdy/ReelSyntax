@@ -19,6 +19,9 @@
   "optional": ["captions", "tone", "palette", "music_bed"],
   "skills": [
     "frame-clock",
+    "locale-aware-casing",
+    "orphan-widow-line-balance",
+    "cultural-adaptation-audit",
     "ken-burns-photo-choreography",
     "eyeline-headroom-grammar",
     "optical-vignette-halation",

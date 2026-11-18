@@ -19,6 +19,10 @@
   "optional": ["hook_style", "tone", "palette", "cta_text"],
   "skills": [
     "opening-hook",
+    "burned-in-caption-styling",
+    "multilingual-caption-profiles",
+    "transcreation-tone",
+    "accessibility-caption-ad-check",
     "pattern-interrupt-cadence",
     "silence-as-punctuation",
     "scene-duration-floor-ceiling",

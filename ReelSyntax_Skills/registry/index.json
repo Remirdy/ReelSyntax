@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "6f6ba8364f118448eb6fd4207b5d117ec584ea739f8d6200509e3a6f496026af",
+  "digest": "60e5b363188291f6f25912eae77cde0184bfadd56f1a4d640374829297ab23d8",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -8159,6 +8159,42 @@
       "resource_sha256": {}
     },
     {
+      "id": "accessibility-caption-ad-check",
+      "description": "Verify caption completeness for non-speech audio cues, speaker changes, contrast, and visual-only information parity for blind and deaf/hard-of-hearing viewers.",
+      "category": "qa",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "accessibility caption check",
+        "caption and audio description qa",
+        "erişilebilir altyazı ve sesli betimleme denetimi",
+        "işitme görme erişilebilirlik kontrolü",
+        "Barrierefreiheit Untertitel-Prüfung",
+        "Hörbeschreibung und Untertitel prüfen",
+        "auditoría de subtítulos accesibles",
+        "contrôle accessibilité sous-titres"
+      ],
+      "requires": [],
+      "path": "library/qa/accessibility-caption-ad-check/SKILL.md",
+      "estimated_words": 714,
+      "estimated_tokens": 1811,
+      "sha256": "8ba89c186eeceb5b298d1c7bb8be1b9d2382d9cf2d5ea5ad1e017618dcf10bb0",
+      "body_sha256": "09b2fb7739b982be7966ca5a7bb5dd0d64568d9599320d74870fafd0626d391d",
+      "recommended_next": [
+        "audio-description-track",
+        "contrast-audit",
+        "reading-speed-audit",
+        "flash-safety"
+      ],
+      "resources": [
+        "library/qa/accessibility-caption-ad-check/references/wcag-media-parity-matrix.md"
+      ],
+      "resource_sha256": {
+        "library/qa/accessibility-caption-ad-check/references/wcag-media-parity-matrix.md": "69af289f7478d3ffa58a573ffacf1971b5569d106177fbea6f2eb946749c0ed4"
+      }
+    },
+    {
       "id": "audio-clipping-audit",
       "description": "Use for audio clipping audit. Measure peaks and clipping indicators across mix and stems.",
       "category": "qa",
@@ -8284,6 +8320,41 @@
       "sha256": "d17f1d68b038b39ad6d8be8c0d91a52caba3937df0bf6654f78f3ccd89171c73",
       "body_sha256": "c9ea1aa0fdfd5cb7a95dfacb8949b2a504887605d78ec769981b4afe2841c7a5",
       "resource_sha256": {}
+    },
+    {
+      "id": "cultural-adaptation-audit",
+      "description": "Audit localized video variants for ambiguous numeric dates, measurement systems, currency assumptions, directional progression cues, and region-locked references.",
+      "category": "qa",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "cultural adaptation audit",
+        "localization qa checklist",
+        "kültürel uyarlama denetimi",
+        "yerelleştirme kalite kontrolü",
+        "Kulturadaptions-Prüfung",
+        "Lokalisierungs-Checkliste",
+        "auditoría de adaptación cultural",
+        "audit d'adaptation culturelle"
+      ],
+      "requires": [],
+      "path": "library/qa/cultural-adaptation-audit/SKILL.md",
+      "estimated_words": 670,
+      "estimated_tokens": 1717,
+      "sha256": "965cdc83f4cf065829ed4de76d407caf79007c97ec98a1234ef196bde57fa5fc",
+      "body_sha256": "3a9ec1686d5a013bc685261093921ef084abf7de0f7fcec22929483c4a9f399a",
+      "recommended_next": [
+        "locale-formatting",
+        "brief-compliance-audit",
+        "transcreation-tone"
+      ],
+      "resources": [
+        "library/qa/cultural-adaptation-audit/references/localization-hazard-checklist.md"
+      ],
+      "resource_sha256": {
+        "library/qa/cultural-adaptation-audit/references/localization-hazard-checklist.md": "d5d418208f671c9b7d1af3ee3320842f474f76fc81a40aa9faf4634abde0a5e3"
+      }
     },
     {
       "id": "debanding",
@@ -10115,6 +10186,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "transcreation-tone",
+      "description": "Adapt hooks, imperatives, humor, and formality registers (du/Sie, sen/siz, tú/usted) across languages by rhetorical function and beat budget rather than literal calques.",
+      "category": "story",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "transcreation tone",
+        "formality register adaptation",
+        "yaratıcı çeviri ve hitap tonu",
+        "sen siz resmiyet uyumu",
+        "Transkreation und Anredeform",
+        "Du-Sie-Tonalität anpassen",
+        "transcreación y registro",
+        "transcréation et registre"
+      ],
+      "requires": [],
+      "path": "library/story/transcreation-tone/SKILL.md",
+      "estimated_words": 735,
+      "estimated_tokens": 1838,
+      "sha256": "5590b7a1d05280bbf4756f958e5cfc6c4f6986733e0d7dcd55f599ad25eb2cf3",
+      "body_sha256": "aae80330398c038dbb9e8c9361b48fd885683018ae66a7e9408d2b2454e99aa6",
+      "recommended_next": [
+        "caption-translation",
+        "lang-detect-and-route",
+        "cultural-adaptation-audit"
+      ],
+      "resources": [
+        "library/story/transcreation-tone/references/register-and-imperative-guide.md"
+      ],
+      "resource_sha256": {
+        "library/story/transcreation-tone/references/register-and-imperative-guide.md": "8df9459d7a21f6ce3db3ba4041657728c7297af08ec45e7c0997f5d83c1a2a52"
+      }
+    },
+    {
       "id": "visual-storytelling",
       "description": "Use for visual storytelling. Communicate through observable action, props, framing and reactions rather than exposition.",
       "category": "story",
@@ -10533,6 +10639,82 @@
       "resource_sha256": {}
     },
     {
+      "id": "bilingual-dual-subtitles",
+      "description": "Stack primary and secondary language subtitle tracks with distinct size/luminance hierarchy, locked shared event timestamps, and <= 3 total lines.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "bilingual subtitles",
+        "dual language captions",
+        "çift dilli altyazı",
+        "iki dilli altyazı yerleşimi",
+        "zweisprachige Untertitel",
+        "Doppel-Untertitel anordnen",
+        "subtítulos bilingües",
+        "sous-titres bilingues"
+      ],
+      "requires": [],
+      "path": "library/typography/bilingual-dual-subtitles/SKILL.md",
+      "estimated_words": 725,
+      "estimated_tokens": 1679,
+      "sha256": "b950df26ac8ebfc4929f5178659a0a59f553cf94b133c8425926c70507d424f2",
+      "body_sha256": "ebbe22df00ddde68e627b022a551c86a9c3dc5a4ae4f41bbf64ec27e6340d27b",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "subtitle-safe-area",
+        "contrast-audit",
+        "multilingual-caption-profiles"
+      ],
+      "resources": [
+        "library/typography/bilingual-dual-subtitles/references/dual-track-stacking.md"
+      ],
+      "resource_sha256": {
+        "library/typography/bilingual-dual-subtitles/references/dual-track-stacking.md": "ed3b0816d5aae1a8f4689285da166a3ce25da54da7cf53043bf3320d0c64686b"
+      }
+    },
+    {
+      "id": "burned-in-caption-styling",
+      "description": "Render legible open burned-in captions with anchored baselines, semi-opaque pill or stroke backing, >= 7:1 contrast, and restrained active-word emphasis.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "burned in captions",
+        "open caption styling",
+        "gömülü altyazı tasarımı",
+        "ekrana işlenmiş altyazı",
+        "eingebrannte Untertitel",
+        "offene Untertitel gestalten",
+        "subtítulos incrustados",
+        "sous-titres incrustés"
+      ],
+      "requires": [],
+      "path": "library/typography/burned-in-caption-styling/SKILL.md",
+      "estimated_words": 734,
+      "estimated_tokens": 1740,
+      "sha256": "0915481314236830fd3ca62a79fcfbd249ebd70a03741a82ba6729200e3ebe80",
+      "body_sha256": "00af0ef023ab05599aabf1f7349bfa897e6e5f25a5ef8e187ef83594f9305b2a",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "contrast-audit",
+        "subtitle-safe-area",
+        "word-timed-captions"
+      ],
+      "resources": [
+        "library/typography/burned-in-caption-styling/references/pill-and-stroke-geometry.md"
+      ],
+      "resource_sha256": {
+        "library/typography/burned-in-caption-styling/references/pill-and-stroke-geometry.md": "61761094152cca7cb3e61a8deb252c1452c24918c0d35f6b472ce950b64e8e51"
+      }
+    },
+    {
       "id": "caption-segmentation",
       "description": "Use for caption segmentation. Segment transcript by phrase and line length while preserving semantic units.",
       "category": "typography",
@@ -10723,6 +10905,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "german-compound-linebreak",
+      "description": "Wrap long German and Nordic compound nouns cleanly at morphological constituent seams using explicit hyphens or soft-hyphen hints instead of mid-morpheme clipping.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "german compound linebreak",
+        "compound word hyphenation",
+        "Almanca birleşik kelime satır kırma",
+        "uzun kelime bölme",
+        "Komposita-Zeilenumbruch",
+        "Worttrennung bei Komposita",
+        "división de palabras compuestas",
+        "césure des mots composés"
+      ],
+      "requires": [],
+      "path": "library/typography/german-compound-linebreak/SKILL.md",
+      "estimated_words": 653,
+      "estimated_tokens": 1643,
+      "sha256": "5094d1875f452ddc169ff3d482d9174df58758c187ed059cb93bcb8a8e24b39d",
+      "body_sha256": "5b35b619c912666a5280fac2e258943c87b129e7908c5c05a5598dc2c0fa353d",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "text-overflow-audit",
+        "text-expansion-layout"
+      ],
+      "resources": [
+        "library/typography/german-compound-linebreak/references/compound-seam-rules.md"
+      ],
+      "resource_sha256": {
+        "library/typography/german-compound-linebreak/references/compound-seam-rules.md": "0489f1110b4e73af342c54d3bce44001a402cd002be0b3a8026c827b8e6196a2"
+      }
+    },
+    {
       "id": "kerning-tracking",
       "description": "Use for kerning tracking. Adjust glyph spacing and word spacing optically without breaking script shaping.",
       "category": "typography",
@@ -10766,6 +10985,43 @@
         "turkish-glyph-audit"
       ],
       "resource_sha256": {}
+    },
+    {
+      "id": "locale-aware-casing",
+      "description": "Transform display headings and kickers using locale-specific uppercase, lowercase, and title-case rules instead of ASCII-biased string methods.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "locale aware casing",
+        "localized uppercase",
+        "yerel büyük küçük harf",
+        "Türkçe İ ı harf dönüşümü",
+        "sprachabhängige Großschreibung",
+        "lokale Großbuchstaben",
+        "mayúsculas según idioma",
+        "casse sensible à la langue"
+      ],
+      "requires": [],
+      "path": "library/typography/locale-aware-casing/SKILL.md",
+      "estimated_words": 595,
+      "estimated_tokens": 1498,
+      "sha256": "0bbcd1aa0578312a217c000ba1c248341bf5431db6bae09867cf5183bc9a453e",
+      "body_sha256": "fd215476ac180870752e987a55a7f2a6331ad687d065bac30a9152a0b94c05e9",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "turkish-glyph-audit",
+        "multilingual-glyph-audit"
+      ],
+      "resources": [
+        "library/typography/locale-aware-casing/references/casing-mapping-table.md"
+      ],
+      "resource_sha256": {
+        "library/typography/locale-aware-casing/references/casing-mapping-table.md": "3f7c2578fda06bf047840d751e3ce6f8634f316f8246c8e2a1d2b7557eaf47f8"
+      }
     },
     {
       "id": "locale-formatting",
@@ -10813,6 +11069,44 @@
       "resource_sha256": {}
     },
     {
+      "id": "multilingual-caption-profiles",
+      "description": "Configure per-language characters-per-second ceilings, line-length limits, minimum hold floors, and shot-cut lead/lag snapping across six languages.",
+      "category": "typography",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "multilingual caption profiles",
+        "per language subtitle timing",
+        "çok dilli altyazı profilleri",
+        "dile göre okuma hızı sınırı",
+        "mehrsprachige Untertitelprofile",
+        "Lesegeschwindigkeit je Sprache",
+        "perfiles de subtítulos multilingües",
+        "profils de sous-titres multilingues"
+      ],
+      "requires": [],
+      "path": "library/typography/multilingual-caption-profiles/SKILL.md",
+      "estimated_words": 682,
+      "estimated_tokens": 1685,
+      "sha256": "235df67f8ae8c74b542e368bc7c6b27709a71f05ab3f6857a0724c3660395726",
+      "body_sha256": "b8c3776bb2eab948e763837d3c97c6b8e0caadcb9f546daf2543a7aafe4aa7c3",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "reading-speed-audit",
+        "caption-segmentation",
+        "caption-translation"
+      ],
+      "resources": [
+        "library/typography/multilingual-caption-profiles/references/six-language-timing-matrix.md"
+      ],
+      "resource_sha256": {
+        "library/typography/multilingual-caption-profiles/references/six-language-timing-matrix.md": "5182acc60a3b97d9e2d9b9eca8c3b0bc08336b43d2d925196650157a4710bb39"
+      }
+    },
+    {
       "id": "multilingual-glyph-audit",
       "description": "Test a selected font against localized strings.",
       "category": "typography",
@@ -10830,6 +11124,82 @@
       "sha256": "7fea715ba93c8e91791c68633acda1eefeb38c91b62f8eaf77d1397bfe6c3bdb",
       "body_sha256": "e8b3e7da41e2d033bf1a93e900994cd5ca8b363cdcda21eb29f3e8dabba0589b",
       "resource_sha256": {}
+    },
+    {
+      "id": "numeric-unit-typography",
+      "description": "Format animated counters, metrics, percentages, currencies, and SI units using tabular lining figures, true minus glyphs, non-breaking spaces, and locale separators.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "numeric unit typography",
+        "tabular figures formatting",
+        "sayı ve birim tipografisi",
+        "rakam hizalama kuralları",
+        "Zahlen- und Einheitentypografie",
+        "Tabellenziffern formatieren",
+        "tipografía numérica y unidades",
+        "typographie des nombres et unités"
+      ],
+      "requires": [],
+      "path": "library/typography/numeric-unit-typography/SKILL.md",
+      "estimated_words": 708,
+      "estimated_tokens": 1666,
+      "sha256": "6bf7844c067b4b3661124a7dc236d71da32fe88f8894a9bc32ed4d69dcc9c235",
+      "body_sha256": "f2f43db5725de1c2ea44cd1fed616007d4cc60f33c856c097836e43029f85f3e",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "variable-font-animation",
+        "locale-formatting",
+        "bar-chart-animation"
+      ],
+      "resources": [
+        "library/typography/numeric-unit-typography/references/locale-number-unit-rules.md"
+      ],
+      "resource_sha256": {
+        "library/typography/numeric-unit-typography/references/locale-number-unit-rules.md": "d56d74867c907ef8c1562bea7aed0dbf53684211f75604a0a3f31f8ce2c52ac4"
+      }
+    },
+    {
+      "id": "orphan-widow-line-balance",
+      "description": "Balance multi-line headings, subheadings, and captions using optical pixel-width ratios and linguistic phrase-break penalties so trailing single-word orphans never appear.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "orphan widow balance",
+        "balanced line wrapping",
+        "yetim dul satır dengesi",
+        "dengeli satır kırma",
+        "Hurenkinder und Schusterjungen vermeiden",
+        "ausgewogener Zeilenumbruch",
+        "equilibrio de líneas huérfanas",
+        "équilibre des lignes orphelines"
+      ],
+      "requires": [],
+      "path": "library/typography/orphan-widow-line-balance/SKILL.md",
+      "estimated_words": 686,
+      "estimated_tokens": 1660,
+      "sha256": "13d0ebe6891798b061b6d65e4b0b44956d6d2c12d2dbea4138315daa358cc70c",
+      "body_sha256": "4cf263004920edd8ce813697973113619257c38a65a787812ec93adf50f0501e",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "caption-segmentation",
+        "visual-hierarchy",
+        "text-overflow-audit"
+      ],
+      "resources": [
+        "library/typography/orphan-widow-line-balance/references/dp-line-breaker.md"
+      ],
+      "resource_sha256": {
+        "library/typography/orphan-widow-line-balance/references/dp-line-breaker.md": "b025d94a79997d875e3d1266f0bd6987579294cdaceebf1d899542fe447e9b22"
+      }
     },
     {
       "id": "rtl-text-layout",

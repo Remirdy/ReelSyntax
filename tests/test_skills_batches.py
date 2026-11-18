@@ -26,6 +26,16 @@ BATCH_SKILLS = (
     "kinetic-layout-choreography",
     "color-script-progression",
     "optical-vignette-halation",
+    "locale-aware-casing",
+    "german-compound-linebreak",
+    "burned-in-caption-styling",
+    "multilingual-caption-profiles",
+    "orphan-widow-line-balance",
+    "numeric-unit-typography",
+    "bilingual-dual-subtitles",
+    "transcreation-tone",
+    "cultural-adaptation-audit",
+    "accessibility-caption-ad-check",
 )
 
 FORBIDDEN_TERMS_RE = re.compile(

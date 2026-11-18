@@ -2361,6 +2361,397 @@
       "forbidden": [
         "optical-vignette-halation"
       ]
+    },
+    {
+      "id": "en-locale-aware-casing",
+      "task": {
+        "intent": "locale aware casing and localized uppercase"
+      },
+      "relevant": [
+        "locale-aware-casing"
+      ]
+    },
+    {
+      "id": "tr-locale-aware-casing",
+      "task": {
+        "intent": "yerel büyük küçük harf ve Türkçe İ ı harf dönüşümü"
+      },
+      "relevant": [
+        "locale-aware-casing",
+        "turkish-glyph-audit"
+      ]
+    },
+    {
+      "id": "de-locale-aware-casing",
+      "task": {
+        "intent": "sprachabhängige Großschreibung und lokale Großbuchstaben"
+      },
+      "relevant": [
+        "locale-aware-casing"
+      ]
+    },
+    {
+      "id": "neg-locale-aware-casing",
+      "task": {
+        "intent": "no text, locale aware casing"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "locale-aware-casing"
+      ]
+    },
+    {
+      "id": "en-german-compound-linebreak",
+      "task": {
+        "intent": "german compound linebreak and compound word hyphenation"
+      },
+      "relevant": [
+        "german-compound-linebreak"
+      ]
+    },
+    {
+      "id": "tr-german-compound-linebreak",
+      "task": {
+        "intent": "Almanca birleşik kelime satır kırma ve uzun kelime bölme"
+      },
+      "relevant": [
+        "german-compound-linebreak"
+      ]
+    },
+    {
+      "id": "de-german-compound-linebreak",
+      "task": {
+        "intent": "Komposita-Zeilenumbruch und Worttrennung bei Komposita"
+      },
+      "relevant": [
+        "german-compound-linebreak"
+      ]
+    },
+    {
+      "id": "neg-german-compound-linebreak",
+      "task": {
+        "intent": "no text, german compound linebreak"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "german-compound-linebreak"
+      ]
+    },
+    {
+      "id": "en-burned-in-caption-styling",
+      "task": {
+        "intent": "burned in captions and open caption styling"
+      },
+      "relevant": [
+        "burned-in-caption-styling"
+      ]
+    },
+    {
+      "id": "tr-burned-in-caption-styling",
+      "task": {
+        "intent": "gömülü altyazı tasarımı ve ekrana işlenmiş altyazı"
+      },
+      "relevant": [
+        "burned-in-caption-styling"
+      ]
+    },
+    {
+      "id": "de-burned-in-caption-styling",
+      "task": {
+        "intent": "eingebrannte Untertitel und offene Untertitel gestalten"
+      },
+      "relevant": [
+        "burned-in-caption-styling"
+      ]
+    },
+    {
+      "id": "neg-burned-in-caption-styling",
+      "task": {
+        "intent": "no text, burned in captions"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "burned-in-caption-styling"
+      ]
+    },
+    {
+      "id": "en-multilingual-caption-profiles",
+      "task": {
+        "intent": "multilingual caption profiles and per language subtitle timing"
+      },
+      "relevant": [
+        "multilingual-caption-profiles"
+      ]
+    },
+    {
+      "id": "tr-multilingual-caption-profiles",
+      "task": {
+        "intent": "çok dilli altyazı profilleri ve dile göre okuma hızı sınırı"
+      },
+      "relevant": [
+        "multilingual-caption-profiles"
+      ]
+    },
+    {
+      "id": "de-multilingual-caption-profiles",
+      "task": {
+        "intent": "mehrsprachige Untertitelprofile und Lesegeschwindigkeit je Sprache"
+      },
+      "relevant": [
+        "multilingual-caption-profiles"
+      ]
+    },
+    {
+      "id": "neg-multilingual-caption-profiles",
+      "task": {
+        "intent": "no text, multilingual caption profiles"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "multilingual-caption-profiles"
+      ]
+    },
+    {
+      "id": "en-orphan-widow-line-balance",
+      "task": {
+        "intent": "orphan widow balance and balanced line wrapping"
+      },
+      "relevant": [
+        "orphan-widow-line-balance"
+      ]
+    },
+    {
+      "id": "tr-orphan-widow-line-balance",
+      "task": {
+        "intent": "yetim dul satır dengesi ve dengeli satır kırma"
+      },
+      "relevant": [
+        "orphan-widow-line-balance"
+      ]
+    },
+    {
+      "id": "de-orphan-widow-line-balance",
+      "task": {
+        "intent": "ausgewogener Zeilenumbruch sowie Hurenkinder und Schusterjungen vermeiden"
+      },
+      "relevant": [
+        "orphan-widow-line-balance"
+      ]
+    },
+    {
+      "id": "neg-orphan-widow-line-balance",
+      "task": {
+        "intent": "no text, orphan widow balance"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "orphan-widow-line-balance"
+      ]
+    },
+    {
+      "id": "en-numeric-unit-typography",
+      "task": {
+        "intent": "numeric unit typography and tabular figures formatting"
+      },
+      "relevant": [
+        "numeric-unit-typography"
+      ]
+    },
+    {
+      "id": "tr-numeric-unit-typography",
+      "task": {
+        "intent": "sayı ve birim tipografisi ile rakam hizalama kuralları"
+      },
+      "relevant": [
+        "numeric-unit-typography"
+      ]
+    },
+    {
+      "id": "de-numeric-unit-typography",
+      "task": {
+        "intent": "Zahlen- und Einheitentypografie sowie Tabellenziffern formatieren"
+      },
+      "relevant": [
+        "numeric-unit-typography"
+      ]
+    },
+    {
+      "id": "neg-numeric-unit-typography",
+      "task": {
+        "intent": "no text, numeric unit typography"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "numeric-unit-typography"
+      ]
+    },
+    {
+      "id": "en-bilingual-dual-subtitles",
+      "task": {
+        "intent": "bilingual subtitles and dual language captions"
+      },
+      "relevant": [
+        "bilingual-dual-subtitles"
+      ]
+    },
+    {
+      "id": "tr-bilingual-dual-subtitles",
+      "task": {
+        "intent": "çift dilli altyazı ve iki dilli altyazı yerleşimi"
+      },
+      "relevant": [
+        "bilingual-dual-subtitles"
+      ]
+    },
+    {
+      "id": "de-bilingual-dual-subtitles",
+      "task": {
+        "intent": "zweisprachige Untertitel und Doppel-Untertitel anordnen"
+      },
+      "relevant": [
+        "bilingual-dual-subtitles"
+      ]
+    },
+    {
+      "id": "neg-bilingual-dual-subtitles",
+      "task": {
+        "intent": "no text, bilingual subtitles"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "bilingual-dual-subtitles"
+      ]
+    },
+    {
+      "id": "en-transcreation-tone",
+      "task": {
+        "intent": "transcreation tone and formality register adaptation"
+      },
+      "relevant": [
+        "transcreation-tone"
+      ]
+    },
+    {
+      "id": "tr-transcreation-tone",
+      "task": {
+        "intent": "yaratıcı çeviri ve hitap tonu sen siz resmiyet uyumu"
+      },
+      "relevant": [
+        "transcreation-tone"
+      ]
+    },
+    {
+      "id": "de-transcreation-tone",
+      "task": {
+        "intent": "Transkreation und Anredeform sowie Du-Sie-Tonalität anpassen"
+      },
+      "relevant": [
+        "transcreation-tone"
+      ]
+    },
+    {
+      "id": "neg-transcreation-tone",
+      "task": {
+        "intent": "locked camera; without transcreation tone"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "transcreation-tone"
+      ]
+    },
+    {
+      "id": "en-cultural-adaptation-audit",
+      "task": {
+        "intent": "cultural adaptation audit and localization qa checklist"
+      },
+      "relevant": [
+        "cultural-adaptation-audit"
+      ]
+    },
+    {
+      "id": "tr-cultural-adaptation-audit",
+      "task": {
+        "intent": "kültürel uyarlama denetimi ve yerelleştirme kalite kontrolü"
+      },
+      "relevant": [
+        "cultural-adaptation-audit"
+      ]
+    },
+    {
+      "id": "de-cultural-adaptation-audit",
+      "task": {
+        "intent": "Kulturadaptions-Prüfung und Lokalisierungs-Checkliste"
+      },
+      "relevant": [
+        "cultural-adaptation-audit"
+      ]
+    },
+    {
+      "id": "neg-cultural-adaptation-audit",
+      "task": {
+        "intent": "frame clock; cultural adaptation audit is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "cultural-adaptation-audit"
+      ]
+    },
+    {
+      "id": "en-accessibility-caption-ad-check",
+      "task": {
+        "intent": "accessibility caption check and caption and audio description qa"
+      },
+      "relevant": [
+        "accessibility-caption-ad-check"
+      ]
+    },
+    {
+      "id": "tr-accessibility-caption-ad-check",
+      "task": {
+        "intent": "erişilebilir altyazı ve sesli betimleme denetimi"
+      },
+      "relevant": [
+        "accessibility-caption-ad-check"
+      ]
+    },
+    {
+      "id": "de-accessibility-caption-ad-check",
+      "task": {
+        "intent": "Barrierefreiheit Untertitel-Prüfung sowie Hörbeschreibung und Untertitel prüfen"
+      },
+      "relevant": [
+        "accessibility-caption-ad-check"
+      ]
+    },
+    {
+      "id": "neg-accessibility-caption-ad-check",
+      "task": {
+        "intent": "locked camera; accessibility caption check is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "accessibility-caption-ad-check"
+      ]
     }
   ]
 }

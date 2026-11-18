@@ -19,6 +19,10 @@ Platform UI chrome dimensions change over time; treat these margins as adjustabl
 ## Wired skills
 
 - `opening-hook` — Immediate visual and sonic contrast within the first two seconds.
+- `burned-in-caption-styling` — Anchored `>= 7:1` backing pills without active-word jitter.
+- `multilingual-caption-profiles` — Language-specific CPS/CPL pacing and shot-cut snapping.
+- `transcreation-tone` — Native hook idioms and consistent second-person register.
+- `accessibility-caption-ad-check` — Bidirectional caption and spoken visual-metric parity.
 - `pattern-interrupt-cadence` — Motivated sensory shifts every `3.5–6.0 s` to sustain attention.
 - `silence-as-punctuation` — De-clicked acoustic pauses before payoff turns.
 - `scene-duration-floor-ceiling` — Shot-type readability floors and hold ceilings.

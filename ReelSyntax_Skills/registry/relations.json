@@ -828,5 +828,135 @@
     "resources": [
       "library/vfx/optical-vignette-halation/references/cos4-and-halation-shader.md"
     ]
+  },
+  "locale-aware-casing": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "turkish-glyph-audit",
+      "multilingual-glyph-audit"
+    ],
+    "resources": [
+      "library/typography/locale-aware-casing/references/casing-mapping-table.md"
+    ]
+  },
+  "german-compound-linebreak": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "text-overflow-audit",
+      "text-expansion-layout"
+    ],
+    "resources": [
+      "library/typography/german-compound-linebreak/references/compound-seam-rules.md"
+    ]
+  },
+  "burned-in-caption-styling": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "contrast-audit",
+      "subtitle-safe-area",
+      "word-timed-captions"
+    ],
+    "resources": [
+      "library/typography/burned-in-caption-styling/references/pill-and-stroke-geometry.md"
+    ]
+  },
+  "multilingual-caption-profiles": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "reading-speed-audit",
+      "caption-segmentation",
+      "caption-translation"
+    ],
+    "resources": [
+      "library/typography/multilingual-caption-profiles/references/six-language-timing-matrix.md"
+    ]
+  },
+  "orphan-widow-line-balance": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "caption-segmentation",
+      "visual-hierarchy",
+      "text-overflow-audit"
+    ],
+    "resources": [
+      "library/typography/orphan-widow-line-balance/references/dp-line-breaker.md"
+    ]
+  },
+  "numeric-unit-typography": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "variable-font-animation",
+      "locale-formatting",
+      "bar-chart-animation"
+    ],
+    "resources": [
+      "library/typography/numeric-unit-typography/references/locale-number-unit-rules.md"
+    ]
+  },
+  "bilingual-dual-subtitles": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "subtitle-safe-area",
+      "contrast-audit",
+      "multilingual-caption-profiles"
+    ],
+    "resources": [
+      "library/typography/bilingual-dual-subtitles/references/dual-track-stacking.md"
+    ]
+  },
+  "transcreation-tone": {
+    "status": "validated",
+    "recommended_next": [
+      "caption-translation",
+      "lang-detect-and-route",
+      "cultural-adaptation-audit"
+    ],
+    "resources": [
+      "library/story/transcreation-tone/references/register-and-imperative-guide.md"
+    ]
+  },
+  "cultural-adaptation-audit": {
+    "status": "validated",
+    "recommended_next": [
+      "locale-formatting",
+      "brief-compliance-audit",
+      "transcreation-tone"
+    ],
+    "resources": [
+      "library/qa/cultural-adaptation-audit/references/localization-hazard-checklist.md"
+    ]
+  },
+  "accessibility-caption-ad-check": {
+    "status": "validated",
+    "recommended_next": [
+      "audio-description-track",
+      "contrast-audit",
+      "reading-speed-audit",
+      "flash-safety"
+    ],
+    "resources": [
+      "library/qa/accessibility-caption-ad-check/references/wcag-media-parity-matrix.md"
+    ]
   }
 }

@@ -19,6 +19,11 @@
   "optional": ["tone", "formality", "palette", "music_bed"],
   "skills": [
     "kinetic-typography",
+    "locale-aware-casing",
+    "german-compound-linebreak",
+    "orphan-widow-line-balance",
+    "numeric-unit-typography",
+    "transcreation-tone",
     "kinetic-layout-choreography",
     "rhythm-density-map",
     "scene-duration-floor-ceiling",

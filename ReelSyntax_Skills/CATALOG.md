@@ -1,6 +1,6 @@
 # ReelSyntax skill catalog
 
-586 skills across 25 categories. 508 guidance, 78 validated.
+596 skills across 25 categories. 508 guidance, 88 validated.
 
 | Category | Skills |
 | --- | ---: |
@@ -21,12 +21,12 @@
 | modeling | 21 |
 | motion | 23 |
 | music | 20 |
-| qa | 21 |
+| qa | 23 |
 | render | 20 |
 | skills | 29 |
-| story | 24 |
+| story | 25 |
 | transitions | 20 |
-| typography | 28 |
+| typography | 35 |
 | vfx | 22 |
 | workflow | 21 |
 
@@ -516,16 +516,18 @@
 | [sidechain-music](library/music/sidechain-music/SKILL.md) | guidance | sidechain, müzik kompresyon | Use for sidechain music. Drive controlled gain reduction from appropriate audio trigger. |
 | [synth-envelope](library/music/synth-envelope/SKILL.md) | guidance | adsr, synth envelope | Use for synth envelope. Shape attack, decay, sustain and release by instrument role. |
 
-## Quality, compliance and restoration (`qa`, 21)
+## Quality, compliance and restoration (`qa`, 23)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
+| [accessibility-caption-ad-check](library/qa/accessibility-caption-ad-check/SKILL.md) | validated | accessibility caption check, caption and audio description qa, erişilebilir altyazı ve sesli betimleme denetimi, işitme görme erişilebilirlik kontrolü, Barrierefreiheit Untertitel-Prüfung, Hörbeschreibung und Untertitel prüfen, auditoría de subtítulos accesibles, contrôle accessibilité sous-titres | Verify caption completeness for non-speech audio cues, speaker changes, contrast, and visual-only information parity for blind and deaf/hard-of-hearing viewers. |
 | [audio-clipping-audit](library/qa/audio-clipping-audit/SKILL.md) | guidance | ses patlaması, clipping | Use for audio clipping audit. Measure peaks and clipping indicators across mix and stems. |
 | [audio-sync-audit](library/qa/audio-sync-audit/SKILL.md) | validated | ses görüntü kontrolü, av sync | Use for audio sync audit. Compare expected cue times to observed audio and visual events. |
 | [black-frame-detection](library/qa/black-frame-detection/SKILL.md) | validated | siyah kare, black frame, Schwarzbilder erkennen, detectar fotogramas negros, détecter les images noires, detectar quadros pretos | Use for black frame detection. Detect sustained near-black intervals using declared thresholds and compare intentional fades. |
 | [brief-compliance-audit](library/qa/brief-compliance-audit/SKILL.md) | guidance | talimat kontrolü, reelguard | Use for brief compliance audit. Recheck all hard constraints including language, aspect, locked camera, and protected layers. |
 | [color-continuity](library/qa/color-continuity/SKILL.md) | guidance | renk tutarlılığı, color matching | Use for color continuity. Compare neighboring shots using references, scopes or measured values and correct exposure/hue. |
 | [contrast-audit](library/qa/contrast-audit/SKILL.md) | validated | kontrast kontrolü, okunabilirlik | Use for contrast audit. Measure contrast in representative text/background regions and inspect moving backgrounds. |
+| [cultural-adaptation-audit](library/qa/cultural-adaptation-audit/SKILL.md) | validated | cultural adaptation audit, localization qa checklist, kültürel uyarlama denetimi, yerelleştirme kalite kontrolü, Kulturadaptions-Prüfung, Lokalisierungs-Checkliste, auditoría de adaptación cultural, audit d'adaptation culturelle | Audit localized video variants for ambiguous numeric dates, measurement systems, currency assumptions, directional progression cues, and region-locked references. |
 | [debanding](library/qa/debanding/SKILL.md) | guidance | banding, renk bantları | Use for debanding. Apply suitable dithering/filtering at appropriate precision before final encode. |
 | [dropped-frame-audit](library/qa/dropped-frame-audit/SKILL.md) | guidance | eksik kare, frame drop | Use for dropped frame audit. Inspect sequence indices, stream timestamps and delta cadence. |
 | [flash-safety](library/qa/flash-safety/SKILL.md) | guidance | flaş güvenliği, ışık çakması | Use for flash safety. Analyze rapid luminance/color changes and limit hazardous patterns; use conservative review when uncertain. |
@@ -601,7 +603,7 @@
 | [skill-token-budget](library/skills/skill-token-budget/SKILL.md) | validated | token optimizasyonu, context budget | Use for skill token budget. Limit initial discovery and per-stage loaded instructions; use summaries and on-demand references. |
 | [skill-versioning](library/skills/skill-versioning/SKILL.md) | guidance | skill sürümü, skill updates | Use for skill versioning. Version metadata and behavior; migrate IDs and rebuild index atomically. |
 
-## Narrative, writing and storyboards (`story`, 24)
+## Narrative, writing and storyboards (`story`, 25)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -627,6 +629,7 @@
 | [story-beats](library/story/story-beats/SKILL.md) | guidance | hikaye ritmi, beat sheet | Use for story beats. Assign an observable change and frame allocation to every beat. |
 | [storyboard](library/story/storyboard/SKILL.md) | guidance | storyboard, sahne çizelgesi | Use for storyboard. Design key panels with framing, staging and motion arrows or notes per shot. |
 | [three-act-structure](library/story/three-act-structure/SKILL.md) | guidance | üç perde, hikaye yapısı | Use for three act structure. Map inciting event, turning points, climax and resolution to available runtime. |
+| [transcreation-tone](library/story/transcreation-tone/SKILL.md) | validated | transcreation tone, formality register adaptation, yaratıcı çeviri ve hitap tonu, sen siz resmiyet uyumu, Transkreation und Anredeform, Du-Sie-Tonalität anpassen, transcreación y registro, transcréation et registre | Adapt hooks, imperatives, humor, and formality registers (du/Sie, sen/siz, tú/usted) across languages by rhetorical function and beat budget rather than literal calques. |
 | [visual-storytelling](library/story/visual-storytelling/SKILL.md) | guidance | görsel hikaye, konuşmasız | Use for visual storytelling. Communicate through observable action, props, framing and reactions rather than exposition. |
 | [voiceover-writing](library/story/voiceover-writing/SKILL.md) | guidance | seslendirme metni, anlatıcı metni | Use for voiceover writing. Write spoken language with timed phrases, natural emphasis and room for breaths. |
 
@@ -655,10 +658,12 @@
 | [slide-transition](library/transitions/slide-transition/SKILL.md) | guidance | kaydırma geçişi, slide transition | Use for slide transition. Move frames along shared axis with consistent easing and overscan. |
 | [wipe-transition](library/transitions/wipe-transition/SKILL.md) | guidance | silme geçişi, wipe | Use for wipe transition. Animate geometric matte boundary across source and target layers. |
 
-## Typography, captions and visual text (`typography`, 28)
+## Typography, captions and visual text (`typography`, 35)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
+| [bilingual-dual-subtitles](library/typography/bilingual-dual-subtitles/SKILL.md) | validated | bilingual subtitles, dual language captions, çift dilli altyazı, iki dilli altyazı yerleşimi, zweisprachige Untertitel, Doppel-Untertitel anordnen, subtítulos bilingües, sous-titres bilingues | Stack primary and secondary language subtitle tracks with distinct size/luminance hierarchy, locked shared event timestamps, and <= 3 total lines. |
+| [burned-in-caption-styling](library/typography/burned-in-caption-styling/SKILL.md) | validated | burned in captions, open caption styling, gömülü altyazı tasarımı, ekrana işlenmiş altyazı, eingebrannte Untertitel, offene Untertitel gestalten, subtítulos incrustados, sous-titres incrustés | Render legible open burned-in captions with anchored baselines, semi-opaque pill or stroke backing, >= 7:1 contrast, and restrained active-word emphasis. |
 | [caption-segmentation](library/typography/caption-segmentation/SKILL.md) | guidance | altyazı bölme, caption chunks | Use for caption segmentation. Segment transcript by phrase and line length while preserving semantic units. |
 | [caption-translation](library/typography/caption-translation/SKILL.md) | guidance | altyazı çeviri, çok dilli altyazı | Use for caption translation. Translate meaning, then resegment for reading speed and local punctuation. |
 | [character-reveal](library/typography/character-reveal/SKILL.md) | guidance | harf harf, typewriter | Use for character reveal. Reveal grapheme clusters rather than splitting combining characters. |
@@ -669,11 +674,16 @@
 | [extruded-type](library/typography/extruded-type/SKILL.md) | guidance | 3d yazı, extruded typography | Use for extruded type. Create beveled or extruded glyph geometry with appropriate lighting and depth. |
 | [font-fallback-chain](library/typography/font-fallback-chain/SKILL.md) | guidance | font fallback, yedek font zinciri | Choose fallback fonts for missing script coverage. |
 | [font-selection](library/typography/font-selection/SKILL.md) | guidance | font seçimi, yazı tipi | Use for font selection. Select licensed typefaces by tone, script coverage and legibility; establish fallback stack. |
+| [german-compound-linebreak](library/typography/german-compound-linebreak/SKILL.md) | validated | german compound linebreak, compound word hyphenation, Almanca birleşik kelime satır kırma, uzun kelime bölme, Komposita-Zeilenumbruch, Worttrennung bei Komposita, división de palabras compuestas, césure des mots composés | Wrap long German and Nordic compound nouns cleanly at morphological constituent seams using explicit hyphens or soft-hyphen hints instead of mid-morpheme clipping. |
 | [kerning-tracking](library/typography/kerning-tracking/SKILL.md) | guidance | harf aralığı, kerning | Use for kerning tracking. Adjust glyph spacing and word spacing optically without breaking script shaping. |
 | [kinetic-typography](library/typography/kinetic-typography/SKILL.md) | validated | kinetik tipografi, hareketli yazı | Use for kinetic typography. Animate letter, word or phrase groups according to spoken emphasis and reading hold. |
+| [locale-aware-casing](library/typography/locale-aware-casing/SKILL.md) | validated | locale aware casing, localized uppercase, yerel büyük küçük harf, Türkçe İ ı harf dönüşümü, sprachabhängige Großschreibung, lokale Großbuchstaben, mayúsculas según idioma, casse sensible à la langue | Transform display headings and kickers using locale-specific uppercase, lowercase, and title-case rules instead of ASCII-biased string methods. |
 | [locale-formatting](library/typography/locale-formatting/SKILL.md) | guidance | locale format, yerel biçimlendirme | Format dates, quantities and currency for a specified locale. |
 | [lower-thirds](library/typography/lower-thirds/SKILL.md) | validated | alt bant, lower third | Use for lower thirds. Reserve speaker label area with consistent entrance, hold and exit rules. |
+| [multilingual-caption-profiles](library/typography/multilingual-caption-profiles/SKILL.md) | validated | multilingual caption profiles, per language subtitle timing, çok dilli altyazı profilleri, dile göre okuma hızı sınırı, mehrsprachige Untertitelprofile, Lesegeschwindigkeit je Sprache, perfiles de subtítulos multilingües, profils de sous-titres multilingues | Configure per-language characters-per-second ceilings, line-length limits, minimum hold floors, and shot-cut lead/lag snapping across six languages. |
 | [multilingual-glyph-audit](library/typography/multilingual-glyph-audit/SKILL.md) | guidance | glyph audit, karakter seti denetimi | Test a selected font against localized strings. |
+| [numeric-unit-typography](library/typography/numeric-unit-typography/SKILL.md) | validated | numeric unit typography, tabular figures formatting, sayı ve birim tipografisi, rakam hizalama kuralları, Zahlen- und Einheitentypografie, Tabellenziffern formatieren, tipografía numérica y unidades, typographie des nombres et unités | Format animated counters, metrics, percentages, currencies, and SI units using tabular lining figures, true minus glyphs, non-breaking spaces, and locale separators. |
+| [orphan-widow-line-balance](library/typography/orphan-widow-line-balance/SKILL.md) | validated | orphan widow balance, balanced line wrapping, yetim dul satır dengesi, dengeli satır kırma, Hurenkinder und Schusterjungen vermeiden, ausgewogener Zeilenumbruch, equilibrio de líneas huérfanas, équilibre des lignes orphelines | Balance multi-line headings, subheadings, and captions using optical pixel-width ratios and linguistic phrase-break penalties so trailing single-word orphans never appear. |
 | [rtl-text-layout](library/typography/rtl-text-layout/SKILL.md) | guidance | arapça, sağdan sola, rtl | Use for rtl text layout. Use proper bidirectional shaping and isolate mixed-direction tokens. |
 | [subtitle-format-export](library/typography/subtitle-format-export/SKILL.md) | validated | srt, vtt, ass altyazı | Use for subtitle format export. Convert cue times to selected format with escaping and consistent numbering. |
 | [subtitle-safe-area](library/typography/subtitle-safe-area/SKILL.md) | guidance | altyazı güvenli alan, safe zone | Use for subtitle safe area. Reserve platform-appropriate regions around captions, UI and faces. |
