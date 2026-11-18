@@ -2,6 +2,28 @@
 
 `reel.json` declares `schema_version: 1`, a lowercase hyphenated `id`, integer `seed`, `output`, `scenes`, `audio`, optional `camera`, optional `constraints`, and optional `quality`. Unknown fields fail validation.
 
+## Editor JSON Schema and migration
+
+Published schemas carry canonical versioned identifiers:
+
+- `https://remirdy.github.io/ReelSyntax/schemas/reel.v1.schema.json`
+- `https://remirdy.github.io/ReelSyntax/schemas/config.v1.schema.json`
+
+`reelsyntax init` writes a local `reel.schema.json` beside `reel.json` and sets `"$schema": "./reel.schema.json"` so Visual Studio Code and JSON Schema-aware editors provide autocomplete and inline validation offline. To map `reel.json` globally in `.vscode/settings.json`:
+
+```json
+{
+  "json.schemas": [
+    {
+      "fileMatch": ["**/reel.json"],
+      "url": "https://remirdy.github.io/ReelSyntax/schemas/reel.v1.schema.json"
+    }
+  ]
+}
+```
+
+Upgrade unversioned or pre-v1 project files with `reelsyntax migrate <project>` (`--dry-run` previews changes without modifying files; applied migrations store a backup under `.reelsyntax/migrations/`).
+
 ## Output and canonical timing
 
 `output` contains even `width` and `height` (`64..7680`) and rational `fps` string (`"24/1"`, `"30/1"`, `"30000/1001"` in `[1, 120]`). Timeline intervals are sequential half-open integer frame ranges with zero floating-point drift.

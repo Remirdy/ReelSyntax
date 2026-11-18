@@ -11,10 +11,36 @@ from . import __version__
 def parser():
     root = argparse.ArgumentParser(prog='reelsyntax', description='Local skill routing, unified MCP gateway, and deterministic video production.')
     root.add_argument('--version', action='version', version=__version__)
+    root.add_argument('--config', type=Path, help='Explicit reelsyntax.toml configuration file')
     commands = root.add_subparsers(dest='command', required=True)
 
     schema = commands.add_parser('schema', help='Print the editor JSON Schema')
+    schema.add_argument('--kind', choices=['reel', 'config'], default='reel')
+    schema.add_argument('--schema-version', type=int, default=1)
     schema.add_argument('--output', type=Path)
+
+    migrate = commands.add_parser('migrate', help='Upgrade a legacy or unversioned reel.json to the current schema version')
+    migrate.add_argument('project', type=Path)
+    migrate.add_argument('--dry-run', action='store_true')
+    migrate.add_argument('--remote-schema', action='store_true')
+    migrate.add_argument('--json', action='store_true')
+
+    cfg_cmd = commands.add_parser('config', help='Inspect, initialize, or validate reelsyntax.toml configuration')
+    cfg_sub = cfg_cmd.add_subparsers(dest='action', required=True)
+    cfg_show = cfg_sub.add_parser('show')
+    cfg_show.add_argument('--project', type=Path)
+    cfg_show.add_argument('--json', action='store_true')
+    cfg_path = cfg_sub.add_parser('path')
+    cfg_path.add_argument('--project', type=Path)
+    cfg_path.add_argument('--json', action='store_true')
+    cfg_init = cfg_sub.add_parser('init')
+    cfg_init.add_argument('target', nargs='?', type=Path)
+    cfg_init.add_argument('--user', action='store_true')
+    cfg_init.add_argument('--force', action='store_true')
+    cfg_init.add_argument('--json', action='store_true')
+    cfg_val = cfg_sub.add_parser('validate')
+    cfg_val.add_argument('path', nargs='?', type=Path)
+    cfg_val.add_argument('--json', action='store_true')
 
     captions = commands.add_parser('captions').add_subparsers(dest='operation', required=True)
     burn = captions.add_parser('burn')
@@ -84,7 +110,7 @@ def parser():
     for name in ['render', 'resume']:
         command = commands.add_parser(name)
         command.add_argument('project', type=Path)
-        command.add_argument('--profile', choices=['draft', 'production', 'hero'], default='draft')
+        command.add_argument('--profile', choices=['draft', 'production', 'hero'])
         if name == 'render':
             from .variants import TARGETS
             command.add_argument('--aspect', help='Comma-separated width:height ratios')
@@ -95,7 +121,7 @@ def parser():
             command.add_argument('--queue', help='Project-relative delivery jobs JSON')
         command.add_argument('--allow-browser-module', action='store_true')
         command.add_argument('--max-frames', type=int, default=18000)
-        command.add_argument('--timeout', type=int, default=180, help='Per media process timeout in seconds')
+        command.add_argument('--timeout', type=int, help='Per media process timeout in seconds')
         command.add_argument('--fallback', choices=['pillow', 'browser'], help='Graceful fallback engine when optional Blender is absent')
         command.add_argument('--cache-budget-mib', type=int, help='Prune unused scene caches after delivery; current delivery caches stay protected')
         command.add_argument('--json', action='store_true')
@@ -113,7 +139,7 @@ def parser():
 
     qc = commands.add_parser('qc')
     qc.add_argument('project', type=Path)
-    qc.add_argument('--profile', choices=['draft', 'production', 'hero'], default='draft')
+    qc.add_argument('--profile', choices=['draft', 'production', 'hero'])
     qc.add_argument('--loop', action='store_true')
     qc.add_argument('--html', action='store_true')
     audio = commands.add_parser('audio').add_subparsers(dest='operation', required=True)
@@ -126,7 +152,7 @@ def parser():
     snapshot = commands.add_parser('snapshot', help='Decode an actual rendered frame')
     snapshot.add_argument('project', type=Path)
     snapshot.add_argument('--frame', required=True, type=int)
-    snapshot.add_argument('--profile', choices=['draft', 'production', 'hero'], default='draft')
+    snapshot.add_argument('--profile', choices=['draft', 'production', 'hero'])
 
     lock = commands.add_parser('lock', help='Protect specified scene sources, timing, or rendered ROI pixel regions')
     lock.add_argument('project', type=Path)
@@ -251,8 +277,52 @@ def skill_command(args):
     raise ValueError('Unsupported skill action')
 
 
+def config_command(args):
+    from .config import (
+        CONFIG_FILENAME,
+        discover_project_config,
+        load_config,
+        read_toml_file,
+        user_config_path,
+        write_starter_config,
+    )
+
+    if args.action == 'show':
+        return load_config(config_file=getattr(args, 'config', None), project=args.project).to_dict()
+    if args.action == 'path':
+        u_path = user_config_path()
+        p_path = discover_project_config(project=args.project)
+        return {
+            'user_config': str(u_path),
+            'user_exists': u_path.is_file(),
+            'project_config': str(p_path) if p_path else None,
+            'project_exists': p_path is not None and p_path.is_file(),
+        }
+    if args.action == 'init':
+        written = write_starter_config(args.target, user_scope=args.user, force=args.force)
+        return {'path': str(written), 'created': True}
+    if args.action == 'validate':
+        target = args.path or getattr(args, 'config', None) or (Path.cwd() / CONFIG_FILENAME)
+        normalized = read_toml_file(target)
+        return {'path': str(Path(target).resolve()), 'valid': True, 'config_version': normalized['config_version']}
+    raise ValueError('Unsupported config action')
+
+
 def execute(args):
+    from .config import config_context, load_config
+
+    project_hint = getattr(args, 'project', None)
+    with config_context(getattr(args, 'config', None), project_hint):
+        return _execute_with_config(args, load_config)
+
+
+def _execute_with_config(args, load_config):
     from . import project
+    if args.command == 'config':
+        return config_command(args)
+    if args.command == 'migrate':
+        from .migration import migrate_project
+        return migrate_project(args.project, dry_run=args.dry_run, remote_schema=args.remote_schema)
     if args.command == 'skills':
         return skill_command(args)
     if args.command == 'captions':
@@ -322,14 +392,19 @@ def execute(args):
         return {**metadata, 'scenes': scenes, 'constraints': plan.get('constraints', {}), 'network': 'no render networking is implemented'}
     if args.command in {'render', 'resume'}:
         from .render import render
-        if not 1 <= args.timeout <= 3600:
+        cfg = load_config()
+        profile = args.profile or cfg.render.default_profile
+        timeout = args.timeout if args.timeout is not None else cfg.render.timeout_sec
+        if not 1 <= timeout <= 3600:
             raise ValueError('Timeout must be between 1 and 3600 seconds')
-        budget = args.cache_budget_mib * 1024 * 1024 if args.cache_budget_mib is not None else None
+        budget_mib = args.cache_budget_mib if args.cache_budget_mib is not None else (cfg.render.cache_budget_mib or None)
+        budget = budget_mib * 1024 * 1024 if budget_mib is not None else None
         if args.command == 'render' and any((args.aspect, args.target, args.locale, args.set, args.brand, args.queue)):
             from .variants import render_variants
-            return render_variants(args, dict(profile=args.profile, max_frames=args.max_frames, timeout=args.timeout,
+            args.profile = profile
+            return render_variants(args, dict(profile=profile, max_frames=args.max_frames, timeout=timeout,
                                               fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module))
-        return render(args.project, args.profile, args.max_frames, args.timeout, recover=args.command == 'resume', fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module)
+        return render(args.project, profile, args.max_frames, timeout, recover=args.command == 'resume', fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module)
 
     if args.command == 'cache':
         from .cache import prune_cache
@@ -343,7 +418,8 @@ def execute(args):
         return audio_onsets(args.source, args.fps, args.emit_cues)
     if args.command == 'qc':
         from .quality import check
-        return check(args.project, args.profile, loop=args.loop, html=args.html)
+        profile = args.profile or load_config().render.default_profile
+        return check(args.project, profile, loop=args.loop, html=args.html)
     if args.command == 'lock':
         from .render import lock
         return lock(args.project, args.scene, roi_profile=args.roi_profile)
@@ -361,11 +437,12 @@ def execute(args):
         return build_handoff_package(args.project, args.output, verify_jsx=not args.no_jsx_check)
     if args.command == 'snapshot':
         from .media import executable, run
+        profile = args.profile or load_config().render.default_profile
         root, _, metadata = project.load(args.project)
         if not 0 <= args.frame < metadata['frames']:
             raise ValueError('Frame is outside the timeline')
-        artifact = contained_path(root, f'output/{args.profile}.mp4')
-        target = contained_path(root, f'review/{args.profile}-decoded-{args.frame:06d}.png', must_exist=False)
+        artifact = contained_path(root, f'output/{profile}.mp4')
+        target = contained_path(root, f'review/{profile}-decoded-{args.frame:06d}.png', must_exist=False)
         target.parent.mkdir(parents=True, exist_ok=True)
         run([executable('ffmpeg'), '-v', 'error', '-nostdin', '-y', '-i', str(artifact), '-vf', f'select=eq(n\\,{args.frame})', '-frames:v', '1', str(target)])
         if not target.is_file():
@@ -381,16 +458,20 @@ def main(argv=None):
     args = parser().parse_args(argv)
     try:
         if args.command == 'schema':
-            from .schema import project_schema
-            document = json.dumps(project_schema(), indent=2, ensure_ascii=False)
+            from .schema import schema_for
+            payload = schema_for(args.kind, args.schema_version)
+            document = json.dumps(payload, indent=2, ensure_ascii=False)
             if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
                 args.output.write_text(document + '\n', encoding='utf-8')
             else:
                 print(document)
             return 0
         if args.command == 'mcp':
+            from .config import config_context
             from .mcp_server import serve_stdio
-            return serve_stdio(workspace=args.workspace)
+            with config_context(args.config, args.workspace):
+                return serve_stdio(workspace=args.workspace)
         result = execute(args)
         ok = result.get('technical_status') not in {'fail', 'blocked', 'review'}
         if result.get('unfulfilled_explicit_ids'):
