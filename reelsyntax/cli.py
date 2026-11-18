@@ -16,7 +16,7 @@ def parser():
     commands = root.add_subparsers(dest='command', required=True)
 
     schema = commands.add_parser('schema', help='Print the editor JSON Schema')
-    schema.add_argument('--kind', choices=['reel', 'config'], default='reel')
+    schema.add_argument('--kind', choices=['reel', 'config', 'format'], default='reel')
     schema.add_argument('--schema-version', type=int, default=1)
     schema.add_argument('--output', type=Path)
 
@@ -41,6 +41,23 @@ def parser():
     lang_val.add_argument('locale', nargs='?')
     lang_val.add_argument('--root', type=Path)
     lang_val.add_argument('--json', action='store_true')
+
+    fmt_cmd = commands.add_parser('formats', help='List, inspect, scaffold, or validate prompt-to-video formats')
+    fmt_sub = fmt_cmd.add_subparsers(dest='action', required=True)
+    fmt_list = fmt_sub.add_parser('list')
+    fmt_list.add_argument('--category')
+    fmt_list.add_argument('--json', action='store_true')
+    fmt_show = fmt_sub.add_parser('show')
+    fmt_show.add_argument('id')
+    fmt_show.add_argument('--json', action='store_true')
+    fmt_new = fmt_sub.add_parser('new')
+    fmt_new.add_argument('target')
+    fmt_new.add_argument('--category', default='social')
+    fmt_new.add_argument('--base-dir', type=Path)
+    fmt_new.add_argument('--json', action='store_true')
+    fmt_val = fmt_sub.add_parser('validate')
+    fmt_val.add_argument('target')
+    fmt_val.add_argument('--json', action='store_true')
 
     cfg_cmd = commands.add_parser('config', help='Inspect, initialize, or validate reelsyntax.toml configuration')
     cfg_sub = cfg_cmd.add_subparsers(dest='action', required=True)
@@ -370,12 +387,46 @@ def lang_command(args):
     raise ValueError('Unsupported lang action')
 
 
+def formats_command(args):
+    from .formats import discover_formats, get_format, scaffold_format, validate_format_directory
+
+    if args.action == 'list':
+        rows = discover_formats(category=args.category)
+        return {
+            'total': len(rows),
+            'formats': [
+                {
+                    'id': r['id'],
+                    'version': r['version'],
+                    'category': r['category'],
+                    'title': r['title'],
+                    'aspect': r['aspect'],
+                    'engines': r['engines'],
+                }
+                for r in rows
+            ],
+        }
+    if args.action == 'show':
+        return get_format(args.id)
+    if args.action == 'new':
+        return scaffold_format(args.target, category=args.category, base_dir=args.base_dir)
+    if args.action == 'validate':
+        target_path = Path(args.target)
+        if target_path.is_dir():
+            return validate_format_directory(target_path)
+        info = get_format(args.target)
+        return validate_format_directory(Path(info['path']))
+    raise ValueError('Unsupported formats action')
+
+
 def _execute_with_config(args, load_config):
     from . import project
     if args.command == 'config':
         return config_command(args)
     if args.command == 'lang':
         return lang_command(args)
+    if args.command == 'formats':
+        return formats_command(args)
     if args.command == 'migrate':
         from .migration import migrate_project
         return migrate_project(args.project, dry_run=args.dry_run, remote_schema=args.remote_schema)

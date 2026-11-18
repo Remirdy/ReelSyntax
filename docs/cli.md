@@ -5,8 +5,9 @@
 | Command | Behavior |
 | --- | --- |
 | `config <show\|path\|init\|validate>` | Inspect merged `reelsyntax.toml` settings, print user/project config paths, create a starter TOML, or validate syntax and bounds |
+| `formats <list\|show\|new\|validate>` | Browse available formats, inspect a format manifest, scaffold a new data-only format directory, or validate `format.json` + skeleton safety |
 | `lang <list\|show\|new\|validate>` | List supported locales and owner-verification flags, inspect a language profile, scaffold a new locale, or validate key/placeholder parity |
-| `schema [--kind reel\|config] [--schema-version N]` | Print or write the versioned editor JSON Schema for `reel.json` or `reelsyntax.toml` |
+| `schema [--kind reel\|config\|format] [--schema-version N]` | Print or write the versioned editor JSON Schema for `reel.json`, `reelsyntax.toml`, or `format.json` |
 | `migrate <project> [--dry-run]` | Upgrade legacy or unversioned `reel.json` files to `schema_version: 1` with `.reelsyntax/migrations/` backup |
 | `doctor` | Probe Python, FFmpeg/FFprobe, Pillow, Chromium, Blender, After Effects/`aerender`, and first-party MCP status |
 | `integrations` | Report submodule initialization, pinned commits, package versions, and runtime readiness for `BlenderMCP` and `AfterEffectsMCP` |
