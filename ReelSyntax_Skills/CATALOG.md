@@ -1,11 +1,11 @@
 # ReelSyntax skill catalog
 
-596 skills across 25 categories. 508 guidance, 88 validated.
+606 skills across 25 categories. 508 guidance, 98 validated.
 
 | Category | Skills |
 | --- | ---: |
 | art | 27 |
-| audio | 23 |
+| audio | 27 |
 | camera | 25 |
 | capture | 20 |
 | character | 20 |
@@ -14,20 +14,20 @@
 | direction | 22 |
 | editing | 24 |
 | engines | 24 |
-| formats | 32 |
-| graphics | 20 |
+| formats | 34 |
+| graphics | 21 |
 | ingest | 20 |
 | lighting | 23 |
-| modeling | 21 |
+| modeling | 22 |
 | motion | 23 |
-| music | 20 |
+| music | 21 |
 | qa | 23 |
 | render | 20 |
 | skills | 29 |
 | story | 25 |
 | transitions | 20 |
 | typography | 35 |
-| vfx | 22 |
+| vfx | 23 |
 | workflow | 21 |
 
 ## Art direction, composition and design (`art`, 27)
@@ -62,7 +62,7 @@
 | [vaporwave-synthwave-style](library/art/vaporwave-synthwave-style/SKILL.md) | guidance | synthwave, retro gelecek | Compose a retro-futurist grid and horizon palette. |
 | [visual-hierarchy](library/art/visual-hierarchy/SKILL.md) | guidance | görsel hiyerarşi, tasarım hiyerarşisi | Use for visual hierarchy. Prioritize scale, contrast, position and motion to produce an intended reading order. |
 
-## Sound design, recording and mixing (`audio`, 23)
+## Sound design, recording and mixing (`audio`, 27)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -80,14 +80,18 @@
 | [local-text-to-speech](library/audio/local-text-to-speech/SKILL.md) | guidance | local TTS, yerel seslendirme | Prepare narration from an installed local synthesizer. |
 | [loudness-normalization](library/audio/loudness-normalization/SKILL.md) | validated | lufs, ses normalizasyonu | Use for loudness normalization. Measure integrated loudness and true peak; normalize to destination specification. |
 | [multitrack-mixing](library/audio/multitrack-mixing/SKILL.md) | guidance | çok kanallı ses, mix | Use for multitrack mixing. Balance dialogue, music, effects and ambience as separate stems with master headroom. |
+| [platform-loudness-targets](library/audio/platform-loudness-targets/SKILL.md) | validated | platform loudness targets, lufs true peak mastering, platform ses yüksekliği hedefleri, LUFS ve tavan seviye ayarı, Plattform-Lautheitsziele, LUFS und True-Peak-Mastering, objetivos de sonoridad por plataforma, cibles de sonie et crête vraie | Master integrated program loudness, short-term dynamics, loudness range, and true-peak ceilings using adjustable delivery presets and dual-pass measurement. |
 | [procedural-impact](library/audio/procedural-impact/SKILL.md) | guidance | darbe sesi, impact sfx | Use for procedural impact. Combine low transient, shaped noise and short decay using deterministic synthesis. |
 | [procedural-weather-audio](library/audio/procedural-weather-audio/SKILL.md) | guidance | yağmur sesi, rüzgar sesi | Use for procedural weather audio. Synthesize filtered seeded noise layers with controlled random event rates. |
 | [procedural-whoosh](library/audio/procedural-whoosh/SKILL.md) | guidance | whoosh, geçiş sesi | Use for procedural whoosh. Shape filtered noise and pitch envelopes to match motion direction and duration. |
 | [room-tone](library/audio/room-tone/SKILL.md) | guidance | oda sesi, room tone | Use for room tone. Fill dialogue gaps using compatible room tone and short crossfades. |
+| [sfx-layering-transient-tail](library/audio/sfx-layering-transient-tail/SKILL.md) | validated | sfx transient tail layering, layered sound effects, katmanlı ses efekti tasarımı, atak gövde kuyruk katmanlama, SFX-Schichtung Attack und Tail, Klangschichten für Übergänge, capas de efectos de sonido, superposition d'effets sonores | Synthesize or layer clean UI, transition, and impact sound effects across non-overlapping sub-body, mid-transient, and airy-tail bands locked to exact frame onsets. |
 | [sound-spotting](library/audio/sound-spotting/SKILL.md) | guidance | ses planı, sound spotting | Use for sound spotting. Mark dialogue, ambience, Foley, music and effects cues on the timeline. |
 | [spatial-audio](library/audio/spatial-audio/SKILL.md) | guidance | mekansal ses, stereo pan | Use for spatial audio. Place sources by screen position and narrative relevance with safe stereo width. |
 | [true-peak-limiting](library/audio/true-peak-limiting/SKILL.md) | guidance | limiter, true peak | Use for true peak limiting. Limit final mix to declared true-peak ceiling with headroom. |
+| [tts-phonetic-pronunciation](library/audio/tts-phonetic-pronunciation/SKILL.md) | validated | tts phonetic pronunciation, speech pronunciation lexicon, seslendirme telaffuz sözlüğü, kısaltma okunuş düzeltme, Aussprache-Lexikon für Sprachsynthese, Phonetische Aussprache steuern, pronunciación fonética de síntesis, prononciation phonétique vocale | Normalize acronyms, version strings, SI units, numbers, and cross-language loanwords into spoken pronunciation lexicons for local speech synthesis without altering visible captions. |
 | [voice-cleanup](library/audio/voice-cleanup/SKILL.md) | guidance | ses temizleme, noise reduction | Use for voice cleanup. Analyze noise profile and apply conservative cleanup without changing meaning. |
+| [voice-fx-flat-synth](library/audio/voice-fx-flat-synth/SKILL.md) | validated | voice fx synth, stylized radio robot voice, stilize telsiz robot sesi, retro oyun ses efekti, stilisierte Funk- und Roboterstimme, Synthetische Stimmcharakteristik, efectos de voz sintética, effets de voix synthétique | Shape stylized radio, intercom, retro-console chatter, or dry synthetic robot voices with controlled bandpass, subtle bit quantization, and intelligibility protection. |
 | [voiceover-alignment](library/audio/voiceover-alignment/SKILL.md) | guidance | seslendirme senkronu, voice over sync | Use for voiceover alignment. Map narration timestamps to scene beats and handle unmatched words explicitly. |
 
 ## Camera and cinematography (`camera`, 25)
@@ -322,7 +326,7 @@
 | [threejs-scene](library/engines/threejs-scene/SKILL.md) | guidance | three.js, threejs | Use for threejs scene. Create renderer, camera, scene and explicit frame-time update; dispose resources. |
 | [webcodecs-offscreen-canvas](library/engines/webcodecs-offscreen-canvas/SKILL.md) | guidance | webcodecs render, offscreencanvas, tarayıcı kare sentezi | Use for headless OffscreenCanvas and WebCodecs frame synthesis. Render frame-indexed 2D/WebGL buffers with explicit microsecond timestamps and zero DOM layout overhead. |
 
-## Genre workflows and creative formats (`formats`, 32)
+## Genre workflows and creative formats (`formats`, 34)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -345,6 +349,7 @@
 | [memorial-tribute](library/formats/memorial-tribute/SKILL.md) | guidance | anma videosu, duygusal anma | Use for memorial tribute. Build respectful tone using verified archival or supplied material with restrained effects. |
 | [music-visualizer](library/formats/music-visualizer/SKILL.md) | guidance | müzik görselleştirme, visualizer | Use for music visualizer. Map audio features to controlled visual motifs with repeatable timing. |
 | [news-explainer](library/formats/news-explainer/SKILL.md) | guidance | news explainer, haber açıklayıcı | Build a sourced chronology for a short news segment. |
+| [news-ticker-hierarchy](library/formats/news-ticker-hierarchy/SKILL.md) | validated | news ticker hierarchy, broadcast ticker crawl, haber bandı hiyerarşisi, kayan alt bant düzeni, Nachrichtenticker-Hierarchie, Laufband-Layout gestalten, jerarquía de cintillo informativo, hiérarchie de bandeau d'actualité | Design structured news-brief layouts with clear primary-headline dominance, judder-free integer-pixel ticker crawls, source badges, and zero dual-reading overload. |
 | [podcast-clip](library/formats/podcast-clip/SKILL.md) | guidance | podcast kesiti, podcast reel | Use for podcast clip. Select self-contained excerpt and preserve speaker context while trimming. |
 | [product-commercial](library/formats/product-commercial/SKILL.md) | guidance | ürün reklamı, ticari reklam | Use for product commercial. Plan benefit-driven visual shots, accurate product assets and a clear end card. |
 | [quote-card-motion](library/formats/quote-card-motion/SKILL.md) | guidance | quote card, alıntı kartı animasyonu | Time a quote reveal against a recorded reading. |
@@ -352,6 +357,7 @@
 | [recipe-cooking-video](library/formats/recipe-cooking-video/SKILL.md) | guidance | recipe video, yemek tarifi videosu | Build an overhead cooking sequence with measured ingredients. |
 | [research-documentary](library/formats/research-documentary/SKILL.md) | guidance | belgesel, araştırmadan belgesel | Use for research documentary. Develop source-grounded narrative with archival permissions and labeled reconstructions. |
 | [restaurant-commercial](library/formats/restaurant-commercial/SKILL.md) | guidance | restoran reklamı, yemek videosu | Use for restaurant commercial. Build appetizing food coverage, clean price/offer hierarchy and truthful conditions. |
+| [retro-cutscene-directing](library/formats/retro-cutscene-directing/SKILL.md) | validated | retro cutscene directing, lowpoly cutscene staging, retro ara sahne yönetimi, düşük poligonlu diyalog sahnesi, Retro-Zwischensequenz-Regie, Low-Poly-Dialogszene inszenieren, dirección de cinemática retro, mise en scène de cinématique rétro | Direct original 22-to-30-second low-poly 3D character cutscenes with crisp faceted lighting, 180-degree dialogue staging, mouth-envelope lip sync, and HUD dialogue boxes. |
 | [series-episode-workflow](library/formats/series-episode-workflow/SKILL.md) | guidance | dizi bölümü, seri üretim | Use for series episode workflow. Apply series bible, episode continuity and reusable asset versions while preserving new story beats. |
 | [short-form-story](library/formats/short-form-story/SKILL.md) | guidance | shorts, kısa hikaye | Use for short form story. Use one clear premise, concise escalation and satisfying final beat. |
 | [social-media-reel](library/formats/social-media-reel/SKILL.md) | guidance | reels, dikey sosyal medya | Use for social media reel. Compose vertical story with a strong opening, safe areas and mobile reading cadence. |
@@ -359,7 +365,7 @@
 | [teacher-tribute](library/formats/teacher-tribute/SKILL.md) | guidance | öğretmenler günü, öğretmen videosu | Use for teacher tribute. Stage authentic school details, consistent cast and respectful narrative aligned to requested culture. |
 | [tutorial-how-to](library/formats/tutorial-how-to/SKILL.md) | guidance | how-to video, nasıl yapılır videosu | Show one observable action per step. |
 
-## 2D graphics and vector animation (`graphics`, 20)
+## 2D graphics and vector animation (`graphics`, 21)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -374,6 +380,7 @@
 | [lottie-animation](library/graphics/lottie-animation/SKILL.md) | guidance | lottie, bodymovin | Use for lottie animation. Use supported vector features and test playback in the target Lottie renderer. |
 | [map-graphic](library/graphics/map-graphic/SKILL.md) | guidance | harita grafiği, rota haritası | Use for map graphic. Project geographic data consistently and credit sources; animate routes by distance. |
 | [masking-2d](library/graphics/masking-2d/SKILL.md) | guidance | 2d maskeleme, clipping path | Use for masking 2d. Build alpha or geometric masks with stable coordinate spaces. |
+| [paper-cutout-layering](library/graphics/paper-cutout-layering/SKILL.md) | validated | paper cutout layering, 2.5d paper parallax build, çok katmanlı kağıt kesme kurulumu, kağıt katman gölge ve paralaks, Papier-Schnitt-Ebenenaufbau, mehrschichtiger Scherenschnitt-Parallax, capas de recorte de papel, superposition de papier découpé | Construct 2.5D multi-plane paper cutout scenes with Z-coupled drop-shadow offsets, subtle white cut-edge bevels, local fiber texture, and parallax camera drift. |
 | [particle-2d](library/graphics/particle-2d/SKILL.md) | guidance | 2d parçacık, particle system | Use for particle 2d. Use seeded emitters with bounded lifetime and count; separate simulation clock from render. |
 | [procedural-illustration](library/graphics/procedural-illustration/SKILL.md) | guidance | kodla illüstrasyon, çizim üretimi | Use for procedural illustration. Construct reusable original shapes with seeded variation and semantic layers. |
 | [procedural-patterns](library/graphics/procedural-patterns/SKILL.md) | guidance | desen üretimi, pattern | Use for procedural patterns. Define repeat unit, seed and controlled variation using vector or canvas primitives. |
@@ -437,7 +444,7 @@
 | [volumetric-lighting](library/lighting/volumetric-lighting/SKILL.md) | guidance | hacimsel ışık, god rays | Use for volumetric lighting. Control participating medium density, light direction and sampling. |
 | [weather-design](library/lighting/weather-design/SKILL.md) | guidance | hava efekti, yağmur kar | Use for weather design. Create seeded rain, snow or fog with direction, scale and environmental reaction. |
 
-## 3D modeling, materials and assets (`modeling`, 21)
+## 3D modeling, materials and assets (`modeling`, 22)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -458,6 +465,7 @@
 | [procedural-texturing](library/modeling/procedural-texturing/SKILL.md) | guidance | prosedürel doku, noise texture | Use for procedural texturing. Map coherent noise and pattern scale to object or world coordinates. |
 | [product-modeling](library/modeling/product-modeling/SKILL.md) | guidance | ürün modelleme, 3d ürün | Use for product modeling. Model to supplied dimensions and separate functional surfaces and logo decals. |
 | [prop-modeling](library/modeling/prop-modeling/SKILL.md) | guidance | eşya modelleme, aksesuar | Use for prop modeling. Build reusable prop with sensible origin, scale and named parts. |
+| [stepped-clay-lookdev](library/modeling/stepped-clay-lookdev/SKILL.md) | validated | stepped clay lookdev, 3d stop motion clay shader, kademeli kil görünüm geliştirme, 3B kil gölgelendirici ve adım kare, gestuftes Knet-Lookdev, 3D-Stop-Motion-Tonmaterial, lookdev de arcilla escalonada, lookdev argile saccadée | Build tactile 3D claymation shaders and stepped 12-fps animation F-curves in Blender with world-scale thumbprint normals, warm subsurface scatter, and tabletop lighting. |
 | [subdivision-modeling](library/modeling/subdivision-modeling/SKILL.md) | guidance | subdivision, yüzey yumuşatma | Use for subdivision modeling. Use support loops and subdivision levels targeted at visible curvature. |
 | [texture-baking](library/modeling/texture-baking/SKILL.md) | guidance | texture bake, doku pişirme | Use for texture baking. Bake selected material channels to UV maps with appropriate margins and colorspace. |
 | [usd-scene-assembly](library/modeling/usd-scene-assembly/SKILL.md) | guidance | openusd, usda sahne, usd variant, universal scene description | Use for OpenUSD scene assembly. Structure non-destructive .usda sublayers, asset payloads, lookdev VariantSets, and rational timeSamples for 3D cinematic pipelines. |
@@ -491,12 +499,13 @@
 | [stop-motion-cadence](library/motion/stop-motion-cadence/SKILL.md) | guidance | stop motion, kareli hareket | Use for stop motion cadence. Quantize poses deliberately to a lower cadence while preserving output frame rate. |
 | [verlet-constraint-solver](library/motion/verlet-constraint-solver/SKILL.md) | validated | verlet physics, ip simülasyonu, position based dynamics, kablo fiziği | Use for Verlet constraint physics. Simulate deterministic ropes, cables, ribbons, and secondary pendulums from canonical frame indices using fixed-substep Verlet projection. |
 
-## Music and procedural audio composition (`music`, 20)
+## Music and procedural audio composition (`music`, 21)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [arpeggio-design](library/music/arpeggio-design/SKILL.md) | guidance | arpej, arpeggio | Use for arpeggio design. Sequence chord tones with intentional direction, rhythmic subdivision and accents. |
 | [audio-stem-export](library/music/audio-stem-export/SKILL.md) | guidance | stem export, ses kanalı çıktı | Use for audio stem export. Export synchronized individual bus stems with explicit channel format and length. |
+| [bar-grid-music-alignment](library/music/bar-grid-music-alignment/SKILL.md) | validated | bar grid music alignment, tempo to frame grid, müzik ölçü ızgarası hizalama, BPM kare senkronu, Taktraster-Musikausrichtung, BPM auf Bildraster abstimmen, alineación musical por compases, alignement musical sur grille de mesures | Quantize musical tempo, bar/beat frame boundaries, harmonic loop seams, and final cadence resolves onto exact integer project frames. |
 | [bassline-design](library/music/bassline-design/SKILL.md) | guidance | bas çizgisi, bassline | Use for bassline design. Write bass movement in harmonic context and control sub-frequency energy. |
 | [chord-progression](library/music/chord-progression/SKILL.md) | guidance | akor dizisi, chord progression | Use for chord progression. Choose harmonic movement appropriate to mood and phrase length. |
 | [cinematic-drone](library/music/cinematic-drone/SKILL.md) | guidance | drone müzik, atmosferik pad | Use for cinematic drone. Layer slow evolving tones with dissonance and low-end controlled by intent. |
@@ -698,7 +707,7 @@
 | [word-reveal](library/typography/word-reveal/SKILL.md) | guidance | kelime kelime, word reveal | Use for word reveal. Reveal words at timed anchors without shifting already-read text unnecessarily. |
 | [word-timed-captions](library/typography/word-timed-captions/SKILL.md) | guidance | kelime zamanlı altyazı, karaoke | Use for word timed captions. Use word timestamps to highlight active words with stable layout. |
 
-## Visual effects and compositing (`vfx`, 22)
+## Visual effects and compositing (`vfx`, 23)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -721,6 +730,7 @@
 | [rotoscoping](library/vfx/rotoscoping/SKILL.md) | guidance | rotoskop, rotoscoping | Use for rotoscoping. Track manually defined masks across keyframes with interpolation and edge feathering. |
 | [screen-replacement](library/vfx/screen-replacement/SKILL.md) | guidance | ekran değiştirme, screen replacement | Use for screen replacement. Warp replacement to tracked corners and match reflections, grain and exposure. |
 | [shader-effects](library/vfx/shader-effects/SKILL.md) | guidance | shader, glsl efekt | Use for shader effects. Write bounded shader uniforms driven by deterministic time and validate compile status. |
+| [shader-loop-art](library/vfx/shader-loop-art/SKILL.md) | validated | shader loop art, seamless glsl loop, kesintisiz gölgelendirici döngüsü, periyodik prosedürel döngü sanatı, nahtlose Shader-Schleife, periodische GLSL-Animation, arte de bucle en shader, boucle procédurale shader sans couture | Author mathematically seamless periodic GLSL and procedural visual loops using 2*pi*f/N phase clocks, circular 4D noise trajectories, and stutter-free terminal frames. |
 | [shadow-catcher](library/vfx/shadow-catcher/SKILL.md) | guidance | gölge yakalayıcı, shadow catcher | Use for shadow catcher. Render contact shadows separately and composite with plate lighting. |
 | [signed-distance-fields](library/vfx/signed-distance-fields/SKILL.md) | guidance | sdf raymarching, signed distance field, smooth boolean, analitik mesafe alanı | Use for signed distance fields. Construct 2D and 3D procedural geometry with smooth polynomial CSG booleans, analytical normals, and soft penumbra shadows. |
 | [smoke-fog](library/vfx/smoke-fog/SKILL.md) | guidance | duman, sis | Use for smoke fog. Use procedural volumes or lightweight billboards with depth sorting and evolving seed. |

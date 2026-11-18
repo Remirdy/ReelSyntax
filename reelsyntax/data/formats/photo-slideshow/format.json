@@ -19,6 +19,8 @@
   "optional": ["captions", "tone", "palette", "music_bed"],
   "skills": [
     "frame-clock",
+    "bar-grid-music-alignment",
+    "platform-loudness-targets",
     "locale-aware-casing",
     "orphan-widow-line-balance",
     "cultural-adaptation-audit",

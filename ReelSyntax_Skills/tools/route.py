@@ -36,7 +36,7 @@ CAMERA_MOVES = {
 TEXT_ADDITIONS = {
     'kinetic-typography', 'word-reveal', 'character-reveal', 'text-mask-reveal', 'text-on-path',
     'extruded-type', 'lower-thirds', 'word-timed-captions', 'end-card', 'variable-font-animation',
-    'kinetic-layout-choreography',
+    'kinetic-layout-choreography', 'news-ticker-hierarchy',
 }
 STEMS = {
     'kameras': 'kamera', 'schwarzbildern': 'schwarzbilder', 'camaras': 'camara',
@@ -206,6 +206,7 @@ def route(query, rows, limit=6, stage=None, categories=(), available=None, exclu
             excluded.add('silence-audit')
     elif locks.get('no_music'):
         excluded.update(r['id'] for r in rows if r['category'] == 'music')
+        excluded.add('music-visualizer')
     if locks.get('no_voice'):
         excluded.update(sid for sid in known if any(x in sid for x in ('voiceover', 'narration', 'text-to-speech', 'tts')))
     for row in rows:

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "60e5b363188291f6f25912eae77cde0184bfadd56f1a4d640374829297ab23d8",
+  "digest": "b30294c873e1a9fc03ec445ae4d7d73399bc746e3311d633496e01ae7157cec8",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -799,6 +799,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "platform-loudness-targets",
+      "description": "Master integrated program loudness, short-term dynamics, loudness range, and true-peak ceilings using adjustable delivery presets and dual-pass measurement.",
+      "category": "audio",
+      "stage": "export",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "platform loudness targets",
+        "lufs true peak mastering",
+        "platform ses yüksekliği hedefleri",
+        "LUFS ve tavan seviye ayarı",
+        "Plattform-Lautheitsziele",
+        "LUFS und True-Peak-Mastering",
+        "objetivos de sonoridad por plataforma",
+        "cibles de sonie et crête vraie"
+      ],
+      "requires": [
+        "ffmpeg"
+      ],
+      "path": "library/audio/platform-loudness-targets/SKILL.md",
+      "estimated_words": 747,
+      "estimated_tokens": 1815,
+      "sha256": "20fe1c3eea2d558cf77bd6b634049b4297c16ce039b9479dde0b883b2d10a5e3",
+      "body_sha256": "a4c514baebf271e455edf9724433dbfc153ef2ab375e59dd2ffc0bc111300218",
+      "recommended_next": [
+        "loudness-normalization",
+        "ebu-r128-dialogue-gating",
+        "true-peak-limiting"
+      ],
+      "resources": [
+        "library/audio/platform-loudness-targets/references/delivery-loudness-presets.md"
+      ],
+      "resource_sha256": {
+        "library/audio/platform-loudness-targets/references/delivery-loudness-presets.md": "dd073fa5c2af2ffc101dcb5684b4f9de18d5934238c124f642fff5ef0bf20dca"
+      }
+    },
+    {
       "id": "procedural-impact",
       "description": "Use for procedural impact. Combine low transient, shaped noise and short decay using deterministic synthesis.",
       "category": "audio",
@@ -875,6 +912,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "sfx-layering-transient-tail",
+      "description": "Synthesize or layer clean UI, transition, and impact sound effects across non-overlapping sub-body, mid-transient, and airy-tail bands locked to exact frame onsets.",
+      "category": "audio",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "sfx transient tail layering",
+        "layered sound effects",
+        "katmanlı ses efekti tasarımı",
+        "atak gövde kuyruk katmanlama",
+        "SFX-Schichtung Attack und Tail",
+        "Klangschichten für Übergänge",
+        "capas de efectos de sonido",
+        "superposition d'effets sonores"
+      ],
+      "requires": [],
+      "path": "library/audio/sfx-layering-transient-tail/SKILL.md",
+      "estimated_words": 713,
+      "estimated_tokens": 1668,
+      "sha256": "a5078a6fa023516fbdb9c834eda91a800de032d02723300c1633f5f1ded04651",
+      "body_sha256": "7c7f24408012c460541a237fc3bc074dd644b3e5714371317bb511233412d1b8",
+      "recommended_next": [
+        "foley-design",
+        "multitrack-mixing",
+        "true-peak-limiting"
+      ],
+      "resources": [
+        "library/audio/sfx-layering-transient-tail/references/three-band-sfx-recipes.md"
+      ],
+      "resource_sha256": {
+        "library/audio/sfx-layering-transient-tail/references/three-band-sfx-recipes.md": "1d3b1cc790eda7e6d4cdc858b3f4b9f3b36c7277f9779ebb7188931cc9790cd6"
+      }
+    },
+    {
       "id": "sound-spotting",
       "description": "Use for sound spotting. Mark dialogue, ambience, Foley, music and effects cues on the timeline.",
       "category": "audio",
@@ -932,6 +1004,40 @@
       "resource_sha256": {}
     },
     {
+      "id": "tts-phonetic-pronunciation",
+      "description": "Normalize acronyms, version strings, SI units, numbers, and cross-language loanwords into spoken pronunciation lexicons for local speech synthesis without altering visible captions.",
+      "category": "audio",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "tts phonetic pronunciation",
+        "speech pronunciation lexicon",
+        "seslendirme telaffuz sözlüğü",
+        "kısaltma okunuş düzeltme",
+        "Aussprache-Lexikon für Sprachsynthese",
+        "Phonetische Aussprache steuern",
+        "pronunciación fonética de síntesis",
+        "prononciation phonétique vocale"
+      ],
+      "requires": [],
+      "path": "library/audio/tts-phonetic-pronunciation/SKILL.md",
+      "estimated_words": 638,
+      "estimated_tokens": 1691,
+      "sha256": "262235548be41acf537c99a94905175d466d870510279cd4a30746cdbe5df4e5",
+      "body_sha256": "8be8a218f72f7b6bdde1cc844807fdbc2a150d30562349d54676b86c11147469",
+      "recommended_next": [
+        "local-text-to-speech",
+        "voiceover-alignment"
+      ],
+      "resources": [
+        "library/audio/tts-phonetic-pronunciation/references/dual-text-lexicon-schema.md"
+      ],
+      "resource_sha256": {
+        "library/audio/tts-phonetic-pronunciation/references/dual-text-lexicon-schema.md": "4c9056a24e73f75363972421d93d90f621b93937171a273a683ba195107f8f44"
+      }
+    },
+    {
       "id": "voice-cleanup",
       "description": "Use for voice cleanup. Analyze noise profile and apply conservative cleanup without changing meaning.",
       "category": "audio",
@@ -949,6 +1055,41 @@
       "sha256": "6da341e911c8921e64435ca039d44d8ec1b6d88a82f2ddb46b322d8d29ba684b",
       "body_sha256": "6c939ea9f706e0def16a382e907c2a2795c8e34203752651593d42dd4fd8121c",
       "resource_sha256": {}
+    },
+    {
+      "id": "voice-fx-flat-synth",
+      "description": "Shape stylized radio, intercom, retro-console chatter, or dry synthetic robot voices with controlled bandpass, subtle bit quantization, and intelligibility protection.",
+      "category": "audio",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "voice fx synth",
+        "stylized radio robot voice",
+        "stilize telsiz robot sesi",
+        "retro oyun ses efekti",
+        "stilisierte Funk- und Roboterstimme",
+        "Synthetische Stimmcharakteristik",
+        "efectos de voz sintética",
+        "effets de voix synthétique"
+      ],
+      "requires": [],
+      "path": "library/audio/voice-fx-flat-synth/SKILL.md",
+      "estimated_words": 655,
+      "estimated_tokens": 1609,
+      "sha256": "0fb99b5612686abf84578769b977b9df6e40720ab3d0f53742b7fbc293f4c997",
+      "body_sha256": "ffdae171e6eb5844743c4e43e4e137c20c12980afebc0c081feee6630381e674",
+      "recommended_next": [
+        "dialogue-editing",
+        "true-peak-limiting",
+        "burned-in-caption-styling"
+      ],
+      "resources": [
+        "library/audio/voice-fx-flat-synth/references/dsp-voice-presets.md"
+      ],
+      "resource_sha256": {
+        "library/audio/voice-fx-flat-synth/references/dsp-voice-presets.md": "fccb6119efe367e7979cd0080264a7a64326db0dd75df17e46a6c11d67d74fc6"
+      }
     },
     {
       "id": "voiceover-alignment",
@@ -5387,6 +5528,45 @@
       "resource_sha256": {}
     },
     {
+      "id": "news-ticker-hierarchy",
+      "description": "Design structured news-brief layouts with clear primary-headline dominance, judder-free integer-pixel ticker crawls, source badges, and zero dual-reading overload.",
+      "category": "formats",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "news ticker hierarchy",
+        "broadcast ticker crawl",
+        "haber bandı hiyerarşisi",
+        "kayan alt bant düzeni",
+        "Nachrichtenticker-Hierarchie",
+        "Laufband-Layout gestalten",
+        "jerarquía de cintillo informativo",
+        "hiérarchie de bandeau d'actualité"
+      ],
+      "requires": [],
+      "path": "library/formats/news-ticker-hierarchy/SKILL.md",
+      "estimated_words": 784,
+      "estimated_tokens": 1926,
+      "sha256": "3af3c0abde13723de5dcc7dafc62ef2f15e174ad1069b8901e1747f548adb670",
+      "body_sha256": "5b32c916fe7f4b4d4dbcaec9d1cc46b57df8d56d9fc4cbc8e775ddee98793297",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "lower-thirds",
+        "shutter-angle-judder",
+        "contrast-audit",
+        "reading-speed-audit"
+      ],
+      "resources": [
+        "library/formats/news-ticker-hierarchy/references/ticker-speed-and-zone-spec.md"
+      ],
+      "resource_sha256": {
+        "library/formats/news-ticker-hierarchy/references/ticker-speed-and-zone-spec.md": "b0fb1fd281aeeb7a9ab68a6de4b22d7e0856a6d2e361048d3e53f3b83e2bfba8"
+      }
+    },
+    {
       "id": "podcast-clip",
       "description": "Use for podcast clip. Select self-contained excerpt and preserve speaker context while trimming.",
       "category": "formats",
@@ -5518,6 +5698,42 @@
       "sha256": "8989bc1619356a94fb2e747e570b35d3cbe757a275665f4f9b44d9239cb7a31c",
       "body_sha256": "2f523873c9ad2c5c74a357481aba33a6e41f73723010f85bf2671381688bb298",
       "resource_sha256": {}
+    },
+    {
+      "id": "retro-cutscene-directing",
+      "description": "Direct original 22-to-30-second low-poly 3D character cutscenes with crisp faceted lighting, 180-degree dialogue staging, mouth-envelope lip sync, and HUD dialogue boxes.",
+      "category": "formats",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "retro cutscene directing",
+        "lowpoly cutscene staging",
+        "retro ara sahne yönetimi",
+        "düşük poligonlu diyalog sahnesi",
+        "Retro-Zwischensequenz-Regie",
+        "Low-Poly-Dialogszene inszenieren",
+        "dirección de cinemática retro",
+        "mise en scène de cinématique rétro"
+      ],
+      "requires": [],
+      "path": "library/formats/retro-cutscene-directing/SKILL.md",
+      "estimated_words": 754,
+      "estimated_tokens": 1959,
+      "sha256": "94b33cded4317cc72c2af450649dd7a0ccea952a27a55221aa1bcaf02ed88054",
+      "body_sha256": "33077c689dd8c3b56f3069ac0c2c7c0893351b40d9da47a087b215319ef4bb42",
+      "recommended_next": [
+        "low-poly-style",
+        "eyeline-headroom-grammar",
+        "lip-sync",
+        "voice-fx-flat-synth"
+      ],
+      "resources": [
+        "library/formats/retro-cutscene-directing/references/cutscene-shot-grammar.md"
+      ],
+      "resource_sha256": {
+        "library/formats/retro-cutscene-directing/references/cutscene-shot-grammar.md": "f3dea0d97598d9b59fe189c19bd0c25f81156b9f2f69bb6216642fc1650d574c"
+      }
     },
     {
       "id": "series-episode-workflow",
@@ -5843,6 +6059,44 @@
       "sha256": "6fa43a1c207b98149c7ecb14e648156a5fcfd55ada64629c4a56aa4cb855cbcb",
       "body_sha256": "40a7102dfad4e9c75b303e04e81d179ddeae51eb21db0b1a2baddffececd7a33",
       "resource_sha256": {}
+    },
+    {
+      "id": "paper-cutout-layering",
+      "description": "Construct 2.5D multi-plane paper cutout scenes with Z-coupled drop-shadow offsets, subtle white cut-edge bevels, local fiber texture, and parallax camera drift.",
+      "category": "graphics",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "paper cutout layering",
+        "2.5d paper parallax build",
+        "çok katmanlı kağıt kesme kurulumu",
+        "kağıt katman gölge ve paralaks",
+        "Papier-Schnitt-Ebenenaufbau",
+        "mehrschichtiger Scherenschnitt-Parallax",
+        "capas de recorte de papel",
+        "superposition de papier découpé"
+      ],
+      "requires": [],
+      "path": "library/graphics/paper-cutout-layering/SKILL.md",
+      "estimated_words": 750,
+      "estimated_tokens": 1770,
+      "sha256": "06199d3a9e17183b039ef99c2bf7e9a0061e5477c8c6100671f2fb51c1c14f49",
+      "body_sha256": "8f9981e973b90d2526cb945d30054f40b92d28684e3918b0c1dc753e423ecf63",
+      "dependencies": [
+        "paper-cut-style"
+      ],
+      "recommended_next": [
+        "alpha-compositing-2d",
+        "depth-of-field-budget",
+        "contrast-audit"
+      ],
+      "resources": [
+        "library/graphics/paper-cutout-layering/references/z-plane-shadow-and-parallax-math.md"
+      ],
+      "resource_sha256": {
+        "library/graphics/paper-cutout-layering/references/z-plane-shadow-and-parallax-math.md": "9068897422ca4a341a4359ad393617d22ddbf0d53d6b6e4edd77deda48ecfc1e"
+      }
     },
     {
       "id": "particle-2d",
@@ -7210,6 +7464,46 @@
       "resource_sha256": {}
     },
     {
+      "id": "stepped-clay-lookdev",
+      "description": "Build tactile 3D claymation shaders and stepped 12-fps animation F-curves in Blender with world-scale thumbprint normals, warm subsurface scatter, and tabletop lighting.",
+      "category": "modeling",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "stepped clay lookdev",
+        "3d stop motion clay shader",
+        "kademeli kil görünüm geliştirme",
+        "3B kil gölgelendirici ve adım kare",
+        "gestuftes Knet-Lookdev",
+        "3D-Stop-Motion-Tonmaterial",
+        "lookdev de arcilla escalonada",
+        "lookdev argile saccadée"
+      ],
+      "requires": [
+        "blender"
+      ],
+      "path": "library/modeling/stepped-clay-lookdev/SKILL.md",
+      "estimated_words": 754,
+      "estimated_tokens": 1803,
+      "sha256": "bd718bf7dabf9d31f870d0dae77a97cc1536b742309783532c1f1aefeced5d72",
+      "body_sha256": "4b10700887275fd24b5547d6f348fdf780316c82a33bd0e3c4c74fb68f97b6d5",
+      "dependencies": [
+        "claymation-style"
+      ],
+      "recommended_next": [
+        "blender-cycles",
+        "three-point-lighting",
+        "depth-of-field-budget"
+      ],
+      "resources": [
+        "library/modeling/stepped-clay-lookdev/references/blender-clay-node-and-fcurve-spec.md"
+      ],
+      "resource_sha256": {
+        "library/modeling/stepped-clay-lookdev/references/blender-clay-node-and-fcurve-spec.md": "3485dc0672c3ea97d796e3eccd5daacf12d724de746d3d8b4560606207bd9cce"
+      }
+    },
+    {
       "id": "subdivision-modeling",
       "description": "Use for subdivision modeling. Use support loops and subdivision levels targeted at visible curvature.",
       "category": "modeling",
@@ -7814,6 +8108,43 @@
       ],
       "resource_sha256": {
         "library/music/audio-stem-export/references/project-check.md": "73d728de0a37cd165c15091c4f3292b5d564987d70b41369d4d33f8bdda46c20"
+      }
+    },
+    {
+      "id": "bar-grid-music-alignment",
+      "description": "Quantize musical tempo, bar/beat frame boundaries, harmonic loop seams, and final cadence resolves onto exact integer project frames.",
+      "category": "music",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "bar grid music alignment",
+        "tempo to frame grid",
+        "müzik ölçü ızgarası hizalama",
+        "BPM kare senkronu",
+        "Taktraster-Musikausrichtung",
+        "BPM auf Bildraster abstimmen",
+        "alineación musical por compases",
+        "alignement musical sur grille de mesures"
+      ],
+      "requires": [],
+      "path": "library/music/bar-grid-music-alignment/SKILL.md",
+      "estimated_words": 795,
+      "estimated_tokens": 1780,
+      "sha256": "83610fe34ab241f554b49d85257bb7b38951df7966956ff79593263cda706089",
+      "body_sha256": "02348522f7e85ffb5255af4e3bb91c5cbeff353d0dae2a803b10f1d6a525fe71",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "beat-synced-editing",
+        "music-looping"
+      ],
+      "resources": [
+        "library/music/bar-grid-music-alignment/references/integer-frame-bpm-table.md"
+      ],
+      "resource_sha256": {
+        "library/music/bar-grid-music-alignment/references/integer-frame-bpm-table.md": "547df5ea9cce629132fc6d6b1880882e75a1d82594bc8f4146e16add9c44cb34"
       }
     },
     {
@@ -11853,6 +12184,44 @@
       ],
       "resource_sha256": {
         "library/vfx/shader-effects/references/offline-webgl2.md": "0ff3fbc1d5f028c0fc9af893e52f697ee854fd20118bb74cc7e362555be2fc69"
+      }
+    },
+    {
+      "id": "shader-loop-art",
+      "description": "Author mathematically seamless periodic GLSL and procedural visual loops using 2*pi*f/N phase clocks, circular 4D noise trajectories, and stutter-free terminal frames.",
+      "category": "vfx",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "shader loop art",
+        "seamless glsl loop",
+        "kesintisiz gölgelendirici döngüsü",
+        "periyodik prosedürel döngü sanatı",
+        "nahtlose Shader-Schleife",
+        "periodische GLSL-Animation",
+        "arte de bucle en shader",
+        "boucle procédurale shader sans couture"
+      ],
+      "requires": [],
+      "path": "library/vfx/shader-loop-art/SKILL.md",
+      "estimated_words": 828,
+      "estimated_tokens": 1822,
+      "sha256": "bdef39f00cca395009f4c7990b9b800ee16bf72adb8a84e788e0dd4315bc62f6",
+      "body_sha256": "e2548ce27d34ba8fe8d0d4e16a57864e81cd0cac0d62ad66b3512a2cdceb6826",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "loop-seam-audit",
+        "signed-distance-fields",
+        "oklch-perceptual-palettes"
+      ],
+      "resources": [
+        "library/vfx/shader-loop-art/references/periodic-phase-and-noise-math.md"
+      ],
+      "resource_sha256": {
+        "library/vfx/shader-loop-art/references/periodic-phase-and-noise-math.md": "1efcfa10b567eb8b46b8f84cb4ee7cb9e953001528087f55361599ab6aa2ab4f"
       }
     },
     {

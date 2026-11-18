@@ -27,6 +27,8 @@ Treat the values below as adjustable defaults and tune per audience and language
 ## Wired skills
 
 - `kinetic-typography` — Statement hierarchy, entrance damping, and hold pacing.
+- `sfx-layering-transient-tail` — Frame-accurate transient clicks and low-end weight clear of speech.
+- `platform-loudness-targets` — Two-pass linear loudness and `-1.5 dBTP` pre-codec mastering.
 - `locale-aware-casing` — Turkish `İ`/`ı` and German `ß -> SS` display casing before width measurement.
 - `german-compound-linebreak` — Morphological constituent hyphenation for long compound nouns.
 - `orphan-widow-line-balance` — Balanced multi-line wrapping free of single-word trailing orphans.

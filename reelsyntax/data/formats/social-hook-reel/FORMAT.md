@@ -19,6 +19,9 @@ Platform UI chrome dimensions change over time; treat these margins as adjustabl
 ## Wired skills
 
 - `opening-hook` — Immediate visual and sonic contrast within the first two seconds.
+- `tts-phonetic-pronunciation` — Dual-text pronunciation normalization preserving clean captions.
+- `sfx-layering-transient-tail` — Sub-impact + mid-snap hook accents with mobile speaker harmonics.
+- `platform-loudness-targets` — `-14 LUFS` short-form target with `-1.5 dBTP` AAC headroom.
 - `burned-in-caption-styling` — Anchored `>= 7:1` backing pills without active-word jitter.
 - `multilingual-caption-profiles` — Language-specific CPS/CPL pacing and shot-cut snapping.
 - `transcreation-tone` — Native hook idioms and consistent second-person register.

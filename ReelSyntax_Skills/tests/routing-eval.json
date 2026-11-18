@@ -2752,6 +2752,427 @@
       "forbidden": [
         "accessibility-caption-ad-check"
       ]
+    },
+    {
+      "id": "en-tts-phonetic-pronunciation",
+      "task": {
+        "intent": "tts phonetic pronunciation and speech pronunciation lexicon"
+      },
+      "relevant": [
+        "tts-phonetic-pronunciation"
+      ]
+    },
+    {
+      "id": "tr-tts-phonetic-pronunciation",
+      "task": {
+        "intent": "seslendirme telaffuz sözlüğü ve kısaltma okunuş düzeltme"
+      },
+      "relevant": [
+        "tts-phonetic-pronunciation"
+      ]
+    },
+    {
+      "id": "de-tts-phonetic-pronunciation",
+      "task": {
+        "intent": "Aussprache-Lexikon für Sprachsynthese und Phonetische Aussprache steuern"
+      },
+      "relevant": [
+        "tts-phonetic-pronunciation"
+      ]
+    },
+    {
+      "id": "neg-tts-phonetic-pronunciation",
+      "task": {
+        "intent": "no narration, tts phonetic pronunciation"
+      },
+      "relevant": [],
+      "forbidden": [
+        "tts-phonetic-pronunciation"
+      ]
+    },
+    {
+      "id": "en-voice-fx-flat-synth",
+      "task": {
+        "intent": "voice fx synth and stylized radio robot voice"
+      },
+      "relevant": [
+        "voice-fx-flat-synth"
+      ]
+    },
+    {
+      "id": "tr-voice-fx-flat-synth",
+      "task": {
+        "intent": "stilize telsiz robot sesi ve retro oyun ses efekti"
+      },
+      "relevant": [
+        "voice-fx-flat-synth"
+      ]
+    },
+    {
+      "id": "de-voice-fx-flat-synth",
+      "task": {
+        "intent": "stilisierte Funk- und Roboterstimme sowie Synthetische Stimmcharakteristik"
+      },
+      "relevant": [
+        "voice-fx-flat-synth"
+      ]
+    },
+    {
+      "id": "neg-voice-fx-flat-synth",
+      "task": {
+        "intent": "silent video, voice fx synth",
+        "constraints": {
+          "no_audio": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "voice-fx-flat-synth"
+      ]
+    },
+    {
+      "id": "en-sfx-layering-transient-tail",
+      "task": {
+        "intent": "sfx transient tail layering and layered sound effects"
+      },
+      "relevant": [
+        "sfx-layering-transient-tail"
+      ]
+    },
+    {
+      "id": "tr-sfx-layering-transient-tail",
+      "task": {
+        "intent": "katmanlı ses efekti tasarımı ve atak gövde kuyruk katmanlama"
+      },
+      "relevant": [
+        "sfx-layering-transient-tail"
+      ]
+    },
+    {
+      "id": "de-sfx-layering-transient-tail",
+      "task": {
+        "intent": "SFX-Schichtung Attack und Tail sowie Klangschichten für Übergänge"
+      },
+      "relevant": [
+        "sfx-layering-transient-tail"
+      ]
+    },
+    {
+      "id": "neg-sfx-layering-transient-tail",
+      "task": {
+        "intent": "silent video, sfx transient tail layering",
+        "constraints": {
+          "no_audio": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "sfx-layering-transient-tail"
+      ]
+    },
+    {
+      "id": "en-platform-loudness-targets",
+      "task": {
+        "intent": "platform loudness targets and lufs true peak mastering",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "platform-loudness-targets"
+      ]
+    },
+    {
+      "id": "tr-platform-loudness-targets",
+      "task": {
+        "intent": "platform ses yüksekliği hedefleri ve LUFS ve tavan seviye ayarı",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "platform-loudness-targets"
+      ]
+    },
+    {
+      "id": "de-platform-loudness-targets",
+      "task": {
+        "intent": "Plattform-Lautheitsziele sowie LUFS und True-Peak-Mastering",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "platform-loudness-targets"
+      ]
+    },
+    {
+      "id": "neg-platform-loudness-targets",
+      "task": {
+        "intent": "platform loudness targets",
+        "capabilities": []
+      },
+      "relevant": [],
+      "forbidden": [
+        "platform-loudness-targets"
+      ]
+    },
+    {
+      "id": "en-bar-grid-music-alignment",
+      "task": {
+        "intent": "bar grid music alignment and tempo to frame grid"
+      },
+      "relevant": [
+        "bar-grid-music-alignment",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-bar-grid-music-alignment",
+      "task": {
+        "intent": "müzik ölçü ızgarası hizalama ve BPM kare senkronu"
+      },
+      "relevant": [
+        "bar-grid-music-alignment",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-bar-grid-music-alignment",
+      "task": {
+        "intent": "Taktraster-Musikausrichtung sowie BPM auf Bildraster abstimmen"
+      },
+      "relevant": [
+        "bar-grid-music-alignment",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-bar-grid-music-alignment",
+      "task": {
+        "intent": "müziksiz bar music alignment",
+        "constraints": {
+          "no_music": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "bar-grid-music-alignment"
+      ]
+    },
+    {
+      "id": "en-stepped-clay-lookdev",
+      "task": {
+        "intent": "stepped clay lookdev and 3d stop motion clay shader",
+        "capabilities": [
+          "blender"
+        ]
+      },
+      "relevant": [
+        "stepped-clay-lookdev",
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "tr-stepped-clay-lookdev",
+      "task": {
+        "intent": "kademeli kil görünüm geliştirme ve 3B kil gölgelendirici",
+        "capabilities": [
+          "blender"
+        ]
+      },
+      "relevant": [
+        "stepped-clay-lookdev",
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "de-stepped-clay-lookdev",
+      "task": {
+        "intent": "gestuftes Knet-Lookdev und 3D-Stop-Motion-Tonmaterial",
+        "capabilities": [
+          "blender"
+        ]
+      },
+      "relevant": [
+        "stepped-clay-lookdev",
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "neg-stepped-clay-lookdev",
+      "task": {
+        "intent": "frame clock; stepped clay lookdev",
+        "capabilities": []
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "stepped-clay-lookdev"
+      ]
+    },
+    {
+      "id": "en-paper-cutout-layering",
+      "task": {
+        "intent": "paper cutout layering and 2.5d paper parallax build"
+      },
+      "relevant": [
+        "paper-cutout-layering",
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "tr-paper-cutout-layering",
+      "task": {
+        "intent": "çok katmanlı kağıt kesme kurulumu ile kağıt katman gölge ve paralaks"
+      },
+      "relevant": [
+        "paper-cutout-layering",
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "de-paper-cutout-layering",
+      "task": {
+        "intent": "Papier-Schnitt-Ebenenaufbau und mehrschichtiger Scherenschnitt-Parallax"
+      },
+      "relevant": [
+        "paper-cutout-layering",
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "neg-paper-cutout-layering",
+      "task": {
+        "intent": "contrast audit; paper cutout layering is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "paper-cutout-layering"
+      ]
+    },
+    {
+      "id": "en-shader-loop-art",
+      "task": {
+        "intent": "shader loop art and seamless glsl loop"
+      },
+      "relevant": [
+        "shader-loop-art",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-shader-loop-art",
+      "task": {
+        "intent": "kesintisiz gölgelendirici döngüsü ve periyodik prosedürel döngü sanatı"
+      },
+      "relevant": [
+        "shader-loop-art",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-shader-loop-art",
+      "task": {
+        "intent": "nahtlose Shader-Schleife und periodische GLSL-Animation"
+      },
+      "relevant": [
+        "shader-loop-art",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-shader-loop-art",
+      "task": {
+        "intent": "contrast audit; without shader loop art"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "shader-loop-art"
+      ]
+    },
+    {
+      "id": "en-retro-cutscene-directing",
+      "task": {
+        "intent": "retro cutscene directing and lowpoly cutscene staging"
+      },
+      "relevant": [
+        "retro-cutscene-directing"
+      ]
+    },
+    {
+      "id": "tr-retro-cutscene-directing",
+      "task": {
+        "intent": "retro ara sahne yönetimi ve düşük poligonlu diyalog sahnesi"
+      },
+      "relevant": [
+        "retro-cutscene-directing"
+      ]
+    },
+    {
+      "id": "de-retro-cutscene-directing",
+      "task": {
+        "intent": "Retro-Zwischensequenz-Regie sowie Low-Poly-Dialogszene inszenieren"
+      },
+      "relevant": [
+        "retro-cutscene-directing"
+      ]
+    },
+    {
+      "id": "neg-retro-cutscene-directing",
+      "task": {
+        "intent": "locked camera; without retro cutscene directing"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "retro-cutscene-directing"
+      ]
+    },
+    {
+      "id": "en-news-ticker-hierarchy",
+      "task": {
+        "intent": "news ticker hierarchy and broadcast ticker crawl"
+      },
+      "relevant": [
+        "news-ticker-hierarchy"
+      ]
+    },
+    {
+      "id": "tr-news-ticker-hierarchy",
+      "task": {
+        "intent": "haber bandı hiyerarşisi ve kayan alt bant düzeni"
+      },
+      "relevant": [
+        "news-ticker-hierarchy"
+      ]
+    },
+    {
+      "id": "de-news-ticker-hierarchy",
+      "task": {
+        "intent": "Nachrichtenticker-Hierarchie sowie Laufband-Layout gestalten"
+      },
+      "relevant": [
+        "news-ticker-hierarchy"
+      ]
+    },
+    {
+      "id": "neg-news-ticker-hierarchy",
+      "task": {
+        "intent": "no text, news ticker hierarchy"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "news-ticker-hierarchy"
+      ]
     }
   ]
 }

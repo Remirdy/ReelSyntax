@@ -19,6 +19,8 @@
   "optional": ["tone", "formality", "palette", "music_bed"],
   "skills": [
     "kinetic-typography",
+    "sfx-layering-transient-tail",
+    "platform-loudness-targets",
     "locale-aware-casing",
     "german-compound-linebreak",
     "orphan-widow-line-balance",

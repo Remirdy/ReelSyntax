@@ -36,6 +36,16 @@ BATCH_SKILLS = (
     "transcreation-tone",
     "cultural-adaptation-audit",
     "accessibility-caption-ad-check",
+    "tts-phonetic-pronunciation",
+    "voice-fx-flat-synth",
+    "sfx-layering-transient-tail",
+    "platform-loudness-targets",
+    "bar-grid-music-alignment",
+    "stepped-clay-lookdev",
+    "paper-cutout-layering",
+    "shader-loop-art",
+    "retro-cutscene-directing",
+    "news-ticker-hierarchy",
 )
 
 FORBIDDEN_TERMS_RE = re.compile(

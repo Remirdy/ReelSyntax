@@ -21,6 +21,8 @@ Treat the values below as adjustable defaults:
 ## Wired skills
 
 - `frame-clock` — Exact slide durations aligned to harmonic beat cues.
+- `bar-grid-music-alignment` — Drift-free bar downbeat dissolves and resolved closing cadences.
+- `platform-loudness-targets` — Consistent integrated program loudness across slideshows.
 - `locale-aware-casing` — Locale-accurate chapter kickers and titles.
 - `orphan-widow-line-balance` — Optically balanced two-line photo captions.
 - `cultural-adaptation-audit` — Unambiguous localized dates and regional conventions.

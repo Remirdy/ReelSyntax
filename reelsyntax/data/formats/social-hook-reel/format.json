@@ -19,6 +19,9 @@
   "optional": ["hook_style", "tone", "palette", "cta_text"],
   "skills": [
     "opening-hook",
+    "tts-phonetic-pronunciation",
+    "sfx-layering-transient-tail",
+    "platform-loudness-targets",
     "burned-in-caption-styling",
     "multilingual-caption-profiles",
     "transcreation-tone",

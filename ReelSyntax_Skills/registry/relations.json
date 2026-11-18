@@ -958,5 +958,136 @@
     "resources": [
       "library/qa/accessibility-caption-ad-check/references/wcag-media-parity-matrix.md"
     ]
+  },
+  "tts-phonetic-pronunciation": {
+    "status": "validated",
+    "recommended_next": [
+      "local-text-to-speech",
+      "voiceover-alignment"
+    ],
+    "resources": [
+      "library/audio/tts-phonetic-pronunciation/references/dual-text-lexicon-schema.md"
+    ]
+  },
+  "voice-fx-flat-synth": {
+    "status": "validated",
+    "recommended_next": [
+      "dialogue-editing",
+      "true-peak-limiting",
+      "burned-in-caption-styling"
+    ],
+    "resources": [
+      "library/audio/voice-fx-flat-synth/references/dsp-voice-presets.md"
+    ]
+  },
+  "sfx-layering-transient-tail": {
+    "status": "validated",
+    "recommended_next": [
+      "foley-design",
+      "multitrack-mixing",
+      "true-peak-limiting"
+    ],
+    "resources": [
+      "library/audio/sfx-layering-transient-tail/references/three-band-sfx-recipes.md"
+    ]
+  },
+  "platform-loudness-targets": {
+    "status": "validated",
+    "requires": [
+      "ffmpeg"
+    ],
+    "recommended_next": [
+      "loudness-normalization",
+      "ebu-r128-dialogue-gating",
+      "true-peak-limiting"
+    ],
+    "resources": [
+      "library/audio/platform-loudness-targets/references/delivery-loudness-presets.md"
+    ]
+  },
+  "bar-grid-music-alignment": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "beat-synced-editing",
+      "music-looping"
+    ],
+    "resources": [
+      "library/music/bar-grid-music-alignment/references/integer-frame-bpm-table.md"
+    ]
+  },
+  "stepped-clay-lookdev": {
+    "status": "validated",
+    "requires": [
+      "blender"
+    ],
+    "dependencies": [
+      "claymation-style"
+    ],
+    "recommended_next": [
+      "blender-cycles",
+      "three-point-lighting",
+      "depth-of-field-budget"
+    ],
+    "resources": [
+      "library/modeling/stepped-clay-lookdev/references/blender-clay-node-and-fcurve-spec.md"
+    ]
+  },
+  "paper-cutout-layering": {
+    "status": "validated",
+    "dependencies": [
+      "paper-cut-style"
+    ],
+    "recommended_next": [
+      "alpha-compositing-2d",
+      "depth-of-field-budget",
+      "contrast-audit"
+    ],
+    "resources": [
+      "library/graphics/paper-cutout-layering/references/z-plane-shadow-and-parallax-math.md"
+    ]
+  },
+  "shader-loop-art": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "loop-seam-audit",
+      "signed-distance-fields",
+      "oklch-perceptual-palettes"
+    ],
+    "resources": [
+      "library/vfx/shader-loop-art/references/periodic-phase-and-noise-math.md"
+    ]
+  },
+  "retro-cutscene-directing": {
+    "status": "validated",
+    "recommended_next": [
+      "low-poly-style",
+      "eyeline-headroom-grammar",
+      "lip-sync",
+      "voice-fx-flat-synth"
+    ],
+    "resources": [
+      "library/formats/retro-cutscene-directing/references/cutscene-shot-grammar.md"
+    ]
+  },
+  "news-ticker-hierarchy": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "lower-thirds",
+      "shutter-angle-judder",
+      "contrast-audit",
+      "reading-speed-audit"
+    ],
+    "resources": [
+      "library/formats/news-ticker-hierarchy/references/ticker-speed-and-zone-spec.md"
+    ]
   }
 }
