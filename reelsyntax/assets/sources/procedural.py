@@ -1,12 +1,14 @@
+import importlib.util
 import math
 from pathlib import Path
 import struct
 from typing import Any
 import wave
+import zlib
 
 from ReelSyntax_Skills.tools.registry import contained_path, read_json
 
-from ...palette import mix_oklab, rgb_to_hex
+from ...palette import hex_to_rgb, mix_oklab, rgb_to_hex
 from ...sound import _voice_sample
 from ..license import record_asset_license, write_licenses_markdown
 
@@ -104,15 +106,42 @@ def _write_sfx_wav(dest: Path, spec: dict[str, Any], seed: int) -> None:
         wf.writeframes(chunk)
 
 
-def _write_graphic_plate_png(dest: Path, spec: dict[str, Any]) -> None:
-    from PIL import Image, ImageDraw
+def _png_chunk(tag: bytes, payload: bytes) -> bytes:
+    crc = zlib.crc32(tag + payload) & 0xFFFFFFFF
+    return struct.pack(">I", len(payload)) + tag + payload + struct.pack(">I", crc)
 
+
+def _write_minimal_rgb_png(dest: Path, width: int, height: int, bg_hex: str, acc_hex: str) -> None:
+    r0, g0, b0 = hex_to_rgb(bg_hex)
+    r1, g1, b1 = hex_to_rgb(acc_hex)
+    top_row = b"\x00" + bytes([r0, g0, b0]) * width
+    band_row = b"\x00" + bytes([r1, g1, b1]) * width
+    split_y = int(height * 0.62)
+    raw = top_row * split_y + band_row * (height - split_y)
+    ihdr = struct.pack(">IIBBBBB", width, height, 8, 2, 0, 0, 0)
+    png_bytes = (
+        b"\x89PNG\r\n\x1a\n"
+        + _png_chunk(b"IHDR", ihdr)
+        + _png_chunk(b"IDAT", zlib.compress(raw, level=6))
+        + _png_chunk(b"IEND", b"")
+    )
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    dest.write_bytes(png_bytes)
+
+
+def _write_graphic_plate_png(dest: Path, spec: dict[str, Any]) -> None:
     w = int(spec.get("width", 1080))
     h = int(spec.get("height", 1080))
     colors = spec.get("colors", {})
     bg = str(colors.get("background", "#2b303a"))
     fg = str(colors.get("foreground", "#f4f6f9"))
     acc = str(colors.get("accent", "#d97745"))
+    if importlib.util.find_spec("PIL") is None:
+        _write_minimal_rgb_png(dest, min(w, 256), min(h, 256), bg, acc)
+        return
+
+    from PIL import Image, ImageDraw
+
     motif = str(spec.get("motif", "horizon_sun"))
 
     img = Image.new("RGB", (w, h), bg)
