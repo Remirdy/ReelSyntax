@@ -431,11 +431,11 @@ class StudioHttpTests(unittest.TestCase):
         self.assertEqual(detail["prompt"]["text"].split()[0], "12s")
         first_scene = detail["timeline"]["scenes"][0]["id"]
 
-        status, payload = self.studio.post_json("/api/revise", {"project": "out/demo", "instruction": "heading: Studio Title", "scene": first_scene})
+        status, payload = self.studio.post_json("/api/revise", {"project": "out/demo", "instruction": "heading: Studio", "scene": first_scene})
         self.assertEqual(status, 200, payload)
         self.assertEqual(payload["result"]["changed_scenes"], [first_scene])
         plan = json.loads((self.workspace / "out/demo/reel.json").read_text(encoding="utf-8"))
-        self.assertEqual(plan["scenes"][0]["params"]["heading"], "Studio Title")
+        self.assertEqual(plan["scenes"][0]["params"]["heading"], "Studio")
         status, payload = self.studio.post_json("/api/revise", {"project": "out/demo", "instruction": "heading: X", "scene": "missing-scene"})
         self.assertEqual(status, 400)
         status, payload = self.studio.post_json("/api/revise", {"project": "out/demo", "instruction": "x", "render": "yes"})

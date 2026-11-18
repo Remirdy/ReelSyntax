@@ -774,6 +774,13 @@ class StudioHandler(BaseHTTPRequestHandler):
         if length < 0:
             raise StudioHttpError(400, "Invalid Content-Length")
         if length > MAX_BODY_BYTES:
+            remaining = min(length, 262_144)
+            while remaining > 0:
+                chunk = self.rfile.read(min(remaining, 65_536))
+                if not chunk:
+                    break
+                remaining -= len(chunk)
+            self.close_connection = True
             raise StudioHttpError(413, "Request body too large")
         raw = self.rfile.read(length)
         try:
