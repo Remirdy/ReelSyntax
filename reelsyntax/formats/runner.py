@@ -104,6 +104,8 @@ def _slice_pilot_plan(plan: dict[str, Any], max_seconds: int = 5) -> dict[str, A
             break
         scene_copy = copy.deepcopy(scene)
         scene_copy["duration_frames"] = take
+        if isinstance(scene_copy.get("params", {}).get("mouth_envelope"), list):
+            scene_copy["params"]["mouth_envelope"] = scene_copy["params"]["mouth_envelope"][:take]
         if "transition" in scene_copy and scene_copy["transition"].get("duration_frames", 1) > take // 2:
             scene_copy["transition"]["duration_frames"] = max(1, take // 2)
         kept_scenes.append(scene_copy)
@@ -111,6 +113,8 @@ def _slice_pilot_plan(plan: dict[str, Any], max_seconds: int = 5) -> dict[str, A
     if not kept_scenes:
         first = copy.deepcopy(pilot["scenes"][0])
         first["duration_frames"] = min(first["duration_frames"], max_frames)
+        if isinstance(first.get("params", {}).get("mouth_envelope"), list):
+            first["params"]["mouth_envelope"] = first["params"]["mouth_envelope"][: first["duration_frames"]]
         kept_scenes = [first]
     total_pilot = sum(s["duration_frames"] for s in kept_scenes)
     pilot["scenes"] = kept_scenes
@@ -122,6 +126,18 @@ def _slice_pilot_plan(plan: dict[str, Any], max_seconds: int = 5) -> dict[str, A
                 c_copy["duration_frames"] = min(c_copy["duration_frames"], total_pilot - cue["frame"])
                 cues.append(c_copy)
         pilot["audio"]["cues"] = cues
+        if isinstance(pilot["audio"].get("tracks"), list):
+            kept_tracks = []
+            for trk in pilot["audio"]["tracks"]:
+                if trk["start_frame"] < total_pilot:
+                    t_copy = dict(trk)
+                    new_dur = min(int(t_copy["duration_frames"]), total_pilot - int(t_copy["start_frame"]))
+                    t_copy["duration_frames"] = new_dur
+                    for fkey in ("fade_in_frames", "fade_out_frames"):
+                        if fkey in t_copy:
+                            t_copy[fkey] = min(int(t_copy[fkey]), new_dur)
+                    kept_tracks.append(t_copy)
+            pilot["audio"]["tracks"] = kept_tracks
     if "quality" in pilot and "exceptions" in pilot["quality"]:
         trimmed_exc: dict[str, list[list[int]]] = {}
         for key, intervals in pilot["quality"]["exceptions"].items():
@@ -323,6 +339,58 @@ def _attach_product_promo_assets(root: Path, plan: dict[str, Any]) -> dict[str, 
     return updated
 
 
+def _attach_cutscene_voice_chirps(root: Path, plan: dict[str, Any], seed: int) -> dict[str, Any]:
+    if not plan["audio"]["enabled"] or plan.get("constraints", {}).get("no_voice"):
+        return plan
+    from ..assets import record_asset_license, write_licenses_markdown
+    from ..audio.voice_fx import synthesize_retro_dialogue_chirps
+    from ..character import build_mouth_envelope, get_character_preset
+
+    updated = copy.deepcopy(plan)
+    fps_str = str(updated["output"]["fps"])
+    fps_val = float(Fraction(fps_str))
+    tracks = list(updated["audio"].get("tracks") or [])
+    cursor = 0
+    for idx, scene in enumerate(updated["scenes"]):
+        dur = int(scene["duration_frames"])
+        params = scene.get("params", {})
+        role = params.get("shot_role", "")
+        if role in {"speaker_a", "speaker_b", "two_shot"}:
+            char_id = str(params.get("character", "scout"))
+            preset = get_character_preset(char_id)
+            line = str(params.get("dialogue") or params.get("subheading") or params.get("speaker") or scene["id"])
+            rel_wav = f"assets/audio/{scene['id']}.wav"
+            abs_wav = contained_path(root, rel_wav, must_exist=False)
+            synthesize_retro_dialogue_chirps(
+                abs_wav,
+                line,
+                duration_sec=(dur + 2) / fps_val,
+                base_pitch_hz=float(preset["default_pitch_hz"]),
+                seed=seed + idx,
+            )
+            params["mouth_envelope"] = build_mouth_envelope(abs_wav, fps=fps_str, duration_frames=dur)
+            record_asset_license(root, rel_wav, spdx="CC0-1.0", source_kind="starter_procedural", author="ReelSyntax Voice Synth")
+            pos = params.get("character_pos", "center")
+            pan = -0.25 if pos == "left" else (0.25 if pos == "right" else 0.0)
+            tracks.append({
+                "id": f"voice-{scene['id']}",
+                "source": rel_wav,
+                "kind": "voice",
+                "start_frame": cursor,
+                "duration_frames": dur,
+                "gain_db": -6.0,
+                "pan": pan,
+                "fade_in_frames": 2,
+                "fade_out_frames": min(4, dur),
+            })
+        cursor += dur
+    if tracks:
+        updated["audio"]["tracks"] = tracks
+        write_licenses_markdown(root)
+    validate(updated)
+    return updated
+
+
 def _record_brief_derived_sources(root: Path, plan: dict[str, Any], format_id: str, qc_rules: list[str]) -> None:
     if "claims-must-be-sourced" not in qc_rules:
         return
@@ -350,8 +418,6 @@ def _record_brief_derived_sources(root: Path, plan: dict[str, Any], format_id: s
     if not doc.get("sources"):
         doc["sources"] = claims
         atomic_json(prov_path, doc)
-
-
 def invalidate_from_step(state: dict[str, Any], manifest: dict[str, Any], step_id: str) -> int:
     step_ids = [s["id"] for s in manifest["steps"]]
     if step_id not in step_ids:
@@ -667,6 +733,8 @@ class FormatRunner:
                 compiled = _attach_slideshow_plates(root, compiled, state["seed"])
             elif self.manifest["id"] == "product-promo":
                 compiled = _attach_product_promo_assets(root, compiled)
+            elif self.manifest["id"] == "retro-lowpoly-cutscene":
+                compiled = _attach_cutscene_voice_chirps(root, compiled, state["seed"])
             _record_brief_derived_sources(root, compiled, self.manifest["id"], list(self.manifest.get("qc_rules", [])))
             atomic_json(root / "reel.json", compiled)
             return {
@@ -683,6 +751,8 @@ class FormatRunner:
                     compiled = _attach_slideshow_plates(root, compiled, state["seed"])
                 elif self.manifest["id"] == "product-promo":
                     compiled = _attach_product_promo_assets(root, compiled)
+                elif self.manifest["id"] == "retro-lowpoly-cutscene":
+                    compiled = _attach_cutscene_voice_chirps(root, compiled, state["seed"])
                 _record_brief_derived_sources(root, compiled, self.manifest["id"], list(self.manifest.get("qc_rules", [])))
                 atomic_json(root / "reel.json", compiled)
             return _execute_render_step(root, step, dry_run_render=self.dry_run_render)

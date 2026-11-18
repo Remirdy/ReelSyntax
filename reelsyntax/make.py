@@ -605,6 +605,8 @@ def _apply_instruction_to_scene(
         explicit_handled = True
     if subheading_match:
         params["subheading"] = subheading_match.group(1).strip()[:120]
+        if "dialogue" in params:
+            params["dialogue"] = params["subheading"]
         explicit_handled = True
 
     if not preserve_roi:

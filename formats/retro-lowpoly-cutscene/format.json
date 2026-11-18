@@ -1,0 +1,50 @@
+{
+  "$schema": "https://remirdy.github.io/ReelSyntax/schemas/format.v1.schema.json",
+  "id": "retro-lowpoly-cutscene",
+  "version": "1.0.0",
+  "title": {
+    "en": "Retro Low-Poly Cutscene",
+    "tr": "Retro Düşük Poligon Ara Sahne",
+    "de": "Retro-Low-Poly-Zwischensequenz"
+  },
+  "category": "creator",
+  "aspect": ["16:9", "9:16", "1:1", "4:5"],
+  "duration_sec": {
+    "min": 18,
+    "max": 45
+  },
+  "languages": ["en", "tr", "de"],
+  "engines": ["pillow", "blender", "ffmpeg"],
+  "needs": ["topic_or_dialogue"],
+  "optional": ["character_presets", "tone", "palette", "aspect"],
+  "skills": [
+    "retro-cutscene-directing",
+    "low-poly-style",
+    "lip-sync",
+    "voice-fx-flat-synth",
+    "eyeline-headroom-grammar",
+    "content-policy-boundaries",
+    "frame-clock",
+    "contrast-audit",
+    "vertical-safe-zones",
+    "reading-speed-audit"
+  ],
+  "steps": [
+    {"id": "idea", "type": "llm", "gate": "approve"},
+    {"id": "script", "type": "llm", "gate": "approve"},
+    {"id": "look", "type": "llm", "gate": "approve"},
+    {"id": "frames", "type": "render", "profile": "snapshot", "gate": "approve"},
+    {"id": "pilot", "type": "render", "scope": "first_5s", "profile": "draft", "gate": "approve"},
+    {"id": "full", "type": "render", "profile": "draft", "gate": "approve"},
+    {"id": "hero", "type": "render", "profile": "hero"},
+    {"id": "qc", "type": "qc"}
+  ],
+  "qc_rules": [
+    "safe-area",
+    "contrast",
+    "required-glyphs",
+    "reading-speed",
+    "mouth-sync",
+    "loudness"
+  ]
+}
