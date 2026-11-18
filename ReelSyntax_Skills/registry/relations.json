@@ -595,5 +595,118 @@
     "resources": [
       "library/delivery/premiere-interchange/references/project-check.md"
     ]
+  },
+  "idea-angle-framing": {
+    "status": "validated",
+    "recommended_next": [
+      "prompt-to-storyboard",
+      "message-hierarchy",
+      "opening-hook"
+    ],
+    "resources": [
+      "library/direction/idea-angle-framing/references/angle-matrix.md"
+    ]
+  },
+  "prompt-to-storyboard": {
+    "status": "validated",
+    "dependencies": [
+      "idea-angle-framing"
+    ],
+    "recommended_next": [
+      "frame-clock",
+      "storyboard",
+      "shot-list"
+    ],
+    "resources": [
+      "library/story/prompt-to-storyboard/references/scene-card-allocation.md"
+    ]
+  },
+  "open-loop-retention": {
+    "status": "validated",
+    "recommended_next": [
+      "opening-hook",
+      "ending-payoff"
+    ],
+    "resources": [
+      "library/story/open-loop-retention/references/loop-closure-patterns.md"
+    ]
+  },
+  "comedic-timing-beats": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "j-cut",
+      "l-cut"
+    ],
+    "resources": [
+      "library/story/comedic-timing-beats/references/frame-offset-recipes.md"
+    ]
+  },
+  "microlearning-chunking": {
+    "status": "validated",
+    "recommended_next": [
+      "reading-speed-audit",
+      "educational-explainer",
+      "caption-segmentation"
+    ],
+    "resources": [
+      "library/story/microlearning-chunking/references/cognitive-load-budget.md"
+    ]
+  },
+  "procedural-broll-planner": {
+    "status": "validated",
+    "recommended_next": [
+      "b-roll-placement",
+      "procedural-patterns"
+    ],
+    "resources": [
+      "library/direction/procedural-broll-planner/references/claim-to-plate-mapping.md"
+    ]
+  },
+  "prompt-injection-guard": {
+    "status": "validated",
+    "dependencies": [
+      "reelguard-policy"
+    ],
+    "recommended_next": [
+      "schema-json-repair",
+      "secure-local-execution"
+    ],
+    "resources": [
+      "library/skills/prompt-injection-guard/references/untrusted-brief-patterns.md"
+    ]
+  },
+  "schema-json-repair": {
+    "status": "validated",
+    "recommended_next": [
+      "prompt-injection-guard",
+      "frame-clock"
+    ],
+    "resources": [
+      "library/skills/schema-json-repair/references/repair-stages.md"
+    ]
+  },
+  "lang-detect-and-route": {
+    "status": "validated",
+    "recommended_next": [
+      "turkish-glyph-audit",
+      "multilingual-glyph-audit",
+      "locale-formatting"
+    ],
+    "resources": [
+      "library/skills/lang-detect-and-route/references/language-signatures.md"
+    ]
+  },
+  "cross-shot-grade-consistency": {
+    "status": "validated",
+    "recommended_next": [
+      "contrast-audit",
+      "oklch-perceptual-palettes"
+    ],
+    "resources": [
+      "library/lighting/cross-shot-grade-consistency/references/bt709-matching-tolerances.md"
+    ]
   }
 }

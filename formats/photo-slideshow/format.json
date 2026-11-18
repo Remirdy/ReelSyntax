@@ -19,6 +19,8 @@
   "optional": ["captions", "tone", "palette", "music_bed"],
   "skills": [
     "frame-clock",
+    "prompt-to-storyboard",
+    "cross-shot-grade-consistency",
     "contrast-audit",
     "beat-synced-editing",
     "j-cut",

@@ -19,6 +19,9 @@
   "optional": ["tone", "formality", "palette", "music_bed"],
   "skills": [
     "kinetic-typography",
+    "idea-angle-framing",
+    "prompt-to-storyboard",
+    "lang-detect-and-route",
     "frame-clock",
     "contrast-audit",
     "vertical-safe-zones",

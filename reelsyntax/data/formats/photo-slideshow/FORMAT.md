@@ -21,6 +21,8 @@ Treat the values below as adjustable defaults:
 ## Wired skills
 
 - `frame-clock` — Exact slide durations aligned to harmonic beat cues.
+- `prompt-to-storyboard` — Chapter and slide allocation across exact rational frame totals.
+- `cross-shot-grade-consistency` — Matched shadow floors, white balance, and perceptual chroma across consecutive photos.
 - `contrast-audit` — Accessible matte and caption contrast.
 - `beat-synced-editing` — Dissolve anchor alignment with musical downbeats.
 - `j-cut` — Continuous audio bed bridging across slide dissolves.

@@ -1,6 +1,6 @@
 # ReelSyntax skill catalog
 
-566 skills across 25 categories. 508 guidance, 58 validated.
+576 skills across 25 categories. 508 guidance, 68 validated.
 
 | Category | Skills |
 | --- | ---: |
@@ -11,20 +11,20 @@
 | character | 20 |
 | data | 29 |
 | delivery | 28 |
-| direction | 20 |
+| direction | 22 |
 | editing | 20 |
 | engines | 24 |
 | formats | 32 |
 | graphics | 20 |
 | ingest | 20 |
-| lighting | 21 |
+| lighting | 22 |
 | modeling | 21 |
 | motion | 21 |
 | music | 20 |
 | qa | 21 |
 | render | 20 |
-| skills | 26 |
-| story | 20 |
+| skills | 29 |
+| story | 24 |
 | transitions | 20 |
 | typography | 28 |
 | vfx | 21 |
@@ -235,7 +235,7 @@
 | [vertical-safe-zones](library/delivery/vertical-safe-zones/SKILL.md) | guidance | safe zones, güvenli alanlar | Keep vertical-video labels clear of player controls. |
 | [webm-export](library/delivery/webm-export/SKILL.md) | guidance | webm, vp9 | Use for webm export. Encode using compatible VPx or AV1 options as appropriate to target environment. |
 
-## Creative direction and production planning (`direction`, 20)
+## Creative direction and production planning (`direction`, 22)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -248,7 +248,9 @@
 | [creative-direction](library/direction/creative-direction/SKILL.md) | guidance | yaratıcı yönetmenlik, sanat yönetimi | Use for creative direction. Define one visual thesis, three design principles and a shot hierarchy; reject motifs that do not serve the message. |
 | [creative-risk-review](library/direction/creative-risk-review/SKILL.md) | guidance | yaratıcı risk, konsept kontrol | Use for creative risk review. Identify readability, originality, complexity and production risks with mitigation tests. |
 | [engine-selection](library/direction/engine-selection/SKILL.md) | guidance | motor seçimi, render motoru | Use for engine selection. Score candidates by output type, installed tools, licenses, reproducibility and fallback options. |
+| [idea-angle-framing](library/direction/idea-angle-framing/SKILL.md) | validated | idea angle, editorial angle, konu açısı, fikir çerçeveleme, Themenwinkel, Blickwinkel bestimmen, ángulo editorial, angle éditorial, ângulo editorial | Narrow a broad topic into one sharp editorial angle, concrete viewer tension, and bounded thesis before storyboarding. |
 | [message-hierarchy](library/direction/message-hierarchy/SKILL.md) | guidance | mesaj sıralaması, ana mesaj | Use for message hierarchy. Rank one core claim and supporting claims; assign emphasis and screen time accordingly. |
+| [procedural-broll-planner](library/direction/procedural-broll-planner/SKILL.md) | validated | procedural broll, procedural b-roll, prosedürel ara görüntü, üretimsel görsel planlama, prozedurales B-Roll, synthetische Schnittbilder planen, b-roll procedimental, b-roll procédural | Translate abstract narration claims into deterministic procedural visual plates—diagrams, metric counters, geometry, and layer stacks—when camera footage is absent. |
 | [production-handoff](library/direction/production-handoff/SKILL.md) | guidance | proje teslimi, iş devri | Use for production handoff. Record approved plan, assets, decisions, open issues and exact next steps. |
 | [production-scope](library/direction/production-scope/SKILL.md) | guidance | iş kapsamı, prodüksiyon planı | Use for production scope. Break work into deliverables, dependencies and milestones with cost classes. |
 | [reellab-variants](library/direction/reellab-variants/SKILL.md) | guidance | alternatif önizleme, reellab | Use for reellab variants. Produce low-cost comparable previews using distinct composition and motion mechanisms. |
@@ -401,13 +403,14 @@
 | [reference-frame-extraction](library/ingest/reference-frame-extraction/SKILL.md) | guidance | kare çıkarma, frame extraction | Use for reference frame extraction. Extract selected frames with source timestamp and consistent color conversion. |
 | [source-verification](library/ingest/source-verification/SKILL.md) | guidance | kaynak doğrulama, fact check | Use for source verification. Use primary sources where possible, record exact claim and evidence links. |
 
-## Lighting, staging and environment (`lighting`, 21)
+## Lighting, staging and environment (`lighting`, 22)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [agx-aces-tonemapping](library/lighting/agx-aces-tonemapping/SKILL.md) | validated | agx tonemapping, aces output transform, filmic highlight rolloff, renk sıkıştırma | Use for AgX and ACES tone mapping. Evaluate lighting in unbounded scene-referred linear RGB and apply gamut-preserving highlight desaturation exactly once. |
 | [ambient-occlusion](library/lighting/ambient-occlusion/SKILL.md) | guidance | ao, ambient occlusion | Use for ambient occlusion. Use contact shading moderately and avoid duplicating physically rendered occlusion. |
 | [background-depth](library/lighting/background-depth/SKILL.md) | guidance | arka plan derinliği, atmosferik perspektif | Use for background depth. Layer foreground, midground and background with consistent occlusion and depth cues. |
+| [cross-shot-grade-consistency](library/lighting/cross-shot-grade-consistency/SKILL.md) | validated | shot grade consistency, grade consistency, çekim renk tutarlılığı, sahneler arası renk uyumu, Schnitt-Farbkonsistenz, Farbabgleich zwischen Szenen, consistencia de etalonaje, cohérence colorimétrique | Match black floor, neutral white balance, highlight shoulder, and perceptual chroma across consecutive shots so cuts never pop. |
 | [exposure-planning](library/lighting/exposure-planning/SKILL.md) | guidance | pozlama, exposure | Use for exposure planning. Set rendering exposure and highlight handling using reference test charts. |
 | [exterior-staging](library/lighting/exterior-staging/SKILL.md) | guidance | dış mekan, çevre sahnesi | Use for exterior staging. Set horizon, terrain, vegetation and architecture by world scale. |
 | [golden-hour-lighting](library/lighting/golden-hour-lighting/SKILL.md) | guidance | altın saat, gün batımı | Use for golden hour lighting. Set low-angle warm key, cooler fill and long directional shadows. |
@@ -555,7 +558,7 @@
 | [resource-budget](library/render/resource-budget/SKILL.md) | guidance | ram disk bütçesi, bellek optimizasyonu | Use for resource budget. Estimate memory, disk and time from sample jobs and cap concurrency accordingly. |
 | [resume-render](library/render/resume-render/SKILL.md) | validated | render devam, devam ettir | Use for resume render. Persist completed frame/job evidence and resume incomplete work idempotently. |
 
-## Skill engineering, agent interoperability and development (`skills`, 26)
+## Skill engineering, agent interoperability and development (`skills`, 29)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -568,12 +571,15 @@
 | [engine-adapter-development](library/skills/engine-adapter-development/SKILL.md) | guidance | motor geliştir, engine adapter | Use for engine adapter development. Implement capability probe, typed scene contract, render invocation and artifact validation. |
 | [example-gallery-curation](library/skills/example-gallery-curation/SKILL.md) | guidance | example gallery, örnek galerisi | Maintain reproducible previews for example projects. |
 | [host-compat-matrix](library/skills/host-compat-matrix/SKILL.md) | guidance | compat matrix, uyumluluk matrisi | Record installer and activation results for each host. |
+| [lang-detect-and-route](library/skills/lang-detect-and-route/SKILL.md) | validated | language detection, lang detect route, dil algılama ve yönlendirme, hedef dil seçimi, Spracherkennung und Routing, Zielsprache erkennen, detección de idioma, détection de langue | Detect brief language offline via script diacritics and stopword profiles, keeping CLI interface locale separate from target video language. |
 | [license-audit-dependencies](library/skills/license-audit-dependencies/SKILL.md) | guidance | bağımlılık lisansı, spdx | Use for license audit dependencies. Inventory direct/transitive licenses and distinguish software from content assets. |
 | [mcp-gateway-routing](library/skills/mcp-gateway-routing/SKILL.md) | validated | mcp gateway, progressive tool discovery, namespaced mcp tools, birleşik mcp geçidi | Use for Unified MCP Gateway routing and progressive tool discovery. Expose constant meta-tools, namespace blender:* and after_effects:* schemas lazily, and detect upstream tool schema drift. |
 | [mcp-registry-publishing](library/skills/mcp-registry-publishing/SKILL.md) | guidance | MCP publishing, MCP yayınlama | Prepare a gateway listing with verifiable ownership. |
 | [mcp-tool-contract](library/skills/mcp-tool-contract/SKILL.md) | validated | mcp entegrasyonu, tool schema | Use for mcp tool contract. Expose typed discovery, validation and render operations with scoped input/output and permission checks. |
 | [plugin-sdk](library/skills/plugin-sdk/SKILL.md) | guidance | eklenti sdk, plugin geliştirme | Use for plugin sdk. Define capability manifest, lifecycle, version compatibility and isolated adapter interfaces. |
+| [prompt-injection-guard](library/skills/prompt-injection-guard/SKILL.md) | validated | prompt injection guard, brief sanitization, istem enjeksiyon koruması, güvenli istem sınırı, Eingabe-Injektionsschutz, Brief-Abschirmung, protección contra inyección, garde contre injection | Isolate untrusted user briefs inside inert data boundaries and reject embedded instruction overrides, path traversal tokens, and network/shell escalations. |
 | [release-documentation](library/skills/release-documentation/SKILL.md) | guidance | readme, release dokümantasyon | Use for release documentation. Document only verified features, setup paths and known limitations with reproducible examples. |
+| [schema-json-repair](library/skills/schema-json-repair/SKILL.md) | validated | schema json repair, json plan repair, şema json onarımı, bozuk json düzeltme, JSON-Schema-Reparatur, Strukturdaten-Reparatur, reparación de json, réparation de schéma json | Recover valid, schema-conformant scene plans from malformed JSON outputs using deterministic syntax normalization, bounded retries, and rule-based fallback. |
 | [secure-local-execution](library/skills/secure-local-execution/SKILL.md) | guidance | lokal güvenlik, sandbox | Use for secure local execution. Use canonical paths, subprocess argument arrays, allowlists, timeouts and narrow file permissions. |
 | [skill-alias-localization](library/skills/skill-alias-localization/SKILL.md) | guidance | alias localization, alias yerelleştirme | Add a language-specific search phrase to the router. |
 | [skill-authoring](library/skills/skill-authoring/SKILL.md) | guidance | skill oluştur, skill yaz | Use for skill authoring. Write a distinct use case with triggers, input contract, procedure, output and validation. |
@@ -586,7 +592,7 @@
 | [skill-token-budget](library/skills/skill-token-budget/SKILL.md) | validated | token optimizasyonu, context budget | Use for skill token budget. Limit initial discovery and per-stage loaded instructions; use summaries and on-demand references. |
 | [skill-versioning](library/skills/skill-versioning/SKILL.md) | guidance | skill sürümü, skill updates | Use for skill versioning. Version metadata and behavior; migrate IDs and rebuild index atomically. |
 
-## Narrative, writing and storyboards (`story`, 20)
+## Narrative, writing and storyboards (`story`, 24)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -594,11 +600,15 @@
 | [blocking](library/story/blocking/SKILL.md) | guidance | sahne konumlama, oyuncu yerleşimi | Use for blocking. Plot positions, eyelines and movement paths in a top-down diagram or coordinates. |
 | [call-to-action-writing](library/story/call-to-action-writing/SKILL.md) | guidance | harekete geçirici mesaj, cta | Use for call to action writing. Write a specific feasible next action consistent with user-provided offer terms. |
 | [chapter-structure](library/story/chapter-structure/SKILL.md) | guidance | bölümler, uzun video | Use for chapter structure. Divide long material into chapters with distinct questions and transitions. |
+| [comedic-timing-beats](library/story/comedic-timing-beats/SKILL.md) | validated | comedic timing, comedy beats, komedi zamanlaması, espri ritmi, Pointen-Timing, Komik-Rhythmus, ritmo cómico, rythme comique | Time setup-subversion beats using rule-of-three escalation, pre-punchline micro-holds, hard cuts on plosive transients, and clipped reaction tails. |
 | [continuity-ledger](library/story/continuity-ledger/SKILL.md) | guidance | süreklilik, devamlılık | Use for continuity ledger. Track wardrobe, props, positions, light, time and character state by shot. |
 | [dialogue-writing](library/story/dialogue-writing/SKILL.md) | guidance | diyalog, karakter konuşması | Use for dialogue writing. Give speakers distinct intent and concise reactions; keep subtext in actions. |
 | [ending-payoff](library/story/ending-payoff/SKILL.md) | guidance | kapanış, final sahne | Use for ending payoff. Resolve the central promise with a visual callback or decisive action. |
 | [logline-writing](library/story/logline-writing/SKILL.md) | guidance | logline, tek cümle hikaye | Use for logline writing. Express protagonist or subject, goal and conflict or promise in one clear sentence. |
+| [microlearning-chunking](library/story/microlearning-chunking/SKILL.md) | validated | microlearning, microlearning chunking, mikro öğrenme, kavram parçalama, Mikrolernen, Lernhäppchen strukturieren, microaprendizaje, micro-apprentissage | Structure educational shorts under strict cognitive-load ceilings using concept-anchor, worked visual proof, and active micro-recall beats. |
+| [open-loop-retention](library/story/open-loop-retention/SKILL.md) | validated | open loop, open loop retention, açık döngü kurgusu, merak boşluğu, Offene Schleife, Spannungsbogen halten, bucle abierto, boucle ouverte | Plant a concrete unanswered question in the opening beat, advance partial evidence across middle beats, and close the loop cleanly before the final hold. |
 | [opening-hook](library/story/opening-hook/SKILL.md) | guidance | ilk saniyeler, açılış kancası | Use for opening hook. Show the question, conflict or value through a concrete opening image before explanation. |
+| [prompt-to-storyboard](library/story/prompt-to-storyboard/SKILL.md) | validated | prompt to storyboard, brief to scenes, istemden öykü panosuna, metinden sahne planına, Kurztext zu Storyboard, Entwurf zu Szenenplan, texto a guion gráfico, brief vers scénarimage | Convert a short natural-language brief into frame-quantized scene cards with visual action, on-screen copy, audio cue, and recipe assignment. |
 | [research-script](library/story/research-script/SKILL.md) | guidance | kaynaklı senaryo, araştırma senaryosu | Use for research script. Map factual claims to reliable sources and keep interpretations clearly marked. |
 | [screenwriting](library/story/screenwriting/SKILL.md) | guidance | senaryo, senaryo yaz | Use for screenwriting. Structure setup, development and payoff in scenes with visual action rather than abstract adjectives. |
 | [script-localization](library/story/script-localization/SKILL.md) | guidance | senaryo çeviri, yerelleştirme | Use for script localization. Adapt idioms and spoken timing while preserving factual meaning and brand terms. |

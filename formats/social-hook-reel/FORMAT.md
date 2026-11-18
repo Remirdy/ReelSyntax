@@ -19,6 +19,9 @@ Platform UI chrome dimensions change over time; treat these margins as adjustabl
 ## Wired skills
 
 - `opening-hook` — Immediate visual and sonic contrast within the first two seconds.
+- `idea-angle-framing` — Focused tension framing for sub-45s vertical narratives.
+- `open-loop-retention` — Concrete opening gap, progressive middle clues, and timely payoff closure.
+- `procedural-broll-planner` — Motivated procedural plates for abstract proof beats.
 - `vertical-safe-zones` — Clearance from top, bottom, and right-edge UI overlays.
 - `kinetic-typography` — Scannable headline hierarchy and damped entrances.
 - `end-card` — Clear closing takeaway without cluttered overlays.

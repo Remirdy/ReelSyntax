@@ -27,6 +27,9 @@ Treat the values below as adjustable defaults and tune per audience and language
 ## Wired skills
 
 - `kinetic-typography` — Statement hierarchy, entrance damping, and hold pacing.
+- `idea-angle-framing` — Single sharp editorial angle and scope boundary before scripting.
+- `prompt-to-storyboard` — Frame-quantized card breakdown from natural-language briefs.
+- `lang-detect-and-route` — Independent UI and target video language resolution.
 - `frame-clock` — Integer frame budgeting and drift-free beat boundaries.
 - `contrast-audit` — Foreground/background perceptual contrast verification.
 - `vertical-safe-zones` — Platform overlay clearance on `9:16` deliverables.

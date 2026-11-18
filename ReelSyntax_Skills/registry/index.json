@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "29cced433e0702439dd39fa1c0d139573639f733ec93b6f6a6bdc337a82ef68e",
+  "digest": "6a7750a3af366445100a6460fe507dbdb3630e7b6a0a79c8fac32e45c827881d",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -3548,6 +3548,42 @@
       "resource_sha256": {}
     },
     {
+      "id": "idea-angle-framing",
+      "description": "Narrow a broad topic into one sharp editorial angle, concrete viewer tension, and bounded thesis before storyboarding.",
+      "category": "direction",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "idea angle",
+        "editorial angle",
+        "konu açısı",
+        "fikir çerçeveleme",
+        "Themenwinkel",
+        "Blickwinkel bestimmen",
+        "ángulo editorial",
+        "angle éditorial",
+        "ângulo editorial"
+      ],
+      "requires": [],
+      "path": "library/direction/idea-angle-framing/SKILL.md",
+      "estimated_words": 583,
+      "estimated_tokens": 1416,
+      "sha256": "21e8cb1a7066b6bd6b60297eb4489873d1bf10ee5c3b232328529ae53ecadf72",
+      "body_sha256": "79ad2d0275c9acdf7a40686ea50dad49106abadaf5dff7b45821981b987790a5",
+      "recommended_next": [
+        "prompt-to-storyboard",
+        "message-hierarchy",
+        "opening-hook"
+      ],
+      "resources": [
+        "library/direction/idea-angle-framing/references/angle-matrix.md"
+      ],
+      "resource_sha256": {
+        "library/direction/idea-angle-framing/references/angle-matrix.md": "45c238d713b3b98b88e74420d95b42daff5bf2740f790d9f1702c214ff990363"
+      }
+    },
+    {
       "id": "message-hierarchy",
       "description": "Use for message hierarchy. Rank one core claim and supporting claims; assign emphasis and screen time accordingly.",
       "category": "direction",
@@ -3565,6 +3601,40 @@
       "sha256": "35319aabb47a9e39793a86cdb8e36d01e98b8543a8d2eb0212808c9223eb9d3a",
       "body_sha256": "38615a514db55318f9e25b11b25ca9246f1bf87ee20c801430976268afab6b65",
       "resource_sha256": {}
+    },
+    {
+      "id": "procedural-broll-planner",
+      "description": "Translate abstract narration claims into deterministic procedural visual plates—diagrams, metric counters, geometry, and layer stacks—when camera footage is absent.",
+      "category": "direction",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "procedural broll",
+        "procedural b-roll",
+        "prosedürel ara görüntü",
+        "üretimsel görsel planlama",
+        "prozedurales B-Roll",
+        "synthetische Schnittbilder planen",
+        "b-roll procedimental",
+        "b-roll procédural"
+      ],
+      "requires": [],
+      "path": "library/direction/procedural-broll-planner/SKILL.md",
+      "estimated_words": 653,
+      "estimated_tokens": 1643,
+      "sha256": "7d037edfb53fcc5eadc00c79e6eb6b8f961cf5171a2d2bf8318c5a6f42023cd9",
+      "body_sha256": "e749a556d8eef405e1353f7c3dce32f6f129e936be01f393df5d3076556863ca",
+      "recommended_next": [
+        "b-roll-placement",
+        "procedural-patterns"
+      ],
+      "resources": [
+        "library/direction/procedural-broll-planner/references/claim-to-plate-mapping.md"
+      ],
+      "resource_sha256": {
+        "library/direction/procedural-broll-planner/references/claim-to-plate-mapping.md": "10279d69ef5f5ab33765ea8db8ef0e8ccf80ab21b0acb3ff0268b30271cd89f7"
+      }
     },
     {
       "id": "production-handoff",
@@ -6184,6 +6254,40 @@
       "resource_sha256": {}
     },
     {
+      "id": "cross-shot-grade-consistency",
+      "description": "Match black floor, neutral white balance, highlight shoulder, and perceptual chroma across consecutive shots so cuts never pop.",
+      "category": "lighting",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "shot grade consistency",
+        "grade consistency",
+        "çekim renk tutarlılığı",
+        "sahneler arası renk uyumu",
+        "Schnitt-Farbkonsistenz",
+        "Farbabgleich zwischen Szenen",
+        "consistencia de etalonaje",
+        "cohérence colorimétrique"
+      ],
+      "requires": [],
+      "path": "library/lighting/cross-shot-grade-consistency/SKILL.md",
+      "estimated_words": 657,
+      "estimated_tokens": 1575,
+      "sha256": "8fb8fce213fd3d729f52275a4b26c964144eeba0309e44a589e97f612054dd01",
+      "body_sha256": "d9f1582ef365142d89574d139ab75dd495f18bbe6f68d5da2623320e1d212411",
+      "recommended_next": [
+        "contrast-audit",
+        "oklch-perceptual-palettes"
+      ],
+      "resources": [
+        "library/lighting/cross-shot-grade-consistency/references/bt709-matching-tolerances.md"
+      ],
+      "resource_sha256": {
+        "library/lighting/cross-shot-grade-consistency/references/bt709-matching-tolerances.md": "563de90dc6505c181a795be73f98c3e5cee4a8d945065f306ea889cb6cebb550"
+      }
+    },
+    {
       "id": "exposure-planning",
       "description": "Use for exposure planning. Set rendering exposure and highlight handling using reference test charts.",
       "category": "lighting",
@@ -8762,6 +8866,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "lang-detect-and-route",
+      "description": "Detect brief language offline via script diacritics and stopword profiles, keeping CLI interface locale separate from target video language.",
+      "category": "skills",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "language detection",
+        "lang detect route",
+        "dil algılama ve yönlendirme",
+        "hedef dil seçimi",
+        "Spracherkennung und Routing",
+        "Zielsprache erkennen",
+        "detección de idioma",
+        "détection de langue"
+      ],
+      "requires": [],
+      "path": "library/skills/lang-detect-and-route/SKILL.md",
+      "estimated_words": 599,
+      "estimated_tokens": 1599,
+      "sha256": "f75f00e360249e99c6c1cfbfd7e9d98d6576f703f8d10937c4f1d2dfc4e7c5ac",
+      "body_sha256": "4fdb985e0e7cdeb0251e22ac137f4db166df779b83ec328cf9acb82d3988d487",
+      "recommended_next": [
+        "turkish-glyph-audit",
+        "multilingual-glyph-audit",
+        "locale-formatting"
+      ],
+      "resources": [
+        "library/skills/lang-detect-and-route/references/language-signatures.md"
+      ],
+      "resource_sha256": {
+        "library/skills/lang-detect-and-route/references/language-signatures.md": "31da793d34be96c2ab8fb1aef256e84ddb914178075ba38beb93589b23575478"
+      }
+    },
+    {
       "id": "license-audit-dependencies",
       "description": "Use for license audit dependencies. Inventory direct/transitive licenses and distinguish software from content assets.",
       "category": "skills",
@@ -8866,6 +9005,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "prompt-injection-guard",
+      "description": "Isolate untrusted user briefs inside inert data boundaries and reject embedded instruction overrides, path traversal tokens, and network/shell escalations.",
+      "category": "skills",
+      "stage": "ingest",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "prompt injection guard",
+        "brief sanitization",
+        "istem enjeksiyon koruması",
+        "güvenli istem sınırı",
+        "Eingabe-Injektionsschutz",
+        "Brief-Abschirmung",
+        "protección contra inyección",
+        "garde contre injection"
+      ],
+      "requires": [],
+      "path": "library/skills/prompt-injection-guard/SKILL.md",
+      "estimated_words": 590,
+      "estimated_tokens": 1611,
+      "sha256": "52795e8e0d41a0b628a586b7eff1ba2c13d985b83a4e3ece371fc712f3ff1751",
+      "body_sha256": "4762ce3cffeec883162942db35e347b9933843b8db444dd399d6952ed15b6e27",
+      "dependencies": [
+        "reelguard-policy"
+      ],
+      "recommended_next": [
+        "schema-json-repair",
+        "secure-local-execution"
+      ],
+      "resources": [
+        "library/skills/prompt-injection-guard/references/untrusted-brief-patterns.md"
+      ],
+      "resource_sha256": {
+        "library/skills/prompt-injection-guard/references/untrusted-brief-patterns.md": "c99c2948540bb22846e0a3d5dd6ab9f665ae0d0ee6b57ac8de7f891584327e37"
+      }
+    },
+    {
       "id": "release-documentation",
       "description": "Use for release documentation. Document only verified features, setup paths and known limitations with reproducible examples.",
       "category": "skills",
@@ -8883,6 +9059,40 @@
       "sha256": "7151ccdb2f6f0e2078e53631f87a94cba08a0d9c9fec5c36846b4662d52d0a8d",
       "body_sha256": "ed2eacaa5cc4b00844a801467ac2054f2b72c22860aaf1cbd3b538497b89c4c4",
       "resource_sha256": {}
+    },
+    {
+      "id": "schema-json-repair",
+      "description": "Recover valid, schema-conformant scene plans from malformed JSON outputs using deterministic syntax normalization, bounded retries, and rule-based fallback.",
+      "category": "skills",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "schema json repair",
+        "json plan repair",
+        "şema json onarımı",
+        "bozuk json düzeltme",
+        "JSON-Schema-Reparatur",
+        "Strukturdaten-Reparatur",
+        "reparación de json",
+        "réparation de schéma json"
+      ],
+      "requires": [],
+      "path": "library/skills/schema-json-repair/SKILL.md",
+      "estimated_words": 587,
+      "estimated_tokens": 1552,
+      "sha256": "1f0387a76f1a1a0f83045ecf9cf87d184fb1231ad292e55652231fbe02a5191f",
+      "body_sha256": "df13b47792484d9fd2c7303f241b5fc11b3f779d9b8fd4730b1fd0db863d6872",
+      "recommended_next": [
+        "prompt-injection-guard",
+        "frame-clock"
+      ],
+      "resources": [
+        "library/skills/schema-json-repair/references/repair-stages.md"
+      ],
+      "resource_sha256": {
+        "library/skills/schema-json-repair/references/repair-stages.md": "941ca5171cc30b3d06acfd9c3b407865ea322aacc8355f064565fe55b9f5b843"
+      }
     },
     {
       "id": "secure-local-execution",
@@ -9170,6 +9380,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "comedic-timing-beats",
+      "description": "Time setup-subversion beats using rule-of-three escalation, pre-punchline micro-holds, hard cuts on plosive transients, and clipped reaction tails.",
+      "category": "story",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "comedic timing",
+        "comedy beats",
+        "komedi zamanlaması",
+        "espri ritmi",
+        "Pointen-Timing",
+        "Komik-Rhythmus",
+        "ritmo cómico",
+        "rythme comique"
+      ],
+      "requires": [],
+      "path": "library/story/comedic-timing-beats/SKILL.md",
+      "estimated_words": 598,
+      "estimated_tokens": 1456,
+      "sha256": "f57b7e2471d24eed93947cf07853ad026a80908e53c73aa96e8e038c5ba443d7",
+      "body_sha256": "fecc09c2b8ce405710013130b19e9ec5ca2aac44c618b5c76cf572fa35a4dc77",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "j-cut",
+        "l-cut"
+      ],
+      "resources": [
+        "library/story/comedic-timing-beats/references/frame-offset-recipes.md"
+      ],
+      "resource_sha256": {
+        "library/story/comedic-timing-beats/references/frame-offset-recipes.md": "08887baf80fe5119f9625d4295029fd28794ad98502e7be45394aecb256f16e0"
+      }
+    },
+    {
       "id": "continuity-ledger",
       "description": "Use for continuity ledger. Track wardrobe, props, positions, light, time and character state by shot.",
       "category": "story",
@@ -9246,6 +9493,75 @@
       "resource_sha256": {}
     },
     {
+      "id": "microlearning-chunking",
+      "description": "Structure educational shorts under strict cognitive-load ceilings using concept-anchor, worked visual proof, and active micro-recall beats.",
+      "category": "story",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "microlearning",
+        "microlearning chunking",
+        "mikro öğrenme",
+        "kavram parçalama",
+        "Mikrolernen",
+        "Lernhäppchen strukturieren",
+        "microaprendizaje",
+        "micro-apprentissage"
+      ],
+      "requires": [],
+      "path": "library/story/microlearning-chunking/SKILL.md",
+      "estimated_words": 603,
+      "estimated_tokens": 1513,
+      "sha256": "c3b93e12d0f9fa0e7cbb67174bdee98c4b88a4aebba7066da549ed313a15ccc2",
+      "body_sha256": "eb5ca49880e5e717d826489af8d4ae2acd850b09e0c6e7b22aa8e18c4f298255",
+      "recommended_next": [
+        "reading-speed-audit",
+        "educational-explainer",
+        "caption-segmentation"
+      ],
+      "resources": [
+        "library/story/microlearning-chunking/references/cognitive-load-budget.md"
+      ],
+      "resource_sha256": {
+        "library/story/microlearning-chunking/references/cognitive-load-budget.md": "f43aadd16a206d7ef3543a61aee2d32e3589f2e1532743f70c96c9c29cc325f8"
+      }
+    },
+    {
+      "id": "open-loop-retention",
+      "description": "Plant a concrete unanswered question in the opening beat, advance partial evidence across middle beats, and close the loop cleanly before the final hold.",
+      "category": "story",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "open loop",
+        "open loop retention",
+        "açık döngü kurgusu",
+        "merak boşluğu",
+        "Offene Schleife",
+        "Spannungsbogen halten",
+        "bucle abierto",
+        "boucle ouverte"
+      ],
+      "requires": [],
+      "path": "library/story/open-loop-retention/SKILL.md",
+      "estimated_words": 604,
+      "estimated_tokens": 1422,
+      "sha256": "f7df61c02e83151945ddd8e707553022a25e76d5d2502b69833a4c0e23a4a114",
+      "body_sha256": "9a8280ba78c99aab43ca8ac48a1ebc97789376da6ae588aca1447ed8311df9b7",
+      "recommended_next": [
+        "opening-hook",
+        "ending-payoff"
+      ],
+      "resources": [
+        "library/story/open-loop-retention/references/loop-closure-patterns.md"
+      ],
+      "resource_sha256": {
+        "library/story/open-loop-retention/references/loop-closure-patterns.md": "20fe45671b89f14728dae929eeb1d3aabee171dda46eb453d3e90be17a7ab3b6"
+      }
+    },
+    {
       "id": "opening-hook",
       "description": "Use for opening hook. Show the question, conflict or value through a concrete opening image before explanation.",
       "category": "story",
@@ -9263,6 +9579,44 @@
       "sha256": "e43347a07f1851c71ab67d78ec15f6a4ec6af5025e1cdbb386413ca46f9830bb",
       "body_sha256": "2be1f5566cc971b15918b4a7f10f988b6ce1e04ab095574171500f90fbd9eff9",
       "resource_sha256": {}
+    },
+    {
+      "id": "prompt-to-storyboard",
+      "description": "Convert a short natural-language brief into frame-quantized scene cards with visual action, on-screen copy, audio cue, and recipe assignment.",
+      "category": "story",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "prompt to storyboard",
+        "brief to scenes",
+        "istemden öykü panosuna",
+        "metinden sahne planına",
+        "Kurztext zu Storyboard",
+        "Entwurf zu Szenenplan",
+        "texto a guion gráfico",
+        "brief vers scénarimage"
+      ],
+      "requires": [],
+      "path": "library/story/prompt-to-storyboard/SKILL.md",
+      "estimated_words": 620,
+      "estimated_tokens": 1543,
+      "sha256": "2d72da8e5c6f243c259672c1a50d586fd173c18aa49eee35010c6a60258b9fda",
+      "body_sha256": "8f969975760a6ce8f2e088521911e5f7cd07a5b5545cd370f82e67319d029f3c",
+      "dependencies": [
+        "idea-angle-framing"
+      ],
+      "recommended_next": [
+        "frame-clock",
+        "storyboard",
+        "shot-list"
+      ],
+      "resources": [
+        "library/story/prompt-to-storyboard/references/scene-card-allocation.md"
+      ],
+      "resource_sha256": {
+        "library/story/prompt-to-storyboard/references/scene-card-allocation.md": "ffdf26a3d1e4280eb381acfab92cef45599491f230321ecfddd61b625acbe030"
+      }
     },
     {
       "id": "research-script",
