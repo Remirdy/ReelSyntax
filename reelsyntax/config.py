@@ -95,15 +95,14 @@ def _check_lang(value: Any, label: str) -> str:
 
 
 def _check_executable_path(value: Any, label: str) -> str:
-    if not isinstance(value, str):
+    if not isinstance(value, str) or any(ord(c) < 32 for c in value):
         raise ValueError(f"{label}: expected string path")
     if value == "":
         return ""
     candidate = Path(value).expanduser()
-    if not candidate.is_absolute() or not candidate.is_file():
-        raise ValueError(f"{label}: must be an existing absolute file path")
-    if os.name != "nt" and not os.access(candidate, os.X_OK):
-        raise ValueError(f"{label}: file is not executable")
+    is_win_drive = bool(re.match(r"^[A-Za-z]:[\\/]", value))
+    if not (candidate.is_absolute() or is_win_drive):
+        raise ValueError(f"{label}: must be an absolute file path")
     return str(candidate)
 
 
