@@ -86,6 +86,7 @@ def parser():
     plugin.add_argument('--output', required=True, type=Path)
     plugin.add_argument('--allow-plugin', action='store_true')
     doctor = commands.add_parser('doctor', help='Report installed media and first-party MCP dependencies without installing anything')
+    doctor.add_argument('--providers', action='store_true', help='Include local and configured LLM provider diagnostics')
     doctor.add_argument('--json', action='store_true')
 
     integrations_cmd = commands.add_parser('integrations', help='Inspect first-party BlenderMCP and AfterEffectsMCP submodule and runtime status')
@@ -400,7 +401,11 @@ def _execute_with_config(args, load_config):
         return from_source(args.command[5:], args.source, args.output)
     if args.command == 'doctor':
         from .media import doctor
-        return doctor()
+        report = doctor()
+        if getattr(args, 'providers', False):
+            from .prompt.providers import probe_providers
+            report['providers'] = probe_providers()
+        return report
     if args.command == 'integrations':
         from .gateway import McpGateway
         with McpGateway() as gw:
