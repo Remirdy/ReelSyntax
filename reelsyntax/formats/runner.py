@@ -3,6 +3,8 @@ from datetime import datetime, timezone
 from fractions import Fraction
 import hashlib
 from pathlib import Path
+import shutil
+import tempfile
 from typing import Any, Callable
 
 from ReelSyntax_Skills.tools.registry import atomic_json, contained_path, read_json
@@ -167,10 +169,18 @@ def _execute_render_step(
         previews: list[str] = []
         for scene in plan["scenes"]:
             if scene["engine"] == "pillow":
-                mid = scene["duration_frames"] // 2
-                img, _ = drawing.draw(scene, mid, snap_output, plan["seed"], supersampling=1)
                 out_file = snap_dir / f"{scene['id']}.png"
-                img.save(out_file)
+                if scene["recipe"] == "layer-stack":
+                    from ..ingest import render_layers
+
+                    with tempfile.TemporaryDirectory() as ltmp:
+                        one_scene = dict(scene, duration_frames=1)
+                        render_layers(project_root, one_scene, plan["output"], snap_output, Path(ltmp))
+                        shutil.copy2(Path(ltmp) / "000000.png", out_file)
+                else:
+                    mid = scene["duration_frames"] // 2
+                    img, _ = drawing.draw(scene, mid, snap_output, plan["seed"], supersampling=1)
+                    img.save(out_file)
                 previews.append(out_file.relative_to(project_root).as_posix())
         return {"profile": "snapshot", "previews": previews}
 
@@ -179,6 +189,12 @@ def _execute_render_step(
     if scope == "first_5s":
         pilot_dir = contained_path(project_root, ".formats/pilot", must_exist=False)
         pilot_dir.mkdir(parents=True, exist_ok=True)
+        src_assets = project_root / "assets"
+        if src_assets.is_dir():
+            dst_assets = pilot_dir / "assets"
+            if dst_assets.exists():
+                shutil.rmtree(dst_assets)
+            shutil.copytree(src_assets, dst_assets)
         pilot_plan = _slice_pilot_plan(plan, max_seconds=5)
         atomic_json(pilot_dir / "reel.json", pilot_plan)
         res = render(pilot_dir, profile="draft")
@@ -191,6 +207,65 @@ def _execute_render_step(
 
     res = render(project_root, profile=prof)
     return {"profile": prof, "scope": "full", "artifact": res["artifact"], "frames": res["frames"]}
+
+
+def _attach_slideshow_plates(root: Path, plan: dict[str, Any], seed: int) -> dict[str, Any]:
+    from ..assets import load_license_ledger, materialize_starter_asset, record_asset_license, write_licenses_markdown
+
+    assets_dir = root / "assets"
+    user_photos: list[str] = []
+    if assets_dir.is_dir():
+        ledger = load_license_ledger(root).get("assets", {})
+        for img_path in sorted(assets_dir.rglob("*")):
+            if img_path.is_file() and img_path.suffix.lower() in {".png", ".jpg", ".jpeg", ".webp"}:
+                rel = img_path.relative_to(root).as_posix()
+                if not rel.startswith("assets/starter/"):
+                    user_photos.append(rel)
+                    if rel not in ledger:
+                        record_asset_license(root, rel, spdx="User-Provided", author="Project Owner")
+
+    if user_photos:
+        plate_paths = user_photos
+    else:
+        w_plate = materialize_starter_asset(root, "photo-plate-warm", seed=seed)
+        c_plate = materialize_starter_asset(root, "photo-plate-cool", seed=seed + 1)
+        plate_paths = [w_plate["path"], c_plate["path"]]
+    write_licenses_markdown(root)
+
+    out_w = int(plan["output"]["width"])
+    out_h = int(plan["output"]["height"])
+    box_side = int(round(min(out_w, out_h) * 0.82))
+    box_x = (out_w - box_side) // 2
+    box_y = (out_h - box_side) // 2
+
+    updated = copy.deepcopy(plan)
+    updated.pop("camera", None)
+    plate_cursor = 0
+    for idx, scene in enumerate(updated["scenes"]):
+        if idx % 2 == 1 or len(updated["scenes"]) == 1:
+            chosen_rel = plate_paths[plate_cursor % len(plate_paths)]
+            plate_cursor += 1
+            bg_col = scene.get("params", {}).get("background", "#2b303a")
+            scene.pop("camera", None)
+            scene["recipe"] = "layer-stack"
+            scene["engine"] = "pillow"
+            scene["params"] = {
+                "background": bg_col,
+                "layers": [
+                    {
+                        "source": chosen_rel,
+                        "name": f"slide-{plate_cursor}",
+                        "x": box_x,
+                        "y": box_y,
+                        "width": box_side,
+                        "height": box_side,
+                        "opacity": 1.0,
+                        "blend": "normal",
+                    }
+                ],
+            }
+    validate(updated)
+    return updated
 
 
 def invalidate_from_step(state: dict[str, Any], manifest: dict[str, Any], step_id: str) -> int:
@@ -490,8 +565,9 @@ class FormatRunner:
                     plan = read_json(root / "reel.json")
                     for scene in plan["scenes"]:
                         scene["params"]["background"] = bg
-                        scene["params"]["foreground"] = fg
-                        scene["params"]["accent"] = acc
+                        if scene["recipe"] not in {"layer-stack", "shape-field", "footage"}:
+                            scene["params"]["foreground"] = fg
+                            scene["params"]["accent"] = acc
                     validate(plan)
                     atomic_json(root / "reel.json", plan)
                 return {**out, "attempts": attempts}
@@ -503,6 +579,8 @@ class FormatRunner:
                 project_id=root.name,
                 seed=state["seed"],
             )
+            if self.manifest["id"] == "photo-slideshow":
+                compiled = _attach_slideshow_plates(root, compiled, state["seed"])
             atomic_json(root / "reel.json", compiled)
             return {
                 "scene_count": len(compiled["scenes"]),

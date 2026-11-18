@@ -1,0 +1,44 @@
+{
+  "$schema": "https://remirdy.github.io/ReelSyntax/schemas/format.v1.schema.json",
+  "id": "photo-slideshow",
+  "version": "1.0.0",
+  "title": {
+    "en": "Photo Slideshow",
+    "tr": "Fotoğraf Slayt Gösterisi",
+    "de": "Foto-Diashow"
+  },
+  "category": "personal",
+  "aspect": ["9:16", "1:1", "16:9", "4:5"],
+  "duration_sec": {
+    "min": 6,
+    "max": 90
+  },
+  "languages": ["en", "tr", "de", "es", "fr", "pt"],
+  "engines": ["pillow", "ffmpeg"],
+  "needs": ["photos_or_topic"],
+  "optional": ["captions", "tone", "palette", "music_bed"],
+  "skills": [
+    "frame-clock",
+    "contrast-audit",
+    "beat-synced-editing",
+    "j-cut",
+    "vertical-safe-zones",
+    "easing-design"
+  ],
+  "steps": [
+    {"id": "idea", "type": "llm", "gate": "approve"},
+    {"id": "script", "type": "llm", "gate": "approve"},
+    {"id": "look", "type": "llm", "gate": "approve"},
+    {"id": "frames", "type": "render", "profile": "snapshot", "gate": "approve"},
+    {"id": "pilot", "type": "render", "scope": "first_5s", "profile": "draft", "gate": "approve"},
+    {"id": "full", "type": "render", "profile": "draft", "gate": "approve"},
+    {"id": "hero", "type": "render", "profile": "hero"},
+    {"id": "qc", "type": "qc"}
+  ],
+  "qc_rules": [
+    "contrast",
+    "safe-area",
+    "required-glyphs",
+    "loudness"
+  ]
+}
