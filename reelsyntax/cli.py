@@ -242,6 +242,7 @@ def parser():
             command.add_argument('--model')
             command.add_argument('--allow-network', action='store_true')
         command.add_argument('--allow-browser-module', action='store_true')
+        command.add_argument('--reduced-motion', action='store_true', help='Replace rapid wipes/glitches with dissolves and lock moving cameras')
         command.add_argument('--max-frames', type=int, default=18000)
         command.add_argument('--timeout', type=int, help='Per media process timeout in seconds')
         command.add_argument('--fallback', choices=['pillow', 'browser'], help='Graceful fallback engine when optional Blender is absent')
@@ -264,6 +265,7 @@ def parser():
     qc.add_argument('--profile', choices=['draft', 'production', 'hero'])
     qc.add_argument('--loop', action='store_true')
     qc.add_argument('--html', action='store_true')
+    qc.add_argument('--rule', action='append', dest='qc_rules', help='Explicitly activate format QC rule (for example opening-hook or claims-must-be-sourced)')
     audio = commands.add_parser('audio').add_subparsers(dest='operation', required=True)
     analyze = audio.add_parser('analyze', help='Find frame-aligned transients in a PCM WAV')
     analyze.add_argument('source', type=Path)
@@ -720,12 +722,14 @@ def _execute_with_config(args, load_config):
             raise ValueError('Timeout must be between 1 and 3600 seconds')
         budget_mib = args.cache_budget_mib if args.cache_budget_mib is not None else (cfg.render.cache_budget_mib or None)
         budget = budget_mib * 1024 * 1024 if budget_mib is not None else None
+        eff_reduced = bool(getattr(args, 'reduced_motion', False) or cfg.render.reduced_motion)
         if args.command == 'render' and any((args.aspect, args.target, args.locale, args.set, args.brand, args.queue)):
             from .variants import render_variants
             args.profile = profile
             return render_variants(args, dict(profile=profile, max_frames=args.max_frames, timeout=timeout,
-                                              fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module))
-        return render(args.project, profile, args.max_frames, timeout, recover=args.command == 'resume', fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module)
+                                              fallback_engine=args.fallback, cache_budget_bytes=budget,
+                                              allow_browser_module=args.allow_browser_module, reduced_motion=eff_reduced))
+        return render(args.project, profile, args.max_frames, timeout, recover=args.command == 'resume', fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module, reduced_motion=eff_reduced)
 
     if args.command == 'cache':
         from .cache import prune_cache
@@ -740,7 +744,7 @@ def _execute_with_config(args, load_config):
     if args.command == 'qc':
         from .quality import check
         profile = args.profile or load_config().render.default_profile
-        return check(args.project, profile, loop=args.loop, html=args.html)
+        return check(args.project, profile, loop=args.loop, html=args.html, rules=args.qc_rules)
     if args.command == 'lock':
         from .render import lock
         return lock(args.project, args.scene, roi_profile=args.roi_profile)
