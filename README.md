@@ -141,7 +141,7 @@ Render the selected profile first and keep its master accessible to the editor. 
 
 ## Unified MCP Gateway and agent host setup
 
-Registering `python3 -m reelsyntax mcp` exposes a constant 9-tool progressive MCP surface (`reelsyntax_skills_*`, `gateway_search_tools` → `gateway_describe_tool` → `gateway_call_tool`, `reelsyntax_project_*`), routing across `blender:*` (`integrations/BlenderMCP`) and `after_effects:*` (`integrations/AfterEffectsMCP`) on demand without loading 570+ tool schemas into prompt context.
+Registering `python3 -m reelsyntax mcp` exposes a constant 13-tool progressive MCP surface (`reelsyntax_skills_*`, `gateway_search_tools` → `gateway_describe_tool` → `gateway_call_tool`, `reelsyntax_project_*`, `reelsyntax_format_list` → `reelsyntax_format_show` → `reelsyntax_format_make` → `reelsyntax_format_revise`), routing across `blender:*` (`integrations/BlenderMCP`) and `after_effects:*` (`integrations/AfterEffectsMCP`) on demand without loading 570+ tool schemas into prompt context.
 
 First-party integration management and host router installation:
 

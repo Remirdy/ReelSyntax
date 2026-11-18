@@ -3,9 +3,93 @@ from pathlib import Path
 import sys
 
 from . import __version__
+from .formats.schema import FORMAT_CATEGORIES, FORMAT_ID_RE
 from .gateway import McpGateway, validate_args_against_schema
+from .lang.catalog import LOCALE_TAG_RE
 from ReelSyntax_Skills.tools.registry import contained_path, unique_object
 from . import project, quality, skills
+
+FORMAT_ASPECT_ENUM = ['9:16', '1:1', '16:9', '4:5']
+FORMAT_STEP_ACTIONS = ['run', 'approve', 'edit', 'back']
+FORMAT_SUMMARY_KEYS = ('id', 'version', 'title', 'category', 'aspect', 'duration_sec', 'languages', 'engines', 'needs')
+FORMAT_DOC_MAX_BYTES = 65_536
+FORMAT_MAKE_CREATE_ONLY = ('prompt', 'format_id', 'video_lang', 'ui_lang', 'aspect', 'duration_sec', 'seed', 'dry_run', 'attribution')
+
+FORMAT_TOOLS = [
+    {
+        'name': 'reelsyntax_format_list',
+        'description': 'List installed declarative prompt-to-video formats as concise summaries without full manifests.',
+        'inputSchema': {
+            'type': 'object',
+            'properties': {
+                'category': {'type': 'string', 'enum': sorted(FORMAT_CATEGORIES)},
+            },
+            'additionalProperties': False,
+        },
+    },
+    {
+        'name': 'reelsyntax_format_show',
+        'description': 'Lazily load one validated format manifest with its steps, approval gates and QC rules.',
+        'inputSchema': {
+            'type': 'object',
+            'properties': {
+                'format_id': {'type': 'string', 'minLength': 1, 'maxLength': 64, 'description': 'Format identifier from reelsyntax_format_list.'},
+                'include_docs': {'type': 'boolean', 'default': False},
+            },
+            'required': ['format_id'],
+            'additionalProperties': False,
+        },
+    },
+    {
+        'name': 'reelsyntax_format_make',
+        'description': 'Create a prompt-to-video project inside the MCP workspace, preview it with dry_run, or advance an existing project one gated step.',
+        'inputSchema': {
+            'type': 'object',
+            'properties': {
+                'prompt': {'type': 'string', 'minLength': 1, 'maxLength': 4000},
+                'project': {'type': 'string', 'minLength': 1, 'maxLength': 512, 'description': 'Workspace-relative project directory.'},
+                'format_id': {'type': 'string', 'minLength': 1, 'maxLength': 64},
+                'video_lang': {'type': 'string', 'minLength': 2, 'maxLength': 16},
+                'ui_lang': {'type': 'string', 'minLength': 2, 'maxLength': 16},
+                'aspect': {'type': 'string', 'enum': FORMAT_ASPECT_ENUM},
+                'duration_sec': {'type': 'integer', 'minimum': 4, 'maximum': 180},
+                'seed': {'type': 'integer', 'minimum': 0, 'maximum': 4294967295, 'default': 42},
+                'dry_run': {'type': 'boolean', 'default': False},
+                'yes': {'type': 'boolean', 'default': False},
+                'attribution': {'type': 'boolean', 'default': False},
+                'offline': {'type': 'boolean', 'default': True},
+                'step': {
+                    'type': 'object',
+                    'properties': {
+                        'id': {'type': 'string', 'minLength': 1, 'maxLength': 64},
+                        'action': {'type': 'string', 'enum': FORMAT_STEP_ACTIONS, 'default': 'run'},
+                        'edit': {'type': 'string', 'minLength': 1, 'maxLength': 2000},
+                    },
+                    'required': ['id'],
+                    'additionalProperties': False,
+                },
+            },
+            'additionalProperties': False,
+        },
+    },
+    {
+        'name': 'reelsyntax_format_revise',
+        'description': 'Apply a checkpointed, lock-aware revision to unlocked scenes of a workspace project.',
+        'inputSchema': {
+            'type': 'object',
+            'properties': {
+                'project': {'type': 'string', 'minLength': 1, 'maxLength': 512},
+                'instruction': {'type': 'string', 'minLength': 1, 'maxLength': 2000},
+                'scene_id': {'type': 'string', 'minLength': 1, 'maxLength': 64},
+                'render': {'type': 'boolean', 'default': False},
+                'profile': {'type': 'string', 'enum': ['draft', 'production', 'hero']},
+                'offline': {'type': 'boolean', 'default': True},
+            },
+            'required': ['project', 'instruction'],
+            'additionalProperties': False,
+        },
+    },
+]
 
 GATEWAY_TOOLS = [
     {
@@ -130,7 +214,29 @@ GATEWAY_TOOLS = [
             'additionalProperties': False,
         },
     },
+    *FORMAT_TOOLS,
 ]
+
+
+def _checked_format_id(value: str) -> str:
+    if len(value) > 64 or not FORMAT_ID_RE.fullmatch(value):
+        raise ValueError(f'Invalid format identifier: {value!r}')
+    return value
+
+
+def _checked_locale(value: str | None, field: str) -> str | None:
+    if value is None:
+        return None
+    if not LOCALE_TAG_RE.fullmatch(value):
+        raise ValueError(f'{field} must be a BCP-47 style locale tag such as en, tr or pt-BR')
+    return value
+
+
+def _format_summary(manifest: dict) -> dict:
+    summary = {key: manifest[key] for key in FORMAT_SUMMARY_KEYS if key in manifest}
+    summary['steps'] = [step['id'] for step in manifest.get('steps', [])]
+    summary['approval_gates'] = [step['id'] for step in manifest.get('steps', []) if step.get('gate') == 'approve']
+    return summary
 
 
 class UnifiedMcpServer:
@@ -144,23 +250,160 @@ class UnifiedMcpServer:
     def close(self):
         self.gateway.close()
 
-    def project_directory(self, value: str) -> Path:
+    def workspace_relative(self, value: str) -> str:
         candidate = Path(value)
-        if not candidate.is_absolute():
-            relative = candidate.as_posix()
-        else:
-            for root in [self.workspace, self.workspace_alias]:
-                try:
-                    relative = candidate.relative_to(root).as_posix()
-                    break
-                except ValueError:
-                    continue
-            else:
-                raise ValueError('Project must stay inside the authorized MCP workspace')
-        directory = contained_path(self.workspace, relative, must_exist=False)
+        if not (candidate.is_absolute() or candidate.drive or candidate.root):
+            return value
+        for root in [self.workspace, self.workspace_alias]:
+            try:
+                return candidate.relative_to(root).as_posix()
+            except ValueError:
+                continue
+        raise ValueError('Project must stay inside the authorized MCP workspace')
+
+    def project_directory(self, value: str) -> Path:
+        directory = contained_path(self.workspace, self.workspace_relative(value), must_exist=False)
         if not directory.is_dir():
             raise ValueError('Project directory does not exist inside the MCP workspace')
         return directory
+
+    def new_project_directory(self, value: str) -> Path:
+        directory = contained_path(self.workspace, self.workspace_relative(value), must_exist=False)
+        if directory == self.workspace:
+            raise ValueError('New project must use a subdirectory inside the MCP workspace')
+        if directory.exists() and (not directory.is_dir() or any(directory.iterdir())):
+            raise ValueError('New project directory must be absent or empty inside the MCP workspace')
+        return directory
+
+    def _format_response(self, result: dict) -> dict:
+        root = Path(result['project'])
+        relative = root.relative_to(self.workspace).as_posix()
+        result['project'] = relative
+        result.pop('next_actions', None)
+        pending = result.get('pending_gate')
+        if pending:
+            steps = [{'id': pending, 'action': 'approve'}, {'id': pending, 'action': 'edit', 'edit': '...'}, {'id': pending, 'action': 'back'}]
+            result['next_steps'] = [{'tool': 'reelsyntax_format_make', 'arguments': {'project': relative, 'step': item}} for item in steps]
+        return result
+
+    def format_list(self, arguments: dict) -> dict:
+        from .formats.registry import discover_formats
+        from .make import BUILTIN_PROMPT_DIRECT_MANIFEST
+
+        category = arguments.get('category')
+        manifests = discover_formats(category=category)
+        summaries = [_format_summary(item) for item in manifests]
+        known = {item['id'] for item in summaries}
+        builtin = BUILTIN_PROMPT_DIRECT_MANIFEST
+        if builtin['id'] not in known and category in (None, builtin['category']):
+            summaries.append({**_format_summary(builtin), 'builtin': True})
+        summaries.sort(key=lambda item: item['id'])
+        return {'count': len(summaries), 'formats': summaries, 'full_manifests_exposed': 0}
+
+    def format_show(self, arguments: dict) -> dict:
+        import copy
+
+        from .formats.registry import get_format
+        from .formats.schema import validate_format_manifest
+        from .make import BUILTIN_PROMPT_DIRECT_MANIFEST
+
+        format_id = _checked_format_id(arguments['format_id'])
+        try:
+            manifest = get_format(format_id)
+        except ValueError:
+            if format_id != BUILTIN_PROMPT_DIRECT_MANIFEST['id']:
+                raise
+            manifest = {**copy.deepcopy(validate_format_manifest(BUILTIN_PROMPT_DIRECT_MANIFEST)), 'builtin': True}
+        source = manifest.pop('path', None)
+        result = {'manifest': manifest, 'summary': _format_summary(manifest)}
+        if arguments.get('include_docs', False) and source:
+            doc_path = contained_path(Path(source), 'FORMAT.md', must_exist=False)
+            if doc_path.is_file():
+                if doc_path.stat().st_size > FORMAT_DOC_MAX_BYTES:
+                    raise ValueError('FORMAT.md exceeds the 64 KiB documentation limit')
+                result['docs'] = doc_path.read_text(encoding='utf-8')
+        return result
+
+    def format_make(self, arguments: dict) -> dict:
+        from . import make
+
+        offline = bool(arguments.get('offline', True))
+        provider_name = 'offline_rules' if offline else None
+        yes = bool(arguments.get('yes', False))
+        step = arguments.get('step')
+        if step is not None:
+            conflicting = sorted(key for key in FORMAT_MAKE_CREATE_ONLY if key in arguments)
+            if conflicting:
+                raise ValueError(f'step mode cannot be combined with: {", ".join(conflicting)}')
+            if 'project' not in arguments:
+                raise ValueError('step mode requires an existing workspace project')
+            root = self.project_directory(arguments['project'])
+            step_id = _checked_format_id(step['id'])
+            action = step.get('action', 'run')
+            if (action == 'edit') != ('edit' in step):
+                raise ValueError("step.edit is required for action 'edit' and forbidden otherwise")
+            result = make.step_project(
+                root,
+                step_id,
+                approve=action == 'approve',
+                edit=step.get('edit'),
+                back=action == 'back',
+                yes=yes,
+                provider_name=provider_name,
+                allow_network=not offline,
+            )
+            return self._format_response(result)
+        if 'prompt' not in arguments:
+            raise ValueError('prompt is required unless step is provided')
+        format_id = arguments.get('format_id')
+        if format_id is not None:
+            _checked_format_id(format_id)
+        dry_run = bool(arguments.get('dry_run', False))
+        target = None
+        if dry_run:
+            if 'project' in arguments:
+                raise ValueError('dry_run never writes files; omit project')
+        else:
+            if 'project' not in arguments:
+                raise ValueError('project is required unless dry_run is true')
+            target = self.new_project_directory(arguments['project'])
+        result = make.make_video(
+            arguments['prompt'],
+            format_id=format_id,
+            out_dir=target,
+            provider_name=provider_name,
+            video_lang=_checked_locale(arguments.get('video_lang'), 'video_lang'),
+            ui_lang=_checked_locale(arguments.get('ui_lang'), 'ui_lang'),
+            aspect=arguments.get('aspect'),
+            duration_sec=arguments.get('duration_sec'),
+            seed=int(arguments.get('seed', 42)),
+            yes=yes,
+            dry_run=dry_run,
+            allow_network=not offline,
+            attribution=bool(arguments.get('attribution', False)),
+        )
+        if dry_run:
+            return result
+        return self._format_response(result)
+
+    def format_revise(self, arguments: dict) -> dict:
+        from .make import revise_project
+
+        offline = bool(arguments.get('offline', True))
+        root = self.project_directory(arguments['project'])
+        if 'profile' in arguments and not arguments.get('render', False):
+            raise ValueError('profile requires render to be true')
+        result = revise_project(
+            root,
+            arguments['instruction'],
+            scene_id=arguments.get('scene_id'),
+            provider_name='offline_rules' if offline else None,
+            allow_network=not offline,
+            render_after=bool(arguments.get('render', False)),
+            profile=arguments.get('profile'),
+        )
+        result['project'] = Path(result['project']).relative_to(self.workspace).as_posix()
+        return result
 
     def dispatch_tool(self, name: str, arguments: dict) -> dict:
         definition = next((tool for tool in GATEWAY_TOOLS if tool['name'] == name), None)
@@ -215,6 +458,14 @@ class UnifiedMcpServer:
             return {**metadata, 'scenes': scenes, 'constraints': plan.get('constraints', {})}
         if name == 'reelsyntax_project_qc':
             return quality.check(self.project_directory(arguments['project']), arguments.get('profile', 'draft'))
+        if name == 'reelsyntax_format_list':
+            return self.format_list(arguments)
+        if name == 'reelsyntax_format_show':
+            return self.format_show(arguments)
+        if name == 'reelsyntax_format_make':
+            return self.format_make(arguments)
+        if name == 'reelsyntax_format_revise':
+            return self.format_revise(arguments)
         raise ValueError(f'Unknown MCP tool: {name}')
 
     def handle_message(self, message: dict) -> dict | None:
@@ -237,7 +488,7 @@ class UnifiedMcpServer:
                         'protocolVersion': protocol if protocol in {'2024-11-05', '2025-03-26'} else '2024-11-05',
                         'capabilities': {'tools': {'listChanged': False}},
                         'serverInfo': {'name': 'reelsyntax-unified-gateway', 'version': __version__},
-                        'instructions': 'Unified ReelSyntax Gateway. Search skills with reelsyntax_skills_search; discover downstream BlenderMCP/AfterEffectsMCP tools progressively via gateway_search_tools -> gateway_describe_tool -> gateway_call_tool.',
+                        'instructions': 'Unified ReelSyntax Gateway. Search skills with reelsyntax_skills_search; discover downstream BlenderMCP/AfterEffectsMCP tools progressively via gateway_search_tools -> gateway_describe_tool -> gateway_call_tool; build prompt-to-video projects via reelsyntax_format_list -> reelsyntax_format_show -> reelsyntax_format_make -> reelsyntax_format_revise.',
                     },
                 }
             if method == 'ping':

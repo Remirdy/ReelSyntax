@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add MCP format tools (`reelsyntax_format_list`, `reelsyntax_format_show`, `reelsyntax_format_make` with `dry_run`/`step`/`yes`/`video_lang`/`ui_lang`/`attribution`, and `reelsyntax_format_revise`) with closed schemas, workspace path containment, and offline-by-default providers.
 - Add format-aware QC extensions (`reading_speed`, `vertical_safe_zones`, `opening_hook`, `claims_sourced` for `claims-must-be-sourced`, `asset_licenses`, `mouth_sync`, `qc --rule`) and `--reduced-motion` accessible render mode.
 - Add audio pipeline (`reelsyntax.audio`: measured per-language `tts` + `stt` probes, caption+music fallback, beat-grid and sidechain ducking `music`, transition `sfx`, non-lexical retro `voice_fx` + lip-sync mouth envelope, language-profile `captions`) and `doctor --tts --stt`.
 - Add official `social-hook-reel` format package (`formats/social-hook-reel/`, `<= 2.0s` opening hook enforcement, localized EN/TR/DE kickers, mirrored to `reelsyntax/data/formats/`) and golden-frame visual regression suite (`tests/test_visual_regression.py`).
