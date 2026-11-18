@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add prompt compilation pipeline (`reelsyntax.prompt.intent`, `storyboard`, `compiler`, and bounded 3-attempt schema `repair`) with untrusted-prompt data framing and path/recipe allowlists.
 - Add `LLMProvider` protocol and `offline_rules`, `ollama`, `openai_compat`, and `mcp_host` providers (`reelsyntax.prompt.providers`) with loopback-only default network policy and `reelsyntax doctor --providers`.
 - Add internationalization foundation (`locales/` with `status.json`, `lang-profiles/` for `en`/`tr`/`de`, `reelsyntax.lang` offline language detection and locale-aware Turkish/German casing, `reelsyntax lang` CLI commands, multilingual negative routing patterns, and Tier 1 golden routing suites).
 - Add community format and language issue templates, Discussions and private security advisory routing (`.github/ISSUE_TEMPLATE/config.yml`), and repository label taxonomy (`.github/labels.json`, `tools/sync_labels.py`).
