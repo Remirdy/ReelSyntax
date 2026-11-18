@@ -1,0 +1,32 @@
+name: Format proposal
+description: Propose a data-only video format recipe
+labels: ["format"]
+body:
+  - type: input
+    id: format-id
+    attributes:
+      label: "Format ID and category"
+      placeholder: "kinetic-typography (social)"
+    validations:
+      required: true
+  - type: textarea
+    id: titles-and-languages
+    attributes:
+      label: "Titles and supported languages (EN, TR, DE)"
+    validations:
+      required: true
+  - type: textarea
+    id: engines-and-steps
+    attributes:
+      label: "Engines, aspect ratios, duration bounds, and approval gates"
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety-checks
+    attributes:
+      label: "Content and security checklist"
+      options:
+        - label: "Contains declarative data only (JSON, Markdown, licensed assets) with no executable code"
+          required: true
+        - label: "Uses original content with no third-party brand logos, copyrighted characters, or unlicensed music"
+          required: true

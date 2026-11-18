@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add community format and language issue templates, Discussions and private security advisory routing (`.github/ISSUE_TEMPLATE/config.yml`), and repository label taxonomy (`.github/labels.json`, `tools/sync_labels.py`).
 - Add automated security scanning workflow (`.github/workflows/security.yml` with CodeQL, `pip-audit`, and license/CVE dependency review) and grouped Dependabot updates.
 - Add PyPI package metadata and subpackage inclusion in `pyproject.toml`, automated release verification/notes/MCPB SHA-256 stamping (`tools/release_prepare.py`), PyPI OIDC Trusted Publishing workflow, and `docs/releasing.md`.
 - Expand CI media verification (`doctor`, FFmpeg/Blender path discovery, `render`, and `qc`) across Ubuntu, macOS, and Windows, add standard cross-platform binary fallback paths, and terminate child process trees on Windows timeouts.

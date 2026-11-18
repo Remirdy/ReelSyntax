@@ -12,4 +12,10 @@ Package builds use `uv build` or an equivalent PEP 517 frontend. No public packa
 
 ## First contributions
 
-A small fixture for a translated label, a caption timing edge case, or a new routing alias makes a good first contribution. Document the expected frame range or ranked skill before changing the implementation. Browse [issues labeled good first issue](https://github.com/Remirdy/ReelSyntax/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22) for assigned scope.
+A small fixture for a translated label, a caption timing edge case, a declarative format template, or a new routing alias makes a good first contribution:
+
+- **Formats (`format`):** Declarative data-only packages (`FORMAT.md`, `format.json`, `template/reel.skel.json`, working example, and QC test) containing zero executable scripts and zero third-party brand assets.
+- **Languages (`i18n`):** Language profile (`lang-profiles/<lang>.json`), UI catalog (`locales/<lang>.json`), glyph coverage sample, and golden routing cases.
+- **Skills (`skills`):** Distinct non-overlapping production intent with EN/TR/DE aliases, `relations.json` dependencies/conflicts, and positive + negative `routing-eval.json` cases.
+
+Document the expected frame range or ranked skill before changing the implementation. Browse [issues labeled good first issue](https://github.com/Remirdy/ReelSyntax/issues?q=is%3Aissue%20is%3Aopen%20label%3A%22good%20first%20issue%22) for assigned scope, or join [GitHub Discussions](https://github.com/Remirdy/ReelSyntax/discussions) for open design questions.
