@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add PyPI package metadata and subpackage inclusion in `pyproject.toml`, automated release verification/notes/MCPB SHA-256 stamping (`tools/release_prepare.py`), PyPI OIDC Trusted Publishing workflow, and `docs/releasing.md`.
 - Expand CI media verification (`doctor`, FFmpeg/Blender path discovery, `render`, and `qc`) across Ubuntu, macOS, and Windows, add standard cross-platform binary fallback paths, and terminate child process trees on Windows timeouts.
 - Add canonical versioned JSON Schemas (`docs/schemas/reel.v1.schema.json`, `docs/schemas/config.v1.schema.json`) with `$id` URLs and non-destructive project schema migration (`reelsyntax migrate`).
 - Add `reelsyntax.toml` configuration support (`reelsyntax.config`) using Python's `tomllib`, `reelsyntax config show|path|init|validate` CLI commands, and `docs/config.schema.json`.

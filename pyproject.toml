@@ -10,7 +10,30 @@ readme = "README.md"
 requires-python = ">=3.11"
 license = "MIT"
 license-files = ["LICENSE"]
+authors = [{ name = "Remirdy" }]
+keywords = ["video", "motion-graphics", "ffmpeg", "blender", "mcp", "captions", "cli"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "Intended Audience :: End Users/Desktop",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Multimedia :: Video",
+    "Typing :: Typed",
+]
 dependencies = []
+
+[project.urls]
+Homepage = "https://remirdy.github.io/ReelSyntax/"
+Documentation = "https://remirdy.github.io/ReelSyntax/"
+Repository = "https://github.com/Remirdy/ReelSyntax"
+Issues = "https://github.com/Remirdy/ReelSyntax/issues"
+Changelog = "https://github.com/Remirdy/ReelSyntax/blob/main/CHANGELOG.md"
 
 [project.optional-dependencies]
 render = ["Pillow==12.2.0"]
@@ -21,12 +44,12 @@ reelsyntax = "reelsyntax.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["."]
-include = ["reelsyntax", "ReelSyntax_Skills", "ReelSyntax_Skills.tools"]
+include = ["reelsyntax*", "ReelSyntax_Skills*"]
 namespaces = true
 
 [tool.setuptools.package-data]
 ReelSyntax_Skills = ["registry/index.json", "registry/relations.json", "registry/catalog.csv", "library/*/*/SKILL.md", "library/*/*/references/*", ".agents/skills/reelsyntax-router/SKILL.md", "tests/routing-eval.json", "QUALITY_STANDARD.md", "SKILL_SYSTEM.md"]
-reelsyntax = ["py.typed"]
+reelsyntax = ["py.typed", "data/**/*"]
 
 [tool.ruff]
 target-version = "py311"

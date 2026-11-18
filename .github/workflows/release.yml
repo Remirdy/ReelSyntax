@@ -3,19 +3,66 @@ on:
   push:
     tags: ['v*']
 permissions:
-  contents: write
+  contents: read
 jobs:
-  release:
+  build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      id-token: write
+      attestations: write
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
           python-version: '3.13'
+      - run: python tools/release_prepare.py verify --tag "$GITHUB_REF_NAME"
       - run: python -m pip install build
       - run: python -m build
+      - name: Smoke test installed wheel in isolated environment
+        run: |
+          python -m venv /tmp/reelsyntax-wheel-smoke
+          /tmp/reelsyntax-wheel-smoke/bin/pip install dist/*.whl
+          cd /tmp
+          /tmp/reelsyntax-wheel-smoke/bin/reelsyntax --version
+          /tmp/reelsyntax-wheel-smoke/bin/reelsyntax skills validate
+          /tmp/reelsyntax-wheel-smoke/bin/reelsyntax schema --kind reel > /tmp/reel.schema.json
+          /tmp/reelsyntax-wheel-smoke/bin/reelsyntax config show --json
       - run: python tools/build_mcpb.py dist/*.whl dist/reelsyntax.mcpb
-      - run: cd dist && sha256sum * > SHA256SUMS.txt
-      - env:
+      - run: python tools/release_prepare.py stamp-mcpb --mcpb dist/reelsyntax.mcpb --server-json server.json --output dist/server.json
+      - run: python tools/release_prepare.py notes --version "$GITHUB_REF_NAME" --output dist/RELEASE_NOTES.md
+      - run: cd dist && sha256sum *.whl *.tar.gz reelsyntax.mcpb server.json > SHA256SUMS.txt
+      - uses: actions/attest-build-provenance@c074443f1aee8d4aeeae555aebba3282517eb71b
+        with:
+          subject-path: 'dist/*'
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: pypi-distributions
+          path: |
+            dist/*.whl
+            dist/*.tar.gz
+      - name: Publish GitHub Release
+        env:
           GH_TOKEN: ${{ github.token }}
-        run: gh release create "$GITHUB_REF_NAME" dist/* --generate-notes --prerelease
+        run: |
+          IS_PRE=$(python tools/release_prepare.py is-prerelease --tag "$GITHUB_REF_NAME")
+          PRE_FLAG=""
+          if [ "$IS_PRE" = "true" ]; then
+            PRE_FLAG="--prerelease"
+          fi
+          gh release create "$GITHUB_REF_NAME" dist/*.whl dist/*.tar.gz dist/reelsyntax.mcpb dist/server.json dist/SHA256SUMS.txt --title "ReelSyntax $GITHUB_REF_NAME" --notes-file dist/RELEASE_NOTES.md $PRE_FLAG
+
+  pypi:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/p/reelsyntax
+    permissions:
+      id-token: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093
+        with:
+          name: pypi-distributions
+          path: dist
+      - uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc
