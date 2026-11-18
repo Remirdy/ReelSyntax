@@ -1062,6 +1062,7 @@
             "assembly",
             "cassette",
             "character-stage",
+            "cinematic-3d",
             "custom-shader",
             "data-horizon",
             "footage",
@@ -1070,11 +1071,13 @@
             "layer-stack",
             "loop-art",
             "news-ticker",
+            "paper-cutout",
             "prism-monolith",
             "rings",
             "shader-sculpture",
             "shape-field",
             "signal",
+            "stepped-clay",
             "three-scene",
             "title"
           ]

@@ -1,0 +1,130 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "stepped-clay-tr",
+  "seed": 42,
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": "24/1"
+  },
+  "delivery": {
+    "language": "tur"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true
+  },
+  "scenes": [
+    {
+      "id": "sculpt",
+      "duration_frames": 48,
+      "recipe": "stepped-clay",
+      "engine": "pillow",
+      "camera": {
+        "preset": "dolly_in",
+        "focal_mm": 50.0
+      },
+      "params": {
+        "kicker": "01",
+        "heading": "KİL FORM",
+        "subheading": "El yapımı masaüstü heykel dili.",
+        "background": "#292421",
+        "foreground": "#f4ede3",
+        "accent": "#df7c52"
+      }
+    },
+    {
+      "id": "cadence",
+      "duration_frames": 48,
+      "recipe": "stepped-clay",
+      "engine": "pillow",
+      "camera": {
+        "preset": "orbit",
+        "focal_mm": 50.0
+      },
+      "params": {
+        "kicker": "02",
+        "heading": "İKİLİ ADIM",
+        "subheading": "Saniyede on iki net kare pozu.",
+        "background": "#292421",
+        "foreground": "#f4ede3",
+        "accent": "#df7c52"
+      },
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      }
+    },
+    {
+      "id": "glaze",
+      "duration_frames": 48,
+      "recipe": "stepped-clay",
+      "engine": "pillow",
+      "camera": {
+        "preset": "locked",
+        "focal_mm": 50.0
+      },
+      "params": {
+        "kicker": "03",
+        "heading": "SICAK DOKU",
+        "subheading": "Mat yüzey ve yumuşak gölge.",
+        "background": "#292421",
+        "foreground": "#f4ede3",
+        "accent": "#df7c52"
+      },
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 220,
+        "duration_frames": 16,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 48,
+        "frequency": 294,
+        "duration_frames": 16,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 96,
+        "frequency": 370,
+        "duration_frames": 16,
+        "instrument": "warm_pad"
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [
+        [
+          0,
+          144
+        ]
+      ],
+      "silence": [
+        [
+          16,
+          48
+        ],
+        [
+          64,
+          96
+        ],
+        [
+          112,
+          144
+        ]
+      ]
+    }
+  }
+}

@@ -156,6 +156,7 @@ def _execute_render_step(
     step: dict[str, Any],
     *,
     dry_run_render: bool = False,
+    fallback_engine: str | None = None,
 ) -> dict[str, Any]:
     prof = step["profile"]
     scope = step.get("scope", "full")
@@ -170,7 +171,7 @@ def _execute_render_step(
         }
 
     if prof == "snapshot":
-        from .. import drawing
+        from .. import art_recipes, drawing
 
         snap_dir = contained_path(project_root, ".formats/snapshots", must_exist=False)
         snap_dir.mkdir(parents=True, exist_ok=True)
@@ -184,7 +185,10 @@ def _execute_render_step(
         }
         previews: list[str] = []
         for scene in plan["scenes"]:
-            if scene["engine"] == "pillow":
+            can_pillow = scene["engine"] == "pillow" or (
+                scene["engine"] == "blender" and scene["recipe"] in art_recipes.ART_RECIPES
+            )
+            if can_pillow:
                 out_file = snap_dir / f"{scene['id']}.png"
                 if scene["recipe"] == "layer-stack":
                     from ..ingest import render_layers
@@ -193,6 +197,10 @@ def _execute_render_step(
                         one_scene = dict(scene, duration_frames=1)
                         render_layers(project_root, one_scene, plan["output"], snap_output, Path(ltmp))
                         shutil.copy2(Path(ltmp) / "000000.png", out_file)
+                elif scene["recipe"] in art_recipes.ART_RECIPES:
+                    mid = scene["duration_frames"] // 2
+                    img, _ = art_recipes.draw_art_scene(scene, mid, snap_output, plan["seed"], supersampling=1)
+                    img.save(out_file)
                 else:
                     mid = scene["duration_frames"] // 2
                     img, _ = drawing.draw(scene, mid, snap_output, plan["seed"], supersampling=1)
@@ -213,7 +221,7 @@ def _execute_render_step(
             shutil.copytree(src_assets, dst_assets)
         pilot_plan = _slice_pilot_plan(plan, max_seconds=5)
         atomic_json(pilot_dir / "reel.json", pilot_plan)
-        res = render(pilot_dir, profile="draft")
+        res = render(pilot_dir, profile="draft", fallback_engine=fallback_engine)
         return {
             "profile": "draft",
             "scope": "first_5s",
@@ -221,7 +229,7 @@ def _execute_render_step(
             "frames": res["frames"],
         }
 
-    res = render(project_root, profile=prof)
+    res = render(project_root, profile=prof, fallback_engine=fallback_engine)
     return {"profile": prof, "scope": "full", "artifact": res["artifact"], "frames": res["frames"]}
 
 
@@ -755,7 +763,8 @@ class FormatRunner:
                     compiled = _attach_cutscene_voice_chirps(root, compiled, state["seed"])
                 _record_brief_derived_sources(root, compiled, self.manifest["id"], list(self.manifest.get("qc_rules", [])))
                 atomic_json(root / "reel.json", compiled)
-            return _execute_render_step(root, step, dry_run_render=self.dry_run_render)
+            fb_engine = "pillow" if "pillow" in self.manifest.get("engines", ()) else None
+            return _execute_render_step(root, step, dry_run_render=self.dry_run_render, fallback_engine=fb_engine)
 
         if stype == "qc":
             if self.dry_run_render:

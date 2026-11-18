@@ -1,0 +1,15 @@
+{
+  "locale": "tr",
+  "camera_presets": [
+    "orbit",
+    "dolly_in",
+    "crane_rise"
+  ],
+  "dof_fstop": 4.0,
+  "vignette_k": 0.24,
+  "palette": {
+    "background": "#232834",
+    "foreground": "#f4f6f9",
+    "accent": "#5eb8c4"
+  }
+}

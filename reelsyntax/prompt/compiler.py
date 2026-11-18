@@ -471,6 +471,9 @@ def compile_storyboard_to_project(
         is_news_fmt = intent.format_hint == "news-ticker"
         is_promo_fmt = intent.format_hint == "product-promo"
         is_loop_fmt = intent.format_hint == "loop-art"
+        is_cinematic_3d = intent.format_hint == "cinematic-3d"
+        is_stepped_clay = intent.format_hint == "stepped-clay-look"
+        is_paper_cutout = intent.format_hint == "paper-cutout"
         total_beats = len(storyboard.beats)
         fps_float = float(Fraction(storyboard.fps))
         max_hook_frames = max(24, int(round(2.0 * fps_float)))
@@ -576,6 +579,12 @@ def compile_storyboard_to_project(
                         chosen_recipe = "kinetic-type"
                     else:
                         chosen_recipe = "data-horizon"
+                elif is_cinematic_3d:
+                    chosen_recipe = "cinematic-3d"
+                elif is_stepped_clay:
+                    chosen_recipe = "stepped-clay"
+                elif is_paper_cutout:
+                    chosen_recipe = "paper-cutout"
                 params: dict[str, Any] = {
                     "background": bg_hex,
                     "foreground": fg_hex,
@@ -584,7 +593,7 @@ def compile_storyboard_to_project(
                 if chosen_recipe in LEGACY_DRAWING_RECIPES:
                     params["font_mode"] = "system"
                 if not no_text:
-                    if is_kinetic_fmt:
+                    if is_kinetic_fmt or is_cinematic_3d or is_stepped_clay or is_paper_cutout:
                         params["kicker"] = f"{idx + 1:02d}"
                     elif is_hook_fmt:
                         if idx == 0:
@@ -654,6 +663,13 @@ def compile_storyboard_to_project(
                     }
                 if not camera_locked and chosen_recipe == "prism-monolith":
                     scene_entry["camera"] = {"preset": "dolly_in", "focal_mm": 50.0}
+                elif not camera_locked and chosen_recipe == "cinematic-3d":
+                    cam_presets = ("orbit", "dolly_in", "crane_rise")
+                    scene_entry["camera"] = {"preset": cam_presets[idx % len(cam_presets)], "focal_mm": 50.0}
+                elif not camera_locked and chosen_recipe == "stepped-clay":
+                    scene_entry["camera"] = {"preset": "dolly_in" if idx == 0 else "locked", "focal_mm": 52.0}
+                elif chosen_recipe == "paper-cutout":
+                    scene_entry["camera"] = {"preset": "locked" if camera_locked else "dolly_in", "focal_mm": 50.0}
                 scenes.append(scene_entry)
 
                 if not no_audio:

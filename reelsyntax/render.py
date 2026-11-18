@@ -14,6 +14,7 @@ import uuid
 
 from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_path, digest, read_json
 from . import __version__
+from . import art_recipes
 from . import drawing
 from .media import encode_scene, executable, probe, run
 from .project import load
@@ -271,6 +272,8 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
         }
         if sources:
             environment['ingest_source_sha256'] = file_digest(Path(__file__).with_name('ingest.py'))
+        if any(s['recipe'] in art_recipes.ART_RECIPES for s in plan['scenes']):
+            environment['art_recipes_sha256'] = file_digest(Path(art_recipes.__file__))
         if reduced_motion:
             environment['reduced_motion'] = True
         active_scenes = apply_reduced_motion_scenes(plan['scenes']) if reduced_motion else plan['scenes']
@@ -349,7 +352,7 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                         engine_evidence = render_layers(root, scene, plan['output'], output, temporary)
                     elif eng == 'blender':
                         from .blender_engine import render_blender_scene
-                        engine_evidence, layout = render_blender_scene(scene, output, profile, temporary, timeout=timeout)
+                        engine_evidence, layout = render_blender_scene(scene, output, profile, temporary, timeout=timeout, reduced_motion=bool(reduced_motion))
                     else:
                         browser_scene = scene
                         if scene['recipe'] in ('custom-shader', 'three-scene'):
@@ -365,6 +368,9 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                             destination = temporary / f'{frame:06d}.png'
                             if eng == 'browser':
                                 bounds = browser.draw(browser_scene, frame, output, plan['seed'], destination)
+                            elif scene['recipe'] in art_recipes.ART_RECIPES:
+                                image, bounds = art_recipes.draw_art_scene(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height'])), plan['seed'], supersampling=supersample, reduced_motion=bool(reduced_motion))
+                                image.save(destination)
                             else:
                                 image, bounds = drawing.draw(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height']), reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=supersample)
                                 image.save(destination)
@@ -466,8 +472,13 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                 hero_scene = next((s for s in plan['scenes'] if resolved_engines[s['id']] == 'pillow' and s['recipe'] != 'layer-stack'), plan['scenes'][0])
                 mid_f = hero_scene['duration_frames'] // 2
                 if resolved_engines[hero_scene['id']] == 'pillow' and hero_scene['recipe'] != 'layer-stack':
-                    neutral_img, _ = drawing.draw(hero_scene, mid_f, dict(output, reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=2, look_mode='neutral')
-                    graded_img, _ = drawing.draw(hero_scene, mid_f, dict(output, reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=3, look_mode='agx')
+                    hero_out = dict(output, reduced_motion=bool(reduced_motion))
+                    if hero_scene['recipe'] in art_recipes.ART_RECIPES:
+                        neutral_img, _ = art_recipes.draw_art_scene(hero_scene, mid_f, hero_out, plan['seed'], supersampling=2, look_mode='neutral', reduced_motion=bool(reduced_motion))
+                        graded_img, _ = art_recipes.draw_art_scene(hero_scene, mid_f, hero_out, plan['seed'], supersampling=3, look_mode='agx', reduced_motion=bool(reduced_motion))
+                    else:
+                        neutral_img, _ = drawing.draw(hero_scene, mid_f, hero_out, plan['seed'], supersampling=2, look_mode='neutral')
+                        graded_img, _ = drawing.draw(hero_scene, mid_f, hero_out, plan['seed'], supersampling=3, look_mode='agx')
                     ab_sheet = Image.new('RGB', (960, 270), '#14171c')
                     ab_sheet.paste(ImageOps.contain(neutral_img.convert('RGB'), (480, 270)), (0, 0))
                     ab_sheet.paste(ImageOps.contain(graded_img.convert('RGB'), (480, 270)), (480, 0))
