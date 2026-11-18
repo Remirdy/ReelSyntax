@@ -1,7 +1,13 @@
+import errno
 import json
 from pathlib import Path
 import re
+import shutil
+import tempfile
 import unittest
+from unittest.mock import patch
+
+from ReelSyntax_Skills.tools import registry as skills_registry
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 DOCKERFILE = REPO_ROOT / "Dockerfile"
@@ -210,6 +216,27 @@ class ContainerDocsTests(unittest.TestCase):
         for snippet in ["docker compose", "ghcr.io/remirdy/reelsyntax", "Codespaces", "/workspace", "doctor --json", "REELSYNTAX_UID"]:
             self.assertIn(snippet, text)
         self.assertIn("containers.md", read(REPO_ROOT / "mkdocs.yml"))
+
+
+class ReadOnlyContainerRuntimeTests(unittest.TestCase):
+    def test_load_index_survives_erofs_when_freshness_cache_is_read_only(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            sample = skills_registry.ROOT / "library/render/frame-clock/SKILL.md"
+            target = root / "library/render/frame-clock/SKILL.md"
+            target.parent.mkdir(parents=True)
+            target.write_bytes(sample.read_bytes())
+            skills_registry.atomic_json(root / "registry/relations.json", {"frame-clock": {"requires": []}})
+            skills_registry.rebuild(root)
+            shutil.rmtree(root / ".reelsyntax")
+
+            def raise_erofs(*args, **kwargs):
+                raise OSError(errno.EROFS, "Read-only file system")
+
+            with patch.object(skills_registry, "atomic_json", side_effect=raise_erofs):
+                doc = skills_registry.load_index(root)
+            self.assertEqual(len(doc["skills"]), 1)
+            self.assertIn("not writable", doc["maintenance_warning"])
 
 
 if __name__ == "__main__":

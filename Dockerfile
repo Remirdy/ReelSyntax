@@ -45,6 +45,7 @@ RUN set -eu; \
     wheel="$(ls /wheels/reelsyntax-*.whl)"; \
     python3 -m pip install "${wheel}[render]"; \
     rm -rf /wheels; \
+    python3 -m reelsyntax skills validate >/dev/null; \
     groupadd --gid 10001 reelsyntax; \
     useradd --uid 10001 --gid 10001 --create-home --home-dir /home/reelsyntax --shell /usr/sbin/nologin reelsyntax; \
     mkdir -p /workspace; \
