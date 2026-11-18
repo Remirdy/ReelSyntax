@@ -20,6 +20,9 @@
     "one": "{count} sahne planlandı ({frames} kare).",
     "other": "{count} sahne planlandı ({frames} kare)."
   },
+  "make.dry_run.summary": "Ön hesaplama: {frames} kare (~{draft_sec}sn taslak, ~{hero_sec}sn final, ~{cache_mib} MiB önbellek).",
+  "make.gate.paused": "'{project}' projesi '{step}' onay kapısında duraklatıldı.",
+  "revise.completed": "'{project}' projesi güncellendi (kontrol noktası: '{checkpoint}').",
   "audio.tts_fallback": "'{lang}' dili için yerel seslendirme bulunamadı; altyazı ve müzik moduna geçiliyor.",
   "qc.status.pass": "Teknik kontroller geçti; yaratıcı inceleme gereklidir.",
   "qc.status.review": "Teknik inceleme bulguları gözden geçirilmelidir.",

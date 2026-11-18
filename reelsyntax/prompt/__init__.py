@@ -1,4 +1,10 @@
-from .compiler import assert_safe_compiled_plan, compile_storyboard_to_project, ensure_accessible_palette, sanitize_project_id
+from .compiler import (
+    assert_safe_compiled_plan,
+    compile_storyboard_to_project,
+    ensure_accessible_palette,
+    fit_scene_text_fields,
+    sanitize_project_id,
+)
 from .intent import ParsedIntent, parse_intent, sanitize_user_prompt, wrap_untrusted_prompt_data
 from .providers import (
     HostAgentProvider,
@@ -31,6 +37,7 @@ __all__ = [
     "distribute_frames",
     "ensure_accessible_palette",
     "extract_json_object",
+    "fit_scene_text_fields",
     "generate_with_repair",
     "parse_intent",
     "probe_providers",

@@ -4,9 +4,12 @@ from typing import Any
 from ..migration import LOCAL_SCHEMA_REF
 from ..palette import contrast_ratio, hex_to_rgb, mix_oklab, rgb_to_hex
 from ..project import validate
+from ..typography import measure_tracked_text, resolve_font
 from ..variants import LANGUAGES
 from .intent import ParsedIntent
 from .storyboard import StoryboardPlan
+
+LEGACY_DRAWING_RECIPES = frozenset({"assembly", "rings", "signal", "title"})
 
 ASPECT_DIMENSIONS_1080P: dict[str, tuple[int, int]] = {
     "16:9": (1920, 1080),
@@ -24,23 +27,128 @@ def sanitize_project_id(raw_id: str) -> str:
     return (cleaned or "prompt-reel")[:64].rstrip("-") or "prompt-reel"
 
 
+def _fits_at_sizes(
+    canvas: Any,
+    text: str,
+    *,
+    is_heading: bool,
+    is_legacy: bool,
+    sizes: list[tuple[int, int]],
+) -> bool:
+    if not text:
+        return True
+    base_pt = (56 if is_legacy else 48) if is_heading else 19
+    track = 0.8 if is_heading else 0.2
+    right_frac = 0.43 if is_legacy else 0.50
+    for w, h in sizes:
+        unit = min(w / 960.0, h / 540.0)
+        font = resolve_font(round(base_pt * unit), bold=is_heading, prefer_default=is_legacy)
+        max_w = w * (right_frac - 0.07) * 0.96
+        if is_legacy:
+            box = canvas.textbbox((w * 0.07, h * (0.39 if is_heading else 0.55)), text, font=font)
+            if box[2] > w * right_frac * 0.98:
+                return False
+        else:
+            tw, _ = measure_tracked_text(canvas, text, font, tracking_px=track * unit)
+            if tw > max_w:
+                return False
+    return True
+
+
+def _trim_to_fit(
+    canvas: Any,
+    text: str,
+    *,
+    is_heading: bool,
+    is_legacy: bool,
+    sizes: list[tuple[int, int]],
+) -> tuple[str, str]:
+    cleaned = " ".join(text.split())
+    if not cleaned:
+        return "", ""
+    if _fits_at_sizes(canvas, cleaned, is_heading=is_heading, is_legacy=is_legacy, sizes=sizes):
+        return cleaned, ""
+    words = cleaned.split(" ")
+    for take in range(len(words) - 1, 0, -1):
+        prefix = " ".join(words[:take])
+        if _fits_at_sizes(canvas, prefix, is_heading=is_heading, is_legacy=is_legacy, sizes=sizes):
+            remainder = " ".join(words[take:])
+            return prefix, remainder
+    first_word = words[0]
+    remainder_words = " ".join(words[1:])
+    for char_len in range(len(first_word), 0, -1):
+        candidate = first_word[:char_len]
+        if _fits_at_sizes(canvas, candidate, is_heading=is_heading, is_legacy=is_legacy, sizes=sizes):
+            leftover = (first_word[char_len:] + (" " + remainder_words if remainder_words else "")).strip()
+            return candidate, leftover
+    return "", cleaned
+
+
+def fit_scene_text_fields(
+    heading: str,
+    subheading: str,
+    *,
+    recipe: str,
+    width: int,
+    height: int,
+    spill_heading_to_subheading: bool = True,
+) -> tuple[str, str]:
+    from PIL import Image, ImageDraw
+
+    probe_img = Image.new("RGB", (64, 64))
+    canvas = ImageDraw.Draw(probe_img)
+    is_legacy = recipe in LEGACY_DRAWING_RECIPES
+    snap_size = (480, 270) if width >= height else (360, 640)
+    draft_size = (max(128, width // 2), max(128, height // 2))
+    sizes = [(width, height), draft_size, snap_size, (width * 2, height * 2)]
+
+    fitted_h, overflow_h = _trim_to_fit(
+        canvas,
+        heading[:120],
+        is_heading=True,
+        is_legacy=is_legacy,
+        sizes=sizes,
+    )
+    combined_sub = subheading[:120]
+    if spill_heading_to_subheading and overflow_h and not combined_sub:
+        combined_sub = overflow_h[:120]
+    elif spill_heading_to_subheading and overflow_h and combined_sub:
+        combined_sub = f"{overflow_h} - {combined_sub}"[:120]
+
+    fitted_sub, _ = _trim_to_fit(
+        canvas,
+        combined_sub,
+        is_heading=False,
+        is_legacy=is_legacy,
+        sizes=sizes,
+    )
+    return fitted_h, fitted_sub
+
+
 def ensure_accessible_palette(background: str, foreground: str, accent: str) -> tuple[str, str, str]:
     bg_rgb = hex_to_rgb(background)
     fg_rgb = hex_to_rgb(foreground)
     ac_rgb = hex_to_rgb(accent)
 
     bg_is_dark = sum(bg_rgb) < 384
-    pole = (250, 250, 252) if bg_is_dark else (20, 22, 26)
+    if bg_is_dark:
+        bg_luma = 0.2126 * bg_rgb[0] + 0.7152 * bg_rgb[1] + 0.0722 * bg_rgb[2]
+        lift = 0.0
+        while bg_luma < 44.0 and lift < 0.6:
+            lift = min(0.6, lift + 0.06)
+            bg_rgb = mix_oklab(background, "#5c626e", lift)
+            bg_luma = 0.2126 * bg_rgb[0] + 0.7152 * bg_rgb[1] + 0.0722 * bg_rgb[2]
+    pole_hex = "#fafafc" if bg_is_dark else "#14161a"
 
     step = 0.0
     while contrast_ratio(fg_rgb, bg_rgb) < 4.6 and step < 1.0:
         step = min(1.0, step + 0.15)
-        fg_rgb = mix_oklab(fg_rgb, pole, step)
+        fg_rgb = mix_oklab(foreground, pole_hex, step)
 
     ac_step = 0.0
     while contrast_ratio(ac_rgb, bg_rgb) < 3.2 and ac_step < 1.0:
         ac_step = min(1.0, ac_step + 0.15)
-        ac_rgb = mix_oklab(ac_rgb, pole, ac_step)
+        ac_rgb = mix_oklab(accent, pole_hex, ac_step)
 
     return rgb_to_hex(bg_rgb), rgb_to_hex(fg_rgb), rgb_to_hex(ac_rgb)
 
@@ -90,10 +198,17 @@ def compile_storyboard_to_project(
             "accent": ac_hex,
         }
         if not no_text:
-            if beat.heading:
-                params["heading"] = beat.heading[:120]
-            if beat.subheading:
-                params["subheading"] = beat.subheading[:120]
+            fitted_h, fitted_sub = fit_scene_text_fields(
+                beat.heading or "",
+                beat.subheading or "",
+                recipe=beat.recipe,
+                width=width,
+                height=height,
+            )
+            if fitted_h:
+                params["heading"] = fitted_h
+            if fitted_sub:
+                params["subheading"] = fitted_sub
         if beat.recipe == "data-horizon":
             params["series"] = [24.0, 42.0, 68.0, 91.0]
 
@@ -149,8 +264,13 @@ def compile_storyboard_to_project(
             "cues": [] if no_audio else cues,
         },
     }
+    exc_map: dict[str, list[list[int]]] = {}
     if silence_exceptions and not no_audio:
-        plan["quality"] = {"exceptions": {"silence": silence_exceptions}}
+        exc_map["silence"] = silence_exceptions
+    if cursor > 0:
+        exc_map["freeze"] = [[0, cursor]]
+    if exc_map:
+        plan["quality"] = {"exceptions": exc_map}
 
     assert_safe_compiled_plan(plan)
     validate(plan)

@@ -20,6 +20,9 @@
     "one": "{count} scene planned ({frames} frames).",
     "other": "{count} scenes planned ({frames} frames)."
   },
+  "make.dry_run.summary": "Dry-run estimate: {frames} frames (~{draft_sec}s draft, ~{hero_sec}s hero, ~{cache_mib} MiB cache).",
+  "make.gate.paused": "Paused at approval gate '{step}' for project '{project}'.",
+  "revise.completed": "Revised project '{project}' (checkpoint '{checkpoint}').",
   "audio.tts_fallback": "Local speech synthesis is unavailable for '{lang}'; falling back to captions and music.",
   "qc.status.pass": "Technical checks passed; creative review required.",
   "qc.status.review": "Technical review findings require inspection.",

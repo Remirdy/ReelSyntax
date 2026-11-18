@@ -152,15 +152,23 @@ def _execute_render_step(
         }
 
     if prof == "snapshot":
-        from ..drawing import draw_scene_frame
+        from .. import drawing
 
         snap_dir = contained_path(project_root, ".formats/snapshots", must_exist=False)
         snap_dir.mkdir(parents=True, exist_ok=True)
+        snap_w = 480 if plan["output"]["width"] >= plan["output"]["height"] else 360
+        snap_h = 270 if plan["output"]["width"] >= plan["output"]["height"] else 640
+        snap_output = {
+            "width": snap_w,
+            "height": snap_h,
+            "fps": plan["output"]["fps"],
+            "original_size": (plan["output"]["width"], plan["output"]["height"]),
+        }
         previews: list[str] = []
         for scene in plan["scenes"]:
             if scene["engine"] == "pillow":
                 mid = scene["duration_frames"] // 2
-                img = draw_scene_frame(scene, mid, 480, 270 if plan["output"]["width"] >= plan["output"]["height"] else 854, Fraction(plan["output"]["fps"]), plan["seed"])
+                img, _ = drawing.draw(scene, mid, snap_output, plan["seed"], supersampling=1)
                 out_file = snap_dir / f"{scene['id']}.png"
                 img.save(out_file)
                 previews.append(out_file.relative_to(project_root).as_posix())
@@ -207,7 +215,8 @@ class FormatRunner:
         max_attempts: int = 3,
         dry_run_render: bool = False,
     ) -> None:
-        self.manifest = validate_format_manifest(manifest)
+        clean_manifest = {k: v for k, v in manifest.items() if k != "path"}
+        self.manifest = validate_format_manifest(clean_manifest)
         self.provider = provider
         self.max_attempts = max_attempts
         self.dry_run_render = dry_run_render
@@ -223,6 +232,27 @@ class FormatRunner:
         dry_run_render: bool = False,
     ) -> "FormatRunner":
         manifest = get_format(format_id, extra_roots=extra_roots)
+        return cls(manifest, provider, max_attempts=max_attempts, dry_run_render=dry_run_render)
+
+    @classmethod
+    def from_project(
+        cls,
+        project_dir: Path | str,
+        provider: LLMProvider,
+        *,
+        extra_roots: tuple[Path, ...] = (),
+        max_attempts: int = 3,
+        dry_run_render: bool = False,
+    ) -> "FormatRunner":
+        state = load_runner_state(Path(project_dir))
+        fid = state["format_id"]
+        try:
+            manifest = get_format(fid, extra_roots=extra_roots)
+        except ValueError:
+            saved_manifest = state.get("manifest")
+            if not isinstance(saved_manifest, dict):
+                raise
+            manifest = saved_manifest
         return cls(manifest, provider, max_attempts=max_attempts, dry_run_render=dry_run_render)
 
     def initialize_project(
@@ -254,6 +284,7 @@ class FormatRunner:
             "schema_version": 1,
             "format_id": self.manifest["id"],
             "format_version": self.manifest["version"],
+            "manifest": copy.deepcopy(self.manifest),
             "provider": self.provider.name,
             "seed": int(seed) & 0xFFFFFFFF,
             "prompt": prompt,
@@ -350,7 +381,7 @@ class FormatRunner:
         _save_runner_state(root, state)
         return state
 
-    def approve_pending_gate(self, project_dir: Path | str) -> dict[str, Any]:
+    def approve_pending_gate(self, project_dir: Path | str, expected_step_id: str | None = None) -> dict[str, Any]:
         root = Path(project_dir).resolve(strict=True)
         state = load_runner_state(root)
         idx = int(state["current_step_index"])
@@ -358,6 +389,8 @@ class FormatRunner:
         if idx >= len(steps):
             return state
         sid = steps[idx]["id"]
+        if expected_step_id is not None and expected_step_id != sid:
+            raise ValueError(f"Current gate is {sid!r}, cannot approve {expected_step_id!r}")
         if sid not in state["completed_steps"]:
             raise ValueError(f"Cannot approve step {sid!r} before it executes")
         state["approvals"][sid] = {"approved": True, "mode": "manual"}
@@ -372,6 +405,25 @@ class FormatRunner:
         state = load_runner_state(root)
         invalidate_from_step(state, self.manifest, step_id)
         state.setdefault("step_edits", {})[step_id] = instruction.strip()
+        state.pop("pending_gate", None)
+        _save_runner_state(root, state)
+        return state
+
+    def step_back(self, project_dir: Path | str, step_id: str | None = None) -> dict[str, Any]:
+        root = Path(project_dir).resolve(strict=True)
+        state = load_runner_state(root)
+        steps = [s["id"] for s in self.manifest["steps"]]
+        cur_idx = min(int(state["current_step_index"]), len(steps) - 1)
+        if step_id is not None:
+            if step_id not in steps:
+                raise ValueError(f"Step {step_id!r} does not exist in format {self.manifest['id']!r}")
+            req_idx = steps.index(step_id)
+            target_idx = max(0, req_idx - 1) if req_idx == cur_idx else req_idx
+        else:
+            target_idx = max(0, cur_idx - 1)
+        target_id = steps[target_idx]
+        invalidate_from_step(state, self.manifest, target_id)
+        state.pop("pending_gate", None)
         _save_runner_state(root, state)
         return state
 

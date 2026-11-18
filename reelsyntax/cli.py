@@ -20,6 +20,49 @@ def parser():
     schema.add_argument('--schema-version', type=int, default=1)
     schema.add_argument('--output', type=Path)
 
+    comp = commands.add_parser('completion', help='Generate shell tab-completion script')
+    comp.add_argument('shell', choices=['bash', 'zsh', 'fish', 'powershell'])
+    comp.add_argument('--output', type=Path)
+
+    make_cmd = commands.add_parser('make', help='Create a video project from a natural-language prompt')
+    make_cmd.add_argument('prompt')
+    make_cmd.add_argument('--format', dest='format_id')
+    make_cmd.add_argument('--out', dest='out_dir', type=Path)
+    make_cmd.add_argument('--provider')
+    make_cmd.add_argument('--model')
+    make_cmd.add_argument('--lang')
+    make_cmd.add_argument('--aspect', choices=['9:16', '1:1', '16:9', '4:5'])
+    make_cmd.add_argument('--duration', type=int)
+    make_cmd.add_argument('--seed', type=int, default=42)
+    make_cmd.add_argument('-y', '--yes', action='store_true')
+    make_cmd.add_argument('--dry-run', action='store_true')
+    make_cmd.add_argument('--allow-network', action='store_true')
+    make_cmd.add_argument('--attribution', action='store_true')
+    make_cmd.add_argument('--json', action='store_true')
+
+    step_cmd = commands.add_parser('step', help='Inspect, approve, edit, or step back a format workflow step')
+    step_cmd.add_argument('project', type=Path)
+    step_cmd.add_argument('step_id')
+    step_cmd.add_argument('--approve', action='store_true')
+    step_cmd.add_argument('--edit')
+    step_cmd.add_argument('--back', action='store_true')
+    step_cmd.add_argument('-y', '--yes', action='store_true')
+    step_cmd.add_argument('--provider')
+    step_cmd.add_argument('--model')
+    step_cmd.add_argument('--allow-network', action='store_true')
+    step_cmd.add_argument('--json', action='store_true')
+
+    revise_cmd = commands.add_parser('revise', help='Apply a targeted revision to unlocked scenes in a project')
+    revise_cmd.add_argument('project', type=Path)
+    revise_cmd.add_argument('instruction')
+    revise_cmd.add_argument('--scene')
+    revise_cmd.add_argument('--provider')
+    revise_cmd.add_argument('--model')
+    revise_cmd.add_argument('--allow-network', action='store_true')
+    revise_cmd.add_argument('--render', action='store_true')
+    revise_cmd.add_argument('--profile', choices=['draft', 'production', 'hero'])
+    revise_cmd.add_argument('--json', action='store_true')
+
     migrate = commands.add_parser('migrate', help='Upgrade a legacy or unversioned reel.json to the current schema version')
     migrate.add_argument('project', type=Path)
     migrate.add_argument('--dry-run', action='store_true')
@@ -166,6 +209,11 @@ def parser():
             command.add_argument('--set', action='append', default=[], metavar='SCENE.FIELD=TEXT')
             command.add_argument('--brand', help='Project-relative brand kit JSON')
             command.add_argument('--queue', help='Project-relative delivery jobs JSON')
+        else:
+            command.add_argument('-y', '--yes', action='store_true')
+            command.add_argument('--provider')
+            command.add_argument('--model')
+            command.add_argument('--allow-network', action='store_true')
         command.add_argument('--allow-browser-module', action='store_true')
         command.add_argument('--max-frames', type=int, default=18000)
         command.add_argument('--timeout', type=int, help='Per media process timeout in seconds')
@@ -462,6 +510,49 @@ def _execute_with_config(args, load_config):
         return lang_command(args)
     if args.command == 'formats':
         return formats_command(args)
+    if args.command == 'make':
+        from .make import make_video
+        return make_video(
+            args.prompt,
+            format_id=args.format_id,
+            out_dir=args.out_dir,
+            provider_name=args.provider,
+            model=args.model,
+            video_lang=args.lang,
+            ui_lang=getattr(args, 'ui_lang', None),
+            aspect=args.aspect,
+            duration_sec=args.duration,
+            seed=args.seed,
+            yes=args.yes,
+            dry_run=args.dry_run,
+            allow_network=args.allow_network,
+            attribution=args.attribution,
+        )
+    if args.command == 'step':
+        from .make import step_project
+        return step_project(
+            args.project,
+            args.step_id,
+            approve=args.approve,
+            edit=args.edit,
+            back=args.back,
+            yes=args.yes,
+            provider_name=args.provider,
+            model=args.model,
+            allow_network=args.allow_network,
+        )
+    if args.command == 'revise':
+        from .make import revise_project
+        return revise_project(
+            args.project,
+            args.instruction,
+            scene_id=args.scene,
+            provider_name=args.provider,
+            model=args.model,
+            allow_network=args.allow_network,
+            render_after=args.render,
+            profile=args.profile,
+        )
     if args.command == 'migrate':
         from .migration import migrate_project
         return migrate_project(args.project, dry_run=args.dry_run, remote_schema=args.remote_schema)
@@ -537,6 +628,16 @@ def _execute_with_config(args, load_config):
             start += scene['duration_frames']
         return {**metadata, 'scenes': scenes, 'constraints': plan.get('constraints', {}), 'network': 'no render networking is implemented'}
     if args.command in {'render', 'resume'}:
+        if args.command == 'resume' and args.profile is None:
+            from .make import has_active_format_state, resume_format_project
+            if has_active_format_state(args.project):
+                return resume_format_project(
+                    args.project,
+                    yes=args.yes,
+                    provider_name=args.provider,
+                    model=args.model,
+                    allow_network=args.allow_network,
+                )
         from .render import render
         cfg = load_config()
         profile = args.profile or cfg.render.default_profile
@@ -612,6 +713,15 @@ def main(argv=None):
                 args.output.write_text(document + '\n', encoding='utf-8')
             else:
                 print(document)
+            return 0
+        if args.command == 'completion':
+            from .completion import generate_completion
+            script = generate_completion(args.shell)
+            if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                args.output.write_text(script, encoding='utf-8')
+            else:
+                sys.stdout.write(script)
             return 0
         if args.command == 'mcp':
             from .config import config_context

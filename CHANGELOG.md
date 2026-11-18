@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add `reelsyntax make`, `step`, `revise`, format-aware `resume`, `prompt.json` provenance ledger, `--dry-run` render-budget estimator, and `completion <bash|zsh|fish|powershell>` tab-completion generator.
 - Add `reelsyntax formats install|uninstall|installed` for data-only community format packages from local directories, `.zip` archives, and opt-in `--allow-network` Git repositories.
 - Add declarative format system (`reelsyntax.formats` manifest schema, data-only package validator, registry, stateful approval-gated `FormatRunner`, `docs/schemas/format.v1.schema.json`, and `reelsyntax formats list|show|new|validate`).
 - Add prompt compilation pipeline (`reelsyntax.prompt.intent`, `storyboard`, `compiler`, and bounded 3-attempt schema `repair`) with untrusted-prompt data framing and path/recipe allowlists.

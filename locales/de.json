@@ -20,6 +20,9 @@
     "one": "{count} Szene geplant ({frames} Einzelbilder).",
     "other": "{count} Szenen geplant ({frames} Einzelbilder)."
   },
+  "make.dry_run.summary": "Trockenlauf-Schätzung: {frames} Einzelbilder (~{draft_sec}s Entwurf, ~{hero_sec}s Master, ~{cache_mib} MiB Cache).",
+  "make.gate.paused": "Projekt '{project}' wartet an Freigabestufe '{step}'.",
+  "revise.completed": "Projekt '{project}' überarbeitet (Sicherungspunkt '{checkpoint}').",
   "audio.tts_fallback": "Lokale Sprachausgabe für '{lang}' nicht verfügbar; Wechsel in den Untertitel-und-Musik-Modus.",
   "qc.status.pass": "Technische Prüfungen bestanden; gestalterische Abnahme erforderlich.",
   "qc.status.review": "Technische Prüfbefunde erfordern eine Durchsicht.",
