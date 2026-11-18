@@ -6,6 +6,7 @@ Run `reelsyntax --help` (or `python -m reelsyntax --help` on Linux/macOS, `py -m
 
 - **macOS / Linux:** `python3 -m venv .venv && . .venv/bin/activate && python -m pip install ".[render]"`
 - **Windows (PowerShell):** `py -3 -m venv .venv; .\.venv\Scripts\Activate.ps1; python -m pip install ".[render]"`
+- **Container:** `docker run --rm ghcr.io/remirdy/reelsyntax doctor --json` runs the published non-root image with FFmpeg and Pillow preinstalled; see [Containers and Codespaces](containers.md) for Compose, MCP and GitHub Codespaces setup.
 
 The optional render extra installs Pillow (`".[render]"`). The optional browser extra installs Pillow and Playwright (`".[browser]"`). FFmpeg and FFprobe must be installed separately from a distribution linked by the [FFmpeg project](https://ffmpeg.org/download.html) (for example `brew install ffmpeg` on macOS, `apt install ffmpeg` on Debian/Ubuntu, or `winget install Gyan.FFmpeg` / `choco install ffmpeg` on Windows); builds and codecs have separate licensing implications. Do not bundle binaries under the MIT core license.
 

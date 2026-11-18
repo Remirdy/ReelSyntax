@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add production container image (`Dockerfile` with pinned `python:3.12-slim`, FFmpeg, Pillow, non-root user, `/workspace` volume), hardened offline `docker-compose.yml`, Codespaces dev container, `docs/containers.md`, and `.github/workflows/container.yml` with GHCR publishing gated to `v*` tags and manual dispatch.
 - Add MCP format tools (`reelsyntax_format_list`, `reelsyntax_format_show`, `reelsyntax_format_make` with `dry_run`/`step`/`yes`/`video_lang`/`ui_lang`/`attribution`, and `reelsyntax_format_revise`) with closed schemas, workspace path containment, and offline-by-default providers.
 - Add format-aware QC extensions (`reading_speed`, `vertical_safe_zones`, `opening_hook`, `claims_sourced` for `claims-must-be-sourced`, `asset_licenses`, `mouth_sync`, `qc --rule`) and `--reduced-motion` accessible render mode.
 - Add audio pipeline (`reelsyntax.audio`: measured per-language `tts` + `stt` probes, caption+music fallback, beat-grid and sidechain ducking `music`, transition `sfx`, non-lexical retro `voice_fx` + lip-sync mouth envelope, language-profile `captions`) and `doctor --tts --stt`.
