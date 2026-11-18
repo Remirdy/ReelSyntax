@@ -1,3 +1,4 @@
+import importlib.util
 import io
 import json
 from pathlib import Path
@@ -16,6 +17,8 @@ from reelsyntax.render import check_locks, lock
 
 
 def _ffmpeg_ready() -> bool:
+    if importlib.util.find_spec("PIL") is None:
+        return False
     try:
         return bool(executable("ffmpeg")) and bool(executable("ffprobe"))
     except ValueError:
