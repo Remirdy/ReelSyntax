@@ -395,6 +395,9 @@ def make_video(
         ui_lang=resolved_ui,
         attribution=effective_attribution,
     )
+    from .assets.license import write_licenses_markdown
+
+    write_licenses_markdown(target_dir)
     state = runner.run(target_dir, auto_approve=yes)
     result = _format_runner_response(target_dir, state)
     result["attribution"] = effective_attribution

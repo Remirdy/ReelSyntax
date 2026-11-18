@@ -114,6 +114,29 @@ def parser():
     fmt_installed = fmt_sub.add_parser('installed')
     fmt_installed.add_argument('--json', action='store_true')
 
+    assets_cmd = commands.add_parser('assets', help='List starter assets, materialize procedural beds/plates, register files, or audit licenses')
+    assets_sub = assets_cmd.add_subparsers(dest='action', required=True)
+    assets_list = assets_sub.add_parser('list')
+    assets_list.add_argument('--kind', choices=['music', 'sfx', 'palette', 'graphic', 'font_preset'])
+    assets_list.add_argument('--json', action='store_true')
+    assets_mat = assets_sub.add_parser('materialize')
+    assets_mat.add_argument('project', type=Path)
+    assets_mat.add_argument('--id', action='append', dest='asset_ids')
+    assets_mat.add_argument('--duration', type=float, default=8.0)
+    assets_mat.add_argument('--seed', type=int, default=42)
+    assets_mat.add_argument('--json', action='store_true')
+    assets_reg = assets_sub.add_parser('register')
+    assets_reg.add_argument('project', type=Path)
+    assets_reg.add_argument('source', type=Path)
+    assets_reg.add_argument('--spdx', default='User-Provided')
+    assets_reg.add_argument('--author', default='Project Owner')
+    assets_reg.add_argument('--attribution', default='')
+    assets_reg.add_argument('--json', action='store_true')
+    assets_lic = assets_sub.add_parser('licenses')
+    assets_lic.add_argument('project', type=Path)
+    assets_lic.add_argument('--write', action='store_true')
+    assets_lic.add_argument('--json', action='store_true')
+
     cfg_cmd = commands.add_parser('config', help='Inspect, initialize, or validate reelsyntax.toml configuration')
     cfg_sub = cfg_cmd.add_subparsers(dest='action', required=True)
     cfg_show = cfg_sub.add_parser('show')
@@ -504,6 +527,42 @@ def formats_command(args):
     raise ValueError('Unsupported formats action')
 
 
+def assets_command(args):
+    from .assets import (
+        audit_project_licenses,
+        list_starter_assets,
+        materialize_starter_pack,
+        register_local_asset,
+        write_licenses_markdown,
+    )
+
+    if args.action == 'list':
+        rows = list_starter_assets(kind=args.kind)
+        return {'total': len(rows), 'assets': rows}
+    if args.action == 'materialize':
+        return materialize_starter_pack(
+            args.project,
+            asset_ids=args.asset_ids,
+            duration_sec=args.duration,
+            seed=args.seed,
+        )
+    if args.action == 'register':
+        return register_local_asset(
+            args.project,
+            args.source,
+            spdx=args.spdx,
+            author=args.author,
+            attribution=args.attribution,
+        )
+    if args.action == 'licenses':
+        audit = audit_project_licenses(args.project)
+        if args.write:
+            out = write_licenses_markdown(args.project)
+            audit['licenses_markdown'] = out.relative_to(Path(args.project).resolve(strict=True)).as_posix()
+        return audit
+    raise ValueError('Unsupported assets action')
+
+
 def _execute_with_config(args, load_config):
     from . import project
     if args.command == 'config':
@@ -512,6 +571,8 @@ def _execute_with_config(args, load_config):
         return lang_command(args)
     if args.command == 'formats':
         return formats_command(args)
+    if args.command == 'assets':
+        return assets_command(args)
     if args.command == 'make':
         from .make import make_video
         return make_video(
