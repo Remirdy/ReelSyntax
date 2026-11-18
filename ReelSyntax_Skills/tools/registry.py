@@ -234,7 +234,7 @@ def rebuild(root=ROOT):
         atomic_json(index_path, document)
     try:
         atomic_json(contained_path(root, '.reelsyntax/registry-inventory.json', must_exist=False), {'digest': document['digest'], 'files': snapshot})
-    except PermissionError:
+    except OSError:
         document['maintenance_warning'] = 'Freshness cache is not writable; subsequent queries may rebuild metadata.'
     document['maintenance_body_reads'] = len(rows)
     return document
