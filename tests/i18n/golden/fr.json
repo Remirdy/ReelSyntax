@@ -1,0 +1,24 @@
+{
+  "locale": "fr",
+  "min_accuracy": 1.0,
+  "cases": [
+    {
+      "id": "fr-locked-no-text",
+      "query": "caméra fixe sans texte",
+      "expected_any": ["locked-camera", "textless-visual-design"],
+      "forbidden": ["orbit-camera", "kinetic-typography"]
+    },
+    {
+      "id": "fr-frame-clock",
+      "query": "cadence des images",
+      "expected_any": ["frame-clock"],
+      "forbidden": []
+    },
+    {
+      "id": "fr-black-frames-no-music",
+      "query": "détecter les images noires sans musique",
+      "expected_any": ["black-frame-detection"],
+      "forbidden": ["cinematic-drone"]
+    }
+  ]
+}

@@ -16,6 +16,8 @@ STOP_TOKENS = frozenset({
     "make", "create", "video", "short", "vertical", "horizontal", "with", "without",
     "calm", "warm", "colors", "for", "and", "the", "bir", "kisa", "kısa", "dikey",
     "yatay", "renkler", "sakin", "ile", "ve", "kurzes", "mit", "ruhigen", "farben",
+    "con", "sin", "para", "colores", "tranquilos", "avec", "sans", "pour", "couleurs",
+    "calmes", "com", "sem", "cores", "calmas",
 })
 
 
@@ -53,6 +55,24 @@ def _extract_topic_phrases(prompt: str, lang: str, count: int) -> list[str]:
             "Clear structure and steady focus",
             "Measured pacing and clean contrast",
             "Concise takeaway that sticks",
+        ],
+        "es": [
+            base_topic,
+            "Estructura clara y enfoque constante",
+            "Ritmo medido y contraste legible",
+            "Conclusión breve y memorable",
+        ],
+        "fr": [
+            base_topic,
+            "Structure claire et focus constant",
+            "Rythme mesuré et contraste lisible",
+            "Synthèse concise à retenir",
+        ],
+        "pt": [
+            base_topic,
+            "Estrutura clara e foco constante",
+            "Ritmo medido e contraste legível",
+            "Resumo direto para reter",
         ],
     }
     pool = meaningful + defaults_by_lang.get(lang, defaults_by_lang["en"])

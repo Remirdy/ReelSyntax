@@ -1,5 +1,8 @@
 from .casing import locale_lower, locale_title, locale_upper, primary_subtag
 from .catalog import (
+    SUPPORTED_LOCALES,
+    TIER1_LOCALES,
+    TIER2_LOCALES,
     fallback_chain,
     load_catalog,
     load_locale_status,
@@ -12,6 +15,9 @@ from .detect import detect_language, detect_script, fold_accents_for_match, norm
 from .profiles import list_profiles, load_profile, scaffold_language, validate_profile_data
 
 __all__ = [
+    "SUPPORTED_LOCALES",
+    "TIER1_LOCALES",
+    "TIER2_LOCALES",
     "detect_language",
     "detect_script",
     "fallback_chain",

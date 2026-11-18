@@ -12,7 +12,7 @@ def parser():
     root = argparse.ArgumentParser(prog='reelsyntax', description='Local skill routing, unified MCP gateway, and deterministic video production.')
     root.add_argument('--version', action='version', version=__version__)
     root.add_argument('--config', type=Path, help='Explicit reelsyntax.toml configuration file')
-    root.add_argument('--ui-lang', help='Interface locale code (for example en, tr, de)')
+    root.add_argument('--ui-lang', help='Interface locale code (for example en, tr, de, es, fr, pt)')
     commands = root.add_subparsers(dest='command', required=True)
 
     schema = commands.add_parser('schema', help='Print the editor JSON Schema')

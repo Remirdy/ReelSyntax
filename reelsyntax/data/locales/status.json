@@ -25,6 +25,30 @@
       "maintainer": "Remirdy",
       "verified_by_owner": false,
       "verified_at": null
+    },
+    "es": {
+      "tier": 2,
+      "name": "Spanish",
+      "native_name": "Español",
+      "maintainer": "Remirdy",
+      "verified_by_owner": false,
+      "verified_at": null
+    },
+    "fr": {
+      "tier": 2,
+      "name": "French",
+      "native_name": "Français",
+      "maintainer": "Remirdy",
+      "verified_by_owner": false,
+      "verified_at": null
+    },
+    "pt": {
+      "tier": 2,
+      "name": "Portuguese",
+      "native_name": "Português",
+      "maintainer": "Remirdy",
+      "verified_by_owner": false,
+      "verified_at": null
     }
   }
 }

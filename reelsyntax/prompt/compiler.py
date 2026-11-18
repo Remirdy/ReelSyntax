@@ -497,8 +497,8 @@ def compile_storyboard_to_project(
             bar_snapped = quantize_durations_to_grid(beat_durations, grid_bar)
             beat_durations = bar_snapped if bar_snapped != beat_durations else quantize_durations_to_grid(beat_durations, grid_beat)
 
-        hook_kickers = {"tr": "DİKKAT", "de": "STOPP", "en": "HOOK"}
-        payoff_kickers = {"tr": "SONUÇ", "de": "FAZIT", "en": "PAYOFF"}
+        hook_kickers = {"tr": "DİKKAT", "de": "STOPP", "en": "HOOK", "es": "CLAVE", "fr": "ACCROCHE", "pt": "GANCHO"}
+        payoff_kickers = {"tr": "SONUÇ", "de": "FAZIT", "en": "PAYOFF", "es": "CIERRE", "fr": "BILAN", "pt": "FECHO"}
         data_kickers = {"tr": "VERİ", "de": "DATEN", "en": "DATA"}
         news_kickers = {"tr": "HABER", "de": "MELDUNG", "en": "BRIEFING"}
         news_sub_kickers = {"tr": "GÜNCEL", "de": "AKTUELL", "en": "UPDATE"}

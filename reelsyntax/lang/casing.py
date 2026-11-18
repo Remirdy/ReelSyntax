@@ -34,7 +34,7 @@ def locale_lower(text: str, locale: str = "en") -> str:
 
 
 def locale_title(text: str, locale: str = "en") -> str:
-    words = text.split(" ")
+    words = unicodedata.normalize("NFC", text).split(" ")
     transformed: list[str] = []
     for word in words:
         if not word:
@@ -42,5 +42,5 @@ def locale_title(text: str, locale: str = "en") -> str:
             continue
         first = locale_upper(word[:1], locale)
         rest = locale_lower(word[1:], locale)
-        transformed.append(first + rest)
+        transformed.append(unicodedata.normalize("NFC", first + rest))
     return " ".join(transformed)
