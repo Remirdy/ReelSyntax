@@ -4,6 +4,8 @@
 
 | Command | Behavior |
 | --- | --- |
+| `config <show\|path\|init\|validate>` | Inspect merged `reelsyntax.toml` settings, print user/project config paths, create a starter TOML, or validate syntax and bounds |
+| `schema [--kind reel\|config]` | Print or write the editor JSON Schema for `reel.json` or `reelsyntax.toml` |
 | `doctor` | Probe Python, FFmpeg/FFprobe, Pillow, Chromium, Blender, After Effects/`aerender`, and first-party MCP status |
 | `integrations` | Report submodule initialization, pinned commits, package versions, and runtime readiness for `BlenderMCP` and `AfterEffectsMCP` |
 | `capabilities` | Refresh or progressively search namespaced `blender:*` and `after_effects:*` MCP tools without dumping full schemas |

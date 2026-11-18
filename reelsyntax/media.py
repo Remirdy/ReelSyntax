@@ -8,9 +8,13 @@ import subprocess
 
 def executable(name):
     configured = os.environ.get('REELSYNTAX_' + name.upper())
+    if not configured and name in {'ffmpeg', 'ffprobe', 'blender'}:
+        from .config import load_config
+
+        configured = getattr(load_config().paths, name, '') or None
     candidate = Path(configured).expanduser() if configured else None
     if candidate is not None:
-        if not candidate.is_absolute() or not candidate.is_file() or not os.access(candidate, os.X_OK):
+        if not candidate.is_absolute() or not candidate.is_file() or (os.name != 'nt' and not os.access(candidate, os.X_OK)):
             raise ValueError(f'REELSYNTAX_{name.upper()} must name an executable absolute path')
         return str(candidate)
     path = shutil.which(name)

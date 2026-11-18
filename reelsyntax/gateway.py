@@ -4,7 +4,6 @@ import json
 import math
 import os
 from pathlib import Path
-import platform
 import queue
 import re
 import shutil
@@ -13,7 +12,7 @@ import subprocess
 import sys
 import threading
 
-from ReelSyntax_Skills.tools.registry import ROOT as SKILLS_ROOT, atomic_json, canonical, contained_path, digest, load_index, read_json
+from ReelSyntax_Skills.tools.registry import ROOT as SKILLS_ROOT, atomic_json, canonical, contained_path, digest, read_json
 from ReelSyntax_Skills.tools.route import norm, terms
 
 REPO_ROOT = SKILLS_ROOT.parent
@@ -81,6 +80,10 @@ def _parse_semver(value: str) -> tuple[int, int, int]:
 
 def discover_blender_binary() -> dict:
     configured = os.environ.get('REELSYNTAX_BLENDER')
+    if not configured:
+        from .config import load_config
+
+        configured = load_config().paths.blender or None
     candidates = []
     if configured:
         candidates.append(Path(configured).expanduser())

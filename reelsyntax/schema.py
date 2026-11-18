@@ -75,3 +75,56 @@ def project_schema():
         **root,
         '$defs': definitions,
     }
+
+
+def config_schema():
+    from .config import LANG_TAG_RE, PROFILE_NAMES, PROVIDER_NAMES
+
+    lang_prop = {
+        'type': 'string',
+        'anyOf': [
+            {'const': 'auto'},
+            {'pattern': LANG_TAG_RE.pattern},
+        ],
+    }
+    return {
+        '$schema': 'https://json-schema.org/draft/2020-12/schema',
+        'title': 'ReelSyntax configuration',
+        **object_schema(
+            {
+                'config_version': {'const': 1},
+                'general': object_schema(
+                    {
+                        'ui_lang': lang_prop,
+                        'video_lang': lang_prop,
+                        'allow_network': {'type': 'boolean'},
+                        'attribution': {'type': 'boolean'},
+                    }
+                ),
+                'provider': object_schema(
+                    {
+                        'name': {'enum': sorted(PROVIDER_NAMES)},
+                        'model': {'type': 'string', 'maxLength': 128},
+                        'endpoint': {'type': 'string', 'maxLength': 512},
+                        'timeout_sec': {'type': 'integer', 'minimum': 1, 'maximum': 600},
+                        'max_repairs': {'type': 'integer', 'minimum': 0, 'maximum': 3},
+                    }
+                ),
+                'paths': object_schema(
+                    {
+                        'ffmpeg': {'type': 'string'},
+                        'ffprobe': {'type': 'string'},
+                        'blender': {'type': 'string'},
+                    }
+                ),
+                'render': object_schema(
+                    {
+                        'default_profile': {'enum': sorted(PROFILE_NAMES)},
+                        'cache_budget_mib': {'type': 'integer', 'minimum': 0, 'maximum': 1_048_576},
+                        'reduced_motion': {'type': 'boolean'},
+                        'timeout_sec': {'type': 'integer', 'minimum': 1, 'maximum': 3600},
+                    }
+                ),
+            }
+        ),
+    }
