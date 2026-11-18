@@ -918,6 +918,70 @@
             "type": "object",
             "additionalProperties": true
           }
+        },
+        "character": {
+          "enum": [
+            "scout",
+            "archivist",
+            "relay"
+          ]
+        },
+        "partner_character": {
+          "enum": [
+            "scout",
+            "archivist",
+            "relay"
+          ]
+        },
+        "expression": {
+          "enum": [
+            "neutral",
+            "focused",
+            "surprised",
+            "happy"
+          ]
+        },
+        "partner_expression": {
+          "enum": [
+            "neutral",
+            "focused",
+            "surprised",
+            "happy"
+          ]
+        },
+        "mouth_envelope": {
+          "type": "array",
+          "items": {
+            "type": "number"
+          }
+        },
+        "speaker": {
+          "type": "string",
+          "maxLength": 48
+        },
+        "dialogue": {
+          "type": "string",
+          "maxLength": 160
+        },
+        "shot_role": {
+          "enum": [
+            "establishing",
+            "speaker_a",
+            "speaker_b",
+            "insert",
+            "two_shot"
+          ]
+        },
+        "character_pos": {
+          "enum": [
+            "left",
+            "right",
+            "center",
+            "duo"
+          ]
+        },
+        "blink_offset": {
+          "type": "integer"
         }
       },
       "required": [],
@@ -997,6 +1061,7 @@
             "aperture",
             "assembly",
             "cassette",
+            "character-stage",
             "custom-shader",
             "data-horizon",
             "footage",

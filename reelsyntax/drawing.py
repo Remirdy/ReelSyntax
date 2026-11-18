@@ -282,6 +282,12 @@ def draw(scene, frame, output, seed, supersampling=1, look_mode='agx'):
         if scale > 1:
             image = image.resize((width, height), Image.Resampling.LANCZOS)
         return image, []
+    if recipe == 'character-stage':
+        from .character import draw_character_scene
+        bounds = draw_character_scene(canvas, scene, frame, w, h, fps_val, seed, background, foreground, accent, scale=scale, look_mode=look_mode, dither=dither)
+        if scale > 1:
+            image = image.resize((width, height), Image.Resampling.LANCZOS)
+        return image, bounds
     if recipe in LEGACY_RECIPES:
         for kind, points, colored, thickness in scene_geometry(scene, frame, w, h, seed):
             fill = accent if colored else foreground

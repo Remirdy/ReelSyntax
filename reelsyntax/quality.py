@@ -48,10 +48,16 @@ def _check_typography_and_glyphs(plan: dict) -> tuple[dict, dict]:
         for key, min_ratio, color_rgb, bold in [
             ('heading', 3.0, fg_rgb, True),
             ('subheading', 4.5, fg_rgb, False),
+            ('dialogue', 4.5, fg_rgb, False),
             ('kicker', 3.0, ac_rgb, True),
+            ('speaker', 4.5, fg_rgb, True),
         ]:
             val = params.get(key, '')
             if not val:
+                continue
+            if key == 'dialogue' and val == params.get('subheading', ''):
+                continue
+            if key == 'speaker' and val == params.get('kicker', ''):
                 continue
             has_text = True
             ratio = round(contrast_ratio(color_rgb, bg_rgb), 2)
@@ -158,7 +164,11 @@ def check_reading_speed(plan: dict, rules: set[str] | None = None) -> dict:
     observations = []
     for scene in plan['scenes']:
         params = scene.get('params', {})
-        text_joined = ' '.join(str(params.get(k, '')).strip() for k in ('heading', 'subheading') if params.get(k)).strip()
+        parts = [str(params.get(k, '')).strip() for k in ('heading', 'subheading') if params.get(k)]
+        dlg = str(params.get('dialogue', '')).strip()
+        if dlg and dlg != str(params.get('subheading', '')).strip():
+            parts.append(dlg)
+        text_joined = ' '.join(parts).strip()
         if not text_joined:
             continue
         dur_sec = max(1e-3, scene['duration_frames'] / fps_val)
@@ -375,7 +385,7 @@ def check(project, profile='draft', *, loop=False, html=False, rules=None):
         checks.append({'id': 'cue_sync', 'status': 'review', 'observed': 'Sample-accurate synthesis anchors verified; perceived audio/video alignment requires playback review', 'expected': 'Playback review of actual encoded cue events'})
     checks.append({
         'id': 'glyph_integrity',
-        'status': 'review' if any(s['params'].get('heading') or s['params'].get('subheading') or s['params'].get('kicker') for s in plan['scenes']) else 'not-applicable',
+        'status': 'review' if any(s['params'].get('heading') or s['params'].get('subheading') or s['params'].get('kicker') or s['params'].get('dialogue') or s['params'].get('speaker') for s in plan['scenes']) else 'not-applicable',
         'observed': 'Text bounds and glyph coverage checked; full visual shaping needs frame review',
         'expected': 'Readable intended glyphs in rendered frames',
     })
