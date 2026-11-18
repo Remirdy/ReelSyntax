@@ -78,8 +78,23 @@ jobs:
       - run: ffmpeg -version
       - run: ffprobe -version
       - run: reelsyntax doctor --json
-      - run: python -c "import json, subprocess, sys; d = json.loads(subprocess.check_output([sys.executable, '-m', 'reelsyntax', 'doctor', '--json'], text=True)); assert d['result']['render_available'], d"
-      - run: python -c "import subprocess, sys, tempfile, pathlib; p = pathlib.Path(tempfile.mkdtemp()) / 'smoke'; subprocess.check_call([sys.executable, '-m', 'reelsyntax', 'init', str(p)]); subprocess.check_call([sys.executable, '-m', 'reelsyntax', 'render', str(p), '--profile', 'draft']); r = subprocess.run([sys.executable, '-m', 'reelsyntax', 'qc', str(p), '--profile', 'draft', '--json'], capture_output=True, text=True); assert r.returncode in (0, 2) and '\"frame_cadence\"' in r.stdout, r.stderr"
+      - name: Verify cross-OS render and QC smoke pipeline
+        shell: python
+        run: |
+          import json
+          import pathlib
+          import subprocess
+          import sys
+          import tempfile
+
+          doc = json.loads(subprocess.check_output([sys.executable, "-m", "reelsyntax", "doctor", "--json"], text=True))
+          assert doc["result"]["render_available"], doc
+
+          proj = pathlib.Path(tempfile.mkdtemp()) / "smoke"
+          subprocess.check_call([sys.executable, "-m", "reelsyntax", "init", str(proj)])
+          subprocess.check_call([sys.executable, "-m", "reelsyntax", "render", str(proj), "--profile", "draft"])
+          qc = subprocess.run([sys.executable, "-m", "reelsyntax", "qc", str(proj), "--profile", "draft", "--json"], capture_output=True, text=True)
+          assert qc.returncode in (0, 2) and "frame_cadence" in qc.stdout, qc.stderr
       - if: runner.os == 'Linux'
         run: python -m unittest discover -s tests -v
   docs:
