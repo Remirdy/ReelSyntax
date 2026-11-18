@@ -1,0 +1,151 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "music-visualizer-tr",
+  "seed": 42,
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1"
+  },
+  "delivery": {
+    "language": "tur"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true
+  },
+  "scenes": [
+    {
+      "id": "pulse",
+      "duration_frames": 120,
+      "recipe": "signal",
+      "engine": "pillow",
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "font_mode": "system",
+        "kicker": "ÖLÇÜ 01",
+        "heading": "NABIZ",
+        "subheading": "Bas ritmi ızgarayı kurar."
+      }
+    },
+    {
+      "id": "orbit",
+      "duration_frames": 120,
+      "recipe": "rings",
+      "engine": "pillow",
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      },
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "font_mode": "system",
+        "kicker": "ÖLÇÜ 03",
+        "heading": "YÖRÜNGE",
+        "subheading": "Yaylar her ölçüde nefes alır."
+      }
+    },
+    {
+      "id": "resolve",
+      "duration_frames": 120,
+      "recipe": "signal",
+      "engine": "pillow",
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      },
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "font_mode": "system",
+        "kicker": "ÖLÇÜ 05",
+        "heading": "ÇÖZÜLÜŞ",
+        "subheading": "Enerji sakince durulur."
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 220,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 60,
+        "frequency": 262,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 120,
+        "frequency": 294,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 180,
+        "frequency": 330,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 240,
+        "frequency": 392,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 300,
+        "frequency": 220,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [
+        [
+          0,
+          360
+        ]
+      ],
+      "silence": [
+        [
+          18,
+          60
+        ],
+        [
+          78,
+          120
+        ],
+        [
+          138,
+          180
+        ],
+        [
+          198,
+          240
+        ],
+        [
+          258,
+          300
+        ],
+        [
+          318,
+          360
+        ]
+      ]
+    }
+  }
+}

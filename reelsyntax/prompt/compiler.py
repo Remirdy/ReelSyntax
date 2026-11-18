@@ -9,9 +9,69 @@ from ..project import validate
 from ..typography import measure_tracked_text, resolve_font
 from ..variants import LANGUAGES
 from .intent import ParsedIntent
-from .storyboard import StoryboardPlan
+from .storyboard import StoryboardPlan, distribute_frames
 
 LEGACY_DRAWING_RECIPES = frozenset({"assembly", "rings", "signal", "title"})
+
+MUSIC_GRID_BPM = 120
+FLASH_SAFE_TRANSITIONS = frozenset({"cut", "cross_dissolve"})
+
+WAVE_FORMAT_KICKERS: dict[str, dict[str, dict[str, str]]] = {
+    "explainer-slides": {
+        "chapter": {"en": "CHAPTER", "tr": "BÖLÜM", "de": "KAPITEL"},
+        "recap": {"en": "RECAP", "tr": "ÖZET", "de": "FAZIT"},
+    },
+    "lyric-video": {
+        "line": {"en": "LINE", "tr": "DİZE", "de": "ZEILE"},
+    },
+    "music-visualizer": {
+        "bar": {"en": "BAR", "tr": "ÖLÇÜ", "de": "TAKT"},
+    },
+    "channel-intro": {
+        "open": {"en": "CHANNEL", "tr": "KANAL", "de": "KANAL"},
+        "body": {"en": "NOW", "tr": "ŞİMDİ", "de": "JETZT"},
+        "close": {"en": "SUBSCRIBE", "tr": "ABONE OL", "de": "ABONNIEREN"},
+    },
+}
+
+PENTATONIC_HZ = (220, 262, 294, 330, 392)
+
+
+def music_grid_frames(fps: str, bpm: int = MUSIC_GRID_BPM) -> tuple[int, int]:
+    beat = max(1, int(round(float(Fraction(fps)) * 60.0 / bpm)))
+    return beat, beat * 4
+
+
+def quantize_durations_to_grid(durations: list[int], unit: int) -> list[int]:
+    total = sum(durations)
+    count = len(durations)
+    if unit < 12 or count == 0 or total // unit < count:
+        return list(durations)
+    slots = total // unit
+    raw = [slots * d / total for d in durations]
+    units = [max(1, int(r)) for r in raw]
+    order = sorted(range(count), key=lambda i: (raw[i] - int(raw[i]), -i), reverse=True)
+    cursor = 0
+    while sum(units) < slots:
+        units[order[cursor % count]] += 1
+        cursor += 1
+    while sum(units) > slots:
+        slot = max(range(count), key=lambda i: (units[i], -i))
+        units[slot] -= 1
+    out = [u * unit for u in units]
+    out[-1] += total - sum(out)
+    return out
+
+
+def reweight_durations(durations: list[int], weights: list[int]) -> list[int]:
+    if len(weights) != len(durations) or not durations:
+        return list(durations)
+    return distribute_frames(sum(durations), weights)
+
+
+def _wave_kicker(format_id: str, role: str, lang: str) -> str:
+    table = WAVE_FORMAT_KICKERS[format_id][role]
+    return table.get(lang, table["en"])
 
 ASPECT_DIMENSIONS_1080P: dict[str, tuple[int, int]] = {
     "16:9": (1920, 1080),
@@ -226,16 +286,33 @@ def compile_storyboard_to_project(
 
     is_kinetic_fmt = intent.format_hint == "kinetic-typography"
     is_hook_fmt = intent.format_hint == "social-hook-reel"
+    is_explainer_fmt = intent.format_hint == "explainer-slides"
+    is_lyric_fmt = intent.format_hint == "lyric-video"
+    is_visualizer_fmt = intent.format_hint == "music-visualizer"
+    is_intro_fmt = intent.format_hint == "channel-intro"
     lang_primary = intent.video_lang.split("-", 1)[0].lower()
     total_beats = len(storyboard.beats)
     fps_float = float(Fraction(storyboard.fps))
     max_hook_frames = max(24, int(round(2.0 * fps_float)))
+    grid_beat, grid_bar = music_grid_frames(storyboard.fps)
 
     beat_durations = [int(b.duration_frames) for b in storyboard.beats]
     if is_hook_fmt and total_beats >= 2 and beat_durations[0] > max_hook_frames:
         excess = beat_durations[0] - max_hook_frames
         beat_durations[0] = max_hook_frames
         beat_durations[-1] += excess
+    if is_explainer_fmt and total_beats >= 3:
+        beat_durations = reweight_durations(
+            beat_durations,
+            [3] + [5 if i % 2 == 0 else 4 for i in range(total_beats - 2)] + [4],
+        )
+    elif is_intro_fmt and total_beats >= 3:
+        beat_durations = reweight_durations(beat_durations, [4] + [5] * (total_beats - 2) + [3])
+    elif is_lyric_fmt:
+        beat_durations = quantize_durations_to_grid(beat_durations, grid_beat)
+    elif is_visualizer_fmt:
+        bar_snapped = quantize_durations_to_grid(beat_durations, grid_bar)
+        beat_durations = bar_snapped if bar_snapped != beat_durations else quantize_durations_to_grid(beat_durations, grid_beat)
 
     hook_kickers = {"tr": "DİKKAT", "de": "STOPP", "en": "HOOK"}
     payoff_kickers = {"tr": "SONUÇ", "de": "FAZIT", "en": "PAYOFF"}
@@ -243,13 +320,22 @@ def compile_storyboard_to_project(
     for idx, beat in enumerate(storyboard.beats):
         dur_frames = beat_durations[idx]
         chosen_recipe = beat.recipe
+        is_last = idx == total_beats - 1
         if is_kinetic_fmt:
-            chosen_recipe = "signal" if (idx == total_beats - 1 and total_beats >= 3) else "kinetic-type"
+            chosen_recipe = "signal" if (is_last and total_beats >= 3) else "kinetic-type"
         elif is_hook_fmt:
             if idx == 0:
                 chosen_recipe = "prism-monolith"
-            elif idx == total_beats - 1:
+            elif is_last:
                 chosen_recipe = "kinetic-type"
+        elif is_explainer_fmt:
+            chosen_recipe = "kinetic-type" if (idx == 0 or is_last) else "assembly"
+        elif is_lyric_fmt:
+            chosen_recipe = "kinetic-type"
+        elif is_visualizer_fmt:
+            chosen_recipe = "signal" if idx % 2 == 0 else "rings"
+        elif is_intro_fmt:
+            chosen_recipe = "prism-monolith" if idx == 0 else "kinetic-type"
         params: dict[str, Any] = {
             "background": bg_hex,
             "foreground": fg_hex,
@@ -263,16 +349,32 @@ def compile_storyboard_to_project(
             elif is_hook_fmt:
                 if idx == 0:
                     params["kicker"] = hook_kickers.get(lang_primary, "HOOK")
-                elif idx == total_beats - 1:
+                elif is_last:
                     params["kicker"] = payoff_kickers.get(lang_primary, "PAYOFF")
                 else:
                     params["kicker"] = f"{idx + 1:02d}"
+            elif is_explainer_fmt:
+                if is_last and total_beats >= 3:
+                    params["kicker"] = _wave_kicker("explainer-slides", "recap", lang_primary)
+                else:
+                    params["kicker"] = f"{_wave_kicker('explainer-slides', 'chapter', lang_primary)} {idx + 1:02d}/{total_beats:02d}"
+            elif is_lyric_fmt:
+                params["kicker"] = f"{_wave_kicker('lyric-video', 'line', lang_primary)} {idx + 1:02d}"
+            elif is_visualizer_fmt:
+                bar_aligned = sum(beat_durations[:idx]) % grid_bar == 0 and dur_frames >= grid_bar
+                start_bar = sum(beat_durations[:idx]) // grid_bar + 1 if bar_aligned else idx + 1
+                params["kicker"] = f"{_wave_kicker('music-visualizer', 'bar', lang_primary)} {start_bar:02d}"
+            elif is_intro_fmt:
+                role = "open" if idx == 0 else ("close" if is_last and total_beats >= 3 else "body")
+                params["kicker"] = _wave_kicker("channel-intro", role, lang_primary)
+            intro_card_only = is_intro_fmt and (idx == 0 or (is_last and total_beats >= 3))
             fitted_h, fitted_sub = fit_scene_text_fields(
                 beat.heading or "",
-                beat.subheading or "",
+                "" if intro_card_only else (beat.subheading or ""),
                 recipe=chosen_recipe,
                 width=width,
                 height=height,
+                spill_heading_to_subheading=not intro_card_only,
             )
             if fitted_h:
                 params["heading"] = fitted_h
@@ -291,7 +393,7 @@ def compile_storyboard_to_project(
         if idx > 0 and dur_frames >= 24:
             if is_hook_fmt and idx == 1:
                 trans_type = "wipe_left"
-            elif (is_kinetic_fmt or is_hook_fmt) and idx < total_beats - 1:
+            elif (is_kinetic_fmt or is_hook_fmt or is_explainer_fmt) and idx < total_beats - 1:
                 trans_type = "slide_left"
             else:
                 trans_type = "cross_dissolve"
@@ -312,6 +414,32 @@ def compile_storyboard_to_project(
                     "duration_frames": cue_dur,
                     "instrument": "sub_impact",
                 })
+            elif is_visualizer_fmt:
+                for bar_offset in range(0, dur_frames, grid_bar):
+                    remaining = dur_frames - bar_offset
+                    if remaining < 6 and bar_offset > 0:
+                        continue
+                    bar_index = (cursor + bar_offset) // grid_bar
+                    cues.append({
+                        "frame": cursor + bar_offset,
+                        "frequency": PENTATONIC_HZ[bar_index % len(PENTATONIC_HZ)],
+                        "duration_frames": min(18, remaining),
+                        "instrument": "harmonic_pluck",
+                    })
+            elif is_lyric_fmt:
+                cues.append({
+                    "frame": cursor,
+                    "frequency": PENTATONIC_HZ[idx % len(PENTATONIC_HZ)],
+                    "duration_frames": cue_dur,
+                    "instrument": "harmonic_pluck",
+                })
+            elif is_intro_fmt:
+                cues.append({
+                    "frame": cursor,
+                    "frequency": 262 if (is_last and total_beats >= 3) else (392 if idx == 0 else 523),
+                    "duration_frames": cue_dur,
+                    "instrument": "warm_pad" if (is_last and total_beats >= 3) else "harmonic_pluck",
+                })
             else:
                 cues.append({
                     "frame": cursor,
@@ -319,9 +447,15 @@ def compile_storyboard_to_project(
                     "duration_frames": cue_dur,
                     "instrument": "harmonic_pluck" if idx % 2 == 0 else "warm_pad",
                 })
-            if cursor + cue_dur < cursor + dur_frames:
-                silence_exceptions.append([cursor + cue_dur, cursor + dur_frames])
         cursor += dur_frames
+
+    if not no_audio:
+        ordered_cues = sorted(cues, key=lambda c: int(c["frame"]))
+        for pos, cue in enumerate(ordered_cues):
+            gap_start = int(cue["frame"]) + int(cue["duration_frames"])
+            gap_end = int(ordered_cues[pos + 1]["frame"]) if pos + 1 < len(ordered_cues) else cursor
+            if gap_start < gap_end:
+                silence_exceptions.append([gap_start, gap_end])
 
     iso3 = LANGUAGES.get(lang_primary, "eng")
 

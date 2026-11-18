@@ -1,0 +1,120 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "channel-intro-tr",
+  "seed": 42,
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1"
+  },
+  "delivery": {
+    "language": "tur"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true
+  },
+  "scenes": [
+    {
+      "id": "reveal",
+      "duration_frames": 72,
+      "recipe": "prism-monolith",
+      "engine": "pillow",
+      "camera": {
+        "preset": "dolly_in",
+        "focal_mm": 50.0
+      },
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "kicker": "KANAL",
+        "heading": "STÜDYO"
+      }
+    },
+    {
+      "id": "name",
+      "duration_frames": 90,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      },
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "kicker": "ŞİMDİ",
+        "heading": "NOTLAR",
+        "subheading": "Haftalık zanaat notları."
+      }
+    },
+    {
+      "id": "end-card",
+      "duration_frames": 54,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      },
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "kicker": "ABONE OL",
+        "heading": "KATIL"
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 392,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 72,
+        "frequency": 523,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 162,
+        "frequency": 262,
+        "duration_frames": 18,
+        "instrument": "warm_pad"
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [
+        [
+          0,
+          216
+        ]
+      ],
+      "silence": [
+        [
+          18,
+          72
+        ],
+        [
+          90,
+          162
+        ],
+        [
+          180,
+          216
+        ]
+      ]
+    }
+  }
+}
