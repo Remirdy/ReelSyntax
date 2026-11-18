@@ -1,3 +1,4 @@
+from .installer import install_format, is_remote_git_source, list_installed_formats, uninstall_format
 from .registry import discover_formats, format_search_roots, get_format, scaffold_format, user_formats_directory
 from .runner import FormatRunner, derive_step_seed, invalidate_from_step, load_runner_state
 from .schema import (
@@ -23,9 +24,13 @@ __all__ = [
     "format_schema",
     "format_search_roots",
     "get_format",
+    "install_format",
     "invalidate_from_step",
+    "is_remote_git_source",
+    "list_installed_formats",
     "load_runner_state",
     "scaffold_format",
+    "uninstall_format",
     "user_formats_directory",
     "validate_format_directory",
     "validate_format_manifest",

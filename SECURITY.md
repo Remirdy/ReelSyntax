@@ -19,3 +19,5 @@ The stdio reader bounds messages to 1 MiB and compatibility headers to 8 KiB. Ma
 ## Local extensions and authoring inputs
 
 An installed Python recipe runs with the caller's OS permissions when explicitly selected by `from-plugin --allow-plugin`. Review the package before enabling it. Keep this operation out of untrusted CI jobs. A `three-scene` browser bundle requires `--allow-browser-module` on every render or resume. Browser assets remain local and the worker has a per-operation timeout. The gateway does not enable either extension flag.
+
+Community format packages installed through `reelsyntax formats install` are restricted to declarative data (`format.json`, `FORMAT.md`, `template/reel.skel.json`, references, and static assets). The installer disables Git hooks (`core.hooksPath=/dev/null`) and submodule recursion during clone, requires `--allow-network` for remote Git URLs, and rejects symbolic links, path traversal, executable/code file extensions, external media URLs, and `custom-shader` / `three-scene` executable browser recipes.

@@ -58,6 +58,18 @@ def parser():
     fmt_val = fmt_sub.add_parser('validate')
     fmt_val.add_argument('target')
     fmt_val.add_argument('--json', action='store_true')
+    fmt_inst = fmt_sub.add_parser('install')
+    fmt_inst.add_argument('source')
+    fmt_inst.add_argument('--subdir')
+    fmt_inst.add_argument('--ref')
+    fmt_inst.add_argument('--allow-network', action='store_true')
+    fmt_inst.add_argument('--force', action='store_true')
+    fmt_inst.add_argument('--json', action='store_true')
+    fmt_uninst = fmt_sub.add_parser('uninstall')
+    fmt_uninst.add_argument('id')
+    fmt_uninst.add_argument('--json', action='store_true')
+    fmt_installed = fmt_sub.add_parser('installed')
+    fmt_installed.add_argument('--json', action='store_true')
 
     cfg_cmd = commands.add_parser('config', help='Inspect, initialize, or validate reelsyntax.toml configuration')
     cfg_sub = cfg_cmd.add_subparsers(dest='action', required=True)
@@ -388,7 +400,16 @@ def lang_command(args):
 
 
 def formats_command(args):
-    from .formats import discover_formats, get_format, scaffold_format, validate_format_directory
+    from .config import load_config
+    from .formats import (
+        discover_formats,
+        get_format,
+        install_format,
+        list_installed_formats,
+        scaffold_format,
+        uninstall_format,
+        validate_format_directory,
+    )
 
     if args.action == 'list':
         rows = discover_formats(category=args.category)
@@ -416,6 +437,20 @@ def formats_command(args):
             return validate_format_directory(target_path)
         info = get_format(args.target)
         return validate_format_directory(Path(info['path']))
+    if args.action == 'install':
+        net = bool(args.allow_network or load_config().general.allow_network)
+        return install_format(
+            args.source,
+            subdir=args.subdir,
+            ref=args.ref,
+            allow_network=net,
+            force=args.force,
+        )
+    if args.action == 'uninstall':
+        return uninstall_format(args.id)
+    if args.action == 'installed':
+        rows = list_installed_formats()
+        return {'total': len(rows), 'installed': rows}
     raise ValueError('Unsupported formats action')
 
 

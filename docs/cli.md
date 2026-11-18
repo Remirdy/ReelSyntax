@@ -5,7 +5,7 @@
 | Command | Behavior |
 | --- | --- |
 | `config <show\|path\|init\|validate>` | Inspect merged `reelsyntax.toml` settings, print user/project config paths, create a starter TOML, or validate syntax and bounds |
-| `formats <list\|show\|new\|validate>` | Browse available formats, inspect a format manifest, scaffold a new data-only format directory, or validate `format.json` + skeleton safety |
+| `formats <list\|show\|new\|validate\|install\|uninstall\|installed>` | Browse available formats, scaffold or validate data-only format packages, or install/remove community formats from local paths, `.zip` archives, or git URLs (`--allow-network`) |
 | `lang <list\|show\|new\|validate>` | List supported locales and owner-verification flags, inspect a language profile, scaffold a new locale, or validate key/placeholder parity |
 | `schema [--kind reel\|config\|format] [--schema-version N]` | Print or write the versioned editor JSON Schema for `reel.json`, `reelsyntax.toml`, or `format.json` |
 | `migrate <project> [--dry-run]` | Upgrade legacy or unversioned `reel.json` files to `schema_version: 1` with `.reelsyntax/migrations/` backup |
