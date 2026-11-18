@@ -15,7 +15,7 @@
       "camera": {"preset": "dolly_in", "focal_mm": 50.0},
       "params": {
         "kicker": "DİKKAT",
-        "heading": "TAHMİNİ BIRAK",
+        "heading": "NET ÖLÇÜM",
         "subheading": "Çıktıdan önce her kareyi ölçün.",
         "background": "#2b303a",
         "foreground": "#f4f6f9",

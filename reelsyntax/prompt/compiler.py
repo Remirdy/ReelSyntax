@@ -1,4 +1,5 @@
 from fractions import Fraction
+import importlib.util
 import re
 from typing import Any
 
@@ -45,7 +46,7 @@ def _fits_at_sizes(
     for w, h in sizes:
         unit = min(w / 960.0, h / 540.0)
         font = resolve_font(round(base_pt * unit), bold=is_heading, prefer_default=use_default_font)
-        max_w = w * (right_frac - 0.07) * 0.96
+        max_w = w * (right_frac - 0.07) * 0.90
         if is_legacy:
             box = canvas.textbbox((w * 0.07, h * (0.39 if is_heading else 0.55)), text, font=font)
             if box[2] > w * right_frac * 0.98:
@@ -87,6 +88,18 @@ def _trim_to_fit(
     return "", cleaned
 
 
+def _trim_by_char_budget(text: str, max_chars: int) -> tuple[str, str]:
+    cleaned = " ".join(text.split())
+    if len(cleaned) <= max_chars:
+        return cleaned, ""
+    words = cleaned.split(" ")
+    for take in range(len(words) - 1, 0, -1):
+        prefix = " ".join(words[:take])
+        if len(prefix) <= max_chars:
+            return prefix, " ".join(words[take:])
+    return words[0][:max_chars], (words[0][max_chars:] + " " + " ".join(words[1:])).strip()
+
+
 def fit_scene_text_fields(
     heading: str,
     subheading: str,
@@ -97,6 +110,19 @@ def fit_scene_text_fields(
     spill_heading_to_subheading: bool = True,
     use_system_font: bool = True,
 ) -> tuple[str, str]:
+    if importlib.util.find_spec("PIL") is None:
+        scale_ratio = max(0.6, width / 1080.0)
+        h_budget = max(8, int(round(12 * scale_ratio)))
+        sub_budget = max(16, int(round(32 * scale_ratio)))
+        fh, over = _trim_by_char_budget(heading[:120], h_budget)
+        c_sub = subheading[:120]
+        if spill_heading_to_subheading and over and not c_sub:
+            c_sub = over[:120]
+        elif spill_heading_to_subheading and over and c_sub:
+            c_sub = f"{over} - {c_sub}"[:120]
+        fsub, _ = _trim_by_char_budget(c_sub, sub_budget)
+        return fh, fsub
+
     from PIL import Image, ImageDraw
 
     probe_img = Image.new("RGB", (64, 64))

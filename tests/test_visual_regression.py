@@ -1,11 +1,13 @@
 import hashlib
+import importlib.util
 from pathlib import Path
+from typing import Any
 import unittest
-
-from PIL import Image
 
 from ReelSyntax_Skills.tools.registry import read_json
 from reelsyntax import drawing
+
+HAS_PILLOW = importlib.util.find_spec("PIL") is not None
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 BASELINES_PATH = REPO_ROOT / "tests/golden/visual_baselines.json"
@@ -43,7 +45,9 @@ DRAFT_VERTICAL_OUTPUT = {
 }
 
 
-def compute_grid_signature(img: Image.Image, cols: int = 8, rows: int = 8) -> list[list[int]]:
+def compute_grid_signature(img: Any, cols: int = 8, rows: int = 8) -> list[list[int]]:
+    from PIL import Image
+
     small = img.convert("RGB").resize((cols, rows), Image.Resampling.BOX)
     raw = small.tobytes()
     return [[raw[i], raw[i + 1], raw[i + 2]] for i in range(0, len(raw), 3)]
@@ -59,6 +63,7 @@ def grid_mae(grid_a: list[list[int]], grid_b: list[list[int]]) -> float:
     return total / max(1, channels)
 
 
+@unittest.skipUnless(HAS_PILLOW, "Pillow required for visual regression tests")
 class VisualRegressionTests(unittest.TestCase):
     def test_pure_shape_field_matches_golden_baseline_and_repeats_bit_identically(self) -> None:
         baselines = read_json(BASELINES_PATH)["cases"]

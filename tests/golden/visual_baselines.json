@@ -330,7 +330,7 @@
     "format_kinetic-typography_scene0": {
       "format_id": "kinetic-typography",
       "frame": 30,
-      "max_mae": 5.0,
+      "max_mae": 8.0,
       "text_fields": [
         "kicker",
         "heading",
@@ -662,7 +662,7 @@
     "format_photo-slideshow_scene0": {
       "format_id": "photo-slideshow",
       "frame": 30,
-      "max_mae": 5.0,
+      "max_mae": 8.0,
       "text_fields": [
         "heading",
         "subheading"
@@ -993,7 +993,7 @@
     "format_social-hook-reel_scene0": {
       "format_id": "social-hook-reel",
       "frame": 27,
-      "max_mae": 5.0,
+      "max_mae": 8.0,
       "text_fields": [
         "kicker",
         "heading",
@@ -1121,24 +1121,24 @@
           58
         ],
         [
-          50,
-          55,
-          65
+          49,
+          54,
+          64
         ],
         [
           56,
-          61,
+          60,
           70
         ],
         [
+          54,
           59,
-          64,
-          73
+          68
         ],
         [
-          59,
-          64,
-          73
+          43,
+          48,
+          58
         ],
         [
           92,

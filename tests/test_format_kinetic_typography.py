@@ -1,3 +1,4 @@
+import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
@@ -15,6 +16,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _ffmpeg_ready() -> bool:
+    if importlib.util.find_spec("PIL") is None:
+        return False
     try:
         return bool(executable("ffmpeg")) and bool(executable("ffprobe"))
     except ValueError:
