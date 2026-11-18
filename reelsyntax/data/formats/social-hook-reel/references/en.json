@@ -1,0 +1,6 @@
+{
+  "locale": "en",
+  "max_hook_sec": 2.0,
+  "hook_kicker": "HOOK",
+  "payoff_kicker": "PAYOFF"
+}

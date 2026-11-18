@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add official `social-hook-reel` format package (`formats/social-hook-reel/`, `<= 2.0s` opening hook enforcement, localized EN/TR/DE kickers, mirrored to `reelsyntax/data/formats/`) and golden-frame visual regression suite (`tests/test_visual_regression.py`).
 - Add official `photo-slideshow` format package (`formats/photo-slideshow/`, automatic starter/user `layer-stack` plate provisioning, localized EN/TR/DE references and examples, mirrored to `reelsyntax/data/formats/`).
 - Add official `kinetic-typography` format package (`formats/kinetic-typography/`, localized EN/TR/DE references and examples, mirrored to `reelsyntax/data/formats/`).
 - Add starter asset pack (`reelsyntax.data.starter_assets`), SPDX license ledger (`reelsyntax.assets`, `.reelsyntax/asset-licenses.json`, `LICENSES.md` generator), and `reelsyntax assets list|materialize|register|licenses`.

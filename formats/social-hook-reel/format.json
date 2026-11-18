@@ -1,0 +1,46 @@
+{
+  "$schema": "https://remirdy.github.io/ReelSyntax/schemas/format.v1.schema.json",
+  "id": "social-hook-reel",
+  "version": "1.0.0",
+  "title": {
+    "en": "Social Hook Reel",
+    "tr": "Sosyal Kanca Videosu",
+    "de": "Social-Hook-Kurzvideo"
+  },
+  "category": "social",
+  "aspect": ["9:16", "4:5", "1:1"],
+  "duration_sec": {
+    "min": 6,
+    "max": 45
+  },
+  "languages": ["en", "tr", "de", "es", "fr", "pt"],
+  "engines": ["pillow", "ffmpeg"],
+  "needs": ["topic_or_text"],
+  "optional": ["hook_style", "tone", "palette", "cta_text"],
+  "skills": [
+    "opening-hook",
+    "vertical-safe-zones",
+    "kinetic-typography",
+    "end-card",
+    "contrast-audit",
+    "frame-clock"
+  ],
+  "steps": [
+    {"id": "idea", "type": "llm", "gate": "approve"},
+    {"id": "script", "type": "llm", "gate": "approve"},
+    {"id": "look", "type": "llm", "gate": "approve"},
+    {"id": "frames", "type": "render", "profile": "snapshot", "gate": "approve"},
+    {"id": "pilot", "type": "render", "scope": "first_5s", "profile": "draft", "gate": "approve"},
+    {"id": "full", "type": "render", "profile": "draft", "gate": "approve"},
+    {"id": "hero", "type": "render", "profile": "hero"},
+    {"id": "qc", "type": "qc"}
+  ],
+  "qc_rules": [
+    "opening-hook",
+    "safe-area",
+    "contrast",
+    "required-glyphs",
+    "reading-speed",
+    "loudness"
+  ]
+}

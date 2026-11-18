@@ -1,3 +1,4 @@
+from fractions import Fraction
 import re
 from typing import Any
 
@@ -198,12 +199,31 @@ def compile_storyboard_to_project(
     note_frequencies = (220, 277, 330, 392, 440, 523)
 
     is_kinetic_fmt = intent.format_hint == "kinetic-typography"
+    is_hook_fmt = intent.format_hint == "social-hook-reel"
+    lang_primary = intent.video_lang.split("-", 1)[0].lower()
     total_beats = len(storyboard.beats)
+    fps_float = float(Fraction(storyboard.fps))
+    max_hook_frames = max(24, int(round(2.0 * fps_float)))
+
+    beat_durations = [int(b.duration_frames) for b in storyboard.beats]
+    if is_hook_fmt and total_beats >= 2 and beat_durations[0] > max_hook_frames:
+        excess = beat_durations[0] - max_hook_frames
+        beat_durations[0] = max_hook_frames
+        beat_durations[-1] += excess
+
+    hook_kickers = {"tr": "DİKKAT", "de": "STOPP", "en": "HOOK"}
+    payoff_kickers = {"tr": "SONUÇ", "de": "FAZIT", "en": "PAYOFF"}
 
     for idx, beat in enumerate(storyboard.beats):
+        dur_frames = beat_durations[idx]
         chosen_recipe = beat.recipe
         if is_kinetic_fmt:
             chosen_recipe = "signal" if (idx == total_beats - 1 and total_beats >= 3) else "kinetic-type"
+        elif is_hook_fmt:
+            if idx == 0:
+                chosen_recipe = "prism-monolith"
+            elif idx == total_beats - 1:
+                chosen_recipe = "kinetic-type"
         params: dict[str, Any] = {
             "background": bg_hex,
             "foreground": fg_hex,
@@ -214,6 +234,13 @@ def compile_storyboard_to_project(
         if not no_text:
             if is_kinetic_fmt:
                 params["kicker"] = f"{idx + 1:02d}"
+            elif is_hook_fmt:
+                if idx == 0:
+                    params["kicker"] = hook_kickers.get(lang_primary, "HOOK")
+                elif idx == total_beats - 1:
+                    params["kicker"] = payoff_kickers.get(lang_primary, "PAYOFF")
+                else:
+                    params["kicker"] = f"{idx + 1:02d}"
             fitted_h, fitted_sub = fit_scene_text_fields(
                 beat.heading or "",
                 beat.subheading or "",
@@ -230,34 +257,46 @@ def compile_storyboard_to_project(
 
         scene_entry: dict[str, Any] = {
             "id": sanitize_project_id(beat.id),
-            "duration_frames": beat.duration_frames,
+            "duration_frames": dur_frames,
             "recipe": chosen_recipe,
             "engine": "pillow",
             "params": params,
         }
-        if idx > 0 and beat.duration_frames >= 24:
-            trans_type = "slide_left" if (is_kinetic_fmt and idx < total_beats - 1) else "cross_dissolve"
+        if idx > 0 and dur_frames >= 24:
+            if is_hook_fmt and idx == 1:
+                trans_type = "wipe_left"
+            elif (is_kinetic_fmt or is_hook_fmt) and idx < total_beats - 1:
+                trans_type = "slide_left"
+            else:
+                trans_type = "cross_dissolve"
             scene_entry["transition"] = {
                 "type": trans_type,
-                "duration_frames": min(6 if trans_type == "slide_left" else 8, beat.duration_frames // 4),
+                "duration_frames": min(6 if trans_type in {"slide_left", "wipe_left"} else 8, dur_frames // 4),
             }
         if not camera_locked and chosen_recipe == "prism-monolith":
             scene_entry["camera"] = {"preset": "dolly_in", "focal_mm": 50.0}
         scenes.append(scene_entry)
 
         if not no_audio:
-            cue_dur = min(18, beat.duration_frames)
-            cues.append({
-                "frame": cursor,
-                "frequency": note_frequencies[idx % len(note_frequencies)],
-                "duration_frames": cue_dur,
-                "instrument": "harmonic_pluck" if idx % 2 == 0 else "warm_pad",
-            })
-            if cursor + cue_dur < cursor + beat.duration_frames:
-                silence_exceptions.append([cursor + cue_dur, cursor + beat.duration_frames])
-        cursor += beat.duration_frames
+            cue_dur = min(18, dur_frames)
+            if is_hook_fmt and idx == 0:
+                cues.append({
+                    "frame": cursor,
+                    "frequency": 68,
+                    "duration_frames": cue_dur,
+                    "instrument": "sub_impact",
+                })
+            else:
+                cues.append({
+                    "frame": cursor,
+                    "frequency": note_frequencies[idx % len(note_frequencies)],
+                    "duration_frames": cue_dur,
+                    "instrument": "harmonic_pluck" if idx % 2 == 0 else "warm_pad",
+                })
+            if cursor + cue_dur < cursor + dur_frames:
+                silence_exceptions.append([cursor + cue_dur, cursor + dur_frames])
+        cursor += dur_frames
 
-    lang_primary = intent.video_lang.split("-", 1)[0].lower()
     iso3 = LANGUAGES.get(lang_primary, "eng")
 
     plan: dict[str, Any] = {

@@ -1,0 +1,72 @@
+{
+  "$schema": "../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "social-hook-reel-template",
+  "seed": 42,
+  "output": {"width": 1080, "height": 1920, "fps": "30/1"},
+  "delivery": {"language": "eng"},
+  "constraints": {"offline": true, "no_paid_services": true},
+  "scenes": [
+    {
+      "id": "hook",
+      "duration_frames": 54,
+      "recipe": "prism-monolith",
+      "engine": "pillow",
+      "camera": {"preset": "dolly_in", "focal_mm": 50.0},
+      "params": {
+        "kicker": "HOOK",
+        "heading": "STOP GUESSING",
+        "subheading": "Measure every frame before export.",
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e06246"
+      }
+    },
+    {
+      "id": "proof",
+      "duration_frames": 60,
+      "recipe": "data-horizon",
+      "engine": "pillow",
+      "transition": {"type": "wipe_left", "duration_frames": 6},
+      "params": {
+        "kicker": "02",
+        "heading": "3X FASTER",
+        "subheading": "Cached scenes skip redundant work.",
+        "series": [24.0, 46.0, 72.0, 94.0],
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e06246"
+      }
+    },
+    {
+      "id": "payoff",
+      "duration_frames": 66,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "transition": {"type": "cross_dissolve", "duration_frames": 8},
+      "params": {
+        "kicker": "PAYOFF",
+        "heading": "LOCK IT IN",
+        "subheading": "Predictable vertical masters locally.",
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e06246"
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {"frame": 0, "frequency": 68, "duration_frames": 18, "instrument": "sub_impact"},
+      {"frame": 54, "frequency": 330, "duration_frames": 16, "instrument": "harmonic_pluck"},
+      {"frame": 114, "frequency": 392, "duration_frames": 18, "instrument": "warm_pad"}
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [[0, 180]],
+      "silence": [[18, 54], [70, 114], [132, 180]]
+    }
+  }
+}
