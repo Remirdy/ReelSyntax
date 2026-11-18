@@ -78,29 +78,58 @@ def _parse_semver(value: str) -> tuple[int, int, int]:
     return (nums[0], nums[1], nums[2])
 
 
-def discover_blender_binary() -> dict:
-    configured = os.environ.get('REELSYNTAX_BLENDER')
-    if not configured:
+def blender_binary_candidates(platform_name: str | None = None, environ: dict[str, str] | None = None) -> list[Path]:
+    plat = sys.platform if platform_name is None else platform_name
+    env = os.environ if environ is None else environ
+    candidates: list[Path] = []
+    configured = env.get('REELSYNTAX_BLENDER')
+    if not configured and environ is None:
         from .config import load_config
 
         configured = load_config().paths.blender or None
-    candidates = []
     if configured:
         candidates.append(Path(configured).expanduser())
-    which_bl = shutil.which('blender') or shutil.which('Blender')
+    which_bl = shutil.which('blender', path=env.get('PATH')) or shutil.which('Blender', path=env.get('PATH'))
     if which_bl:
         candidates.append(Path(which_bl))
-    if sys.platform == 'darwin':
+    if plat == 'darwin':
         candidates.extend([
             Path('/Applications/Blender.app/Contents/MacOS/Blender'),
             Path.home() / 'Applications/Blender.app/Contents/MacOS/Blender',
+            Path('/opt/homebrew/bin/blender'),
+            Path('/usr/local/bin/blender'),
         ])
-    elif os.name == 'nt':
-        pf = Path(os.environ.get('ProgramFiles', 'C:/Program Files')) / 'Blender Foundation'
-        if pf.is_dir():
-            candidates.extend(sorted(pf.glob('Blender*/blender.exe'), reverse=True))
-    for path in candidates:
-        if path.is_file() and os.access(path, os.X_OK):
+    elif plat == 'win32':
+        roots = []
+        for env_key in ('ProgramFiles', 'ProgramW6432'):
+            val = env.get(env_key)
+            if val:
+                roots.append(Path(val) / 'Blender Foundation')
+        local_app = env.get('LOCALAPPDATA')
+        if local_app:
+            roots.append(Path(local_app) / 'Programs/Blender Foundation')
+        for bf_dir in dict.fromkeys(roots):
+            if bf_dir.is_dir():
+                candidates.extend(sorted(bf_dir.glob('Blender*/blender.exe'), reverse=True))
+        user_prof = env.get('USERPROFILE')
+        if user_prof:
+            candidates.append(Path(user_prof) / 'scoop/apps/blender/current/blender.exe')
+        candidates.append(Path('C:/ProgramData/chocolatey/bin/blender.exe'))
+    else:
+        candidates.extend([
+            Path('/usr/bin/blender'),
+            Path('/usr/local/bin/blender'),
+            Path('/snap/bin/blender'),
+            Path('/var/lib/flatpak/exports/bin/org.blender.Blender'),
+        ])
+    return list(dict.fromkeys(candidates))
+
+
+def discover_blender_binary(platform_name: str | None = None, environ: dict[str, str] | None = None) -> dict:
+    plat = sys.platform if platform_name is None else platform_name
+    for path in blender_binary_candidates(platform_name=plat, environ=environ):
+        usable = path.is_file() and (path.suffix.lower() in {'.exe', '.cmd', '.bat'} if plat == 'win32' else os.access(path, os.X_OK))
+        if usable:
             version_line = None
             try:
                 proc = subprocess.run([str(path), '--version'], capture_output=True, text=True, timeout=8, check=False)

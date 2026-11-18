@@ -4,27 +4,96 @@ import platform
 import shutil
 import signal
 import subprocess
+import sys
 
 
-def executable(name):
-    configured = os.environ.get('REELSYNTAX_' + name.upper())
+def standard_media_candidates(name: str, platform_name: str | None = None, environ: dict[str, str] | None = None) -> list[Path]:
+    plat = sys.platform if platform_name is None else platform_name
+    env = os.environ if environ is None else environ
+    if plat == 'win32':
+        binary = name if name.lower().endswith('.exe') else f'{name}.exe'
+        found: list[Path] = []
+        local_app = env.get('LOCALAPPDATA')
+        if local_app:
+            found.append(Path(local_app) / 'Microsoft/WinGet/Links' / binary)
+        user_profile = env.get('USERPROFILE')
+        if user_profile:
+            found.append(Path(user_profile) / 'scoop/shims' / binary)
+        found.extend([
+            Path('C:/ProgramData/chocolatey/bin') / binary,
+            Path('C:/ffmpeg/bin') / binary,
+        ])
+        return found
+    if plat == 'darwin':
+        return [
+            Path('/opt/homebrew/bin') / name,
+            Path('/usr/local/bin') / name,
+            Path('/opt/local/bin') / name,
+        ]
+    return [
+        Path('/usr/bin') / name,
+        Path('/usr/local/bin') / name,
+        Path('/snap/bin') / name,
+    ]
+
+
+def _is_usable_binary(path: Path, platform_name: str | None = None) -> bool:
+    plat = sys.platform if platform_name is None else platform_name
+    if not path.is_file():
+        return False
+    if plat == 'win32':
+        return path.suffix.lower() in {'.exe', '.cmd', '.bat'}
+    return os.access(path, os.X_OK)
+
+
+def executable(name, *, platform_name: str | None = None, environ: dict[str, str] | None = None):
+    env = os.environ if environ is None else environ
+    plat = sys.platform if platform_name is None else platform_name
+    configured = env.get('REELSYNTAX_' + name.upper())
     if not configured and name in {'ffmpeg', 'ffprobe', 'blender'}:
         from .config import load_config
 
-        configured = getattr(load_config().paths, name, '') or None
+        configured = getattr(load_config(environ=env).paths, name, '') or None
     candidate = Path(configured).expanduser() if configured else None
     if candidate is not None:
-        if not candidate.is_absolute() or not candidate.is_file() or (os.name != 'nt' and not os.access(candidate, os.X_OK)):
+        if not candidate.is_absolute() or not _is_usable_binary(candidate, plat):
             raise ValueError(f'REELSYNTAX_{name.upper()} must name an executable absolute path')
         return str(candidate)
-    path = shutil.which(name)
-    if path is None:
-        raise ValueError(f'{name} is unavailable; install it separately or configure REELSYNTAX_{name.upper()}')
-    return path
+    path = shutil.which(name, path=env.get('PATH'))
+    if path is None and plat == 'win32' and not name.lower().endswith('.exe'):
+        path = shutil.which(name + '.exe', path=env.get('PATH'))
+    if path is not None:
+        return path
+    for fallback in standard_media_candidates(name, plat, env):
+        if _is_usable_binary(fallback, plat):
+            return str(fallback)
+    raise ValueError(f'{name} is unavailable; install it separately or configure REELSYNTAX_{name.upper()}')
+
+
+def _terminate_process_tree(process: subprocess.Popen) -> None:
+    if os.name == 'nt':
+        try:
+            subprocess.run(
+                ['taskkill', '/F', '/T', '/PID', str(process.pid)],
+                stdin=subprocess.DEVNULL,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                timeout=5,
+                check=False,
+            )
+        except (OSError, subprocess.TimeoutExpired):
+            pass
+        process.kill()
+        return
+    try:
+        os.killpg(process.pid, signal.SIGKILL)
+    except ProcessLookupError:
+        pass
 
 
 def run(args, timeout=180, cwd=None):
     environment = {key: value for key, value in os.environ.items() if key in {'PATH', 'HOME', 'SystemRoot', 'WINDIR', 'TEMP', 'TMP', 'TMPDIR', 'LANG', 'LC_ALL', 'FONTCONFIG_PATH'}}
+    popen_kwargs = {'creationflags': getattr(subprocess, 'CREATE_NEW_PROCESS_GROUP', 0)} if os.name == 'nt' else {'start_new_session': True}
     process = subprocess.Popen(
         [str(x) for x in args],
         stdin=subprocess.DEVNULL,
@@ -32,18 +101,12 @@ def run(args, timeout=180, cwd=None):
         stderr=subprocess.PIPE,
         cwd=cwd,
         env=environment,
-        start_new_session=os.name != 'nt',
+        **popen_kwargs,
     )
     try:
         stdout, stderr = process.communicate(timeout=timeout)
     except BaseException:
-        if os.name == 'nt':
-            process.kill()
-        else:
-            try:
-                os.killpg(process.pid, signal.SIGKILL)
-            except ProcessLookupError:
-                pass
+        _terminate_process_tree(process)
         process.communicate()
         raise
     if process.returncode:
