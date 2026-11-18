@@ -289,7 +289,12 @@ def check_asset_licenses(root: Path, plan: dict) -> dict:
     return {
         'id': 'asset_licenses',
         'status': 'pass' if res['ok'] else 'fail',
-        'observed': {'missing': res['missing_licenses'], 'mismatches': res['hash_mismatches']},
+        'observed': {
+            'missing': res['missing_licenses'],
+            'mismatches': res['hash_mismatches'],
+            'invalid': res.get('invalid_entries', []),
+            'synthetic_assets': res.get('synthetic_assets', []),
+        },
         'expected': 'all referenced file assets registered with approved SPDX licenses and matching digests',
     }
 

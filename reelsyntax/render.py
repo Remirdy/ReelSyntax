@@ -383,9 +383,12 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                     encode_scene(temporary, scene['duration_frames'], output, timeout)
                     roi_digests = compute_roi_digests(temporary, scene, plan['output'], output)
                     artifacts = {p.name: file_digest(p) for p in temporary.iterdir() if p.is_file()}
+                    from .assets.license import collect_synthetic_origin
+
+                    scene_synthetic = collect_synthetic_origin(root, paths=set(dependencies))
                     atomic_json(
                         temporary / 'manifest.json',
-                        {'key': key, 'scene_id': scene['id'], 'engine_used': eng, 'engine_evidence': engine_evidence, 'frames': scene['duration_frames'], 'artifacts': artifacts, 'layout_samples': layout, 'roi_digests': roi_digests},
+                        {'key': key, 'scene_id': scene['id'], 'engine_used': eng, 'engine_evidence': engine_evidence, 'frames': scene['duration_frames'], 'artifacts': artifacts, 'layout_samples': layout, 'roi_digests': roi_digests, 'synthetic_origin': scene_synthetic},
                     )
                     if directory.exists():
                         quarantine = contained_path(root, '.reelsyntax/quarantine/' + uuid.uuid4().hex, must_exist=False)
@@ -515,6 +518,8 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                 ex_sheet.save(ex_path)
                 hero_artifacts['motion_extrema'] = ex_path.relative_to(root).as_posix()
 
+        from .assets.license import collect_synthetic_origin
+
         state.update({
             'status': 'rendered',
             'elapsed_seconds': round(time.perf_counter() - started, 4),
@@ -531,6 +536,7 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
             'snapshots': snapshots,
             'filmstrip': sheet_path.relative_to(root).as_posix(),
             'creative_review': 'required',
+            'synthetic_origin': collect_synthetic_origin(root),
             'profile_note': f"Hero generated {', '.join(sorted(hero_artifacts))} sheets; human/host visual and playback review remain mandatory." if profile == 'hero' else None,
         })
         if 'attribution' in delivery:

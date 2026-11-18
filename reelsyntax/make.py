@@ -229,6 +229,8 @@ def write_prompt_provenance(
     ui_lang: str,
     attribution: bool,
 ) -> dict[str, Any]:
+    from .assets.license import collect_synthetic_origin
+
     now = datetime.now(timezone.utc).isoformat()
     payload: dict[str, Any] = {
         "schema_version": 1,
@@ -247,6 +249,7 @@ def write_prompt_provenance(
         "aspect": intent.aspect,
         "duration_sec": intent.duration_sec,
         "attribution": bool(attribution),
+        "synthetic_origin": collect_synthetic_origin(project_dir),
         "created_at": now,
         "updated_at": now,
         "revisions": [],
