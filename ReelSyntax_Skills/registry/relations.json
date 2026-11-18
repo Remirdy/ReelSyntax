@@ -536,22 +536,26 @@
   "poster-thumbnail": {
     "resources": [
       "library/delivery/poster-thumbnail/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "gif-preview": {
     "resources": [
       "library/delivery/gif-preview/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "webm-export": {
     "resources": [
       "library/delivery/webm-export/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "mp4-delivery": {
     "resources": [
       "library/delivery/mp4-delivery/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "loop-design": {
     "resources": [
@@ -578,7 +582,8 @@
   "caption-delivery-package": {
     "resources": [
       "library/delivery/caption-delivery-package/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "multilingual-variants": {
     "resources": [
@@ -1478,6 +1483,66 @@
     "status": "validated",
     "resources": [
       "library/transitions/wipe-transition/references/project-check.md"
+    ]
+  },
+  "loop-seam-audit": {
+    "status": "validated",
+    "resources": [
+      "library/delivery/loop-seam-audit/references/project-check.md"
+    ]
+  },
+  "reading-speed-audit": {
+    "status": "validated",
+    "resources": [
+      "library/delivery/reading-speed-audit/references/project-check.md"
+    ]
+  },
+  "asset-provenance": {
+    "status": "validated",
+    "resources": [
+      "library/ingest/asset-provenance/references/project-check.md"
+    ]
+  },
+  "font-licensing": {
+    "status": "validated",
+    "resources": [
+      "library/ingest/font-licensing/references/project-check.md"
+    ]
+  },
+  "license-compatibility": {
+    "status": "validated",
+    "resources": [
+      "library/ingest/license-compatibility/references/project-check.md"
+    ]
+  },
+  "debanding": {
+    "status": "validated",
+    "resources": [
+      "library/qa/debanding/references/project-check.md"
+    ]
+  },
+  "brief-compliance-audit": {
+    "status": "validated",
+    "resources": [
+      "library/qa/brief-compliance-audit/references/project-check.md"
+    ]
+  },
+  "preview-render": {
+    "status": "validated",
+    "resources": [
+      "library/render/preview-render/references/project-check.md"
+    ]
+  },
+  "render-preflight": {
+    "status": "validated",
+    "resources": [
+      "library/render/render-preflight/references/project-check.md"
+    ]
+  },
+  "resource-budget": {
+    "status": "validated",
+    "resources": [
+      "library/render/resource-budget/references/project-check.md"
     ]
   }
 }

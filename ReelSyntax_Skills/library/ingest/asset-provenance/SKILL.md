@@ -6,7 +6,7 @@ metadata:
   stage: ingest
   status: guidance
   version: "2.0.0"
-  aliases: "kaynak takibi,asset provenance"
+  aliases: "kaynak takibi,asset provenance,Asset-Herkunftsnachweis,Medien-Provenienz"
   requires: ""
 ---
 

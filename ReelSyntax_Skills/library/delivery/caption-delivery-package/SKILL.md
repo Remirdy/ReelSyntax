@@ -6,7 +6,7 @@ metadata:
   stage: export
   status: guidance
   version: "2.0.0"
-  aliases: "altyazı teslimi,subtitle package"
+  aliases: "altyazı teslimi,subtitle package,caption delivery package,Untertitel-Lieferpaket,SRT-VTT-Auslieferung"
   requires: ""
 ---
 

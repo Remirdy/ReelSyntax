@@ -6,7 +6,7 @@ metadata:
   stage: export
   status: guidance
   version: "1.0.0"
-  aliases: "loop seam, döngü dikişi"
+  aliases: "loop seam,döngü dikişi,loop seam audit,Schleifennaht-Prüfung,Loop-Übergang prüfen"
   requires: ""
 ---
 

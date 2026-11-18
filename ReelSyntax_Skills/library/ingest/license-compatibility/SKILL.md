@@ -6,7 +6,7 @@ metadata:
   stage: ingest
   status: guidance
   version: "2.0.0"
-  aliases: "mit uyumluluğu,telif lisans"
+  aliases: "mit uyumluluğu,telif lisans,license compatibility,Lizenzkompatibilität,SPDX-Verträglichkeitsprüfung"
   requires: ""
 ---
 

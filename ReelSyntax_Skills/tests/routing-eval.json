@@ -5341,6 +5341,591 @@
       "forbidden": [
         "wipe-transition"
       ]
+    },
+    {
+      "id": "val-en-poster-thumbnail",
+      "task": {
+        "intent": "poster thumbnail"
+      },
+      "relevant": [
+        "poster-thumbnail"
+      ]
+    },
+    {
+      "id": "val-tr-poster-thumbnail",
+      "task": {
+        "intent": "thumbnail"
+      },
+      "relevant": [
+        "poster-thumbnail"
+      ]
+    },
+    {
+      "id": "val-de-poster-thumbnail",
+      "task": {
+        "intent": "Vorschaubild-Poster"
+      },
+      "relevant": [
+        "poster-thumbnail"
+      ]
+    },
+    {
+      "id": "val-neg-poster-thumbnail",
+      "task": {
+        "intent": "frame clock; poster thumbnail is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "poster-thumbnail"
+      ]
+    },
+    {
+      "id": "val-en-gif-preview",
+      "task": {
+        "intent": "gif preview"
+      },
+      "relevant": [
+        "gif-preview"
+      ]
+    },
+    {
+      "id": "val-tr-gif-preview",
+      "task": {
+        "intent": "gif"
+      },
+      "relevant": [
+        "gif-preview"
+      ]
+    },
+    {
+      "id": "val-de-gif-preview",
+      "task": {
+        "intent": "GIF-Vorschau"
+      },
+      "relevant": [
+        "gif-preview"
+      ]
+    },
+    {
+      "id": "val-neg-gif-preview",
+      "task": {
+        "intent": "frame clock; gif preview is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "gif-preview"
+      ]
+    },
+    {
+      "id": "val-en-webm-export",
+      "task": {
+        "intent": "webm export"
+      },
+      "relevant": [
+        "webm-export"
+      ]
+    },
+    {
+      "id": "val-tr-webm-export",
+      "task": {
+        "intent": "webm"
+      },
+      "relevant": [
+        "webm-export"
+      ]
+    },
+    {
+      "id": "val-de-webm-export",
+      "task": {
+        "intent": "WebM-Export"
+      },
+      "relevant": [
+        "webm-export"
+      ]
+    },
+    {
+      "id": "val-neg-webm-export",
+      "task": {
+        "intent": "frame clock; webm export is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "webm-export"
+      ]
+    },
+    {
+      "id": "val-en-mp4-delivery",
+      "task": {
+        "intent": "mp4 delivery"
+      },
+      "relevant": [
+        "mp4-delivery"
+      ]
+    },
+    {
+      "id": "val-tr-mp4-delivery",
+      "task": {
+        "intent": "mp4 çıktı"
+      },
+      "relevant": [
+        "mp4-delivery"
+      ]
+    },
+    {
+      "id": "val-de-mp4-delivery",
+      "task": {
+        "intent": "MP4-Auslieferung"
+      },
+      "relevant": [
+        "mp4-delivery"
+      ]
+    },
+    {
+      "id": "val-neg-mp4-delivery",
+      "task": {
+        "intent": "frame clock; mp4 delivery is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "mp4-delivery"
+      ]
+    },
+    {
+      "id": "val-en-loop-seam-audit",
+      "task": {
+        "intent": "loop seam audit"
+      },
+      "relevant": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "val-tr-loop-seam-audit",
+      "task": {
+        "intent": "loop seam"
+      },
+      "relevant": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "val-de-loop-seam-audit",
+      "task": {
+        "intent": "Schleifennaht-Prüfung"
+      },
+      "relevant": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "val-neg-loop-seam-audit",
+      "task": {
+        "intent": "frame clock; loop seam audit is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "val-en-reading-speed-audit",
+      "task": {
+        "intent": "reading speed audit"
+      },
+      "relevant": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "val-tr-reading-speed-audit",
+      "task": {
+        "intent": "reading speed"
+      },
+      "relevant": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "val-de-reading-speed-audit",
+      "task": {
+        "intent": "Lesegeschwindigkeits-Prüfung"
+      },
+      "relevant": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "val-neg-reading-speed-audit",
+      "task": {
+        "intent": "frame clock; reading speed audit is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "val-en-caption-delivery-package",
+      "task": {
+        "intent": "caption delivery package"
+      },
+      "relevant": [
+        "caption-delivery-package"
+      ]
+    },
+    {
+      "id": "val-tr-caption-delivery-package",
+      "task": {
+        "intent": "altyazı teslimi"
+      },
+      "relevant": [
+        "caption-delivery-package"
+      ]
+    },
+    {
+      "id": "val-de-caption-delivery-package",
+      "task": {
+        "intent": "Untertitel-Lieferpaket"
+      },
+      "relevant": [
+        "caption-delivery-package"
+      ]
+    },
+    {
+      "id": "val-neg-caption-delivery-package",
+      "task": {
+        "intent": "frame clock; caption delivery package is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "caption-delivery-package"
+      ]
+    },
+    {
+      "id": "val-en-asset-provenance",
+      "task": {
+        "intent": "asset provenance"
+      },
+      "relevant": [
+        "asset-provenance"
+      ]
+    },
+    {
+      "id": "val-tr-asset-provenance",
+      "task": {
+        "intent": "kaynak takibi"
+      },
+      "relevant": [
+        "asset-provenance"
+      ]
+    },
+    {
+      "id": "val-de-asset-provenance",
+      "task": {
+        "intent": "Asset-Herkunftsnachweis"
+      },
+      "relevant": [
+        "asset-provenance"
+      ]
+    },
+    {
+      "id": "val-neg-asset-provenance",
+      "task": {
+        "intent": "frame clock; asset provenance is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "asset-provenance"
+      ]
+    },
+    {
+      "id": "val-en-font-licensing",
+      "task": {
+        "intent": "font licensing"
+      },
+      "relevant": [
+        "font-licensing"
+      ]
+    },
+    {
+      "id": "val-tr-font-licensing",
+      "task": {
+        "intent": "font lisansı"
+      },
+      "relevant": [
+        "font-licensing"
+      ]
+    },
+    {
+      "id": "val-de-font-licensing",
+      "task": {
+        "intent": "Schriftlizenz-Prüfung"
+      },
+      "relevant": [
+        "font-licensing"
+      ]
+    },
+    {
+      "id": "val-neg-font-licensing",
+      "task": {
+        "intent": "frame clock; font licensing is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "font-licensing"
+      ]
+    },
+    {
+      "id": "val-en-license-compatibility",
+      "task": {
+        "intent": "license compatibility"
+      },
+      "relevant": [
+        "license-compatibility"
+      ]
+    },
+    {
+      "id": "val-tr-license-compatibility",
+      "task": {
+        "intent": "mit uyumluluğu"
+      },
+      "relevant": [
+        "license-compatibility"
+      ]
+    },
+    {
+      "id": "val-de-license-compatibility",
+      "task": {
+        "intent": "Lizenzkompatibilität"
+      },
+      "relevant": [
+        "license-compatibility"
+      ]
+    },
+    {
+      "id": "val-neg-license-compatibility",
+      "task": {
+        "intent": "frame clock; license compatibility is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "license-compatibility"
+      ]
+    },
+    {
+      "id": "val-en-debanding",
+      "task": {
+        "intent": "debanding"
+      },
+      "relevant": [
+        "debanding"
+      ]
+    },
+    {
+      "id": "val-tr-debanding",
+      "task": {
+        "intent": "banding"
+      },
+      "relevant": [
+        "debanding"
+      ]
+    },
+    {
+      "id": "val-de-debanding",
+      "task": {
+        "intent": "Banding-Reduktion"
+      },
+      "relevant": [
+        "debanding"
+      ]
+    },
+    {
+      "id": "val-neg-debanding",
+      "task": {
+        "intent": "frame clock; debanding is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "debanding"
+      ]
+    },
+    {
+      "id": "val-en-brief-compliance-audit",
+      "task": {
+        "intent": "brief compliance audit"
+      },
+      "relevant": [
+        "brief-compliance-audit"
+      ]
+    },
+    {
+      "id": "val-tr-brief-compliance-audit",
+      "task": {
+        "intent": "talimat kontrolü"
+      },
+      "relevant": [
+        "brief-compliance-audit"
+      ]
+    },
+    {
+      "id": "val-de-brief-compliance-audit",
+      "task": {
+        "intent": "Briefing-Konformitätsprüfung"
+      },
+      "relevant": [
+        "brief-compliance-audit"
+      ]
+    },
+    {
+      "id": "val-neg-brief-compliance-audit",
+      "task": {
+        "intent": "frame clock; brief compliance audit is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "brief-compliance-audit"
+      ]
+    },
+    {
+      "id": "val-en-preview-render",
+      "task": {
+        "intent": "preview render"
+      },
+      "relevant": [
+        "preview-render"
+      ]
+    },
+    {
+      "id": "val-tr-preview-render",
+      "task": {
+        "intent": "taslak render"
+      },
+      "relevant": [
+        "preview-render"
+      ]
+    },
+    {
+      "id": "val-de-preview-render",
+      "task": {
+        "intent": "Vorschau-Render"
+      },
+      "relevant": [
+        "preview-render"
+      ]
+    },
+    {
+      "id": "val-neg-preview-render",
+      "task": {
+        "intent": "frame clock; preview render is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "preview-render"
+      ]
+    },
+    {
+      "id": "val-en-render-preflight",
+      "task": {
+        "intent": "render preflight"
+      },
+      "relevant": [
+        "render-preflight"
+      ]
+    },
+    {
+      "id": "val-tr-render-preflight",
+      "task": {
+        "intent": "render öncesi kontrol"
+      },
+      "relevant": [
+        "render-preflight"
+      ]
+    },
+    {
+      "id": "val-de-render-preflight",
+      "task": {
+        "intent": "Render-Vorabprüfung"
+      },
+      "relevant": [
+        "render-preflight"
+      ]
+    },
+    {
+      "id": "val-neg-render-preflight",
+      "task": {
+        "intent": "frame clock; render preflight is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "render-preflight"
+      ]
+    },
+    {
+      "id": "val-en-resource-budget",
+      "task": {
+        "intent": "resource budget"
+      },
+      "relevant": [
+        "resource-budget"
+      ]
+    },
+    {
+      "id": "val-tr-resource-budget",
+      "task": {
+        "intent": "ram disk bütçesi"
+      },
+      "relevant": [
+        "resource-budget"
+      ]
+    },
+    {
+      "id": "val-de-resource-budget",
+      "task": {
+        "intent": "Ressourcen-Budget"
+      },
+      "relevant": [
+        "resource-budget"
+      ]
+    },
+    {
+      "id": "val-neg-resource-budget",
+      "task": {
+        "intent": "frame clock; resource budget is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "resource-budget"
+      ]
     }
   ]
 }

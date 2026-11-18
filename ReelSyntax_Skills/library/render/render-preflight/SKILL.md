@@ -6,7 +6,7 @@ metadata:
   stage: render
   status: guidance
   version: "2.0.0"
-  aliases: "render öncesi kontrol,preflight"
+  aliases: "render öncesi kontrol,preflight,render preflight,Render-Vorabprüfung,Preflight-Check"
   requires: ""
 ---
 

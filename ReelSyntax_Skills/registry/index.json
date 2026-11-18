@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "99ca8cd7cbb81dcbf4fdd84ce18f6bded9b062213baf1108a86b8cc2d429ce60",
+  "digest": "051b7e7f9ac6dc29fe1c2fa15bf1d74c87a1794dfa4802dcb7c30893ce4400b1",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -3172,17 +3172,20 @@
       "description": "Use for caption delivery package. Deliver requested burned-in and separate captions plus language tags and transcript where relevant.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "altyazı teslimi",
-        "subtitle package"
+        "subtitle package",
+        "caption delivery package",
+        "Untertitel-Lieferpaket",
+        "SRT-VTT-Auslieferung"
       ],
       "requires": [],
       "path": "library/delivery/caption-delivery-package/SKILL.md",
-      "estimated_words": 401,
-      "estimated_tokens": 1023,
-      "sha256": "3e02e9290b1b2d8f4203f6f2915cca390e3af6e7d951f58877647f3206025e88",
+      "estimated_words": 403,
+      "estimated_tokens": 1046,
+      "sha256": "2cd01d0664203c9a5a80710cb9eef85adde5943ed515f2ff4559b80c5fb66869",
       "body_sha256": "07881a3aac2608f4287c33c3370ae7e791f858d8d1583484bd9c8d772b9cce01",
       "resources": [
         "library/delivery/caption-delivery-package/references/project-check.md"
@@ -3380,17 +3383,20 @@
       "description": "Use for gif preview. Create compact palette-aware looping preview with fps and size constraints.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "gif",
-        "readme gif"
+        "readme gif",
+        "gif preview",
+        "GIF-Vorschau",
+        "animierte Vorschau-Schleife"
       ],
       "requires": [],
       "path": "library/delivery/gif-preview/SKILL.md",
-      "estimated_words": 386,
-      "estimated_tokens": 982,
-      "sha256": "ca1a70728266771ba48618adb0242bd3ab6ace8e32709123fd2190d795aa6474",
+      "estimated_words": 388,
+      "estimated_tokens": 1000,
+      "sha256": "253090a973c6a83a424419bbafc7b41b987ab4cd0735f2b2df76160a8636f76d",
       "body_sha256": "44ea0758fb43e516a69fcb5ef3e979bf8f14f1a0322fa5464d05b7b03e6f7541",
       "resources": [
         "library/delivery/gif-preview/references/project-check.md"
@@ -3442,19 +3448,27 @@
       "description": "Inspect visual and audio continuity across a loop boundary.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "loop seam",
-        "döngü dikişi"
+        "döngü dikişi",
+        "loop seam audit",
+        "Schleifennaht-Prüfung",
+        "Loop-Übergang prüfen"
       ],
       "requires": [],
       "path": "library/delivery/loop-seam-audit/SKILL.md",
-      "estimated_words": 75,
-      "estimated_tokens": 173,
-      "sha256": "e66222d42769ebf06bb619ba03ab0a925d2ff7e17d6b56ef240c7d04661a8ce5",
+      "estimated_words": 77,
+      "estimated_tokens": 193,
+      "sha256": "0fe7a880f478626c510f4d7397c2e878e23fb11e48328ddf04d1bd4b648a9068",
       "body_sha256": "f10f66aab2b737b8fdac6b404daaf248b2ec56a2a4b8db5db12ba8956658db9d",
-      "resource_sha256": {}
+      "resources": [
+        "library/delivery/loop-seam-audit/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/loop-seam-audit/references/project-check.md": "3ed46c199dbf76edd96c35cbf27dd27ff9b6c794b46346dc78521c47c0f63e75"
+      }
     },
     {
       "id": "media-metadata-tagging",
@@ -3499,17 +3513,20 @@
       "description": "Use for mp4 delivery. Select supported codec, pixel format and audio format for target playback; validate via probe.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "mp4 çıktı",
-        "h264"
+        "h264",
+        "mp4 delivery",
+        "MP4-Auslieferung",
+        "H.264-Webmaster"
       ],
       "requires": [],
       "path": "library/delivery/mp4-delivery/SKILL.md",
-      "estimated_words": 396,
-      "estimated_tokens": 990,
-      "sha256": "295759fe7c071593fc635522aa0bc48de0fd40233050cc7b6c3e52106b64c895",
+      "estimated_words": 397,
+      "estimated_tokens": 1006,
+      "sha256": "17eeca8cff47ed6ff84309983a80f4297fcd6966e465cccd3e3a94c86f14bce1",
       "body_sha256": "d96bd1d4d90358953f56088577de47d232e30e7e7257399b1477de2b75f11fb5",
       "resources": [
         "library/delivery/mp4-delivery/references/project-check.md"
@@ -3598,17 +3615,20 @@
       "description": "Use for poster thumbnail. Select representative image and compose truthful readable thumbnail from approved assets.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "thumbnail",
-        "video kapak"
+        "video kapak",
+        "poster thumbnail",
+        "Vorschaubild-Poster",
+        "Thumbnail-Standbild"
       ],
       "requires": [],
       "path": "library/delivery/poster-thumbnail/SKILL.md",
-      "estimated_words": 389,
-      "estimated_tokens": 992,
-      "sha256": "0340f4399cc7a73f6c50061c4d512863ba27987bedf70301b8aea2f2dca49798",
+      "estimated_words": 390,
+      "estimated_tokens": 1011,
+      "sha256": "68bcbcee0dd762046929d75b461055491dfac36d652828ad0f20536c4b6b731d",
       "body_sha256": "a6921160aaa2cc6dff7b26db44a01ef36ab015616ac1b28a8798f13d89b47e7a",
       "resources": [
         "library/delivery/poster-thumbnail/references/project-check.md"
@@ -3646,19 +3666,27 @@
       "description": "Measure reading time per caption interval.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "reading speed",
-        "okuma hızı"
+        "okuma hızı",
+        "reading speed audit",
+        "Lesegeschwindigkeits-Prüfung",
+        "Zeichen-pro-Sekunde-Audit"
       ],
       "requires": [],
       "path": "library/delivery/reading-speed-audit/SKILL.md",
-      "estimated_words": 67,
-      "estimated_tokens": 165,
-      "sha256": "3f49de2e5febd755719bc05b723cdc2171fceaa3c8a6515fad2efb530f4e3fe7",
+      "estimated_words": 68,
+      "estimated_tokens": 190,
+      "sha256": "6fe8f2eaa5f577e143d075adefb9a8bd78309a0e0176cd056122547814ad185c",
       "body_sha256": "90c9746fd1b68b91106b15948996f594d2f692c63a970a4aa19d4f80cb46c688",
-      "resource_sha256": {}
+      "resources": [
+        "library/delivery/reading-speed-audit/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/reading-speed-audit/references/project-check.md": "6ad5f91d996286579554a95ed5370713cd222a0a3955a5b3c98443740741ec58"
+      }
     },
     {
       "id": "reduced-motion-variant",
@@ -3754,17 +3782,20 @@
       "description": "Use for webm export. Encode using compatible VPx or AV1 options as appropriate to target environment.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "webm",
-        "vp9"
+        "vp9",
+        "webm export",
+        "WebM-Export",
+        "VP9-Webausgabe"
       ],
       "requires": [],
       "path": "library/delivery/webm-export/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 975,
-      "sha256": "f076281e9821c161c8c07d8943fe28283ab325f3e50b07acc0a50882e5c77f67",
+      "estimated_words": 388,
+      "estimated_tokens": 988,
+      "sha256": "4d7c937510b3ee59908ec3db99cbb9d2d7ab588b6cbf16e1e6b2480ac807aecd",
       "body_sha256": "befbf485243dc781df7bba3eaf3d8a688dbf85e7e9a717b2b3e69915493c0870",
       "resources": [
         "library/delivery/webm-export/references/project-check.md"
@@ -6704,19 +6735,26 @@
       "description": "Use for asset provenance. Record source, creator, acquisition, modifications and content hash per asset.",
       "category": "ingest",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kaynak takibi",
-        "asset provenance"
+        "asset provenance",
+        "Asset-Herkunftsnachweis",
+        "Medien-Provenienz"
       ],
       "requires": [],
       "path": "library/ingest/asset-provenance/SKILL.md",
       "estimated_words": 386,
-      "estimated_tokens": 990,
-      "sha256": "67ec928e68b6a42862c66b6004e42250ce81598f70d2622aa2725b431576847c",
+      "estimated_tokens": 1004,
+      "sha256": "b389fe9ce52ad6bfe882f0e719472d7b967e08830d6bb61d5075470a889d02bc",
       "body_sha256": "c2ddfeb42730f6945ff916f435d4f143f8036179899014366f772ffa79341c24",
-      "resource_sha256": {}
+      "resources": [
+        "library/ingest/asset-provenance/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/ingest/asset-provenance/references/project-check.md": "68bbc96c2223db7d3e4c0b46b04b7c71086c29d122981a35645d2b7c98841b6d"
+      }
     },
     {
       "id": "asset-tagging",
@@ -6799,19 +6837,27 @@
       "description": "Use for font licensing. Check distribution, embedding and commercial terms for exact font files.",
       "category": "ingest",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "font lisansı",
-        "yazı tipi lisansı"
+        "yazı tipi lisansı",
+        "font licensing",
+        "Schriftlizenz-Prüfung",
+        "Font-Lizenzierung"
       ],
       "requires": [],
       "path": "library/ingest/font-licensing/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 984,
-      "sha256": "f5da677fa687b68fb18672965a0fbfd6acccf9e9b86ab9ad7dc11ba1b24f3fab",
+      "estimated_words": 388,
+      "estimated_tokens": 1003,
+      "sha256": "e9f43ba7e25c0f0fef3ec641ca03bf83f0a1fe8bbe7004574d91339d12d89c1b",
       "body_sha256": "f07041139720ee734e6adb909798cfd0d15c735f941de63803e3851a208f239f",
-      "resource_sha256": {}
+      "resources": [
+        "library/ingest/font-licensing/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/ingest/font-licensing/references/project-check.md": "7911988c53180eeb161b95f6df5aa8062716517a0c3a7422cb9fe0b334b18fed"
+      }
     },
     {
       "id": "image-preprocessing",
@@ -6837,19 +6883,27 @@
       "description": "Use for license compatibility. Review code, assets, fonts and build dependencies separately; flag unclear or copyleft combinations.",
       "category": "ingest",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "mit uyumluluğu",
-        "telif lisans"
+        "telif lisans",
+        "license compatibility",
+        "Lizenzkompatibilität",
+        "SPDX-Verträglichkeitsprüfung"
       ],
       "requires": [],
       "path": "library/ingest/license-compatibility/SKILL.md",
-      "estimated_words": 395,
-      "estimated_tokens": 1020,
-      "sha256": "2163ec965bc93d11bebb222be8975c014d627386eea9607d2f882cebdb0d89ee",
+      "estimated_words": 396,
+      "estimated_tokens": 1045,
+      "sha256": "6072de8127c9da0c7de68caba6675a572f0f41ae25f41963e17fca91a105cfb3",
       "body_sha256": "20f9c8d99ac8c24c57eccdfb054409427b9bfe5b1feed7335a6f1aeddaad4b70",
-      "resource_sha256": {}
+      "resources": [
+        "library/ingest/license-compatibility/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/ingest/license-compatibility/references/project-check.md": "3c4cffe2636885ec0ce29dacb475c5db93e802a45d0957446d3cee0cc4ef204a"
+      }
     },
     {
       "id": "local-stock-search",
@@ -9026,19 +9080,27 @@
       "description": "Use for brief compliance audit. Recheck all hard constraints including language, aspect, locked camera, and protected layers.",
       "category": "qa",
       "stage": "review",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "talimat kontrolü",
-        "reelguard"
+        "reelguard",
+        "brief compliance audit",
+        "Briefing-Konformitätsprüfung",
+        "Anforderungs-Abgleich"
       ],
       "requires": [],
       "path": "library/qa/brief-compliance-audit/SKILL.md",
-      "estimated_words": 401,
-      "estimated_tokens": 1019,
-      "sha256": "3d423d3103ac91cdb1a0334ca30d85ecbe41c9dd2be3746e67c752f4b6b59451",
+      "estimated_words": 403,
+      "estimated_tokens": 1045,
+      "sha256": "4dfbe23fc34b88357b44d356703cdb86d8c745bab1c9f94526a953a8d9502963",
       "body_sha256": "21173812ffa8c23a5454751de90237a6be510eb200186985b8e3166928285b4b",
-      "resource_sha256": {}
+      "resources": [
+        "library/qa/brief-compliance-audit/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/qa/brief-compliance-audit/references/project-check.md": "07da04dc494e038abbc258ef4b40351452414ba2f2456206face80e67ffc62c9"
+      }
     },
     {
       "id": "claims-must-be-sourced",
@@ -9190,19 +9252,27 @@
       "description": "Use for debanding. Apply suitable dithering/filtering at appropriate precision before final encode.",
       "category": "qa",
       "stage": "review",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "banding",
-        "renk bantları"
+        "renk bantları",
+        "debanding",
+        "Banding-Reduktion",
+        "Farbabstufungs-Glättung"
       ],
       "requires": [],
       "path": "library/qa/debanding/SKILL.md",
       "estimated_words": 385,
-      "estimated_tokens": 992,
-      "sha256": "d5e773dfcbe815227220338865873dda83f65a1246bad4529fef99b5a8f7c5a6",
+      "estimated_tokens": 1010,
+      "sha256": "e998a369c8668e544333fe1dcfe21d0255c3e624d00fe8e815c5031678887c4a",
       "body_sha256": "b47cc0668e4e260fa53b93296ce9f92ef283d97f641ad90a2409c9fde9e33016",
-      "resource_sha256": {}
+      "resources": [
+        "library/qa/debanding/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/qa/debanding/references/project-check.md": "8dc32d344b2bd9b683215f55ebde6a24d1d7d1273de18015a2c398fa06bb8c0d"
+      }
     },
     {
       "id": "dropped-frame-audit",
@@ -9714,19 +9784,27 @@
       "description": "Use for preview render. Use reduced resolution, samples or representative range while preserving timing and composition.",
       "category": "render",
       "stage": "render",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "taslak render",
-        "preview"
+        "preview",
+        "preview render",
+        "Vorschau-Render",
+        "Entwurfs-Rendering"
       ],
       "requires": [],
       "path": "library/render/preview-render/SKILL.md",
-      "estimated_words": 392,
-      "estimated_tokens": 984,
-      "sha256": "976c442fbaf9c58d4580f9bd77c6b34e73c1bfa6e03a3b495664b5ed77d248af",
+      "estimated_words": 393,
+      "estimated_tokens": 1001,
+      "sha256": "99ba39612690ae5dcb839ae114ded9031e22451003acdc1a40d6855196334a1c",
       "body_sha256": "04a586fa00a29d484dc46d663a378b80b8c905bb0e06a86aadb1cd5e1d659d80",
-      "resource_sha256": {}
+      "resources": [
+        "library/render/preview-render/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/render/preview-render/references/project-check.md": "c9e142c84b9dfb6d74fde9bd8f05c71c9dca9dc690feee76655755e5fdd2dc78"
+      }
     },
     {
       "id": "reeldoctor-diagnostics",
@@ -9856,19 +9934,27 @@
       "description": "Use for render preflight. Validate scene references, frame ranges, output paths and available capabilities before render.",
       "category": "render",
       "stage": "render",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "render öncesi kontrol",
-        "preflight"
+        "preflight",
+        "render preflight",
+        "Render-Vorabprüfung",
+        "Preflight-Check"
       ],
       "requires": [],
       "path": "library/render/render-preflight/SKILL.md",
-      "estimated_words": 397,
-      "estimated_tokens": 999,
-      "sha256": "e686955355a49650736d283cbec3067ec4a4fa9caa83da8531c304196c848bca",
+      "estimated_words": 398,
+      "estimated_tokens": 1017,
+      "sha256": "ffde5d3c1074bc230ce159b9c681428d489dbcdd0301c0620ce9d57a956b56b4",
       "body_sha256": "4b03e64eceeb35cece5734201772233a446bcdbf66286edbff694f54041eabee",
-      "resource_sha256": {}
+      "resources": [
+        "library/render/render-preflight/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/render/render-preflight/references/project-check.md": "1714b04c65bbd358e65b0f9aeac9e559e0cb90bed3d277ebedbd69466c583d19"
+      }
     },
     {
       "id": "render-queue",
@@ -9918,19 +10004,27 @@
       "description": "Use for resource budget. Estimate memory, disk and time from sample jobs and cap concurrency accordingly.",
       "category": "render",
       "stage": "render",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "ram disk bütçesi",
-        "bellek optimizasyonu"
+        "bellek optimizasyonu",
+        "resource budget",
+        "Ressourcen-Budget",
+        "Renderzeit- und Speicherlimit"
       ],
       "requires": [],
       "path": "library/render/resource-budget/SKILL.md",
-      "estimated_words": 398,
-      "estimated_tokens": 994,
-      "sha256": "5a1b29f39121eba598861037ca7bf146729facc2636b39d166d6438c01a2abb2",
+      "estimated_words": 401,
+      "estimated_tokens": 1015,
+      "sha256": "ea6d3924862c9ef4af89d9afff75e6102f05beed35f0b364a2a12d566c3a09fb",
       "body_sha256": "01e032966be40193bc61176ac2e4d7e1b43ff6206b47571c416aed87ea95e4a7",
-      "resource_sha256": {}
+      "resources": [
+        "library/render/resource-budget/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/render/resource-budget/references/project-check.md": "ceaea1952b929c7bf917e12894882eb2e9ef9089e62270cc1b7ec25a095c17e9"
+      }
     },
     {
       "id": "resume-render",

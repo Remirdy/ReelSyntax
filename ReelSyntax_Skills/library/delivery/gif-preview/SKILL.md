@@ -6,7 +6,7 @@ metadata:
   stage: export
   status: guidance
   version: "2.0.0"
-  aliases: "gif,readme gif"
+  aliases: "gif,readme gif,gif preview,GIF-Vorschau,animierte Vorschau-Schleife"
   requires: ""
 ---
 

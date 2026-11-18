@@ -6,7 +6,7 @@ metadata:
   stage: export
   status: guidance
   version: "1.0.0"
-  aliases: "reading speed, okuma hızı"
+  aliases: "reading speed,okuma hızı,reading speed audit,Lesegeschwindigkeits-Prüfung,Zeichen-pro-Sekunde-Audit"
   requires: ""
 ---
 

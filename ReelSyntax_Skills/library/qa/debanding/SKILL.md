@@ -6,7 +6,7 @@ metadata:
   stage: review
   status: guidance
   version: "2.0.0"
-  aliases: "banding,renk bantları"
+  aliases: "banding,renk bantları,debanding,Banding-Reduktion,Farbabstufungs-Glättung"
   requires: ""
 ---
 

@@ -6,7 +6,7 @@ metadata:
   stage: ingest
   status: guidance
   version: "2.0.0"
-  aliases: "font lisansı,yazı tipi lisansı"
+  aliases: "font lisansı,yazı tipi lisansı,font licensing,Schriftlizenz-Prüfung,Font-Lizenzierung"
   requires: ""
 ---
 

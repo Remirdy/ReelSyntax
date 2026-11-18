@@ -6,7 +6,7 @@ metadata:
   stage: render
   status: guidance
   version: "2.0.0"
-  aliases: "ram disk bütçesi,bellek optimizasyonu"
+  aliases: "ram disk bütçesi,bellek optimizasyonu,resource budget,Ressourcen-Budget,Renderzeit- und Speicherlimit"
   requires: ""
 ---
 

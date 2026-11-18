@@ -6,7 +6,7 @@ metadata:
   stage: render
   status: guidance
   version: "2.0.0"
-  aliases: "taslak render,preview"
+  aliases: "taslak render,preview,preview render,Vorschau-Render,Entwurfs-Rendering"
   requires: ""
 ---
 
