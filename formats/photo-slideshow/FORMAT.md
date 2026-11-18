@@ -21,6 +21,8 @@ Treat the values below as adjustable defaults:
 ## Wired skills
 
 - `frame-clock` — Exact slide durations aligned to harmonic beat cues.
+- `asset-license-ledger` — SHA-256 and SPDX tracking for starter and user photographs.
+- `format-runner-protocol` — Keyframe and 5-second pilot verification before full slideshow render.
 - `bar-grid-music-alignment` — Drift-free bar downbeat dissolves and resolved closing cadences.
 - `platform-loudness-targets` — Consistent integrated program loudness across slideshows.
 - `locale-aware-casing` — Locale-accurate chapter kickers and titles.

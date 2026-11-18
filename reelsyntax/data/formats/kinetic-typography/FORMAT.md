@@ -27,6 +27,9 @@ Treat the values below as adjustable defaults and tune per audience and language
 ## Wired skills
 
 - `kinetic-typography` — Statement hierarchy, entrance damping, and hold pacing.
+- `anti-aliasing-thin-lines` — Minimum `>= 2 px` divider strokes and `2x` SSAA geometric sharpness.
+- `chroma-subsampling-text-guard` — `|ΔY| >= 85` luma separation for crisp `yuv420p` colored badges.
+- `format-runner-protocol` — Step-gated approval and selective revision cache reuse.
 - `sfx-layering-transient-tail` — Frame-accurate transient clicks and low-end weight clear of speech.
 - `platform-loudness-targets` — Two-pass linear loudness and `-1.5 dBTP` pre-codec mastering.
 - `locale-aware-casing` — Turkish `İ`/`ı` and German `ß -> SS` display casing before width measurement.

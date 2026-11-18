@@ -46,6 +46,16 @@ BATCH_SKILLS = (
     "shader-loop-art",
     "retro-cutscene-directing",
     "news-ticker-hierarchy",
+    "claims-must-be-sourced",
+    "content-policy-boundaries",
+    "anti-aliasing-thin-lines",
+    "chroma-subsampling-text-guard",
+    "golden-frame-regression",
+    "asset-license-ledger",
+    "format-runner-protocol",
+    "safe-community-format-package",
+    "showreel-direction",
+    "brand-sting-remirdy",
 )
 
 FORBIDDEN_TERMS_RE = re.compile(

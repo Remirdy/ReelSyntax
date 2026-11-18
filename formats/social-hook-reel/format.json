@@ -19,6 +19,10 @@
   "optional": ["hook_style", "tone", "palette", "cta_text"],
   "skills": [
     "opening-hook",
+    "content-policy-boundaries",
+    "chroma-subsampling-text-guard",
+    "golden-frame-regression",
+    "format-runner-protocol",
     "tts-phonetic-pronunciation",
     "sfx-layering-transient-tail",
     "platform-loudness-targets",

@@ -19,6 +19,10 @@ Platform UI chrome dimensions change over time; treat these margins as adjustabl
 ## Wired skills
 
 - `opening-hook` — Immediate visual and sonic contrast within the first two seconds.
+- `content-policy-boundaries` — Brand-free, non-impersonating short-form scripting boundaries.
+- `chroma-subsampling-text-guard` — Crisp `yuv420p` rendering on colored kicker pills.
+- `golden-frame-regression` — Cross-OS visual baseline verification across Linux, macOS, and Windows.
+- `format-runner-protocol` — Fast `pilot` gate before `full` and `hero` renders.
 - `tts-phonetic-pronunciation` — Dual-text pronunciation normalization preserving clean captions.
 - `sfx-layering-transient-tail` — Sub-impact + mid-snap hook accents with mobile speaker harmonics.
 - `platform-loudness-targets` — `-14 LUFS` short-form target with `-1.5 dBTP` AAC headroom.

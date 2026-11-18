@@ -3173,6 +3173,419 @@
       "forbidden": [
         "news-ticker-hierarchy"
       ]
+    },
+    {
+      "id": "en-claims-must-be-sourced",
+      "task": {
+        "intent": "claims must be sourced and quantitative claim citation"
+      },
+      "relevant": [
+        "claims-must-be-sourced"
+      ]
+    },
+    {
+      "id": "tr-claims-must-be-sourced",
+      "task": {
+        "intent": "iddialar kaynaklı olmalı ve sayısal veri kaynak doğrulama"
+      },
+      "relevant": [
+        "claims-must-be-sourced"
+      ]
+    },
+    {
+      "id": "de-claims-must-be-sourced",
+      "task": {
+        "intent": "Quellenpflicht für Zahlenangaben und Belegprüfung für Behauptungen"
+      },
+      "relevant": [
+        "claims-must-be-sourced"
+      ]
+    },
+    {
+      "id": "neg-claims-must-be-sourced",
+      "task": {
+        "intent": "locked camera; claims must be sourced is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "claims-must-be-sourced"
+      ]
+    },
+    {
+      "id": "en-content-policy-boundaries",
+      "task": {
+        "intent": "content policy boundaries and impersonation and trademark guard"
+      },
+      "relevant": [
+        "content-policy-boundaries",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "tr-content-policy-boundaries",
+      "task": {
+        "intent": "içerik politikası sınırları ile kişi taklidi ve marka koruması"
+      },
+      "relevant": [
+        "content-policy-boundaries",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "de-content-policy-boundaries",
+      "task": {
+        "intent": "Inhaltsrichtlinien-Grenzen sowie Imitations- und Markenschutz"
+      },
+      "relevant": [
+        "content-policy-boundaries",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "neg-content-policy-boundaries",
+      "task": {
+        "intent": "frame clock; content policy boundaries is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "content-policy-boundaries"
+      ]
+    },
+    {
+      "id": "en-anti-aliasing-thin-lines",
+      "task": {
+        "intent": "anti aliasing thin lines and thin stroke shimmer fix"
+      },
+      "relevant": [
+        "anti-aliasing-thin-lines"
+      ]
+    },
+    {
+      "id": "tr-anti-aliasing-thin-lines",
+      "task": {
+        "intent": "ince çizgi kenar yumuşatma ve titreyen ızgara çizgisi düzeltme"
+      },
+      "relevant": [
+        "anti-aliasing-thin-lines"
+      ]
+    },
+    {
+      "id": "de-anti-aliasing-thin-lines",
+      "task": {
+        "intent": "Kantenglättung dünner Linien sowie Flimmern feiner Linien beheben"
+      },
+      "relevant": [
+        "anti-aliasing-thin-lines"
+      ]
+    },
+    {
+      "id": "neg-anti-aliasing-thin-lines",
+      "task": {
+        "intent": "frame clock; without anti aliasing thin lines"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "anti-aliasing-thin-lines"
+      ]
+    },
+    {
+      "id": "en-chroma-subsampling-text-guard",
+      "task": {
+        "intent": "chroma subsampling text guard and yuv420p colored text fix",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "chroma-subsampling-text-guard"
+      ]
+    },
+    {
+      "id": "tr-chroma-subsampling-text-guard",
+      "task": {
+        "intent": "kroma alt örnekleme metin koruması ve renkli yazı kenar dağılması önleme",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "chroma-subsampling-text-guard"
+      ]
+    },
+    {
+      "id": "de-chroma-subsampling-text-guard",
+      "task": {
+        "intent": "Chroma-Subsampling-Textschutz sowie Farbsäume bei Text vermeiden",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "chroma-subsampling-text-guard"
+      ]
+    },
+    {
+      "id": "neg-chroma-subsampling-text-guard",
+      "task": {
+        "intent": "chroma subsampling text guard",
+        "capabilities": []
+      },
+      "relevant": [],
+      "forbidden": [
+        "chroma-subsampling-text-guard"
+      ]
+    },
+    {
+      "id": "en-golden-frame-regression",
+      "task": {
+        "intent": "golden frame regression and visual render regression test"
+      },
+      "relevant": [
+        "golden-frame-regression"
+      ]
+    },
+    {
+      "id": "tr-golden-frame-regression",
+      "task": {
+        "intent": "altın kare görsel regresyon ve işletim sistemleri arası kare testi"
+      },
+      "relevant": [
+        "golden-frame-regression"
+      ]
+    },
+    {
+      "id": "de-golden-frame-regression",
+      "task": {
+        "intent": "Golden-Frame-Regressionstest sowie Plattformübergreifender Bildvergleich"
+      },
+      "relevant": [
+        "golden-frame-regression"
+      ]
+    },
+    {
+      "id": "neg-golden-frame-regression",
+      "task": {
+        "intent": "locked camera; without golden frame regression"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "golden-frame-regression"
+      ]
+    },
+    {
+      "id": "en-asset-license-ledger",
+      "task": {
+        "intent": "asset license ledger and spdx attribution manifest"
+      },
+      "relevant": [
+        "asset-license-ledger"
+      ]
+    },
+    {
+      "id": "tr-asset-license-ledger",
+      "task": {
+        "intent": "varlık lisans defteri ile telif ve atıf kaydı"
+      },
+      "relevant": [
+        "asset-license-ledger"
+      ]
+    },
+    {
+      "id": "de-asset-license-ledger",
+      "task": {
+        "intent": "Asset-Lizenzverzeichnis sowie SPDX-Quellen- und Lizenzbuch"
+      },
+      "relevant": [
+        "asset-license-ledger"
+      ]
+    },
+    {
+      "id": "neg-asset-license-ledger",
+      "task": {
+        "intent": "frame clock; asset license ledger is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "asset-license-ledger"
+      ]
+    },
+    {
+      "id": "en-format-runner-protocol",
+      "task": {
+        "intent": "format runner protocol and step gated video pipeline"
+      },
+      "relevant": [
+        "format-runner-protocol",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-format-runner-protocol",
+      "task": {
+        "intent": "biçim yürütücü protokolü ve onay kapılı üretim hattı"
+      },
+      "relevant": [
+        "format-runner-protocol",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-format-runner-protocol",
+      "task": {
+        "intent": "Format-Ausführungsprotokoll sowie Stufengesteuerte Render-Pipeline"
+      },
+      "relevant": [
+        "format-runner-protocol",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-format-runner-protocol",
+      "task": {
+        "intent": "contrast audit; format runner protocol is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "format-runner-protocol"
+      ]
+    },
+    {
+      "id": "en-safe-community-format-package",
+      "task": {
+        "intent": "safe community format package and data only format install"
+      },
+      "relevant": [
+        "safe-community-format-package",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "tr-safe-community-format-package",
+      "task": {
+        "intent": "güvenli topluluk biçim paketi ve yalnızca veri biçim kurulumu"
+      },
+      "relevant": [
+        "safe-community-format-package",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "de-safe-community-format-package",
+      "task": {
+        "intent": "sicheres Community-Formatpaket sowie reines Datenformat installieren"
+      },
+      "relevant": [
+        "safe-community-format-package",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "neg-safe-community-format-package",
+      "task": {
+        "intent": "locked camera; safe community format package is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "safe-community-format-package"
+      ]
+    },
+    {
+      "id": "en-showreel-direction",
+      "task": {
+        "intent": "showreel direction and demo reel editing arc"
+      },
+      "relevant": [
+        "showreel-direction",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-showreel-direction",
+      "task": {
+        "intent": "tanıtım seçkisi yönetimi ve portfolyo kurgusu showreel"
+      },
+      "relevant": [
+        "showreel-direction",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-showreel-direction",
+      "task": {
+        "intent": "Showreel-Regie sowie Demoreel-Dramaturgie schneiden"
+      },
+      "relevant": [
+        "showreel-direction",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-showreel-direction",
+      "task": {
+        "intent": "contrast audit; showreel direction is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "showreel-direction"
+      ]
+    },
+    {
+      "id": "en-brand-sting-remirdy",
+      "task": {
+        "intent": "brand sting remirdy and creator signature sting"
+      },
+      "relevant": [
+        "brand-sting-remirdy",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-brand-sting-remirdy",
+      "task": {
+        "intent": "remirdy kapanış imzası ve üretici imza kartı kuralları"
+      },
+      "relevant": [
+        "brand-sting-remirdy",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-brand-sting-remirdy",
+      "task": {
+        "intent": "Remirdy-Signatur-Abspann sowie dezentes Urheber-Signet"
+      },
+      "relevant": [
+        "brand-sting-remirdy",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-brand-sting-remirdy",
+      "task": {
+        "intent": "contrast audit; brand sting remirdy is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "brand-sting-remirdy"
+      ]
     }
   ]
 }

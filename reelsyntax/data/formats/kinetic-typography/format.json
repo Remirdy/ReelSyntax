@@ -19,6 +19,9 @@
   "optional": ["tone", "formality", "palette", "music_bed"],
   "skills": [
     "kinetic-typography",
+    "anti-aliasing-thin-lines",
+    "chroma-subsampling-text-guard",
+    "format-runner-protocol",
     "sfx-layering-transient-tail",
     "platform-loudness-targets",
     "locale-aware-casing",

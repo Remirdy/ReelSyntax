@@ -1,6 +1,6 @@
 # ReelSyntax skill catalog
 
-606 skills across 25 categories. 508 guidance, 98 validated.
+616 skills across 25 categories. 508 guidance, 108 validated.
 
 | Category | Skills |
 | --- | ---: |
@@ -10,25 +10,25 @@
 | capture | 20 |
 | character | 20 |
 | data | 29 |
-| delivery | 28 |
-| direction | 22 |
+| delivery | 29 |
+| direction | 24 |
 | editing | 24 |
 | engines | 24 |
 | formats | 34 |
 | graphics | 21 |
-| ingest | 20 |
+| ingest | 21 |
 | lighting | 23 |
 | modeling | 22 |
 | motion | 23 |
 | music | 21 |
-| qa | 23 |
+| qa | 27 |
 | render | 20 |
-| skills | 29 |
+| skills | 30 |
 | story | 25 |
 | transitions | 20 |
 | typography | 35 |
 | vfx | 23 |
-| workflow | 21 |
+| workflow | 22 |
 
 ## Art direction, composition and design (`art`, 27)
 
@@ -208,7 +208,7 @@
 | [statistical-uncertainty](library/data/statistical-uncertainty/SKILL.md) | guidance | belirsizlik, hata çubuğu | Use for statistical uncertainty. Represent uncertainty intervals, variation and sample size with correct definitions. |
 | [timeline-visualization](library/data/timeline-visualization/SKILL.md) | guidance | zaman çizelgesi, tarih grafiği | Use for timeline visualization. Position events by actual date or explicitly discrete order. |
 
-## Export, interoperability and deliverables (`delivery`, 28)
+## Export, interoperability and deliverables (`delivery`, 29)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -216,6 +216,7 @@
 | [audio-description-track](library/delivery/audio-description-track/SKILL.md) | guidance | audio description, sesli betimleme | Place descriptions in gaps between spoken lines. |
 | [caption-delivery-package](library/delivery/caption-delivery-package/SKILL.md) | guidance | altyazı teslimi, subtitle package | Use for caption delivery package. Deliver requested burned-in and separate captions plus language tags and transcript where relevant. |
 | [chapter-marker-export](library/delivery/chapter-marker-export/SKILL.md) | guidance | chapter markers, bölüm işaretleri | Use for chapter marker export. Export chapter titles and timecodes in recipient-compatible format. |
+| [chroma-subsampling-text-guard](library/delivery/chroma-subsampling-text-guard/SKILL.md) | validated | chroma subsampling text guard, yuv420p colored text fix, kroma alt örnekleme metin koruması, renkli yazı kenar dağılması önleme, Chroma-Subsampling-Textschutz, Farbsäume bei 4:2:0-Text vermeiden, protección de texto en submuestreo croma, protection du texte en sous-échantillonnage chroma | Prevent 4:2:0 (yuv420p) chroma subsampling fringing on colored typography and UI badges by enforcing luminance contrast floors, even-pixel alignment, and stroke minimums. |
 | [color-blind-simulation-audit](library/delivery/color-blind-simulation-audit/SKILL.md) | guidance | color blind check, renk körlüğü denetimi | Review category and state encodings under color-vision simulations. |
 | [color-management-export](library/delivery/color-management-export/SKILL.md) | guidance | renk yönetimi, rec709 | Use for color management export. Preserve or deliberately transform transfer characteristics, gamut and range. |
 | [content-credentials-labeling](library/delivery/content-credentials-labeling/SKILL.md) | guidance | C2PA, içerik kimliği ve etiket | Track attribution and provenance through delivery. |
@@ -241,13 +242,14 @@
 | [vertical-safe-zones](library/delivery/vertical-safe-zones/SKILL.md) | guidance | safe zones, güvenli alanlar | Keep vertical-video labels clear of player controls. |
 | [webm-export](library/delivery/webm-export/SKILL.md) | guidance | webm, vp9 | Use for webm export. Encode using compatible VPx or AV1 options as appropriate to target environment. |
 
-## Creative direction and production planning (`direction`, 22)
+## Creative direction and production planning (`direction`, 24)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [asset-feasibility](library/direction/asset-feasibility/SKILL.md) | guidance | asset uygunluğu, varlık listesi | Use for asset feasibility. Inventory source availability, permissions, quality, and substitutes before committing to concepts. |
 | [audience-mapping](library/direction/audience-mapping/SKILL.md) | guidance | hedef kitle, izleyici | Use for audience mapping. Map audience knowledge, context, expectations and reading speed to narrative decisions. |
 | [brand-brief](library/direction/brand-brief/SKILL.md) | guidance | marka briefi, kurumsal kimlik | Use for brand brief. Extract approved logos, colors, fonts, restrictions and required legal copy from supplied assets. |
+| [brand-sting-remirdy](library/direction/brand-sting-remirdy/SKILL.md) | validated | brand sting remirdy, creator signature sting, remirdy kapanış imzası, üretici imza kartı kuralları, Remirdy-Signatur-Abspann, dezentes Urheber-Signet, cierre de firma remirdy, signature finale remirdy | Render the restrained 1.6-to-2.4-second Remirdy closing signature sting or corner mark for first-party showcase deliverables while keeping --attribution off completely unbranded. |
 | [brief-decoding](library/direction/brief-decoding/SKILL.md) | guidance | brief çözümleme, istek analizi | Use for brief decoding. Extract audience, purpose, duration, format and non-negotiable constraints; separate facts from assumptions. |
 | [concept-divergence](library/direction/concept-divergence/SKILL.md) | guidance | yaratıcı fikir, alternatif konsept | Use for concept divergence. Draft three concepts with different visual mechanisms, not just colors; compare cost and feasibility. |
 | [creative-constraint-lock](library/direction/creative-constraint-lock/SKILL.md) | guidance | kısıtlar, kamera sabit, yazı olmasın | Use for creative constraint lock. Convert prohibitions and fixed properties into explicit locks before scene construction. |
@@ -264,6 +266,7 @@
 | [reference-analysis](library/direction/reference-analysis/SKILL.md) | guidance | referans video, örnek video | Use for reference analysis. Sample shots, measure cuts, infer camera paths and characterize color and typography without cloning assets. |
 | [series-planning](library/direction/series-planning/SKILL.md) | guidance | seri planı, bölüm planı | Use for series planning. Create a reusable series bible, episode structure and visual continuity ledger. |
 | [shot-budget](library/direction/shot-budget/SKILL.md) | guidance | sahne bütçesi, çekim sayısı | Use for shot budget. Distribute frames over story beats and calculate shot and render cost from explicit assumptions. |
+| [showreel-direction](library/direction/showreel-direction/SKILL.md) | validated | showreel direction, demo reel editing arc, tanıtım seçkisi yönetimi, portfolyo şov릴 kurgusu, Showreel-Regie, Demoreel-Dramaturgie schneiden, dirección de bobina de demostración, direction de bande démo | Curate and cut a 25-to-45-second multi-format capability showreel that front-loads peak craft in frame 0, alternates visual mediums, matches motion vectors, and resolves into the signature card. |
 | [style-selection](library/direction/style-selection/SKILL.md) | guidance | stil seçimi, görsel tarz | Use for style selection. Compare stylistic options against brief, asset availability and compute budget. |
 | [tone-calibration](library/direction/tone-calibration/SKILL.md) | guidance | duygu, video tonu | Use for tone calibration. Define emotional start/end and beats; map intensity to motion, music and color. |
 | [visual-language-bible](library/direction/visual-language-bible/SKILL.md) | guidance | görsel dil, stil rehberi | Use for visual language bible. Specify shape vocabulary, texture, contrast, typography, movement and forbidden motifs. |
@@ -391,12 +394,13 @@
 | [vector-export](library/graphics/vector-export/SKILL.md) | guidance | vektör çıktı, svg export | Use for vector export. Flatten unsupported effects only when necessary and preserve editable groups. |
 | [vector-path-trimming](library/graphics/vector-path-trimming/SKILL.md) | guidance | çizgi çizilme, stroke reveal | Use for vector path trimming. Animate path stroke dash or measured contour length with correct joins. |
 
-## Asset ingestion, research, rights and source management (`ingest`, 20)
+## Asset ingestion, research, rights and source management (`ingest`, 21)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [archival-media-verification](library/ingest/archival-media-verification/SKILL.md) | guidance | arşiv doğrulama, tarihi fotoğraf | Use for archival media verification. Cross-check origin, date, caption and rights before use. |
 | [asset-deduplication](library/ingest/asset-deduplication/SKILL.md) | guidance | asset tekrarları, duplicate files | Use for asset deduplication. Compare hashes and optional perceptual fingerprints; never delete automatically. |
+| [asset-license-ledger](library/ingest/asset-license-ledger/SKILL.md) | validated | asset license ledger, spdx attribution manifest, varlık lisans defteri, telif ve atıf kaydı, Asset-Lizenzverzeichnis, SPDX-Quellen- und Lizenzbuch, registro de licencias de recursos, registre de licences des médias | Track SHA-256 digests, approved SPDX license identifiers, source URLs, and attribution notices for every bundled or imported font, audio, image, and 3D asset. |
 | [asset-matching](library/ingest/asset-matching/SKILL.md) | guidance | asset eşleştirme, psd mp3 eşleştir | Use for asset matching. Rank candidates by stable identifier, filename and content evidence; flag ambiguous ties. |
 | [asset-portability](library/ingest/asset-portability/SKILL.md) | guidance | taşınabilir asset, dosya taşıma | Use for asset portability. Use relative logical IDs and package only permitted dependencies. |
 | [asset-provenance](library/ingest/asset-provenance/SKILL.md) | guidance | kaynak takibi, asset provenance | Use for asset provenance. Record source, creator, acquisition, modifications and content hash per asset. |
@@ -525,16 +529,19 @@
 | [sidechain-music](library/music/sidechain-music/SKILL.md) | guidance | sidechain, müzik kompresyon | Use for sidechain music. Drive controlled gain reduction from appropriate audio trigger. |
 | [synth-envelope](library/music/synth-envelope/SKILL.md) | guidance | adsr, synth envelope | Use for synth envelope. Shape attack, decay, sustain and release by instrument role. |
 
-## Quality, compliance and restoration (`qa`, 23)
+## Quality, compliance and restoration (`qa`, 27)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [accessibility-caption-ad-check](library/qa/accessibility-caption-ad-check/SKILL.md) | validated | accessibility caption check, caption and audio description qa, erişilebilir altyazı ve sesli betimleme denetimi, işitme görme erişilebilirlik kontrolü, Barrierefreiheit Untertitel-Prüfung, Hörbeschreibung und Untertitel prüfen, auditoría de subtítulos accesibles, contrôle accessibilité sous-titres | Verify caption completeness for non-speech audio cues, speaker changes, contrast, and visual-only information parity for blind and deaf/hard-of-hearing viewers. |
+| [anti-aliasing-thin-lines](library/qa/anti-aliasing-thin-lines/SKILL.md) | validated | anti aliasing thin lines, thin stroke shimmer fix, ince çizgi kenar yumuşatma, titreyen ızgara çizgisi düzeltme, Kantenglättung dünner Linien, Flimmern feiner Linien beheben, antialiasing de líneas finas, anticrénelage des lignes fines | Eliminate single-pixel line buzz, diagonal stair-stepping, and pan-induced moiré shimmer using minimum stroke floors, integer grid snapping, and 2x supersampling. |
 | [audio-clipping-audit](library/qa/audio-clipping-audit/SKILL.md) | guidance | ses patlaması, clipping | Use for audio clipping audit. Measure peaks and clipping indicators across mix and stems. |
 | [audio-sync-audit](library/qa/audio-sync-audit/SKILL.md) | validated | ses görüntü kontrolü, av sync | Use for audio sync audit. Compare expected cue times to observed audio and visual events. |
 | [black-frame-detection](library/qa/black-frame-detection/SKILL.md) | validated | siyah kare, black frame, Schwarzbilder erkennen, detectar fotogramas negros, détecter les images noires, detectar quadros pretos | Use for black frame detection. Detect sustained near-black intervals using declared thresholds and compare intentional fades. |
 | [brief-compliance-audit](library/qa/brief-compliance-audit/SKILL.md) | guidance | talimat kontrolü, reelguard | Use for brief compliance audit. Recheck all hard constraints including language, aspect, locked camera, and protected layers. |
+| [claims-must-be-sourced](library/qa/claims-must-be-sourced/SKILL.md) | validated | claims must be sourced, quantitative claim citation, iddialar kaynaklı olmalı, sayısal veri kaynak doğrulama, Quellenpflicht für Zahlenangaben, Belegprüfung für Behauptungen, citas obligatorias para datos, sources requises pour affirmations | Require verifiable source citations in project provenance and on-screen attribution for every quantitative statistic, multiplier, benchmark, or factual claim. |
 | [color-continuity](library/qa/color-continuity/SKILL.md) | guidance | renk tutarlılığı, color matching | Use for color continuity. Compare neighboring shots using references, scopes or measured values and correct exposure/hue. |
+| [content-policy-boundaries](library/qa/content-policy-boundaries/SKILL.md) | validated | content policy boundaries, impersonation and trademark guard, içerik politikası sınırları, kişi taklidi ve marka koruması, Inhaltsrichtlinien-Grenzen, Imitations- und Markenschutz, límites de política de contenido, limites de politique de contenu | Enforce strict ethical and legal content boundaries—no real-person likeness or voice impersonation, no third-party brand spoofing, and no unlicensed copyrighted IP. |
 | [contrast-audit](library/qa/contrast-audit/SKILL.md) | validated | kontrast kontrolü, okunabilirlik | Use for contrast audit. Measure contrast in representative text/background regions and inspect moving backgrounds. |
 | [cultural-adaptation-audit](library/qa/cultural-adaptation-audit/SKILL.md) | validated | cultural adaptation audit, localization qa checklist, kültürel uyarlama denetimi, yerelleştirme kalite kontrolü, Kulturadaptions-Prüfung, Lokalisierungs-Checkliste, auditoría de adaptación cultural, audit d'adaptation culturelle | Audit localized video variants for ambiguous numeric dates, measurement systems, currency assumptions, directional progression cues, and region-locked references. |
 | [debanding](library/qa/debanding/SKILL.md) | guidance | banding, renk bantları | Use for debanding. Apply suitable dithering/filtering at appropriate precision before final encode. |
@@ -543,6 +550,7 @@
 | [font-render-audit](library/qa/font-render-audit/SKILL.md) | validated | font hatası, eksik glif | Use for font render audit. Render coverage fixture using actual font files and compare glyph availability. |
 | [frame-comparison](library/qa/frame-comparison/SKILL.md) | validated | kare karşılaştırma, before after | Use for frame comparison. Compare same timestamp, dimensions and color treatment using visual and measurable deltas. |
 | [freeze-detection](library/qa/freeze-detection/SKILL.md) | validated | donmuş kare, freeze detection | Use for freeze detection. Measure frame differences over windows and compare intended static holds. |
+| [golden-frame-regression](library/qa/golden-frame-regression/SKILL.md) | validated | golden frame regression, visual render regression test, altın kare görsel regresyon, işletim sistemleri arası kare testi, Golden-Frame-Regressionstest, Plattformübergreifender Bildvergleich, regresión visual de fotogramas dorados, régression visuelle d'images de référence | Verify cross-platform visual render consistency across Linux, macOS, and Windows using golden reference descriptors, structural band tolerances, and font-metric isolation. |
 | [lut-application](library/qa/lut-application/SKILL.md) | guidance | lut, renk düzenleme | Use for lut application. Verify LUT input/output color space before applying and manage intensity deliberately. |
 | [self-correction-loop](library/qa/self-correction-loop/SKILL.md) | guidance | otomatik düzeltme, self correction | Use for self correction loop. Prioritize verified defects, edit smallest affected unit, rerender and recheck with bounded retries. |
 | [silence-audit](library/qa/silence-audit/SKILL.md) | validated | ses yok, silent audio | Use for silence audit. Detect unexpected silent intervals and compare to requested sound plan. |
@@ -578,7 +586,7 @@
 | [resource-budget](library/render/resource-budget/SKILL.md) | guidance | ram disk bütçesi, bellek optimizasyonu | Use for resource budget. Estimate memory, disk and time from sample jobs and cap concurrency accordingly. |
 | [resume-render](library/render/resume-render/SKILL.md) | validated | render devam, devam ettir | Use for resume render. Persist completed frame/job evidence and resume incomplete work idempotently. |
 
-## Skill engineering, agent interoperability and development (`skills`, 29)
+## Skill engineering, agent interoperability and development (`skills`, 30)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -599,6 +607,7 @@
 | [plugin-sdk](library/skills/plugin-sdk/SKILL.md) | guidance | eklenti sdk, plugin geliştirme | Use for plugin sdk. Define capability manifest, lifecycle, version compatibility and isolated adapter interfaces. |
 | [prompt-injection-guard](library/skills/prompt-injection-guard/SKILL.md) | validated | prompt injection guard, brief sanitization, istem enjeksiyon koruması, güvenli istem sınırı, Eingabe-Injektionsschutz, Brief-Abschirmung, protección contra inyección, garde contre injection | Isolate untrusted user briefs inside inert data boundaries and reject embedded instruction overrides, path traversal tokens, and network/shell escalations. |
 | [release-documentation](library/skills/release-documentation/SKILL.md) | guidance | readme, release dokümantasyon | Use for release documentation. Document only verified features, setup paths and known limitations with reproducible examples. |
+| [safe-community-format-package](library/skills/safe-community-format-package/SKILL.md) | validated | safe community format package, data only format install, güvenli topluluk biçim paketi, yalnızca veri biçim kurulumu, sicheres Community-Formatpaket, reines Datenformat installieren, paquete de formato seguro de solo datos, paquet de format communautaire sans code | Validate third-party community format packages as pure declarative data—blocking executable scripts, custom code recipes, symlinks, path traversal, and network fetches. |
 | [schema-json-repair](library/skills/schema-json-repair/SKILL.md) | validated | schema json repair, json plan repair, şema json onarımı, bozuk json düzeltme, JSON-Schema-Reparatur, Strukturdaten-Reparatur, reparación de json, réparation de schéma json | Recover valid, schema-conformant scene plans from malformed JSON outputs using deterministic syntax normalization, bounded retries, and rule-based fallback. |
 | [secure-local-execution](library/skills/secure-local-execution/SKILL.md) | guidance | lokal güvenlik, sandbox | Use for secure local execution. Use canonical paths, subprocess argument arrays, allowlists, timeouts and narrow file permissions. |
 | [skill-alias-localization](library/skills/skill-alias-localization/SKILL.md) | guidance | alias localization, alias yerelleştirme | Add a language-specific search phrase to the router. |
@@ -735,13 +744,14 @@
 | [signed-distance-fields](library/vfx/signed-distance-fields/SKILL.md) | guidance | sdf raymarching, signed distance field, smooth boolean, analitik mesafe alanı | Use for signed distance fields. Construct 2D and 3D procedural geometry with smooth polynomial CSG booleans, analytical normals, and soft penumbra shadows. |
 | [smoke-fog](library/vfx/smoke-fog/SKILL.md) | guidance | duman, sis | Use for smoke fog. Use procedural volumes or lightweight billboards with depth sorting and evolving seed. |
 
-## Project intelligence and batch workflows (`workflow`, 21)
+## Project intelligence and batch workflows (`workflow`, 22)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [batch-production](library/workflow/batch-production/SKILL.md) | guidance | toplu video, batch production | Use for batch production. Create per-item job manifests with explicit shared templates and independent output paths. |
 | [blender-ae-interchange](library/workflow/blender-ae-interchange/SKILL.md) | validated | blender after effects köprüsü, 3d kamera aktarımı, blender ae compositing, interchange handoff | Use for coordinated BlenderMCP, ReelSyntax, and AfterEffectsMCP multi-tool workflows. Transfer 3D camera rigs, rational FPS timelines, RGBA/depth passes, GLB assets, masks, and audio stems. |
 | [brand-kit-workflow](library/workflow/brand-kit-workflow/SKILL.md) | guidance | brand kit, marka kiti | Use for brand kit workflow. Store approved fonts, logos, palette, layout locks and legal text in reusable manifest. |
+| [format-runner-protocol](library/workflow/format-runner-protocol/SKILL.md) | validated | format runner protocol, step gated video pipeline, biçim yürütücü protokolü, onay kapılı üretim hattı, Format-Ausführungsprotokoll, Stufengesteuerte Render-Pipeline, protocolo de ejecución de formatos, protocole d'exécution de format | Execute step-gated format pipelines (idea, script, look, frames, pilot, full, hero, qc) with approval checkpoints, upstream-edit cache invalidation, and hero render protection. |
 | [multilingual-variants](library/workflow/multilingual-variants/SKILL.md) | guidance | çok dilli video, çeviri varyantı | Use for multilingual variants. Generate language-specific text, voice and timing while preserving shared design constraints. |
 | [production-cost-estimation](library/workflow/production-cost-estimation/SKILL.md) | guidance | render maliyeti, iş süresi tahmini | Use for production cost estimation. Estimate compute, storage and optional external cost with ranges from actual samples. |
 | [production-observability](library/workflow/production-observability/SKILL.md) | guidance | işlem kayıtları, production log | Use for production observability. Record step IDs, timings, tool versions and outcomes with secret redaction. |

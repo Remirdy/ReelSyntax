@@ -1089,5 +1089,132 @@
     "resources": [
       "library/formats/news-ticker-hierarchy/references/ticker-speed-and-zone-spec.md"
     ]
+  },
+  "claims-must-be-sourced": {
+    "status": "validated",
+    "recommended_next": [
+      "scientific-source-audit",
+      "brief-compliance-audit"
+    ],
+    "resources": [
+      "library/qa/claims-must-be-sourced/references/sources-ledger-schema.md"
+    ]
+  },
+  "content-policy-boundaries": {
+    "status": "validated",
+    "dependencies": [
+      "reelguard-policy"
+    ],
+    "recommended_next": [
+      "content-credentials-labeling",
+      "prompt-injection-guard",
+      "asset-license-ledger"
+    ],
+    "resources": [
+      "library/qa/content-policy-boundaries/references/boundary-decision-table.md"
+    ]
+  },
+  "anti-aliasing-thin-lines": {
+    "status": "validated",
+    "recommended_next": [
+      "temporal-flicker-audit",
+      "shutter-angle-judder",
+      "chroma-subsampling-text-guard"
+    ],
+    "resources": [
+      "library/qa/anti-aliasing-thin-lines/references/stroke-width-and-ssaa-rules.md"
+    ]
+  },
+  "chroma-subsampling-text-guard": {
+    "status": "validated",
+    "requires": [
+      "ffmpeg"
+    ],
+    "recommended_next": [
+      "contrast-audit",
+      "mp4-delivery",
+      "anti-aliasing-thin-lines"
+    ],
+    "resources": [
+      "library/delivery/chroma-subsampling-text-guard/references/yuv420p-luminance-and-swscale-guide.md"
+    ]
+  },
+  "golden-frame-regression": {
+    "status": "validated",
+    "recommended_next": [
+      "render-artifact-validation",
+      "revision-diff",
+      "font-render-audit"
+    ],
+    "resources": [
+      "library/qa/golden-frame-regression/references/cross-os-tolerance-spec.md"
+    ]
+  },
+  "asset-license-ledger": {
+    "status": "validated",
+    "recommended_next": [
+      "license-compatibility",
+      "font-licensing",
+      "asset-provenance"
+    ],
+    "resources": [
+      "library/ingest/asset-license-ledger/references/spdx-allowlist-and-ledger-format.md"
+    ]
+  },
+  "format-runner-protocol": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "partial-render",
+      "resume-render",
+      "revision-diff"
+    ],
+    "resources": [
+      "library/workflow/format-runner-protocol/references/state-machine-and-invalidation.md"
+    ]
+  },
+  "safe-community-format-package": {
+    "status": "validated",
+    "dependencies": [
+      "reelguard-policy"
+    ],
+    "recommended_next": [
+      "skill-security-review",
+      "secure-local-execution",
+      "asset-license-ledger"
+    ],
+    "resources": [
+      "library/skills/safe-community-format-package/references/package-allowlist-spec.md"
+    ]
+  },
+  "showreel-direction": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "bar-grid-music-alignment",
+      "cross-shot-grade-consistency",
+      "brand-sting-remirdy"
+    ],
+    "resources": [
+      "library/direction/showreel-direction/references/showreel-sequencing-grid.md"
+    ]
+  },
+  "brand-sting-remirdy": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "end-card",
+      "platform-loudness-targets",
+      "contrast-audit"
+    ],
+    "resources": [
+      "library/direction/brand-sting-remirdy/references/attribution-flag-and-sting-spec.md"
+    ]
   }
 }

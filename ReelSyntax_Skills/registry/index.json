@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "b30294c873e1a9fc03ec445ae4d7d73399bc746e3311d633496e01ae7157cec8",
+  "digest": "b7eb378dc7c59eaa0238018cdccf057bcb07820573b49da077ec16db1422fe3c",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -3068,6 +3068,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "chroma-subsampling-text-guard",
+      "description": "Prevent 4:2:0 (yuv420p) chroma subsampling fringing on colored typography and UI badges by enforcing luminance contrast floors, even-pixel alignment, and stroke minimums.",
+      "category": "delivery",
+      "stage": "export",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "chroma subsampling text guard",
+        "yuv420p colored text fix",
+        "kroma alt örnekleme metin koruması",
+        "renkli yazı kenar dağılması önleme",
+        "Chroma-Subsampling-Textschutz",
+        "Farbsäume bei 4:2:0-Text vermeiden",
+        "protección de texto en submuestreo croma",
+        "protection du texte en sous-échantillonnage chroma"
+      ],
+      "requires": [
+        "ffmpeg"
+      ],
+      "path": "library/delivery/chroma-subsampling-text-guard/SKILL.md",
+      "estimated_words": 772,
+      "estimated_tokens": 1855,
+      "sha256": "a2968d3d5bd599bb8f61b9d6e92c7269864582fdf89a23e9f6a1730b2e875354",
+      "body_sha256": "7cc8542d8c6bf78d7beb6a91f8cec02adca51bd455b13d420ba3bda30b98c9d3",
+      "recommended_next": [
+        "contrast-audit",
+        "mp4-delivery",
+        "anti-aliasing-thin-lines"
+      ],
+      "resources": [
+        "library/delivery/chroma-subsampling-text-guard/references/yuv420p-luminance-and-swscale-guide.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/chroma-subsampling-text-guard/references/yuv420p-luminance-and-swscale-guide.md": "0990cc1778aebed36a75711a0b0af26d63ba0c5fbe352c43076c03861163c892"
+      }
+    },
+    {
       "id": "color-blind-simulation-audit",
       "description": "Review category and state encodings under color-vision simulations.",
       "category": "delivery",
@@ -3643,6 +3680,44 @@
       "resource_sha256": {}
     },
     {
+      "id": "brand-sting-remirdy",
+      "description": "Render the restrained 1.6-to-2.4-second Remirdy closing signature sting or corner mark for first-party showcase deliverables while keeping --attribution off completely unbranded.",
+      "category": "direction",
+      "stage": "export",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "brand sting remirdy",
+        "creator signature sting",
+        "remirdy kapanış imzası",
+        "üretici imza kartı kuralları",
+        "Remirdy-Signatur-Abspann",
+        "dezentes Urheber-Signet",
+        "cierre de firma remirdy",
+        "signature finale remirdy"
+      ],
+      "requires": [],
+      "path": "library/direction/brand-sting-remirdy/SKILL.md",
+      "estimated_words": 745,
+      "estimated_tokens": 1894,
+      "sha256": "a06366d4a2fd93ddbf9d78691e8d7fec60a9c0373a1adf843b516da47be38e59",
+      "body_sha256": "0ed6d479c1091f4edfeb69a7834d23eb75f5d93f78966ce4841f7d8fd5a8ce1a",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "end-card",
+        "platform-loudness-targets",
+        "contrast-audit"
+      ],
+      "resources": [
+        "library/direction/brand-sting-remirdy/references/attribution-flag-and-sting-spec.md"
+      ],
+      "resource_sha256": {
+        "library/direction/brand-sting-remirdy/references/attribution-flag-and-sting-spec.md": "55b7ceea5275d8e8bcbad50bc61831484f7dc738511e5e525334249491421db6"
+      }
+    },
+    {
       "id": "brief-decoding",
       "description": "Use for brief decoding. Extract audience, purpose, duration, format and non-negotiable constraints; separate facts from assumptions.",
       "category": "direction",
@@ -3978,6 +4053,44 @@
       "sha256": "1308149df8c782059d459aec0af8508f7da8794ff244bf16088834743a4ee527",
       "body_sha256": "0d4d478a5246143a011d6991a7ae4786a0e9ec9ba4ecc2188873c61bde879c0b",
       "resource_sha256": {}
+    },
+    {
+      "id": "showreel-direction",
+      "description": "Curate and cut a 25-to-45-second multi-format capability showreel that front-loads peak craft in frame 0, alternates visual mediums, matches motion vectors, and resolves into the signature card.",
+      "category": "direction",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "showreel direction",
+        "demo reel editing arc",
+        "tanıtım seçkisi yönetimi",
+        "portfolyo şov릴 kurgusu",
+        "Showreel-Regie",
+        "Demoreel-Dramaturgie schneiden",
+        "dirección de bobina de demostración",
+        "direction de bande démo"
+      ],
+      "requires": [],
+      "path": "library/direction/showreel-direction/SKILL.md",
+      "estimated_words": 737,
+      "estimated_tokens": 1867,
+      "sha256": "0ff43c9f56c02a2b9894c2c6c7efa4ced686d8a3255b9512571fa4fd569b7b0d",
+      "body_sha256": "4aa84e916d7b9e56bb999a0c3d5ba37b7adb34f818fc6bfe029fca598cb2800d",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "bar-grid-music-alignment",
+        "cross-shot-grade-consistency",
+        "brand-sting-remirdy"
+      ],
+      "resources": [
+        "library/direction/showreel-direction/references/showreel-sequencing-grid.md"
+      ],
+      "resource_sha256": {
+        "library/direction/showreel-direction/references/showreel-sequencing-grid.md": "0521b28f0e5b13268cf5ba218a7c046320681229c12f3b2b06fd63f5d3e15530"
+      }
     },
     {
       "id": "style-selection",
@@ -6311,6 +6424,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "asset-license-ledger",
+      "description": "Track SHA-256 digests, approved SPDX license identifiers, source URLs, and attribution notices for every bundled or imported font, audio, image, and 3D asset.",
+      "category": "ingest",
+      "stage": "ingest",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "asset license ledger",
+        "spdx attribution manifest",
+        "varlık lisans defteri",
+        "telif ve atıf kaydı",
+        "Asset-Lizenzverzeichnis",
+        "SPDX-Quellen- und Lizenzbuch",
+        "registro de licencias de recursos",
+        "registre de licences des médias"
+      ],
+      "requires": [],
+      "path": "library/ingest/asset-license-ledger/SKILL.md",
+      "estimated_words": 595,
+      "estimated_tokens": 1694,
+      "sha256": "94ddc813cfd12ce9a3fd7a75993ef425f6de6c80c31713300e45e63abaed524c",
+      "body_sha256": "e59644ac7743932a892d45374f7354c14f5deef4ffe56782d8ba283f2dca32d5",
+      "recommended_next": [
+        "license-compatibility",
+        "font-licensing",
+        "asset-provenance"
+      ],
+      "resources": [
+        "library/ingest/asset-license-ledger/references/spdx-allowlist-and-ledger-format.md"
+      ],
+      "resource_sha256": {
+        "library/ingest/asset-license-ledger/references/spdx-allowlist-and-ledger-format.md": "d06d144bf4871dcd8e18b8d9467d35c79888bb64c242afa31df3150499f5f34a"
+      }
+    },
+    {
       "id": "asset-matching",
       "description": "Use for asset matching. Rank candidates by stable identifier, filename and content evidence; flag ambiguous ties.",
       "category": "ingest",
@@ -8526,6 +8674,41 @@
       }
     },
     {
+      "id": "anti-aliasing-thin-lines",
+      "description": "Eliminate single-pixel line buzz, diagonal stair-stepping, and pan-induced moiré shimmer using minimum stroke floors, integer grid snapping, and 2x supersampling.",
+      "category": "qa",
+      "stage": "render",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "anti aliasing thin lines",
+        "thin stroke shimmer fix",
+        "ince çizgi kenar yumuşatma",
+        "titreyen ızgara çizgisi düzeltme",
+        "Kantenglättung dünner Linien",
+        "Flimmern feiner Linien beheben",
+        "antialiasing de líneas finas",
+        "anticrénelage des lignes fines"
+      ],
+      "requires": [],
+      "path": "library/qa/anti-aliasing-thin-lines/SKILL.md",
+      "estimated_words": 712,
+      "estimated_tokens": 1729,
+      "sha256": "143eca5714f591890267e0b8d3fe9b1ec7d9c9a87d8a79f04da22bda9bd7a811",
+      "body_sha256": "12079a9a662ce0214e8146b075120bdaf269f239f9e748129fc210187ea5c982",
+      "recommended_next": [
+        "temporal-flicker-audit",
+        "shutter-angle-judder",
+        "chroma-subsampling-text-guard"
+      ],
+      "resources": [
+        "library/qa/anti-aliasing-thin-lines/references/stroke-width-and-ssaa-rules.md"
+      ],
+      "resource_sha256": {
+        "library/qa/anti-aliasing-thin-lines/references/stroke-width-and-ssaa-rules.md": "209747e2266884a048c52245b40fb877573e294ebcd135293c8cec89bf36cc10"
+      }
+    },
+    {
       "id": "audio-clipping-audit",
       "description": "Use for audio clipping audit. Measure peaks and clipping indicators across mix and stems.",
       "category": "qa",
@@ -8615,6 +8798,40 @@
       "resource_sha256": {}
     },
     {
+      "id": "claims-must-be-sourced",
+      "description": "Require verifiable source citations in project provenance and on-screen attribution for every quantitative statistic, multiplier, benchmark, or factual claim.",
+      "category": "qa",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "claims must be sourced",
+        "quantitative claim citation",
+        "iddialar kaynaklı olmalı",
+        "sayısal veri kaynak doğrulama",
+        "Quellenpflicht für Zahlenangaben",
+        "Belegprüfung für Behauptungen",
+        "citas obligatorias para datos",
+        "sources requises pour affirmations"
+      ],
+      "requires": [],
+      "path": "library/qa/claims-must-be-sourced/SKILL.md",
+      "estimated_words": 592,
+      "estimated_tokens": 1582,
+      "sha256": "1d575adc004f149b38c847ef91a0da0aab1193a109e35691426506c7b644f240",
+      "body_sha256": "8878876c84508d295bf5e28e1bb6d80d883375913d843b5c93ddc07e06f44977",
+      "recommended_next": [
+        "scientific-source-audit",
+        "brief-compliance-audit"
+      ],
+      "resources": [
+        "library/qa/claims-must-be-sourced/references/sources-ledger-schema.md"
+      ],
+      "resource_sha256": {
+        "library/qa/claims-must-be-sourced/references/sources-ledger-schema.md": "e235b773b4f044f25237a6199916f91b80b7d2d742914c8fe25f7f75e56615c8"
+      }
+    },
+    {
       "id": "color-continuity",
       "description": "Use for color continuity. Compare neighboring shots using references, scopes or measured values and correct exposure/hue.",
       "category": "qa",
@@ -8632,6 +8849,44 @@
       "sha256": "c942ae3233308b54a3e95ddc553ae150caffaf8a363bc2d65d6ae61e8ed9cf17",
       "body_sha256": "5ee0e033a04d3730862697b7df939c8d5ea848e254aeeee55958c72b633a5e40",
       "resource_sha256": {}
+    },
+    {
+      "id": "content-policy-boundaries",
+      "description": "Enforce strict ethical and legal content boundaries—no real-person likeness or voice impersonation, no third-party brand spoofing, and no unlicensed copyrighted IP.",
+      "category": "qa",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "content policy boundaries",
+        "impersonation and trademark guard",
+        "içerik politikası sınırları",
+        "kişi taklidi ve marka koruması",
+        "Inhaltsrichtlinien-Grenzen",
+        "Imitations- und Markenschutz",
+        "límites de política de contenido",
+        "limites de politique de contenu"
+      ],
+      "requires": [],
+      "path": "library/qa/content-policy-boundaries/SKILL.md",
+      "estimated_words": 630,
+      "estimated_tokens": 1735,
+      "sha256": "eec1e97728291eb79eed10f084986ff9432666ef50f4ee83dc970461981e3fb6",
+      "body_sha256": "f6442b57259f29a66a1f68cc5e505cd4387c591ba2dd3249b1b4472d3ad11c3c",
+      "dependencies": [
+        "reelguard-policy"
+      ],
+      "recommended_next": [
+        "content-credentials-labeling",
+        "prompt-injection-guard",
+        "asset-license-ledger"
+      ],
+      "resources": [
+        "library/qa/content-policy-boundaries/references/boundary-decision-table.md"
+      ],
+      "resource_sha256": {
+        "library/qa/content-policy-boundaries/references/boundary-decision-table.md": "cded94e7e4f5ac2e893473603df55217f4de57ad32708e239a5012a590064ba6"
+      }
     },
     {
       "id": "contrast-audit",
@@ -8815,6 +9070,41 @@
       "sha256": "80656970054d8e00d1f6d25cd30ea25404a9cd923aee0a5e5598c142522b07d8",
       "body_sha256": "0adb65cdb3734ab7476f99e604604071182375e8b2db5116eb69451b4f570080",
       "resource_sha256": {}
+    },
+    {
+      "id": "golden-frame-regression",
+      "description": "Verify cross-platform visual render consistency across Linux, macOS, and Windows using golden reference descriptors, structural band tolerances, and font-metric isolation.",
+      "category": "qa",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "golden frame regression",
+        "visual render regression test",
+        "altın kare görsel regresyon",
+        "işletim sistemleri arası kare testi",
+        "Golden-Frame-Regressionstest",
+        "Plattformübergreifender Bildvergleich",
+        "regresión visual de fotogramas dorados",
+        "régression visuelle d'images de référence"
+      ],
+      "requires": [],
+      "path": "library/qa/golden-frame-regression/SKILL.md",
+      "estimated_words": 721,
+      "estimated_tokens": 1856,
+      "sha256": "7d5a82d401d6c728f340f98bc4e0d36e4c048680ace208f82223bd39174c48ec",
+      "body_sha256": "f1c77decba50ac6abd1c2c40156c803041e0e51f06d27f1dcf59d97a20e1bd9c",
+      "recommended_next": [
+        "render-artifact-validation",
+        "revision-diff",
+        "font-render-audit"
+      ],
+      "resources": [
+        "library/qa/golden-frame-regression/references/cross-os-tolerance-spec.md"
+      ],
+      "resource_sha256": {
+        "library/qa/golden-frame-regression/references/cross-os-tolerance-spec.md": "dbb65ba18b90534f61f2660feeb8caa91c67a60ca8a88419086139f8b0fcd725"
+      }
     },
     {
       "id": "lut-application",
@@ -9786,6 +10076,44 @@
       "sha256": "7151ccdb2f6f0e2078e53631f87a94cba08a0d9c9fec5c36846b4662d52d0a8d",
       "body_sha256": "ed2eacaa5cc4b00844a801467ac2054f2b72c22860aaf1cbd3b538497b89c4c4",
       "resource_sha256": {}
+    },
+    {
+      "id": "safe-community-format-package",
+      "description": "Validate third-party community format packages as pure declarative data—blocking executable scripts, custom code recipes, symlinks, path traversal, and network fetches.",
+      "category": "skills",
+      "stage": "ingest",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "safe community format package",
+        "data only format install",
+        "güvenli topluluk biçim paketi",
+        "yalnızca veri biçim kurulumu",
+        "sicheres Community-Formatpaket",
+        "reines Datenformat installieren",
+        "paquete de formato seguro de solo datos",
+        "paquet de format communautaire sans code"
+      ],
+      "requires": [],
+      "path": "library/skills/safe-community-format-package/SKILL.md",
+      "estimated_words": 657,
+      "estimated_tokens": 1894,
+      "sha256": "211d7f88f75648f98fbe6fe37b5be68f2d226bf43d1d60aa66257e686d2b4cce",
+      "body_sha256": "7bcd218b84bf4c597b3a8362ae17adeda0a44668d0d2fc7d2270a6d3728b68dd",
+      "dependencies": [
+        "reelguard-policy"
+      ],
+      "recommended_next": [
+        "skill-security-review",
+        "secure-local-execution",
+        "asset-license-ledger"
+      ],
+      "resources": [
+        "library/skills/safe-community-format-package/references/package-allowlist-spec.md"
+      ],
+      "resource_sha256": {
+        "library/skills/safe-community-format-package/references/package-allowlist-spec.md": "c9faef50b5767b34c4be43893e020b49532997e49c9d41507e5adb3c445dcb5b"
+      }
     },
     {
       "id": "schema-json-repair",
@@ -12366,6 +12694,44 @@
       ],
       "resource_sha256": {
         "library/workflow/brand-kit-workflow/references/project-check.md": "ea187c4dc34a4bbe4fe675641897b0dcc81b39ad5b422ed82d94ffc11a51377e"
+      }
+    },
+    {
+      "id": "format-runner-protocol",
+      "description": "Execute step-gated format pipelines (idea, script, look, frames, pilot, full, hero, qc) with approval checkpoints, upstream-edit cache invalidation, and hero render protection.",
+      "category": "workflow",
+      "stage": "operate",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "format runner protocol",
+        "step gated video pipeline",
+        "biçim yürütücü protokolü",
+        "onay kapılı üretim hattı",
+        "Format-Ausführungsprotokoll",
+        "Stufengesteuerte Render-Pipeline",
+        "protocolo de ejecución de formatos",
+        "protocole d'exécution de format"
+      ],
+      "requires": [],
+      "path": "library/workflow/format-runner-protocol/SKILL.md",
+      "estimated_words": 645,
+      "estimated_tokens": 1776,
+      "sha256": "95d1b2461e9143e7d79ffa8b55557e94792e223620775bd0c57a8fc58842e4b4",
+      "body_sha256": "57094e3413054b632a69ebba87263a56207a88a44321c25ffd89f77ecdc36dca",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "partial-render",
+        "resume-render",
+        "revision-diff"
+      ],
+      "resources": [
+        "library/workflow/format-runner-protocol/references/state-machine-and-invalidation.md"
+      ],
+      "resource_sha256": {
+        "library/workflow/format-runner-protocol/references/state-machine-and-invalidation.md": "b7cd9db28aeaebfd7a5dc18278c6e6b7d1d9af9527c943899a595a11e7cc527c"
       }
     },
     {

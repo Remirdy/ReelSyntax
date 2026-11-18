@@ -19,6 +19,8 @@
   "optional": ["captions", "tone", "palette", "music_bed"],
   "skills": [
     "frame-clock",
+    "asset-license-ledger",
+    "format-runner-protocol",
     "bar-grid-music-alignment",
     "platform-loudness-targets",
     "locale-aware-casing",
