@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "ilk saniyeler,açılış kancası"
+  aliases: "ilk saniyeler,açılış kancası,opening hook,Eröffnungs-Hook,erste Sekunden"
   requires: ""
 ---
 

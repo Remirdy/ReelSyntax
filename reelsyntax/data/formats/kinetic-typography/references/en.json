@@ -1,0 +1,10 @@
+{
+  "locale": "en",
+  "max_cps": 15,
+  "kicker_style": "numeric_two_digit",
+  "beat_templates": [
+    {"role": "hook", "heading": "SHARP SIGNAL", "subheading": "Cut the noise from frame one."},
+    {"role": "point", "heading": "STEADY RHYTHM", "subheading": "Pace each line for effortless reading."},
+    {"role": "payoff", "heading": "CLEAN RESULT", "subheading": "Repeatable output on every run."}
+  ]
+}

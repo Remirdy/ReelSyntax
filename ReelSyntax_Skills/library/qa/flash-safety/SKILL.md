@@ -6,7 +6,7 @@ metadata:
   stage: review
   status: guidance
   version: "2.0.0"
-  aliases: "flaş güvenliği,ışık çakması"
+  aliases: "flaş güvenliği,ışık çakması,flash safety,Blitzschutz-Prüfung,Photosensitivitäts-Schutz"
   requires: ""
 ---
 

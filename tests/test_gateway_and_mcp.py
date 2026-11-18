@@ -167,7 +167,7 @@ class GatewayAndMcpSimulatedTests(unittest.TestCase):
                 gw.close()
 
     def test_unified_mcp_stdio_server_wire_protocol_and_bounded_list(self):
-        self.assertLessEqual(len(GATEWAY_TOOLS), 12)
+        self.assertLessEqual(len(GATEWAY_TOOLS), 16)
         proc = subprocess.Popen(
             [sys.executable, '-m', 'reelsyntax', 'mcp'],
             cwd=str(REPO_ROOT),

@@ -143,4 +143,8 @@ def schema_for(kind: str = 'reel', schema_version: int = 1) -> dict:
         return project_schema()
     if kind == 'config':
         return config_schema()
+    if kind == 'format':
+        from .formats.schema import format_schema
+
+        return format_schema()
     raise ValueError(f'Unknown schema kind: {kind}')

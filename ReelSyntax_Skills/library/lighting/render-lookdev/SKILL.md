@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "lookdev,test ışığı"
+  aliases: "lookdev,test ışığı,render lookdev,Render-Lookentwicklung,Licht- und Material-Lookdev"
   requires: ""
 ---
 

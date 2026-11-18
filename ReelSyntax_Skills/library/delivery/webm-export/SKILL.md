@@ -6,7 +6,7 @@ metadata:
   stage: export
   status: guidance
   version: "2.0.0"
-  aliases: "webm,vp9"
+  aliases: "webm,vp9,webm export,WebM-Export,VP9-Webausgabe"
   requires: ""
 ---
 

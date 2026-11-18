@@ -1,0 +1,7 @@
+{
+  "locale": "de",
+  "kicker": "DATEN",
+  "decimal": ",",
+  "thousands": ".",
+  "qualitative_default": "Basis gegen Cache-Lauf"
+}

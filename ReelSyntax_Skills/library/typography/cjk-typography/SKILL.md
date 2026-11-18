@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "1.0.0"
-  aliases: "CJK typography, CJK tipografi"
+  aliases: "CJK typography,CJK tipografi,CJK-Typografie,ostasiatischer Satz"
   requires: ""
 ---
 

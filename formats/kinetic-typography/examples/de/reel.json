@@ -1,0 +1,71 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "kinetic-typography-de",
+  "seed": 42,
+  "output": {"width": 1080, "height": 1920, "fps": "30/1"},
+  "delivery": {"language": "deu"},
+  "constraints": {"offline": true, "no_paid_services": true, "camera_locked": true},
+  "scenes": [
+    {
+      "id": "auftakt",
+      "duration_frames": 60,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "params": {
+        "kicker": "01",
+        "heading": "KLARER FOKUS",
+        "subheading": "Präzise Aussage ab Bild eins.",
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#5aa6b0"
+      }
+    },
+    {
+      "id": "takt",
+      "duration_frames": 60,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "transition": {"type": "slide_left", "duration_frames": 6},
+      "params": {
+        "kicker": "02",
+        "heading": "RUHIGER TAKT",
+        "subheading": "Genug Lesezeit für jede Zeile.",
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#5aa6b0"
+      }
+    },
+    {
+      "id": "schluss",
+      "duration_frames": 60,
+      "recipe": "signal",
+      "engine": "pillow",
+      "transition": {"type": "cross_dissolve", "duration_frames": 8},
+      "params": {
+        "font_mode": "system",
+        "kicker": "03",
+        "heading": "KLARES ZIEL",
+        "subheading": "Verlässliches Ergebnis im Lauf.",
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#5aa6b0"
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {"frame": 0, "frequency": 262, "duration_frames": 16, "instrument": "harmonic_pluck"},
+      {"frame": 60, "frequency": 330, "duration_frames": 16, "instrument": "harmonic_pluck"},
+      {"frame": 120, "frequency": 392, "duration_frames": 18, "instrument": "warm_pad"}
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [[0, 180]],
+      "silence": [[16, 60], [76, 120], [138, 180]]
+    }
+  }
+}

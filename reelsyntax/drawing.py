@@ -128,7 +128,6 @@ def _draw_prism_monolith(canvas, scene, frame, w, h, fps_val, seed, background, 
     grid_col = rgb_to_hex(mix_oklab(background, foreground, 0.09))
     canvas.line((w * 0.07, h * 0.14, w * 0.93, h * 0.14), fill=grid_col, width=max(1, round(unit)))
 
-    # Soft grounded elliptical contact shadow under monolith assembly.
     shadow_cx, shadow_cy = w * 0.73, h * 0.66
     for ring in range(6, 0, -1):
         rx = (108 + ring * 13) * unit
@@ -169,7 +168,6 @@ def _draw_kinetic_type(canvas, scene, frame, w, h, fps_val, seed, background, fo
     for col_frac in (0.07, 0.52, 0.93):
         canvas.line((w * col_frac, h * 0.14, w * col_frac, h * 0.80), fill=subtle, width=max(1, round(unit)))
 
-    # Verlet physical ribbon pendulum on the right visual stage.
     anchor_x, anchor_y = w * 0.73, h * 0.18
     def anchor_fn(t_sec):
         swing = math.sin(t_sec * 3.4 + (seed % 11) * 0.2) * 42.0 * unit
@@ -197,7 +195,7 @@ def _draw_data_horizon(canvas, scene, frame, w, h, background, foreground, accen
 
     for step in range(5):
         gy = bottom - (bottom - top) * (step / 4.0)
-        canvas.line((left, gy, right, gy), fill=grid_col, width=max(1, round(unit)))
+        canvas.line((left, gy, right, gy), fill=grid_col, width=max(2, round(1.8 * unit)))
 
     count = len(values)
     slot = (right - left) / max(1, count)
@@ -242,7 +240,6 @@ def _draw_hud_lock(canvas, scene, frame, w, h, seed, background, foreground, acc
         r_out = r_in + 12 * unit
         canvas.line((cx + r_in * math.cos(tang), cy + r_in * math.sin(tang), cx + r_out * math.cos(tang), cy + r_out * math.sin(tang)), fill=foreground, width=max(1, round(1.8 * unit)))
 
-    # Deterministic static brand/compliance lower bar inside y=[0.84*h, h) for ROI pixel lock verification.
     bar_top = int(round(h * 0.84))
     bar_bg = rgb_to_hex(mix_oklab(foreground, background, 0.10))
     bar_fg = background
@@ -269,6 +266,16 @@ def draw(scene, frame, output, seed, supersampling=1, look_mode='agx'):
     canvas = ImageDraw.Draw(image)
     dither = (((frame * 73 + seed * 19) % 17) / 17.0 - 0.5) * 0.75 if scale >= 2 else 0.0
 
+    if recipe in {'news-ticker', 'loop-art'}:
+        from .format_plates import draw_loop_art, draw_news_ticker
+        rm = bool(output.get('reduced_motion', False))
+        if recipe == 'news-ticker':
+            bounds = draw_news_ticker(canvas, image, scene, frame, w, h, seed, scale=scale, reduced_motion=rm)
+        else:
+            bounds = draw_loop_art(canvas, image, scene, frame, w, h, seed, scale=scale, reduced_motion=rm)
+        if scale > 1:
+            image = image.resize((width, height), Image.Resampling.LANCZOS)
+        return image, bounds
     if recipe == 'shape-field':
         from .shapes import paint_shapes
         paint_shapes(image, params['shapes'], background, scene.get('locked_regions', []), output.get('original_size', (width, height)), frame, fps_val)

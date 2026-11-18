@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "görsel hiyerarşi,tasarım hiyerarşisi"
+  aliases: "görsel hiyerarşi,tasarım hiyerarşisi,visual hierarchy,visuelle Hierarchie,Blickführung gestalten"
   requires: ""
 ---
 

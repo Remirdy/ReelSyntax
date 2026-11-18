@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "müzik kısma,ducking"
+  aliases: "müzik kısma,ducking,audio ducking,Audio-Ducking,Musikabsenkung unter Sprache"
   requires: ""
 ---
 

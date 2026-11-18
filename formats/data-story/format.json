@@ -1,0 +1,111 @@
+{
+  "$schema": "https://remirdy.github.io/ReelSyntax/schemas/format.v1.schema.json",
+  "id": "data-story",
+  "version": "1.0.0",
+  "title": {
+    "en": "Data Story",
+    "tr": "Veri Hikayesi",
+    "de": "Daten-Story"
+  },
+  "category": "business",
+  "aspect": [
+    "9:16",
+    "16:9",
+    "1:1",
+    "4:5"
+  ],
+  "duration_sec": {
+    "min": 6,
+    "max": 90
+  },
+  "languages": [
+    "en",
+    "tr",
+    "de",
+    "es",
+    "fr",
+    "pt"
+  ],
+  "engines": [
+    "pillow",
+    "ffmpeg"
+  ],
+  "needs": [
+    "topic_or_metrics"
+  ],
+  "optional": [
+    "sources_json",
+    "tone",
+    "palette",
+    "cta_text"
+  ],
+  "skills": [
+    "claims-must-be-sourced",
+    "numeric-unit-typography",
+    "anti-aliasing-thin-lines",
+    "reading-speed-audit",
+    "contrast-audit",
+    "frame-clock",
+    "vertical-safe-zones",
+    "locale-aware-casing",
+    "format-runner-protocol",
+    "platform-loudness-targets",
+    "chroma-subsampling-text-guard",
+    "prompt-to-storyboard",
+    "easing-design",
+    "font-fallback-chain"
+  ],
+  "steps": [
+    {
+      "id": "idea",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "script",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "look",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "frames",
+      "type": "render",
+      "profile": "snapshot",
+      "gate": "approve"
+    },
+    {
+      "id": "pilot",
+      "type": "render",
+      "scope": "first_5s",
+      "profile": "draft",
+      "gate": "approve"
+    },
+    {
+      "id": "full",
+      "type": "render",
+      "profile": "draft",
+      "gate": "approve"
+    },
+    {
+      "id": "hero",
+      "type": "render",
+      "profile": "hero"
+    },
+    {
+      "id": "qc",
+      "type": "qc"
+    }
+  ],
+  "qc_rules": [
+    "claims-must-be-sourced",
+    "contrast",
+    "safe-area",
+    "required-glyphs",
+    "reading-speed",
+    "loudness"
+  ]
+}

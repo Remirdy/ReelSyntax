@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="__REELSYNTAX_LANG__">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="dark light">
+<meta name="referrer" content="no-referrer">
+<meta name="reelsyntax-csrf" content="__REELSYNTAX_CSRF__">
+<title>ReelSyntax Studio</title>
+<link rel="stylesheet" href="/static/app.css">
+<script src="/static/app.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main" data-i18n="ui.skip">Skip to content</a>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">RS</span>
+    <div>
+      <h1 data-i18n="ui.title">ReelSyntax Studio</h1>
+      <p class="tagline" data-i18n="app.tagline">Local, deterministic prompt-to-video production.</p>
+    </div>
+  </div>
+  <nav class="tabs" data-i18n-aria-label="ui.nav.label" aria-label="Studio sections">
+    <button type="button" class="tab" data-view="projects" aria-current="page" data-i18n="ui.nav.projects">Projects</button>
+    <button type="button" class="tab" data-view="formats" data-i18n="ui.nav.formats">Formats</button>
+    <button type="button" class="tab" data-view="new" data-i18n="ui.nav.new">New project</button>
+  </nav>
+  <label class="lang-picker">
+    <span data-i18n="ui.lang.label">Language</span>
+    <select id="lang-select"></select>
+  </label>
+</header>
+<p class="notice" data-i18n="ui.offline_notice">Offline studio: bound to this computer, network providers disabled.</p>
+<main id="main" tabindex="-1">
+  <section id="view-projects" class="view" aria-labelledby="projects-heading">
+    <div class="split">
+      <aside class="panel project-list-panel">
+        <div class="panel-head">
+          <h2 id="projects-heading" data-i18n="ui.projects.title">Projects</h2>
+          <button type="button" id="refresh-projects" class="secondary" data-i18n="ui.projects.refresh">Refresh</button>
+        </div>
+        <ul id="project-list" class="project-list"></ul>
+      </aside>
+      <div id="project-detail" class="panel project-detail">
+        <p class="muted" data-i18n="ui.project.none_selected">Select a project to inspect it.</p>
+      </div>
+    </div>
+  </section>
+  <section id="view-formats" class="view" aria-labelledby="formats-heading" hidden>
+    <h2 id="formats-heading" data-i18n="ui.formats.title">Registered formats</h2>
+    <div id="format-grid" class="format-grid"></div>
+  </section>
+  <section id="view-new" class="view" aria-labelledby="new-heading" hidden>
+    <div class="panel narrow">
+      <h2 id="new-heading" data-i18n="ui.make.title">Start a new project</h2>
+      <form id="make-form" class="form" novalidate>
+        <label class="field">
+          <span data-i18n="ui.make.prompt_label">Describe the video</span>
+          <textarea id="make-prompt" name="prompt" rows="4" maxlength="2000" required></textarea>
+        </label>
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="ui.make.format_label">Format</span>
+            <select id="make-format" name="format_id"></select>
+          </label>
+          <label class="field">
+            <span data-i18n="ui.make.aspect_label">Aspect ratio</span>
+            <select id="make-aspect" name="aspect"></select>
+          </label>
+        </div>
+        <div class="field-row">
+          <label class="field">
+            <span data-i18n="ui.make.duration_label">Duration (seconds)</span>
+            <input id="make-duration" name="duration" type="number" min="1" max="600" inputmode="numeric">
+          </label>
+          <label class="field">
+            <span data-i18n="ui.make.lang_label">Video language</span>
+            <select id="make-lang" name="lang"></select>
+          </label>
+          <label class="field">
+            <span data-i18n="ui.make.seed_label">Seed</span>
+            <input id="make-seed" name="seed" type="number" min="0" max="4294967295" value="42" inputmode="numeric">
+          </label>
+        </div>
+        <label class="field">
+          <span data-i18n="ui.make.name_label">Folder name (optional)</span>
+          <input id="make-name" name="name" type="text" maxlength="64" pattern="[a-z0-9][a-z0-9_\-]*" autocomplete="off" spellcheck="false">
+        </label>
+        <div class="actions">
+          <button type="submit" class="secondary" data-mode="dry" data-i18n="ui.make.preview">Preview budget (dry run)</button>
+          <button type="submit" class="primary" data-mode="create" data-i18n="ui.make.create">Create project</button>
+        </div>
+      </form>
+      <div id="make-result" class="result"></div>
+    </div>
+  </section>
+</main>
+<div id="status" class="status" role="status" aria-live="polite"></div>
+</body>
+</html>

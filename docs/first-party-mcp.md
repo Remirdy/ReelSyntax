@@ -31,15 +31,35 @@ Standard stdio uses UTF-8 newline-delimited JSON-RPC as described in the [MCP tr
 
 Together, `BlenderMCP` (~303 tools) and `AfterEffectsMCP` (~270 tools) expose more than 570 tool definitions, including identically named tools with incompatible schemas such as `render_preview`. Eagerly exposing all 570+ schemas in `tools/list` wastes tens of thousands of prompt tokens and causes name collisions.
 
-ReelSyntax's Unified MCP Gateway exposes a constant 9-tool meta-surface:
+ReelSyntax's Unified MCP Gateway exposes a constant 13-tool meta-surface:
 
 1. `reelsyntax_skills_search`, `reelsyntax_skills_get`, `reelsyntax_skills_explain` — progressive retrieval across the indexed production skills plus matching MCP tool summaries.
 2. `gateway_search_tools` — progressive search returning concise `blender:<tool>` and `after_effects:<tool>` summaries without full JSON schemas.
 3. `gateway_describe_tool` — lazy second-phase fetch returning the full JSON `inputSchema`, schema SHA-256, and compatible ReelSyntax skill IDs for a single selected namespaced tool.
 4. `gateway_call_tool` — validates arguments against the discovered JSON schema and active project constraints (`offline`, `no_paid_services`, `no_text`), starts the target MCP server on demand, recovers automatically from transient child-process exits, and returns structured results.
 5. `reelsyntax_project_validate`, `reelsyntax_project_plan`, `reelsyntax_project_qc` — scoped local project operations.
+6. `reelsyntax_format_list` → `reelsyntax_format_show` → `reelsyntax_format_make` → `reelsyntax_format_revise` — progressive prompt-to-video format tools (see [Format and prompt-to-video tools](#format-and-prompt-to-video-tools)).
 
 When `offline` or `no_paid_services` is enabled (the default), the gateway automatically blocks external generative/cloud tools (`comfyui_*`, `runway_*`, `generate_ai_*`, `multi_llm_*`, cloud image-to-3D) to preserve ReelSyntax's architectural boundaries.
+
+## Format and prompt-to-video tools
+
+The format tools follow the same progressive disclosure pattern as the downstream gateway: list concise summaries first, load one manifest on demand, then act on a single workspace project.
+
+| Tool | Purpose | Key arguments |
+| --- | --- | --- |
+| `reelsyntax_format_list` | Concise summaries (id, title, category, aspects, duration bounds, languages, engines, step ids, approval gates). Never returns full manifests or filesystem paths. | `category` |
+| `reelsyntax_format_show` | One validated manifest with steps, gates and QC rules; `include_docs` adds the bounded (64 KiB) `FORMAT.md`. | `format_id`, `include_docs` |
+| `reelsyntax_format_make` | `dry_run` returns the storyboard summary and render budget without writing files. Otherwise creates a gated project at a new or empty workspace-relative `project`, or advances an existing project with `step: {id, action: run\|approve\|edit\|back, edit}`. | `prompt`, `project`, `format_id`, `dry_run`, `step`, `yes`, `video_lang`, `ui_lang`, `aspect`, `duration_sec`, `seed`, `attribution`, `offline` |
+| `reelsyntax_format_revise` | Checkpointed, lock-aware revision of unlocked scenes; optional re-render. | `project`, `instruction`, `scene_id`, `render`, `profile`, `offline` |
+
+Safety rules:
+
+- **Closed parameters**: every schema sets `additionalProperties: false`; format and step identifiers must match the lowercase hyphenated format id pattern, and `video_lang`/`ui_lang` must be locale tags such as `en`, `tr` or `pt-BR`. Directory paths are never accepted as `format_id`.
+- **Path containment**: `project` resolves inside `--workspace` through `contained_path`, rejecting traversal, outside absolute paths, drive prefixes, backslashes and symbolic links. New projects require an absent or empty directory; `step` and `revise` require an existing project directory.
+- **Offline by default**: `offline` defaults to `true`, which pins the deterministic `offline_rules` provider with networking disabled. Setting `offline: false` is an explicit opt-in to the provider configured in `reelsyntax.toml` with network access allowed.
+- **Gates stay explicit**: without `yes`, `reelsyntax_format_make` stops at the first approval gate and returns `next_steps` describing the `approve`, `edit` and `back` calls. `step` mode cannot be mixed with creation-only arguments such as `prompt` or `dry_run`.
+- **Rendering is optional**: list, show, dry runs, gated creation up to the first render step and text revisions work without Pillow or FFmpeg installed.
 
 ## Local reuse, installation, and updates
 

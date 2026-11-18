@@ -1,5 +1,41 @@
 {
-  "name": "ReelSyntax media",
-  "build": {"dockerfile": "Dockerfile", "context": ".."},
-  "postCreateCommand": "python -m pip install --user -e ."
+  "name": "ReelSyntax",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "context": "..",
+    "target": "dev"
+  },
+  "remoteUser": "editor",
+  "containerUser": "editor",
+  "updateRemoteUserUID": true,
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "4gb"
+  },
+  "containerEnv": {
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "postCreateCommand": "python3 -m pip install --user -e . && python3 -m reelsyntax doctor",
+  "customizations": {
+    "codespaces": {
+      "openFiles": [
+        "README.md",
+        "docs/containers.md"
+      ]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python3",
+        "python.testing.unittestEnabled": true,
+        "python.testing.unittestArgs": [
+          "-s",
+          "tests"
+        ]
+      }
+    }
+  }
 }

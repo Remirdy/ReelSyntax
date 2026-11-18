@@ -193,7 +193,28 @@ def _apply_transitions_and_encode(directories: list[Path], scenes: list[dict], o
     return [single_seg]
 
 
-def render(project, profile='draft', max_frames=18000, timeout=180, recover=False, fallback_engine=None, cache_budget_bytes=None, allow_browser_module=False):
+HIGH_MOTION_TRANSITIONS = frozenset({'wipe_left', 'slide_left', 'slide_right', 'glitch', 'radial', 'fade_white'})
+
+
+def apply_reduced_motion_scenes(scenes: list[dict]) -> list[dict]:
+    out = []
+    for scene in scenes:
+        s_copy = dict(scene)
+        if 'camera' in s_copy and isinstance(s_copy['camera'], dict):
+            cam = dict(s_copy['camera'])
+            if cam.get('preset', 'locked') != 'locked':
+                cam['preset'] = 'locked'
+            s_copy['camera'] = cam
+        if 'transition' in s_copy and isinstance(s_copy['transition'], dict):
+            tr = dict(s_copy['transition'])
+            if tr.get('type') in HIGH_MOTION_TRANSITIONS:
+                tr['type'] = 'cut'
+            s_copy['transition'] = tr
+        out.append(s_copy)
+    return out
+
+
+def render(project, profile='draft', max_frames=18000, timeout=180, recover=False, fallback_engine=None, cache_budget_bytes=None, allow_browser_module=False, reduced_motion=False):
     if cache_budget_bytes is not None and (type(cache_budget_bytes) is not int or cache_budget_bytes < 0):
         raise ValueError('cache_budget_bytes must be a nonnegative integer')
     if profile not in {'draft', 'production', 'hero'}:
@@ -250,6 +271,9 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
         }
         if sources:
             environment['ingest_source_sha256'] = file_digest(Path(__file__).with_name('ingest.py'))
+        if reduced_motion:
+            environment['reduced_motion'] = True
+        active_scenes = apply_reduced_motion_scenes(plan['scenes']) if reduced_motion else plan['scenes']
         with ExitStack() as stack:
             from .gateway import discover_blender_binary
             blender_probe = discover_blender_binary()
@@ -299,7 +323,7 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                 stack.callback(BRAND_FONT.reset, font_token)
             supersample = 1 if profile == 'draft' else (3 if profile == 'hero' else 2)
             directories = []
-            for scene in plan['scenes']:
+            for scene in active_scenes:
                 eng = resolved_engines[scene['id']]
                 effective_scene = dict(scene)
                 if scene['recipe'] == 'shape-field':
@@ -342,7 +366,7 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                             if eng == 'browser':
                                 bounds = browser.draw(browser_scene, frame, output, plan['seed'], destination)
                             else:
-                                image, bounds = drawing.draw(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height'])), plan['seed'], supersampling=supersample)
+                                image, bounds = drawing.draw(scene, frame, dict(output, original_size=(plan['output']['width'], plan['output']['height']), reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=supersample)
                                 image.save(destination)
                             if frame in {0, scene['duration_frames'] // 2, scene['duration_frames'] - 1}:
                                 layout.append({'frame': frame, 'text': bounds})
@@ -372,7 +396,7 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
 
             with tempfile.TemporaryDirectory(prefix='delivery-', dir=state_path.parent) as temp:
                 temp = Path(temp)
-                segments = _apply_transitions_and_encode(directories, plan['scenes'], output, temp, timeout)
+                segments = _apply_transitions_and_encode(directories, active_scenes, output, temp, timeout)
                 concat = temp / 'concat.txt'
                 concat.write_text('\n'.join(f"file '{seg.name}'" for seg in segments) + '\n', encoding='utf-8')
                 args = [executable('ffmpeg'), '-v', 'error', '-nostdin', '-y', '-f', 'concat', '-safe', '1', '-i', 'concat.txt']
@@ -442,8 +466,8 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
                 hero_scene = next((s for s in plan['scenes'] if resolved_engines[s['id']] == 'pillow' and s['recipe'] != 'layer-stack'), plan['scenes'][0])
                 mid_f = hero_scene['duration_frames'] // 2
                 if resolved_engines[hero_scene['id']] == 'pillow' and hero_scene['recipe'] != 'layer-stack':
-                    neutral_img, _ = drawing.draw(hero_scene, mid_f, output, plan['seed'], supersampling=2, look_mode='neutral')
-                    graded_img, _ = drawing.draw(hero_scene, mid_f, output, plan['seed'], supersampling=3, look_mode='agx')
+                    neutral_img, _ = drawing.draw(hero_scene, mid_f, dict(output, reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=2, look_mode='neutral')
+                    graded_img, _ = drawing.draw(hero_scene, mid_f, dict(output, reduced_motion=bool(reduced_motion)), plan['seed'], supersampling=3, look_mode='agx')
                     ab_sheet = Image.new('RGB', (960, 270), '#14171c')
                     ab_sheet.paste(ImageOps.contain(neutral_img.convert('RGB'), (480, 270)), (0, 0))
                     ab_sheet.paste(ImageOps.contain(graded_img.convert('RGB'), (480, 270)), (480, 0))
@@ -483,6 +507,7 @@ def render(project, profile='draft', max_frames=18000, timeout=180, recover=Fals
             'elapsed_seconds': round(time.perf_counter() - started, 4),
             'environment': environment,
             'frames': metadata['frames'],
+            'reduced_motion': bool(reduced_motion),
             'output_settings': output,
             'sound': sound,
             'fallbacks_used': fallbacks_used,

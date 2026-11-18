@@ -1,0 +1,6 @@
+{
+  "locale": "de",
+  "max_hook_sec": 2.0,
+  "hook_kicker": "STOPP",
+  "payoff_kicker": "FAZIT"
+}

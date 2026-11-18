@@ -1,0 +1,33 @@
+name: Language and localization
+description: Propose a new language profile, locale catalog, or routing alias pack
+labels: ["i18n"]
+body:
+  - type: input
+    id: locale-code
+    attributes:
+      label: "BCP-47 language code and script"
+      placeholder: "fr (Latn, LTR)"
+    validations:
+      required: true
+  - type: dropdown
+    id: tier
+    attributes:
+      label: "Target support tier"
+      options:
+        - "Tier 1 (Full UI, docs, morphology, captions, templates, golden tests)"
+        - "Tier 2 (UI catalog, routing aliases, caption profile, glyph audit)"
+        - "Tier 3 (RTL or CJK shaping and line-breaking verification)"
+    validations:
+      required: true
+  - type: textarea
+    id: typography-rules
+    attributes:
+      label: "Required glyphs, casing rules, quotation marks, and caption reading-speed defaults"
+    validations:
+      required: true
+  - type: input
+    id: maintainer
+    attributes:
+      label: "Language maintainer GitHub handle"
+    validations:
+      required: true

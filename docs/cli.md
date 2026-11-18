@@ -4,10 +4,18 @@
 
 | Command | Behavior |
 | --- | --- |
+| `make <prompt> [--format ID] [--out DIR] [--yes] [--dry-run]` | Compile a natural-language prompt into a stateful format project (`prompt.json` + `.formats/state.json`), estimate render budget (`--dry-run`), or run approval-gated video production |
+| `step <project> <step_id> [--approve\|--edit TEXT\|--back]` | Inspect, approve, revise, or step back an approval-gated format workflow step |
+| `revise <project> <instruction> [--scene ID] [--render]` | Apply a targeted, checkpointed edit to unlocked scenes while preserving locked scenes and unaffected scene caches |
+| `ui [--host HOST] [--port PORT] [--project DIR] [--no-open] [--allow-non-loopback]` | Launch the zero-dependency localhost web studio (`127.0.0.1:8765` by default, CSRF-protected) to browse formats, inspect timelines/snapshots/videos/QC, approve or edit steps, revise scenes, and preview or create projects |
+| `completion <bash\|zsh\|fish\|powershell>` | Generate shell tab-completion scripts dynamically from registered CLI commands and flags |
 | `config <show\|path\|init\|validate>` | Inspect merged `reelsyntax.toml` settings, print user/project config paths, create a starter TOML, or validate syntax and bounds |
-| `schema [--kind reel\|config] [--schema-version N]` | Print or write the versioned editor JSON Schema for `reel.json` or `reelsyntax.toml` |
+| `formats <list\|show\|new\|validate\|install\|uninstall\|installed>` | Browse available formats, scaffold or validate data-only format packages, or install/remove community formats from local paths, `.zip` archives, or git URLs (`--allow-network`) |
+| `assets <list\|materialize\|register\|licenses>` | Browse CC0/MIT starter music beds, SFX, palettes, and graphics; materialize starter `.wav`/`.png` packs; register local assets; or audit SPDX licenses and emit `LICENSES.md` |
+| `lang <list\|show\|new\|validate>` | List supported locales and owner-verification flags, inspect a language profile, scaffold a new locale, or validate key/placeholder parity |
+| `schema [--kind reel\|config\|format] [--schema-version N]` | Print or write the versioned editor JSON Schema for `reel.json`, `reelsyntax.toml`, or `format.json` |
 | `migrate <project> [--dry-run]` | Upgrade legacy or unversioned `reel.json` files to `schema_version: 1` with `.reelsyntax/migrations/` backup |
-| `doctor` | Probe Python, FFmpeg/FFprobe, Pillow, Chromium, Blender, After Effects/`aerender`, and first-party MCP status |
+| `doctor [--providers] [--blender] [--tts] [--stt] [--report]` | Probe Python, FFmpeg/FFprobe, Pillow, Chromium, headless Blender (`--blender`), local providers (`--providers`), measured TTS/STT (`--tts`, `--stt`), and path-redacted reports (`--report`) |
 | `integrations` | Report submodule initialization, pinned commits, package versions, and runtime readiness for `BlenderMCP` and `AfterEffectsMCP` |
 | `capabilities` | Refresh or progressively search namespaced `blender:*` and `after_effects:*` MCP tools without dumping full schemas |
 | `install <blender\|after-effects\|--all>` | Reuse existing compatible local runtimes or initialize submodules and local environments (`--dry-run` supported) |
@@ -15,10 +23,10 @@
 | `mcp --workspace PATH` | Run the Unified MCP Gateway over stdio; scope project validation/planning/QC to PATH (default: current directory) |
 | `init <directory>` | Write starter `reel.json` into a new or empty directory |
 | `validate`, `plan`, `status` | Validate `reel.json`, inspect integer-frame sequential timeline, or read persisted render state |
-| `render`, `resume` | Render/cache scenes (`draft`, `production`, `hero`), synthesize stems/mix, apply transitions, encode BT.709 MP4, and write review sheets (`--fallback pillow\|browser` optional) |
+| `render`, `resume` | Render/cache scenes (`draft`, `production`, `hero`), synthesize stems/mix, apply transitions, encode BT.709 MP4, and write review sheets (`--fallback pillow\|browser`, `--reduced-motion` optional) |
 | `cache --max-mib N` | Preview LRU removal of recognized unreferenced scene caches; `--apply` removes them under the shared render lock |
 | `ingest-psd --source PATH --destination DIR` | Extract supported local PSD raster layers into a new directory using an existing optional Node runtime |
-| `qc` | Run FFprobe/decode/black/freeze/silence/loudness scans plus WCAG contrast, glyph coverage, cue-onset alignment, temporal continuity, and ROI lock checks |
+| `qc [--rule NAME]` | Run FFprobe/decode/black/freeze/silence/loudness scans plus WCAG contrast, glyph coverage, reading speed, vertical safe zones, opening hook, claim sourcing (`--rule claims-must-be-sourced`), license ledger, mouth sync, and ROI lock checks |
 | `snapshot --frame N` | Decode an exact frame from `output/<profile>.mp4` |
 | `diff --base A --target B` | Compare two rendered profiles (`mae_rgb8`, `psnr_db`, audio RMS delta, and side-by-side visual diff sheet) |
 | `export --format FMT` | Export `otio`, `fcpxml` (v1.10), `vtt`, `srt`, `svg`, or native `blender` editorial project |

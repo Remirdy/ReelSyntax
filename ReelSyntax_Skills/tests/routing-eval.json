@@ -1,165 +1,5931 @@
 {
   "version": "2.0.0",
   "cases": [
-    {"id":"tr-inflection", "task":{"intent":"PS D dosyalarını seslendirmeyle eşleştirin", "assets":["psd","wav"]}, "relevant":["asset-matching","psd-voiceover-matching","psd-to-video","voiceover-alignment","motionpilot-psd-pipeline"]},
-    {"id":"english-paraphrase", "task":{"intent":"Bind the motion to words in the narration, word anchored timing"}, "relevant":["word-anchored-timeline","voiceover-alignment","frame-clock"]},
-    {"id":"mixed-language", "task":{"intent":"GitHub tanıtım için terminal animation ve beat sync"}, "relevant":["repository-to-video","beat-synced-editing","terminal-animation"]},
-    {"id":"text-negation", "task":{"intent":"No text. kinetic typography is forbidden."}, "relevant":["textless-visual-design"], "forbidden":["kinetic-typography","word-reveal","lower-thirds","variable-font-animation"]},
-    {"id":"camera-negation", "task":{"intent":"Kamerayı oynatma, orbit camera istemiyorum"}, "relevant":["locked-camera","camera-continuity"], "forbidden":["orbit-camera","slow-dolly","camera-inertia-rig","procedural-camera-shake"]},
-    {"id":"no-audio", "task":{"intent":"Silent video, no audio, cinematic drone and foley", "constraints":{"no_audio":true}}, "relevant":[], "forbidden":["cinematic-drone","foley-design","aerial-shot"]},
-    {"id":"unavailable-blender", "task":{"intent":"blender cycles", "capabilities":[]}, "relevant":[], "forbidden":["blender-cycles"]},
-    {"id":"available-blender", "task":{"intent":"blender cycles", "capabilities":["blender"]}, "relevant":["blender-cycles"]},
-    {"id":"stage-render", "task":{"intent":"render devam", "stage":"render"}, "relevant":["resume-render","render-cache"]},
-    {"id":"dependency", "task":{"intent":"sadece değişen sahne", "include":["partial-render"]}, "relevant":["partial-render","render-cache"]},
-    {"id":"typo", "task":{"intent":"kinetci typography"}, "relevant":["kinetic-typography"]},
-    {"id":"suffix", "task":{"intent":"sahneleri render devam"}, "relevant":["resume-render","render-cache","partial-render"]},
-    {"id":"cue", "task":{"intent":"seslendirme senkronu"}, "relevant":["voiceover-alignment"]},
-    {"id":"region", "task":{"intent":"Alt bar sabit kalmalı; locked region editing"}, "relevant":["locked-region-editing","locked-camera"]},
-    {"id":"unicode", "task":{"intent":"Türkçe karakter eksik glyph kontrolü"}, "relevant":["turkish-glyph-audit","font-render-audit"]},
-    {"id":"black", "task":{"intent":"Detect siyah kare in final output"}, "relevant":["black-frame-detection"]},
-    {"id":"budget", "task":{"intent":"PS D animasyon seslendirme senkronu", "context_budget":1}, "relevant":[]},
-    {"id":"explicit", "task":{"intent":"Match these inputs", "include":["asset-matching"]}, "relevant":["asset-matching"]},
-    {"id":"exclude", "task":{"intent":"orbit camera", "exclude":["orbit-camera"]}, "relevant":[], "forbidden":["orbit-camera"]},
-    {"id":"unrelated", "task":{"intent":"xqz elephant sandwich"}, "relevant":[]},
-    {"id":"generic", "task":{"intent":"Make me a video please"}, "relevant":[]},
-    {"id":"transcode", "task":{"intent":"ffmpeg transcoding", "capabilities":["ffmpeg"], "assets":["mov"]}, "relevant":["ffmpeg-transcoding"]},
-    {"id":"export", "task":{"intent":"fcpxml", "stage":"export"}, "relevant":["fcpxml-export","frame-clock"]},
-    {"id":"math", "task":{"intent":"lineer cebir"}, "relevant":["linear-algebra-visualization"]},
-    {"id":"foley", "task":{"intent":"foley"}, "relevant":["foley-design"]},
-    {"id":"workflow", "task":{"intent":"öğretmenler günü storyboard kamera sabit yazı olmasın"}, "relevant":["teacher-tribute","storyboard","locked-camera","textless-visual-design","creative-constraint-lock"], "forbidden":["kinetic-typography","orbit-camera"]},
-    {"id":"browser-unavailable", "task":{"intent":"headless browser render", "capabilities":[]}, "relevant":[], "forbidden":["headless-browser-render","browser-frame-capture","webcodecs-offscreen-canvas"]},
-    {"id":"no-music", "task":{"intent":"müziksiz cinematic drone", "constraints":{"no_music":true}}, "relevant":[], "forbidden":["cinematic-drone","aerial-shot"]},
-    {"id":"sound-level", "task":{"intent":"loudness normalization"}, "relevant":["loudness-normalization"]},
-    {"id":"skill-system", "task":{"intent":"skill seçimi"}, "relevant":["skill-routing"]},
-    {"id":"first-party-ae-psd", "task":{"intent":"motionpilot psd katmanlı aep otomasyon", "capabilities":["after-effects-mcp"], "assets":["psd"]}, "relevant":["motionpilot-psd-pipeline","after-effects-mcp"]},
-    {"id":"first-party-ae-vfx", "task":{"intent":"motionpilot vfx flipbook sprite sheet", "capabilities":["after-effects-mcp"]}, "relevant":["after-effects-mcp","motionpilot-vfx-flipbook","sprite-sheet-animation"]},
-    {"id":"first-party-blender-nodes", "task":{"intent":"remirdy blender node graph procedural shader geometry", "capabilities":["blender-mcp"]}, "relevant":["blender-mcp","remirdy-blender-nodes","blender-geometry-nodes"]},
-    {"id":"blender-ae-handoff", "task":{"intent":"blender after effects köprüsü 3d kamera aktarımı", "assets":["glb","aep"]}, "relevant":["blender-ae-interchange","frame-clock"]},
-    {"id":"mcp-gateway", "task":{"intent":"birleşik mcp geçidi progressive tool discovery"}, "relevant":["mcp-gateway-routing","mcp-tool-contract"]},
-    {"id":"agx-tonemapping", "task":{"intent":"agx tonemapping filmic highlight rolloff"}, "relevant":["agx-aces-tonemapping"]},
-    {"id":"camera-spring-rig", "task":{"intent":"kamera ataleti spring damper camera"}, "relevant":["camera-inertia-rig"]},
-    {"id":"camera-spring-blocked", "task":{"intent":"spring damper camera rig", "constraints":{"camera_locked":true}}, "relevant":["locked-camera"], "forbidden":["camera-inertia-rig"]},
-    {"id":"pan-judder", "task":{"intent":"180 derece obtüratör pan judder titreme kontrolü"}, "relevant":["shutter-angle-judder"]},
-    {"id":"camera-trauma", "task":{"intent":"camera trauma darbe sarsıntısı"}, "relevant":["procedural-camera-shake"]},
-    {"id":"sdf-boolean", "task":{"intent":"signed distance field smooth boolean raymarching"}, "relevant":["signed-distance-fields"]},
-    {"id":"verlet-rope", "task":{"intent":"verlet physics kablo fiziği ip simülasyonu"}, "relevant":["verlet-constraint-solver"]},
-    {"id":"variable-font", "task":{"intent":"değişken font animasyonu tabular figures"}, "relevant":["variable-font-animation"]},
-    {"id":"oklch-palette", "task":{"intent":"oklch renk paleti algısal renk geçişi"}, "relevant":["oklch-perceptual-palettes"]},
-    {"id":"webcodecs", "task":{"intent":"offscreencanvas webcodecs render", "capabilities":["browser"]}, "relevant":["webcodecs-offscreen-canvas","frame-clock"]},
-    {"id":"openusd", "task":{"intent":"openusd usda sahne variant", "assets":["usda"]}, "relevant":["usd-scene-assembly"]},
-    {"id":"ebu-gating", "task":{"intent":"ebu r128 dialogue gating kısa video ses seviyesi", "capabilities":["ffmpeg"]}, "relevant":["ebu-r128-dialogue-gating"]},
-    {"id":"flicker-qa", "task":{"intent":"temporal flicker luminance pop kontrolü"}, "relevant":["temporal-flicker-audit"]},
-    {"id":"otio-timeline", "task":{"intent":"otio export timeline", "assets":["otio"]}, "relevant":["otio-export","frame-clock"]},
-    {"id":"antigravity-host", "task":{"intent":"antigravity entegrasyon skill"}, "relevant":["antigravity-integration"]},
-    {"id":"en-tutorial-how-to","task":{"intent":"how-to video"},"relevant":["tutorial-how-to"]},
-    {"id":"tr-tutorial-how-to","task":{"intent":"nasıl yapılır videosu"},"relevant":["tutorial-how-to"]},
-    {"id":"en-app-store-preview","task":{"intent":"app store preview"},"relevant":["app-store-preview"]},
-    {"id":"tr-app-store-preview","task":{"intent":"uygulama mağazası videosu"},"relevant":["app-store-preview"]},
-    {"id":"en-customer-testimonial","task":{"intent":"testimonial"},"relevant":["customer-testimonial"]},
-    {"id":"tr-customer-testimonial","task":{"intent":"müşteri yorumu videosu"},"relevant":["customer-testimonial"]},
-    {"id":"en-gaming-highlight-montage","task":{"intent":"gaming highlight"},"relevant":["gaming-highlight-montage"]},
-    {"id":"tr-gaming-highlight-montage","task":{"intent":"oyun özet montajı"},"relevant":["gaming-highlight-montage"]},
-    {"id":"en-recipe-cooking-video","task":{"intent":"recipe video"},"relevant":["recipe-cooking-video"]},
-    {"id":"tr-recipe-cooking-video","task":{"intent":"yemek tarifi videosu"},"relevant":["recipe-cooking-video"]},
-    {"id":"en-news-explainer","task":{"intent":"news explainer"},"relevant":["news-explainer"]},
-    {"id":"tr-news-explainer","task":{"intent":"haber açıklayıcı"},"relevant":["news-explainer"]},
-    {"id":"en-social-thread-to-video","task":{"intent":"thread to video"},"relevant":["social-thread-to-video"]},
-    {"id":"tr-social-thread-to-video","task":{"intent":"konu dizisini videoya çevir"},"relevant":["social-thread-to-video"]},
-    {"id":"en-before-after-comparison","task":{"intent":"before after"},"relevant":["before-after-comparison"]},
-    {"id":"tr-before-after-comparison","task":{"intent":"önce sonra karşılaştırma"},"relevant":["before-after-comparison"]},
-    {"id":"en-quote-card-motion","task":{"intent":"quote card"},"relevant":["quote-card-motion"]},
-    {"id":"tr-quote-card-motion","task":{"intent":"alıntı kartı animasyonu"},"relevant":["quote-card-motion"]},
-    {"id":"en-livestream-overlay","task":{"intent":"stream overlay"},"relevant":["livestream-overlay"]},
-    {"id":"tr-livestream-overlay","task":{"intent":"yayın katmanı"},"relevant":["livestream-overlay"]},
-    {"id":"en-animated-sticker-pack","task":{"intent":"sticker pack"},"relevant":["animated-sticker-pack"]},
-    {"id":"tr-animated-sticker-pack","task":{"intent":"hareketli çıkartma seti"},"relevant":["animated-sticker-pack"]},
-    {"id":"en-countdown-timer-video","task":{"intent":"countdown"},"relevant":["countdown-timer-video"]},
-    {"id":"tr-countdown-timer-video","task":{"intent":"geri sayım videosu"},"relevant":["countdown-timer-video"]},
-    {"id":"en-mermaid-to-video","task":{"intent":"mermaid animation"},"relevant":["mermaid-to-video"]},
-    {"id":"tr-mermaid-to-video","task":{"intent":"mermaid videosu"},"relevant":["mermaid-to-video"]},
-    {"id":"en-sequence-diagram-animation","task":{"intent":"sequence diagram"},"relevant":["sequence-diagram-animation"]},
-    {"id":"tr-sequence-diagram-animation","task":{"intent":"sıralı diyagram"},"relevant":["sequence-diagram-animation"]},
-    {"id":"en-architecture-diagram-animation","task":{"intent":"architecture diagram"},"relevant":["architecture-diagram-animation"]},
-    {"id":"tr-architecture-diagram-animation","task":{"intent":"mimari diyagram"},"relevant":["architecture-diagram-animation"]},
-    {"id":"en-code-diff-animation","task":{"intent":"code diff"},"relevant":["code-diff-animation"]},
-    {"id":"tr-code-diff-animation","task":{"intent":"kod farkı animasyonu"},"relevant":["code-diff-animation"]},
-    {"id":"en-benchmark-results-video","task":{"intent":"benchmark video"},"relevant":["benchmark-results-video"]},
-    {"id":"tr-benchmark-results-video","task":{"intent":"performans sonuçları"},"relevant":["benchmark-results-video"]},
-    {"id":"en-sankey-flow-animation","task":{"intent":"sankey"},"relevant":["sankey-flow-animation"]},
-    {"id":"tr-sankey-flow-animation","task":{"intent":"akış diyagramı"},"relevant":["sankey-flow-animation"]},
-    {"id":"en-heatmap-animation","task":{"intent":"heatmap"},"relevant":["heatmap-animation"]},
-    {"id":"tr-heatmap-animation","task":{"intent":"ısı haritası"},"relevant":["heatmap-animation"]},
-    {"id":"en-choropleth-map-animation","task":{"intent":"choropleth"},"relevant":["choropleth-map-animation"]},
-    {"id":"tr-choropleth-map-animation","task":{"intent":"bölge haritası"},"relevant":["choropleth-map-animation"]},
-    {"id":"en-candlestick-finance-chart","task":{"intent":"candlestick"},"relevant":["candlestick-finance-chart"]},
-    {"id":"tr-candlestick-finance-chart","task":{"intent":"mum grafik"},"relevant":["candlestick-finance-chart"]},
-    {"id":"en-swiss-grid-motion","task":{"intent":"swiss grid"},"relevant":["swiss-grid-motion"]},
-    {"id":"tr-swiss-grid-motion","task":{"intent":"isviçre ızgara"},"relevant":["swiss-grid-motion"]},
-    {"id":"en-halftone-risograph-style","task":{"intent":"halftone"},"relevant":["halftone-risograph-style"]},
-    {"id":"tr-halftone-risograph-style","task":{"intent":"risograph baskı"},"relevant":["halftone-risograph-style"]},
-    {"id":"en-toon-shading-npr","task":{"intent":"toon shading"},"relevant":["toon-shading-npr"]},
-    {"id":"tr-toon-shading-npr","task":{"intent":"çizgi film gölgelendirme"},"relevant":["toon-shading-npr"]},
-    {"id":"en-glassmorphism-motion","task":{"intent":"glassmorphism"},"relevant":["glassmorphism-motion"]},
-    {"id":"tr-glassmorphism-motion","task":{"intent":"cam efekti"},"relevant":["glassmorphism-motion"]},
-    {"id":"en-brutalist-motion","task":{"intent":"brutalist design"},"relevant":["brutalist-motion"]},
-    {"id":"tr-brutalist-motion","task":{"intent":"brütalist tasarım"},"relevant":["brutalist-motion"]},
-    {"id":"en-vaporwave-synthwave-style","task":{"intent":"synthwave"},"relevant":["vaporwave-synthwave-style"]},
-    {"id":"tr-vaporwave-synthwave-style","task":{"intent":"retro gelecek"},"relevant":["vaporwave-synthwave-style"]},
-    {"id":"en-multilingual-glyph-audit","task":{"intent":"glyph audit"},"relevant":["multilingual-glyph-audit"]},
-    {"id":"tr-multilingual-glyph-audit","task":{"intent":"karakter seti denetimi"},"relevant":["multilingual-glyph-audit"]},
-    {"id":"en-text-expansion-layout","task":{"intent":"text expansion"},"relevant":["text-expansion-layout"]},
-    {"id":"tr-text-expansion-layout","task":{"intent":"metin genişlemesi"},"relevant":["text-expansion-layout"]},
-    {"id":"en-cjk-typography","task":{"intent":"CJK typography"},"relevant":["cjk-typography"]},
-    {"id":"tr-cjk-typography","task":{"intent":"CJK tipografi"},"relevant":["cjk-typography"]},
-    {"id":"en-complex-script-shaping","task":{"intent":"script shaping"},"relevant":["complex-script-shaping"]},
-    {"id":"tr-complex-script-shaping","task":{"intent":"karmaşık yazı sistemleri"},"relevant":["complex-script-shaping"]},
-    {"id":"en-locale-formatting","task":{"intent":"locale format"},"relevant":["locale-formatting"]},
-    {"id":"tr-locale-formatting","task":{"intent":"yerel biçimlendirme"},"relevant":["locale-formatting"]},
-    {"id":"en-font-fallback-chain","task":{"intent":"font fallback"},"relevant":["font-fallback-chain"]},
-    {"id":"tr-font-fallback-chain","task":{"intent":"yedek font zinciri"},"relevant":["font-fallback-chain"]},
-    {"id":"en-emoji-rendering","task":{"intent":"emoji rendering"},"relevant":["emoji-rendering"]},
-    {"id":"tr-emoji-rendering","task":{"intent":"emoji çizimi"},"relevant":["emoji-rendering"]},
-    {"id":"en-vertical-safe-zones","task":{"intent":"safe zones"},"relevant":["vertical-safe-zones"]},
-    {"id":"tr-vertical-safe-zones","task":{"intent":"güvenli alanlar"},"relevant":["vertical-safe-zones"]},
-    {"id":"en-content-credentials-labeling","task":{"intent":"C2PA"},"relevant":["content-credentials-labeling"]},
-    {"id":"tr-content-credentials-labeling","task":{"intent":"içerik kimliği ve etiket"},"relevant":["content-credentials-labeling"]},
-    {"id":"en-media-metadata-tagging","task":{"intent":"metadata tagging"},"relevant":["media-metadata-tagging"]},
-    {"id":"tr-media-metadata-tagging","task":{"intent":"medya üst verisi"},"relevant":["media-metadata-tagging"]},
-    {"id":"en-audio-description-track","task":{"intent":"audio description"},"relevant":["audio-description-track"]},
-    {"id":"tr-audio-description-track","task":{"intent":"sesli betimleme"},"relevant":["audio-description-track"]},
-    {"id":"en-reduced-motion-variant","task":{"intent":"reduced motion"},"relevant":["reduced-motion-variant"]},
-    {"id":"tr-reduced-motion-variant","task":{"intent":"azaltılmış hareket"},"relevant":["reduced-motion-variant"]},
-    {"id":"en-reading-speed-audit","task":{"intent":"reading speed"},"relevant":["reading-speed-audit"]},
-    {"id":"tr-reading-speed-audit","task":{"intent":"okuma hızı"},"relevant":["reading-speed-audit"]},
-    {"id":"en-color-blind-simulation-audit","task":{"intent":"color blind check"},"relevant":["color-blind-simulation-audit"]},
-    {"id":"tr-color-blind-simulation-audit","task":{"intent":"renk körlüğü denetimi"},"relevant":["color-blind-simulation-audit"]},
-    {"id":"en-loop-seam-audit","task":{"intent":"loop seam"},"relevant":["loop-seam-audit"]},
-    {"id":"tr-loop-seam-audit","task":{"intent":"döngü dikişi"},"relevant":["loop-seam-audit"]},
-    {"id":"en-local-speech-to-text","task":{"intent":"local transcription"},"relevant":["local-speech-to-text"]},
-    {"id":"tr-local-speech-to-text","task":{"intent":"yerel yazıya dökme"},"relevant":["local-speech-to-text"]},
-    {"id":"en-local-text-to-speech","task":{"intent":"local TTS"},"relevant":["local-text-to-speech"]},
-    {"id":"tr-local-text-to-speech","task":{"intent":"yerel seslendirme"},"relevant":["local-text-to-speech"]},
-    {"id":"en-skill-alias-localization","task":{"intent":"alias localization"},"relevant":["skill-alias-localization"]},
-    {"id":"tr-skill-alias-localization","task":{"intent":"alias yerelleştirme"},"relevant":["skill-alias-localization"]},
-    {"id":"en-skill-status-promotion","task":{"intent":"status promotion"},"relevant":["skill-status-promotion"]},
-    {"id":"tr-skill-status-promotion","task":{"intent":"durum yükseltme"},"relevant":["skill-status-promotion"]},
-    {"id":"en-host-compat-matrix","task":{"intent":"compat matrix"},"relevant":["host-compat-matrix"]},
-    {"id":"tr-host-compat-matrix","task":{"intent":"uyumluluk matrisi"},"relevant":["host-compat-matrix"]},
-    {"id":"en-mcp-registry-publishing","task":{"intent":"MCP publishing"},"relevant":["mcp-registry-publishing"]},
-    {"id":"tr-mcp-registry-publishing","task":{"intent":"MCP yayınlama"},"relevant":["mcp-registry-publishing"]},
-    {"id":"en-example-gallery-curation","task":{"intent":"example gallery"},"relevant":["example-gallery-curation"]},
-    {"id":"tr-example-gallery-curation","task":{"intent":"örnek galerisi"},"relevant":["example-gallery-curation"]},
-    {"id":"de-frame-clock","task":{"intent":"Bildfrequenz"},"relevant":["frame-clock"]},
-    {"id":"es-frame-clock","task":{"intent":"reloj de fotogramas"},"relevant":["frame-clock"]},
-    {"id":"fr-frame-clock","task":{"intent":"cadence des images"},"relevant":["frame-clock"]},
-    {"id":"pt-frame-clock","task":{"intent":"taxa de quadros"},"relevant":["frame-clock"]},
-    {"id":"de-locked-camera","task":{"intent":"feste Kamera"},"relevant":["locked-camera"]},
-    {"id":"es-locked-camera","task":{"intent":"cámara fija"},"relevant":["locked-camera"]},
-    {"id":"fr-locked-camera","task":{"intent":"caméra fixe"},"relevant":["locked-camera"]},
-    {"id":"pt-locked-camera","task":{"intent":"câmera fixa"},"relevant":["locked-camera"]},
-    {"id":"de-black-frame-detection","task":{"intent":"Schwarzbilder erkennen"},"relevant":["black-frame-detection"]},
-    {"id":"es-black-frame-detection","task":{"intent":"detectar fotogramas negros"},"relevant":["black-frame-detection"]},
-    {"id":"fr-black-frame-detection","task":{"intent":"détecter les images noires"},"relevant":["black-frame-detection"]},
-    {"id":"pt-black-frame-detection","task":{"intent":"detectar quadros pretos"},"relevant":["black-frame-detection"]}
+    {
+      "id": "tr-inflection",
+      "task": {
+        "intent": "PS D dosyalarını seslendirmeyle eşleştirin",
+        "assets": [
+          "psd",
+          "wav"
+        ]
+      },
+      "relevant": [
+        "asset-matching",
+        "psd-voiceover-matching",
+        "psd-to-video",
+        "voiceover-alignment",
+        "motionpilot-psd-pipeline"
+      ]
+    },
+    {
+      "id": "english-paraphrase",
+      "task": {
+        "intent": "Bind the motion to words in the narration, word anchored timing"
+      },
+      "relevant": [
+        "word-anchored-timeline",
+        "voiceover-alignment",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "mixed-language",
+      "task": {
+        "intent": "GitHub tanıtım için terminal animation ve beat sync"
+      },
+      "relevant": [
+        "repository-to-video",
+        "beat-synced-editing",
+        "terminal-animation"
+      ]
+    },
+    {
+      "id": "text-negation",
+      "task": {
+        "intent": "No text. kinetic typography is forbidden."
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "kinetic-typography",
+        "word-reveal",
+        "lower-thirds",
+        "variable-font-animation"
+      ]
+    },
+    {
+      "id": "camera-negation",
+      "task": {
+        "intent": "Kamerayı oynatma, orbit camera istemiyorum"
+      },
+      "relevant": [
+        "locked-camera",
+        "camera-continuity"
+      ],
+      "forbidden": [
+        "orbit-camera",
+        "slow-dolly",
+        "camera-inertia-rig",
+        "procedural-camera-shake"
+      ]
+    },
+    {
+      "id": "no-audio",
+      "task": {
+        "intent": "Silent video, no audio, cinematic drone and foley",
+        "constraints": {
+          "no_audio": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "cinematic-drone",
+        "foley-design",
+        "aerial-shot"
+      ]
+    },
+    {
+      "id": "unavailable-blender",
+      "task": {
+        "intent": "blender cycles",
+        "capabilities": []
+      },
+      "relevant": [],
+      "forbidden": [
+        "blender-cycles"
+      ]
+    },
+    {
+      "id": "available-blender",
+      "task": {
+        "intent": "blender cycles",
+        "capabilities": [
+          "blender"
+        ]
+      },
+      "relevant": [
+        "blender-cycles"
+      ]
+    },
+    {
+      "id": "stage-render",
+      "task": {
+        "intent": "render devam",
+        "stage": "render"
+      },
+      "relevant": [
+        "resume-render",
+        "render-cache"
+      ]
+    },
+    {
+      "id": "dependency",
+      "task": {
+        "intent": "sadece değişen sahne",
+        "include": [
+          "partial-render"
+        ]
+      },
+      "relevant": [
+        "partial-render",
+        "render-cache"
+      ]
+    },
+    {
+      "id": "typo",
+      "task": {
+        "intent": "kinetci typography"
+      },
+      "relevant": [
+        "kinetic-typography"
+      ]
+    },
+    {
+      "id": "suffix",
+      "task": {
+        "intent": "sahneleri render devam"
+      },
+      "relevant": [
+        "resume-render",
+        "render-cache",
+        "partial-render"
+      ]
+    },
+    {
+      "id": "cue",
+      "task": {
+        "intent": "seslendirme senkronu"
+      },
+      "relevant": [
+        "voiceover-alignment"
+      ]
+    },
+    {
+      "id": "region",
+      "task": {
+        "intent": "Alt bar sabit kalmalı; locked region editing"
+      },
+      "relevant": [
+        "locked-region-editing",
+        "locked-camera"
+      ]
+    },
+    {
+      "id": "unicode",
+      "task": {
+        "intent": "Türkçe karakter eksik glyph kontrolü"
+      },
+      "relevant": [
+        "turkish-glyph-audit",
+        "font-render-audit"
+      ]
+    },
+    {
+      "id": "black",
+      "task": {
+        "intent": "Detect siyah kare in final output"
+      },
+      "relevant": [
+        "black-frame-detection"
+      ]
+    },
+    {
+      "id": "budget",
+      "task": {
+        "intent": "PS D animasyon seslendirme senkronu",
+        "context_budget": 1
+      },
+      "relevant": []
+    },
+    {
+      "id": "explicit",
+      "task": {
+        "intent": "Match these inputs",
+        "include": [
+          "asset-matching"
+        ]
+      },
+      "relevant": [
+        "asset-matching"
+      ]
+    },
+    {
+      "id": "exclude",
+      "task": {
+        "intent": "orbit camera",
+        "exclude": [
+          "orbit-camera"
+        ]
+      },
+      "relevant": [],
+      "forbidden": [
+        "orbit-camera"
+      ]
+    },
+    {
+      "id": "unrelated",
+      "task": {
+        "intent": "xqz elephant sandwich"
+      },
+      "relevant": []
+    },
+    {
+      "id": "generic",
+      "task": {
+        "intent": "Make me a video please"
+      },
+      "relevant": []
+    },
+    {
+      "id": "transcode",
+      "task": {
+        "intent": "ffmpeg transcoding",
+        "capabilities": [
+          "ffmpeg"
+        ],
+        "assets": [
+          "mov"
+        ]
+      },
+      "relevant": [
+        "ffmpeg-transcoding"
+      ]
+    },
+    {
+      "id": "export",
+      "task": {
+        "intent": "fcpxml",
+        "stage": "export"
+      },
+      "relevant": [
+        "fcpxml-export",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "math",
+      "task": {
+        "intent": "lineer cebir"
+      },
+      "relevant": [
+        "linear-algebra-visualization"
+      ]
+    },
+    {
+      "id": "foley",
+      "task": {
+        "intent": "foley"
+      },
+      "relevant": [
+        "foley-design"
+      ]
+    },
+    {
+      "id": "workflow",
+      "task": {
+        "intent": "öğretmenler günü storyboard kamera sabit yazı olmasın"
+      },
+      "relevant": [
+        "teacher-tribute",
+        "storyboard",
+        "locked-camera",
+        "textless-visual-design",
+        "creative-constraint-lock"
+      ],
+      "forbidden": [
+        "kinetic-typography",
+        "orbit-camera"
+      ]
+    },
+    {
+      "id": "browser-unavailable",
+      "task": {
+        "intent": "headless browser render",
+        "capabilities": []
+      },
+      "relevant": [],
+      "forbidden": [
+        "headless-browser-render",
+        "browser-frame-capture",
+        "webcodecs-offscreen-canvas"
+      ]
+    },
+    {
+      "id": "no-music",
+      "task": {
+        "intent": "müziksiz cinematic drone",
+        "constraints": {
+          "no_music": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "cinematic-drone",
+        "aerial-shot"
+      ]
+    },
+    {
+      "id": "sound-level",
+      "task": {
+        "intent": "loudness normalization"
+      },
+      "relevant": [
+        "loudness-normalization"
+      ]
+    },
+    {
+      "id": "skill-system",
+      "task": {
+        "intent": "skill seçimi"
+      },
+      "relevant": [
+        "skill-routing"
+      ]
+    },
+    {
+      "id": "first-party-ae-psd",
+      "task": {
+        "intent": "motionpilot psd katmanlı aep otomasyon",
+        "capabilities": [
+          "after-effects-mcp"
+        ],
+        "assets": [
+          "psd"
+        ]
+      },
+      "relevant": [
+        "motionpilot-psd-pipeline",
+        "after-effects-mcp"
+      ]
+    },
+    {
+      "id": "first-party-ae-vfx",
+      "task": {
+        "intent": "motionpilot vfx flipbook sprite sheet",
+        "capabilities": [
+          "after-effects-mcp"
+        ]
+      },
+      "relevant": [
+        "after-effects-mcp",
+        "motionpilot-vfx-flipbook",
+        "sprite-sheet-animation"
+      ]
+    },
+    {
+      "id": "first-party-blender-nodes",
+      "task": {
+        "intent": "remirdy blender node graph procedural shader geometry",
+        "capabilities": [
+          "blender-mcp"
+        ]
+      },
+      "relevant": [
+        "blender-mcp",
+        "remirdy-blender-nodes",
+        "blender-geometry-nodes"
+      ]
+    },
+    {
+      "id": "blender-ae-handoff",
+      "task": {
+        "intent": "blender after effects köprüsü 3d kamera aktarımı",
+        "assets": [
+          "glb",
+          "aep"
+        ]
+      },
+      "relevant": [
+        "blender-ae-interchange",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "mcp-gateway",
+      "task": {
+        "intent": "birleşik mcp geçidi progressive tool discovery"
+      },
+      "relevant": [
+        "mcp-gateway-routing",
+        "mcp-tool-contract"
+      ]
+    },
+    {
+      "id": "agx-tonemapping",
+      "task": {
+        "intent": "agx tonemapping filmic highlight rolloff"
+      },
+      "relevant": [
+        "agx-aces-tonemapping"
+      ]
+    },
+    {
+      "id": "camera-spring-rig",
+      "task": {
+        "intent": "kamera ataleti spring damper camera"
+      },
+      "relevant": [
+        "camera-inertia-rig"
+      ]
+    },
+    {
+      "id": "camera-spring-blocked",
+      "task": {
+        "intent": "spring damper camera rig",
+        "constraints": {
+          "camera_locked": true
+        }
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "camera-inertia-rig"
+      ]
+    },
+    {
+      "id": "pan-judder",
+      "task": {
+        "intent": "180 derece obtüratör pan judder titreme kontrolü"
+      },
+      "relevant": [
+        "shutter-angle-judder"
+      ]
+    },
+    {
+      "id": "camera-trauma",
+      "task": {
+        "intent": "camera trauma darbe sarsıntısı"
+      },
+      "relevant": [
+        "procedural-camera-shake"
+      ]
+    },
+    {
+      "id": "sdf-boolean",
+      "task": {
+        "intent": "signed distance field smooth boolean raymarching"
+      },
+      "relevant": [
+        "signed-distance-fields"
+      ]
+    },
+    {
+      "id": "verlet-rope",
+      "task": {
+        "intent": "verlet physics kablo fiziği ip simülasyonu"
+      },
+      "relevant": [
+        "verlet-constraint-solver"
+      ]
+    },
+    {
+      "id": "variable-font",
+      "task": {
+        "intent": "değişken font animasyonu tabular figures"
+      },
+      "relevant": [
+        "variable-font-animation"
+      ]
+    },
+    {
+      "id": "oklch-palette",
+      "task": {
+        "intent": "oklch renk paleti algısal renk geçişi"
+      },
+      "relevant": [
+        "oklch-perceptual-palettes"
+      ]
+    },
+    {
+      "id": "webcodecs",
+      "task": {
+        "intent": "offscreencanvas webcodecs render",
+        "capabilities": [
+          "browser"
+        ]
+      },
+      "relevant": [
+        "webcodecs-offscreen-canvas",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "openusd",
+      "task": {
+        "intent": "openusd usda sahne variant",
+        "assets": [
+          "usda"
+        ]
+      },
+      "relevant": [
+        "usd-scene-assembly"
+      ]
+    },
+    {
+      "id": "ebu-gating",
+      "task": {
+        "intent": "ebu r128 dialogue gating kısa video ses seviyesi",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "ebu-r128-dialogue-gating"
+      ]
+    },
+    {
+      "id": "flicker-qa",
+      "task": {
+        "intent": "temporal flicker luminance pop kontrolü"
+      },
+      "relevant": [
+        "temporal-flicker-audit"
+      ]
+    },
+    {
+      "id": "otio-timeline",
+      "task": {
+        "intent": "otio export timeline",
+        "assets": [
+          "otio"
+        ]
+      },
+      "relevant": [
+        "otio-export",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "antigravity-host",
+      "task": {
+        "intent": "antigravity entegrasyon skill"
+      },
+      "relevant": [
+        "antigravity-integration"
+      ]
+    },
+    {
+      "id": "en-tutorial-how-to",
+      "task": {
+        "intent": "how-to video"
+      },
+      "relevant": [
+        "tutorial-how-to"
+      ]
+    },
+    {
+      "id": "tr-tutorial-how-to",
+      "task": {
+        "intent": "nasıl yapılır videosu"
+      },
+      "relevant": [
+        "tutorial-how-to"
+      ]
+    },
+    {
+      "id": "en-app-store-preview",
+      "task": {
+        "intent": "app store preview"
+      },
+      "relevant": [
+        "app-store-preview"
+      ]
+    },
+    {
+      "id": "tr-app-store-preview",
+      "task": {
+        "intent": "uygulama mağazası videosu"
+      },
+      "relevant": [
+        "app-store-preview"
+      ]
+    },
+    {
+      "id": "en-customer-testimonial",
+      "task": {
+        "intent": "testimonial"
+      },
+      "relevant": [
+        "customer-testimonial"
+      ]
+    },
+    {
+      "id": "tr-customer-testimonial",
+      "task": {
+        "intent": "müşteri yorumu videosu"
+      },
+      "relevant": [
+        "customer-testimonial"
+      ]
+    },
+    {
+      "id": "en-gaming-highlight-montage",
+      "task": {
+        "intent": "gaming highlight"
+      },
+      "relevant": [
+        "gaming-highlight-montage"
+      ]
+    },
+    {
+      "id": "tr-gaming-highlight-montage",
+      "task": {
+        "intent": "oyun özet montajı"
+      },
+      "relevant": [
+        "gaming-highlight-montage"
+      ]
+    },
+    {
+      "id": "en-recipe-cooking-video",
+      "task": {
+        "intent": "recipe video"
+      },
+      "relevant": [
+        "recipe-cooking-video"
+      ]
+    },
+    {
+      "id": "tr-recipe-cooking-video",
+      "task": {
+        "intent": "yemek tarifi videosu"
+      },
+      "relevant": [
+        "recipe-cooking-video"
+      ]
+    },
+    {
+      "id": "en-news-explainer",
+      "task": {
+        "intent": "news explainer"
+      },
+      "relevant": [
+        "news-explainer"
+      ]
+    },
+    {
+      "id": "tr-news-explainer",
+      "task": {
+        "intent": "haber açıklayıcı"
+      },
+      "relevant": [
+        "news-explainer"
+      ]
+    },
+    {
+      "id": "en-social-thread-to-video",
+      "task": {
+        "intent": "thread to video"
+      },
+      "relevant": [
+        "social-thread-to-video"
+      ]
+    },
+    {
+      "id": "tr-social-thread-to-video",
+      "task": {
+        "intent": "konu dizisini videoya çevir"
+      },
+      "relevant": [
+        "social-thread-to-video"
+      ]
+    },
+    {
+      "id": "en-before-after-comparison",
+      "task": {
+        "intent": "before after"
+      },
+      "relevant": [
+        "before-after-comparison"
+      ]
+    },
+    {
+      "id": "tr-before-after-comparison",
+      "task": {
+        "intent": "önce sonra karşılaştırma"
+      },
+      "relevant": [
+        "before-after-comparison"
+      ]
+    },
+    {
+      "id": "en-quote-card-motion",
+      "task": {
+        "intent": "quote card"
+      },
+      "relevant": [
+        "quote-card-motion"
+      ]
+    },
+    {
+      "id": "tr-quote-card-motion",
+      "task": {
+        "intent": "alıntı kartı animasyonu"
+      },
+      "relevant": [
+        "quote-card-motion"
+      ]
+    },
+    {
+      "id": "en-livestream-overlay",
+      "task": {
+        "intent": "stream overlay"
+      },
+      "relevant": [
+        "livestream-overlay"
+      ]
+    },
+    {
+      "id": "tr-livestream-overlay",
+      "task": {
+        "intent": "yayın katmanı"
+      },
+      "relevant": [
+        "livestream-overlay"
+      ]
+    },
+    {
+      "id": "en-animated-sticker-pack",
+      "task": {
+        "intent": "sticker pack"
+      },
+      "relevant": [
+        "animated-sticker-pack"
+      ]
+    },
+    {
+      "id": "tr-animated-sticker-pack",
+      "task": {
+        "intent": "hareketli çıkartma seti"
+      },
+      "relevant": [
+        "animated-sticker-pack"
+      ]
+    },
+    {
+      "id": "en-countdown-timer-video",
+      "task": {
+        "intent": "countdown"
+      },
+      "relevant": [
+        "countdown-timer-video"
+      ]
+    },
+    {
+      "id": "tr-countdown-timer-video",
+      "task": {
+        "intent": "geri sayım videosu"
+      },
+      "relevant": [
+        "countdown-timer-video"
+      ]
+    },
+    {
+      "id": "en-mermaid-to-video",
+      "task": {
+        "intent": "mermaid animation"
+      },
+      "relevant": [
+        "mermaid-to-video"
+      ]
+    },
+    {
+      "id": "tr-mermaid-to-video",
+      "task": {
+        "intent": "mermaid videosu"
+      },
+      "relevant": [
+        "mermaid-to-video"
+      ]
+    },
+    {
+      "id": "en-sequence-diagram-animation",
+      "task": {
+        "intent": "sequence diagram"
+      },
+      "relevant": [
+        "sequence-diagram-animation"
+      ]
+    },
+    {
+      "id": "tr-sequence-diagram-animation",
+      "task": {
+        "intent": "sıralı diyagram"
+      },
+      "relevant": [
+        "sequence-diagram-animation"
+      ]
+    },
+    {
+      "id": "en-architecture-diagram-animation",
+      "task": {
+        "intent": "architecture diagram"
+      },
+      "relevant": [
+        "architecture-diagram-animation"
+      ]
+    },
+    {
+      "id": "tr-architecture-diagram-animation",
+      "task": {
+        "intent": "mimari diyagram"
+      },
+      "relevant": [
+        "architecture-diagram-animation"
+      ]
+    },
+    {
+      "id": "en-code-diff-animation",
+      "task": {
+        "intent": "code diff"
+      },
+      "relevant": [
+        "code-diff-animation"
+      ]
+    },
+    {
+      "id": "tr-code-diff-animation",
+      "task": {
+        "intent": "kod farkı animasyonu"
+      },
+      "relevant": [
+        "code-diff-animation"
+      ]
+    },
+    {
+      "id": "en-benchmark-results-video",
+      "task": {
+        "intent": "benchmark video"
+      },
+      "relevant": [
+        "benchmark-results-video"
+      ]
+    },
+    {
+      "id": "tr-benchmark-results-video",
+      "task": {
+        "intent": "performans sonuçları"
+      },
+      "relevant": [
+        "benchmark-results-video"
+      ]
+    },
+    {
+      "id": "en-sankey-flow-animation",
+      "task": {
+        "intent": "sankey"
+      },
+      "relevant": [
+        "sankey-flow-animation"
+      ]
+    },
+    {
+      "id": "tr-sankey-flow-animation",
+      "task": {
+        "intent": "akış diyagramı"
+      },
+      "relevant": [
+        "sankey-flow-animation"
+      ]
+    },
+    {
+      "id": "en-heatmap-animation",
+      "task": {
+        "intent": "heatmap"
+      },
+      "relevant": [
+        "heatmap-animation"
+      ]
+    },
+    {
+      "id": "tr-heatmap-animation",
+      "task": {
+        "intent": "ısı haritası"
+      },
+      "relevant": [
+        "heatmap-animation"
+      ]
+    },
+    {
+      "id": "en-choropleth-map-animation",
+      "task": {
+        "intent": "choropleth"
+      },
+      "relevant": [
+        "choropleth-map-animation"
+      ]
+    },
+    {
+      "id": "tr-choropleth-map-animation",
+      "task": {
+        "intent": "bölge haritası"
+      },
+      "relevant": [
+        "choropleth-map-animation"
+      ]
+    },
+    {
+      "id": "en-candlestick-finance-chart",
+      "task": {
+        "intent": "candlestick"
+      },
+      "relevant": [
+        "candlestick-finance-chart"
+      ]
+    },
+    {
+      "id": "tr-candlestick-finance-chart",
+      "task": {
+        "intent": "mum grafik"
+      },
+      "relevant": [
+        "candlestick-finance-chart"
+      ]
+    },
+    {
+      "id": "en-swiss-grid-motion",
+      "task": {
+        "intent": "swiss grid"
+      },
+      "relevant": [
+        "swiss-grid-motion"
+      ]
+    },
+    {
+      "id": "tr-swiss-grid-motion",
+      "task": {
+        "intent": "isviçre ızgara"
+      },
+      "relevant": [
+        "swiss-grid-motion"
+      ]
+    },
+    {
+      "id": "en-halftone-risograph-style",
+      "task": {
+        "intent": "halftone"
+      },
+      "relevant": [
+        "halftone-risograph-style"
+      ]
+    },
+    {
+      "id": "tr-halftone-risograph-style",
+      "task": {
+        "intent": "risograph baskı"
+      },
+      "relevant": [
+        "halftone-risograph-style"
+      ]
+    },
+    {
+      "id": "en-toon-shading-npr",
+      "task": {
+        "intent": "toon shading"
+      },
+      "relevant": [
+        "toon-shading-npr"
+      ]
+    },
+    {
+      "id": "tr-toon-shading-npr",
+      "task": {
+        "intent": "çizgi film gölgelendirme"
+      },
+      "relevant": [
+        "toon-shading-npr"
+      ]
+    },
+    {
+      "id": "en-glassmorphism-motion",
+      "task": {
+        "intent": "glassmorphism"
+      },
+      "relevant": [
+        "glassmorphism-motion"
+      ]
+    },
+    {
+      "id": "tr-glassmorphism-motion",
+      "task": {
+        "intent": "cam efekti"
+      },
+      "relevant": [
+        "glassmorphism-motion"
+      ]
+    },
+    {
+      "id": "en-brutalist-motion",
+      "task": {
+        "intent": "brutalist design"
+      },
+      "relevant": [
+        "brutalist-motion"
+      ]
+    },
+    {
+      "id": "tr-brutalist-motion",
+      "task": {
+        "intent": "brütalist tasarım"
+      },
+      "relevant": [
+        "brutalist-motion"
+      ]
+    },
+    {
+      "id": "en-vaporwave-synthwave-style",
+      "task": {
+        "intent": "synthwave"
+      },
+      "relevant": [
+        "vaporwave-synthwave-style"
+      ]
+    },
+    {
+      "id": "tr-vaporwave-synthwave-style",
+      "task": {
+        "intent": "retro gelecek"
+      },
+      "relevant": [
+        "vaporwave-synthwave-style"
+      ]
+    },
+    {
+      "id": "en-multilingual-glyph-audit",
+      "task": {
+        "intent": "glyph audit"
+      },
+      "relevant": [
+        "multilingual-glyph-audit"
+      ]
+    },
+    {
+      "id": "tr-multilingual-glyph-audit",
+      "task": {
+        "intent": "karakter seti denetimi"
+      },
+      "relevant": [
+        "multilingual-glyph-audit"
+      ]
+    },
+    {
+      "id": "en-text-expansion-layout",
+      "task": {
+        "intent": "text expansion"
+      },
+      "relevant": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "tr-text-expansion-layout",
+      "task": {
+        "intent": "metin genişlemesi"
+      },
+      "relevant": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "en-cjk-typography",
+      "task": {
+        "intent": "CJK typography"
+      },
+      "relevant": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "tr-cjk-typography",
+      "task": {
+        "intent": "CJK tipografi"
+      },
+      "relevant": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "en-complex-script-shaping",
+      "task": {
+        "intent": "script shaping"
+      },
+      "relevant": [
+        "complex-script-shaping"
+      ]
+    },
+    {
+      "id": "tr-complex-script-shaping",
+      "task": {
+        "intent": "karmaşık yazı sistemleri"
+      },
+      "relevant": [
+        "complex-script-shaping"
+      ]
+    },
+    {
+      "id": "en-locale-formatting",
+      "task": {
+        "intent": "locale format"
+      },
+      "relevant": [
+        "locale-formatting"
+      ]
+    },
+    {
+      "id": "tr-locale-formatting",
+      "task": {
+        "intent": "yerel biçimlendirme"
+      },
+      "relevant": [
+        "locale-formatting"
+      ]
+    },
+    {
+      "id": "en-font-fallback-chain",
+      "task": {
+        "intent": "font fallback"
+      },
+      "relevant": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "tr-font-fallback-chain",
+      "task": {
+        "intent": "yedek font zinciri"
+      },
+      "relevant": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "en-emoji-rendering",
+      "task": {
+        "intent": "emoji rendering"
+      },
+      "relevant": [
+        "emoji-rendering"
+      ]
+    },
+    {
+      "id": "tr-emoji-rendering",
+      "task": {
+        "intent": "emoji çizimi"
+      },
+      "relevant": [
+        "emoji-rendering"
+      ]
+    },
+    {
+      "id": "en-vertical-safe-zones",
+      "task": {
+        "intent": "safe zones"
+      },
+      "relevant": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "tr-vertical-safe-zones",
+      "task": {
+        "intent": "güvenli alanlar"
+      },
+      "relevant": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "en-content-credentials-labeling",
+      "task": {
+        "intent": "C2PA"
+      },
+      "relevant": [
+        "content-credentials-labeling"
+      ]
+    },
+    {
+      "id": "tr-content-credentials-labeling",
+      "task": {
+        "intent": "içerik kimliği ve etiket"
+      },
+      "relevant": [
+        "content-credentials-labeling"
+      ]
+    },
+    {
+      "id": "en-media-metadata-tagging",
+      "task": {
+        "intent": "metadata tagging"
+      },
+      "relevant": [
+        "media-metadata-tagging"
+      ]
+    },
+    {
+      "id": "tr-media-metadata-tagging",
+      "task": {
+        "intent": "medya üst verisi"
+      },
+      "relevant": [
+        "media-metadata-tagging"
+      ]
+    },
+    {
+      "id": "en-audio-description-track",
+      "task": {
+        "intent": "audio description"
+      },
+      "relevant": [
+        "audio-description-track"
+      ]
+    },
+    {
+      "id": "tr-audio-description-track",
+      "task": {
+        "intent": "sesli betimleme"
+      },
+      "relevant": [
+        "audio-description-track"
+      ]
+    },
+    {
+      "id": "en-reduced-motion-variant",
+      "task": {
+        "intent": "reduced motion"
+      },
+      "relevant": [
+        "reduced-motion-variant"
+      ]
+    },
+    {
+      "id": "tr-reduced-motion-variant",
+      "task": {
+        "intent": "azaltılmış hareket"
+      },
+      "relevant": [
+        "reduced-motion-variant"
+      ]
+    },
+    {
+      "id": "en-reading-speed-audit",
+      "task": {
+        "intent": "reading speed"
+      },
+      "relevant": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "tr-reading-speed-audit",
+      "task": {
+        "intent": "okuma hızı"
+      },
+      "relevant": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "en-color-blind-simulation-audit",
+      "task": {
+        "intent": "color blind check"
+      },
+      "relevant": [
+        "color-blind-simulation-audit"
+      ]
+    },
+    {
+      "id": "tr-color-blind-simulation-audit",
+      "task": {
+        "intent": "renk körlüğü denetimi"
+      },
+      "relevant": [
+        "color-blind-simulation-audit"
+      ]
+    },
+    {
+      "id": "en-loop-seam-audit",
+      "task": {
+        "intent": "loop seam"
+      },
+      "relevant": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "tr-loop-seam-audit",
+      "task": {
+        "intent": "döngü dikişi"
+      },
+      "relevant": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "en-local-speech-to-text",
+      "task": {
+        "intent": "local transcription"
+      },
+      "relevant": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "tr-local-speech-to-text",
+      "task": {
+        "intent": "yerel yazıya dökme"
+      },
+      "relevant": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "en-local-text-to-speech",
+      "task": {
+        "intent": "local TTS"
+      },
+      "relevant": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "tr-local-text-to-speech",
+      "task": {
+        "intent": "yerel seslendirme"
+      },
+      "relevant": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "en-skill-alias-localization",
+      "task": {
+        "intent": "alias localization"
+      },
+      "relevant": [
+        "skill-alias-localization"
+      ]
+    },
+    {
+      "id": "tr-skill-alias-localization",
+      "task": {
+        "intent": "alias yerelleştirme"
+      },
+      "relevant": [
+        "skill-alias-localization"
+      ]
+    },
+    {
+      "id": "en-skill-status-promotion",
+      "task": {
+        "intent": "status promotion"
+      },
+      "relevant": [
+        "skill-status-promotion"
+      ]
+    },
+    {
+      "id": "tr-skill-status-promotion",
+      "task": {
+        "intent": "durum yükseltme"
+      },
+      "relevant": [
+        "skill-status-promotion"
+      ]
+    },
+    {
+      "id": "en-host-compat-matrix",
+      "task": {
+        "intent": "compat matrix"
+      },
+      "relevant": [
+        "host-compat-matrix"
+      ]
+    },
+    {
+      "id": "tr-host-compat-matrix",
+      "task": {
+        "intent": "uyumluluk matrisi"
+      },
+      "relevant": [
+        "host-compat-matrix"
+      ]
+    },
+    {
+      "id": "en-mcp-registry-publishing",
+      "task": {
+        "intent": "MCP publishing"
+      },
+      "relevant": [
+        "mcp-registry-publishing"
+      ]
+    },
+    {
+      "id": "tr-mcp-registry-publishing",
+      "task": {
+        "intent": "MCP yayınlama"
+      },
+      "relevant": [
+        "mcp-registry-publishing"
+      ]
+    },
+    {
+      "id": "en-example-gallery-curation",
+      "task": {
+        "intent": "example gallery"
+      },
+      "relevant": [
+        "example-gallery-curation"
+      ]
+    },
+    {
+      "id": "tr-example-gallery-curation",
+      "task": {
+        "intent": "örnek galerisi"
+      },
+      "relevant": [
+        "example-gallery-curation"
+      ]
+    },
+    {
+      "id": "de-frame-clock",
+      "task": {
+        "intent": "Bildfrequenz"
+      },
+      "relevant": [
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "es-frame-clock",
+      "task": {
+        "intent": "reloj de fotogramas"
+      },
+      "relevant": [
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "fr-frame-clock",
+      "task": {
+        "intent": "cadence des images"
+      },
+      "relevant": [
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "pt-frame-clock",
+      "task": {
+        "intent": "taxa de quadros"
+      },
+      "relevant": [
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-locked-camera",
+      "task": {
+        "intent": "feste Kamera"
+      },
+      "relevant": [
+        "locked-camera"
+      ]
+    },
+    {
+      "id": "es-locked-camera",
+      "task": {
+        "intent": "cámara fija"
+      },
+      "relevant": [
+        "locked-camera"
+      ]
+    },
+    {
+      "id": "fr-locked-camera",
+      "task": {
+        "intent": "caméra fixe"
+      },
+      "relevant": [
+        "locked-camera"
+      ]
+    },
+    {
+      "id": "pt-locked-camera",
+      "task": {
+        "intent": "câmera fixa"
+      },
+      "relevant": [
+        "locked-camera"
+      ]
+    },
+    {
+      "id": "de-black-frame-detection",
+      "task": {
+        "intent": "Schwarzbilder erkennen"
+      },
+      "relevant": [
+        "black-frame-detection"
+      ]
+    },
+    {
+      "id": "es-black-frame-detection",
+      "task": {
+        "intent": "detectar fotogramas negros"
+      },
+      "relevant": [
+        "black-frame-detection"
+      ]
+    },
+    {
+      "id": "fr-black-frame-detection",
+      "task": {
+        "intent": "détecter les images noires"
+      },
+      "relevant": [
+        "black-frame-detection"
+      ]
+    },
+    {
+      "id": "pt-black-frame-detection",
+      "task": {
+        "intent": "detectar quadros pretos"
+      },
+      "relevant": [
+        "black-frame-detection"
+      ]
+    },
+    {
+      "id": "en-idea-angle-framing",
+      "task": {
+        "intent": "idea angle framing for a broad topic"
+      },
+      "relevant": [
+        "idea-angle-framing"
+      ]
+    },
+    {
+      "id": "tr-idea-angle-framing",
+      "task": {
+        "intent": "geniş başlık için konu açısı ve fikir çerçeveleme"
+      },
+      "relevant": [
+        "idea-angle-framing"
+      ]
+    },
+    {
+      "id": "de-idea-angle-framing",
+      "task": {
+        "intent": "Themenwinkel und Blickwinkel bestimmen"
+      },
+      "relevant": [
+        "idea-angle-framing"
+      ]
+    },
+    {
+      "id": "neg-idea-angle-framing",
+      "task": {
+        "intent": "locked camera; idea angle is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "idea-angle-framing"
+      ]
+    },
+    {
+      "id": "en-prompt-to-storyboard",
+      "task": {
+        "intent": "prompt to storyboard scene cards"
+      },
+      "relevant": [
+        "prompt-to-storyboard",
+        "idea-angle-framing",
+        "storyboard"
+      ]
+    },
+    {
+      "id": "tr-prompt-to-storyboard",
+      "task": {
+        "intent": "kısa istemden öykü panosuna ve metinden sahne planına"
+      },
+      "relevant": [
+        "prompt-to-storyboard",
+        "idea-angle-framing"
+      ]
+    },
+    {
+      "id": "de-prompt-to-storyboard",
+      "task": {
+        "intent": "Kurztext zu Storyboard und Entwurf zu Szenenplan"
+      },
+      "relevant": [
+        "prompt-to-storyboard",
+        "idea-angle-framing",
+        "storyboard"
+      ]
+    },
+    {
+      "id": "neg-prompt-to-storyboard",
+      "task": {
+        "intent": "black frame detection; prompt to storyboard is forbidden"
+      },
+      "relevant": [
+        "black-frame-detection"
+      ],
+      "forbidden": [
+        "prompt-to-storyboard"
+      ]
+    },
+    {
+      "id": "en-open-loop-retention",
+      "task": {
+        "intent": "open loop retention structure for short story"
+      },
+      "relevant": [
+        "open-loop-retention"
+      ]
+    },
+    {
+      "id": "tr-open-loop-retention",
+      "task": {
+        "intent": "izleyiciyi tutmak için açık döngü kurgusu ve merak boşluğu"
+      },
+      "relevant": [
+        "open-loop-retention"
+      ]
+    },
+    {
+      "id": "de-open-loop-retention",
+      "task": {
+        "intent": "Offene Schleife und Spannungsbogen halten"
+      },
+      "relevant": [
+        "open-loop-retention"
+      ]
+    },
+    {
+      "id": "neg-open-loop-retention",
+      "task": {
+        "intent": "locked camera; without open loop retention"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "open-loop-retention"
+      ]
+    },
+    {
+      "id": "en-comedic-timing-beats",
+      "task": {
+        "intent": "comedic timing and comedy beats on punchline cuts"
+      },
+      "relevant": [
+        "comedic-timing-beats",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-comedic-timing-beats",
+      "task": {
+        "intent": "komedi zamanlaması ve espri ritmi kesmeleri"
+      },
+      "relevant": [
+        "comedic-timing-beats",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-comedic-timing-beats",
+      "task": {
+        "intent": "Pointen-Timing und Komik-Rhythmus im Schnitt"
+      },
+      "relevant": [
+        "comedic-timing-beats",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-comedic-timing-beats",
+      "task": {
+        "intent": "j cut; comedic timing istemiyorum"
+      },
+      "relevant": [
+        "j-cut"
+      ],
+      "forbidden": [
+        "comedic-timing-beats"
+      ]
+    },
+    {
+      "id": "en-microlearning-chunking",
+      "task": {
+        "intent": "microlearning chunking for educational short"
+      },
+      "relevant": [
+        "microlearning-chunking"
+      ]
+    },
+    {
+      "id": "tr-microlearning-chunking",
+      "task": {
+        "intent": "eğitici videoda mikro öğrenme ve kavram parçalama"
+      },
+      "relevant": [
+        "microlearning-chunking"
+      ]
+    },
+    {
+      "id": "de-microlearning-chunking",
+      "task": {
+        "intent": "Mikrolernen und Lernhäppchen strukturieren"
+      },
+      "relevant": [
+        "microlearning-chunking"
+      ]
+    },
+    {
+      "id": "neg-microlearning-chunking",
+      "task": {
+        "intent": "frame clock; microlearning chunking is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "microlearning-chunking"
+      ]
+    },
+    {
+      "id": "en-procedural-broll-planner",
+      "task": {
+        "intent": "procedural broll planning for abstract script"
+      },
+      "relevant": [
+        "procedural-broll-planner"
+      ]
+    },
+    {
+      "id": "tr-procedural-broll-planner",
+      "task": {
+        "intent": "soyut metin için prosedürel ara görüntü ve üretimsel görsel planlama"
+      },
+      "relevant": [
+        "procedural-broll-planner"
+      ]
+    },
+    {
+      "id": "de-procedural-broll-planner",
+      "task": {
+        "intent": "prozedurales B-Roll und synthetische Schnittbilder planen"
+      },
+      "relevant": [
+        "procedural-broll-planner"
+      ]
+    },
+    {
+      "id": "neg-procedural-broll-planner",
+      "task": {
+        "intent": "locked camera; procedural broll is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "procedural-broll-planner"
+      ]
+    },
+    {
+      "id": "en-prompt-injection-guard",
+      "task": {
+        "intent": "prompt injection guard and brief sanitization"
+      },
+      "relevant": [
+        "prompt-injection-guard",
+        "reelguard-policy",
+        "skill-security-review"
+      ]
+    },
+    {
+      "id": "tr-prompt-injection-guard",
+      "task": {
+        "intent": "istem enjeksiyon koruması ve güvenli istem sınırı"
+      },
+      "relevant": [
+        "prompt-injection-guard",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "de-prompt-injection-guard",
+      "task": {
+        "intent": "Eingabe-Injektionsschutz und Brief-Abschirmung"
+      },
+      "relevant": [
+        "prompt-injection-guard",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "neg-prompt-injection-guard",
+      "task": {
+        "intent": "contrast audit; without prompt injection guard"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "prompt-injection-guard"
+      ]
+    },
+    {
+      "id": "en-schema-json-repair",
+      "task": {
+        "intent": "schema json repair for malformed scene plan"
+      },
+      "relevant": [
+        "schema-json-repair"
+      ]
+    },
+    {
+      "id": "tr-schema-json-repair",
+      "task": {
+        "intent": "bozuk json düzeltme ve şema json onarımı"
+      },
+      "relevant": [
+        "schema-json-repair"
+      ]
+    },
+    {
+      "id": "de-schema-json-repair",
+      "task": {
+        "intent": "JSON-Schema-Reparatur und Strukturdaten-Reparatur"
+      },
+      "relevant": [
+        "schema-json-repair"
+      ]
+    },
+    {
+      "id": "neg-schema-json-repair",
+      "task": {
+        "intent": "render cache; şema json onarımı istemiyorum"
+      },
+      "relevant": [
+        "render-cache"
+      ],
+      "forbidden": [
+        "schema-json-repair"
+      ]
+    },
+    {
+      "id": "en-lang-detect-and-route",
+      "task": {
+        "intent": "language detection and lang detect route for brief"
+      },
+      "relevant": [
+        "lang-detect-and-route"
+      ]
+    },
+    {
+      "id": "tr-lang-detect-and-route",
+      "task": {
+        "intent": "istem için dil algılama ve yönlendirme hedef dil seçimi"
+      },
+      "relevant": [
+        "lang-detect-and-route"
+      ]
+    },
+    {
+      "id": "de-lang-detect-and-route",
+      "task": {
+        "intent": "Spracherkennung und Routing um Zielsprache erkennen"
+      },
+      "relevant": [
+        "lang-detect-and-route"
+      ]
+    },
+    {
+      "id": "neg-lang-detect-and-route",
+      "task": {
+        "intent": "locked camera; without language detection"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "lang-detect-and-route"
+      ]
+    },
+    {
+      "id": "en-cross-shot-grade-consistency",
+      "task": {
+        "intent": "shot grade consistency across consecutive cuts"
+      },
+      "relevant": [
+        "cross-shot-grade-consistency"
+      ]
+    },
+    {
+      "id": "tr-cross-shot-grade-consistency",
+      "task": {
+        "intent": "çekim renk tutarlılığı ve sahneler arası renk uyumu"
+      },
+      "relevant": [
+        "cross-shot-grade-consistency"
+      ]
+    },
+    {
+      "id": "de-cross-shot-grade-consistency",
+      "task": {
+        "intent": "Schnitt-Farbkonsistenz und Farbabgleich zwischen Szenen"
+      },
+      "relevant": [
+        "cross-shot-grade-consistency"
+      ]
+    },
+    {
+      "id": "neg-cross-shot-grade-consistency",
+      "task": {
+        "intent": "frame clock; ohne Schnitt Farbkonsistenz"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "cross-shot-grade-consistency"
+      ]
+    },
+    {
+      "id": "en-pattern-interrupt-cadence",
+      "task": {
+        "intent": "pattern interrupt cadence every four seconds"
+      },
+      "relevant": [
+        "pattern-interrupt-cadence",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-pattern-interrupt-cadence",
+      "task": {
+        "intent": "örüntü kırıcı ritim ve dikkat tazeleme kesmesi"
+      },
+      "relevant": [
+        "pattern-interrupt-cadence",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-pattern-interrupt-cadence",
+      "task": {
+        "intent": "Musterunterbrechung und Aufmerksamkeitswechsel im Schnitt"
+      },
+      "relevant": [
+        "pattern-interrupt-cadence",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-pattern-interrupt-cadence",
+      "task": {
+        "intent": "locked camera; pattern interrupt is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "pattern-interrupt-cadence"
+      ]
+    },
+    {
+      "id": "en-silence-as-punctuation",
+      "task": {
+        "intent": "silence as punctuation and dramatic audio pause"
+      },
+      "relevant": [
+        "silence-as-punctuation",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-silence-as-punctuation",
+      "task": {
+        "intent": "noktalama olarak sessizlik ve bilinçli ses boşluğu"
+      },
+      "relevant": [
+        "silence-as-punctuation",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-silence-as-punctuation",
+      "task": {
+        "intent": "Stille als Satzzeichen und gezielte Sprechpause"
+      },
+      "relevant": [
+        "silence-as-punctuation",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-silence-as-punctuation",
+      "task": {
+        "intent": "silent video, silence as punctuation",
+        "constraints": {
+          "no_audio": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "silence-as-punctuation"
+      ]
+    },
+    {
+      "id": "en-rhythm-density-map",
+      "task": {
+        "intent": "rhythm density map and pacing wave map"
+      },
+      "relevant": [
+        "rhythm-density-map"
+      ]
+    },
+    {
+      "id": "tr-rhythm-density-map",
+      "task": {
+        "intent": "ritim yoğunluk haritası ve kurgu tempo eğrisi"
+      },
+      "relevant": [
+        "rhythm-density-map"
+      ]
+    },
+    {
+      "id": "de-rhythm-density-map",
+      "task": {
+        "intent": "Rhythmusdichte-Karte und Tempowellen planen"
+      },
+      "relevant": [
+        "rhythm-density-map"
+      ]
+    },
+    {
+      "id": "neg-rhythm-density-map",
+      "task": {
+        "intent": "contrast audit; without rhythm density map"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "rhythm-density-map"
+      ]
+    },
+    {
+      "id": "en-scene-duration-floor-ceiling",
+      "task": {
+        "intent": "scene duration bounds and shot length floor ceiling"
+      },
+      "relevant": [
+        "scene-duration-floor-ceiling",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-scene-duration-floor-ceiling",
+      "task": {
+        "intent": "sahne süresi alt üst sınırı ve çekim süresi limitleri"
+      },
+      "relevant": [
+        "scene-duration-floor-ceiling",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-scene-duration-floor-ceiling",
+      "task": {
+        "intent": "Szenendauer-Grenzen und Einstellungslänge begrenzen"
+      },
+      "relevant": [
+        "scene-duration-floor-ceiling",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-scene-duration-floor-ceiling",
+      "task": {
+        "intent": "locked camera; without scene duration bounds"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "scene-duration-floor-ceiling"
+      ]
+    },
+    {
+      "id": "en-eyeline-headroom-grammar",
+      "task": {
+        "intent": "eyeline headroom and lead room framing"
+      },
+      "relevant": [
+        "eyeline-headroom-grammar"
+      ]
+    },
+    {
+      "id": "tr-eyeline-headroom-grammar",
+      "task": {
+        "intent": "bakış çizgisi ve baş boşluğu kadraj bakış boşluğu"
+      },
+      "relevant": [
+        "eyeline-headroom-grammar"
+      ]
+    },
+    {
+      "id": "de-eyeline-headroom-grammar",
+      "task": {
+        "intent": "Augenhöhe und Kopffreiheit sowie Blickraum im Bild"
+      },
+      "relevant": [
+        "eyeline-headroom-grammar"
+      ]
+    },
+    {
+      "id": "neg-eyeline-headroom-grammar",
+      "task": {
+        "intent": "contrast audit; eyeline headroom is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "eyeline-headroom-grammar"
+      ]
+    },
+    {
+      "id": "en-depth-of-field-budget",
+      "task": {
+        "intent": "depth of field budget and dof blur budget"
+      },
+      "relevant": [
+        "depth-of-field-budget"
+      ]
+    },
+    {
+      "id": "tr-depth-of-field-budget",
+      "task": {
+        "intent": "alan derinliği bütçesi ve odak bulanıklığı sınırı"
+      },
+      "relevant": [
+        "depth-of-field-budget"
+      ]
+    },
+    {
+      "id": "de-depth-of-field-budget",
+      "task": {
+        "intent": "Schärfentiefe-Budget und Unschärfekreis planen"
+      },
+      "relevant": [
+        "depth-of-field-budget"
+      ]
+    },
+    {
+      "id": "neg-depth-of-field-budget",
+      "task": {
+        "intent": "frame clock; without depth of field budget"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "depth-of-field-budget"
+      ]
+    },
+    {
+      "id": "en-ken-burns-photo-choreography",
+      "task": {
+        "intent": "ken burns photo pan zoom choreography"
+      },
+      "relevant": [
+        "ken-burns-photo-choreography"
+      ]
+    },
+    {
+      "id": "tr-ken-burns-photo-choreography",
+      "task": {
+        "intent": "fotoğraf kaydırma yakınlaştırma ve hareketli fotoğraf kurgusu"
+      },
+      "relevant": [
+        "ken-burns-photo-choreography"
+      ]
+    },
+    {
+      "id": "de-ken-burns-photo-choreography",
+      "task": {
+        "intent": "Ken-Burns-Kamerafahrt und Foto-Zoomfahrt"
+      },
+      "relevant": [
+        "ken-burns-photo-choreography"
+      ]
+    },
+    {
+      "id": "neg-ken-burns-photo-choreography",
+      "task": {
+        "intent": "ken burns photo pan zoom",
+        "constraints": {
+          "camera_locked": true
+        }
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "ken-burns-photo-choreography"
+      ]
+    },
+    {
+      "id": "en-kinetic-layout-choreography",
+      "task": {
+        "intent": "kinetic layout and staggered grid choreography"
+      },
+      "relevant": [
+        "kinetic-layout-choreography"
+      ]
+    },
+    {
+      "id": "tr-kinetic-layout-choreography",
+      "task": {
+        "intent": "kinetik yerleşim koreografisi ve kademeli ızgara hareketi"
+      },
+      "relevant": [
+        "kinetic-layout-choreography"
+      ]
+    },
+    {
+      "id": "de-kinetic-layout-choreography",
+      "task": {
+        "intent": "kinetisches Layout und gestaffelte Raster-Choreografie"
+      },
+      "relevant": [
+        "kinetic-layout-choreography"
+      ]
+    },
+    {
+      "id": "neg-kinetic-layout-choreography",
+      "task": {
+        "intent": "no text, kinetic layout choreography"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "kinetic-layout-choreography"
+      ]
+    },
+    {
+      "id": "en-color-script-progression",
+      "task": {
+        "intent": "color script progression across story acts"
+      },
+      "relevant": [
+        "color-script-progression"
+      ]
+    },
+    {
+      "id": "tr-color-script-progression",
+      "task": {
+        "intent": "renk senaryosu akışı ve duygusal renk yayılımı"
+      },
+      "relevant": [
+        "color-script-progression"
+      ]
+    },
+    {
+      "id": "de-color-script-progression",
+      "task": {
+        "intent": "Farbdramaturgie und Farbskript-Verlauf planen"
+      },
+      "relevant": [
+        "color-script-progression"
+      ]
+    },
+    {
+      "id": "neg-color-script-progression",
+      "task": {
+        "intent": "frame clock; color script is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "color-script-progression"
+      ]
+    },
+    {
+      "id": "en-optical-vignette-halation",
+      "task": {
+        "intent": "optical vignette and halation lens falloff"
+      },
+      "relevant": [
+        "optical-vignette-halation"
+      ]
+    },
+    {
+      "id": "tr-optical-vignette-halation",
+      "task": {
+        "intent": "optik vinyet ve halasyon kenar karartma ve ışık halesi"
+      },
+      "relevant": [
+        "optical-vignette-halation"
+      ]
+    },
+    {
+      "id": "de-optical-vignette-halation",
+      "task": {
+        "intent": "optische Vignettierung sowie Lichtsaum und Randabfall"
+      },
+      "relevant": [
+        "optical-vignette-halation"
+      ]
+    },
+    {
+      "id": "neg-optical-vignette-halation",
+      "task": {
+        "intent": "contrast audit; without optical vignette"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "optical-vignette-halation"
+      ]
+    },
+    {
+      "id": "en-locale-aware-casing",
+      "task": {
+        "intent": "locale aware casing and localized uppercase"
+      },
+      "relevant": [
+        "locale-aware-casing"
+      ]
+    },
+    {
+      "id": "tr-locale-aware-casing",
+      "task": {
+        "intent": "yerel büyük küçük harf ve Türkçe İ ı harf dönüşümü"
+      },
+      "relevant": [
+        "locale-aware-casing",
+        "turkish-glyph-audit"
+      ]
+    },
+    {
+      "id": "de-locale-aware-casing",
+      "task": {
+        "intent": "sprachabhängige Großschreibung und lokale Großbuchstaben"
+      },
+      "relevant": [
+        "locale-aware-casing"
+      ]
+    },
+    {
+      "id": "neg-locale-aware-casing",
+      "task": {
+        "intent": "no text, locale aware casing"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "locale-aware-casing"
+      ]
+    },
+    {
+      "id": "en-german-compound-linebreak",
+      "task": {
+        "intent": "german compound linebreak and compound word hyphenation"
+      },
+      "relevant": [
+        "german-compound-linebreak"
+      ]
+    },
+    {
+      "id": "tr-german-compound-linebreak",
+      "task": {
+        "intent": "Almanca birleşik kelime satır kırma ve uzun kelime bölme"
+      },
+      "relevant": [
+        "german-compound-linebreak"
+      ]
+    },
+    {
+      "id": "de-german-compound-linebreak",
+      "task": {
+        "intent": "Komposita-Zeilenumbruch und Worttrennung bei Komposita"
+      },
+      "relevant": [
+        "german-compound-linebreak"
+      ]
+    },
+    {
+      "id": "neg-german-compound-linebreak",
+      "task": {
+        "intent": "no text, german compound linebreak"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "german-compound-linebreak"
+      ]
+    },
+    {
+      "id": "en-burned-in-caption-styling",
+      "task": {
+        "intent": "burned in captions and open caption styling"
+      },
+      "relevant": [
+        "burned-in-caption-styling"
+      ]
+    },
+    {
+      "id": "tr-burned-in-caption-styling",
+      "task": {
+        "intent": "gömülü altyazı tasarımı ve ekrana işlenmiş altyazı"
+      },
+      "relevant": [
+        "burned-in-caption-styling"
+      ]
+    },
+    {
+      "id": "de-burned-in-caption-styling",
+      "task": {
+        "intent": "eingebrannte Untertitel und offene Untertitel gestalten"
+      },
+      "relevant": [
+        "burned-in-caption-styling"
+      ]
+    },
+    {
+      "id": "neg-burned-in-caption-styling",
+      "task": {
+        "intent": "no text, burned in captions"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "burned-in-caption-styling"
+      ]
+    },
+    {
+      "id": "en-multilingual-caption-profiles",
+      "task": {
+        "intent": "multilingual caption profiles and per language subtitle timing"
+      },
+      "relevant": [
+        "multilingual-caption-profiles"
+      ]
+    },
+    {
+      "id": "tr-multilingual-caption-profiles",
+      "task": {
+        "intent": "çok dilli altyazı profilleri ve dile göre okuma hızı sınırı"
+      },
+      "relevant": [
+        "multilingual-caption-profiles"
+      ]
+    },
+    {
+      "id": "de-multilingual-caption-profiles",
+      "task": {
+        "intent": "mehrsprachige Untertitelprofile und Lesegeschwindigkeit je Sprache"
+      },
+      "relevant": [
+        "multilingual-caption-profiles"
+      ]
+    },
+    {
+      "id": "neg-multilingual-caption-profiles",
+      "task": {
+        "intent": "no text, multilingual caption profiles"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "multilingual-caption-profiles"
+      ]
+    },
+    {
+      "id": "en-orphan-widow-line-balance",
+      "task": {
+        "intent": "orphan widow balance and balanced line wrapping"
+      },
+      "relevant": [
+        "orphan-widow-line-balance"
+      ]
+    },
+    {
+      "id": "tr-orphan-widow-line-balance",
+      "task": {
+        "intent": "yetim dul satır dengesi ve dengeli satır kırma"
+      },
+      "relevant": [
+        "orphan-widow-line-balance"
+      ]
+    },
+    {
+      "id": "de-orphan-widow-line-balance",
+      "task": {
+        "intent": "ausgewogener Zeilenumbruch sowie Hurenkinder und Schusterjungen vermeiden"
+      },
+      "relevant": [
+        "orphan-widow-line-balance"
+      ]
+    },
+    {
+      "id": "neg-orphan-widow-line-balance",
+      "task": {
+        "intent": "no text, orphan widow balance"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "orphan-widow-line-balance"
+      ]
+    },
+    {
+      "id": "en-numeric-unit-typography",
+      "task": {
+        "intent": "numeric unit typography and tabular figures formatting"
+      },
+      "relevant": [
+        "numeric-unit-typography"
+      ]
+    },
+    {
+      "id": "tr-numeric-unit-typography",
+      "task": {
+        "intent": "sayı ve birim tipografisi ile rakam hizalama kuralları"
+      },
+      "relevant": [
+        "numeric-unit-typography"
+      ]
+    },
+    {
+      "id": "de-numeric-unit-typography",
+      "task": {
+        "intent": "Zahlen- und Einheitentypografie sowie Tabellenziffern formatieren"
+      },
+      "relevant": [
+        "numeric-unit-typography"
+      ]
+    },
+    {
+      "id": "neg-numeric-unit-typography",
+      "task": {
+        "intent": "no text, numeric unit typography"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "numeric-unit-typography"
+      ]
+    },
+    {
+      "id": "en-bilingual-dual-subtitles",
+      "task": {
+        "intent": "bilingual subtitles and dual language captions"
+      },
+      "relevant": [
+        "bilingual-dual-subtitles"
+      ]
+    },
+    {
+      "id": "tr-bilingual-dual-subtitles",
+      "task": {
+        "intent": "çift dilli altyazı ve iki dilli altyazı yerleşimi"
+      },
+      "relevant": [
+        "bilingual-dual-subtitles"
+      ]
+    },
+    {
+      "id": "de-bilingual-dual-subtitles",
+      "task": {
+        "intent": "zweisprachige Untertitel und Doppel-Untertitel anordnen"
+      },
+      "relevant": [
+        "bilingual-dual-subtitles"
+      ]
+    },
+    {
+      "id": "neg-bilingual-dual-subtitles",
+      "task": {
+        "intent": "no text, bilingual subtitles"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "bilingual-dual-subtitles"
+      ]
+    },
+    {
+      "id": "en-transcreation-tone",
+      "task": {
+        "intent": "transcreation tone and formality register adaptation"
+      },
+      "relevant": [
+        "transcreation-tone"
+      ]
+    },
+    {
+      "id": "tr-transcreation-tone",
+      "task": {
+        "intent": "yaratıcı çeviri ve hitap tonu sen siz resmiyet uyumu"
+      },
+      "relevant": [
+        "transcreation-tone"
+      ]
+    },
+    {
+      "id": "de-transcreation-tone",
+      "task": {
+        "intent": "Transkreation und Anredeform sowie Du-Sie-Tonalität anpassen"
+      },
+      "relevant": [
+        "transcreation-tone"
+      ]
+    },
+    {
+      "id": "neg-transcreation-tone",
+      "task": {
+        "intent": "locked camera; without transcreation tone"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "transcreation-tone"
+      ]
+    },
+    {
+      "id": "en-cultural-adaptation-audit",
+      "task": {
+        "intent": "cultural adaptation audit and localization qa checklist"
+      },
+      "relevant": [
+        "cultural-adaptation-audit"
+      ]
+    },
+    {
+      "id": "tr-cultural-adaptation-audit",
+      "task": {
+        "intent": "kültürel uyarlama denetimi ve yerelleştirme kalite kontrolü"
+      },
+      "relevant": [
+        "cultural-adaptation-audit"
+      ]
+    },
+    {
+      "id": "de-cultural-adaptation-audit",
+      "task": {
+        "intent": "Kulturadaptions-Prüfung und Lokalisierungs-Checkliste"
+      },
+      "relevant": [
+        "cultural-adaptation-audit"
+      ]
+    },
+    {
+      "id": "neg-cultural-adaptation-audit",
+      "task": {
+        "intent": "frame clock; cultural adaptation audit is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "cultural-adaptation-audit"
+      ]
+    },
+    {
+      "id": "en-accessibility-caption-ad-check",
+      "task": {
+        "intent": "accessibility caption check and caption and audio description qa"
+      },
+      "relevant": [
+        "accessibility-caption-ad-check"
+      ]
+    },
+    {
+      "id": "tr-accessibility-caption-ad-check",
+      "task": {
+        "intent": "erişilebilir altyazı ve sesli betimleme denetimi"
+      },
+      "relevant": [
+        "accessibility-caption-ad-check"
+      ]
+    },
+    {
+      "id": "de-accessibility-caption-ad-check",
+      "task": {
+        "intent": "Barrierefreiheit Untertitel-Prüfung sowie Hörbeschreibung und Untertitel prüfen"
+      },
+      "relevant": [
+        "accessibility-caption-ad-check"
+      ]
+    },
+    {
+      "id": "neg-accessibility-caption-ad-check",
+      "task": {
+        "intent": "locked camera; accessibility caption check is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "accessibility-caption-ad-check"
+      ]
+    },
+    {
+      "id": "en-tts-phonetic-pronunciation",
+      "task": {
+        "intent": "tts phonetic pronunciation and speech pronunciation lexicon"
+      },
+      "relevant": [
+        "tts-phonetic-pronunciation"
+      ]
+    },
+    {
+      "id": "tr-tts-phonetic-pronunciation",
+      "task": {
+        "intent": "seslendirme telaffuz sözlüğü ve kısaltma okunuş düzeltme"
+      },
+      "relevant": [
+        "tts-phonetic-pronunciation"
+      ]
+    },
+    {
+      "id": "de-tts-phonetic-pronunciation",
+      "task": {
+        "intent": "Aussprache-Lexikon für Sprachsynthese und Phonetische Aussprache steuern"
+      },
+      "relevant": [
+        "tts-phonetic-pronunciation"
+      ]
+    },
+    {
+      "id": "neg-tts-phonetic-pronunciation",
+      "task": {
+        "intent": "no narration, tts phonetic pronunciation"
+      },
+      "relevant": [],
+      "forbidden": [
+        "tts-phonetic-pronunciation"
+      ]
+    },
+    {
+      "id": "en-voice-fx-flat-synth",
+      "task": {
+        "intent": "voice fx synth and stylized radio robot voice"
+      },
+      "relevant": [
+        "voice-fx-flat-synth"
+      ]
+    },
+    {
+      "id": "tr-voice-fx-flat-synth",
+      "task": {
+        "intent": "stilize telsiz robot sesi ve retro oyun ses efekti"
+      },
+      "relevant": [
+        "voice-fx-flat-synth"
+      ]
+    },
+    {
+      "id": "de-voice-fx-flat-synth",
+      "task": {
+        "intent": "stilisierte Funk- und Roboterstimme sowie Synthetische Stimmcharakteristik"
+      },
+      "relevant": [
+        "voice-fx-flat-synth"
+      ]
+    },
+    {
+      "id": "neg-voice-fx-flat-synth",
+      "task": {
+        "intent": "silent video, voice fx synth",
+        "constraints": {
+          "no_audio": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "voice-fx-flat-synth"
+      ]
+    },
+    {
+      "id": "en-sfx-layering-transient-tail",
+      "task": {
+        "intent": "sfx transient tail layering and layered sound effects"
+      },
+      "relevant": [
+        "sfx-layering-transient-tail"
+      ]
+    },
+    {
+      "id": "tr-sfx-layering-transient-tail",
+      "task": {
+        "intent": "katmanlı ses efekti tasarımı ve atak gövde kuyruk katmanlama"
+      },
+      "relevant": [
+        "sfx-layering-transient-tail"
+      ]
+    },
+    {
+      "id": "de-sfx-layering-transient-tail",
+      "task": {
+        "intent": "SFX-Schichtung Attack und Tail sowie Klangschichten für Übergänge"
+      },
+      "relevant": [
+        "sfx-layering-transient-tail"
+      ]
+    },
+    {
+      "id": "neg-sfx-layering-transient-tail",
+      "task": {
+        "intent": "silent video, sfx transient tail layering",
+        "constraints": {
+          "no_audio": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "sfx-layering-transient-tail"
+      ]
+    },
+    {
+      "id": "en-platform-loudness-targets",
+      "task": {
+        "intent": "platform loudness targets and lufs true peak mastering",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "platform-loudness-targets"
+      ]
+    },
+    {
+      "id": "tr-platform-loudness-targets",
+      "task": {
+        "intent": "platform ses yüksekliği hedefleri ve LUFS ve tavan seviye ayarı",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "platform-loudness-targets"
+      ]
+    },
+    {
+      "id": "de-platform-loudness-targets",
+      "task": {
+        "intent": "Plattform-Lautheitsziele sowie LUFS und True-Peak-Mastering",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "platform-loudness-targets"
+      ]
+    },
+    {
+      "id": "neg-platform-loudness-targets",
+      "task": {
+        "intent": "platform loudness targets",
+        "capabilities": []
+      },
+      "relevant": [],
+      "forbidden": [
+        "platform-loudness-targets"
+      ]
+    },
+    {
+      "id": "en-bar-grid-music-alignment",
+      "task": {
+        "intent": "bar grid music alignment and tempo to frame grid"
+      },
+      "relevant": [
+        "bar-grid-music-alignment",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-bar-grid-music-alignment",
+      "task": {
+        "intent": "müzik ölçü ızgarası hizalama ve BPM kare senkronu"
+      },
+      "relevant": [
+        "bar-grid-music-alignment",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-bar-grid-music-alignment",
+      "task": {
+        "intent": "Taktraster-Musikausrichtung sowie BPM auf Bildraster abstimmen"
+      },
+      "relevant": [
+        "bar-grid-music-alignment",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-bar-grid-music-alignment",
+      "task": {
+        "intent": "müziksiz bar music alignment",
+        "constraints": {
+          "no_music": true
+        }
+      },
+      "relevant": [],
+      "forbidden": [
+        "bar-grid-music-alignment"
+      ]
+    },
+    {
+      "id": "en-stepped-clay-lookdev",
+      "task": {
+        "intent": "stepped clay lookdev and 3d stop motion clay shader",
+        "capabilities": [
+          "blender"
+        ]
+      },
+      "relevant": [
+        "stepped-clay-lookdev",
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "tr-stepped-clay-lookdev",
+      "task": {
+        "intent": "kademeli kil görünüm geliştirme ve 3B kil gölgelendirici",
+        "capabilities": [
+          "blender"
+        ]
+      },
+      "relevant": [
+        "stepped-clay-lookdev",
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "de-stepped-clay-lookdev",
+      "task": {
+        "intent": "gestuftes Knet-Lookdev und 3D-Stop-Motion-Tonmaterial",
+        "capabilities": [
+          "blender"
+        ]
+      },
+      "relevant": [
+        "stepped-clay-lookdev",
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "neg-stepped-clay-lookdev",
+      "task": {
+        "intent": "frame clock; stepped clay lookdev",
+        "capabilities": []
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "stepped-clay-lookdev"
+      ]
+    },
+    {
+      "id": "en-paper-cutout-layering",
+      "task": {
+        "intent": "paper cutout layering and 2.5d paper parallax build"
+      },
+      "relevant": [
+        "paper-cutout-layering",
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "tr-paper-cutout-layering",
+      "task": {
+        "intent": "çok katmanlı kağıt kesme kurulumu ile kağıt katman gölge ve paralaks"
+      },
+      "relevant": [
+        "paper-cutout-layering",
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "de-paper-cutout-layering",
+      "task": {
+        "intent": "Papier-Schnitt-Ebenenaufbau und mehrschichtiger Scherenschnitt-Parallax"
+      },
+      "relevant": [
+        "paper-cutout-layering",
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "neg-paper-cutout-layering",
+      "task": {
+        "intent": "contrast audit; paper cutout layering is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "paper-cutout-layering"
+      ]
+    },
+    {
+      "id": "en-shader-loop-art",
+      "task": {
+        "intent": "shader loop art and seamless glsl loop"
+      },
+      "relevant": [
+        "shader-loop-art",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-shader-loop-art",
+      "task": {
+        "intent": "kesintisiz gölgelendirici döngüsü ve periyodik prosedürel döngü sanatı"
+      },
+      "relevant": [
+        "shader-loop-art",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-shader-loop-art",
+      "task": {
+        "intent": "nahtlose Shader-Schleife und periodische GLSL-Animation"
+      },
+      "relevant": [
+        "shader-loop-art",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-shader-loop-art",
+      "task": {
+        "intent": "contrast audit; without shader loop art"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "shader-loop-art"
+      ]
+    },
+    {
+      "id": "en-retro-cutscene-directing",
+      "task": {
+        "intent": "retro cutscene directing and lowpoly cutscene staging"
+      },
+      "relevant": [
+        "retro-cutscene-directing"
+      ]
+    },
+    {
+      "id": "tr-retro-cutscene-directing",
+      "task": {
+        "intent": "retro ara sahne yönetimi ve düşük poligonlu diyalog sahnesi"
+      },
+      "relevant": [
+        "retro-cutscene-directing"
+      ]
+    },
+    {
+      "id": "de-retro-cutscene-directing",
+      "task": {
+        "intent": "Retro-Zwischensequenz-Regie sowie Low-Poly-Dialogszene inszenieren"
+      },
+      "relevant": [
+        "retro-cutscene-directing"
+      ]
+    },
+    {
+      "id": "neg-retro-cutscene-directing",
+      "task": {
+        "intent": "locked camera; without retro cutscene directing"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "retro-cutscene-directing"
+      ]
+    },
+    {
+      "id": "en-news-ticker-hierarchy",
+      "task": {
+        "intent": "news ticker hierarchy and broadcast ticker crawl"
+      },
+      "relevant": [
+        "news-ticker-hierarchy"
+      ]
+    },
+    {
+      "id": "tr-news-ticker-hierarchy",
+      "task": {
+        "intent": "haber bandı hiyerarşisi ve kayan alt bant düzeni"
+      },
+      "relevant": [
+        "news-ticker-hierarchy"
+      ]
+    },
+    {
+      "id": "de-news-ticker-hierarchy",
+      "task": {
+        "intent": "Nachrichtenticker-Hierarchie sowie Laufband-Layout gestalten"
+      },
+      "relevant": [
+        "news-ticker-hierarchy"
+      ]
+    },
+    {
+      "id": "neg-news-ticker-hierarchy",
+      "task": {
+        "intent": "no text, news ticker hierarchy"
+      },
+      "relevant": [
+        "textless-visual-design"
+      ],
+      "forbidden": [
+        "news-ticker-hierarchy"
+      ]
+    },
+    {
+      "id": "en-claims-must-be-sourced",
+      "task": {
+        "intent": "claims must be sourced and quantitative claim citation"
+      },
+      "relevant": [
+        "claims-must-be-sourced"
+      ]
+    },
+    {
+      "id": "tr-claims-must-be-sourced",
+      "task": {
+        "intent": "iddialar kaynaklı olmalı ve sayısal veri kaynak doğrulama"
+      },
+      "relevant": [
+        "claims-must-be-sourced"
+      ]
+    },
+    {
+      "id": "de-claims-must-be-sourced",
+      "task": {
+        "intent": "Quellenpflicht für Zahlenangaben und Belegprüfung für Behauptungen"
+      },
+      "relevant": [
+        "claims-must-be-sourced"
+      ]
+    },
+    {
+      "id": "neg-claims-must-be-sourced",
+      "task": {
+        "intent": "locked camera; claims must be sourced is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "claims-must-be-sourced"
+      ]
+    },
+    {
+      "id": "en-content-policy-boundaries",
+      "task": {
+        "intent": "content policy boundaries and impersonation and trademark guard"
+      },
+      "relevant": [
+        "content-policy-boundaries",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "tr-content-policy-boundaries",
+      "task": {
+        "intent": "içerik politikası sınırları ile kişi taklidi ve marka koruması"
+      },
+      "relevant": [
+        "content-policy-boundaries",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "de-content-policy-boundaries",
+      "task": {
+        "intent": "Inhaltsrichtlinien-Grenzen sowie Imitations- und Markenschutz"
+      },
+      "relevant": [
+        "content-policy-boundaries",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "neg-content-policy-boundaries",
+      "task": {
+        "intent": "frame clock; content policy boundaries is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "content-policy-boundaries"
+      ]
+    },
+    {
+      "id": "en-anti-aliasing-thin-lines",
+      "task": {
+        "intent": "anti aliasing thin lines and thin stroke shimmer fix"
+      },
+      "relevant": [
+        "anti-aliasing-thin-lines"
+      ]
+    },
+    {
+      "id": "tr-anti-aliasing-thin-lines",
+      "task": {
+        "intent": "ince çizgi kenar yumuşatma ve titreyen ızgara çizgisi düzeltme"
+      },
+      "relevant": [
+        "anti-aliasing-thin-lines"
+      ]
+    },
+    {
+      "id": "de-anti-aliasing-thin-lines",
+      "task": {
+        "intent": "Kantenglättung dünner Linien sowie Flimmern feiner Linien beheben"
+      },
+      "relevant": [
+        "anti-aliasing-thin-lines"
+      ]
+    },
+    {
+      "id": "neg-anti-aliasing-thin-lines",
+      "task": {
+        "intent": "frame clock; without anti aliasing thin lines"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "anti-aliasing-thin-lines"
+      ]
+    },
+    {
+      "id": "en-chroma-subsampling-text-guard",
+      "task": {
+        "intent": "chroma subsampling text guard and yuv420p colored text fix",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "chroma-subsampling-text-guard"
+      ]
+    },
+    {
+      "id": "tr-chroma-subsampling-text-guard",
+      "task": {
+        "intent": "kroma alt örnekleme metin koruması ve renkli yazı kenar dağılması önleme",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "chroma-subsampling-text-guard"
+      ]
+    },
+    {
+      "id": "de-chroma-subsampling-text-guard",
+      "task": {
+        "intent": "Chroma-Subsampling-Textschutz sowie Farbsäume bei Text vermeiden",
+        "capabilities": [
+          "ffmpeg"
+        ]
+      },
+      "relevant": [
+        "chroma-subsampling-text-guard"
+      ]
+    },
+    {
+      "id": "neg-chroma-subsampling-text-guard",
+      "task": {
+        "intent": "chroma subsampling text guard",
+        "capabilities": []
+      },
+      "relevant": [],
+      "forbidden": [
+        "chroma-subsampling-text-guard"
+      ]
+    },
+    {
+      "id": "en-golden-frame-regression",
+      "task": {
+        "intent": "golden frame regression and visual render regression test"
+      },
+      "relevant": [
+        "golden-frame-regression"
+      ]
+    },
+    {
+      "id": "tr-golden-frame-regression",
+      "task": {
+        "intent": "altın kare görsel regresyon ve işletim sistemleri arası kare testi"
+      },
+      "relevant": [
+        "golden-frame-regression"
+      ]
+    },
+    {
+      "id": "de-golden-frame-regression",
+      "task": {
+        "intent": "Golden-Frame-Regressionstest sowie Plattformübergreifender Bildvergleich"
+      },
+      "relevant": [
+        "golden-frame-regression"
+      ]
+    },
+    {
+      "id": "neg-golden-frame-regression",
+      "task": {
+        "intent": "locked camera; without golden frame regression"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "golden-frame-regression"
+      ]
+    },
+    {
+      "id": "en-asset-license-ledger",
+      "task": {
+        "intent": "asset license ledger and spdx attribution manifest"
+      },
+      "relevant": [
+        "asset-license-ledger"
+      ]
+    },
+    {
+      "id": "tr-asset-license-ledger",
+      "task": {
+        "intent": "varlık lisans defteri ile telif ve atıf kaydı"
+      },
+      "relevant": [
+        "asset-license-ledger"
+      ]
+    },
+    {
+      "id": "de-asset-license-ledger",
+      "task": {
+        "intent": "Asset-Lizenzverzeichnis sowie SPDX-Quellen- und Lizenzbuch"
+      },
+      "relevant": [
+        "asset-license-ledger"
+      ]
+    },
+    {
+      "id": "neg-asset-license-ledger",
+      "task": {
+        "intent": "frame clock; asset license ledger is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "asset-license-ledger"
+      ]
+    },
+    {
+      "id": "en-format-runner-protocol",
+      "task": {
+        "intent": "format runner protocol and step gated video pipeline"
+      },
+      "relevant": [
+        "format-runner-protocol",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-format-runner-protocol",
+      "task": {
+        "intent": "biçim yürütücü protokolü ve onay kapılı üretim hattı"
+      },
+      "relevant": [
+        "format-runner-protocol",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-format-runner-protocol",
+      "task": {
+        "intent": "Format-Ausführungsprotokoll sowie Stufengesteuerte Render-Pipeline"
+      },
+      "relevant": [
+        "format-runner-protocol",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-format-runner-protocol",
+      "task": {
+        "intent": "contrast audit; format runner protocol is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "format-runner-protocol"
+      ]
+    },
+    {
+      "id": "en-safe-community-format-package",
+      "task": {
+        "intent": "safe community format package and data only format install"
+      },
+      "relevant": [
+        "safe-community-format-package",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "tr-safe-community-format-package",
+      "task": {
+        "intent": "güvenli topluluk biçim paketi ve yalnızca veri biçim kurulumu"
+      },
+      "relevant": [
+        "safe-community-format-package",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "de-safe-community-format-package",
+      "task": {
+        "intent": "sicheres Community-Formatpaket sowie reines Datenformat installieren"
+      },
+      "relevant": [
+        "safe-community-format-package",
+        "reelguard-policy"
+      ]
+    },
+    {
+      "id": "neg-safe-community-format-package",
+      "task": {
+        "intent": "locked camera; safe community format package is forbidden"
+      },
+      "relevant": [
+        "locked-camera"
+      ],
+      "forbidden": [
+        "safe-community-format-package"
+      ]
+    },
+    {
+      "id": "en-showreel-direction",
+      "task": {
+        "intent": "showreel direction and demo reel editing arc"
+      },
+      "relevant": [
+        "showreel-direction",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-showreel-direction",
+      "task": {
+        "intent": "tanıtım seçkisi yönetimi ve portfolyo kurgusu showreel"
+      },
+      "relevant": [
+        "showreel-direction",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-showreel-direction",
+      "task": {
+        "intent": "Showreel-Regie sowie Demoreel-Dramaturgie schneiden"
+      },
+      "relevant": [
+        "showreel-direction",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-showreel-direction",
+      "task": {
+        "intent": "contrast audit; showreel direction is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "showreel-direction"
+      ]
+    },
+    {
+      "id": "en-brand-sting-remirdy",
+      "task": {
+        "intent": "brand sting remirdy and creator signature sting"
+      },
+      "relevant": [
+        "brand-sting-remirdy",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "tr-brand-sting-remirdy",
+      "task": {
+        "intent": "remirdy kapanış imzası ve üretici imza kartı kuralları"
+      },
+      "relevant": [
+        "brand-sting-remirdy",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "de-brand-sting-remirdy",
+      "task": {
+        "intent": "Remirdy-Signatur-Abspann sowie dezentes Urheber-Signet"
+      },
+      "relevant": [
+        "brand-sting-remirdy",
+        "frame-clock"
+      ]
+    },
+    {
+      "id": "neg-brand-sting-remirdy",
+      "task": {
+        "intent": "contrast audit; brand sting remirdy is forbidden"
+      },
+      "relevant": [
+        "contrast-audit"
+      ],
+      "forbidden": [
+        "brand-sting-remirdy"
+      ]
+    },
+    {
+      "id": "val-en-opening-hook",
+      "task": {
+        "intent": "opening hook"
+      },
+      "relevant": [
+        "opening-hook"
+      ]
+    },
+    {
+      "id": "val-tr-opening-hook",
+      "task": {
+        "intent": "ilk saniyeler"
+      },
+      "relevant": [
+        "opening-hook"
+      ]
+    },
+    {
+      "id": "val-de-opening-hook",
+      "task": {
+        "intent": "Eröffnungs-Hook"
+      },
+      "relevant": [
+        "opening-hook"
+      ]
+    },
+    {
+      "id": "val-neg-opening-hook",
+      "task": {
+        "intent": "frame clock; opening hook is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "opening-hook"
+      ]
+    },
+    {
+      "id": "val-en-ending-payoff",
+      "task": {
+        "intent": "ending payoff"
+      },
+      "relevant": [
+        "ending-payoff"
+      ]
+    },
+    {
+      "id": "val-tr-ending-payoff",
+      "task": {
+        "intent": "kapanış"
+      },
+      "relevant": [
+        "ending-payoff"
+      ]
+    },
+    {
+      "id": "val-de-ending-payoff",
+      "task": {
+        "intent": "Abschluss-Pointe"
+      },
+      "relevant": [
+        "ending-payoff"
+      ]
+    },
+    {
+      "id": "val-neg-ending-payoff",
+      "task": {
+        "intent": "frame clock; ending payoff is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "ending-payoff"
+      ]
+    },
+    {
+      "id": "val-en-storyboard",
+      "task": {
+        "intent": "storyboard"
+      },
+      "relevant": [
+        "storyboard"
+      ]
+    },
+    {
+      "id": "val-tr-storyboard",
+      "task": {
+        "intent": "sahne çizelgesi"
+      },
+      "relevant": [
+        "storyboard"
+      ]
+    },
+    {
+      "id": "val-de-storyboard",
+      "task": {
+        "intent": "Szenenboard"
+      },
+      "relevant": [
+        "storyboard"
+      ]
+    },
+    {
+      "id": "val-neg-storyboard",
+      "task": {
+        "intent": "frame clock; storyboard is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "storyboard"
+      ]
+    },
+    {
+      "id": "val-en-shot-list",
+      "task": {
+        "intent": "shot list"
+      },
+      "relevant": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "val-tr-shot-list",
+      "task": {
+        "intent": "çekim listesi"
+      },
+      "relevant": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "val-de-shot-list",
+      "task": {
+        "intent": "Einstellungsliste"
+      },
+      "relevant": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "val-neg-shot-list",
+      "task": {
+        "intent": "frame clock; shot list is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "shot-list"
+      ]
+    },
+    {
+      "id": "val-en-end-card",
+      "task": {
+        "intent": "end card"
+      },
+      "relevant": [
+        "end-card"
+      ]
+    },
+    {
+      "id": "val-tr-end-card",
+      "task": {
+        "intent": "kapanış kartı"
+      },
+      "relevant": [
+        "end-card"
+      ]
+    },
+    {
+      "id": "val-de-end-card",
+      "task": {
+        "intent": "Abspannkarte"
+      },
+      "relevant": [
+        "end-card"
+      ]
+    },
+    {
+      "id": "val-neg-end-card",
+      "task": {
+        "intent": "frame clock; end card is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "end-card"
+      ]
+    },
+    {
+      "id": "val-en-font-fallback-chain",
+      "task": {
+        "intent": "font fallback chain"
+      },
+      "relevant": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "val-tr-font-fallback-chain",
+      "task": {
+        "intent": "font fallback"
+      },
+      "relevant": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "val-de-font-fallback-chain",
+      "task": {
+        "intent": "Schrift-Fallback-Kette"
+      },
+      "relevant": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "val-neg-font-fallback-chain",
+      "task": {
+        "intent": "frame clock; font fallback chain is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "font-fallback-chain"
+      ]
+    },
+    {
+      "id": "val-en-rtl-text-layout",
+      "task": {
+        "intent": "rtl text layout"
+      },
+      "relevant": [
+        "rtl-text-layout"
+      ]
+    },
+    {
+      "id": "val-tr-rtl-text-layout",
+      "task": {
+        "intent": "arapça"
+      },
+      "relevant": [
+        "rtl-text-layout"
+      ]
+    },
+    {
+      "id": "val-de-rtl-text-layout",
+      "task": {
+        "intent": "Rechts-nach-links-Satz"
+      },
+      "relevant": [
+        "rtl-text-layout"
+      ]
+    },
+    {
+      "id": "val-neg-rtl-text-layout",
+      "task": {
+        "intent": "frame clock; rtl text layout is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "rtl-text-layout"
+      ]
+    },
+    {
+      "id": "val-en-cjk-typography",
+      "task": {
+        "intent": "cjk typography"
+      },
+      "relevant": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "val-tr-cjk-typography",
+      "task": {
+        "intent": "CJK tipografi"
+      },
+      "relevant": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "val-de-cjk-typography",
+      "task": {
+        "intent": "CJK-Typografie"
+      },
+      "relevant": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "val-neg-cjk-typography",
+      "task": {
+        "intent": "frame clock; cjk typography is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "cjk-typography"
+      ]
+    },
+    {
+      "id": "val-en-text-expansion-layout",
+      "task": {
+        "intent": "text expansion layout"
+      },
+      "relevant": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "val-tr-text-expansion-layout",
+      "task": {
+        "intent": "text expansion"
+      },
+      "relevant": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "val-de-text-expansion-layout",
+      "task": {
+        "intent": "Textausdehnung-Layout"
+      },
+      "relevant": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "val-neg-text-expansion-layout",
+      "task": {
+        "intent": "frame clock; text expansion layout is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "text-expansion-layout"
+      ]
+    },
+    {
+      "id": "val-en-vertical-safe-zones",
+      "task": {
+        "intent": "vertical safe zones"
+      },
+      "relevant": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "val-tr-vertical-safe-zones",
+      "task": {
+        "intent": "safe zones"
+      },
+      "relevant": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "val-de-vertical-safe-zones",
+      "task": {
+        "intent": "vertikale Sicherheitszonen"
+      },
+      "relevant": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "val-neg-vertical-safe-zones",
+      "task": {
+        "intent": "frame clock; vertical safe zones is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "vertical-safe-zones"
+      ]
+    },
+    {
+      "id": "val-en-beat-synced-editing",
+      "task": {
+        "intent": "beat synced editing"
+      },
+      "relevant": [
+        "beat-synced-editing"
+      ]
+    },
+    {
+      "id": "val-tr-beat-synced-editing",
+      "task": {
+        "intent": "ritme göre kurgu"
+      },
+      "relevant": [
+        "beat-synced-editing"
+      ]
+    },
+    {
+      "id": "val-de-beat-synced-editing",
+      "task": {
+        "intent": "Taktsynchroner Schnitt"
+      },
+      "relevant": [
+        "beat-synced-editing"
+      ]
+    },
+    {
+      "id": "val-neg-beat-synced-editing",
+      "task": {
+        "intent": "frame clock; beat synced editing is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "beat-synced-editing"
+      ]
+    },
+    {
+      "id": "val-en-easing-design",
+      "task": {
+        "intent": "easing design"
+      },
+      "relevant": [
+        "easing-design"
+      ]
+    },
+    {
+      "id": "val-tr-easing-design",
+      "task": {
+        "intent": "easing"
+      },
+      "relevant": [
+        "easing-design"
+      ]
+    },
+    {
+      "id": "val-de-easing-design",
+      "task": {
+        "intent": "Easing-Kurven"
+      },
+      "relevant": [
+        "easing-design"
+      ]
+    },
+    {
+      "id": "val-neg-easing-design",
+      "task": {
+        "intent": "frame clock; easing design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "easing-design"
+      ]
+    },
+    {
+      "id": "val-en-render-lookdev",
+      "task": {
+        "intent": "render lookdev"
+      },
+      "relevant": [
+        "render-lookdev"
+      ]
+    },
+    {
+      "id": "val-tr-render-lookdev",
+      "task": {
+        "intent": "lookdev"
+      },
+      "relevant": [
+        "render-lookdev"
+      ]
+    },
+    {
+      "id": "val-de-render-lookdev",
+      "task": {
+        "intent": "Render-Lookentwicklung"
+      },
+      "relevant": [
+        "render-lookdev"
+      ]
+    },
+    {
+      "id": "val-neg-render-lookdev",
+      "task": {
+        "intent": "frame clock; render lookdev is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "render-lookdev"
+      ]
+    },
+    {
+      "id": "val-en-brand-kit-workflow",
+      "task": {
+        "intent": "brand kit workflow"
+      },
+      "relevant": [
+        "brand-kit-workflow"
+      ]
+    },
+    {
+      "id": "val-tr-brand-kit-workflow",
+      "task": {
+        "intent": "brand kit"
+      },
+      "relevant": [
+        "brand-kit-workflow"
+      ]
+    },
+    {
+      "id": "val-de-brand-kit-workflow",
+      "task": {
+        "intent": "Markenpaket-Workflow"
+      },
+      "relevant": [
+        "brand-kit-workflow"
+      ]
+    },
+    {
+      "id": "val-neg-brand-kit-workflow",
+      "task": {
+        "intent": "frame clock; brand kit workflow is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "brand-kit-workflow"
+      ]
+    },
+    {
+      "id": "val-en-flash-safety",
+      "task": {
+        "intent": "flash safety"
+      },
+      "relevant": [
+        "flash-safety"
+      ]
+    },
+    {
+      "id": "val-tr-flash-safety",
+      "task": {
+        "intent": "flaş güvenliği"
+      },
+      "relevant": [
+        "flash-safety"
+      ]
+    },
+    {
+      "id": "val-de-flash-safety",
+      "task": {
+        "intent": "Blitzschutz-Prüfung"
+      },
+      "relevant": [
+        "flash-safety"
+      ]
+    },
+    {
+      "id": "val-neg-flash-safety",
+      "task": {
+        "intent": "frame clock; flash safety is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "flash-safety"
+      ]
+    },
+    {
+      "id": "val-en-audio-ducking",
+      "task": {
+        "intent": "audio ducking"
+      },
+      "relevant": [
+        "audio-ducking"
+      ]
+    },
+    {
+      "id": "val-tr-audio-ducking",
+      "task": {
+        "intent": "müzik kısma"
+      },
+      "relevant": [
+        "audio-ducking"
+      ]
+    },
+    {
+      "id": "val-de-audio-ducking",
+      "task": {
+        "intent": "Audio-Ducking"
+      },
+      "relevant": [
+        "audio-ducking"
+      ]
+    },
+    {
+      "id": "val-neg-audio-ducking",
+      "task": {
+        "intent": "frame clock; audio ducking is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "audio-ducking"
+      ]
+    },
+    {
+      "id": "val-en-local-text-to-speech",
+      "task": {
+        "intent": "local text to speech"
+      },
+      "relevant": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "val-tr-local-text-to-speech",
+      "task": {
+        "intent": "local TTS"
+      },
+      "relevant": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "val-de-local-text-to-speech",
+      "task": {
+        "intent": "lokale Sprachsynthese"
+      },
+      "relevant": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "val-neg-local-text-to-speech",
+      "task": {
+        "intent": "frame clock; local text to speech is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "local-text-to-speech"
+      ]
+    },
+    {
+      "id": "val-en-local-speech-to-text",
+      "task": {
+        "intent": "local speech to text"
+      },
+      "relevant": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "val-tr-local-speech-to-text",
+      "task": {
+        "intent": "local transcription"
+      },
+      "relevant": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "val-de-local-speech-to-text",
+      "task": {
+        "intent": "lokale Spracherkennung"
+      },
+      "relevant": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "val-neg-local-speech-to-text",
+      "task": {
+        "intent": "frame clock; local speech to text is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "local-speech-to-text"
+      ]
+    },
+    {
+      "id": "val-en-true-peak-limiting",
+      "task": {
+        "intent": "true peak limiting"
+      },
+      "relevant": [
+        "true-peak-limiting"
+      ]
+    },
+    {
+      "id": "val-tr-true-peak-limiting",
+      "task": {
+        "intent": "limiter"
+      },
+      "relevant": [
+        "true-peak-limiting"
+      ]
+    },
+    {
+      "id": "val-de-true-peak-limiting",
+      "task": {
+        "intent": "True-Peak-Begrenzung"
+      },
+      "relevant": [
+        "true-peak-limiting"
+      ]
+    },
+    {
+      "id": "val-neg-true-peak-limiting",
+      "task": {
+        "intent": "frame clock; true peak limiting is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "true-peak-limiting"
+      ]
+    },
+    {
+      "id": "val-en-audio-stem-export",
+      "task": {
+        "intent": "audio stem export"
+      },
+      "relevant": [
+        "audio-stem-export"
+      ]
+    },
+    {
+      "id": "val-tr-audio-stem-export",
+      "task": {
+        "intent": "stem export"
+      },
+      "relevant": [
+        "audio-stem-export"
+      ]
+    },
+    {
+      "id": "val-de-audio-stem-export",
+      "task": {
+        "intent": "Audio-Stem-Export"
+      },
+      "relevant": [
+        "audio-stem-export"
+      ]
+    },
+    {
+      "id": "val-neg-audio-stem-export",
+      "task": {
+        "intent": "frame clock; audio stem export is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "audio-stem-export"
+      ]
+    },
+    {
+      "id": "val-en-music-looping",
+      "task": {
+        "intent": "music looping"
+      },
+      "relevant": [
+        "music-looping"
+      ]
+    },
+    {
+      "id": "val-tr-music-looping",
+      "task": {
+        "intent": "müzik döngüsü"
+      },
+      "relevant": [
+        "music-looping"
+      ]
+    },
+    {
+      "id": "val-de-music-looping",
+      "task": {
+        "intent": "Musik-Schleife"
+      },
+      "relevant": [
+        "music-looping"
+      ]
+    },
+    {
+      "id": "val-neg-music-looping",
+      "task": {
+        "intent": "frame clock; music looping is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "music-looping"
+      ]
+    },
+    {
+      "id": "val-en-lip-sync",
+      "task": {
+        "intent": "lip sync"
+      },
+      "relevant": [
+        "lip-sync"
+      ]
+    },
+    {
+      "id": "val-tr-lip-sync",
+      "task": {
+        "intent": "dudak senkronu"
+      },
+      "relevant": [
+        "lip-sync"
+      ]
+    },
+    {
+      "id": "val-de-lip-sync",
+      "task": {
+        "intent": "Lippensynchronisation"
+      },
+      "relevant": [
+        "lip-sync"
+      ]
+    },
+    {
+      "id": "val-neg-lip-sync",
+      "task": {
+        "intent": "frame clock; lip sync is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "lip-sync"
+      ]
+    },
+    {
+      "id": "val-en-facial-expression",
+      "task": {
+        "intent": "facial expression"
+      },
+      "relevant": [
+        "facial-expression"
+      ]
+    },
+    {
+      "id": "val-tr-facial-expression",
+      "task": {
+        "intent": "yüz ifadesi"
+      },
+      "relevant": [
+        "facial-expression"
+      ]
+    },
+    {
+      "id": "val-de-facial-expression",
+      "task": {
+        "intent": "Gesichtsausdruck"
+      },
+      "relevant": [
+        "facial-expression"
+      ]
+    },
+    {
+      "id": "val-neg-facial-expression",
+      "task": {
+        "intent": "frame clock; facial expression is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "facial-expression"
+      ]
+    },
+    {
+      "id": "val-en-character-continuity",
+      "task": {
+        "intent": "character continuity"
+      },
+      "relevant": [
+        "character-continuity"
+      ]
+    },
+    {
+      "id": "val-tr-character-continuity",
+      "task": {
+        "intent": "karakter devamlılığı"
+      },
+      "relevant": [
+        "character-continuity"
+      ]
+    },
+    {
+      "id": "val-de-character-continuity",
+      "task": {
+        "intent": "Charakter-Kontinuität"
+      },
+      "relevant": [
+        "character-continuity"
+      ]
+    },
+    {
+      "id": "val-neg-character-continuity",
+      "task": {
+        "intent": "frame clock; character continuity is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "character-continuity"
+      ]
+    },
+    {
+      "id": "val-en-idle-animation",
+      "task": {
+        "intent": "idle animation"
+      },
+      "relevant": [
+        "idle-animation"
+      ]
+    },
+    {
+      "id": "val-tr-idle-animation",
+      "task": {
+        "intent": "idle"
+      },
+      "relevant": [
+        "idle-animation"
+      ]
+    },
+    {
+      "id": "val-de-idle-animation",
+      "task": {
+        "intent": "Ruheanimation"
+      },
+      "relevant": [
+        "idle-animation"
+      ]
+    },
+    {
+      "id": "val-neg-idle-animation",
+      "task": {
+        "intent": "frame clock; idle animation is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "idle-animation"
+      ]
+    },
+    {
+      "id": "val-en-shot-size",
+      "task": {
+        "intent": "shot size"
+      },
+      "relevant": [
+        "shot-size"
+      ]
+    },
+    {
+      "id": "val-tr-shot-size",
+      "task": {
+        "intent": "plan ölçeği"
+      },
+      "relevant": [
+        "shot-size"
+      ]
+    },
+    {
+      "id": "val-de-shot-size",
+      "task": {
+        "intent": "Einstellungsgröße"
+      },
+      "relevant": [
+        "shot-size"
+      ]
+    },
+    {
+      "id": "val-neg-shot-size",
+      "task": {
+        "intent": "frame clock; shot size is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "shot-size"
+      ]
+    },
+    {
+      "id": "val-en-match-cut-design",
+      "task": {
+        "intent": "match cut design"
+      },
+      "relevant": [
+        "match-cut-design"
+      ]
+    },
+    {
+      "id": "val-tr-match-cut-design",
+      "task": {
+        "intent": "match cut"
+      },
+      "relevant": [
+        "match-cut-design"
+      ]
+    },
+    {
+      "id": "val-de-match-cut-design",
+      "task": {
+        "intent": "Match-Cut-Gestaltung"
+      },
+      "relevant": [
+        "match-cut-design"
+      ]
+    },
+    {
+      "id": "val-neg-match-cut-design",
+      "task": {
+        "intent": "frame clock; match cut design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "match-cut-design"
+      ]
+    },
+    {
+      "id": "val-en-loop-design",
+      "task": {
+        "intent": "loop design"
+      },
+      "relevant": [
+        "loop-design"
+      ]
+    },
+    {
+      "id": "val-tr-loop-design",
+      "task": {
+        "intent": "döngü animasyonu"
+      },
+      "relevant": [
+        "loop-design"
+      ]
+    },
+    {
+      "id": "val-de-loop-design",
+      "task": {
+        "intent": "Schleifen-Design"
+      },
+      "relevant": [
+        "loop-design"
+      ]
+    },
+    {
+      "id": "val-neg-loop-design",
+      "task": {
+        "intent": "frame clock; loop design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "loop-design"
+      ]
+    },
+    {
+      "id": "val-en-speed-ramping-design",
+      "task": {
+        "intent": "speed ramping design"
+      },
+      "relevant": [
+        "speed-ramping-design"
+      ]
+    },
+    {
+      "id": "val-tr-speed-ramping-design",
+      "task": {
+        "intent": "hız rampası"
+      },
+      "relevant": [
+        "speed-ramping-design"
+      ]
+    },
+    {
+      "id": "val-de-speed-ramping-design",
+      "task": {
+        "intent": "Geschwindigkeitsrampe"
+      },
+      "relevant": [
+        "speed-ramping-design"
+      ]
+    },
+    {
+      "id": "val-neg-speed-ramping-design",
+      "task": {
+        "intent": "frame clock; speed ramping design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "speed-ramping-design"
+      ]
+    },
+    {
+      "id": "val-en-staggered-animation",
+      "task": {
+        "intent": "staggered animation"
+      },
+      "relevant": [
+        "staggered-animation"
+      ]
+    },
+    {
+      "id": "val-tr-staggered-animation",
+      "task": {
+        "intent": "sıralı animasyon"
+      },
+      "relevant": [
+        "staggered-animation"
+      ]
+    },
+    {
+      "id": "val-de-staggered-animation",
+      "task": {
+        "intent": "gestaffelte Animation"
+      },
+      "relevant": [
+        "staggered-animation"
+      ]
+    },
+    {
+      "id": "val-neg-staggered-animation",
+      "task": {
+        "intent": "frame clock; staggered animation is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "staggered-animation"
+      ]
+    },
+    {
+      "id": "val-en-social-media-reel",
+      "task": {
+        "intent": "social media reel"
+      },
+      "relevant": [
+        "social-media-reel"
+      ]
+    },
+    {
+      "id": "val-tr-social-media-reel",
+      "task": {
+        "intent": "reels"
+      },
+      "relevant": [
+        "social-media-reel"
+      ]
+    },
+    {
+      "id": "val-de-social-media-reel",
+      "task": {
+        "intent": "Social-Media-Kurzvideo"
+      },
+      "relevant": [
+        "social-media-reel"
+      ]
+    },
+    {
+      "id": "val-neg-social-media-reel",
+      "task": {
+        "intent": "frame clock; social media reel is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "social-media-reel"
+      ]
+    },
+    {
+      "id": "val-en-educational-explainer",
+      "task": {
+        "intent": "educational explainer"
+      },
+      "relevant": [
+        "educational-explainer"
+      ]
+    },
+    {
+      "id": "val-tr-educational-explainer",
+      "task": {
+        "intent": "eğitici video"
+      },
+      "relevant": [
+        "educational-explainer"
+      ]
+    },
+    {
+      "id": "val-de-educational-explainer",
+      "task": {
+        "intent": "Lehrvideo-Erklärfilm"
+      },
+      "relevant": [
+        "educational-explainer"
+      ]
+    },
+    {
+      "id": "val-neg-educational-explainer",
+      "task": {
+        "intent": "frame clock; educational explainer is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "educational-explainer"
+      ]
+    },
+    {
+      "id": "val-en-lyric-video",
+      "task": {
+        "intent": "lyric video"
+      },
+      "relevant": [
+        "lyric-video"
+      ]
+    },
+    {
+      "id": "val-tr-lyric-video",
+      "task": {
+        "intent": "şarkı sözü videosu"
+      },
+      "relevant": [
+        "lyric-video"
+      ]
+    },
+    {
+      "id": "val-de-lyric-video",
+      "task": {
+        "intent": "Lyrik-Video"
+      },
+      "relevant": [
+        "lyric-video"
+      ]
+    },
+    {
+      "id": "val-neg-lyric-video",
+      "task": {
+        "intent": "frame clock; lyric video is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "lyric-video"
+      ]
+    },
+    {
+      "id": "val-en-music-visualizer",
+      "task": {
+        "intent": "music visualizer"
+      },
+      "relevant": [
+        "music-visualizer"
+      ]
+    },
+    {
+      "id": "val-tr-music-visualizer",
+      "task": {
+        "intent": "müzik görselleştirme"
+      },
+      "relevant": [
+        "music-visualizer"
+      ]
+    },
+    {
+      "id": "val-de-music-visualizer",
+      "task": {
+        "intent": "Musik-Visualizer"
+      },
+      "relevant": [
+        "music-visualizer"
+      ]
+    },
+    {
+      "id": "val-neg-music-visualizer",
+      "task": {
+        "intent": "frame clock; music visualizer is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "music-visualizer"
+      ]
+    },
+    {
+      "id": "val-en-product-commercial",
+      "task": {
+        "intent": "product commercial"
+      },
+      "relevant": [
+        "product-commercial"
+      ]
+    },
+    {
+      "id": "val-tr-product-commercial",
+      "task": {
+        "intent": "ürün reklamı"
+      },
+      "relevant": [
+        "product-commercial"
+      ]
+    },
+    {
+      "id": "val-de-product-commercial",
+      "task": {
+        "intent": "Produktwerbespot"
+      },
+      "relevant": [
+        "product-commercial"
+      ]
+    },
+    {
+      "id": "val-neg-product-commercial",
+      "task": {
+        "intent": "frame clock; product commercial is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "product-commercial"
+      ]
+    },
+    {
+      "id": "val-en-bar-chart-animation",
+      "task": {
+        "intent": "bar chart animation"
+      },
+      "relevant": [
+        "bar-chart-animation"
+      ]
+    },
+    {
+      "id": "val-tr-bar-chart-animation",
+      "task": {
+        "intent": "çubuk grafik"
+      },
+      "relevant": [
+        "bar-chart-animation"
+      ]
+    },
+    {
+      "id": "val-de-bar-chart-animation",
+      "task": {
+        "intent": "Balkendiagramm-Animation"
+      },
+      "relevant": [
+        "bar-chart-animation"
+      ]
+    },
+    {
+      "id": "val-neg-bar-chart-animation",
+      "task": {
+        "intent": "frame clock; bar chart animation is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "bar-chart-animation"
+      ]
+    },
+    {
+      "id": "val-en-line-chart-animation",
+      "task": {
+        "intent": "line chart animation"
+      },
+      "relevant": [
+        "line-chart-animation"
+      ]
+    },
+    {
+      "id": "val-tr-line-chart-animation",
+      "task": {
+        "intent": "çizgi grafik"
+      },
+      "relevant": [
+        "line-chart-animation"
+      ]
+    },
+    {
+      "id": "val-de-line-chart-animation",
+      "task": {
+        "intent": "Liniendiagramm-Animation"
+      },
+      "relevant": [
+        "line-chart-animation"
+      ]
+    },
+    {
+      "id": "val-neg-line-chart-animation",
+      "task": {
+        "intent": "frame clock; line chart animation is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "line-chart-animation"
+      ]
+    },
+    {
+      "id": "val-en-accessible-data-design",
+      "task": {
+        "intent": "accessible data design"
+      },
+      "relevant": [
+        "accessible-data-design"
+      ]
+    },
+    {
+      "id": "val-tr-accessible-data-design",
+      "task": {
+        "intent": "erişilebilir grafik"
+      },
+      "relevant": [
+        "accessible-data-design"
+      ]
+    },
+    {
+      "id": "val-de-accessible-data-design",
+      "task": {
+        "intent": "barrierefreies Datendesign"
+      },
+      "relevant": [
+        "accessible-data-design"
+      ]
+    },
+    {
+      "id": "val-neg-accessible-data-design",
+      "task": {
+        "intent": "frame clock; accessible data design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "accessible-data-design"
+      ]
+    },
+    {
+      "id": "val-en-palette-design",
+      "task": {
+        "intent": "palette design"
+      },
+      "relevant": [
+        "palette-design"
+      ]
+    },
+    {
+      "id": "val-tr-palette-design",
+      "task": {
+        "intent": "renk paleti"
+      },
+      "relevant": [
+        "palette-design"
+      ]
+    },
+    {
+      "id": "val-de-palette-design",
+      "task": {
+        "intent": "Farbpaletten-Design"
+      },
+      "relevant": [
+        "palette-design"
+      ]
+    },
+    {
+      "id": "val-neg-palette-design",
+      "task": {
+        "intent": "frame clock; palette design is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "palette-design"
+      ]
+    },
+    {
+      "id": "val-en-visual-hierarchy",
+      "task": {
+        "intent": "visual hierarchy"
+      },
+      "relevant": [
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "val-tr-visual-hierarchy",
+      "task": {
+        "intent": "görsel hiyerarşi"
+      },
+      "relevant": [
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "val-de-visual-hierarchy",
+      "task": {
+        "intent": "visuelle Hierarchie"
+      },
+      "relevant": [
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "val-neg-visual-hierarchy",
+      "task": {
+        "intent": "frame clock; visual hierarchy is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "visual-hierarchy"
+      ]
+    },
+    {
+      "id": "val-en-low-poly-style",
+      "task": {
+        "intent": "low poly style"
+      },
+      "relevant": [
+        "low-poly-style"
+      ]
+    },
+    {
+      "id": "val-tr-low-poly-style",
+      "task": {
+        "intent": "low poly"
+      },
+      "relevant": [
+        "low-poly-style"
+      ]
+    },
+    {
+      "id": "val-de-low-poly-style",
+      "task": {
+        "intent": "Low-Poly-Stil"
+      },
+      "relevant": [
+        "low-poly-style"
+      ]
+    },
+    {
+      "id": "val-neg-low-poly-style",
+      "task": {
+        "intent": "frame clock; low poly style is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "low-poly-style"
+      ]
+    },
+    {
+      "id": "val-en-claymation-style",
+      "task": {
+        "intent": "claymation style"
+      },
+      "relevant": [
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "val-tr-claymation-style",
+      "task": {
+        "intent": "kil animasyon"
+      },
+      "relevant": [
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "val-de-claymation-style",
+      "task": {
+        "intent": "Knetanimations-Stil"
+      },
+      "relevant": [
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "val-neg-claymation-style",
+      "task": {
+        "intent": "frame clock; claymation style is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "claymation-style"
+      ]
+    },
+    {
+      "id": "val-en-paper-cut-style",
+      "task": {
+        "intent": "paper cut style"
+      },
+      "relevant": [
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "val-tr-paper-cut-style",
+      "task": {
+        "intent": "kağıt kesme"
+      },
+      "relevant": [
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "val-de-paper-cut-style",
+      "task": {
+        "intent": "Scherenschnitt-Stil"
+      },
+      "relevant": [
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "val-neg-paper-cut-style",
+      "task": {
+        "intent": "frame clock; paper cut style is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "paper-cut-style"
+      ]
+    },
+    {
+      "id": "val-en-cross-dissolve",
+      "task": {
+        "intent": "cross dissolve"
+      },
+      "relevant": [
+        "cross-dissolve"
+      ]
+    },
+    {
+      "id": "val-tr-cross-dissolve",
+      "task": {
+        "intent": "çapraz çözünme"
+      },
+      "relevant": [
+        "cross-dissolve"
+      ]
+    },
+    {
+      "id": "val-de-cross-dissolve",
+      "task": {
+        "intent": "Kreuzblende"
+      },
+      "relevant": [
+        "cross-dissolve"
+      ]
+    },
+    {
+      "id": "val-neg-cross-dissolve",
+      "task": {
+        "intent": "frame clock; cross dissolve is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "cross-dissolve"
+      ]
+    },
+    {
+      "id": "val-en-wipe-transition",
+      "task": {
+        "intent": "wipe transition"
+      },
+      "relevant": [
+        "wipe-transition"
+      ]
+    },
+    {
+      "id": "val-tr-wipe-transition",
+      "task": {
+        "intent": "silme geçişi"
+      },
+      "relevant": [
+        "wipe-transition"
+      ]
+    },
+    {
+      "id": "val-de-wipe-transition",
+      "task": {
+        "intent": "Wischblende"
+      },
+      "relevant": [
+        "wipe-transition"
+      ]
+    },
+    {
+      "id": "val-neg-wipe-transition",
+      "task": {
+        "intent": "frame clock; wipe transition is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "wipe-transition"
+      ]
+    },
+    {
+      "id": "val-en-poster-thumbnail",
+      "task": {
+        "intent": "poster thumbnail"
+      },
+      "relevant": [
+        "poster-thumbnail"
+      ]
+    },
+    {
+      "id": "val-tr-poster-thumbnail",
+      "task": {
+        "intent": "thumbnail"
+      },
+      "relevant": [
+        "poster-thumbnail"
+      ]
+    },
+    {
+      "id": "val-de-poster-thumbnail",
+      "task": {
+        "intent": "Vorschaubild-Poster"
+      },
+      "relevant": [
+        "poster-thumbnail"
+      ]
+    },
+    {
+      "id": "val-neg-poster-thumbnail",
+      "task": {
+        "intent": "frame clock; poster thumbnail is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "poster-thumbnail"
+      ]
+    },
+    {
+      "id": "val-en-gif-preview",
+      "task": {
+        "intent": "gif preview"
+      },
+      "relevant": [
+        "gif-preview"
+      ]
+    },
+    {
+      "id": "val-tr-gif-preview",
+      "task": {
+        "intent": "gif"
+      },
+      "relevant": [
+        "gif-preview"
+      ]
+    },
+    {
+      "id": "val-de-gif-preview",
+      "task": {
+        "intent": "GIF-Vorschau"
+      },
+      "relevant": [
+        "gif-preview"
+      ]
+    },
+    {
+      "id": "val-neg-gif-preview",
+      "task": {
+        "intent": "frame clock; gif preview is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "gif-preview"
+      ]
+    },
+    {
+      "id": "val-en-webm-export",
+      "task": {
+        "intent": "webm export"
+      },
+      "relevant": [
+        "webm-export"
+      ]
+    },
+    {
+      "id": "val-tr-webm-export",
+      "task": {
+        "intent": "webm"
+      },
+      "relevant": [
+        "webm-export"
+      ]
+    },
+    {
+      "id": "val-de-webm-export",
+      "task": {
+        "intent": "WebM-Export"
+      },
+      "relevant": [
+        "webm-export"
+      ]
+    },
+    {
+      "id": "val-neg-webm-export",
+      "task": {
+        "intent": "frame clock; webm export is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "webm-export"
+      ]
+    },
+    {
+      "id": "val-en-mp4-delivery",
+      "task": {
+        "intent": "mp4 delivery"
+      },
+      "relevant": [
+        "mp4-delivery"
+      ]
+    },
+    {
+      "id": "val-tr-mp4-delivery",
+      "task": {
+        "intent": "mp4 çıktı"
+      },
+      "relevant": [
+        "mp4-delivery"
+      ]
+    },
+    {
+      "id": "val-de-mp4-delivery",
+      "task": {
+        "intent": "MP4-Auslieferung"
+      },
+      "relevant": [
+        "mp4-delivery"
+      ]
+    },
+    {
+      "id": "val-neg-mp4-delivery",
+      "task": {
+        "intent": "frame clock; mp4 delivery is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "mp4-delivery"
+      ]
+    },
+    {
+      "id": "val-en-loop-seam-audit",
+      "task": {
+        "intent": "loop seam audit"
+      },
+      "relevant": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "val-tr-loop-seam-audit",
+      "task": {
+        "intent": "loop seam"
+      },
+      "relevant": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "val-de-loop-seam-audit",
+      "task": {
+        "intent": "Schleifennaht-Prüfung"
+      },
+      "relevant": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "val-neg-loop-seam-audit",
+      "task": {
+        "intent": "frame clock; loop seam audit is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "loop-seam-audit"
+      ]
+    },
+    {
+      "id": "val-en-reading-speed-audit",
+      "task": {
+        "intent": "reading speed audit"
+      },
+      "relevant": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "val-tr-reading-speed-audit",
+      "task": {
+        "intent": "reading speed"
+      },
+      "relevant": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "val-de-reading-speed-audit",
+      "task": {
+        "intent": "Lesegeschwindigkeits-Prüfung"
+      },
+      "relevant": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "val-neg-reading-speed-audit",
+      "task": {
+        "intent": "frame clock; reading speed audit is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "reading-speed-audit"
+      ]
+    },
+    {
+      "id": "val-en-caption-delivery-package",
+      "task": {
+        "intent": "caption delivery package"
+      },
+      "relevant": [
+        "caption-delivery-package"
+      ]
+    },
+    {
+      "id": "val-tr-caption-delivery-package",
+      "task": {
+        "intent": "altyazı teslimi"
+      },
+      "relevant": [
+        "caption-delivery-package"
+      ]
+    },
+    {
+      "id": "val-de-caption-delivery-package",
+      "task": {
+        "intent": "Untertitel-Lieferpaket"
+      },
+      "relevant": [
+        "caption-delivery-package"
+      ]
+    },
+    {
+      "id": "val-neg-caption-delivery-package",
+      "task": {
+        "intent": "frame clock; caption delivery package is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "caption-delivery-package"
+      ]
+    },
+    {
+      "id": "val-en-asset-provenance",
+      "task": {
+        "intent": "asset provenance"
+      },
+      "relevant": [
+        "asset-provenance"
+      ]
+    },
+    {
+      "id": "val-tr-asset-provenance",
+      "task": {
+        "intent": "kaynak takibi"
+      },
+      "relevant": [
+        "asset-provenance"
+      ]
+    },
+    {
+      "id": "val-de-asset-provenance",
+      "task": {
+        "intent": "Asset-Herkunftsnachweis"
+      },
+      "relevant": [
+        "asset-provenance"
+      ]
+    },
+    {
+      "id": "val-neg-asset-provenance",
+      "task": {
+        "intent": "frame clock; asset provenance is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "asset-provenance"
+      ]
+    },
+    {
+      "id": "val-en-font-licensing",
+      "task": {
+        "intent": "font licensing"
+      },
+      "relevant": [
+        "font-licensing"
+      ]
+    },
+    {
+      "id": "val-tr-font-licensing",
+      "task": {
+        "intent": "font lisansı"
+      },
+      "relevant": [
+        "font-licensing"
+      ]
+    },
+    {
+      "id": "val-de-font-licensing",
+      "task": {
+        "intent": "Schriftlizenz-Prüfung"
+      },
+      "relevant": [
+        "font-licensing"
+      ]
+    },
+    {
+      "id": "val-neg-font-licensing",
+      "task": {
+        "intent": "frame clock; font licensing is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "font-licensing"
+      ]
+    },
+    {
+      "id": "val-en-license-compatibility",
+      "task": {
+        "intent": "license compatibility"
+      },
+      "relevant": [
+        "license-compatibility"
+      ]
+    },
+    {
+      "id": "val-tr-license-compatibility",
+      "task": {
+        "intent": "mit uyumluluğu"
+      },
+      "relevant": [
+        "license-compatibility"
+      ]
+    },
+    {
+      "id": "val-de-license-compatibility",
+      "task": {
+        "intent": "Lizenzkompatibilität"
+      },
+      "relevant": [
+        "license-compatibility"
+      ]
+    },
+    {
+      "id": "val-neg-license-compatibility",
+      "task": {
+        "intent": "frame clock; license compatibility is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "license-compatibility"
+      ]
+    },
+    {
+      "id": "val-en-debanding",
+      "task": {
+        "intent": "debanding"
+      },
+      "relevant": [
+        "debanding"
+      ]
+    },
+    {
+      "id": "val-tr-debanding",
+      "task": {
+        "intent": "banding"
+      },
+      "relevant": [
+        "debanding"
+      ]
+    },
+    {
+      "id": "val-de-debanding",
+      "task": {
+        "intent": "Banding-Reduktion"
+      },
+      "relevant": [
+        "debanding"
+      ]
+    },
+    {
+      "id": "val-neg-debanding",
+      "task": {
+        "intent": "frame clock; debanding is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "debanding"
+      ]
+    },
+    {
+      "id": "val-en-brief-compliance-audit",
+      "task": {
+        "intent": "brief compliance audit"
+      },
+      "relevant": [
+        "brief-compliance-audit"
+      ]
+    },
+    {
+      "id": "val-tr-brief-compliance-audit",
+      "task": {
+        "intent": "talimat kontrolü"
+      },
+      "relevant": [
+        "brief-compliance-audit"
+      ]
+    },
+    {
+      "id": "val-de-brief-compliance-audit",
+      "task": {
+        "intent": "Briefing-Konformitätsprüfung"
+      },
+      "relevant": [
+        "brief-compliance-audit"
+      ]
+    },
+    {
+      "id": "val-neg-brief-compliance-audit",
+      "task": {
+        "intent": "frame clock; brief compliance audit is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "brief-compliance-audit"
+      ]
+    },
+    {
+      "id": "val-en-preview-render",
+      "task": {
+        "intent": "preview render"
+      },
+      "relevant": [
+        "preview-render"
+      ]
+    },
+    {
+      "id": "val-tr-preview-render",
+      "task": {
+        "intent": "taslak render"
+      },
+      "relevant": [
+        "preview-render"
+      ]
+    },
+    {
+      "id": "val-de-preview-render",
+      "task": {
+        "intent": "Vorschau-Render"
+      },
+      "relevant": [
+        "preview-render"
+      ]
+    },
+    {
+      "id": "val-neg-preview-render",
+      "task": {
+        "intent": "frame clock; preview render is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "preview-render"
+      ]
+    },
+    {
+      "id": "val-en-render-preflight",
+      "task": {
+        "intent": "render preflight"
+      },
+      "relevant": [
+        "render-preflight"
+      ]
+    },
+    {
+      "id": "val-tr-render-preflight",
+      "task": {
+        "intent": "render öncesi kontrol"
+      },
+      "relevant": [
+        "render-preflight"
+      ]
+    },
+    {
+      "id": "val-de-render-preflight",
+      "task": {
+        "intent": "Render-Vorabprüfung"
+      },
+      "relevant": [
+        "render-preflight"
+      ]
+    },
+    {
+      "id": "val-neg-render-preflight",
+      "task": {
+        "intent": "frame clock; render preflight is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "render-preflight"
+      ]
+    },
+    {
+      "id": "val-en-resource-budget",
+      "task": {
+        "intent": "resource budget"
+      },
+      "relevant": [
+        "resource-budget"
+      ]
+    },
+    {
+      "id": "val-tr-resource-budget",
+      "task": {
+        "intent": "ram disk bütçesi"
+      },
+      "relevant": [
+        "resource-budget"
+      ]
+    },
+    {
+      "id": "val-de-resource-budget",
+      "task": {
+        "intent": "Ressourcen-Budget"
+      },
+      "relevant": [
+        "resource-budget"
+      ]
+    },
+    {
+      "id": "val-neg-resource-budget",
+      "task": {
+        "intent": "frame clock; resource budget is forbidden"
+      },
+      "relevant": [
+        "frame-clock"
+      ],
+      "forbidden": [
+        "resource-budget"
+      ]
+    }
   ]
 }

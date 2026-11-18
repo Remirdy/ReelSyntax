@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "müzik görselleştirme,visualizer"
+  aliases: "müzik görselleştirme,visualizer,music visualizer,Musik-Visualizer,Audio-Spektrum-Video"
   requires: ""
 ---
 

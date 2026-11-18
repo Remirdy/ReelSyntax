@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "müzik döngüsü,loop music"
+  aliases: "müzik döngüsü,loop music,music looping,Musik-Schleife,nahtloser Musik-Loop"
   requires: ""
 ---
 

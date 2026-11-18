@@ -1,34 +1,34 @@
 # ReelSyntax skill catalog
 
-566 skills across 25 categories. 508 guidance, 58 validated.
+616 skills across 25 categories. 448 guidance, 168 validated.
 
 | Category | Skills |
 | --- | ---: |
 | art | 27 |
-| audio | 23 |
-| camera | 23 |
+| audio | 27 |
+| camera | 25 |
 | capture | 20 |
 | character | 20 |
 | data | 29 |
-| delivery | 28 |
-| direction | 20 |
-| editing | 20 |
+| delivery | 29 |
+| direction | 24 |
+| editing | 24 |
 | engines | 24 |
-| formats | 32 |
-| graphics | 20 |
-| ingest | 20 |
-| lighting | 21 |
-| modeling | 21 |
-| motion | 21 |
-| music | 20 |
-| qa | 21 |
+| formats | 34 |
+| graphics | 21 |
+| ingest | 21 |
+| lighting | 23 |
+| modeling | 22 |
+| motion | 23 |
+| music | 21 |
+| qa | 27 |
 | render | 20 |
-| skills | 26 |
-| story | 20 |
+| skills | 30 |
+| story | 25 |
 | transitions | 20 |
-| typography | 28 |
-| vfx | 21 |
-| workflow | 21 |
+| typography | 35 |
+| vfx | 23 |
+| workflow | 22 |
 
 ## Art direction, composition and design (`art`, 27)
 
@@ -39,19 +39,19 @@
 | [art-reference-board](library/art/art-reference-board/SKILL.md) | guidance | moodboard, referans panosu | Use for art reference board. Collect labeled references by composition, material, light and movement rather than copying whole scenes. |
 | [brand-consistency](library/art/brand-consistency/SKILL.md) | guidance | marka tutarlılığı, logo renk | Use for brand consistency. Use verified brand assets and lock exact colors, spacing and logo geometry. |
 | [brutalist-motion](library/art/brutalist-motion/SKILL.md) | guidance | brutalist design, brütalist tasarım | Build a typographic sequence around hard cuts and exposed structure. |
-| [claymation-style](library/art/claymation-style/SKILL.md) | guidance | kil animasyon, claymation | Use for claymation style. Use handmade surface imperfections, tactile shapes and discrete motion cadence. |
+| [claymation-style](library/art/claymation-style/SKILL.md) | validated | kil animasyon, claymation, claymation style, Knetanimations-Stil, Stop-Motion-Tonstil | Use for claymation style. Use handmade surface imperfections, tactile shapes and discrete motion cadence. |
 | [collage-art](library/art/collage-art/SKILL.md) | guidance | kolaj, arşiv kolaj | Use for collage art. Layer licensed cutouts with deliberate scale, edge treatment and graphic accents. |
 | [editorial-design](library/art/editorial-design/SKILL.md) | guidance | editoryal tasarım, dergi stili | Use for editorial design. Use measured type scale, image crops and asymmetric grid rhythm. |
 | [film-noir](library/art/film-noir/SKILL.md) | guidance | film noir, siyah beyaz sinema | Use for film noir. Build high-contrast monochrome lighting, occlusion and motivated silhouettes. |
 | [glassmorphism-motion](library/art/glassmorphism-motion/SKILL.md) | guidance | glassmorphism, cam efekti | Keep translucent panels legible over moving footage. |
 | [halftone-risograph-style](library/art/halftone-risograph-style/SKILL.md) | guidance | halftone, risograph baskı | Simulate screened spot-color layers. |
 | [layout-grid](library/art/layout-grid/SKILL.md) | guidance | ızgara düzeni, grid | Use for layout grid. Set baseline, gutters, alignment anchors and responsive bounds in scene coordinates. |
-| [low-poly-style](library/art/low-poly-style/SKILL.md) | guidance | low poly, düşük poligon | Use for low poly style. Use clear faceted silhouettes, limited materials and deliberate hard edges. |
+| [low-poly-style](library/art/low-poly-style/SKILL.md) | validated | low poly, düşük poligon, low poly style, Low-Poly-Stil, kantiger Polygon-Look | Use for low poly style. Use clear faceted silhouettes, limited materials and deliberate hard edges. |
 | [miniature-diorama](library/art/miniature-diorama/SKILL.md) | guidance | minyatür, diorama | Use for miniature diorama. Design scaled props, shallow focus and consistent environmental detail. |
 | [minimal-commercial](library/art/minimal-commercial/SKILL.md) | guidance | minimal reklam, sade premium | Use for minimal commercial. Limit objects and materials; assign each move and accent a purpose. |
 | [oklch-perceptual-palettes](library/art/oklch-perceptual-palettes/SKILL.md) | validated | oklch renk paleti, oklab gradient, perceptual color space, algısal renk geçişi | Use for perceptual OKLab and OKLCH color palettes. Interpolate gradients, lighting tints, and data series with uniform perceived lightness and preserved chroma. |
-| [palette-design](library/art/palette-design/SKILL.md) | guidance | renk paleti, renk uyumu | Use for palette design. Choose limited base, accent and neutral roles with luminance separation. |
-| [paper-cut-style](library/art/paper-cut-style/SKILL.md) | guidance | kağıt kesme, paper cut | Use for paper cut style. Stage layered cutout silhouettes with slight depth offsets and coherent shadow direction. |
+| [palette-design](library/art/palette-design/SKILL.md) | validated | renk paleti, renk uyumu, palette design, Farbpaletten-Design, Farbschema entwerfen | Use for palette design. Choose limited base, accent and neutral roles with luminance separation. |
+| [paper-cut-style](library/art/paper-cut-style/SKILL.md) | validated | kağıt kesme, paper cut, paper cut style, Scherenschnitt-Stil, Papierschnitt-Optik | Use for paper cut style. Stage layered cutout silhouettes with slight depth offsets and coherent shadow direction. |
 | [photorealistic-material-direction](library/art/photorealistic-material-direction/SKILL.md) | guidance | gerçekçi materyal, fotogerçekçi | Use for photorealistic material direction. Match scale, roughness, microdetail and plausible light response to references. |
 | [pixel-art-style](library/art/pixel-art-style/SKILL.md) | guidance | piksel sanat, pixel art | Use for pixel art style. Use integer grid scaling, limited palette and nearest-neighbor transforms. |
 | [retro-vhs](library/art/retro-vhs/SKILL.md) | guidance | vhs, retro kaset | Use for retro vhs. Apply bounded chroma bleed, noise and scanline artifacts only where stylistically useful. |
@@ -60,15 +60,15 @@
 | [technical-blueprint](library/art/technical-blueprint/SKILL.md) | guidance | teknik çizim, blueprint | Use for technical blueprint. Use dimension lines, consistent stroke widths and schematic hierarchy. |
 | [toon-shading-npr](library/art/toon-shading-npr/SKILL.md) | guidance | toon shading, çizgi film gölgelendirme | Build stepped lighting and contour lines. |
 | [vaporwave-synthwave-style](library/art/vaporwave-synthwave-style/SKILL.md) | guidance | synthwave, retro gelecek | Compose a retro-futurist grid and horizon palette. |
-| [visual-hierarchy](library/art/visual-hierarchy/SKILL.md) | guidance | görsel hiyerarşi, tasarım hiyerarşisi | Use for visual hierarchy. Prioritize scale, contrast, position and motion to produce an intended reading order. |
+| [visual-hierarchy](library/art/visual-hierarchy/SKILL.md) | validated | görsel hiyerarşi, tasarım hiyerarşisi, visual hierarchy, visuelle Hierarchie, Blickführung gestalten | Use for visual hierarchy. Prioritize scale, contrast, position and motion to produce an intended reading order. |
 
-## Sound design, recording and mixing (`audio`, 23)
+## Sound design, recording and mixing (`audio`, 27)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [ambience-design](library/audio/ambience-design/SKILL.md) | guidance | ambiyans, ortam sesi | Use for ambience design. Layer location-appropriate textures with controlled loop points and distance. |
 | [audio-crossfades](library/audio/audio-crossfades/SKILL.md) | guidance | ses geçişi, crossfade audio | Use for audio crossfades. Select appropriate gain curve and fade length per material. |
-| [audio-ducking](library/audio/audio-ducking/SKILL.md) | guidance | müzik kısma, ducking | Use for audio ducking. Attenuate backing track during dialogue with attack and release adjusted to phrases. |
+| [audio-ducking](library/audio/audio-ducking/SKILL.md) | validated | müzik kısma, ducking, audio ducking, Audio-Ducking, Musikabsenkung unter Sprache | Use for audio ducking. Attenuate backing track during dialogue with attack and release adjusted to phrases. |
 | [audio-equalization](library/audio/audio-equalization/SKILL.md) | guidance | eq, equalizer | Use for audio equalization. Use targeted frequency adjustments for clarity and tonal balance. |
 | [audio-reactive-animation](library/audio/audio-reactive-animation/SKILL.md) | guidance | sese duyarlı, audio reactive | Use for audio reactive animation. Map measured bands or envelope to bounded smoothed visual parameters. |
 | [beat-detection](library/audio/beat-detection/SKILL.md) | guidance | bpm, ritim tespiti | Use for beat detection. Estimate tempo and transient positions or accept authoritative markers. |
@@ -76,21 +76,25 @@
 | [dynamic-compression](library/audio/dynamic-compression/SKILL.md) | guidance | compressor, dinamik sıkıştırma | Use for dynamic compression. Set threshold, ratio and time constants based on source dynamics. |
 | [ebu-r128-dialogue-gating](library/audio/ebu-r128-dialogue-gating/SKILL.md) | validated | ebu r128, dialogue gating, lufs ölçümü, kısa video ses seviyesi | Use for EBU R128 loudness gating and short-form dynamics. Validate gated LUFS, loudness range (LRA), and oversampled true-peak headroom across sparse cues and short bumpers. |
 | [foley-design](library/audio/foley-design/SKILL.md) | guidance | foley, ayak sesi | Use for foley design. Design or use licensed synchronized physical sounds matching material and action. |
-| [local-speech-to-text](library/audio/local-speech-to-text/SKILL.md) | guidance | local transcription, yerel yazıya dökme | Align a transcript from a user-provided local recognizer. |
-| [local-text-to-speech](library/audio/local-text-to-speech/SKILL.md) | guidance | local TTS, yerel seslendirme | Prepare narration from an installed local synthesizer. |
+| [local-speech-to-text](library/audio/local-speech-to-text/SKILL.md) | validated | local transcription, yerel yazıya dökme, local speech to text, lokale Spracherkennung, Offline-Transkription | Align a transcript from a user-provided local recognizer. |
+| [local-text-to-speech](library/audio/local-text-to-speech/SKILL.md) | validated | local TTS, yerel seslendirme, local text to speech, lokale Sprachsynthese, Offline-TTS | Prepare narration from an installed local synthesizer. |
 | [loudness-normalization](library/audio/loudness-normalization/SKILL.md) | validated | lufs, ses normalizasyonu | Use for loudness normalization. Measure integrated loudness and true peak; normalize to destination specification. |
 | [multitrack-mixing](library/audio/multitrack-mixing/SKILL.md) | guidance | çok kanallı ses, mix | Use for multitrack mixing. Balance dialogue, music, effects and ambience as separate stems with master headroom. |
+| [platform-loudness-targets](library/audio/platform-loudness-targets/SKILL.md) | validated | platform loudness targets, lufs true peak mastering, platform ses yüksekliği hedefleri, LUFS ve tavan seviye ayarı, Plattform-Lautheitsziele, LUFS und True-Peak-Mastering, objetivos de sonoridad por plataforma, cibles de sonie et crête vraie | Master integrated program loudness, short-term dynamics, loudness range, and true-peak ceilings using adjustable delivery presets and dual-pass measurement. |
 | [procedural-impact](library/audio/procedural-impact/SKILL.md) | guidance | darbe sesi, impact sfx | Use for procedural impact. Combine low transient, shaped noise and short decay using deterministic synthesis. |
 | [procedural-weather-audio](library/audio/procedural-weather-audio/SKILL.md) | guidance | yağmur sesi, rüzgar sesi | Use for procedural weather audio. Synthesize filtered seeded noise layers with controlled random event rates. |
 | [procedural-whoosh](library/audio/procedural-whoosh/SKILL.md) | guidance | whoosh, geçiş sesi | Use for procedural whoosh. Shape filtered noise and pitch envelopes to match motion direction and duration. |
 | [room-tone](library/audio/room-tone/SKILL.md) | guidance | oda sesi, room tone | Use for room tone. Fill dialogue gaps using compatible room tone and short crossfades. |
+| [sfx-layering-transient-tail](library/audio/sfx-layering-transient-tail/SKILL.md) | validated | sfx transient tail layering, layered sound effects, katmanlı ses efekti tasarımı, atak gövde kuyruk katmanlama, SFX-Schichtung Attack und Tail, Klangschichten für Übergänge, capas de efectos de sonido, superposition d'effets sonores | Synthesize or layer clean UI, transition, and impact sound effects across non-overlapping sub-body, mid-transient, and airy-tail bands locked to exact frame onsets. |
 | [sound-spotting](library/audio/sound-spotting/SKILL.md) | guidance | ses planı, sound spotting | Use for sound spotting. Mark dialogue, ambience, Foley, music and effects cues on the timeline. |
 | [spatial-audio](library/audio/spatial-audio/SKILL.md) | guidance | mekansal ses, stereo pan | Use for spatial audio. Place sources by screen position and narrative relevance with safe stereo width. |
-| [true-peak-limiting](library/audio/true-peak-limiting/SKILL.md) | guidance | limiter, true peak | Use for true peak limiting. Limit final mix to declared true-peak ceiling with headroom. |
+| [true-peak-limiting](library/audio/true-peak-limiting/SKILL.md) | validated | limiter, true peak, true peak limiting, True-Peak-Begrenzung, Spitzenpegel-Limiter | Use for true peak limiting. Limit final mix to declared true-peak ceiling with headroom. |
+| [tts-phonetic-pronunciation](library/audio/tts-phonetic-pronunciation/SKILL.md) | validated | tts phonetic pronunciation, speech pronunciation lexicon, seslendirme telaffuz sözlüğü, kısaltma okunuş düzeltme, Aussprache-Lexikon für Sprachsynthese, Phonetische Aussprache steuern, pronunciación fonética de síntesis, prononciation phonétique vocale | Normalize acronyms, version strings, SI units, numbers, and cross-language loanwords into spoken pronunciation lexicons for local speech synthesis without altering visible captions. |
 | [voice-cleanup](library/audio/voice-cleanup/SKILL.md) | guidance | ses temizleme, noise reduction | Use for voice cleanup. Analyze noise profile and apply conservative cleanup without changing meaning. |
+| [voice-fx-flat-synth](library/audio/voice-fx-flat-synth/SKILL.md) | validated | voice fx synth, stylized radio robot voice, stilize telsiz robot sesi, retro oyun ses efekti, stilisierte Funk- und Roboterstimme, Synthetische Stimmcharakteristik, efectos de voz sintética, effets de voix synthétique | Shape stylized radio, intercom, retro-console chatter, or dry synthetic robot voices with controlled bandpass, subtle bit quantization, and intelligibility protection. |
 | [voiceover-alignment](library/audio/voiceover-alignment/SKILL.md) | guidance | seslendirme senkronu, voice over sync | Use for voiceover alignment. Map narration timestamps to scene beats and handle unmatched words explicitly. |
 
-## Camera and cinematography (`camera`, 23)
+## Camera and cinematography (`camera`, 25)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -98,13 +102,15 @@
 | [camera-continuity](library/camera/camera-continuity/SKILL.md) | guidance | kamera tutarlılığı, çekim tutarlılığı | Use for camera continuity. Compare focal range, height, axis and speed across neighboring shots. |
 | [camera-inertia-rig](library/camera/camera-inertia-rig/SKILL.md) | validated | kamera ataleti, spring damper camera, inertial camera rig, fiziksel kamera | Use for physical camera rig inertia. Drive virtual dolly, crane, and Steadicam transforms through analytical second-order mass-spring-damper dynamics. |
 | [crane-shot](library/camera/crane-shot/SKILL.md) | guidance | vinç çekimi, crane camera | Use for crane shot. Animate vertical and horizontal camera offsets with purposeful reveal timing. |
+| [depth-of-field-budget](library/camera/depth-of-field-budget/SKILL.md) | validated | depth of field budget, dof blur budget, alan derinliği bütçesi, odak bulanıklığı sınırı, Schärfentiefe-Budget, Unschärfekreis planen, presupuesto de profundidad de campo, budget de profondeur de champ | Calibrate focal distance, f-stop circle-of-confusion blur, and sample counts so background separation stays clean without blurring legible planes or stalling renders. |
 | [dolly-zoom](library/camera/dolly-zoom/SKILL.md) | validated | vertigo, dolly zoom | Use for dolly zoom. Couple camera distance and field of view to approximately preserve subject size. |
+| [eyeline-headroom-grammar](library/camera/eyeline-headroom-grammar/SKILL.md) | validated | eyeline headroom, headroom and lead room, bakış çizgisi ve baş boşluğu, kadraj bakış boşluğu, Augenhöhe und Kopffreiheit, Blickraum im Bild, línea de mirada y aire, ligne de regard et air | Position subject eyelines, proportional headroom, directional look space, and 180-degree screen vectors across portrait and widescreen frames. |
 | [handheld-motion](library/camera/handheld-motion/SKILL.md) | guidance | el kamerası, kamera sarsıntısı | Use for handheld motion. Apply seeded low-frequency drift and restrained high-frequency jitter in camera space. |
 | [leading-lines](library/camera/leading-lines/SKILL.md) | guidance | yönlendirici çizgiler, perspektif çizgileri | Use for leading lines. Orient geometry toward the focal subject and control competing vanishing points. |
 | [lens-selection](library/camera/lens-selection/SKILL.md) | guidance | lens seçimi, odak uzaklığı | Use for lens selection. Choose field of view and camera distance together; distinguish perspective from focal length. |
 | [locked-camera](library/camera/locked-camera/SKILL.md) | validated | kamera sabit, kamerayı oynatma, no camera movement, feste Kamera, cámara fija, caméra fixe, câmera fixa | Use for locked camera. Freeze camera transforms and focal parameters; animate subject or light only if allowed. |
 | [macro-cinematography](library/camera/macro-cinematography/SKILL.md) | guidance | makro çekim, çok yakın | Use for macro cinematography. Use shallow depth carefully, scale lighting and stage details to reveal texture. |
-| [match-cut-design](library/camera/match-cut-design/SKILL.md) | guidance | match cut, eşleşmeli kesme | Use for match cut design. Align shape, position, direction or concept across adjacent shot boundaries. |
+| [match-cut-design](library/camera/match-cut-design/SKILL.md) | validated | match cut, eşleşmeli kesme, match cut design, Match-Cut-Gestaltung, Formübergang-Schnitt | Use for match cut design. Align shape, position, direction or concept across adjacent shot boundaries. |
 | [negative-space](library/camera/negative-space/SKILL.md) | guidance | negatif alan, boşluk | Use for negative space. Reserve meaningful breathing room or caption space and compose subject against it. |
 | [orbit-camera](library/camera/orbit-camera/SKILL.md) | guidance | kamera çevresinde dönme, orbit | Use for orbit camera. Orbit around an explicit pivot at controlled radius and target height. |
 | [pov-camera](library/camera/pov-camera/SKILL.md) | guidance | birinci şahıs, bakış açısı | Use for pov camera. Align camera height and motion with character intent; distinguish subjective vs objective shots. |
@@ -112,7 +118,7 @@
 | [rack-focus](library/camera/rack-focus/SKILL.md) | guidance | netlik geçişi, rack focus | Use for rack focus. Animate focus target between motivated depth planes with controlled depth of field. |
 | [rule-of-thirds](library/camera/rule-of-thirds/SKILL.md) | guidance | üçler kuralı, kompozisyon | Use for rule of thirds. Place subject or horizon on intentional anchors, breaking alignment only with reason. |
 | [shot-reverse-shot](library/camera/shot-reverse-shot/SKILL.md) | guidance | karşı çekim, 180 derece | Use for shot reverse shot. Establish action axis and keep opposing eyelines consistent unless intentionally crossing. |
-| [shot-size](library/camera/shot-size/SKILL.md) | guidance | plan ölçeği, yakın çekim | Use for shot size. Choose framing by information need and emotional distance; specify subject occupancy. |
+| [shot-size](library/camera/shot-size/SKILL.md) | validated | plan ölçeği, yakın çekim, shot size, Einstellungsgröße, Kamera-Einstellungsgröße | Use for shot size. Choose framing by information need and emotional distance; specify subject occupancy. |
 | [shutter-angle-judder](library/camera/shutter-angle-judder/SKILL.md) | guidance | shutter angle, pan judder, 180 derece obtüratör, titreme kontrolü | Use for shutter angle and pan judder validation. Enforce 180-degree shutter exposure math and maximum per-frame screen displacement at 24/25/30 fps. |
 | [slow-dolly](library/camera/slow-dolly/SKILL.md) | guidance | dolly, kamera yaklaşma | Use for slow dolly. Translate camera along a planned path with eased endpoints and parallax control. |
 | [tracking-shot](library/camera/tracking-shot/SKILL.md) | guidance | takip çekimi, tracking camera | Use for tracking shot. Follow a moving subject with defined offset, look-at target and collision clearance. |
@@ -149,18 +155,18 @@
 | --- | --- | --- | --- |
 | [blink-animation](library/character/blink-animation/SKILL.md) | guidance | göz kırpma, blink | Use for blink animation. Place asymmetric or natural blink intervals avoiding key expressive holds. |
 | [character-bible](library/character/character-bible/SKILL.md) | guidance | karakter tutarlılığı, karakter rehberi | Use for character bible. Define proportions, silhouette, palette, wardrobe and immutable identifiers. |
-| [character-continuity](library/character/character-continuity/SKILL.md) | guidance | karakter devamlılığı, aynı karakter | Use for character continuity. Compare character IDs and approved geometry, palette, outfit and props by shot. |
+| [character-continuity](library/character/character-continuity/SKILL.md) | validated | karakter devamlılığı, aynı karakter, character continuity, Charakter-Kontinuität, Figuren-Konsistenz | Use for character continuity. Compare character IDs and approved geometry, palette, outfit and props by shot. |
 | [character-crowd](library/character/character-crowd/SKILL.md) | guidance | kalabalık, figüran | Use for character crowd. Instance controlled variations and offset cycles without changing main character identity. |
 | [character-performance](library/character/character-performance/SKILL.md) | guidance | oyunculuk, karakter performansı | Use for character performance. Stage gaze, gesture, posture and timing around emotional objectives. |
 | [character-retargeting](library/character/character-retargeting/SKILL.md) | guidance | retarget, mixamo | Use for character retargeting. Map source and target skeleton with rest-pose correction and scale handling. |
 | [character-rigging](library/character/character-rigging/SKILL.md) | guidance | rig, iskelet | Use for character rigging. Create named bone hierarchy, constraints and deformation-friendly rest pose. |
 | [character-turnaround](library/character/character-turnaround/SKILL.md) | guidance | karakter dönüş, turnaround | Use for character turnaround. Produce aligned front, side, back and three-quarter reference views. |
 | [cloth-secondary-motion](library/character/cloth-secondary-motion/SKILL.md) | guidance | kıyafet hareketi, cloth motion | Use for cloth secondary motion. Drive secondary cloth via rig or lightweight simulation with collision checks. |
-| [facial-expression](library/character/facial-expression/SKILL.md) | guidance | yüz ifadesi, mimik | Use for facial expression. Animate brows, eyelids and mouth shapes using character-specific expression limits. |
+| [facial-expression](library/character/facial-expression/SKILL.md) | validated | yüz ifadesi, mimik, facial expression, Gesichtsausdruck, Mimik-Steuerung | Use for facial expression. Animate brows, eyelids and mouth shapes using character-specific expression limits. |
 | [hand-gesture](library/character/hand-gesture/SKILL.md) | guidance | el hareketi, jest | Use for hand gesture. Block gesture poses around intent, wrist arcs and finger contact. |
-| [idle-animation](library/character/idle-animation/SKILL.md) | guidance | idle, boşta animasyon | Use for idle animation. Use subtle breathing, weight shift and intermittent micro-actions with seeded timing. |
+| [idle-animation](library/character/idle-animation/SKILL.md) | validated | idle, boşta animasyon, idle animation, Ruheanimation, Idle-Bewegung | Use for idle animation. Use subtle breathing, weight shift and intermittent micro-actions with seeded timing. |
 | [ik-fk-switching](library/character/ik-fk-switching/SKILL.md) | guidance | ik fk, ters kinematik | Use for ik fk switching. Set IK goals and FK controls with matched switch transforms. |
-| [lip-sync](library/character/lip-sync/SKILL.md) | guidance | dudak senkronu, lip sync | Use for lip sync. Map approved phoneme or viseme timing to mouth poses with coarticulation. |
+| [lip-sync](library/character/lip-sync/SKILL.md) | validated | dudak senkronu, lip sync, Lippensynchronisation, Mundbewegungs-Sync | Use for lip sync. Map approved phoneme or viseme timing to mouth poses with coarticulation. |
 | [look-at-animation](library/character/look-at-animation/SKILL.md) | guidance | bakış yönü, eye target | Use for look at animation. Coordinate eye target, head turn and lead-lag timing. |
 | [object-interaction](library/character/object-interaction/SKILL.md) | guidance | nesne tutma, prop interaction | Use for object interaction. Use contact anchors and parent-switch constraints for grabbing or releasing objects. |
 | [root-motion](library/character/root-motion/SKILL.md) | guidance | root motion, kök hareketi | Use for root motion. Separate root translation from local pose and reconcile with world path. |
@@ -172,10 +178,10 @@
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
-| [accessible-data-design](library/data/accessible-data-design/SKILL.md) | guidance | erişilebilir grafik, renk körlüğü | Use for accessible data design. Use labels, shape and contrast rather than color alone to distinguish data. |
+| [accessible-data-design](library/data/accessible-data-design/SKILL.md) | validated | erişilebilir grafik, renk körlüğü, accessible data design, barrierefreies Datendesign, zugängliche Diagramme | Use for accessible data design. Use labels, shape and contrast rather than color alone to distinguish data. |
 | [algorithm-visualization](library/data/algorithm-visualization/SKILL.md) | guidance | algoritma animasyonu, sorting | Use for algorithm visualization. Animate recorded algorithm states and distinguish comparisons, swaps and final values. |
 | [architecture-diagram-animation](library/data/architecture-diagram-animation/SKILL.md) | guidance | architecture diagram, mimari diyagram | Explain a system through one data path at a time. |
-| [bar-chart-animation](library/data/bar-chart-animation/SKILL.md) | guidance | çubuk grafik, bar chart | Use for bar chart animation. Animate values from justified baseline with fixed or disclosed scale. |
+| [bar-chart-animation](library/data/bar-chart-animation/SKILL.md) | validated | çubuk grafik, bar chart, bar chart animation, Balkendiagramm-Animation, animiertes Säulendiagramm | Use for bar chart animation. Animate values from justified baseline with fixed or disclosed scale. |
 | [benchmark-results-video](library/data/benchmark-results-video/SKILL.md) | guidance | benchmark video, performans sonuçları | Animate comparable benchmark measurements. |
 | [calculus-visualization](library/data/calculus-visualization/SKILL.md) | guidance | türev integral, calculus | Use for calculus visualization. Plot functions and animate mathematical relationships with defined domains and units. |
 | [candlestick-finance-chart](library/data/candlestick-finance-chart/SKILL.md) | guidance | candlestick, mum grafik | Plot time-ordered OHLC candles and volume. |
@@ -188,7 +194,7 @@
 | [flowchart-animation](library/data/flowchart-animation/SKILL.md) | guidance | akış şeması, flowchart | Use for flowchart animation. Construct process graph from actual steps and decision conditions. |
 | [geometry-proof-animation](library/data/geometry-proof-animation/SKILL.md) | guidance | geometri ispat, geometry | Use for geometry proof animation. Stage construction steps and distinguish proof from illustrative example. |
 | [heatmap-animation](library/data/heatmap-animation/SKILL.md) | guidance | heatmap, ısı haritası | Animate a series of comparable heatmaps. |
-| [line-chart-animation](library/data/line-chart-animation/SKILL.md) | guidance | çizgi grafik, line chart | Use for line chart animation. Plot ordered values with explicit units and missing-data gaps. |
+| [line-chart-animation](library/data/line-chart-animation/SKILL.md) | validated | çizgi grafik, line chart, line chart animation, Liniendiagramm-Animation, Kurvendiagramm-Animation | Use for line chart animation. Plot ordered values with explicit units and missing-data gaps. |
 | [linear-algebra-visualization](library/data/linear-algebra-visualization/SKILL.md) | guidance | lineer cebir, vektör matris | Use for linear algebra visualization. Animate vectors and transformations using explicit matrix conventions. |
 | [map-route-animation](library/data/map-route-animation/SKILL.md) | guidance | rota animasyonu, harita rotası | Use for map route animation. Animate verified or supplied geographic route with distance-aware timing and attribution. |
 | [mermaid-to-video](library/data/mermaid-to-video/SKILL.md) | guidance | mermaid animation, mermaid videosu | Turn diagram edges into a timed reading sequence. |
@@ -202,53 +208,57 @@
 | [statistical-uncertainty](library/data/statistical-uncertainty/SKILL.md) | guidance | belirsizlik, hata çubuğu | Use for statistical uncertainty. Represent uncertainty intervals, variation and sample size with correct definitions. |
 | [timeline-visualization](library/data/timeline-visualization/SKILL.md) | guidance | zaman çizelgesi, tarih grafiği | Use for timeline visualization. Position events by actual date or explicitly discrete order. |
 
-## Export, interoperability and deliverables (`delivery`, 28)
+## Export, interoperability and deliverables (`delivery`, 29)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [aspect-ratio-export](library/delivery/aspect-ratio-export/SKILL.md) | guidance | dikey yatay kare, 9:16 16:9 | Use for aspect ratio export. Build distinct framing plans for each target aspect ratio rather than blindly cropping. |
 | [audio-description-track](library/delivery/audio-description-track/SKILL.md) | guidance | audio description, sesli betimleme | Place descriptions in gaps between spoken lines. |
-| [caption-delivery-package](library/delivery/caption-delivery-package/SKILL.md) | guidance | altyazı teslimi, subtitle package | Use for caption delivery package. Deliver requested burned-in and separate captions plus language tags and transcript where relevant. |
+| [caption-delivery-package](library/delivery/caption-delivery-package/SKILL.md) | validated | altyazı teslimi, subtitle package, caption delivery package, Untertitel-Lieferpaket, SRT-VTT-Auslieferung | Use for caption delivery package. Deliver requested burned-in and separate captions plus language tags and transcript where relevant. |
 | [chapter-marker-export](library/delivery/chapter-marker-export/SKILL.md) | guidance | chapter markers, bölüm işaretleri | Use for chapter marker export. Export chapter titles and timecodes in recipient-compatible format. |
+| [chroma-subsampling-text-guard](library/delivery/chroma-subsampling-text-guard/SKILL.md) | validated | chroma subsampling text guard, yuv420p colored text fix, kroma alt örnekleme metin koruması, renkli yazı kenar dağılması önleme, Chroma-Subsampling-Textschutz, Farbsäume bei 4:2:0-Text vermeiden, protección de texto en submuestreo croma, protection du texte en sous-échantillonnage chroma | Prevent 4:2:0 (yuv420p) chroma subsampling fringing on colored typography and UI badges by enforcing luminance contrast floors, even-pixel alignment, and stroke minimums. |
 | [color-blind-simulation-audit](library/delivery/color-blind-simulation-audit/SKILL.md) | guidance | color blind check, renk körlüğü denetimi | Review category and state encodings under color-vision simulations. |
 | [color-management-export](library/delivery/color-management-export/SKILL.md) | guidance | renk yönetimi, rec709 | Use for color management export. Preserve or deliberately transform transfer characteristics, gamut and range. |
 | [content-credentials-labeling](library/delivery/content-credentials-labeling/SKILL.md) | guidance | C2PA, içerik kimliği ve etiket | Track attribution and provenance through delivery. |
 | [editable-source-package](library/delivery/editable-source-package/SKILL.md) | guidance | kaynak proje, editable project | Use for editable source package. Package generated source, manifests, assets with distribution rights and instructions. |
 | [edl-export](library/delivery/edl-export/SKILL.md) | guidance | edl, edit decision list | Use for edl export. Represent supported cuts and reel identifiers in target frame-rate convention. |
 | [fcpxml-export](library/delivery/fcpxml-export/SKILL.md) | validated | fcpxml, final cut pro | Use for fcpxml export. Generate version-compatible interchange through verified adapter with rational timing. |
-| [gif-preview](library/delivery/gif-preview/SKILL.md) | guidance | gif, readme gif | Use for gif preview. Create compact palette-aware looping preview with fps and size constraints. |
+| [gif-preview](library/delivery/gif-preview/SKILL.md) | validated | gif, readme gif, gif preview, GIF-Vorschau, animierte Vorschau-Schleife | Use for gif preview. Create compact palette-aware looping preview with fps and size constraints. |
 | [hdr-delivery](library/delivery/hdr-delivery/SKILL.md) | guidance | hdr, pq hlg | Use for hdr delivery. Use verified HDR pipeline only when display, engine and metadata support exist. |
 | [image-sequence-export](library/delivery/image-sequence-export/SKILL.md) | guidance | image sequence, exr png | Use for image sequence export. Export indexed frames with declared bit depth, colorspace and naming convention. |
-| [loop-seam-audit](library/delivery/loop-seam-audit/SKILL.md) | guidance | loop seam, döngü dikişi | Inspect visual and audio continuity across a loop boundary. |
+| [loop-seam-audit](library/delivery/loop-seam-audit/SKILL.md) | validated | loop seam, döngü dikişi, loop seam audit, Schleifennaht-Prüfung, Loop-Übergang prüfen | Inspect visual and audio continuity across a loop boundary. |
 | [media-metadata-tagging](library/delivery/media-metadata-tagging/SKILL.md) | guidance | metadata tagging, medya üst verisi | Attach and verify delivery metadata. |
 | [mov-master](library/delivery/mov-master/SKILL.md) | guidance | mov, prores | Use for mov master. Choose appropriate master codec, color metadata and alpha policy based on recipient needs. |
-| [mp4-delivery](library/delivery/mp4-delivery/SKILL.md) | guidance | mp4 çıktı, h264 | Use for mp4 delivery. Select supported codec, pixel format and audio format for target playback; validate via probe. |
+| [mp4-delivery](library/delivery/mp4-delivery/SKILL.md) | validated | mp4 çıktı, h264, mp4 delivery, MP4-Auslieferung, H.264-Webmaster | Use for mp4 delivery. Select supported codec, pixel format and audio format for target playback; validate via probe. |
 | [otio-export](library/delivery/otio-export/SKILL.md) | validated | otio, opentimelineio | Use for otio export. Map source ranges, tracks and markers into interchange representation with explicit unsupported effects. |
 | [platform-encoding](library/delivery/platform-encoding/SKILL.md) | guidance | platform çıktı, instagram youtube | Use for platform encoding. Check current platform requirements at delivery and choose compatible encoding. |
 | [portable-delivery-bundle](library/delivery/portable-delivery-bundle/SKILL.md) | guidance | teslim paketi, zip çıktı | Use for portable delivery bundle. Include final outputs, checksums, approved project and rights notices without secrets or caches. |
-| [poster-thumbnail](library/delivery/poster-thumbnail/SKILL.md) | guidance | thumbnail, video kapak | Use for poster thumbnail. Select representative image and compose truthful readable thumbnail from approved assets. |
+| [poster-thumbnail](library/delivery/poster-thumbnail/SKILL.md) | validated | thumbnail, video kapak, poster thumbnail, Vorschaubild-Poster, Thumbnail-Standbild | Use for poster thumbnail. Select representative image and compose truthful readable thumbnail from approved assets. |
 | [premiere-interchange](library/delivery/premiere-interchange/SKILL.md) | guidance | premiere pro, kurgu aktarımı | Use for premiere interchange. Choose verified XML or supported interchange, map tracks and media references. |
-| [reading-speed-audit](library/delivery/reading-speed-audit/SKILL.md) | guidance | reading speed, okuma hızı | Measure reading time per caption interval. |
+| [reading-speed-audit](library/delivery/reading-speed-audit/SKILL.md) | validated | reading speed, okuma hızı, reading speed audit, Lesegeschwindigkeits-Prüfung, Zeichen-pro-Sekunde-Audit | Measure reading time per caption interval. |
 | [reduced-motion-variant](library/delivery/reduced-motion-variant/SKILL.md) | guidance | reduced motion, azaltılmış hareket | Prepare a lower-motion variant of an edit. |
 | [resolve-interchange](library/delivery/resolve-interchange/SKILL.md) | guidance | davinci resolve, resolve aktarımı | Use for resolve interchange. Use supported OTIO/XML workflow and preserve source references and timebases. |
 | [transparent-video](library/delivery/transparent-video/SKILL.md) | guidance | şeffaf video, alpha video | Use for transparent video. Choose container and codec with verified alpha support and consistent alpha interpretation. |
-| [vertical-safe-zones](library/delivery/vertical-safe-zones/SKILL.md) | guidance | safe zones, güvenli alanlar | Keep vertical-video labels clear of player controls. |
-| [webm-export](library/delivery/webm-export/SKILL.md) | guidance | webm, vp9 | Use for webm export. Encode using compatible VPx or AV1 options as appropriate to target environment. |
+| [vertical-safe-zones](library/delivery/vertical-safe-zones/SKILL.md) | validated | safe zones, güvenli alanlar, vertical safe zones, vertikale Sicherheitszonen, Hochformat-Schutzbereich | Keep vertical-video labels clear of player controls. |
+| [webm-export](library/delivery/webm-export/SKILL.md) | validated | webm, vp9, webm export, WebM-Export, VP9-Webausgabe | Use for webm export. Encode using compatible VPx or AV1 options as appropriate to target environment. |
 
-## Creative direction and production planning (`direction`, 20)
+## Creative direction and production planning (`direction`, 24)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [asset-feasibility](library/direction/asset-feasibility/SKILL.md) | guidance | asset uygunluğu, varlık listesi | Use for asset feasibility. Inventory source availability, permissions, quality, and substitutes before committing to concepts. |
 | [audience-mapping](library/direction/audience-mapping/SKILL.md) | guidance | hedef kitle, izleyici | Use for audience mapping. Map audience knowledge, context, expectations and reading speed to narrative decisions. |
 | [brand-brief](library/direction/brand-brief/SKILL.md) | guidance | marka briefi, kurumsal kimlik | Use for brand brief. Extract approved logos, colors, fonts, restrictions and required legal copy from supplied assets. |
+| [brand-sting-remirdy](library/direction/brand-sting-remirdy/SKILL.md) | validated | brand sting remirdy, creator signature sting, remirdy kapanış imzası, üretici imza kartı kuralları, Remirdy-Signatur-Abspann, dezentes Urheber-Signet, cierre de firma remirdy, signature finale remirdy | Render the restrained 1.6-to-2.4-second Remirdy closing signature sting or corner mark for first-party showcase deliverables while keeping --attribution off completely unbranded. |
 | [brief-decoding](library/direction/brief-decoding/SKILL.md) | guidance | brief çözümleme, istek analizi | Use for brief decoding. Extract audience, purpose, duration, format and non-negotiable constraints; separate facts from assumptions. |
 | [concept-divergence](library/direction/concept-divergence/SKILL.md) | guidance | yaratıcı fikir, alternatif konsept | Use for concept divergence. Draft three concepts with different visual mechanisms, not just colors; compare cost and feasibility. |
 | [creative-constraint-lock](library/direction/creative-constraint-lock/SKILL.md) | guidance | kısıtlar, kamera sabit, yazı olmasın | Use for creative constraint lock. Convert prohibitions and fixed properties into explicit locks before scene construction. |
 | [creative-direction](library/direction/creative-direction/SKILL.md) | guidance | yaratıcı yönetmenlik, sanat yönetimi | Use for creative direction. Define one visual thesis, three design principles and a shot hierarchy; reject motifs that do not serve the message. |
 | [creative-risk-review](library/direction/creative-risk-review/SKILL.md) | guidance | yaratıcı risk, konsept kontrol | Use for creative risk review. Identify readability, originality, complexity and production risks with mitigation tests. |
 | [engine-selection](library/direction/engine-selection/SKILL.md) | guidance | motor seçimi, render motoru | Use for engine selection. Score candidates by output type, installed tools, licenses, reproducibility and fallback options. |
+| [idea-angle-framing](library/direction/idea-angle-framing/SKILL.md) | validated | idea angle, editorial angle, konu açısı, fikir çerçeveleme, Themenwinkel, Blickwinkel bestimmen, ángulo editorial, angle éditorial, ângulo editorial | Narrow a broad topic into one sharp editorial angle, concrete viewer tension, and bounded thesis before storyboarding. |
 | [message-hierarchy](library/direction/message-hierarchy/SKILL.md) | guidance | mesaj sıralaması, ana mesaj | Use for message hierarchy. Rank one core claim and supporting claims; assign emphasis and screen time accordingly. |
+| [procedural-broll-planner](library/direction/procedural-broll-planner/SKILL.md) | validated | procedural broll, procedural b-roll, prosedürel ara görüntü, üretimsel görsel planlama, prozedurales B-Roll, synthetische Schnittbilder planen, b-roll procedimental, b-roll procédural | Translate abstract narration claims into deterministic procedural visual plates—diagrams, metric counters, geometry, and layer stacks—when camera footage is absent. |
 | [production-handoff](library/direction/production-handoff/SKILL.md) | guidance | proje teslimi, iş devri | Use for production handoff. Record approved plan, assets, decisions, open issues and exact next steps. |
 | [production-scope](library/direction/production-scope/SKILL.md) | guidance | iş kapsamı, prodüksiyon planı | Use for production scope. Break work into deliverables, dependencies and milestones with cost classes. |
 | [reellab-variants](library/direction/reellab-variants/SKILL.md) | guidance | alternatif önizleme, reellab | Use for reellab variants. Produce low-cost comparable previews using distinct composition and motion mechanisms. |
@@ -256,16 +266,17 @@
 | [reference-analysis](library/direction/reference-analysis/SKILL.md) | guidance | referans video, örnek video | Use for reference analysis. Sample shots, measure cuts, infer camera paths and characterize color and typography without cloning assets. |
 | [series-planning](library/direction/series-planning/SKILL.md) | guidance | seri planı, bölüm planı | Use for series planning. Create a reusable series bible, episode structure and visual continuity ledger. |
 | [shot-budget](library/direction/shot-budget/SKILL.md) | guidance | sahne bütçesi, çekim sayısı | Use for shot budget. Distribute frames over story beats and calculate shot and render cost from explicit assumptions. |
+| [showreel-direction](library/direction/showreel-direction/SKILL.md) | validated | showreel direction, demo reel editing arc, tanıtım seçkisi yönetimi, portfolyo şov릴 kurgusu, Showreel-Regie, Demoreel-Dramaturgie schneiden, dirección de bobina de demostración, direction de bande démo | Curate and cut a 25-to-45-second multi-format capability showreel that front-loads peak craft in frame 0, alternates visual mediums, matches motion vectors, and resolves into the signature card. |
 | [style-selection](library/direction/style-selection/SKILL.md) | guidance | stil seçimi, görsel tarz | Use for style selection. Compare stylistic options against brief, asset availability and compute budget. |
 | [tone-calibration](library/direction/tone-calibration/SKILL.md) | guidance | duygu, video tonu | Use for tone calibration. Define emotional start/end and beats; map intensity to motion, music and color. |
 | [visual-language-bible](library/direction/visual-language-bible/SKILL.md) | guidance | görsel dil, stil rehberi | Use for visual language bible. Specify shape vocabulary, texture, contrast, typography, movement and forbidden motifs. |
 
-## Editing and temporal assembly (`editing`, 20)
+## Editing and temporal assembly (`editing`, 24)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [b-roll-placement](library/editing/b-roll-placement/SKILL.md) | guidance | b roll, ara görüntü | Use for b roll placement. Place supporting footage over relevant spoken or visual beats; avoid literal repetition. |
-| [beat-synced-editing](library/editing/beat-synced-editing/SKILL.md) | guidance | ritme göre kurgu, beat sync | Use for beat synced editing. Extract or accept tempo markers; map key cuts to beats and phrases selectively. |
+| [beat-synced-editing](library/editing/beat-synced-editing/SKILL.md) | validated | ritme göre kurgu, beat sync, beat synced editing, Taktsynchroner Schnitt, Beat-Schnitt | Use for beat synced editing. Extract or accept tempo markers; map key cuts to beats and phrases selectively. |
 | [fine-cut](library/editing/fine-cut/SKILL.md) | guidance | ince kurgu, fine cut | Use for fine cut. Refine cut frames for eye trace, action, dialogue and pacing. |
 | [footage-ranking](library/editing/footage-ranking/SKILL.md) | guidance | görüntü seçimi, medya eşleştirme | Use for footage ranking. Rank local footage by relevance, quality and permissions; return timecoded candidates. |
 | [j-cut](library/editing/j-cut/SKILL.md) | guidance | j cut, ses önce girsin | Use for j cut. Start outgoing scene's successor audio before its picture to motivate transition. |
@@ -274,10 +285,14 @@
 | [match-on-action](library/editing/match-on-action/SKILL.md) | guidance | harekette kesme, match action | Use for match on action. Cut at compatible action phases, screen direction and subject location. |
 | [montage-editing](library/editing/montage-editing/SKILL.md) | guidance | montaj, kolaj video | Use for montage editing. Sequence distinct shots by thematic progression rather than random transitions. |
 | [multicam-editing](library/editing/multicam-editing/SKILL.md) | guidance | çok kamera, multicam | Use for multicam editing. Synchronize footage via timecodes or audio; switch on motivated moments. |
+| [pattern-interrupt-cadence](library/editing/pattern-interrupt-cadence/SKILL.md) | validated | pattern interrupt, interrupt cadence, örüntü kırıcı ritim, dikkat tazeleme kesmesi, Musterunterbrechung, Aufmerksamkeitswechsel, interrupción de patrón, rupture de rythme | Schedule motivated visual, spatial, or sonic pattern interrupts every 3.5 to 6.0 seconds to prevent viewer habituation without frantic cutting. |
 | [reframing](library/editing/reframing/SKILL.md) | guidance | yeniden kadraj, otomatik crop | Use for reframing. Track subject bounds and reserve caption areas when changing aspect ratio. |
 | [retake-detection](library/editing/retake-detection/SKILL.md) | guidance | tekrar çekim, yanlış tekrar | Use for retake detection. Find transcript repeats and alternate takes; choose complete version with handles. |
+| [rhythm-density-map](library/editing/rhythm-density-map/SKILL.md) | validated | rhythm density map, pacing wave map, ritim yoğunluk haritası, kurgu tempo eğrisi, Rhythmusdichte-Karte, Tempowellen planen, mapa de ritmo, carte de densité rythmique | Chart shot-length and information-rate waves across timeline quarters so fast bursts alternate with comprehension holds. |
 | [rough-cut](library/editing/rough-cut/SKILL.md) | guidance | kaba kurgu, rough cut | Use for rough cut. Assemble selected footage by story beats before detailed transitions and effects. |
+| [scene-duration-floor-ceiling](library/editing/scene-duration-floor-ceiling/SKILL.md) | validated | scene duration bounds, shot length floor ceiling, sahne süresi alt üst sınırı, çekim süresi limitleri, Szenendauer-Grenzen, Einstellungslänge begrenzen, límites de duración de escena, bornes de durée de scène | Enforce shot-type minimum readability floors and maximum static-hold ceilings so cuts never flash unreadably or trigger unintended freeze warnings. |
 | [shot-detection](library/editing/shot-detection/SKILL.md) | guidance | sahne tespiti, shot detect | Use for shot detection. Detect candidate cuts using frame differences and manual review for fades. |
+| [silence-as-punctuation](library/editing/silence-as-punctuation/SKILL.md) | validated | silence as punctuation, dramatic audio pause, noktalama olarak sessizlik, bilinçli ses boşluğu, Stille als Satzzeichen, gezielte Sprechpause, silencio como puntuación, silence de ponctuation | Shape deliberate 8-to-36-frame acoustic pauses before thesis turns or reveals while registering intentional silence windows in QC exceptions. |
 | [silence-removal](library/editing/silence-removal/SKILL.md) | guidance | sessizlik temizleme, boşluk kesme | Use for silence removal. Detect candidate silence with thresholds and handles; preserve intentional pauses. |
 | [slow-motion](library/editing/slow-motion/SKILL.md) | guidance | ağır çekim, slow motion | Use for slow motion. Use source frame rate or explicit interpolation method with retime metadata. |
 | [time-lapse](library/editing/time-lapse/SKILL.md) | guidance | hızlandırılmış video, timelapse | Use for time lapse. Sample source by interval and smooth exposure variation if appropriate. |
@@ -314,7 +329,7 @@
 | [threejs-scene](library/engines/threejs-scene/SKILL.md) | guidance | three.js, threejs | Use for threejs scene. Create renderer, camera, scene and explicit frame-time update; dispose resources. |
 | [webcodecs-offscreen-canvas](library/engines/webcodecs-offscreen-canvas/SKILL.md) | guidance | webcodecs render, offscreencanvas, tarayıcı kare sentezi | Use for headless OffscreenCanvas and WebCodecs frame synthesis. Render frame-indexed 2D/WebGL buffers with explicit microsecond timestamps and zero DOM layout overhead. |
 
-## Genre workflows and creative formats (`formats`, 32)
+## Genre workflows and creative formats (`formats`, 34)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -324,7 +339,7 @@
 | [corporate-film](library/formats/corporate-film/SKILL.md) | guidance | kurumsal video, firma tanıtımı | Use for corporate film. Connect brand purpose, credible evidence and human or operational visuals. |
 | [countdown-timer-video](library/formats/countdown-timer-video/SKILL.md) | guidance | countdown, geri sayım videosu | Drive a countdown from integer frame indices. |
 | [customer-testimonial](library/formats/customer-testimonial/SKILL.md) | guidance | testimonial, müşteri yorumu videosu | Edit a consented interview into an attributed testimonial. |
-| [educational-explainer](library/formats/educational-explainer/SKILL.md) | guidance | eğitici video, konu anlatımı | Use for educational explainer. Define learning goal, example sequence and visual explanation with recap as appropriate. |
+| [educational-explainer](library/formats/educational-explainer/SKILL.md) | validated | eğitici video, konu anlatımı, educational explainer, Lehrvideo-Erklärfilm, Wissen-Erklärvideo | Use for educational explainer. Define learning goal, example sequence and visual explanation with recap as appropriate. |
 | [event-promo](library/formats/event-promo/SKILL.md) | guidance | etkinlik tanıtımı, konser reklamı | Use for event promo. Prioritize event identity, date, time, venue and booking instructions. |
 | [game-trailer](library/formats/game-trailer/SKILL.md) | guidance | oyun fragmanı, game trailer | Use for game trailer. Select authentic gameplay or clearly labeled cinematics; pace around mechanics and payoff. |
 | [gaming-highlight-montage](library/formats/gaming-highlight-montage/SKILL.md) | guidance | gaming highlight, oyun özet montajı | Cut gameplay around recorded events. |
@@ -333,25 +348,27 @@
 | [indie-game-devlog](library/formats/indie-game-devlog/SKILL.md) | guidance | devlog, geliştirme günlüğü | Use for indie game devlog. Show verified milestones and before-after demonstrations with honest status. |
 | [livestream-overlay](library/formats/livestream-overlay/SKILL.md) | guidance | stream overlay, yayın katmanı | Prepare a transparent overlay for a broadcast layout. |
 | [long-form-youtube](library/formats/long-form-youtube/SKILL.md) | guidance | youtube uzun video, youtube içerik | Use for long form youtube. Structure chapters, narrative questions, pacing changes and sourced visuals. |
-| [lyric-video](library/formats/lyric-video/SKILL.md) | guidance | şarkı sözü videosu, lyric video | Use for lyric video. Use authorized lyrics and timed text hierarchy; avoid unlicensed material. |
+| [lyric-video](library/formats/lyric-video/SKILL.md) | validated | şarkı sözü videosu, lyric video, Lyrik-Video, Songtext-Animation | Use for lyric video. Use authorized lyrics and timed text hierarchy; avoid unlicensed material. |
 | [memorial-tribute](library/formats/memorial-tribute/SKILL.md) | guidance | anma videosu, duygusal anma | Use for memorial tribute. Build respectful tone using verified archival or supplied material with restrained effects. |
-| [music-visualizer](library/formats/music-visualizer/SKILL.md) | guidance | müzik görselleştirme, visualizer | Use for music visualizer. Map audio features to controlled visual motifs with repeatable timing. |
+| [music-visualizer](library/formats/music-visualizer/SKILL.md) | validated | müzik görselleştirme, visualizer, music visualizer, Musik-Visualizer, Audio-Spektrum-Video | Use for music visualizer. Map audio features to controlled visual motifs with repeatable timing. |
 | [news-explainer](library/formats/news-explainer/SKILL.md) | guidance | news explainer, haber açıklayıcı | Build a sourced chronology for a short news segment. |
+| [news-ticker-hierarchy](library/formats/news-ticker-hierarchy/SKILL.md) | validated | news ticker hierarchy, broadcast ticker crawl, haber bandı hiyerarşisi, kayan alt bant düzeni, Nachrichtenticker-Hierarchie, Laufband-Layout gestalten, jerarquía de cintillo informativo, hiérarchie de bandeau d'actualité | Design structured news-brief layouts with clear primary-headline dominance, judder-free integer-pixel ticker crawls, source badges, and zero dual-reading overload. |
 | [podcast-clip](library/formats/podcast-clip/SKILL.md) | guidance | podcast kesiti, podcast reel | Use for podcast clip. Select self-contained excerpt and preserve speaker context while trimming. |
-| [product-commercial](library/formats/product-commercial/SKILL.md) | guidance | ürün reklamı, ticari reklam | Use for product commercial. Plan benefit-driven visual shots, accurate product assets and a clear end card. |
+| [product-commercial](library/formats/product-commercial/SKILL.md) | validated | ürün reklamı, ticari reklam, product commercial, Produktwerbespot, Produkt-Spot | Use for product commercial. Plan benefit-driven visual shots, accurate product assets and a clear end card. |
 | [quote-card-motion](library/formats/quote-card-motion/SKILL.md) | guidance | quote card, alıntı kartı animasyonu | Time a quote reveal against a recorded reading. |
 | [real-estate-walkthrough](library/formats/real-estate-walkthrough/SKILL.md) | guidance | emlak turu, ev tanıtımı | Use for real estate walkthrough. Sequence real property footage by spatial path and distinguish virtual staging. |
 | [recipe-cooking-video](library/formats/recipe-cooking-video/SKILL.md) | guidance | recipe video, yemek tarifi videosu | Build an overhead cooking sequence with measured ingredients. |
 | [research-documentary](library/formats/research-documentary/SKILL.md) | guidance | belgesel, araştırmadan belgesel | Use for research documentary. Develop source-grounded narrative with archival permissions and labeled reconstructions. |
 | [restaurant-commercial](library/formats/restaurant-commercial/SKILL.md) | guidance | restoran reklamı, yemek videosu | Use for restaurant commercial. Build appetizing food coverage, clean price/offer hierarchy and truthful conditions. |
+| [retro-cutscene-directing](library/formats/retro-cutscene-directing/SKILL.md) | validated | retro cutscene directing, lowpoly cutscene staging, retro ara sahne yönetimi, düşük poligonlu diyalog sahnesi, Retro-Zwischensequenz-Regie, Low-Poly-Dialogszene inszenieren, dirección de cinemática retro, mise en scène de cinématique rétro | Direct original 22-to-30-second low-poly 3D character cutscenes with crisp faceted lighting, 180-degree dialogue staging, mouth-envelope lip sync, and HUD dialogue boxes. |
 | [series-episode-workflow](library/formats/series-episode-workflow/SKILL.md) | guidance | dizi bölümü, seri üretim | Use for series episode workflow. Apply series bible, episode continuity and reusable asset versions while preserving new story beats. |
 | [short-form-story](library/formats/short-form-story/SKILL.md) | guidance | shorts, kısa hikaye | Use for short form story. Use one clear premise, concise escalation and satisfying final beat. |
-| [social-media-reel](library/formats/social-media-reel/SKILL.md) | guidance | reels, dikey sosyal medya | Use for social media reel. Compose vertical story with a strong opening, safe areas and mobile reading cadence. |
+| [social-media-reel](library/formats/social-media-reel/SKILL.md) | validated | reels, dikey sosyal medya, social media reel, Social-Media-Kurzvideo, Hochformat-Reel | Use for social media reel. Compose vertical story with a strong opening, safe areas and mobile reading cadence. |
 | [social-thread-to-video](library/formats/social-thread-to-video/SKILL.md) | guidance | thread to video, konu dizisini videoya çevir | Adapt a thread into a sequence of readable cards. |
 | [teacher-tribute](library/formats/teacher-tribute/SKILL.md) | guidance | öğretmenler günü, öğretmen videosu | Use for teacher tribute. Stage authentic school details, consistent cast and respectful narrative aligned to requested culture. |
 | [tutorial-how-to](library/formats/tutorial-how-to/SKILL.md) | guidance | how-to video, nasıl yapılır videosu | Show one observable action per step. |
 
-## 2D graphics and vector animation (`graphics`, 20)
+## 2D graphics and vector animation (`graphics`, 21)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -366,6 +383,7 @@
 | [lottie-animation](library/graphics/lottie-animation/SKILL.md) | guidance | lottie, bodymovin | Use for lottie animation. Use supported vector features and test playback in the target Lottie renderer. |
 | [map-graphic](library/graphics/map-graphic/SKILL.md) | guidance | harita grafiği, rota haritası | Use for map graphic. Project geographic data consistently and credit sources; animate routes by distance. |
 | [masking-2d](library/graphics/masking-2d/SKILL.md) | guidance | 2d maskeleme, clipping path | Use for masking 2d. Build alpha or geometric masks with stable coordinate spaces. |
+| [paper-cutout-layering](library/graphics/paper-cutout-layering/SKILL.md) | validated | paper cutout layering, 2.5d paper parallax build, çok katmanlı kağıt kesme kurulumu, kağıt katman gölge ve paralaks, Papier-Schnitt-Ebenenaufbau, mehrschichtiger Scherenschnitt-Parallax, capas de recorte de papel, superposition de papier découpé | Construct 2.5D multi-plane paper cutout scenes with Z-coupled drop-shadow offsets, subtle white cut-edge bevels, local fiber texture, and parallax camera drift. |
 | [particle-2d](library/graphics/particle-2d/SKILL.md) | guidance | 2d parçacık, particle system | Use for particle 2d. Use seeded emitters with bounded lifetime and count; separate simulation clock from render. |
 | [procedural-illustration](library/graphics/procedural-illustration/SKILL.md) | guidance | kodla illüstrasyon, çizim üretimi | Use for procedural illustration. Construct reusable original shapes with seeded variation and semantic layers. |
 | [procedural-patterns](library/graphics/procedural-patterns/SKILL.md) | guidance | desen üretimi, pattern | Use for procedural patterns. Define repeat unit, seed and controlled variation using vector or canvas primitives. |
@@ -376,22 +394,23 @@
 | [vector-export](library/graphics/vector-export/SKILL.md) | guidance | vektör çıktı, svg export | Use for vector export. Flatten unsupported effects only when necessary and preserve editable groups. |
 | [vector-path-trimming](library/graphics/vector-path-trimming/SKILL.md) | guidance | çizgi çizilme, stroke reveal | Use for vector path trimming. Animate path stroke dash or measured contour length with correct joins. |
 
-## Asset ingestion, research, rights and source management (`ingest`, 20)
+## Asset ingestion, research, rights and source management (`ingest`, 21)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [archival-media-verification](library/ingest/archival-media-verification/SKILL.md) | guidance | arşiv doğrulama, tarihi fotoğraf | Use for archival media verification. Cross-check origin, date, caption and rights before use. |
 | [asset-deduplication](library/ingest/asset-deduplication/SKILL.md) | guidance | asset tekrarları, duplicate files | Use for asset deduplication. Compare hashes and optional perceptual fingerprints; never delete automatically. |
+| [asset-license-ledger](library/ingest/asset-license-ledger/SKILL.md) | validated | asset license ledger, spdx attribution manifest, varlık lisans defteri, telif ve atıf kaydı, Asset-Lizenzverzeichnis, SPDX-Quellen- und Lizenzbuch, registro de licencias de recursos, registre de licences des médias | Track SHA-256 digests, approved SPDX license identifiers, source URLs, and attribution notices for every bundled or imported font, audio, image, and 3D asset. |
 | [asset-matching](library/ingest/asset-matching/SKILL.md) | guidance | asset eşleştirme, psd mp3 eşleştir | Use for asset matching. Rank candidates by stable identifier, filename and content evidence; flag ambiguous ties. |
 | [asset-portability](library/ingest/asset-portability/SKILL.md) | guidance | taşınabilir asset, dosya taşıma | Use for asset portability. Use relative logical IDs and package only permitted dependencies. |
-| [asset-provenance](library/ingest/asset-provenance/SKILL.md) | guidance | kaynak takibi, asset provenance | Use for asset provenance. Record source, creator, acquisition, modifications and content hash per asset. |
+| [asset-provenance](library/ingest/asset-provenance/SKILL.md) | validated | kaynak takibi, asset provenance, Asset-Herkunftsnachweis, Medien-Provenienz | Use for asset provenance. Record source, creator, acquisition, modifications and content hash per asset. |
 | [asset-tagging](library/ingest/asset-tagging/SKILL.md) | guidance | asset etiketleme, medya etiket | Use for asset tagging. Assign content and technical tags from observable metadata or authorized inspection. |
 | [asset-versioning](library/ingest/asset-versioning/SKILL.md) | guidance | asset sürümü, dosya versiyon | Use for asset versioning. Assign immutable version IDs and content hashes with explicit project references. |
 | [contact-sheet](library/ingest/contact-sheet/SKILL.md) | guidance | contact sheet, görsel özet | Use for contact sheet. Sample representative timestamped frames and arrange readable thumbnails. |
 | [external-stock-research](library/ingest/external-stock-research/SKILL.md) | guidance | internetten stok, telifli stok | Use for external stock research. Search public catalogs for useful media and verify license per exact asset before download. |
-| [font-licensing](library/ingest/font-licensing/SKILL.md) | guidance | font lisansı, yazı tipi lisansı | Use for font licensing. Check distribution, embedding and commercial terms for exact font files. |
+| [font-licensing](library/ingest/font-licensing/SKILL.md) | validated | font lisansı, yazı tipi lisansı, font licensing, Schriftlizenz-Prüfung, Font-Lizenzierung | Use for font licensing. Check distribution, embedding and commercial terms for exact font files. |
 | [image-preprocessing](library/ingest/image-preprocessing/SKILL.md) | guidance | görsel hazırlama, resim boyutlandırma | Use for image preprocessing. Normalize orientation and color, choose non-destructive resizing and preserve original. |
-| [license-compatibility](library/ingest/license-compatibility/SKILL.md) | guidance | mit uyumluluğu, telif lisans | Use for license compatibility. Review code, assets, fonts and build dependencies separately; flag unclear or copyleft combinations. |
+| [license-compatibility](library/ingest/license-compatibility/SKILL.md) | validated | mit uyumluluğu, telif lisans, license compatibility, Lizenzkompatibilität, SPDX-Verträglichkeitsprüfung | Use for license compatibility. Review code, assets, fonts and build dependencies separately; flag unclear or copyleft combinations. |
 | [local-stock-search](library/ingest/local-stock-search/SKILL.md) | guidance | stok görsel, yerel asset arama | Use for local stock search. Search local approved libraries first and filter by license, dimensions and relevance. |
 | [media-inventory](library/ingest/media-inventory/SKILL.md) | guidance | medya envanteri, dosya tarama | Use for media inventory. List media with hashes, type, dimensions, durations and relative paths without modifying originals. |
 | [media-privacy-audit](library/ingest/media-privacy-audit/SKILL.md) | guidance | medya gizlilik, kişisel veri | Use for media privacy audit. Inspect authorized assets for sensitive fields, faces or location data relevant to release. |
@@ -401,13 +420,15 @@
 | [reference-frame-extraction](library/ingest/reference-frame-extraction/SKILL.md) | guidance | kare çıkarma, frame extraction | Use for reference frame extraction. Extract selected frames with source timestamp and consistent color conversion. |
 | [source-verification](library/ingest/source-verification/SKILL.md) | guidance | kaynak doğrulama, fact check | Use for source verification. Use primary sources where possible, record exact claim and evidence links. |
 
-## Lighting, staging and environment (`lighting`, 21)
+## Lighting, staging and environment (`lighting`, 23)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [agx-aces-tonemapping](library/lighting/agx-aces-tonemapping/SKILL.md) | validated | agx tonemapping, aces output transform, filmic highlight rolloff, renk sıkıştırma | Use for AgX and ACES tone mapping. Evaluate lighting in unbounded scene-referred linear RGB and apply gamut-preserving highlight desaturation exactly once. |
 | [ambient-occlusion](library/lighting/ambient-occlusion/SKILL.md) | guidance | ao, ambient occlusion | Use for ambient occlusion. Use contact shading moderately and avoid duplicating physically rendered occlusion. |
 | [background-depth](library/lighting/background-depth/SKILL.md) | guidance | arka plan derinliği, atmosferik perspektif | Use for background depth. Layer foreground, midground and background with consistent occlusion and depth cues. |
+| [color-script-progression](library/lighting/color-script-progression/SKILL.md) | validated | color script, color script progression, renk senaryosu akışı, duygusal renk yayılımı, Farbdramaturgie, Farbskript-Verlauf, guion de color, script colorimétrique | Design a timeline-wide perceptual OKLCH lightness, chroma, and hue arc so visual mood evolves coherently from opening tension to closing resolution. |
+| [cross-shot-grade-consistency](library/lighting/cross-shot-grade-consistency/SKILL.md) | validated | shot grade consistency, grade consistency, çekim renk tutarlılığı, sahneler arası renk uyumu, Schnitt-Farbkonsistenz, Farbabgleich zwischen Szenen, consistencia de etalonaje, cohérence colorimétrique | Match black floor, neutral white balance, highlight shoulder, and perceptual chroma across consecutive shots so cuts never pop. |
 | [exposure-planning](library/lighting/exposure-planning/SKILL.md) | guidance | pozlama, exposure | Use for exposure planning. Set rendering exposure and highlight handling using reference test charts. |
 | [exterior-staging](library/lighting/exterior-staging/SKILL.md) | guidance | dış mekan, çevre sahnesi | Use for exterior staging. Set horizon, terrain, vegetation and architecture by world scale. |
 | [golden-hour-lighting](library/lighting/golden-hour-lighting/SKILL.md) | guidance | altın saat, gün batımı | Use for golden hour lighting. Set low-angle warm key, cooler fill and long directional shadows. |
@@ -419,7 +440,7 @@
 | [practical-lighting](library/lighting/practical-lighting/SKILL.md) | guidance | pratik ışık, mekan lambası | Use for practical lighting. Motivate light sources from visible fixtures and balance exposure. |
 | [procedural-terrain](library/lighting/procedural-terrain/SKILL.md) | guidance | arazi, terrain | Use for procedural terrain. Generate terrain from seeded height data and constrain slopes for action paths. |
 | [product-lighting](library/lighting/product-lighting/SKILL.md) | guidance | ürün ışığı, stüdyo ışığı | Use for product lighting. Shape reflections with area sources, flags and background separation. |
-| [render-lookdev](library/lighting/render-lookdev/SKILL.md) | guidance | lookdev, test ışığı | Use for render lookdev. Render a small material and lighting test under representative final camera conditions. |
+| [render-lookdev](library/lighting/render-lookdev/SKILL.md) | validated | lookdev, test ışığı, render lookdev, Render-Lookentwicklung, Licht- und Material-Lookdev | Use for render lookdev. Render a small material and lighting test under representative final camera conditions. |
 | [set-dressing](library/lighting/set-dressing/SKILL.md) | guidance | dekor, sahne eşyaları | Use for set dressing. Select props by story function and maintain coherent scale, age and placement. |
 | [shadow-design](library/lighting/shadow-design/SKILL.md) | guidance | gölge tasarımı, shadow | Use for shadow design. Choose shadow softness and direction based on source geometry and distance. |
 | [softbox-lighting](library/lighting/softbox-lighting/SKILL.md) | guidance | softbox, yumuşak ışık | Use for softbox lighting. Use area light size relative to subject to control softness and reflections. |
@@ -427,7 +448,7 @@
 | [volumetric-lighting](library/lighting/volumetric-lighting/SKILL.md) | guidance | hacimsel ışık, god rays | Use for volumetric lighting. Control participating medium density, light direction and sampling. |
 | [weather-design](library/lighting/weather-design/SKILL.md) | guidance | hava efekti, yağmur kar | Use for weather design. Create seeded rain, snow or fog with direction, scale and environmental reaction. |
 
-## 3D modeling, materials and assets (`modeling`, 21)
+## 3D modeling, materials and assets (`modeling`, 22)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -448,23 +469,26 @@
 | [procedural-texturing](library/modeling/procedural-texturing/SKILL.md) | guidance | prosedürel doku, noise texture | Use for procedural texturing. Map coherent noise and pattern scale to object or world coordinates. |
 | [product-modeling](library/modeling/product-modeling/SKILL.md) | guidance | ürün modelleme, 3d ürün | Use for product modeling. Model to supplied dimensions and separate functional surfaces and logo decals. |
 | [prop-modeling](library/modeling/prop-modeling/SKILL.md) | guidance | eşya modelleme, aksesuar | Use for prop modeling. Build reusable prop with sensible origin, scale and named parts. |
+| [stepped-clay-lookdev](library/modeling/stepped-clay-lookdev/SKILL.md) | validated | stepped clay lookdev, 3d stop motion clay shader, kademeli kil görünüm geliştirme, 3B kil gölgelendirici ve adım kare, gestuftes Knet-Lookdev, 3D-Stop-Motion-Tonmaterial, lookdev de arcilla escalonada, lookdev argile saccadée | Build tactile 3D claymation shaders and stepped 12-fps animation F-curves in Blender with world-scale thumbprint normals, warm subsurface scatter, and tabletop lighting. |
 | [subdivision-modeling](library/modeling/subdivision-modeling/SKILL.md) | guidance | subdivision, yüzey yumuşatma | Use for subdivision modeling. Use support loops and subdivision levels targeted at visible curvature. |
 | [texture-baking](library/modeling/texture-baking/SKILL.md) | guidance | texture bake, doku pişirme | Use for texture baking. Bake selected material channels to UV maps with appropriate margins and colorspace. |
 | [usd-scene-assembly](library/modeling/usd-scene-assembly/SKILL.md) | guidance | openusd, usda sahne, usd variant, universal scene description | Use for OpenUSD scene assembly. Structure non-destructive .usda sublayers, asset payloads, lookdev VariantSets, and rational timeSamples for 3D cinematic pipelines. |
 | [uv-unwrapping](library/modeling/uv-unwrapping/SKILL.md) | guidance | uv açma, uv map | Use for uv unwrapping. Place seams in less visible regions and maintain texel density. |
 
-## Motion principles and temporal design (`motion`, 21)
+## Motion principles and temporal design (`motion`, 23)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [2d-to-25d](library/motion/2d-to-25d/SKILL.md) | guidance | 2.5d, iki buçuk boyut | Use for 2d to 25d. Separate flat artwork into depth layers and animate modest virtual camera movement. |
 | [anticipation](library/motion/anticipation/SKILL.md) | guidance | hazırlık hareketi, anticipation | Use for anticipation. Insert a short counter-move before the primary action to signal intent. |
 | [arc-motion](library/motion/arc-motion/SKILL.md) | guidance | yay şeklinde hareket, arc motion | Use for arc motion. Plot natural curved trajectories with controlled spacing. |
-| [easing-design](library/motion/easing-design/SKILL.md) | guidance | easing, yumuşak geçiş | Use for easing design. Choose acceleration curves matching mass and narrative intent. |
+| [easing-design](library/motion/easing-design/SKILL.md) | validated | easing, yumuşak geçiş, easing design, Easing-Kurven, Beschleunigungskurve, ivme eğrisi | Use for easing design. Choose acceleration curves matching mass and narrative intent. |
 | [follow-through](library/motion/follow-through/SKILL.md) | guidance | takip hareketi, follow through | Use for follow through. Offset secondary elements according to inertia after the main movement. |
 | [freeze-frame](library/motion/freeze-frame/SKILL.md) | guidance | dondurma efekti, freeze frame | Use for freeze frame. Choose a meaningful pose and hold image while selectively continuing other layers if appropriate. |
+| [ken-burns-photo-choreography](library/motion/ken-burns-photo-choreography/SKILL.md) | validated | ken burns photo, photo pan zoom, fotoğraf kaydırma yakınlaştırma, hareketli fotoğraf kurgusu, Ken-Burns-Kamerafahrt, Foto-Zoomfahrt, efecto ken burns, mouvement ken burns | Animate sub-pixel pan-and-scale trajectories over still photographs with overscan resolution checks, focal-point protection, and alternating motion vectors. |
 | [keyframe-curves](library/motion/keyframe-curves/SKILL.md) | guidance | keyframe, eğri animasyonu | Use for keyframe curves. Set key poses and interpolate with explicit easing and frame indices. |
-| [loop-design](library/motion/loop-design/SKILL.md) | guidance | döngü animasyonu, seamless loop | Use for loop design. Match initial and terminal state including velocity where relevant; omit duplicate endpoint frame. |
+| [kinetic-layout-choreography](library/motion/kinetic-layout-choreography/SKILL.md) | validated | kinetic layout, staggered grid choreography, kinetik yerleşim koreografisi, kademeli ızgara hareketi, kinetisches Layout, gestaffelte Raster-Choreografie, coreografía de diseño cinético, chorégraphie de grille cinétique | Coordinate multi-element grid entrances, shared alignment rails, 3-to-5-frame stagger offsets, and clean simultaneous exits for typographic and diagram cards. |
+| [loop-design](library/motion/loop-design/SKILL.md) | validated | döngü animasyonu, seamless loop, loop design, Schleifen-Design, Endlosschleifen-Konzept | Use for loop design. Match initial and terminal state including velocity where relevant; omit duplicate endpoint frame. |
 | [motion-continuity](library/motion/motion-continuity/SKILL.md) | guidance | hareket tutarlılığı, animasyon devamlılığı | Use for motion continuity. Compare screen direction, phase and speed at scene boundaries. |
 | [parallax-motion](library/motion/parallax-motion/SKILL.md) | guidance | paralaks, katman derinliği | Use for parallax motion. Move depth planes proportionally and extend artwork beyond visible crop. |
 | [path-animation](library/motion/path-animation/SKILL.md) | guidance | yol animasyonu, path animation | Use for path animation. Parameterize movement by path length and orient objects using tangent where needed. |
@@ -472,19 +496,20 @@
 | [pose-to-pose](library/motion/pose-to-pose/SKILL.md) | guidance | poz animasyonu, pose to pose | Use for pose to pose. Block extremes, breakdowns and in-betweens with readable silhouettes. |
 | [seamless-morph](library/motion/seamless-morph/SKILL.md) | guidance | şekil dönüşümü, morph | Use for seamless morph. Normalize corresponding contours or topology before interpolation. |
 | [secondary-motion](library/motion/secondary-motion/SKILL.md) | guidance | ikincil hareket, secondary motion | Use for secondary motion. Add restrained accessory or environment response driven by primary action. |
-| [speed-ramping-design](library/motion/speed-ramping-design/SKILL.md) | guidance | hız rampası, speed ramp | Use for speed ramping design. Schedule speed changes around action peaks and smooth curve joins. |
+| [speed-ramping-design](library/motion/speed-ramping-design/SKILL.md) | validated | hız rampası, speed ramp, speed ramping design, Geschwindigkeitsrampe, Zeitlupen-Rampe | Use for speed ramping design. Schedule speed changes around action peaks and smooth curve joins. |
 | [spring-motion](library/motion/spring-motion/SKILL.md) | guidance | yay animasyonu, spring | Use for spring motion. Set damping and stiffness by desired settle time; sample deterministically. |
 | [squash-stretch](library/motion/squash-stretch/SKILL.md) | guidance | esneme sıkışma, squash stretch | Use for squash stretch. Deform along the action axis while conserving approximate volume where appropriate. |
-| [staggered-animation](library/motion/staggered-animation/SKILL.md) | guidance | sıralı animasyon, stagger | Use for staggered animation. Offset entrances by semantic groups and tune overlaps to reading order. |
+| [staggered-animation](library/motion/staggered-animation/SKILL.md) | validated | sıralı animasyon, stagger, staggered animation, gestaffelte Animation, versetztes Einblenden | Use for staggered animation. Offset entrances by semantic groups and tune overlaps to reading order. |
 | [stop-motion-cadence](library/motion/stop-motion-cadence/SKILL.md) | guidance | stop motion, kareli hareket | Use for stop motion cadence. Quantize poses deliberately to a lower cadence while preserving output frame rate. |
 | [verlet-constraint-solver](library/motion/verlet-constraint-solver/SKILL.md) | validated | verlet physics, ip simülasyonu, position based dynamics, kablo fiziği | Use for Verlet constraint physics. Simulate deterministic ropes, cables, ribbons, and secondary pendulums from canonical frame indices using fixed-substep Verlet projection. |
 
-## Music and procedural audio composition (`music`, 20)
+## Music and procedural audio composition (`music`, 21)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [arpeggio-design](library/music/arpeggio-design/SKILL.md) | guidance | arpej, arpeggio | Use for arpeggio design. Sequence chord tones with intentional direction, rhythmic subdivision and accents. |
-| [audio-stem-export](library/music/audio-stem-export/SKILL.md) | guidance | stem export, ses kanalı çıktı | Use for audio stem export. Export synchronized individual bus stems with explicit channel format and length. |
+| [audio-stem-export](library/music/audio-stem-export/SKILL.md) | validated | stem export, ses kanalı çıktı, audio stem export, Audio-Stem-Export, Einzelspuren exportieren | Use for audio stem export. Export synchronized individual bus stems with explicit channel format and length. |
+| [bar-grid-music-alignment](library/music/bar-grid-music-alignment/SKILL.md) | validated | bar grid music alignment, tempo to frame grid, müzik ölçü ızgarası hizalama, BPM kare senkronu, Taktraster-Musikausrichtung, BPM auf Bildraster abstimmen, alineación musical por compases, alignement musical sur grille de mesures | Quantize musical tempo, bar/beat frame boundaries, harmonic loop seams, and final cadence resolves onto exact integer project frames. |
 | [bassline-design](library/music/bassline-design/SKILL.md) | guidance | bas çizgisi, bassline | Use for bassline design. Write bass movement in harmonic context and control sub-frequency energy. |
 | [chord-progression](library/music/chord-progression/SKILL.md) | guidance | akor dizisi, chord progression | Use for chord progression. Choose harmonic movement appropriate to mood and phrase length. |
 | [cinematic-drone](library/music/cinematic-drone/SKILL.md) | guidance | drone müzik, atmosferik pad | Use for cinematic drone. Layer slow evolving tones with dissonance and low-end controlled by intent. |
@@ -494,7 +519,7 @@
 | [midi-sequencing](library/music/midi-sequencing/SKILL.md) | guidance | midi, midi üretimi | Use for midi sequencing. Write note events, velocities, tempo and track channels with valid timing. |
 | [music-brief](library/music/music-brief/SKILL.md) | guidance | müzik seçimi, fon müziği | Use for music brief. Specify mood, tempo, instrumentation, density, cue points and licensing constraints. |
 | [music-editing](library/music/music-editing/SKILL.md) | guidance | müzik kurgusu, music edit | Use for music editing. Shorten or extend supplied licensed tracks using musically coherent phrase edits. |
-| [music-looping](library/music/music-looping/SKILL.md) | guidance | müzik döngüsü, loop music | Use for music looping. Align loop to phrase boundary with compatible tail and crossfade. |
+| [music-looping](library/music/music-looping/SKILL.md) | validated | müzik döngüsü, loop music, music looping, Musik-Schleife, nahtloser Musik-Loop | Use for music looping. Align loop to phrase boundary with compatible tail and crossfade. |
 | [noise-synthesis](library/music/noise-synthesis/SKILL.md) | guidance | gürültü sentezi, noise synth | Use for noise synthesis. Generate seeded noise and shape spectrum and amplitude for intended sound. |
 | [original-motif](library/music/original-motif/SKILL.md) | guidance | özgün melodi, motif | Use for original motif. Compose a short original motif with defined rhythmic and interval identity. |
 | [oscillator-synthesis](library/music/oscillator-synthesis/SKILL.md) | guidance | osilatör, synthesis | Use for oscillator synthesis. Generate band-limited or suitably sampled tones with controlled amplitude and phase. |
@@ -504,22 +529,28 @@
 | [sidechain-music](library/music/sidechain-music/SKILL.md) | guidance | sidechain, müzik kompresyon | Use for sidechain music. Drive controlled gain reduction from appropriate audio trigger. |
 | [synth-envelope](library/music/synth-envelope/SKILL.md) | guidance | adsr, synth envelope | Use for synth envelope. Shape attack, decay, sustain and release by instrument role. |
 
-## Quality, compliance and restoration (`qa`, 21)
+## Quality, compliance and restoration (`qa`, 27)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
+| [accessibility-caption-ad-check](library/qa/accessibility-caption-ad-check/SKILL.md) | validated | accessibility caption check, caption and audio description qa, erişilebilir altyazı ve sesli betimleme denetimi, işitme görme erişilebilirlik kontrolü, Barrierefreiheit Untertitel-Prüfung, Hörbeschreibung und Untertitel prüfen, auditoría de subtítulos accesibles, contrôle accessibilité sous-titres | Verify caption completeness for non-speech audio cues, speaker changes, contrast, and visual-only information parity for blind and deaf/hard-of-hearing viewers. |
+| [anti-aliasing-thin-lines](library/qa/anti-aliasing-thin-lines/SKILL.md) | validated | anti aliasing thin lines, thin stroke shimmer fix, ince çizgi kenar yumuşatma, titreyen ızgara çizgisi düzeltme, Kantenglättung dünner Linien, Flimmern feiner Linien beheben, antialiasing de líneas finas, anticrénelage des lignes fines | Eliminate single-pixel line buzz, diagonal stair-stepping, and pan-induced moiré shimmer using minimum stroke floors, integer grid snapping, and 2x supersampling. |
 | [audio-clipping-audit](library/qa/audio-clipping-audit/SKILL.md) | guidance | ses patlaması, clipping | Use for audio clipping audit. Measure peaks and clipping indicators across mix and stems. |
 | [audio-sync-audit](library/qa/audio-sync-audit/SKILL.md) | validated | ses görüntü kontrolü, av sync | Use for audio sync audit. Compare expected cue times to observed audio and visual events. |
 | [black-frame-detection](library/qa/black-frame-detection/SKILL.md) | validated | siyah kare, black frame, Schwarzbilder erkennen, detectar fotogramas negros, détecter les images noires, detectar quadros pretos | Use for black frame detection. Detect sustained near-black intervals using declared thresholds and compare intentional fades. |
-| [brief-compliance-audit](library/qa/brief-compliance-audit/SKILL.md) | guidance | talimat kontrolü, reelguard | Use for brief compliance audit. Recheck all hard constraints including language, aspect, locked camera, and protected layers. |
+| [brief-compliance-audit](library/qa/brief-compliance-audit/SKILL.md) | validated | talimat kontrolü, reelguard, brief compliance audit, Briefing-Konformitätsprüfung, Anforderungs-Abgleich | Use for brief compliance audit. Recheck all hard constraints including language, aspect, locked camera, and protected layers. |
+| [claims-must-be-sourced](library/qa/claims-must-be-sourced/SKILL.md) | validated | claims must be sourced, quantitative claim citation, iddialar kaynaklı olmalı, sayısal veri kaynak doğrulama, Quellenpflicht für Zahlenangaben, Belegprüfung für Behauptungen, citas obligatorias para datos, sources requises pour affirmations | Require verifiable source citations in project provenance and on-screen attribution for every quantitative statistic, multiplier, benchmark, or factual claim. |
 | [color-continuity](library/qa/color-continuity/SKILL.md) | guidance | renk tutarlılığı, color matching | Use for color continuity. Compare neighboring shots using references, scopes or measured values and correct exposure/hue. |
+| [content-policy-boundaries](library/qa/content-policy-boundaries/SKILL.md) | validated | content policy boundaries, impersonation and trademark guard, içerik politikası sınırları, kişi taklidi ve marka koruması, Inhaltsrichtlinien-Grenzen, Imitations- und Markenschutz, límites de política de contenido, limites de politique de contenu | Enforce strict ethical and legal content boundaries—no real-person likeness or voice impersonation, no third-party brand spoofing, and no unlicensed copyrighted IP. |
 | [contrast-audit](library/qa/contrast-audit/SKILL.md) | validated | kontrast kontrolü, okunabilirlik | Use for contrast audit. Measure contrast in representative text/background regions and inspect moving backgrounds. |
-| [debanding](library/qa/debanding/SKILL.md) | guidance | banding, renk bantları | Use for debanding. Apply suitable dithering/filtering at appropriate precision before final encode. |
+| [cultural-adaptation-audit](library/qa/cultural-adaptation-audit/SKILL.md) | validated | cultural adaptation audit, localization qa checklist, kültürel uyarlama denetimi, yerelleştirme kalite kontrolü, Kulturadaptions-Prüfung, Lokalisierungs-Checkliste, auditoría de adaptación cultural, audit d'adaptation culturelle | Audit localized video variants for ambiguous numeric dates, measurement systems, currency assumptions, directional progression cues, and region-locked references. |
+| [debanding](library/qa/debanding/SKILL.md) | validated | banding, renk bantları, debanding, Banding-Reduktion, Farbabstufungs-Glättung | Use for debanding. Apply suitable dithering/filtering at appropriate precision before final encode. |
 | [dropped-frame-audit](library/qa/dropped-frame-audit/SKILL.md) | guidance | eksik kare, frame drop | Use for dropped frame audit. Inspect sequence indices, stream timestamps and delta cadence. |
-| [flash-safety](library/qa/flash-safety/SKILL.md) | guidance | flaş güvenliği, ışık çakması | Use for flash safety. Analyze rapid luminance/color changes and limit hazardous patterns; use conservative review when uncertain. |
+| [flash-safety](library/qa/flash-safety/SKILL.md) | validated | flaş güvenliği, ışık çakması, flash safety, Blitzschutz-Prüfung, Photosensitivitäts-Schutz | Use for flash safety. Analyze rapid luminance/color changes and limit hazardous patterns; use conservative review when uncertain. |
 | [font-render-audit](library/qa/font-render-audit/SKILL.md) | validated | font hatası, eksik glif | Use for font render audit. Render coverage fixture using actual font files and compare glyph availability. |
 | [frame-comparison](library/qa/frame-comparison/SKILL.md) | validated | kare karşılaştırma, before after | Use for frame comparison. Compare same timestamp, dimensions and color treatment using visual and measurable deltas. |
 | [freeze-detection](library/qa/freeze-detection/SKILL.md) | validated | donmuş kare, freeze detection | Use for freeze detection. Measure frame differences over windows and compare intended static holds. |
+| [golden-frame-regression](library/qa/golden-frame-regression/SKILL.md) | validated | golden frame regression, visual render regression test, altın kare görsel regresyon, işletim sistemleri arası kare testi, Golden-Frame-Regressionstest, Plattformübergreifender Bildvergleich, regresión visual de fotogramas dorados, régression visuelle d'images de référence | Verify cross-platform visual render consistency across Linux, macOS, and Windows using golden reference descriptors, structural band tolerances, and font-metric isolation. |
 | [lut-application](library/qa/lut-application/SKILL.md) | guidance | lut, renk düzenleme | Use for lut application. Verify LUT input/output color space before applying and manage intensity deliberately. |
 | [self-correction-loop](library/qa/self-correction-loop/SKILL.md) | guidance | otomatik düzeltme, self correction | Use for self correction loop. Prioritize verified defects, edit smallest affected unit, rerender and recheck with bounded retries. |
 | [silence-audit](library/qa/silence-audit/SKILL.md) | validated | ses yok, silent audio | Use for silence audit. Detect unexpected silent intervals and compare to requested sound plan. |
@@ -542,20 +573,20 @@
 | [hardware-encoding](library/render/hardware-encoding/SKILL.md) | guidance | donanım encoder, nvenc videotoolbox | Use for hardware encoding. Check encoder capability and choose compatible format and rate-control settings. |
 | [headless-browser-render](library/render/headless-browser-render/SKILL.md) | validated | headless render, tarayıcı render | Use for headless browser render. Freeze page time, wait for fonts/assets and capture frames in isolated browser context. |
 | [partial-render](library/render/partial-render/SKILL.md) | validated | kısmi render, sadece değişen sahne | Use for partial render. Identify affected shots and dependency edges; rerender only invalidated portions. |
-| [preview-render](library/render/preview-render/SKILL.md) | guidance | taslak render, preview | Use for preview render. Use reduced resolution, samples or representative range while preserving timing and composition. |
+| [preview-render](library/render/preview-render/SKILL.md) | validated | taslak render, preview, preview render, Vorschau-Render, Entwurfs-Rendering | Use for preview render. Use reduced resolution, samples or representative range while preserving timing and composition. |
 | [reeldoctor-diagnostics](library/render/reeldoctor-diagnostics/SKILL.md) | validated | reeldoctor, sistem kontrolü | Use for reeldoctor diagnostics. Probe installed tools, versions, disk, devices and supported features without modifying system. |
 | [remote-render](library/render/remote-render/SKILL.md) | guidance | uzak render, remote worker | Use for remote render. Transfer approved manifest and artifacts to authorized worker with hashes and version checks. |
 | [render-artifact-validation](library/render/render-artifact-validation/SKILL.md) | validated | render dosya kontrolü, artifact validation | Use for render artifact validation. Check expected file presence, size, checksum and frame/stream decode before reuse. |
 | [render-benchmark](library/render/render-benchmark/SKILL.md) | guidance | benchmark, render performansı | Use for render benchmark. Run reproducible short fixtures and record settings, environment, wall time and memory if measured. |
 | [render-cache](library/render/render-cache/SKILL.md) | validated | render önbelleği, cache | Use for render cache. Key artifacts by canonical inputs, versions, settings and relevant environment. |
 | [render-engine-fallback](library/render/render-engine-fallback/SKILL.md) | guidance | render motoru alternatifi, fallback | Use for render engine fallback. Select equivalent supported route only when output requirements can be preserved. |
-| [render-preflight](library/render/render-preflight/SKILL.md) | guidance | render öncesi kontrol, preflight | Use for render preflight. Validate scene references, frame ranges, output paths and available capabilities before render. |
+| [render-preflight](library/render/render-preflight/SKILL.md) | validated | render öncesi kontrol, preflight, render preflight, Render-Vorabprüfung, Preflight-Check | Use for render preflight. Validate scene references, frame ranges, output paths and available capabilities before render. |
 | [render-queue](library/render/render-queue/SKILL.md) | guidance | render kuyruğu, job queue | Use for render queue. Schedule dependency-ready jobs with bounded concurrency and cancellation state. |
 | [render-worker-isolation](library/render/render-worker-isolation/SKILL.md) | guidance | render izolasyonu, worker | Use for render worker isolation. Run renderer in bounded workspace with controlled inputs, timeouts and cleanup. |
-| [resource-budget](library/render/resource-budget/SKILL.md) | guidance | ram disk bütçesi, bellek optimizasyonu | Use for resource budget. Estimate memory, disk and time from sample jobs and cap concurrency accordingly. |
+| [resource-budget](library/render/resource-budget/SKILL.md) | validated | ram disk bütçesi, bellek optimizasyonu, resource budget, Ressourcen-Budget, Renderzeit- und Speicherlimit | Use for resource budget. Estimate memory, disk and time from sample jobs and cap concurrency accordingly. |
 | [resume-render](library/render/resume-render/SKILL.md) | validated | render devam, devam ettir | Use for resume render. Persist completed frame/job evidence and resume incomplete work idempotently. |
 
-## Skill engineering, agent interoperability and development (`skills`, 26)
+## Skill engineering, agent interoperability and development (`skills`, 30)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -568,12 +599,16 @@
 | [engine-adapter-development](library/skills/engine-adapter-development/SKILL.md) | guidance | motor geliştir, engine adapter | Use for engine adapter development. Implement capability probe, typed scene contract, render invocation and artifact validation. |
 | [example-gallery-curation](library/skills/example-gallery-curation/SKILL.md) | guidance | example gallery, örnek galerisi | Maintain reproducible previews for example projects. |
 | [host-compat-matrix](library/skills/host-compat-matrix/SKILL.md) | guidance | compat matrix, uyumluluk matrisi | Record installer and activation results for each host. |
+| [lang-detect-and-route](library/skills/lang-detect-and-route/SKILL.md) | validated | language detection, lang detect route, dil algılama ve yönlendirme, hedef dil seçimi, Spracherkennung und Routing, Zielsprache erkennen, detección de idioma, détection de langue | Detect brief language offline via script diacritics and stopword profiles, keeping CLI interface locale separate from target video language. |
 | [license-audit-dependencies](library/skills/license-audit-dependencies/SKILL.md) | guidance | bağımlılık lisansı, spdx | Use for license audit dependencies. Inventory direct/transitive licenses and distinguish software from content assets. |
 | [mcp-gateway-routing](library/skills/mcp-gateway-routing/SKILL.md) | validated | mcp gateway, progressive tool discovery, namespaced mcp tools, birleşik mcp geçidi | Use for Unified MCP Gateway routing and progressive tool discovery. Expose constant meta-tools, namespace blender:* and after_effects:* schemas lazily, and detect upstream tool schema drift. |
 | [mcp-registry-publishing](library/skills/mcp-registry-publishing/SKILL.md) | guidance | MCP publishing, MCP yayınlama | Prepare a gateway listing with verifiable ownership. |
 | [mcp-tool-contract](library/skills/mcp-tool-contract/SKILL.md) | validated | mcp entegrasyonu, tool schema | Use for mcp tool contract. Expose typed discovery, validation and render operations with scoped input/output and permission checks. |
 | [plugin-sdk](library/skills/plugin-sdk/SKILL.md) | guidance | eklenti sdk, plugin geliştirme | Use for plugin sdk. Define capability manifest, lifecycle, version compatibility and isolated adapter interfaces. |
+| [prompt-injection-guard](library/skills/prompt-injection-guard/SKILL.md) | validated | prompt injection guard, brief sanitization, istem enjeksiyon koruması, güvenli istem sınırı, Eingabe-Injektionsschutz, Brief-Abschirmung, protección contra inyección, garde contre injection | Isolate untrusted user briefs inside inert data boundaries and reject embedded instruction overrides, path traversal tokens, and network/shell escalations. |
 | [release-documentation](library/skills/release-documentation/SKILL.md) | guidance | readme, release dokümantasyon | Use for release documentation. Document only verified features, setup paths and known limitations with reproducible examples. |
+| [safe-community-format-package](library/skills/safe-community-format-package/SKILL.md) | validated | safe community format package, data only format install, güvenli topluluk biçim paketi, yalnızca veri biçim kurulumu, sicheres Community-Formatpaket, reines Datenformat installieren, paquete de formato seguro de solo datos, paquet de format communautaire sans code | Validate third-party community format packages as pure declarative data—blocking executable scripts, custom code recipes, symlinks, path traversal, and network fetches. |
+| [schema-json-repair](library/skills/schema-json-repair/SKILL.md) | validated | schema json repair, json plan repair, şema json onarımı, bozuk json düzeltme, JSON-Schema-Reparatur, Strukturdaten-Reparatur, reparación de json, réparation de schéma json | Recover valid, schema-conformant scene plans from malformed JSON outputs using deterministic syntax normalization, bounded retries, and rule-based fallback. |
 | [secure-local-execution](library/skills/secure-local-execution/SKILL.md) | guidance | lokal güvenlik, sandbox | Use for secure local execution. Use canonical paths, subprocess argument arrays, allowlists, timeouts and narrow file permissions. |
 | [skill-alias-localization](library/skills/skill-alias-localization/SKILL.md) | guidance | alias localization, alias yerelleştirme | Add a language-specific search phrase to the router. |
 | [skill-authoring](library/skills/skill-authoring/SKILL.md) | guidance | skill oluştur, skill yaz | Use for skill authoring. Write a distinct use case with triggers, input contract, procedure, output and validation. |
@@ -586,7 +621,7 @@
 | [skill-token-budget](library/skills/skill-token-budget/SKILL.md) | validated | token optimizasyonu, context budget | Use for skill token budget. Limit initial discovery and per-stage loaded instructions; use summaries and on-demand references. |
 | [skill-versioning](library/skills/skill-versioning/SKILL.md) | guidance | skill sürümü, skill updates | Use for skill versioning. Version metadata and behavior; migrate IDs and rebuild index atomically. |
 
-## Narrative, writing and storyboards (`story`, 20)
+## Narrative, writing and storyboards (`story`, 25)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -594,20 +629,25 @@
 | [blocking](library/story/blocking/SKILL.md) | guidance | sahne konumlama, oyuncu yerleşimi | Use for blocking. Plot positions, eyelines and movement paths in a top-down diagram or coordinates. |
 | [call-to-action-writing](library/story/call-to-action-writing/SKILL.md) | guidance | harekete geçirici mesaj, cta | Use for call to action writing. Write a specific feasible next action consistent with user-provided offer terms. |
 | [chapter-structure](library/story/chapter-structure/SKILL.md) | guidance | bölümler, uzun video | Use for chapter structure. Divide long material into chapters with distinct questions and transitions. |
+| [comedic-timing-beats](library/story/comedic-timing-beats/SKILL.md) | validated | comedic timing, comedy beats, komedi zamanlaması, espri ritmi, Pointen-Timing, Komik-Rhythmus, ritmo cómico, rythme comique | Time setup-subversion beats using rule-of-three escalation, pre-punchline micro-holds, hard cuts on plosive transients, and clipped reaction tails. |
 | [continuity-ledger](library/story/continuity-ledger/SKILL.md) | guidance | süreklilik, devamlılık | Use for continuity ledger. Track wardrobe, props, positions, light, time and character state by shot. |
 | [dialogue-writing](library/story/dialogue-writing/SKILL.md) | guidance | diyalog, karakter konuşması | Use for dialogue writing. Give speakers distinct intent and concise reactions; keep subtext in actions. |
-| [ending-payoff](library/story/ending-payoff/SKILL.md) | guidance | kapanış, final sahne | Use for ending payoff. Resolve the central promise with a visual callback or decisive action. |
+| [ending-payoff](library/story/ending-payoff/SKILL.md) | validated | kapanış, final sahne, ending payoff, Abschluss-Pointe, Schlussauflösung | Use for ending payoff. Resolve the central promise with a visual callback or decisive action. |
 | [logline-writing](library/story/logline-writing/SKILL.md) | guidance | logline, tek cümle hikaye | Use for logline writing. Express protagonist or subject, goal and conflict or promise in one clear sentence. |
-| [opening-hook](library/story/opening-hook/SKILL.md) | guidance | ilk saniyeler, açılış kancası | Use for opening hook. Show the question, conflict or value through a concrete opening image before explanation. |
+| [microlearning-chunking](library/story/microlearning-chunking/SKILL.md) | validated | microlearning, microlearning chunking, mikro öğrenme, kavram parçalama, Mikrolernen, Lernhäppchen strukturieren, microaprendizaje, micro-apprentissage | Structure educational shorts under strict cognitive-load ceilings using concept-anchor, worked visual proof, and active micro-recall beats. |
+| [open-loop-retention](library/story/open-loop-retention/SKILL.md) | validated | open loop, open loop retention, açık döngü kurgusu, merak boşluğu, Offene Schleife, Spannungsbogen halten, bucle abierto, boucle ouverte | Plant a concrete unanswered question in the opening beat, advance partial evidence across middle beats, and close the loop cleanly before the final hold. |
+| [opening-hook](library/story/opening-hook/SKILL.md) | validated | ilk saniyeler, açılış kancası, opening hook, Eröffnungs-Hook, erste Sekunden | Use for opening hook. Show the question, conflict or value through a concrete opening image before explanation. |
+| [prompt-to-storyboard](library/story/prompt-to-storyboard/SKILL.md) | validated | prompt to storyboard, brief to scenes, istemden öykü panosuna, metinden sahne planına, Kurztext zu Storyboard, Entwurf zu Szenenplan, texto a guion gráfico, brief vers scénarimage | Convert a short natural-language brief into frame-quantized scene cards with visual action, on-screen copy, audio cue, and recipe assignment. |
 | [research-script](library/story/research-script/SKILL.md) | guidance | kaynaklı senaryo, araştırma senaryosu | Use for research script. Map factual claims to reliable sources and keep interpretations clearly marked. |
 | [screenwriting](library/story/screenwriting/SKILL.md) | guidance | senaryo, senaryo yaz | Use for screenwriting. Structure setup, development and payoff in scenes with visual action rather than abstract adjectives. |
 | [script-localization](library/story/script-localization/SKILL.md) | guidance | senaryo çeviri, yerelleştirme | Use for script localization. Adapt idioms and spoken timing while preserving factual meaning and brand terms. |
 | [short-film-arc](library/story/short-film-arc/SKILL.md) | guidance | kısa film, hikaye kurgusu | Use for short film arc. Build a compact visual setup, escalation and payoff with economical locations and cast. |
 | [shot-coverage](library/story/shot-coverage/SKILL.md) | guidance | çekim kapsamı, alternatif açı | Use for shot coverage. Plan master, inserts and reaction coverage only where needed for edit flexibility. |
-| [shot-list](library/story/shot-list/SKILL.md) | guidance | çekim listesi, shot list | Use for shot list. Create shot IDs, framing, action, lens intent, duration, asset requirements and continuity notes. |
+| [shot-list](library/story/shot-list/SKILL.md) | validated | çekim listesi, shot list, Einstellungsliste, Kameraliste | Use for shot list. Create shot IDs, framing, action, lens intent, duration, asset requirements and continuity notes. |
 | [story-beats](library/story/story-beats/SKILL.md) | guidance | hikaye ritmi, beat sheet | Use for story beats. Assign an observable change and frame allocation to every beat. |
-| [storyboard](library/story/storyboard/SKILL.md) | guidance | storyboard, sahne çizelgesi | Use for storyboard. Design key panels with framing, staging and motion arrows or notes per shot. |
+| [storyboard](library/story/storyboard/SKILL.md) | validated | storyboard, sahne çizelgesi, Szenenboard, Storyboard-Planung, öykü panosu | Use for storyboard. Design key panels with framing, staging and motion arrows or notes per shot. |
 | [three-act-structure](library/story/three-act-structure/SKILL.md) | guidance | üç perde, hikaye yapısı | Use for three act structure. Map inciting event, turning points, climax and resolution to available runtime. |
+| [transcreation-tone](library/story/transcreation-tone/SKILL.md) | validated | transcreation tone, formality register adaptation, yaratıcı çeviri ve hitap tonu, sen siz resmiyet uyumu, Transkreation und Anredeform, Du-Sie-Tonalität anpassen, transcreación y registro, transcréation et registre | Adapt hooks, imperatives, humor, and formality registers (du/Sie, sen/siz, tú/usted) across languages by rhetorical function and beat budget rather than literal calques. |
 | [visual-storytelling](library/story/visual-storytelling/SKILL.md) | guidance | görsel hikaye, konuşmasız | Use for visual storytelling. Communicate through observable action, props, framing and reactions rather than exposition. |
 | [voiceover-writing](library/story/voiceover-writing/SKILL.md) | guidance | seslendirme metni, anlatıcı metni | Use for voiceover writing. Write spoken language with timed phrases, natural emphasis and room for breaths. |
 
@@ -616,7 +656,7 @@
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [color-match-transition](library/transitions/color-match-transition/SKILL.md) | guidance | renkle geçiş, color match | Use for color match transition. Use shared dominant hue or luminance as a visual bridge across shots. |
-| [cross-dissolve](library/transitions/cross-dissolve/SKILL.md) | guidance | çapraz çözünme, dissolve | Use for cross dissolve. Blend adjacent shots over explicit shared interval in appropriate color space. |
+| [cross-dissolve](library/transitions/cross-dissolve/SKILL.md) | validated | çapraz çözünme, dissolve, cross dissolve, Kreuzblende, weiche Überblendung | Use for cross dissolve. Blend adjacent shots over explicit shared interval in appropriate color space. |
 | [exploded-view-shot](library/transitions/exploded-view-shot/SKILL.md) | guidance | patlatılmış görünüm, exploded view | Use for exploded view shot. Separate product parts along logical assembly axes with delayed reveal and labels if allowed. |
 | [fade-through-black](library/transitions/fade-through-black/SKILL.md) | guidance | siyaha geçiş, fade black | Use for fade through black. Fade down and up with purposeful black hold if requested. |
 | [fade-through-white](library/transitions/fade-through-white/SKILL.md) | guidance | beyaza geçiş, fade white | Use for fade through white. Blend through a bounded white interval without abrupt flashing. |
@@ -634,31 +674,38 @@
 | [seamless-camera-bridge](library/transitions/seamless-camera-bridge/SKILL.md) | guidance | kesintisiz kamera geçişi, one take | Use for seamless camera bridge. Match camera transforms, exposure and velocity at designed seam. |
 | [shape-match-transition](library/transitions/shape-match-transition/SKILL.md) | guidance | şekille geçiş, shape match | Use for shape match transition. Select similar geometry at scene endpoints and align size and position. |
 | [slide-transition](library/transitions/slide-transition/SKILL.md) | guidance | kaydırma geçişi, slide transition | Use for slide transition. Move frames along shared axis with consistent easing and overscan. |
-| [wipe-transition](library/transitions/wipe-transition/SKILL.md) | guidance | silme geçişi, wipe | Use for wipe transition. Animate geometric matte boundary across source and target layers. |
+| [wipe-transition](library/transitions/wipe-transition/SKILL.md) | validated | silme geçişi, wipe, wipe transition, Wischblende, Wipe-Übergang | Use for wipe transition. Animate geometric matte boundary across source and target layers. |
 
-## Typography, captions and visual text (`typography`, 28)
+## Typography, captions and visual text (`typography`, 35)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
+| [bilingual-dual-subtitles](library/typography/bilingual-dual-subtitles/SKILL.md) | validated | bilingual subtitles, dual language captions, çift dilli altyazı, iki dilli altyazı yerleşimi, zweisprachige Untertitel, Doppel-Untertitel anordnen, subtítulos bilingües, sous-titres bilingues | Stack primary and secondary language subtitle tracks with distinct size/luminance hierarchy, locked shared event timestamps, and <= 3 total lines. |
+| [burned-in-caption-styling](library/typography/burned-in-caption-styling/SKILL.md) | validated | burned in captions, open caption styling, gömülü altyazı tasarımı, ekrana işlenmiş altyazı, eingebrannte Untertitel, offene Untertitel gestalten, subtítulos incrustados, sous-titres incrustés | Render legible open burned-in captions with anchored baselines, semi-opaque pill or stroke backing, >= 7:1 contrast, and restrained active-word emphasis. |
 | [caption-segmentation](library/typography/caption-segmentation/SKILL.md) | guidance | altyazı bölme, caption chunks | Use for caption segmentation. Segment transcript by phrase and line length while preserving semantic units. |
 | [caption-translation](library/typography/caption-translation/SKILL.md) | guidance | altyazı çeviri, çok dilli altyazı | Use for caption translation. Translate meaning, then resegment for reading speed and local punctuation. |
 | [character-reveal](library/typography/character-reveal/SKILL.md) | guidance | harf harf, typewriter | Use for character reveal. Reveal grapheme clusters rather than splitting combining characters. |
-| [cjk-typography](library/typography/cjk-typography/SKILL.md) | guidance | CJK typography, CJK tipografi | Lay out Chinese, Japanese or Korean text. |
+| [cjk-typography](library/typography/cjk-typography/SKILL.md) | validated | CJK typography, CJK tipografi, CJK-Typografie, ostasiatischer Satz | Lay out Chinese, Japanese or Korean text. |
 | [complex-script-shaping](library/typography/complex-script-shaping/SKILL.md) | guidance | script shaping, karmaşık yazı sistemleri | Verify shaping and direction in connected scripts. |
 | [emoji-rendering](library/typography/emoji-rendering/SKILL.md) | guidance | emoji rendering, emoji çizimi | Render emoji with consistent scale and fallback. |
-| [end-card](library/typography/end-card/SKILL.md) | guidance | kapanış kartı, end slate | Use for end card. Compose logo, CTA and required copy in a restrained hierarchy with a reading hold. |
+| [end-card](library/typography/end-card/SKILL.md) | validated | kapanış kartı, end slate, end card, Abspannkarte, Endkarte | Use for end card. Compose logo, CTA and required copy in a restrained hierarchy with a reading hold. |
 | [extruded-type](library/typography/extruded-type/SKILL.md) | guidance | 3d yazı, extruded typography | Use for extruded type. Create beveled or extruded glyph geometry with appropriate lighting and depth. |
-| [font-fallback-chain](library/typography/font-fallback-chain/SKILL.md) | guidance | font fallback, yedek font zinciri | Choose fallback fonts for missing script coverage. |
+| [font-fallback-chain](library/typography/font-fallback-chain/SKILL.md) | validated | font fallback, yedek font zinciri, font fallback chain, Schrift-Fallback-Kette, Ersatzschrift | Choose fallback fonts for missing script coverage. |
 | [font-selection](library/typography/font-selection/SKILL.md) | guidance | font seçimi, yazı tipi | Use for font selection. Select licensed typefaces by tone, script coverage and legibility; establish fallback stack. |
+| [german-compound-linebreak](library/typography/german-compound-linebreak/SKILL.md) | validated | german compound linebreak, compound word hyphenation, Almanca birleşik kelime satır kırma, uzun kelime bölme, Komposita-Zeilenumbruch, Worttrennung bei Komposita, división de palabras compuestas, césure des mots composés | Wrap long German and Nordic compound nouns cleanly at morphological constituent seams using explicit hyphens or soft-hyphen hints instead of mid-morpheme clipping. |
 | [kerning-tracking](library/typography/kerning-tracking/SKILL.md) | guidance | harf aralığı, kerning | Use for kerning tracking. Adjust glyph spacing and word spacing optically without breaking script shaping. |
 | [kinetic-typography](library/typography/kinetic-typography/SKILL.md) | validated | kinetik tipografi, hareketli yazı | Use for kinetic typography. Animate letter, word or phrase groups according to spoken emphasis and reading hold. |
+| [locale-aware-casing](library/typography/locale-aware-casing/SKILL.md) | validated | locale aware casing, localized uppercase, yerel büyük küçük harf, Türkçe İ ı harf dönüşümü, sprachabhängige Großschreibung, lokale Großbuchstaben, mayúsculas según idioma, casse sensible à la langue | Transform display headings and kickers using locale-specific uppercase, lowercase, and title-case rules instead of ASCII-biased string methods. |
 | [locale-formatting](library/typography/locale-formatting/SKILL.md) | guidance | locale format, yerel biçimlendirme | Format dates, quantities and currency for a specified locale. |
 | [lower-thirds](library/typography/lower-thirds/SKILL.md) | validated | alt bant, lower third | Use for lower thirds. Reserve speaker label area with consistent entrance, hold and exit rules. |
+| [multilingual-caption-profiles](library/typography/multilingual-caption-profiles/SKILL.md) | validated | multilingual caption profiles, per language subtitle timing, çok dilli altyazı profilleri, dile göre okuma hızı sınırı, mehrsprachige Untertitelprofile, Lesegeschwindigkeit je Sprache, perfiles de subtítulos multilingües, profils de sous-titres multilingues | Configure per-language characters-per-second ceilings, line-length limits, minimum hold floors, and shot-cut lead/lag snapping across six languages. |
 | [multilingual-glyph-audit](library/typography/multilingual-glyph-audit/SKILL.md) | guidance | glyph audit, karakter seti denetimi | Test a selected font against localized strings. |
-| [rtl-text-layout](library/typography/rtl-text-layout/SKILL.md) | guidance | arapça, sağdan sola, rtl | Use for rtl text layout. Use proper bidirectional shaping and isolate mixed-direction tokens. |
+| [numeric-unit-typography](library/typography/numeric-unit-typography/SKILL.md) | validated | numeric unit typography, tabular figures formatting, sayı ve birim tipografisi, rakam hizalama kuralları, Zahlen- und Einheitentypografie, Tabellenziffern formatieren, tipografía numérica y unidades, typographie des nombres et unités | Format animated counters, metrics, percentages, currencies, and SI units using tabular lining figures, true minus glyphs, non-breaking spaces, and locale separators. |
+| [orphan-widow-line-balance](library/typography/orphan-widow-line-balance/SKILL.md) | validated | orphan widow balance, balanced line wrapping, yetim dul satır dengesi, dengeli satır kırma, Hurenkinder und Schusterjungen vermeiden, ausgewogener Zeilenumbruch, equilibrio de líneas huérfanas, équilibre des lignes orphelines | Balance multi-line headings, subheadings, and captions using optical pixel-width ratios and linguistic phrase-break penalties so trailing single-word orphans never appear. |
+| [rtl-text-layout](library/typography/rtl-text-layout/SKILL.md) | validated | arapça, sağdan sola, rtl, rtl text layout, Rechts-nach-links-Satz, RTL-Layout, sağdan sola metin | Use for rtl text layout. Use proper bidirectional shaping and isolate mixed-direction tokens. |
 | [subtitle-format-export](library/typography/subtitle-format-export/SKILL.md) | validated | srt, vtt, ass altyazı | Use for subtitle format export. Convert cue times to selected format with escaping and consistent numbering. |
 | [subtitle-safe-area](library/typography/subtitle-safe-area/SKILL.md) | guidance | altyazı güvenli alan, safe zone | Use for subtitle safe area. Reserve platform-appropriate regions around captions, UI and faces. |
-| [text-expansion-layout](library/typography/text-expansion-layout/SKILL.md) | guidance | text expansion, metin genişlemesi | Test translated copy against its allocated region. |
+| [text-expansion-layout](library/typography/text-expansion-layout/SKILL.md) | validated | text expansion, metin genişlemesi, text expansion layout, Textausdehnung-Layout, Sprachexpansion | Test translated copy against its allocated region. |
 | [text-mask-reveal](library/typography/text-mask-reveal/SKILL.md) | guidance | yazı maskesi, text mask | Use for text mask reveal. Animate clipping geometry independently of text bounds. |
 | [text-on-path](library/typography/text-on-path/SKILL.md) | guidance | çizgide yazı, text path | Use for text on path. Lay text along a path with stable tangents and direction-aware shaping. |
 | [text-wrapping](library/typography/text-wrapping/SKILL.md) | guidance | satır kayması, yazı taşması | Use for text wrapping. Measure rendered glyph bounding boxes and wrap by semantic phrases. |
@@ -669,7 +716,7 @@
 | [word-reveal](library/typography/word-reveal/SKILL.md) | guidance | kelime kelime, word reveal | Use for word reveal. Reveal words at timed anchors without shifting already-read text unnecessarily. |
 | [word-timed-captions](library/typography/word-timed-captions/SKILL.md) | guidance | kelime zamanlı altyazı, karaoke | Use for word timed captions. Use word timestamps to highlight active words with stable layout. |
 
-## Visual effects and compositing (`vfx`, 21)
+## Visual effects and compositing (`vfx`, 23)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
@@ -685,23 +732,26 @@
 | [liquid-morph](library/vfx/liquid-morph/SKILL.md) | guidance | sıvı dönüşüm, liquid morph | Use for liquid morph. Blend implicit fields or animated surfaces using coherent topology and lighting. |
 | [luma-key](library/vfx/luma-key/SKILL.md) | guidance | parlaklık maskesi, luma key | Use for luma key. Derive alpha from luminance with controlled thresholds and softness. |
 | [motion-blur](library/vfx/motion-blur/SKILL.md) | guidance | hareket bulanıklığı, motion blur | Use for motion blur. Use temporal samples or motion vectors with explicit shutter fraction. |
+| [optical-vignette-halation](library/vfx/optical-vignette-halation/SKILL.md) | validated | optical vignette, halation and vignette, optik vinyet ve halasyon, kenar karartma ve ışık halesi, optische Vignettierung, Lichtsaum und Randabfall, viñeteo óptico y halación, vignettage optique et halation | Apply subtle natural-lens peripheral falloff and thresholded warm highlight halation in linear light without crushing corners or reducing caption contrast. |
 | [particle-3d](library/vfx/particle-3d/SKILL.md) | guidance | 3d parçacık, 3d particles | Use for particle 3d. Seed emitters, define world-space velocities and cap count and lifetime. |
 | [planar-tracking](library/vfx/planar-tracking/SKILL.md) | guidance | planar tracking, ekran takip | Use for planar tracking. Track planar feature correspondences and compute perspective transform. |
 | [point-tracking](library/vfx/point-tracking/SKILL.md) | guidance | nokta takibi, motion tracking | Use for point tracking. Track stable features and reject outliers before applying translation or stabilization. |
 | [rotoscoping](library/vfx/rotoscoping/SKILL.md) | guidance | rotoskop, rotoscoping | Use for rotoscoping. Track manually defined masks across keyframes with interpolation and edge feathering. |
 | [screen-replacement](library/vfx/screen-replacement/SKILL.md) | guidance | ekran değiştirme, screen replacement | Use for screen replacement. Warp replacement to tracked corners and match reflections, grain and exposure. |
 | [shader-effects](library/vfx/shader-effects/SKILL.md) | guidance | shader, glsl efekt | Use for shader effects. Write bounded shader uniforms driven by deterministic time and validate compile status. |
+| [shader-loop-art](library/vfx/shader-loop-art/SKILL.md) | validated | shader loop art, seamless glsl loop, kesintisiz gölgelendirici döngüsü, periyodik prosedürel döngü sanatı, nahtlose Shader-Schleife, periodische GLSL-Animation, arte de bucle en shader, boucle procédurale shader sans couture | Author mathematically seamless periodic GLSL and procedural visual loops using 2*pi*f/N phase clocks, circular 4D noise trajectories, and stutter-free terminal frames. |
 | [shadow-catcher](library/vfx/shadow-catcher/SKILL.md) | guidance | gölge yakalayıcı, shadow catcher | Use for shadow catcher. Render contact shadows separately and composite with plate lighting. |
 | [signed-distance-fields](library/vfx/signed-distance-fields/SKILL.md) | guidance | sdf raymarching, signed distance field, smooth boolean, analitik mesafe alanı | Use for signed distance fields. Construct 2D and 3D procedural geometry with smooth polynomial CSG booleans, analytical normals, and soft penumbra shadows. |
 | [smoke-fog](library/vfx/smoke-fog/SKILL.md) | guidance | duman, sis | Use for smoke fog. Use procedural volumes or lightweight billboards with depth sorting and evolving seed. |
 
-## Project intelligence and batch workflows (`workflow`, 21)
+## Project intelligence and batch workflows (`workflow`, 22)
 
 | Skill | Status | Search phrases | Scope |
 | --- | --- | --- | --- |
 | [batch-production](library/workflow/batch-production/SKILL.md) | guidance | toplu video, batch production | Use for batch production. Create per-item job manifests with explicit shared templates and independent output paths. |
 | [blender-ae-interchange](library/workflow/blender-ae-interchange/SKILL.md) | validated | blender after effects köprüsü, 3d kamera aktarımı, blender ae compositing, interchange handoff | Use for coordinated BlenderMCP, ReelSyntax, and AfterEffectsMCP multi-tool workflows. Transfer 3D camera rigs, rational FPS timelines, RGBA/depth passes, GLB assets, masks, and audio stems. |
-| [brand-kit-workflow](library/workflow/brand-kit-workflow/SKILL.md) | guidance | brand kit, marka kiti | Use for brand kit workflow. Store approved fonts, logos, palette, layout locks and legal text in reusable manifest. |
+| [brand-kit-workflow](library/workflow/brand-kit-workflow/SKILL.md) | validated | brand kit, marka kiti, brand kit workflow, Markenpaket-Workflow, Brand-Kit-Anwendung | Use for brand kit workflow. Store approved fonts, logos, palette, layout locks and legal text in reusable manifest. |
+| [format-runner-protocol](library/workflow/format-runner-protocol/SKILL.md) | validated | format runner protocol, step gated video pipeline, biçim yürütücü protokolü, onay kapılı üretim hattı, Format-Ausführungsprotokoll, Stufengesteuerte Render-Pipeline, protocolo de ejecución de formatos, protocole d'exécution de format | Execute step-gated format pipelines (idea, script, look, frames, pilot, full, hero, qc) with approval checkpoints, upstream-edit cache invalidation, and hero render protection. |
 | [multilingual-variants](library/workflow/multilingual-variants/SKILL.md) | guidance | çok dilli video, çeviri varyantı | Use for multilingual variants. Generate language-specific text, voice and timing while preserving shared design constraints. |
 | [production-cost-estimation](library/workflow/production-cost-estimation/SKILL.md) | guidance | render maliyeti, iş süresi tahmini | Use for production cost estimation. Estimate compute, storage and optional external cost with ranges from actual samples. |
 | [production-observability](library/workflow/production-observability/SKILL.md) | guidance | işlem kayıtları, production log | Use for production observability. Record step IDs, timings, tool versions and outcomes with secret redaction. |

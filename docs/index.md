@@ -16,7 +16,7 @@ hide:
 <p class="rs-lead">Render a frame-based video project locally, review the encoded master and deliver it as a video, a still or an editor timeline. Renderers run on your machine. The Python core has no required third-party dependencies.</p>
 
 <div class="rs-actions">
-  <a class="rs-btn rs-btn--primary" href="installation/">Get started</a>
+  <a class="rs-btn rs-btn--primary" href="getting-started/">Getting started</a>
   <a class="rs-btn rs-btn--ghost" href="delivery/">Authoring and delivery</a>
   <a class="rs-btn rs-btn--ghost" href="https://github.com/Remirdy/ReelSyntax">View on GitHub</a>
 </div>

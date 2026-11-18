@@ -21,16 +21,22 @@ STOP = set(
 LOCK_CAMERA = (
     'no camera movement', 'locked camera', 'camera locked', 'static camera',
     'kamera sabit', 'kamera hareket etmesin', 'kamera hareketi olmasın', 'kamerayı oynatma', 'no zoom',
+    'feste kamera', 'keine kamerabewegung', 'statische kamera',
+    'camara fija', 'camera fixe', 'camera fixa',
 )
-LOCK_TEXT = ('no text', 'without text', 'textless', 'yazı olmasın', 'yazısız', 'metin olmasın', 'metinsiz')
+LOCK_TEXT = (
+    'no text', 'without text', 'textless', 'yazı olmasın', 'yazısız', 'metin olmasın', 'metinsiz',
+    'ohne text', 'kein text', 'textfrei', 'sin texto', 'sans texte', 'sem texto',
+)
 CAMERA_MOVES = {
     'slow-dolly', 'tracking-shot', 'orbit-camera', 'crane-shot', 'whip-pan', 'handheld-motion',
     'dolly-zoom', 'aerial-shot', 'pov-camera', 'match-zoom', 'seamless-camera-bridge',
-    'camera-inertia-rig', 'procedural-camera-shake',
+    'camera-inertia-rig', 'procedural-camera-shake', 'ken-burns-photo-choreography',
 }
 TEXT_ADDITIONS = {
     'kinetic-typography', 'word-reveal', 'character-reveal', 'text-mask-reveal', 'text-on-path',
     'extruded-type', 'lower-thirds', 'word-timed-captions', 'end-card', 'variable-font-animation',
+    'kinetic-layout-choreography', 'news-ticker-hierarchy',
 }
 STEMS = {
     'kameras': 'kamera', 'schwarzbildern': 'schwarzbilder', 'camaras': 'camara',
@@ -110,12 +116,12 @@ def terms(value):
 
 
 def extract_negated_phrases(query):
-    clean = unicodedata.normalize('NFKD', query.casefold().replace('ı', 'i'))
+    clean = unicodedata.normalize('NFKD', query.casefold().replace('ı', 'i').replace('ß', 'ss'))
     clean = ''.join(c for c in clean if not unicodedata.combining(c))
     negated = []
     patterns = [
-        r'\b([a-z0-9]+(?:\s+[a-z0-9]+){0,2})\s+(?:is\s+forbidden|forbidden|yasak|istemiyorum|olmasin|haric)\b',
-        r'\b(?:without|no|exclude)\s+([a-z0-9]+(?:\s+[a-z0-9]+){0,2})(?:[.,;]|$|\band\b)',
+        r'\b([a-z0-9]+(?:\s+[a-z0-9]+){0,3}?)\s+(?:is\s+forbidden|forbidden|yasak|istemiyorum|olmasin|haric|verboten)\b',
+        r'\b(?:without|no|exclude|ohne|kein|keine|sin|sans|sem)\s+([a-z0-9]+(?:\s+[a-z0-9]+){0,3})(?:[.,;]|$|\band\b|\bund\b)',
     ]
     for pat in patterns:
         for match in re.finditer(pat, clean):
@@ -179,9 +185,9 @@ def route(query, rows, limit=6, stage=None, categories=(), available=None, exclu
     if any(contains(normalized, norm(p)) for p in LOCK_TEXT):
         locks['no_text'] = True
     for key, phrases in {
-        'no_audio': ('no audio', 'silent video', 'sessiz video', 'ses olmasın'),
-        'no_voice': ('no voice', 'no narration', 'seslendirme olmasın'),
-        'no_music': ('no music', 'müzik olmasın', 'müziksiz'),
+        'no_audio': ('no audio', 'silent video', 'sessiz video', 'ses olmasın', 'ohne ton', 'stummes video', 'sin audio', 'sans audio', 'sem audio'),
+        'no_voice': ('no voice', 'no narration', 'seslendirme olmasın', 'ohne sprache', 'ohne sprecher', 'sin voz', 'sans voix', 'sem voz'),
+        'no_music': ('no music', 'müzik olmasın', 'müziksiz', 'ohne musik', 'keine musik', 'sin musica', 'sans musique', 'sem musica'),
     }.items():
         if any(contains(normalized, norm(p)) for p in phrases):
             locks[key] = True
@@ -195,10 +201,12 @@ def route(query, rows, limit=6, stage=None, categories=(), available=None, exclu
         excluded.update(r['id'] for r in rows if r['category'] == 'typography' and r['id'] != 'textless-visual-design')
     if locks.get('no_audio'):
         excluded.update(r['id'] for r in rows if r['category'] in {'audio', 'music'})
+        excluded.add('silence-as-punctuation')
         if not (q & AUDIT_CUES):
             excluded.add('silence-audit')
     elif locks.get('no_music'):
         excluded.update(r['id'] for r in rows if r['category'] == 'music')
+        excluded.add('music-visualizer')
     if locks.get('no_voice'):
         excluded.update(sid for sid in known if any(x in sid for x in ('voiceover', 'narration', 'text-to-speech', 'tts')))
     for row in rows:
@@ -206,7 +214,7 @@ def route(query, rows, limit=6, stage=None, categories=(), available=None, exclu
         if sid in forced or sid in required_locks:
             continue
         row_phrases = [norm(sid), *(norm(a) for a in row['aliases'])]
-        if any(p and len(p.split()) >= 2 and any(contains(neg, p) or neg == p for neg in negated_phrases) for p in row_phrases):
+        if any(p and ((len(p.split()) >= 2 and any(contains(neg, p) or neg == p for neg in negated_phrases)) or (p == norm(sid) and any(contains(neg, p) or neg == p for neg in negated_phrases))) for p in row_phrases):
             excluded.add(sid)
     audio_drone_context = any(contains(normalized, p) for p in AUDIO_DRONE_PHRASES) and not (q & AERIAL_CUES)
     if audio_drone_context:

@@ -6,7 +6,7 @@ metadata:
   stage: review
   status: guidance
   version: "2.0.0"
-  aliases: "talimat kontrolü,reelguard"
+  aliases: "talimat kontrolü,reelguard,brief compliance audit,Briefing-Konformitätsprüfung,Anforderungs-Abgleich"
   requires: ""
 ---
 

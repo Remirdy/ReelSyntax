@@ -4,6 +4,26 @@
 
 ### Added
 
+- Add `docs/cookbook.md` (wired into `mkdocs.yml`) with EN, TR, and DE weak-vs-strong prompt recipes, diagnosis notes, and repair tips across all 15 ReelSyntax formats.
+- Add production container image (`Dockerfile` with pinned `python:3.12-slim`, FFmpeg, Pillow, non-root user, `/workspace` volume), hardened offline `docker-compose.yml`, Codespaces dev container, `docs/containers.md`, and `.github/workflows/container.yml` with GHCR publishing gated to `v*` tags and manual dispatch.
+- Add MCP format tools (`reelsyntax_format_list`, `reelsyntax_format_show`, `reelsyntax_format_make` with `dry_run`/`step`/`yes`/`video_lang`/`ui_lang`/`attribution`, and `reelsyntax_format_revise`) with closed schemas, workspace path containment, and offline-by-default providers.
+- Add format-aware QC extensions (`reading_speed`, `vertical_safe_zones`, `opening_hook`, `claims_sourced` for `claims-must-be-sourced`, `asset_licenses`, `mouth_sync`, `qc --rule`) and `--reduced-motion` accessible render mode.
+- Add audio pipeline (`reelsyntax.audio`: measured per-language `tts` + `stt` probes, caption+music fallback, beat-grid and sidechain ducking `music`, transition `sfx`, non-lexical retro `voice_fx` + lip-sync mouth envelope, language-profile `captions`) and `doctor --tts --stt`.
+- Add official `social-hook-reel` format package (`formats/social-hook-reel/`, `<= 2.0s` opening hook enforcement, localized EN/TR/DE kickers, mirrored to `reelsyntax/data/formats/`) and golden-frame visual regression suite (`tests/test_visual_regression.py`).
+- Add official `photo-slideshow` format package (`formats/photo-slideshow/`, automatic starter/user `layer-stack` plate provisioning, localized EN/TR/DE references and examples, mirrored to `reelsyntax/data/formats/`).
+- Add official `kinetic-typography` format package (`formats/kinetic-typography/`, localized EN/TR/DE references and examples, mirrored to `reelsyntax/data/formats/`).
+- Add starter asset pack (`reelsyntax.data.starter_assets`), SPDX license ledger (`reelsyntax.assets`, `.reelsyntax/asset-licenses.json`, `LICENSES.md` generator), and `reelsyntax assets list|materialize|register|licenses`.
+- Add first-time setup guide (`docs/getting-started.md`) and `reelsyntax doctor` enhancements (`--blender` headless probe, `--report` path/credential redaction, and setup-guide remediation links).
+- Add `reelsyntax make`, `step`, `revise`, format-aware `resume`, `prompt.json` provenance ledger, `--dry-run` render-budget estimator, and `completion <bash|zsh|fish|powershell>` tab-completion generator.
+- Add `reelsyntax formats install|uninstall|installed` for data-only community format packages from local directories, `.zip` archives, and opt-in `--allow-network` Git repositories.
+- Add declarative format system (`reelsyntax.formats` manifest schema, data-only package validator, registry, stateful approval-gated `FormatRunner`, `docs/schemas/format.v1.schema.json`, and `reelsyntax formats list|show|new|validate`).
+- Add prompt compilation pipeline (`reelsyntax.prompt.intent`, `storyboard`, `compiler`, and bounded 3-attempt schema `repair`) with untrusted-prompt data framing and path/recipe allowlists.
+- Add `LLMProvider` protocol and `offline_rules`, `ollama`, `openai_compat`, and `mcp_host` providers (`reelsyntax.prompt.providers`) with loopback-only default network policy and `reelsyntax doctor --providers`.
+- Add internationalization foundation (`locales/` with `status.json`, `lang-profiles/` for `en`/`tr`/`de`, `reelsyntax.lang` offline language detection and locale-aware Turkish/German casing, `reelsyntax lang` CLI commands, multilingual negative routing patterns, and Tier 1 golden routing suites).
+- Add community format and language issue templates, Discussions and private security advisory routing (`.github/ISSUE_TEMPLATE/config.yml`), and repository label taxonomy (`.github/labels.json`, `tools/sync_labels.py`).
+- Add automated security scanning workflow (`.github/workflows/security.yml` with CodeQL, `pip-audit`, and license/CVE dependency review) and grouped Dependabot updates.
+- Add PyPI package metadata and subpackage inclusion in `pyproject.toml`, automated release verification/notes/MCPB SHA-256 stamping (`tools/release_prepare.py`), PyPI OIDC Trusted Publishing workflow, and `docs/releasing.md`.
+- Expand CI media verification (`doctor`, FFmpeg/Blender path discovery, `render`, and `qc`) across Ubuntu, macOS, and Windows, add standard cross-platform binary fallback paths, and terminate child process trees on Windows timeouts.
 - Add canonical versioned JSON Schemas (`docs/schemas/reel.v1.schema.json`, `docs/schemas/config.v1.schema.json`) with `$id` URLs and non-destructive project schema migration (`reelsyntax migrate`).
 - Add `reelsyntax.toml` configuration support (`reelsyntax.config`) using Python's `tomllib`, `reelsyntax config show|path|init|validate` CLI commands, and `docs/config.schema.json`.
 - Add `tests/test_code_style.py` to enforce zero comments and zero docstrings across new and modified Python, JavaScript, TypeScript, CSS, HTML, and shell source files.

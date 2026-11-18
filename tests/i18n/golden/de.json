@@ -1,0 +1,24 @@
+{
+  "locale": "de",
+  "min_accuracy": 1.0,
+  "cases": [
+    {
+      "id": "de-locked-no-text",
+      "query": "feste Kamera ohne Text",
+      "expected_any": ["locked-camera", "textless-visual-design"],
+      "forbidden": ["orbit-camera", "kinetic-typography"]
+    },
+    {
+      "id": "de-frame-clock",
+      "query": "Bildfrequenz prüfen",
+      "expected_any": ["frame-clock"],
+      "forbidden": []
+    },
+    {
+      "id": "de-black-frames-no-music",
+      "query": "Schwarzbilder erkennen ohne Musik",
+      "expected_any": ["black-frame-detection"],
+      "forbidden": ["cinematic-drone"]
+    }
+  ]
+}

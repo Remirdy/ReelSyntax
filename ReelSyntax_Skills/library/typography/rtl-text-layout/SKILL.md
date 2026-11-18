@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "arapça,sağdan sola,rtl"
+  aliases: "arapça,sağdan sola,rtl,rtl text layout,Rechts-nach-links-Satz,RTL-Layout,sağdan sola metin"
   requires: ""
 ---
 

@@ -1,0 +1,103 @@
+{
+  "$schema": "https://remirdy.github.io/ReelSyntax/schemas/format.v1.schema.json",
+  "id": "music-visualizer",
+  "version": "1.0.0",
+  "title": {
+    "en": "Music Visualizer",
+    "tr": "Müzik Görselleştirici",
+    "de": "Musikvisualisierung"
+  },
+  "category": "music",
+  "aspect": [
+    "9:16",
+    "16:9",
+    "1:1",
+    "4:5"
+  ],
+  "duration_sec": {
+    "min": 8,
+    "max": 240
+  },
+  "languages": [
+    "en",
+    "tr",
+    "de",
+    "es",
+    "fr",
+    "pt"
+  ],
+  "engines": [
+    "pillow",
+    "ffmpeg"
+  ],
+  "needs": [
+    "topic_or_text"
+  ],
+  "optional": [
+    "tone",
+    "palette",
+    "bpm",
+    "music_bed"
+  ],
+  "skills": [
+    "music-visualizer",
+    "bar-grid-music-alignment",
+    "flash-safety",
+    "shader-loop-art",
+    "frame-clock",
+    "contrast-audit",
+    "format-runner-protocol"
+  ],
+  "steps": [
+    {
+      "id": "idea",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "script",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "look",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "frames",
+      "type": "render",
+      "profile": "snapshot",
+      "gate": "approve"
+    },
+    {
+      "id": "pilot",
+      "type": "render",
+      "scope": "first_5s",
+      "profile": "draft",
+      "gate": "approve"
+    },
+    {
+      "id": "full",
+      "type": "render",
+      "profile": "draft",
+      "gate": "approve"
+    },
+    {
+      "id": "hero",
+      "type": "render",
+      "profile": "hero"
+    },
+    {
+      "id": "qc",
+      "type": "qc"
+    }
+  ],
+  "qc_rules": [
+    "contrast",
+    "safe-area",
+    "required-glyphs",
+    "flash-safety",
+    "loudness"
+  ]
+}

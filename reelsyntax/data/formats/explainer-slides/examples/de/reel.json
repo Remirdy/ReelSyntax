@@ -1,0 +1,119 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "explainer-slides-de",
+  "seed": 42,
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": "30/1"
+  },
+  "delivery": {
+    "language": "deu"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true
+  },
+  "scenes": [
+    {
+      "id": "chapter-1",
+      "duration_frames": 135,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "kicker": "KAPITEL 01/03",
+        "heading": "WARUM?",
+        "subheading": "Nur Neues berechnen."
+      }
+    },
+    {
+      "id": "chapter-2",
+      "duration_frames": 225,
+      "recipe": "assembly",
+      "engine": "pillow",
+      "transition": {
+        "type": "slide_left",
+        "duration_frames": 6
+      },
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "font_mode": "system",
+        "kicker": "KAPITEL 02/03",
+        "heading": "HASHEN",
+        "subheading": "Gleiches bleibt gleich."
+      }
+    },
+    {
+      "id": "recap",
+      "duration_frames": 180,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      },
+      "params": {
+        "background": "#2b303a",
+        "foreground": "#f4f6f9",
+        "accent": "#e8a33d",
+        "kicker": "FAZIT",
+        "heading": "WENIGER",
+        "subheading": "Nur Geändertes zeichnen."
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 220,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 135,
+        "frequency": 277,
+        "duration_frames": 18,
+        "instrument": "warm_pad"
+      },
+      {
+        "frame": 360,
+        "frequency": 330,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [
+        [
+          0,
+          540
+        ]
+      ],
+      "silence": [
+        [
+          18,
+          135
+        ],
+        [
+          153,
+          360
+        ],
+        [
+          378,
+          540
+        ]
+      ]
+    }
+  }
+}

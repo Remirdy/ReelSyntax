@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "idle,boşta animasyon"
+  aliases: "idle,boşta animasyon,idle animation,Ruheanimation,Idle-Bewegung"
   requires: ""
 ---
 

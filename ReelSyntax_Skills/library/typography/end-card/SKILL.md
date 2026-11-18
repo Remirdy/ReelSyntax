@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "kapanış kartı,end slate"
+  aliases: "kapanış kartı,end slate,end card,Abspannkarte,Endkarte"
   requires: ""
 ---
 

@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "digest": "29cced433e0702439dd39fa1c0d139573639f733ec93b6f6a6bdc337a82ef68e",
+  "digest": "051b7e7f9ac6dc29fe1c2fa15bf1d74c87a1794dfa4802dcb7c30893ce4400b1",
   "skills": [
     {
       "id": "anime-inspired-layout",
@@ -102,19 +102,27 @@
       "description": "Use for claymation style. Use handmade surface imperfections, tactile shapes and discrete motion cadence.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kil animasyon",
-        "claymation"
+        "claymation",
+        "claymation style",
+        "Knetanimations-Stil",
+        "Stop-Motion-Tonstil"
       ],
       "requires": [],
       "path": "library/art/claymation-style/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 996,
-      "sha256": "262aa4be16200ae5ec3f9d744e54091a56ae3f756475a71a7717c906bbcdf635",
+      "estimated_words": 388,
+      "estimated_tokens": 1015,
+      "sha256": "e312970b6cc43b5a22efb63d8816dfb24fa158756022cc0213ba1d6b6db47388",
       "body_sha256": "d6fa9fbac1e6b858c9a27a2bad88f8a3bb323db109c57a4b13017d50c0b4770e",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/claymation-style/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/claymation-style/references/project-check.md": "4feff96fbc5567293b80995e3206b6c07f5d73aac7010f61538f885ed1538942"
+      }
     },
     {
       "id": "collage-art",
@@ -235,19 +243,27 @@
       "description": "Use for low poly style. Use clear faceted silhouettes, limited materials and deliberate hard edges.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "low poly",
-        "düşük poligon"
+        "düşük poligon",
+        "low poly style",
+        "Low-Poly-Stil",
+        "kantiger Polygon-Look"
       ],
       "requires": [],
       "path": "library/art/low-poly-style/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 987,
-      "sha256": "805963c191e5e78bb92cc1e233c8fe3fdfdf70b77c02c35822df6f2069f00e38",
+      "estimated_words": 390,
+      "estimated_tokens": 1004,
+      "sha256": "14f56c0217cf6029e9db5b7cc25cddea90ff788ab404369d368bf653041b8d2c",
       "body_sha256": "d1632df6099c69fd1d3cb56aa8a30d68fd0b3b018b7aa7a109e74b8a332c9b50",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/low-poly-style/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/low-poly-style/references/project-check.md": "806ded7092a9a9a6957f179a4ea58389adaa3708c6b1f0e8e03c4a1700a0ef9d"
+      }
     },
     {
       "id": "miniature-diorama",
@@ -313,38 +329,54 @@
       "description": "Use for palette design. Choose limited base, accent and neutral roles with luminance separation.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "renk paleti",
-        "renk uyumu"
+        "renk uyumu",
+        "palette design",
+        "Farbpaletten-Design",
+        "Farbschema entwerfen"
       ],
       "requires": [],
       "path": "library/art/palette-design/SKILL.md",
-      "estimated_words": 386,
-      "estimated_tokens": 982,
-      "sha256": "cad685adc80d65a565e70e23cbd0d68b70f53cee60883a0f9bbfea547c373537",
+      "estimated_words": 388,
+      "estimated_tokens": 1001,
+      "sha256": "6c394f064088ff5e9c6f96065d0e391ff5a5eff8efe780ca9a5fd443068e5585",
       "body_sha256": "ca42fa94c447fe8b7561954e84f812bf7065ce906f0c8686cb7474987a740cc8",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/palette-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/palette-design/references/project-check.md": "5c425841cce1751ab687ea05946a3a3c5f75c163af1b46f585990f2460e9f8ad"
+      }
     },
     {
       "id": "paper-cut-style",
       "description": "Use for paper cut style. Stage layered cutout silhouettes with slight depth offsets and coherent shadow direction.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kağıt kesme",
-        "paper cut"
+        "paper cut",
+        "paper cut style",
+        "Scherenschnitt-Stil",
+        "Papierschnitt-Optik"
       ],
       "requires": [],
       "path": "library/art/paper-cut-style/SKILL.md",
-      "estimated_words": 393,
-      "estimated_tokens": 993,
-      "sha256": "e15f66662249863def622f296bf0a31efe56860965f5118f8820e9431f8c5237",
+      "estimated_words": 395,
+      "estimated_tokens": 1012,
+      "sha256": "84873511e71951d5358416a9a12e2705969e93057505e408e4f5c3c0825d521f",
       "body_sha256": "6b9a7c011b674e7e09f76f705419702ed808bb794bff93e3a673c26203ba441a",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/paper-cut-style/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/paper-cut-style/references/project-check.md": "4d4657e856b1139239d799b72f723dad5ffd5698ff17be6f9c96c9d64b30d629"
+      }
     },
     {
       "id": "photorealistic-material-direction",
@@ -503,19 +535,27 @@
       "description": "Use for visual hierarchy. Prioritize scale, contrast, position and motion to produce an intended reading order.",
       "category": "art",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "görsel hiyerarşi",
-        "tasarım hiyerarşisi"
+        "tasarım hiyerarşisi",
+        "visual hierarchy",
+        "visuelle Hierarchie",
+        "Blickführung gestalten"
       ],
       "requires": [],
       "path": "library/art/visual-hierarchy/SKILL.md",
-      "estimated_words": 389,
-      "estimated_tokens": 998,
-      "sha256": "574c7a4001c5158d40ae32278bbccab3374131bb2ff141eb7f3de8b46a9304cb",
+      "estimated_words": 392,
+      "estimated_tokens": 1019,
+      "sha256": "a0cfb2dbeb15afefecc08ff6d8f5e416f6d573cbeb7309bebc35d2430debaf45",
       "body_sha256": "dc08b4114fdf0578588f32175a4031ca771307b2f8ae794592e3031bb6f2a589",
-      "resource_sha256": {}
+      "resources": [
+        "library/art/visual-hierarchy/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/art/visual-hierarchy/references/project-check.md": "f89e810869d20d2494b137d4ce846357aa25b29b7197f01cc224b155c90d0e8d"
+      }
     },
     {
       "id": "ambience-design",
@@ -560,19 +600,27 @@
       "description": "Use for audio ducking. Attenuate backing track during dialogue with attack and release adjusted to phrases.",
       "category": "audio",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "müzik kısma",
-        "ducking"
+        "ducking",
+        "audio ducking",
+        "Audio-Ducking",
+        "Musikabsenkung unter Sprache"
       ],
       "requires": [],
       "path": "library/audio/audio-ducking/SKILL.md",
-      "estimated_words": 397,
-      "estimated_tokens": 980,
-      "sha256": "ca2bfd082beb14596f892dcd9d2214e1518b932289b883a4cd19eb55890926b0",
+      "estimated_words": 400,
+      "estimated_tokens": 999,
+      "sha256": "9337e4fe556980369bbf7f6ec05fb7b5b999ff55f1ec79df6495c97aa9c9753f",
       "body_sha256": "ac41b7baa3604ceb3e649f7feb6570112ae6b8f1c2fedf19d98d7108d9e77cdb",
-      "resource_sha256": {}
+      "resources": [
+        "library/audio/audio-ducking/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/audio/audio-ducking/references/project-check.md": "769388b7301daf57a26c57db028b1020097292df91233b59c8b664583373fa6a"
+      }
     },
     {
       "id": "audio-equalization",
@@ -716,38 +764,54 @@
       "description": "Align a transcript from a user-provided local recognizer.",
       "category": "audio",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "local transcription",
-        "yerel yazıya dökme"
+        "yerel yazıya dökme",
+        "local speech to text",
+        "lokale Spracherkennung",
+        "Offline-Transkription"
       ],
       "requires": [],
       "path": "library/audio/local-speech-to-text/SKILL.md",
-      "estimated_words": 75,
-      "estimated_tokens": 178,
-      "sha256": "6e6aed2bdd9576b907d1b62229dc8010fecbf6e287265ebc5cb140b5b5794ff3",
+      "estimated_words": 78,
+      "estimated_tokens": 200,
+      "sha256": "dd6473c52a5c6b90c87a82e6603ef3a8f587a3616b6830e28998793a558ffd2e",
       "body_sha256": "3eef28ea60d39eb1b013515f8b7846353740f93ef61c3d43346097500331ed95",
-      "resource_sha256": {}
+      "resources": [
+        "library/audio/local-speech-to-text/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/audio/local-speech-to-text/references/project-check.md": "30679e97a8499e0de9a1343ef1f89fc64fb918f26a8df484241a699a7a61b651"
+      }
     },
     {
       "id": "local-text-to-speech",
       "description": "Prepare narration from an installed local synthesizer.",
       "category": "audio",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "local TTS",
-        "yerel seslendirme"
+        "yerel seslendirme",
+        "local text to speech",
+        "lokale Sprachsynthese",
+        "Offline-TTS"
       ],
       "requires": [],
       "path": "library/audio/local-text-to-speech/SKILL.md",
-      "estimated_words": 67,
-      "estimated_tokens": 172,
-      "sha256": "7f72164359197ea5092e6d7e72f443c54c0d6f3f2e8dd3d73fcab2de862c8510",
+      "estimated_words": 70,
+      "estimated_tokens": 190,
+      "sha256": "eaebd6abf9c3d018a64ea3e072812d9f4022199a1224601077692a3814fdaa22",
       "body_sha256": "5dab43d5001daf8ac2f7075442e5a90976fecbaaec4bed1eb2a26eebd8de3224",
-      "resource_sha256": {}
+      "resources": [
+        "library/audio/local-text-to-speech/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/audio/local-text-to-speech/references/project-check.md": "167e2cabc933679d40349ed6a691aa659c1ad3f1331b18df26016102b39912c4"
+      }
     },
     {
       "id": "loudness-normalization",
@@ -797,6 +861,43 @@
       "sha256": "d63f1ac9097edaef33f698feae0cc6824dacb39d348586913f93a7f2feb2ad83",
       "body_sha256": "0af3b6ba220549ffd4ad6e6c30ff77aee7aaa524c96ea735aacef91e913ef761",
       "resource_sha256": {}
+    },
+    {
+      "id": "platform-loudness-targets",
+      "description": "Master integrated program loudness, short-term dynamics, loudness range, and true-peak ceilings using adjustable delivery presets and dual-pass measurement.",
+      "category": "audio",
+      "stage": "export",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "platform loudness targets",
+        "lufs true peak mastering",
+        "platform ses yüksekliği hedefleri",
+        "LUFS ve tavan seviye ayarı",
+        "Plattform-Lautheitsziele",
+        "LUFS und True-Peak-Mastering",
+        "objetivos de sonoridad por plataforma",
+        "cibles de sonie et crête vraie"
+      ],
+      "requires": [
+        "ffmpeg"
+      ],
+      "path": "library/audio/platform-loudness-targets/SKILL.md",
+      "estimated_words": 747,
+      "estimated_tokens": 1815,
+      "sha256": "20fe1c3eea2d558cf77bd6b634049b4297c16ce039b9479dde0b883b2d10a5e3",
+      "body_sha256": "a4c514baebf271e455edf9724433dbfc153ef2ab375e59dd2ffc0bc111300218",
+      "recommended_next": [
+        "loudness-normalization",
+        "ebu-r128-dialogue-gating",
+        "true-peak-limiting"
+      ],
+      "resources": [
+        "library/audio/platform-loudness-targets/references/delivery-loudness-presets.md"
+      ],
+      "resource_sha256": {
+        "library/audio/platform-loudness-targets/references/delivery-loudness-presets.md": "dd073fa5c2af2ffc101dcb5684b4f9de18d5934238c124f642fff5ef0bf20dca"
+      }
     },
     {
       "id": "procedural-impact",
@@ -875,6 +976,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "sfx-layering-transient-tail",
+      "description": "Synthesize or layer clean UI, transition, and impact sound effects across non-overlapping sub-body, mid-transient, and airy-tail bands locked to exact frame onsets.",
+      "category": "audio",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "sfx transient tail layering",
+        "layered sound effects",
+        "katmanlı ses efekti tasarımı",
+        "atak gövde kuyruk katmanlama",
+        "SFX-Schichtung Attack und Tail",
+        "Klangschichten für Übergänge",
+        "capas de efectos de sonido",
+        "superposition d'effets sonores"
+      ],
+      "requires": [],
+      "path": "library/audio/sfx-layering-transient-tail/SKILL.md",
+      "estimated_words": 713,
+      "estimated_tokens": 1668,
+      "sha256": "a5078a6fa023516fbdb9c834eda91a800de032d02723300c1633f5f1ded04651",
+      "body_sha256": "7c7f24408012c460541a237fc3bc074dd644b3e5714371317bb511233412d1b8",
+      "recommended_next": [
+        "foley-design",
+        "multitrack-mixing",
+        "true-peak-limiting"
+      ],
+      "resources": [
+        "library/audio/sfx-layering-transient-tail/references/three-band-sfx-recipes.md"
+      ],
+      "resource_sha256": {
+        "library/audio/sfx-layering-transient-tail/references/three-band-sfx-recipes.md": "1d3b1cc790eda7e6d4cdc858b3f4b9f3b36c7277f9779ebb7188931cc9790cd6"
+      }
+    },
+    {
       "id": "sound-spotting",
       "description": "Use for sound spotting. Mark dialogue, ambience, Foley, music and effects cues on the timeline.",
       "category": "audio",
@@ -917,19 +1053,61 @@
       "description": "Use for true peak limiting. Limit final mix to declared true-peak ceiling with headroom.",
       "category": "audio",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "limiter",
-        "true peak"
+        "true peak",
+        "true peak limiting",
+        "True-Peak-Begrenzung",
+        "Spitzenpegel-Limiter"
       ],
       "requires": [],
       "path": "library/audio/true-peak-limiting/SKILL.md",
-      "estimated_words": 393,
-      "estimated_tokens": 963,
-      "sha256": "f662d6f8a14cc9e48c315d00ae45763769ee1708a0876028cc6a8a7776e61819",
+      "estimated_words": 395,
+      "estimated_tokens": 983,
+      "sha256": "12fb35620ed55b83200a2c7a3cd89bdc0e9fdd2391ab17ed8d69f52e8a16fdcf",
       "body_sha256": "902891ee04aa360a58f580deee5c81b49e9ff7b22fb2d44b3a6ef6778ba1b218",
-      "resource_sha256": {}
+      "resources": [
+        "library/audio/true-peak-limiting/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/audio/true-peak-limiting/references/project-check.md": "b3da40e323312bca770c46e2c8aa5fa177c0276ccd8e7965d5b0bff85a8bd92d"
+      }
+    },
+    {
+      "id": "tts-phonetic-pronunciation",
+      "description": "Normalize acronyms, version strings, SI units, numbers, and cross-language loanwords into spoken pronunciation lexicons for local speech synthesis without altering visible captions.",
+      "category": "audio",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "tts phonetic pronunciation",
+        "speech pronunciation lexicon",
+        "seslendirme telaffuz sözlüğü",
+        "kısaltma okunuş düzeltme",
+        "Aussprache-Lexikon für Sprachsynthese",
+        "Phonetische Aussprache steuern",
+        "pronunciación fonética de síntesis",
+        "prononciation phonétique vocale"
+      ],
+      "requires": [],
+      "path": "library/audio/tts-phonetic-pronunciation/SKILL.md",
+      "estimated_words": 638,
+      "estimated_tokens": 1691,
+      "sha256": "262235548be41acf537c99a94905175d466d870510279cd4a30746cdbe5df4e5",
+      "body_sha256": "8be8a218f72f7b6bdde1cc844807fdbc2a150d30562349d54676b86c11147469",
+      "recommended_next": [
+        "local-text-to-speech",
+        "voiceover-alignment"
+      ],
+      "resources": [
+        "library/audio/tts-phonetic-pronunciation/references/dual-text-lexicon-schema.md"
+      ],
+      "resource_sha256": {
+        "library/audio/tts-phonetic-pronunciation/references/dual-text-lexicon-schema.md": "4c9056a24e73f75363972421d93d90f621b93937171a273a683ba195107f8f44"
+      }
     },
     {
       "id": "voice-cleanup",
@@ -949,6 +1127,41 @@
       "sha256": "6da341e911c8921e64435ca039d44d8ec1b6d88a82f2ddb46b322d8d29ba684b",
       "body_sha256": "6c939ea9f706e0def16a382e907c2a2795c8e34203752651593d42dd4fd8121c",
       "resource_sha256": {}
+    },
+    {
+      "id": "voice-fx-flat-synth",
+      "description": "Shape stylized radio, intercom, retro-console chatter, or dry synthetic robot voices with controlled bandpass, subtle bit quantization, and intelligibility protection.",
+      "category": "audio",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "voice fx synth",
+        "stylized radio robot voice",
+        "stilize telsiz robot sesi",
+        "retro oyun ses efekti",
+        "stilisierte Funk- und Roboterstimme",
+        "Synthetische Stimmcharakteristik",
+        "efectos de voz sintética",
+        "effets de voix synthétique"
+      ],
+      "requires": [],
+      "path": "library/audio/voice-fx-flat-synth/SKILL.md",
+      "estimated_words": 655,
+      "estimated_tokens": 1609,
+      "sha256": "0fb99b5612686abf84578769b977b9df6e40720ab3d0f53742b7fbc293f4c997",
+      "body_sha256": "ffdae171e6eb5844743c4e43e4e137c20c12980afebc0c081feee6630381e674",
+      "recommended_next": [
+        "dialogue-editing",
+        "true-peak-limiting",
+        "burned-in-caption-styling"
+      ],
+      "resources": [
+        "library/audio/voice-fx-flat-synth/references/dsp-voice-presets.md"
+      ],
+      "resource_sha256": {
+        "library/audio/voice-fx-flat-synth/references/dsp-voice-presets.md": "fccb6119efe367e7979cd0080264a7a64326db0dd75df17e46a6c11d67d74fc6"
+      }
     },
     {
       "id": "voiceover-alignment",
@@ -1059,6 +1272,40 @@
       "resource_sha256": {}
     },
     {
+      "id": "depth-of-field-budget",
+      "description": "Calibrate focal distance, f-stop circle-of-confusion blur, and sample counts so background separation stays clean without blurring legible planes or stalling renders.",
+      "category": "camera",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "depth of field budget",
+        "dof blur budget",
+        "alan derinliği bütçesi",
+        "odak bulanıklığı sınırı",
+        "Schärfentiefe-Budget",
+        "Unschärfekreis planen",
+        "presupuesto de profundidad de campo",
+        "budget de profondeur de champ"
+      ],
+      "requires": [],
+      "path": "library/camera/depth-of-field-budget/SKILL.md",
+      "estimated_words": 692,
+      "estimated_tokens": 1619,
+      "sha256": "dbbb190750723f157262cd106e7f024ef2a72233afd03dc1b3810e427392b927",
+      "body_sha256": "c61f718bc0433cc403295b3b964ecf2d58f8e9058041f2ce8c0ce4e845a2f36e",
+      "recommended_next": [
+        "lens-selection",
+        "rack-focus"
+      ],
+      "resources": [
+        "library/camera/depth-of-field-budget/references/coc-and-sample-table.md"
+      ],
+      "resource_sha256": {
+        "library/camera/depth-of-field-budget/references/coc-and-sample-table.md": "3abed35fc0b4e5604e36e5fd9665f73c5f0f57dce0b5a1f7da2b3c5b89463ea6"
+      }
+    },
+    {
       "id": "dolly-zoom",
       "description": "Use for dolly zoom. Couple camera distance and field of view to approximately preserve subject size.",
       "category": "camera",
@@ -1079,6 +1326,41 @@
         "locked-camera"
       ],
       "resource_sha256": {}
+    },
+    {
+      "id": "eyeline-headroom-grammar",
+      "description": "Position subject eyelines, proportional headroom, directional look space, and 180-degree screen vectors across portrait and widescreen frames.",
+      "category": "camera",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "eyeline headroom",
+        "headroom and lead room",
+        "bakış çizgisi ve baş boşluğu",
+        "kadraj bakış boşluğu",
+        "Augenhöhe und Kopffreiheit",
+        "Blickraum im Bild",
+        "línea de mirada y aire",
+        "ligne de regard et air"
+      ],
+      "requires": [],
+      "path": "library/camera/eyeline-headroom-grammar/SKILL.md",
+      "estimated_words": 659,
+      "estimated_tokens": 1565,
+      "sha256": "428c3862f3e5cefe86e7847e6a2efb4a8488e1a54822574eab55c224ed4c021c",
+      "body_sha256": "6dbd22acdc5669c21092f27bffcc5558f169fc628542ae43df1897427d44d12f",
+      "recommended_next": [
+        "vertical-safe-zones",
+        "shot-reverse-shot",
+        "camera-continuity"
+      ],
+      "resources": [
+        "library/camera/eyeline-headroom-grammar/references/aspect-eyeline-coordinates.md"
+      ],
+      "resource_sha256": {
+        "library/camera/eyeline-headroom-grammar/references/aspect-eyeline-coordinates.md": "07104b2d8f38ed8734aff6e924fd9bf45e8ea5536c186e515f3c4b270f50d87b"
+      }
     },
     {
       "id": "handheld-motion",
@@ -1193,19 +1475,27 @@
       "description": "Use for match cut design. Align shape, position, direction or concept across adjacent shot boundaries.",
       "category": "camera",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "match cut",
-        "eşleşmeli kesme"
+        "eşleşmeli kesme",
+        "match cut design",
+        "Match-Cut-Gestaltung",
+        "Formübergang-Schnitt"
       ],
       "requires": [],
       "path": "library/camera/match-cut-design/SKILL.md",
-      "estimated_words": 397,
-      "estimated_tokens": 988,
-      "sha256": "642951cd51f0877d5d6472473f06a16834e46e5806f7c19728958ca439d1d9fd",
+      "estimated_words": 399,
+      "estimated_tokens": 1008,
+      "sha256": "a440dd955f24f92fcfc6ea5219ba2e78435799077d1b14d95136c3d73ad010ba",
       "body_sha256": "ac120c502fff82070c43d15a025b6a11324941356ce64c970f2245bdb2622971",
-      "resource_sha256": {}
+      "resources": [
+        "library/camera/match-cut-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/camera/match-cut-design/references/project-check.md": "a1fbb54c159c5d12215fe1e8963f39262ccbad1440d0ab4d5fb6e47b9fabfad9"
+      }
     },
     {
       "id": "negative-space",
@@ -1353,19 +1643,27 @@
       "description": "Use for shot size. Choose framing by information need and emotional distance; specify subject occupancy.",
       "category": "camera",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "plan ölçeği",
-        "yakın çekim"
+        "yakın çekim",
+        "shot size",
+        "Einstellungsgröße",
+        "Kamera-Einstellungsgröße"
       ],
       "requires": [],
       "path": "library/camera/shot-size/SKILL.md",
-      "estimated_words": 392,
-      "estimated_tokens": 973,
-      "sha256": "5a39a1425574c9a661a4695d901a6fd23d9b78b9957f777322504a19a83810df",
+      "estimated_words": 393,
+      "estimated_tokens": 992,
+      "sha256": "f9321fe0c7755ebbc2d73a7625b8d5216b82e0ca8950424a20b64511ac60cb00",
       "body_sha256": "3dc2aaf7fef0930d262c1736543b0a67fb8faefc6a30122bcb22b2b1532d9a81",
-      "resource_sha256": {}
+      "resources": [
+        "library/camera/shot-size/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/camera/shot-size/references/project-check.md": "e48c112ae8f857aca73b3fc0c81888896fbdf4cf449a3e5ad7ced3f75d96be8c"
+      }
     },
     {
       "id": "shutter-angle-judder",
@@ -1883,19 +2181,27 @@
       "description": "Use for character continuity. Compare character IDs and approved geometry, palette, outfit and props by shot.",
       "category": "character",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "karakter devamlılığı",
-        "aynı karakter"
+        "aynı karakter",
+        "character continuity",
+        "Charakter-Kontinuität",
+        "Figuren-Konsistenz"
       ],
       "requires": [],
       "path": "library/character/character-continuity/SKILL.md",
-      "estimated_words": 395,
-      "estimated_tokens": 990,
-      "sha256": "e38e16ff0f8a59f7cbda2ec8b011b1ee7bfa6143f7952fcd81e687d8f107e3ca",
+      "estimated_words": 396,
+      "estimated_tokens": 1011,
+      "sha256": "f34639aee9b67485eac68a3ef7ae5b5204d6812fc1a25b35f128360c7fc5ccf6",
       "body_sha256": "8b1f6de622771e31b13631546c38f1b4d3dfbfb901aa88787689d6dcb040feba",
-      "resource_sha256": {}
+      "resources": [
+        "library/character/character-continuity/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/character/character-continuity/references/project-check.md": "5ea7a9f244827f6c09d8a590c4a82c5b2a49d7645a33dfb435d3feeafe74b392"
+      }
     },
     {
       "id": "character-crowd",
@@ -2016,19 +2322,27 @@
       "description": "Use for facial expression. Animate brows, eyelids and mouth shapes using character-specific expression limits.",
       "category": "character",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "yüz ifadesi",
-        "mimik"
+        "mimik",
+        "facial expression",
+        "Gesichtsausdruck",
+        "Mimik-Steuerung"
       ],
       "requires": [],
       "path": "library/character/facial-expression/SKILL.md",
-      "estimated_words": 391,
-      "estimated_tokens": 978,
-      "sha256": "0bb8b569908257001c7c20d628e848555618408d256b6693e1d66238388a8621",
+      "estimated_words": 392,
+      "estimated_tokens": 995,
+      "sha256": "1458c143f354cc70b0d6687d4b112c2af804cdd357a1650d1e6ca3e0e989fb9f",
       "body_sha256": "875c8dc0311ea653984c35cf821a927bf7427c349318ad05766e260031b2bae1",
-      "resource_sha256": {}
+      "resources": [
+        "library/character/facial-expression/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/character/facial-expression/references/project-check.md": "939b8cc859467a741f9448638325a3bd513a28af3c309de0ce7cf7c371d7ef31"
+      }
     },
     {
       "id": "hand-gesture",
@@ -2054,19 +2368,27 @@
       "description": "Use for idle animation. Use subtle breathing, weight shift and intermittent micro-actions with seeded timing.",
       "category": "character",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "idle",
-        "boşta animasyon"
+        "boşta animasyon",
+        "idle animation",
+        "Ruheanimation",
+        "Idle-Bewegung"
       ],
       "requires": [],
       "path": "library/character/idle-animation/SKILL.md",
-      "estimated_words": 394,
-      "estimated_tokens": 977,
-      "sha256": "6d2d6b367c79e06dc70b7815e82ef046308e99a98a6c135dfb45abbe77884ca2",
+      "estimated_words": 395,
+      "estimated_tokens": 992,
+      "sha256": "44fa558c5a692171735ba249735af9f09aade293e80f082f7bfc26e66c999c51",
       "body_sha256": "22de2a0826315a25ccefe3a0463bcca1c830d1372713e5025a1416956f6dda88",
-      "resource_sha256": {}
+      "resources": [
+        "library/character/idle-animation/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/character/idle-animation/references/project-check.md": "02ac6541aad18671e9c5fb07b41e48643a86e1f9efba3fa1e404167ca42e458f"
+      }
     },
     {
       "id": "ik-fk-switching",
@@ -2092,19 +2414,26 @@
       "description": "Use for lip sync. Map approved phoneme or viseme timing to mouth poses with coarticulation.",
       "category": "character",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "dudak senkronu",
-        "lip sync"
+        "lip sync",
+        "Lippensynchronisation",
+        "Mundbewegungs-Sync"
       ],
       "requires": [],
       "path": "library/character/lip-sync/SKILL.md",
       "estimated_words": 393,
-      "estimated_tokens": 957,
-      "sha256": "8369ee077aa08e6cb506d4bb216410a45da077a0a9c4c997a6257a18116e77b9",
+      "estimated_tokens": 971,
+      "sha256": "d5298774d90e41582cc2c935f2f67bc484e614f18686916d90b4cfdd9cecc1b3",
       "body_sha256": "320eb3b0823435f90d97f80f7cb00d679f3489226ed0c08366a6496191053fef",
-      "resource_sha256": {}
+      "resources": [
+        "library/character/lip-sync/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/character/lip-sync/references/project-check.md": "b763aa83cbc8c946d4b6eaef285fd22131d12efe1add12cf126dab2104c0f699"
+      }
     },
     {
       "id": "look-at-animation",
@@ -2225,19 +2554,27 @@
       "description": "Use for accessible data design. Use labels, shape and contrast rather than color alone to distinguish data.",
       "category": "data",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "erişilebilir grafik",
-        "renk körlüğü"
+        "renk körlüğü",
+        "accessible data design",
+        "barrierefreies Datendesign",
+        "zugängliche Diagramme"
       ],
       "requires": [],
       "path": "library/data/accessible-data-design/SKILL.md",
-      "estimated_words": 394,
-      "estimated_tokens": 982,
-      "sha256": "e500ffa1fb014d0eefac74e4511bd3228a95480405302978ec079388774ebe5c",
+      "estimated_words": 398,
+      "estimated_tokens": 1006,
+      "sha256": "a57f54ff93a3d9d92fba6f71994e2536d188a97612c221a0003c59ff16e2a4e9",
       "body_sha256": "aac311c5ad7d3903c04abc08df06dd17edf8f7b4ea5f2c6fccc7e48123c785eb",
-      "resource_sha256": {}
+      "resources": [
+        "library/data/accessible-data-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/data/accessible-data-design/references/project-check.md": "ca6f7ae861c52bb715883e98dfc3b30c38c375b41a08d47b58d17d2aecc19242"
+      }
     },
     {
       "id": "algorithm-visualization",
@@ -2282,19 +2619,27 @@
       "description": "Use for bar chart animation. Animate values from justified baseline with fixed or disclosed scale.",
       "category": "data",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "çubuk grafik",
-        "bar chart"
+        "bar chart",
+        "bar chart animation",
+        "Balkendiagramm-Animation",
+        "animiertes Säulendiagramm"
       ],
       "requires": [],
       "path": "library/data/bar-chart-animation/SKILL.md",
-      "estimated_words": 396,
-      "estimated_tokens": 976,
-      "sha256": "bdd24c052d7ec7b43b62e35783e40bf13edb52c3a5dd09d19081b01a05d5607d",
+      "estimated_words": 399,
+      "estimated_tokens": 1000,
+      "sha256": "e5ea3f10182820f49d9d7e6f9e27d31d523106c489409aca866369ccb18722bd",
       "body_sha256": "2f4945b21fae7c2e931694fd1b99af40d93c1e147d9d3ae5128a94c4df7ad0a7",
-      "resource_sha256": {}
+      "resources": [
+        "library/data/bar-chart-animation/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/data/bar-chart-animation/references/project-check.md": "a29a66063ae2a6be58887e05d1dd4fd0b47ce5f2e670a393262f726c66810c6b"
+      }
     },
     {
       "id": "benchmark-results-video",
@@ -2529,19 +2874,27 @@
       "description": "Use for line chart animation. Plot ordered values with explicit units and missing-data gaps.",
       "category": "data",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "çizgi grafik",
-        "line chart"
+        "line chart",
+        "line chart animation",
+        "Liniendiagramm-Animation",
+        "Kurvendiagramm-Animation"
       ],
       "requires": [],
       "path": "library/data/line-chart-animation/SKILL.md",
-      "estimated_words": 391,
-      "estimated_tokens": 966,
-      "sha256": "5cbec120ccecc3f07016e9c6f791e30efa9ba80638844daeb5cc48a842923521",
+      "estimated_words": 393,
+      "estimated_tokens": 990,
+      "sha256": "b17498357cd31267d8308b7b12b47b84143a36978da1c291a29ebd89d08d631d",
       "body_sha256": "cca55591419768edf482547974dcd511d12af25477272ae1337272903a04196c",
-      "resource_sha256": {}
+      "resources": [
+        "library/data/line-chart-animation/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/data/line-chart-animation/references/project-check.md": "a48c8c9e84e9afd4821e8f1e203ffcaeb9aef5f3fab523db0c491df1104a5736"
+      }
     },
     {
       "id": "linear-algebra-visualization",
@@ -2819,17 +3172,20 @@
       "description": "Use for caption delivery package. Deliver requested burned-in and separate captions plus language tags and transcript where relevant.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "altyazı teslimi",
-        "subtitle package"
+        "subtitle package",
+        "caption delivery package",
+        "Untertitel-Lieferpaket",
+        "SRT-VTT-Auslieferung"
       ],
       "requires": [],
       "path": "library/delivery/caption-delivery-package/SKILL.md",
-      "estimated_words": 401,
-      "estimated_tokens": 1023,
-      "sha256": "3e02e9290b1b2d8f4203f6f2915cca390e3af6e7d951f58877647f3206025e88",
+      "estimated_words": 403,
+      "estimated_tokens": 1046,
+      "sha256": "2cd01d0664203c9a5a80710cb9eef85adde5943ed515f2ff4559b80c5fb66869",
       "body_sha256": "07881a3aac2608f4287c33c3370ae7e791f858d8d1583484bd9c8d772b9cce01",
       "resources": [
         "library/delivery/caption-delivery-package/references/project-check.md"
@@ -2856,6 +3212,43 @@
       "sha256": "43610f0e055d09be2bcd6300e096aaec54d21367264febaf08a3e9041ef702fc",
       "body_sha256": "25fc1fb8d999d0475afe566a40f555da1b9a3049c796b5fc22dd22fc7c5ba9b3",
       "resource_sha256": {}
+    },
+    {
+      "id": "chroma-subsampling-text-guard",
+      "description": "Prevent 4:2:0 (yuv420p) chroma subsampling fringing on colored typography and UI badges by enforcing luminance contrast floors, even-pixel alignment, and stroke minimums.",
+      "category": "delivery",
+      "stage": "export",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "chroma subsampling text guard",
+        "yuv420p colored text fix",
+        "kroma alt örnekleme metin koruması",
+        "renkli yazı kenar dağılması önleme",
+        "Chroma-Subsampling-Textschutz",
+        "Farbsäume bei 4:2:0-Text vermeiden",
+        "protección de texto en submuestreo croma",
+        "protection du texte en sous-échantillonnage chroma"
+      ],
+      "requires": [
+        "ffmpeg"
+      ],
+      "path": "library/delivery/chroma-subsampling-text-guard/SKILL.md",
+      "estimated_words": 772,
+      "estimated_tokens": 1855,
+      "sha256": "a2968d3d5bd599bb8f61b9d6e92c7269864582fdf89a23e9f6a1730b2e875354",
+      "body_sha256": "7cc8542d8c6bf78d7beb6a91f8cec02adca51bd455b13d420ba3bda30b98c9d3",
+      "recommended_next": [
+        "contrast-audit",
+        "mp4-delivery",
+        "anti-aliasing-thin-lines"
+      ],
+      "resources": [
+        "library/delivery/chroma-subsampling-text-guard/references/yuv420p-luminance-and-swscale-guide.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/chroma-subsampling-text-guard/references/yuv420p-luminance-and-swscale-guide.md": "0990cc1778aebed36a75711a0b0af26d63ba0c5fbe352c43076c03861163c892"
+      }
     },
     {
       "id": "color-blind-simulation-audit",
@@ -2990,17 +3383,20 @@
       "description": "Use for gif preview. Create compact palette-aware looping preview with fps and size constraints.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "gif",
-        "readme gif"
+        "readme gif",
+        "gif preview",
+        "GIF-Vorschau",
+        "animierte Vorschau-Schleife"
       ],
       "requires": [],
       "path": "library/delivery/gif-preview/SKILL.md",
-      "estimated_words": 386,
-      "estimated_tokens": 982,
-      "sha256": "ca1a70728266771ba48618adb0242bd3ab6ace8e32709123fd2190d795aa6474",
+      "estimated_words": 388,
+      "estimated_tokens": 1000,
+      "sha256": "253090a973c6a83a424419bbafc7b41b987ab4cd0735f2b2df76160a8636f76d",
       "body_sha256": "44ea0758fb43e516a69fcb5ef3e979bf8f14f1a0322fa5464d05b7b03e6f7541",
       "resources": [
         "library/delivery/gif-preview/references/project-check.md"
@@ -3052,19 +3448,27 @@
       "description": "Inspect visual and audio continuity across a loop boundary.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "loop seam",
-        "döngü dikişi"
+        "döngü dikişi",
+        "loop seam audit",
+        "Schleifennaht-Prüfung",
+        "Loop-Übergang prüfen"
       ],
       "requires": [],
       "path": "library/delivery/loop-seam-audit/SKILL.md",
-      "estimated_words": 75,
-      "estimated_tokens": 173,
-      "sha256": "e66222d42769ebf06bb619ba03ab0a925d2ff7e17d6b56ef240c7d04661a8ce5",
+      "estimated_words": 77,
+      "estimated_tokens": 193,
+      "sha256": "0fe7a880f478626c510f4d7397c2e878e23fb11e48328ddf04d1bd4b648a9068",
       "body_sha256": "f10f66aab2b737b8fdac6b404daaf248b2ec56a2a4b8db5db12ba8956658db9d",
-      "resource_sha256": {}
+      "resources": [
+        "library/delivery/loop-seam-audit/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/loop-seam-audit/references/project-check.md": "3ed46c199dbf76edd96c35cbf27dd27ff9b6c794b46346dc78521c47c0f63e75"
+      }
     },
     {
       "id": "media-metadata-tagging",
@@ -3109,17 +3513,20 @@
       "description": "Use for mp4 delivery. Select supported codec, pixel format and audio format for target playback; validate via probe.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "mp4 çıktı",
-        "h264"
+        "h264",
+        "mp4 delivery",
+        "MP4-Auslieferung",
+        "H.264-Webmaster"
       ],
       "requires": [],
       "path": "library/delivery/mp4-delivery/SKILL.md",
-      "estimated_words": 396,
-      "estimated_tokens": 990,
-      "sha256": "295759fe7c071593fc635522aa0bc48de0fd40233050cc7b6c3e52106b64c895",
+      "estimated_words": 397,
+      "estimated_tokens": 1006,
+      "sha256": "17eeca8cff47ed6ff84309983a80f4297fcd6966e465cccd3e3a94c86f14bce1",
       "body_sha256": "d96bd1d4d90358953f56088577de47d232e30e7e7257399b1477de2b75f11fb5",
       "resources": [
         "library/delivery/mp4-delivery/references/project-check.md"
@@ -3208,17 +3615,20 @@
       "description": "Use for poster thumbnail. Select representative image and compose truthful readable thumbnail from approved assets.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "thumbnail",
-        "video kapak"
+        "video kapak",
+        "poster thumbnail",
+        "Vorschaubild-Poster",
+        "Thumbnail-Standbild"
       ],
       "requires": [],
       "path": "library/delivery/poster-thumbnail/SKILL.md",
-      "estimated_words": 389,
-      "estimated_tokens": 992,
-      "sha256": "0340f4399cc7a73f6c50061c4d512863ba27987bedf70301b8aea2f2dca49798",
+      "estimated_words": 390,
+      "estimated_tokens": 1011,
+      "sha256": "68bcbcee0dd762046929d75b461055491dfac36d652828ad0f20536c4b6b731d",
       "body_sha256": "a6921160aaa2cc6dff7b26db44a01ef36ab015616ac1b28a8798f13d89b47e7a",
       "resources": [
         "library/delivery/poster-thumbnail/references/project-check.md"
@@ -3256,19 +3666,27 @@
       "description": "Measure reading time per caption interval.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "reading speed",
-        "okuma hızı"
+        "okuma hızı",
+        "reading speed audit",
+        "Lesegeschwindigkeits-Prüfung",
+        "Zeichen-pro-Sekunde-Audit"
       ],
       "requires": [],
       "path": "library/delivery/reading-speed-audit/SKILL.md",
-      "estimated_words": 67,
-      "estimated_tokens": 165,
-      "sha256": "3f49de2e5febd755719bc05b723cdc2171fceaa3c8a6515fad2efb530f4e3fe7",
+      "estimated_words": 68,
+      "estimated_tokens": 190,
+      "sha256": "6fe8f2eaa5f577e143d075adefb9a8bd78309a0e0176cd056122547814ad185c",
       "body_sha256": "90c9746fd1b68b91106b15948996f594d2f692c63a970a4aa19d4f80cb46c688",
-      "resource_sha256": {}
+      "resources": [
+        "library/delivery/reading-speed-audit/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/reading-speed-audit/references/project-check.md": "6ad5f91d996286579554a95ed5370713cd222a0a3955a5b3c98443740741ec58"
+      }
     },
     {
       "id": "reduced-motion-variant",
@@ -3337,36 +3755,47 @@
       "description": "Keep vertical-video labels clear of player controls.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "safe zones",
-        "güvenli alanlar"
+        "güvenli alanlar",
+        "vertical safe zones",
+        "vertikale Sicherheitszonen",
+        "Hochformat-Schutzbereich"
       ],
       "requires": [],
       "path": "library/delivery/vertical-safe-zones/SKILL.md",
-      "estimated_words": 71,
-      "estimated_tokens": 174,
-      "sha256": "c79fed6fa09f54a219eb3c0b9a4e7f40ef1fd0461665325e562f69954a67d058",
+      "estimated_words": 73,
+      "estimated_tokens": 198,
+      "sha256": "2c274dcd755a855c81a0ed008cbd446672e4ecd6053f20219d800e7b56cf4170",
       "body_sha256": "7145f67d78c88dfcaac486a4491aaa3706f78bd513e36e8e5e444c529be85599",
-      "resource_sha256": {}
+      "resources": [
+        "library/delivery/vertical-safe-zones/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/delivery/vertical-safe-zones/references/project-check.md": "7b8d0df9a631f30b48f68756457adc429c68af39bc1ddac340b3f25d6d58529d"
+      }
     },
     {
       "id": "webm-export",
       "description": "Use for webm export. Encode using compatible VPx or AV1 options as appropriate to target environment.",
       "category": "delivery",
       "stage": "export",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "webm",
-        "vp9"
+        "vp9",
+        "webm export",
+        "WebM-Export",
+        "VP9-Webausgabe"
       ],
       "requires": [],
       "path": "library/delivery/webm-export/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 975,
-      "sha256": "f076281e9821c161c8c07d8943fe28283ab325f3e50b07acc0a50882e5c77f67",
+      "estimated_words": 388,
+      "estimated_tokens": 988,
+      "sha256": "4d7c937510b3ee59908ec3db99cbb9d2d7ab588b6cbf16e1e6b2480ac807aecd",
       "body_sha256": "befbf485243dc781df7bba3eaf3d8a688dbf85e7e9a717b2b3e69915493c0870",
       "resources": [
         "library/delivery/webm-export/references/project-check.md"
@@ -3431,6 +3860,44 @@
       "sha256": "6a5025b376923993a5a419c21ec1868678b833639ff62a72768579b8426e37d5",
       "body_sha256": "6155df67395aeeb5cec86108b8ec70fcba89d89e4973f9df548f88cea42595d8",
       "resource_sha256": {}
+    },
+    {
+      "id": "brand-sting-remirdy",
+      "description": "Render the restrained 1.6-to-2.4-second Remirdy closing signature sting or corner mark for first-party showcase deliverables while keeping --attribution off completely unbranded.",
+      "category": "direction",
+      "stage": "export",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "brand sting remirdy",
+        "creator signature sting",
+        "remirdy kapanış imzası",
+        "üretici imza kartı kuralları",
+        "Remirdy-Signatur-Abspann",
+        "dezentes Urheber-Signet",
+        "cierre de firma remirdy",
+        "signature finale remirdy"
+      ],
+      "requires": [],
+      "path": "library/direction/brand-sting-remirdy/SKILL.md",
+      "estimated_words": 745,
+      "estimated_tokens": 1894,
+      "sha256": "a06366d4a2fd93ddbf9d78691e8d7fec60a9c0373a1adf843b516da47be38e59",
+      "body_sha256": "0ed6d479c1091f4edfeb69a7834d23eb75f5d93f78966ce4841f7d8fd5a8ce1a",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "end-card",
+        "platform-loudness-targets",
+        "contrast-audit"
+      ],
+      "resources": [
+        "library/direction/brand-sting-remirdy/references/attribution-flag-and-sting-spec.md"
+      ],
+      "resource_sha256": {
+        "library/direction/brand-sting-remirdy/references/attribution-flag-and-sting-spec.md": "55b7ceea5275d8e8bcbad50bc61831484f7dc738511e5e525334249491421db6"
+      }
     },
     {
       "id": "brief-decoding",
@@ -3548,6 +4015,42 @@
       "resource_sha256": {}
     },
     {
+      "id": "idea-angle-framing",
+      "description": "Narrow a broad topic into one sharp editorial angle, concrete viewer tension, and bounded thesis before storyboarding.",
+      "category": "direction",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "idea angle",
+        "editorial angle",
+        "konu açısı",
+        "fikir çerçeveleme",
+        "Themenwinkel",
+        "Blickwinkel bestimmen",
+        "ángulo editorial",
+        "angle éditorial",
+        "ângulo editorial"
+      ],
+      "requires": [],
+      "path": "library/direction/idea-angle-framing/SKILL.md",
+      "estimated_words": 583,
+      "estimated_tokens": 1416,
+      "sha256": "21e8cb1a7066b6bd6b60297eb4489873d1bf10ee5c3b232328529ae53ecadf72",
+      "body_sha256": "79ad2d0275c9acdf7a40686ea50dad49106abadaf5dff7b45821981b987790a5",
+      "recommended_next": [
+        "prompt-to-storyboard",
+        "message-hierarchy",
+        "opening-hook"
+      ],
+      "resources": [
+        "library/direction/idea-angle-framing/references/angle-matrix.md"
+      ],
+      "resource_sha256": {
+        "library/direction/idea-angle-framing/references/angle-matrix.md": "45c238d713b3b98b88e74420d95b42daff5bf2740f790d9f1702c214ff990363"
+      }
+    },
+    {
       "id": "message-hierarchy",
       "description": "Use for message hierarchy. Rank one core claim and supporting claims; assign emphasis and screen time accordingly.",
       "category": "direction",
@@ -3565,6 +4068,40 @@
       "sha256": "35319aabb47a9e39793a86cdb8e36d01e98b8543a8d2eb0212808c9223eb9d3a",
       "body_sha256": "38615a514db55318f9e25b11b25ca9246f1bf87ee20c801430976268afab6b65",
       "resource_sha256": {}
+    },
+    {
+      "id": "procedural-broll-planner",
+      "description": "Translate abstract narration claims into deterministic procedural visual plates—diagrams, metric counters, geometry, and layer stacks—when camera footage is absent.",
+      "category": "direction",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "procedural broll",
+        "procedural b-roll",
+        "prosedürel ara görüntü",
+        "üretimsel görsel planlama",
+        "prozedurales B-Roll",
+        "synthetische Schnittbilder planen",
+        "b-roll procedimental",
+        "b-roll procédural"
+      ],
+      "requires": [],
+      "path": "library/direction/procedural-broll-planner/SKILL.md",
+      "estimated_words": 653,
+      "estimated_tokens": 1643,
+      "sha256": "7d037edfb53fcc5eadc00c79e6eb6b8f961cf5171a2d2bf8318c5a6f42023cd9",
+      "body_sha256": "e749a556d8eef405e1353f7c3dce32f6f129e936be01f393df5d3076556863ca",
+      "recommended_next": [
+        "b-roll-placement",
+        "procedural-patterns"
+      ],
+      "resources": [
+        "library/direction/procedural-broll-planner/references/claim-to-plate-mapping.md"
+      ],
+      "resource_sha256": {
+        "library/direction/procedural-broll-planner/references/claim-to-plate-mapping.md": "10279d69ef5f5ab33765ea8db8ef0e8ccf80ab21b0acb3ff0268b30271cd89f7"
+      }
     },
     {
       "id": "production-handoff",
@@ -3700,6 +4237,44 @@
       "resource_sha256": {}
     },
     {
+      "id": "showreel-direction",
+      "description": "Curate and cut a 25-to-45-second multi-format capability showreel that front-loads peak craft in frame 0, alternates visual mediums, matches motion vectors, and resolves into the signature card.",
+      "category": "direction",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "showreel direction",
+        "demo reel editing arc",
+        "tanıtım seçkisi yönetimi",
+        "portfolyo şov릴 kurgusu",
+        "Showreel-Regie",
+        "Demoreel-Dramaturgie schneiden",
+        "dirección de bobina de demostración",
+        "direction de bande démo"
+      ],
+      "requires": [],
+      "path": "library/direction/showreel-direction/SKILL.md",
+      "estimated_words": 737,
+      "estimated_tokens": 1867,
+      "sha256": "0ff43c9f56c02a2b9894c2c6c7efa4ced686d8a3255b9512571fa4fd569b7b0d",
+      "body_sha256": "4aa84e916d7b9e56bb999a0c3d5ba37b7adb34f818fc6bfe029fca598cb2800d",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "bar-grid-music-alignment",
+        "cross-shot-grade-consistency",
+        "brand-sting-remirdy"
+      ],
+      "resources": [
+        "library/direction/showreel-direction/references/showreel-sequencing-grid.md"
+      ],
+      "resource_sha256": {
+        "library/direction/showreel-direction/references/showreel-sequencing-grid.md": "0521b28f0e5b13268cf5ba218a7c046320681229c12f3b2b06fd63f5d3e15530"
+      }
+    },
+    {
       "id": "style-selection",
       "description": "Use for style selection. Compare stylistic options against brief, asset availability and compute budget.",
       "category": "direction",
@@ -3780,17 +4355,20 @@
       "description": "Use for beat synced editing. Extract or accept tempo markers; map key cuts to beats and phrases selectively.",
       "category": "editing",
       "stage": "edit",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "ritme göre kurgu",
-        "beat sync"
+        "beat sync",
+        "beat synced editing",
+        "Taktsynchroner Schnitt",
+        "Beat-Schnitt"
       ],
       "requires": [],
       "path": "library/editing/beat-synced-editing/SKILL.md",
-      "estimated_words": 402,
-      "estimated_tokens": 974,
-      "sha256": "5c54d2733eeea19f689fe96bed602fe5f51c204af3368f39735dd8a2521ac896",
+      "estimated_words": 405,
+      "estimated_tokens": 993,
+      "sha256": "adf32d68fa375c113c0a3318f7b98d0b43cf6806571ab1d8ff68c96d4496b0df",
       "body_sha256": "11146f4ba1c6a302e1b5b682311071b5688adce92457a5d746aa159d47188ce6",
       "resources": [
         "library/editing/beat-synced-editing/references/project-check.md"
@@ -3969,6 +4547,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "pattern-interrupt-cadence",
+      "description": "Schedule motivated visual, spatial, or sonic pattern interrupts every 3.5 to 6.0 seconds to prevent viewer habituation without frantic cutting.",
+      "category": "editing",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "pattern interrupt",
+        "interrupt cadence",
+        "örüntü kırıcı ritim",
+        "dikkat tazeleme kesmesi",
+        "Musterunterbrechung",
+        "Aufmerksamkeitswechsel",
+        "interrupción de patrón",
+        "rupture de rythme"
+      ],
+      "requires": [],
+      "path": "library/editing/pattern-interrupt-cadence/SKILL.md",
+      "estimated_words": 555,
+      "estimated_tokens": 1418,
+      "sha256": "1237a0b25fa85d956e3f23a90bb58aa10f1ff77b0064ab956857a11bfd6d214a",
+      "body_sha256": "3dcf677cd0e9b2182bd3153a12c1635eaa03c27acbb86edc145f6dd6926f1e4c",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "open-loop-retention",
+        "j-cut"
+      ],
+      "resources": [
+        "library/editing/pattern-interrupt-cadence/references/interrupt-taxonomy.md"
+      ],
+      "resource_sha256": {
+        "library/editing/pattern-interrupt-cadence/references/interrupt-taxonomy.md": "b8125a98569f830381135c6c1af250a678a30aa32263c60920c02f010bff8583"
+      }
+    },
+    {
       "id": "reframing",
       "description": "Use for reframing. Track subject bounds and reserve caption areas when changing aspect ratio.",
       "category": "editing",
@@ -4007,6 +4622,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "rhythm-density-map",
+      "description": "Chart shot-length and information-rate waves across timeline quarters so fast bursts alternate with comprehension holds.",
+      "category": "editing",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "rhythm density map",
+        "pacing wave map",
+        "ritim yoğunluk haritası",
+        "kurgu tempo eğrisi",
+        "Rhythmusdichte-Karte",
+        "Tempowellen planen",
+        "mapa de ritmo",
+        "carte de densité rythmique"
+      ],
+      "requires": [],
+      "path": "library/editing/rhythm-density-map/SKILL.md",
+      "estimated_words": 575,
+      "estimated_tokens": 1356,
+      "sha256": "71cbe9ed197e4968c8f31593f4758bab600cbfa58f9d4fec62fb78e6d29d183b",
+      "body_sha256": "2d600f14401976f24477a437d601b05465289d7d76c2f77fbecdce71029ec23a",
+      "recommended_next": [
+        "beat-synced-editing",
+        "frame-clock",
+        "scene-duration-floor-ceiling"
+      ],
+      "resources": [
+        "library/editing/rhythm-density-map/references/quarter-tempo-curves.md"
+      ],
+      "resource_sha256": {
+        "library/editing/rhythm-density-map/references/quarter-tempo-curves.md": "016b5218c6f81a5c07535d60ce8d7d888ff05c3b152a99ef40a94794c6f4095b"
+      }
+    },
+    {
       "id": "rough-cut",
       "description": "Use for rough cut. Assemble selected footage by story beats before detailed transitions and effects.",
       "category": "editing",
@@ -4026,6 +4676,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "scene-duration-floor-ceiling",
+      "description": "Enforce shot-type minimum readability floors and maximum static-hold ceilings so cuts never flash unreadably or trigger unintended freeze warnings.",
+      "category": "editing",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "scene duration bounds",
+        "shot length floor ceiling",
+        "sahne süresi alt üst sınırı",
+        "çekim süresi limitleri",
+        "Szenendauer-Grenzen",
+        "Einstellungslänge begrenzen",
+        "límites de duración de escena",
+        "bornes de durée de scène"
+      ],
+      "requires": [],
+      "path": "library/editing/scene-duration-floor-ceiling/SKILL.md",
+      "estimated_words": 570,
+      "estimated_tokens": 1415,
+      "sha256": "15f07a568456531fee6d5f228e1882b9e37ba1bebf48b9213bfc02ea513952df",
+      "body_sha256": "3c35206fe6afc5153850b54c60c9e841f879c76caa6f12cf5ef8f9df81d55aa6",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "reading-speed-audit",
+        "freeze-detection"
+      ],
+      "resources": [
+        "library/editing/scene-duration-floor-ceiling/references/shot-bound-table.md"
+      ],
+      "resource_sha256": {
+        "library/editing/scene-duration-floor-ceiling/references/shot-bound-table.md": "5a513264ee2d24314623b96cbd04954593964de09a995cf8fb0b76c68385fd82"
+      }
+    },
+    {
       "id": "shot-detection",
       "description": "Use for shot detection. Detect candidate cuts using frame differences and manual review for fades.",
       "category": "editing",
@@ -4043,6 +4730,43 @@
       "sha256": "e93221aa57bb2c4bfa91511b5750c40f83c7a112e3d4da955b0bdf100e3f26e1",
       "body_sha256": "486250e9368077147861b3f649a7eefb244770c3321f7c76a125e6b4abe81b87",
       "resource_sha256": {}
+    },
+    {
+      "id": "silence-as-punctuation",
+      "description": "Shape deliberate 8-to-36-frame acoustic pauses before thesis turns or reveals while registering intentional silence windows in QC exceptions.",
+      "category": "editing",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "silence as punctuation",
+        "dramatic audio pause",
+        "noktalama olarak sessizlik",
+        "bilinçli ses boşluğu",
+        "Stille als Satzzeichen",
+        "gezielte Sprechpause",
+        "silencio como puntuación",
+        "silence de ponctuation"
+      ],
+      "requires": [],
+      "path": "library/editing/silence-as-punctuation/SKILL.md",
+      "estimated_words": 569,
+      "estimated_tokens": 1402,
+      "sha256": "353732b917d614c420a8dc782aa4aec405168189c0acf0df3db050bc2b6b4884",
+      "body_sha256": "e8ae1b281b677ba0d2c37073a5de099dd6b275d2f114f4283c18f415475670dc",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "silence-audit",
+        "comedic-timing-beats"
+      ],
+      "resources": [
+        "library/editing/silence-as-punctuation/references/pause-envelope-spec.md"
+      ],
+      "resource_sha256": {
+        "library/editing/silence-as-punctuation/references/pause-envelope-spec.md": "ba9f37268641f31192f2839370fc494a3888ae9a73e97c13864fda5728ba8d4d"
+      }
     },
     {
       "id": "silence-removal",
@@ -4859,19 +5583,27 @@
       "description": "Use for educational explainer. Define learning goal, example sequence and visual explanation with recap as appropriate.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "eğitici video",
-        "konu anlatımı"
+        "konu anlatımı",
+        "educational explainer",
+        "Lehrvideo-Erklärfilm",
+        "Wissen-Erklärvideo"
       ],
       "requires": [],
       "path": "library/formats/educational-explainer/SKILL.md",
-      "estimated_words": 393,
-      "estimated_tokens": 1001,
-      "sha256": "eed029bdc55a3860f7337126525b0abd29f0a1aef0ab43de0b44c34fe96fa261",
+      "estimated_words": 394,
+      "estimated_tokens": 1022,
+      "sha256": "a7064852e56800eca2df440d405abca371701b9795bf631b466e27681261e6e0",
       "body_sha256": "2f52a39dc73ad1aac1fdac9e438297fe3b7ff8f9328318a5a2161e6f7d389ed1",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/educational-explainer/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/formats/educational-explainer/references/project-check.md": "db8d439a9d53d1500150f698c358e21968ab27e7c95d8c761b2432663c5ce92d"
+      }
     },
     {
       "id": "event-promo",
@@ -5030,19 +5762,29 @@
       "description": "Use for lyric video. Use authorized lyrics and timed text hierarchy; avoid unlicensed material.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "şarkı sözü videosu",
-        "lyric video"
+        "lyric video",
+        "Lyrik-Video",
+        "Songtext-Animation"
       ],
       "requires": [],
       "path": "library/formats/lyric-video/SKILL.md",
       "estimated_words": 396,
-      "estimated_tokens": 985,
-      "sha256": "55cefa00da6e637cf6862392891b7d9c1b9db448d3bde9882e9cf4d53d9356a3",
+      "estimated_tokens": 995,
+      "sha256": "b4ac747053981322979269df20a1f200b9333f9ed5b9a29e6dc7dbfc59c849a2",
       "body_sha256": "d9daa40c0047054ecc8f3c59e79afbe8a5f7e313f4105bebe4634843f7650881",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/lyric-video/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/formats/lyric-video/references/project-check.md": "aa565e0b9b43415c5c8413c3a83e61b473c2912effc3cf39cd71951de7b2389d"
+      }
     },
     {
       "id": "memorial-tribute",
@@ -5068,19 +5810,27 @@
       "description": "Use for music visualizer. Map audio features to controlled visual motifs with repeatable timing.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "müzik görselleştirme",
-        "visualizer"
+        "visualizer",
+        "music visualizer",
+        "Musik-Visualizer",
+        "Audio-Spektrum-Video"
       ],
       "requires": [],
       "path": "library/formats/music-visualizer/SKILL.md",
-      "estimated_words": 389,
-      "estimated_tokens": 990,
-      "sha256": "44012501adf566af43ad06ece57d5bd958ed0b70a486a959162905d809a9a5ae",
+      "estimated_words": 390,
+      "estimated_tokens": 1009,
+      "sha256": "c5c7f53165188657bf87f668f0cb08b4d97859e1bed23da5d231234088da368d",
       "body_sha256": "c84ed8ca57d14bd872b39d27e5c7982ec3dddf45e1743f872623b6ed1dc1a4ea",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/music-visualizer/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/formats/music-visualizer/references/project-check.md": "ccf41edc072287cd5620e38d72f78c8acf580d37487afc32f796c913b15ba8e9"
+      }
     },
     {
       "id": "news-explainer",
@@ -5100,6 +5850,45 @@
       "sha256": "efd7d7ff2933dd52572c02f7be32336a3d38fd1362a362802f27d678ff4721d7",
       "body_sha256": "135e905a8ca10e55689337e07b29241c31d65d762ed346be296d0ced878efd83",
       "resource_sha256": {}
+    },
+    {
+      "id": "news-ticker-hierarchy",
+      "description": "Design structured news-brief layouts with clear primary-headline dominance, judder-free integer-pixel ticker crawls, source badges, and zero dual-reading overload.",
+      "category": "formats",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "news ticker hierarchy",
+        "broadcast ticker crawl",
+        "haber bandı hiyerarşisi",
+        "kayan alt bant düzeni",
+        "Nachrichtenticker-Hierarchie",
+        "Laufband-Layout gestalten",
+        "jerarquía de cintillo informativo",
+        "hiérarchie de bandeau d'actualité"
+      ],
+      "requires": [],
+      "path": "library/formats/news-ticker-hierarchy/SKILL.md",
+      "estimated_words": 784,
+      "estimated_tokens": 1926,
+      "sha256": "3af3c0abde13723de5dcc7dafc62ef2f15e174ad1069b8901e1747f548adb670",
+      "body_sha256": "5b32c916fe7f4b4d4dbcaec9d1cc46b57df8d56d9fc4cbc8e775ddee98793297",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "lower-thirds",
+        "shutter-angle-judder",
+        "contrast-audit",
+        "reading-speed-audit"
+      ],
+      "resources": [
+        "library/formats/news-ticker-hierarchy/references/ticker-speed-and-zone-spec.md"
+      ],
+      "resource_sha256": {
+        "library/formats/news-ticker-hierarchy/references/ticker-speed-and-zone-spec.md": "b0fb1fd281aeeb7a9ab68a6de4b22d7e0856a6d2e361048d3e53f3b83e2bfba8"
+      }
     },
     {
       "id": "podcast-clip",
@@ -5125,19 +5914,27 @@
       "description": "Use for product commercial. Plan benefit-driven visual shots, accurate product assets and a clear end card.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "ürün reklamı",
-        "ticari reklam"
+        "ticari reklam",
+        "product commercial",
+        "Produktwerbespot",
+        "Produkt-Spot"
       ],
       "requires": [],
       "path": "library/formats/product-commercial/SKILL.md",
-      "estimated_words": 396,
-      "estimated_tokens": 992,
-      "sha256": "7078e98133d346fcd51209990302250c18c3bc3e9786c9c9953936d4a2dcf9a1",
+      "estimated_words": 397,
+      "estimated_tokens": 1009,
+      "sha256": "a2cd53a8dd0b04e687d06f25a504bfc51ba781d7de13994a4ab9f3fd1c0dace8",
       "body_sha256": "e4b1ab28273241a3104f7aab15bccf115622b7c6d1f6a53c50178b0b4ce56722",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/product-commercial/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/formats/product-commercial/references/project-check.md": "2e1a06af1ab14a7ff1d3f892294e64f5de13e47c76d68e69cfd3f0573b8ffd97"
+      }
     },
     {
       "id": "quote-card-motion",
@@ -5235,6 +6032,42 @@
       "resource_sha256": {}
     },
     {
+      "id": "retro-cutscene-directing",
+      "description": "Direct original 22-to-30-second low-poly 3D character cutscenes with crisp faceted lighting, 180-degree dialogue staging, mouth-envelope lip sync, and HUD dialogue boxes.",
+      "category": "formats",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "retro cutscene directing",
+        "lowpoly cutscene staging",
+        "retro ara sahne yönetimi",
+        "düşük poligonlu diyalog sahnesi",
+        "Retro-Zwischensequenz-Regie",
+        "Low-Poly-Dialogszene inszenieren",
+        "dirección de cinemática retro",
+        "mise en scène de cinématique rétro"
+      ],
+      "requires": [],
+      "path": "library/formats/retro-cutscene-directing/SKILL.md",
+      "estimated_words": 754,
+      "estimated_tokens": 1959,
+      "sha256": "94b33cded4317cc72c2af450649dd7a0ccea952a27a55221aa1bcaf02ed88054",
+      "body_sha256": "33077c689dd8c3b56f3069ac0c2c7c0893351b40d9da47a087b215319ef4bb42",
+      "recommended_next": [
+        "low-poly-style",
+        "eyeline-headroom-grammar",
+        "lip-sync",
+        "voice-fx-flat-synth"
+      ],
+      "resources": [
+        "library/formats/retro-cutscene-directing/references/cutscene-shot-grammar.md"
+      ],
+      "resource_sha256": {
+        "library/formats/retro-cutscene-directing/references/cutscene-shot-grammar.md": "f3dea0d97598d9b59fe189c19bd0c25f81156b9f2f69bb6216642fc1650d574c"
+      }
+    },
+    {
       "id": "series-episode-workflow",
       "description": "Use for series episode workflow. Apply series bible, episode continuity and reusable asset versions while preserving new story beats.",
       "category": "formats",
@@ -5277,19 +6110,27 @@
       "description": "Use for social media reel. Compose vertical story with a strong opening, safe areas and mobile reading cadence.",
       "category": "formats",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "reels",
-        "dikey sosyal medya"
+        "dikey sosyal medya",
+        "social media reel",
+        "Social-Media-Kurzvideo",
+        "Hochformat-Reel"
       ],
       "requires": [],
       "path": "library/formats/social-media-reel/SKILL.md",
-      "estimated_words": 398,
-      "estimated_tokens": 989,
-      "sha256": "2285673ded93a05a46573434c9ea33f1c67eb567fe532fca7f365dac9ab364cf",
+      "estimated_words": 400,
+      "estimated_tokens": 1008,
+      "sha256": "d5364892863aef8ec182b8e3c3232b5999d86abfafad9fd7ef0b749309e6bea3",
       "body_sha256": "9b8983685fa3a5df0b1f20b87f28797b2a9216098b7ccd4cac25cac17ac39b59",
-      "resource_sha256": {}
+      "resources": [
+        "library/formats/social-media-reel/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/formats/social-media-reel/references/project-check.md": "9d5e378c205e13ea1850f656daf74557e47806c7ba521d350a3997320d8c403a"
+      }
     },
     {
       "id": "social-thread-to-video",
@@ -5560,6 +6401,44 @@
       "resource_sha256": {}
     },
     {
+      "id": "paper-cutout-layering",
+      "description": "Construct 2.5D multi-plane paper cutout scenes with Z-coupled drop-shadow offsets, subtle white cut-edge bevels, local fiber texture, and parallax camera drift.",
+      "category": "graphics",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "paper cutout layering",
+        "2.5d paper parallax build",
+        "çok katmanlı kağıt kesme kurulumu",
+        "kağıt katman gölge ve paralaks",
+        "Papier-Schnitt-Ebenenaufbau",
+        "mehrschichtiger Scherenschnitt-Parallax",
+        "capas de recorte de papel",
+        "superposition de papier découpé"
+      ],
+      "requires": [],
+      "path": "library/graphics/paper-cutout-layering/SKILL.md",
+      "estimated_words": 750,
+      "estimated_tokens": 1770,
+      "sha256": "06199d3a9e17183b039ef99c2bf7e9a0061e5477c8c6100671f2fb51c1c14f49",
+      "body_sha256": "8f9981e973b90d2526cb945d30054f40b92d28684e3918b0c1dc753e423ecf63",
+      "dependencies": [
+        "paper-cut-style"
+      ],
+      "recommended_next": [
+        "alpha-compositing-2d",
+        "depth-of-field-budget",
+        "contrast-audit"
+      ],
+      "resources": [
+        "library/graphics/paper-cutout-layering/references/z-plane-shadow-and-parallax-math.md"
+      ],
+      "resource_sha256": {
+        "library/graphics/paper-cutout-layering/references/z-plane-shadow-and-parallax-math.md": "9068897422ca4a341a4359ad393617d22ddbf0d53d6b6e4edd77deda48ecfc1e"
+      }
+    },
+    {
       "id": "particle-2d",
       "description": "Use for particle 2d. Use seeded emitters with bounded lifetime and count; separate simulation clock from render.",
       "category": "graphics",
@@ -5772,6 +6651,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "asset-license-ledger",
+      "description": "Track SHA-256 digests, approved SPDX license identifiers, source URLs, and attribution notices for every bundled or imported font, audio, image, and 3D asset.",
+      "category": "ingest",
+      "stage": "ingest",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "asset license ledger",
+        "spdx attribution manifest",
+        "varlık lisans defteri",
+        "telif ve atıf kaydı",
+        "Asset-Lizenzverzeichnis",
+        "SPDX-Quellen- und Lizenzbuch",
+        "registro de licencias de recursos",
+        "registre de licences des médias"
+      ],
+      "requires": [],
+      "path": "library/ingest/asset-license-ledger/SKILL.md",
+      "estimated_words": 595,
+      "estimated_tokens": 1694,
+      "sha256": "94ddc813cfd12ce9a3fd7a75993ef425f6de6c80c31713300e45e63abaed524c",
+      "body_sha256": "e59644ac7743932a892d45374f7354c14f5deef4ffe56782d8ba283f2dca32d5",
+      "recommended_next": [
+        "license-compatibility",
+        "font-licensing",
+        "asset-provenance"
+      ],
+      "resources": [
+        "library/ingest/asset-license-ledger/references/spdx-allowlist-and-ledger-format.md"
+      ],
+      "resource_sha256": {
+        "library/ingest/asset-license-ledger/references/spdx-allowlist-and-ledger-format.md": "d06d144bf4871dcd8e18b8d9467d35c79888bb64c242afa31df3150499f5f34a"
+      }
+    },
+    {
       "id": "asset-matching",
       "description": "Use for asset matching. Rank candidates by stable identifier, filename and content evidence; flag ambiguous ties.",
       "category": "ingest",
@@ -5821,19 +6735,26 @@
       "description": "Use for asset provenance. Record source, creator, acquisition, modifications and content hash per asset.",
       "category": "ingest",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kaynak takibi",
-        "asset provenance"
+        "asset provenance",
+        "Asset-Herkunftsnachweis",
+        "Medien-Provenienz"
       ],
       "requires": [],
       "path": "library/ingest/asset-provenance/SKILL.md",
       "estimated_words": 386,
-      "estimated_tokens": 990,
-      "sha256": "67ec928e68b6a42862c66b6004e42250ce81598f70d2622aa2725b431576847c",
+      "estimated_tokens": 1004,
+      "sha256": "b389fe9ce52ad6bfe882f0e719472d7b967e08830d6bb61d5075470a889d02bc",
       "body_sha256": "c2ddfeb42730f6945ff916f435d4f143f8036179899014366f772ffa79341c24",
-      "resource_sha256": {}
+      "resources": [
+        "library/ingest/asset-provenance/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/ingest/asset-provenance/references/project-check.md": "68bbc96c2223db7d3e4c0b46b04b7c71086c29d122981a35645d2b7c98841b6d"
+      }
     },
     {
       "id": "asset-tagging",
@@ -5916,19 +6837,27 @@
       "description": "Use for font licensing. Check distribution, embedding and commercial terms for exact font files.",
       "category": "ingest",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "font lisansı",
-        "yazı tipi lisansı"
+        "yazı tipi lisansı",
+        "font licensing",
+        "Schriftlizenz-Prüfung",
+        "Font-Lizenzierung"
       ],
       "requires": [],
       "path": "library/ingest/font-licensing/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 984,
-      "sha256": "f5da677fa687b68fb18672965a0fbfd6acccf9e9b86ab9ad7dc11ba1b24f3fab",
+      "estimated_words": 388,
+      "estimated_tokens": 1003,
+      "sha256": "e9f43ba7e25c0f0fef3ec641ca03bf83f0a1fe8bbe7004574d91339d12d89c1b",
       "body_sha256": "f07041139720ee734e6adb909798cfd0d15c735f941de63803e3851a208f239f",
-      "resource_sha256": {}
+      "resources": [
+        "library/ingest/font-licensing/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/ingest/font-licensing/references/project-check.md": "7911988c53180eeb161b95f6df5aa8062716517a0c3a7422cb9fe0b334b18fed"
+      }
     },
     {
       "id": "image-preprocessing",
@@ -5954,19 +6883,27 @@
       "description": "Use for license compatibility. Review code, assets, fonts and build dependencies separately; flag unclear or copyleft combinations.",
       "category": "ingest",
       "stage": "ingest",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "mit uyumluluğu",
-        "telif lisans"
+        "telif lisans",
+        "license compatibility",
+        "Lizenzkompatibilität",
+        "SPDX-Verträglichkeitsprüfung"
       ],
       "requires": [],
       "path": "library/ingest/license-compatibility/SKILL.md",
-      "estimated_words": 395,
-      "estimated_tokens": 1020,
-      "sha256": "2163ec965bc93d11bebb222be8975c014d627386eea9607d2f882cebdb0d89ee",
+      "estimated_words": 396,
+      "estimated_tokens": 1045,
+      "sha256": "6072de8127c9da0c7de68caba6675a572f0f41ae25f41963e17fca91a105cfb3",
       "body_sha256": "20f9c8d99ac8c24c57eccdfb054409427b9bfe5b1feed7335a6f1aeddaad4b70",
-      "resource_sha256": {}
+      "resources": [
+        "library/ingest/license-compatibility/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/ingest/license-compatibility/references/project-check.md": "3c4cffe2636885ec0ce29dacb475c5db93e802a45d0957446d3cee0cc4ef204a"
+      }
     },
     {
       "id": "local-stock-search",
@@ -6184,6 +7121,75 @@
       "resource_sha256": {}
     },
     {
+      "id": "color-script-progression",
+      "description": "Design a timeline-wide perceptual OKLCH lightness, chroma, and hue arc so visual mood evolves coherently from opening tension to closing resolution.",
+      "category": "lighting",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "color script",
+        "color script progression",
+        "renk senaryosu akışı",
+        "duygusal renk yayılımı",
+        "Farbdramaturgie",
+        "Farbskript-Verlauf",
+        "guion de color",
+        "script colorimétrique"
+      ],
+      "requires": [],
+      "path": "library/lighting/color-script-progression/SKILL.md",
+      "estimated_words": 682,
+      "estimated_tokens": 1633,
+      "sha256": "23fa5dd7ab7f90eca8eaedabcac9407f977429a3862dae5cf410ff4759696982",
+      "body_sha256": "ead3e31fd5fd426fc571ead90f77213cdc3f42a04280826de2d1570cff91e34d",
+      "recommended_next": [
+        "oklch-perceptual-palettes",
+        "cross-shot-grade-consistency",
+        "contrast-audit"
+      ],
+      "resources": [
+        "library/lighting/color-script-progression/references/oklch-story-arcs.md"
+      ],
+      "resource_sha256": {
+        "library/lighting/color-script-progression/references/oklch-story-arcs.md": "219d9ba01cb009901b7605b771678575fa774677a173c3caa7e29b8114cb967e"
+      }
+    },
+    {
+      "id": "cross-shot-grade-consistency",
+      "description": "Match black floor, neutral white balance, highlight shoulder, and perceptual chroma across consecutive shots so cuts never pop.",
+      "category": "lighting",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "shot grade consistency",
+        "grade consistency",
+        "çekim renk tutarlılığı",
+        "sahneler arası renk uyumu",
+        "Schnitt-Farbkonsistenz",
+        "Farbabgleich zwischen Szenen",
+        "consistencia de etalonaje",
+        "cohérence colorimétrique"
+      ],
+      "requires": [],
+      "path": "library/lighting/cross-shot-grade-consistency/SKILL.md",
+      "estimated_words": 657,
+      "estimated_tokens": 1575,
+      "sha256": "8fb8fce213fd3d729f52275a4b26c964144eeba0309e44a589e97f612054dd01",
+      "body_sha256": "d9f1582ef365142d89574d139ab75dd495f18bbe6f68d5da2623320e1d212411",
+      "recommended_next": [
+        "contrast-audit",
+        "oklch-perceptual-palettes"
+      ],
+      "resources": [
+        "library/lighting/cross-shot-grade-consistency/references/bt709-matching-tolerances.md"
+      ],
+      "resource_sha256": {
+        "library/lighting/cross-shot-grade-consistency/references/bt709-matching-tolerances.md": "563de90dc6505c181a795be73f98c3e5cee4a8d945065f306ea889cb6cebb550"
+      }
+    },
+    {
       "id": "exposure-planning",
       "description": "Use for exposure planning. Set rendering exposure and highlight handling using reference test charts.",
       "category": "lighting",
@@ -6397,19 +7403,27 @@
       "description": "Use for render lookdev. Render a small material and lighting test under representative final camera conditions.",
       "category": "lighting",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "lookdev",
-        "test ışığı"
+        "test ışığı",
+        "render lookdev",
+        "Render-Lookentwicklung",
+        "Licht- und Material-Lookdev"
       ],
       "requires": [],
       "path": "library/lighting/render-lookdev/SKILL.md",
-      "estimated_words": 388,
-      "estimated_tokens": 962,
-      "sha256": "1a02991528f58596de8cf940c6ed16699ad9ae3805f35e7600b9926f98aae334",
+      "estimated_words": 391,
+      "estimated_tokens": 984,
+      "sha256": "1987a70e873e97c15af113a4f136b9bdf56d5db310deeb48b81154997618480b",
       "body_sha256": "e8df1aece1e5e6c9f048e3de258173614d7590989450a44105cc3549b6a5d255",
-      "resource_sha256": {}
+      "resources": [
+        "library/lighting/render-lookdev/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/lighting/render-lookdev/references/project-check.md": "313e1d9083c4189a478e52a03e4bd24d21a12e6b25e95cbf62d50502d95ad2e7"
+      }
     },
     {
       "id": "set-dressing",
@@ -6856,6 +7870,46 @@
       "resource_sha256": {}
     },
     {
+      "id": "stepped-clay-lookdev",
+      "description": "Build tactile 3D claymation shaders and stepped 12-fps animation F-curves in Blender with world-scale thumbprint normals, warm subsurface scatter, and tabletop lighting.",
+      "category": "modeling",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "stepped clay lookdev",
+        "3d stop motion clay shader",
+        "kademeli kil görünüm geliştirme",
+        "3B kil gölgelendirici ve adım kare",
+        "gestuftes Knet-Lookdev",
+        "3D-Stop-Motion-Tonmaterial",
+        "lookdev de arcilla escalonada",
+        "lookdev argile saccadée"
+      ],
+      "requires": [
+        "blender"
+      ],
+      "path": "library/modeling/stepped-clay-lookdev/SKILL.md",
+      "estimated_words": 754,
+      "estimated_tokens": 1803,
+      "sha256": "bd718bf7dabf9d31f870d0dae77a97cc1536b742309783532c1f1aefeced5d72",
+      "body_sha256": "4b10700887275fd24b5547d6f348fdf780316c82a33bd0e3c4c74fb68f97b6d5",
+      "dependencies": [
+        "claymation-style"
+      ],
+      "recommended_next": [
+        "blender-cycles",
+        "three-point-lighting",
+        "depth-of-field-budget"
+      ],
+      "resources": [
+        "library/modeling/stepped-clay-lookdev/references/blender-clay-node-and-fcurve-spec.md"
+      ],
+      "resource_sha256": {
+        "library/modeling/stepped-clay-lookdev/references/blender-clay-node-and-fcurve-spec.md": "3485dc0672c3ea97d796e3eccd5daacf12d724de746d3d8b4560606207bd9cce"
+      }
+    },
+    {
       "id": "subdivision-modeling",
       "description": "Use for subdivision modeling. Use support loops and subdivision levels targeted at visible curvature.",
       "category": "modeling",
@@ -7000,19 +8054,28 @@
       "description": "Use for easing design. Choose acceleration curves matching mass and narrative intent.",
       "category": "motion",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "easing",
-        "yumuşak geçiş"
+        "yumuşak geçiş",
+        "easing design",
+        "Easing-Kurven",
+        "Beschleunigungskurve",
+        "ivme eğrisi"
       ],
       "requires": [],
       "path": "library/motion/easing-design/SKILL.md",
-      "estimated_words": 375,
-      "estimated_tokens": 945,
-      "sha256": "b4f3052dfd21d81b2e0ec6e770cc2dfe329e1b2270494893d58db9282868102d",
+      "estimated_words": 377,
+      "estimated_tokens": 966,
+      "sha256": "c6b76592632cc53adc544c807a1cc47c42aa0cf0e15b573deb4fc199cae52913",
       "body_sha256": "dea742ff57f228aaa7fc5a0c892b62fb294a30b32046d6cabbcc73f1981fcb3f",
-      "resource_sha256": {}
+      "resources": [
+        "library/motion/easing-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/motion/easing-design/references/project-check.md": "3719d4b5b99287e4cdb594311274af835b1d285544757c274b91ab2a1879ce7f"
+      }
     },
     {
       "id": "follow-through",
@@ -7053,6 +8116,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "ken-burns-photo-choreography",
+      "description": "Animate sub-pixel pan-and-scale trajectories over still photographs with overscan resolution checks, focal-point protection, and alternating motion vectors.",
+      "category": "motion",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "ken burns photo",
+        "photo pan zoom",
+        "fotoğraf kaydırma yakınlaştırma",
+        "hareketli fotoğraf kurgusu",
+        "Ken-Burns-Kamerafahrt",
+        "Foto-Zoomfahrt",
+        "efecto ken burns",
+        "mouvement ken burns"
+      ],
+      "requires": [],
+      "path": "library/motion/ken-burns-photo-choreography/SKILL.md",
+      "estimated_words": 662,
+      "estimated_tokens": 1664,
+      "sha256": "bf2de9676e8c55f5b5905ab87790bb22e8c93f7212f8764c252ad5000d2331b2",
+      "body_sha256": "3a340d239604ea6927a978613a6cd3d7c5e0b7021a5ea46336a6b63be0071e87",
+      "conflicts": [
+        "locked-camera"
+      ],
+      "recommended_next": [
+        "cross-shot-grade-consistency",
+        "shutter-angle-judder"
+      ],
+      "resources": [
+        "library/motion/ken-burns-photo-choreography/references/subpixel-pan-math.md"
+      ],
+      "resource_sha256": {
+        "library/motion/ken-burns-photo-choreography/references/subpixel-pan-math.md": "0feb502b0cc85c0a29ac3f3c1170fccdfe1768de128a152ac6510565e854d4b1"
+      }
+    },
+    {
       "id": "keyframe-curves",
       "description": "Use for keyframe curves. Set key poses and interpolate with explicit easing and frame indices.",
       "category": "motion",
@@ -7072,21 +8172,62 @@
       "resource_sha256": {}
     },
     {
+      "id": "kinetic-layout-choreography",
+      "description": "Coordinate multi-element grid entrances, shared alignment rails, 3-to-5-frame stagger offsets, and clean simultaneous exits for typographic and diagram cards.",
+      "category": "motion",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "kinetic layout",
+        "staggered grid choreography",
+        "kinetik yerleşim koreografisi",
+        "kademeli ızgara hareketi",
+        "kinetisches Layout",
+        "gestaffelte Raster-Choreografie",
+        "coreografía de diseño cinético",
+        "chorégraphie de grille cinétique"
+      ],
+      "requires": [],
+      "path": "library/motion/kinetic-layout-choreography/SKILL.md",
+      "estimated_words": 636,
+      "estimated_tokens": 1512,
+      "sha256": "42811c34243bc3c6329a5afbfd63eca6c9747c58ed96738b5ddae221884e8046",
+      "body_sha256": "3f854dc2223dca7a656257fd76a11e7bb9d4e8e906ae119177a2e238a2ff6498",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "kinetic-typography",
+        "easing-design",
+        "swiss-grid-motion"
+      ],
+      "resources": [
+        "library/motion/kinetic-layout-choreography/references/stagger-timing-sheet.md"
+      ],
+      "resource_sha256": {
+        "library/motion/kinetic-layout-choreography/references/stagger-timing-sheet.md": "630090576d778b62ab7f2e8a4636c3aa2f65937b86ef12cd3cedbca5dec6a70d"
+      }
+    },
+    {
       "id": "loop-design",
       "description": "Use for loop design. Match initial and terminal state including velocity where relevant; omit duplicate endpoint frame.",
       "category": "motion",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "döngü animasyonu",
-        "seamless loop"
+        "seamless loop",
+        "loop design",
+        "Schleifen-Design",
+        "Endlosschleifen-Konzept"
       ],
       "requires": [],
       "path": "library/motion/loop-design/SKILL.md",
-      "estimated_words": 387,
-      "estimated_tokens": 967,
-      "sha256": "322740c0a809a7ba0c69b29cb22533a611412c566cc7ce66d5ba47210bf9d223",
+      "estimated_words": 388,
+      "estimated_tokens": 985,
+      "sha256": "5af4b5ccba87de58817f84dd8bc8188a58085fab80cad93f00cd76238060c607",
       "body_sha256": "fc148f3be877279b460c300d05bf35ae6c25e899e05c173164d9606ef519c00f",
       "resources": [
         "library/motion/loop-design/references/project-check.md"
@@ -7233,19 +8374,27 @@
       "description": "Use for speed ramping design. Schedule speed changes around action peaks and smooth curve joins.",
       "category": "motion",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "hız rampası",
-        "speed ramp"
+        "speed ramp",
+        "speed ramping design",
+        "Geschwindigkeitsrampe",
+        "Zeitlupen-Rampe"
       ],
       "requires": [],
       "path": "library/motion/speed-ramping-design/SKILL.md",
-      "estimated_words": 385,
-      "estimated_tokens": 961,
-      "sha256": "5202ec20fd0c63f241cc8f705fa8a1747f36e8bd4265a4e7a603931a180a7b4b",
+      "estimated_words": 387,
+      "estimated_tokens": 980,
+      "sha256": "457792758153945e5cb6153b6c6ddee3a47c7a14bd6577e5b1a2e1dc9ba3bcab",
       "body_sha256": "d114cdca5e19aab6f3d87bf9457f0f3b2f3e5f26c10ae769992b0eadb64abc79",
-      "resource_sha256": {}
+      "resources": [
+        "library/motion/speed-ramping-design/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/motion/speed-ramping-design/references/project-check.md": "e55477d293f2706b115b38f817382b641ce54842fe85db65a94f84fbe4489f84"
+      }
     },
     {
       "id": "spring-motion",
@@ -7290,19 +8439,27 @@
       "description": "Use for staggered animation. Offset entrances by semantic groups and tune overlaps to reading order.",
       "category": "motion",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "sıralı animasyon",
-        "stagger"
+        "stagger",
+        "staggered animation",
+        "gestaffelte Animation",
+        "versetztes Einblenden"
       ],
       "requires": [],
       "path": "library/motion/staggered-animation/SKILL.md",
-      "estimated_words": 381,
-      "estimated_tokens": 955,
-      "sha256": "5ea4b1fa2b0b419d08d8cb39c25c9502100bc2b3291169dc7636d5d165767d16",
+      "estimated_words": 384,
+      "estimated_tokens": 976,
+      "sha256": "058c0e8e2c2f973820a1d76003feefd7c4d87032575fb3098013815dfc96a076",
       "body_sha256": "05eec630d9ce383d9e1079a631250874fcecdb8e45ca02efceb0c18915cc7e94",
-      "resource_sha256": {}
+      "resources": [
+        "library/motion/staggered-animation/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/motion/staggered-animation/references/project-check.md": "707ab799c52572222e626dcdd6baf5f53d44a6ac1a20bcf96290491940a41c37"
+      }
     },
     {
       "id": "stop-motion-cadence",
@@ -7368,23 +8525,63 @@
       "description": "Use for audio stem export. Export synchronized individual bus stems with explicit channel format and length.",
       "category": "music",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "stem export",
-        "ses kanalı çıktı"
+        "ses kanalı çıktı",
+        "audio stem export",
+        "Audio-Stem-Export",
+        "Einzelspuren exportieren"
       ],
       "requires": [],
       "path": "library/music/audio-stem-export/SKILL.md",
-      "estimated_words": 400,
-      "estimated_tokens": 994,
-      "sha256": "7404e2c7b55dadeab6e69829bc7aa9a84311ffa835d314f4a2a8253387a2234b",
+      "estimated_words": 403,
+      "estimated_tokens": 1014,
+      "sha256": "c4a8154c09438d473e8d8b72bc08ffe120a59c06f3bd26e433c2bed99e204f3f",
       "body_sha256": "462178e330e77659b6dfaa8020f698f361f8ad775efc9c4d95916035da3ab270",
       "resources": [
         "library/music/audio-stem-export/references/project-check.md"
       ],
       "resource_sha256": {
         "library/music/audio-stem-export/references/project-check.md": "73d728de0a37cd165c15091c4f3292b5d564987d70b41369d4d33f8bdda46c20"
+      }
+    },
+    {
+      "id": "bar-grid-music-alignment",
+      "description": "Quantize musical tempo, bar/beat frame boundaries, harmonic loop seams, and final cadence resolves onto exact integer project frames.",
+      "category": "music",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "bar grid music alignment",
+        "tempo to frame grid",
+        "müzik ölçü ızgarası hizalama",
+        "BPM kare senkronu",
+        "Taktraster-Musikausrichtung",
+        "BPM auf Bildraster abstimmen",
+        "alineación musical por compases",
+        "alignement musical sur grille de mesures"
+      ],
+      "requires": [],
+      "path": "library/music/bar-grid-music-alignment/SKILL.md",
+      "estimated_words": 795,
+      "estimated_tokens": 1780,
+      "sha256": "83610fe34ab241f554b49d85257bb7b38951df7966956ff79593263cda706089",
+      "body_sha256": "02348522f7e85ffb5255af4e3bb91c5cbeff353d0dae2a803b10f1d6a525fe71",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "beat-synced-editing",
+        "music-looping"
+      ],
+      "resources": [
+        "library/music/bar-grid-music-alignment/references/integer-frame-bpm-table.md"
+      ],
+      "resource_sha256": {
+        "library/music/bar-grid-music-alignment/references/integer-frame-bpm-table.md": "547df5ea9cce629132fc6d6b1880882e75a1d82594bc8f4146e16add9c44cb34"
       }
     },
     {
@@ -7563,19 +8760,27 @@
       "description": "Use for music looping. Align loop to phrase boundary with compatible tail and crossfade.",
       "category": "music",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "müzik döngüsü",
-        "loop music"
+        "loop music",
+        "music looping",
+        "Musik-Schleife",
+        "nahtloser Musik-Loop"
       ],
       "requires": [],
       "path": "library/music/music-looping/SKILL.md",
-      "estimated_words": 392,
-      "estimated_tokens": 971,
-      "sha256": "b0b4fdf80539b0053682d6491d6bd5f912aadbc5984103130be2840295297202",
+      "estimated_words": 394,
+      "estimated_tokens": 988,
+      "sha256": "cd96643374cdcc34951e7c56740bec83ce6282e530b8e22b41da772352852863",
       "body_sha256": "8effffd7210fccb4c1e1249407582f6c8df16e719074937d5b1d74dca30cfc56",
-      "resource_sha256": {}
+      "resources": [
+        "library/music/music-looping/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/music/music-looping/references/project-check.md": "998aee59828b6d17692064911cb523cee10812544927e067674fdeddb27ed5b4"
+      }
     },
     {
       "id": "noise-synthesis",
@@ -7730,6 +8935,77 @@
       "resource_sha256": {}
     },
     {
+      "id": "accessibility-caption-ad-check",
+      "description": "Verify caption completeness for non-speech audio cues, speaker changes, contrast, and visual-only information parity for blind and deaf/hard-of-hearing viewers.",
+      "category": "qa",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "accessibility caption check",
+        "caption and audio description qa",
+        "erişilebilir altyazı ve sesli betimleme denetimi",
+        "işitme görme erişilebilirlik kontrolü",
+        "Barrierefreiheit Untertitel-Prüfung",
+        "Hörbeschreibung und Untertitel prüfen",
+        "auditoría de subtítulos accesibles",
+        "contrôle accessibilité sous-titres"
+      ],
+      "requires": [],
+      "path": "library/qa/accessibility-caption-ad-check/SKILL.md",
+      "estimated_words": 714,
+      "estimated_tokens": 1811,
+      "sha256": "8ba89c186eeceb5b298d1c7bb8be1b9d2382d9cf2d5ea5ad1e017618dcf10bb0",
+      "body_sha256": "09b2fb7739b982be7966ca5a7bb5dd0d64568d9599320d74870fafd0626d391d",
+      "recommended_next": [
+        "audio-description-track",
+        "contrast-audit",
+        "reading-speed-audit",
+        "flash-safety"
+      ],
+      "resources": [
+        "library/qa/accessibility-caption-ad-check/references/wcag-media-parity-matrix.md"
+      ],
+      "resource_sha256": {
+        "library/qa/accessibility-caption-ad-check/references/wcag-media-parity-matrix.md": "69af289f7478d3ffa58a573ffacf1971b5569d106177fbea6f2eb946749c0ed4"
+      }
+    },
+    {
+      "id": "anti-aliasing-thin-lines",
+      "description": "Eliminate single-pixel line buzz, diagonal stair-stepping, and pan-induced moiré shimmer using minimum stroke floors, integer grid snapping, and 2x supersampling.",
+      "category": "qa",
+      "stage": "render",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "anti aliasing thin lines",
+        "thin stroke shimmer fix",
+        "ince çizgi kenar yumuşatma",
+        "titreyen ızgara çizgisi düzeltme",
+        "Kantenglättung dünner Linien",
+        "Flimmern feiner Linien beheben",
+        "antialiasing de líneas finas",
+        "anticrénelage des lignes fines"
+      ],
+      "requires": [],
+      "path": "library/qa/anti-aliasing-thin-lines/SKILL.md",
+      "estimated_words": 712,
+      "estimated_tokens": 1729,
+      "sha256": "143eca5714f591890267e0b8d3fe9b1ec7d9c9a87d8a79f04da22bda9bd7a811",
+      "body_sha256": "12079a9a662ce0214e8146b075120bdaf269f239f9e748129fc210187ea5c982",
+      "recommended_next": [
+        "temporal-flicker-audit",
+        "shutter-angle-judder",
+        "chroma-subsampling-text-guard"
+      ],
+      "resources": [
+        "library/qa/anti-aliasing-thin-lines/references/stroke-width-and-ssaa-rules.md"
+      ],
+      "resource_sha256": {
+        "library/qa/anti-aliasing-thin-lines/references/stroke-width-and-ssaa-rules.md": "209747e2266884a048c52245b40fb877573e294ebcd135293c8cec89bf36cc10"
+      }
+    },
+    {
       "id": "audio-clipping-audit",
       "description": "Use for audio clipping audit. Measure peaks and clipping indicators across mix and stems.",
       "category": "qa",
@@ -7804,19 +9080,61 @@
       "description": "Use for brief compliance audit. Recheck all hard constraints including language, aspect, locked camera, and protected layers.",
       "category": "qa",
       "stage": "review",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "talimat kontrolü",
-        "reelguard"
+        "reelguard",
+        "brief compliance audit",
+        "Briefing-Konformitätsprüfung",
+        "Anforderungs-Abgleich"
       ],
       "requires": [],
       "path": "library/qa/brief-compliance-audit/SKILL.md",
-      "estimated_words": 401,
-      "estimated_tokens": 1019,
-      "sha256": "3d423d3103ac91cdb1a0334ca30d85ecbe41c9dd2be3746e67c752f4b6b59451",
+      "estimated_words": 403,
+      "estimated_tokens": 1045,
+      "sha256": "4dfbe23fc34b88357b44d356703cdb86d8c745bab1c9f94526a953a8d9502963",
       "body_sha256": "21173812ffa8c23a5454751de90237a6be510eb200186985b8e3166928285b4b",
-      "resource_sha256": {}
+      "resources": [
+        "library/qa/brief-compliance-audit/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/qa/brief-compliance-audit/references/project-check.md": "07da04dc494e038abbc258ef4b40351452414ba2f2456206face80e67ffc62c9"
+      }
+    },
+    {
+      "id": "claims-must-be-sourced",
+      "description": "Require verifiable source citations in project provenance and on-screen attribution for every quantitative statistic, multiplier, benchmark, or factual claim.",
+      "category": "qa",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "claims must be sourced",
+        "quantitative claim citation",
+        "iddialar kaynaklı olmalı",
+        "sayısal veri kaynak doğrulama",
+        "Quellenpflicht für Zahlenangaben",
+        "Belegprüfung für Behauptungen",
+        "citas obligatorias para datos",
+        "sources requises pour affirmations"
+      ],
+      "requires": [],
+      "path": "library/qa/claims-must-be-sourced/SKILL.md",
+      "estimated_words": 592,
+      "estimated_tokens": 1582,
+      "sha256": "1d575adc004f149b38c847ef91a0da0aab1193a109e35691426506c7b644f240",
+      "body_sha256": "8878876c84508d295bf5e28e1bb6d80d883375913d843b5c93ddc07e06f44977",
+      "recommended_next": [
+        "scientific-source-audit",
+        "brief-compliance-audit"
+      ],
+      "resources": [
+        "library/qa/claims-must-be-sourced/references/sources-ledger-schema.md"
+      ],
+      "resource_sha256": {
+        "library/qa/claims-must-be-sourced/references/sources-ledger-schema.md": "e235b773b4f044f25237a6199916f91b80b7d2d742914c8fe25f7f75e56615c8"
+      }
     },
     {
       "id": "color-continuity",
@@ -7838,6 +9156,44 @@
       "resource_sha256": {}
     },
     {
+      "id": "content-policy-boundaries",
+      "description": "Enforce strict ethical and legal content boundaries—no real-person likeness or voice impersonation, no third-party brand spoofing, and no unlicensed copyrighted IP.",
+      "category": "qa",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "content policy boundaries",
+        "impersonation and trademark guard",
+        "içerik politikası sınırları",
+        "kişi taklidi ve marka koruması",
+        "Inhaltsrichtlinien-Grenzen",
+        "Imitations- und Markenschutz",
+        "límites de política de contenido",
+        "limites de politique de contenu"
+      ],
+      "requires": [],
+      "path": "library/qa/content-policy-boundaries/SKILL.md",
+      "estimated_words": 630,
+      "estimated_tokens": 1735,
+      "sha256": "eec1e97728291eb79eed10f084986ff9432666ef50f4ee83dc970461981e3fb6",
+      "body_sha256": "f6442b57259f29a66a1f68cc5e505cd4387c591ba2dd3249b1b4472d3ad11c3c",
+      "dependencies": [
+        "reelguard-policy"
+      ],
+      "recommended_next": [
+        "content-credentials-labeling",
+        "prompt-injection-guard",
+        "asset-license-ledger"
+      ],
+      "resources": [
+        "library/qa/content-policy-boundaries/references/boundary-decision-table.md"
+      ],
+      "resource_sha256": {
+        "library/qa/content-policy-boundaries/references/boundary-decision-table.md": "cded94e7e4f5ac2e893473603df55217f4de57ad32708e239a5012a590064ba6"
+      }
+    },
+    {
       "id": "contrast-audit",
       "description": "Use for contrast audit. Measure contrast in representative text/background regions and inspect moving backgrounds.",
       "category": "qa",
@@ -7857,23 +9213,66 @@
       "resource_sha256": {}
     },
     {
+      "id": "cultural-adaptation-audit",
+      "description": "Audit localized video variants for ambiguous numeric dates, measurement systems, currency assumptions, directional progression cues, and region-locked references.",
+      "category": "qa",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "cultural adaptation audit",
+        "localization qa checklist",
+        "kültürel uyarlama denetimi",
+        "yerelleştirme kalite kontrolü",
+        "Kulturadaptions-Prüfung",
+        "Lokalisierungs-Checkliste",
+        "auditoría de adaptación cultural",
+        "audit d'adaptation culturelle"
+      ],
+      "requires": [],
+      "path": "library/qa/cultural-adaptation-audit/SKILL.md",
+      "estimated_words": 670,
+      "estimated_tokens": 1717,
+      "sha256": "965cdc83f4cf065829ed4de76d407caf79007c97ec98a1234ef196bde57fa5fc",
+      "body_sha256": "3a9ec1686d5a013bc685261093921ef084abf7de0f7fcec22929483c4a9f399a",
+      "recommended_next": [
+        "locale-formatting",
+        "brief-compliance-audit",
+        "transcreation-tone"
+      ],
+      "resources": [
+        "library/qa/cultural-adaptation-audit/references/localization-hazard-checklist.md"
+      ],
+      "resource_sha256": {
+        "library/qa/cultural-adaptation-audit/references/localization-hazard-checklist.md": "d5d418208f671c9b7d1af3ee3320842f474f76fc81a40aa9faf4634abde0a5e3"
+      }
+    },
+    {
       "id": "debanding",
       "description": "Use for debanding. Apply suitable dithering/filtering at appropriate precision before final encode.",
       "category": "qa",
       "stage": "review",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "banding",
-        "renk bantları"
+        "renk bantları",
+        "debanding",
+        "Banding-Reduktion",
+        "Farbabstufungs-Glättung"
       ],
       "requires": [],
       "path": "library/qa/debanding/SKILL.md",
       "estimated_words": 385,
-      "estimated_tokens": 992,
-      "sha256": "d5e773dfcbe815227220338865873dda83f65a1246bad4529fef99b5a8f7c5a6",
+      "estimated_tokens": 1010,
+      "sha256": "e998a369c8668e544333fe1dcfe21d0255c3e624d00fe8e815c5031678887c4a",
       "body_sha256": "b47cc0668e4e260fa53b93296ce9f92ef283d97f641ad90a2409c9fde9e33016",
-      "resource_sha256": {}
+      "resources": [
+        "library/qa/debanding/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/qa/debanding/references/project-check.md": "8dc32d344b2bd9b683215f55ebde6a24d1d7d1273de18015a2c398fa06bb8c0d"
+      }
     },
     {
       "id": "dropped-frame-audit",
@@ -7899,17 +9298,20 @@
       "description": "Use for flash safety. Analyze rapid luminance/color changes and limit hazardous patterns; use conservative review when uncertain.",
       "category": "qa",
       "stage": "review",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "flaş güvenliği",
-        "ışık çakması"
+        "ışık çakması",
+        "flash safety",
+        "Blitzschutz-Prüfung",
+        "Photosensitivitäts-Schutz"
       ],
       "requires": [],
       "path": "library/qa/flash-safety/SKILL.md",
-      "estimated_words": 408,
-      "estimated_tokens": 1039,
-      "sha256": "c3a96c3cf7f0780e36e7922c3a2f348221cbf91de6464b0b0e59b092ef46a06b",
+      "estimated_words": 409,
+      "estimated_tokens": 1059,
+      "sha256": "37ae5e811f0aa92087982070cf4be1fb6a76f05ab3697bcd3a98ed9de022f823",
       "body_sha256": "50e621f93ad93bc68dd220d54f5b97c68f595b82ac93c729dfcb24880e0990e6",
       "resources": [
         "library/qa/flash-safety/references/project-check.md"
@@ -7984,6 +9386,41 @@
       "sha256": "80656970054d8e00d1f6d25cd30ea25404a9cd923aee0a5e5598c142522b07d8",
       "body_sha256": "0adb65cdb3734ab7476f99e604604071182375e8b2db5116eb69451b4f570080",
       "resource_sha256": {}
+    },
+    {
+      "id": "golden-frame-regression",
+      "description": "Verify cross-platform visual render consistency across Linux, macOS, and Windows using golden reference descriptors, structural band tolerances, and font-metric isolation.",
+      "category": "qa",
+      "stage": "review",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "golden frame regression",
+        "visual render regression test",
+        "altın kare görsel regresyon",
+        "işletim sistemleri arası kare testi",
+        "Golden-Frame-Regressionstest",
+        "Plattformübergreifender Bildvergleich",
+        "regresión visual de fotogramas dorados",
+        "régression visuelle d'images de référence"
+      ],
+      "requires": [],
+      "path": "library/qa/golden-frame-regression/SKILL.md",
+      "estimated_words": 721,
+      "estimated_tokens": 1856,
+      "sha256": "7d5a82d401d6c728f340f98bc4e0d36e4c048680ace208f82223bd39174c48ec",
+      "body_sha256": "f1c77decba50ac6abd1c2c40156c803041e0e51f06d27f1dcf59d97a20e1bd9c",
+      "recommended_next": [
+        "render-artifact-validation",
+        "revision-diff",
+        "font-render-audit"
+      ],
+      "resources": [
+        "library/qa/golden-frame-regression/references/cross-os-tolerance-spec.md"
+      ],
+      "resource_sha256": {
+        "library/qa/golden-frame-regression/references/cross-os-tolerance-spec.md": "dbb65ba18b90534f61f2660feeb8caa91c67a60ca8a88419086139f8b0fcd725"
+      }
     },
     {
       "id": "lut-application",
@@ -8347,19 +9784,27 @@
       "description": "Use for preview render. Use reduced resolution, samples or representative range while preserving timing and composition.",
       "category": "render",
       "stage": "render",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "taslak render",
-        "preview"
+        "preview",
+        "preview render",
+        "Vorschau-Render",
+        "Entwurfs-Rendering"
       ],
       "requires": [],
       "path": "library/render/preview-render/SKILL.md",
-      "estimated_words": 392,
-      "estimated_tokens": 984,
-      "sha256": "976c442fbaf9c58d4580f9bd77c6b34e73c1bfa6e03a3b495664b5ed77d248af",
+      "estimated_words": 393,
+      "estimated_tokens": 1001,
+      "sha256": "99ba39612690ae5dcb839ae114ded9031e22451003acdc1a40d6855196334a1c",
       "body_sha256": "04a586fa00a29d484dc46d663a378b80b8c905bb0e06a86aadb1cd5e1d659d80",
-      "resource_sha256": {}
+      "resources": [
+        "library/render/preview-render/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/render/preview-render/references/project-check.md": "c9e142c84b9dfb6d74fde9bd8f05c71c9dca9dc690feee76655755e5fdd2dc78"
+      }
     },
     {
       "id": "reeldoctor-diagnostics",
@@ -8489,19 +9934,27 @@
       "description": "Use for render preflight. Validate scene references, frame ranges, output paths and available capabilities before render.",
       "category": "render",
       "stage": "render",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "render öncesi kontrol",
-        "preflight"
+        "preflight",
+        "render preflight",
+        "Render-Vorabprüfung",
+        "Preflight-Check"
       ],
       "requires": [],
       "path": "library/render/render-preflight/SKILL.md",
-      "estimated_words": 397,
-      "estimated_tokens": 999,
-      "sha256": "e686955355a49650736d283cbec3067ec4a4fa9caa83da8531c304196c848bca",
+      "estimated_words": 398,
+      "estimated_tokens": 1017,
+      "sha256": "ffde5d3c1074bc230ce159b9c681428d489dbcdd0301c0620ce9d57a956b56b4",
       "body_sha256": "4b03e64eceeb35cece5734201772233a446bcdbf66286edbff694f54041eabee",
-      "resource_sha256": {}
+      "resources": [
+        "library/render/render-preflight/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/render/render-preflight/references/project-check.md": "1714b04c65bbd358e65b0f9aeac9e559e0cb90bed3d277ebedbd69466c583d19"
+      }
     },
     {
       "id": "render-queue",
@@ -8551,19 +10004,27 @@
       "description": "Use for resource budget. Estimate memory, disk and time from sample jobs and cap concurrency accordingly.",
       "category": "render",
       "stage": "render",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "ram disk bütçesi",
-        "bellek optimizasyonu"
+        "bellek optimizasyonu",
+        "resource budget",
+        "Ressourcen-Budget",
+        "Renderzeit- und Speicherlimit"
       ],
       "requires": [],
       "path": "library/render/resource-budget/SKILL.md",
-      "estimated_words": 398,
-      "estimated_tokens": 994,
-      "sha256": "5a1b29f39121eba598861037ca7bf146729facc2636b39d166d6438c01a2abb2",
+      "estimated_words": 401,
+      "estimated_tokens": 1015,
+      "sha256": "ea6d3924862c9ef4af89d9afff75e6102f05beed35f0b364a2a12d566c3a09fb",
       "body_sha256": "01e032966be40193bc61176ac2e4d7e1b43ff6206b47571c416aed87ea95e4a7",
-      "resource_sha256": {}
+      "resources": [
+        "library/render/resource-budget/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/render/resource-budget/references/project-check.md": "ceaea1952b929c7bf917e12894882eb2e9ef9089e62270cc1b7ec25a095c17e9"
+      }
     },
     {
       "id": "resume-render",
@@ -8762,6 +10223,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "lang-detect-and-route",
+      "description": "Detect brief language offline via script diacritics and stopword profiles, keeping CLI interface locale separate from target video language.",
+      "category": "skills",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "language detection",
+        "lang detect route",
+        "dil algılama ve yönlendirme",
+        "hedef dil seçimi",
+        "Spracherkennung und Routing",
+        "Zielsprache erkennen",
+        "detección de idioma",
+        "détection de langue"
+      ],
+      "requires": [],
+      "path": "library/skills/lang-detect-and-route/SKILL.md",
+      "estimated_words": 599,
+      "estimated_tokens": 1599,
+      "sha256": "f75f00e360249e99c6c1cfbfd7e9d98d6576f703f8d10937c4f1d2dfc4e7c5ac",
+      "body_sha256": "4fdb985e0e7cdeb0251e22ac137f4db166df779b83ec328cf9acb82d3988d487",
+      "recommended_next": [
+        "turkish-glyph-audit",
+        "multilingual-glyph-audit",
+        "locale-formatting"
+      ],
+      "resources": [
+        "library/skills/lang-detect-and-route/references/language-signatures.md"
+      ],
+      "resource_sha256": {
+        "library/skills/lang-detect-and-route/references/language-signatures.md": "31da793d34be96c2ab8fb1aef256e84ddb914178075ba38beb93589b23575478"
+      }
+    },
+    {
       "id": "license-audit-dependencies",
       "description": "Use for license audit dependencies. Inventory direct/transitive licenses and distinguish software from content assets.",
       "category": "skills",
@@ -8866,6 +10362,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "prompt-injection-guard",
+      "description": "Isolate untrusted user briefs inside inert data boundaries and reject embedded instruction overrides, path traversal tokens, and network/shell escalations.",
+      "category": "skills",
+      "stage": "ingest",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "prompt injection guard",
+        "brief sanitization",
+        "istem enjeksiyon koruması",
+        "güvenli istem sınırı",
+        "Eingabe-Injektionsschutz",
+        "Brief-Abschirmung",
+        "protección contra inyección",
+        "garde contre injection"
+      ],
+      "requires": [],
+      "path": "library/skills/prompt-injection-guard/SKILL.md",
+      "estimated_words": 590,
+      "estimated_tokens": 1611,
+      "sha256": "52795e8e0d41a0b628a586b7eff1ba2c13d985b83a4e3ece371fc712f3ff1751",
+      "body_sha256": "4762ce3cffeec883162942db35e347b9933843b8db444dd399d6952ed15b6e27",
+      "dependencies": [
+        "reelguard-policy"
+      ],
+      "recommended_next": [
+        "schema-json-repair",
+        "secure-local-execution"
+      ],
+      "resources": [
+        "library/skills/prompt-injection-guard/references/untrusted-brief-patterns.md"
+      ],
+      "resource_sha256": {
+        "library/skills/prompt-injection-guard/references/untrusted-brief-patterns.md": "c99c2948540bb22846e0a3d5dd6ab9f665ae0d0ee6b57ac8de7f891584327e37"
+      }
+    },
+    {
       "id": "release-documentation",
       "description": "Use for release documentation. Document only verified features, setup paths and known limitations with reproducible examples.",
       "category": "skills",
@@ -8883,6 +10416,78 @@
       "sha256": "7151ccdb2f6f0e2078e53631f87a94cba08a0d9c9fec5c36846b4662d52d0a8d",
       "body_sha256": "ed2eacaa5cc4b00844a801467ac2054f2b72c22860aaf1cbd3b538497b89c4c4",
       "resource_sha256": {}
+    },
+    {
+      "id": "safe-community-format-package",
+      "description": "Validate third-party community format packages as pure declarative data—blocking executable scripts, custom code recipes, symlinks, path traversal, and network fetches.",
+      "category": "skills",
+      "stage": "ingest",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "safe community format package",
+        "data only format install",
+        "güvenli topluluk biçim paketi",
+        "yalnızca veri biçim kurulumu",
+        "sicheres Community-Formatpaket",
+        "reines Datenformat installieren",
+        "paquete de formato seguro de solo datos",
+        "paquet de format communautaire sans code"
+      ],
+      "requires": [],
+      "path": "library/skills/safe-community-format-package/SKILL.md",
+      "estimated_words": 657,
+      "estimated_tokens": 1894,
+      "sha256": "211d7f88f75648f98fbe6fe37b5be68f2d226bf43d1d60aa66257e686d2b4cce",
+      "body_sha256": "7bcd218b84bf4c597b3a8362ae17adeda0a44668d0d2fc7d2270a6d3728b68dd",
+      "dependencies": [
+        "reelguard-policy"
+      ],
+      "recommended_next": [
+        "skill-security-review",
+        "secure-local-execution",
+        "asset-license-ledger"
+      ],
+      "resources": [
+        "library/skills/safe-community-format-package/references/package-allowlist-spec.md"
+      ],
+      "resource_sha256": {
+        "library/skills/safe-community-format-package/references/package-allowlist-spec.md": "c9faef50b5767b34c4be43893e020b49532997e49c9d41507e5adb3c445dcb5b"
+      }
+    },
+    {
+      "id": "schema-json-repair",
+      "description": "Recover valid, schema-conformant scene plans from malformed JSON outputs using deterministic syntax normalization, bounded retries, and rule-based fallback.",
+      "category": "skills",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "schema json repair",
+        "json plan repair",
+        "şema json onarımı",
+        "bozuk json düzeltme",
+        "JSON-Schema-Reparatur",
+        "Strukturdaten-Reparatur",
+        "reparación de json",
+        "réparation de schéma json"
+      ],
+      "requires": [],
+      "path": "library/skills/schema-json-repair/SKILL.md",
+      "estimated_words": 587,
+      "estimated_tokens": 1552,
+      "sha256": "1f0387a76f1a1a0f83045ecf9cf87d184fb1231ad292e55652231fbe02a5191f",
+      "body_sha256": "df13b47792484d9fd2c7303f241b5fc11b3f779d9b8fd4730b1fd0db863d6872",
+      "recommended_next": [
+        "prompt-injection-guard",
+        "frame-clock"
+      ],
+      "resources": [
+        "library/skills/schema-json-repair/references/repair-stages.md"
+      ],
+      "resource_sha256": {
+        "library/skills/schema-json-repair/references/repair-stages.md": "941ca5171cc30b3d06acfd9c3b407865ea322aacc8355f064565fe55b9f5b843"
+      }
     },
     {
       "id": "secure-local-execution",
@@ -9170,6 +10775,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "comedic-timing-beats",
+      "description": "Time setup-subversion beats using rule-of-three escalation, pre-punchline micro-holds, hard cuts on plosive transients, and clipped reaction tails.",
+      "category": "story",
+      "stage": "edit",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "comedic timing",
+        "comedy beats",
+        "komedi zamanlaması",
+        "espri ritmi",
+        "Pointen-Timing",
+        "Komik-Rhythmus",
+        "ritmo cómico",
+        "rythme comique"
+      ],
+      "requires": [],
+      "path": "library/story/comedic-timing-beats/SKILL.md",
+      "estimated_words": 598,
+      "estimated_tokens": 1456,
+      "sha256": "f57b7e2471d24eed93947cf07853ad026a80908e53c73aa96e8e038c5ba443d7",
+      "body_sha256": "fecc09c2b8ce405710013130b19e9ec5ca2aac44c618b5c76cf572fa35a4dc77",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "j-cut",
+        "l-cut"
+      ],
+      "resources": [
+        "library/story/comedic-timing-beats/references/frame-offset-recipes.md"
+      ],
+      "resource_sha256": {
+        "library/story/comedic-timing-beats/references/frame-offset-recipes.md": "08887baf80fe5119f9625d4295029fd28794ad98502e7be45394aecb256f16e0"
+      }
+    },
+    {
       "id": "continuity-ledger",
       "description": "Use for continuity ledger. Track wardrobe, props, positions, light, time and character state by shot.",
       "category": "story",
@@ -9212,19 +10854,27 @@
       "description": "Use for ending payoff. Resolve the central promise with a visual callback or decisive action.",
       "category": "story",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kapanış",
-        "final sahne"
+        "final sahne",
+        "ending payoff",
+        "Abschluss-Pointe",
+        "Schlussauflösung"
       ],
       "requires": [],
       "path": "library/story/ending-payoff/SKILL.md",
-      "estimated_words": 392,
-      "estimated_tokens": 959,
-      "sha256": "1b428a6787f1134fd1b7aecb34391e1ec511a3b44f4cc7e42acf792a3b2687f7",
+      "estimated_words": 393,
+      "estimated_tokens": 976,
+      "sha256": "d906940392b342456b55a017f8e20782b9169cb73594bf7762d3bb7f7a60b3bd",
       "body_sha256": "7bec3f481a710b334a4dc96b2d6270c60ebe787fe9d587274e9c33ccdd93786d",
-      "resource_sha256": {}
+      "resources": [
+        "library/story/ending-payoff/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/story/ending-payoff/references/project-check.md": "5c7856e9882e58e7152db66cc93b631bc1d44217c829fd5c29b1da48f9e04dc9"
+      }
     },
     {
       "id": "logline-writing",
@@ -9246,23 +10896,138 @@
       "resource_sha256": {}
     },
     {
+      "id": "microlearning-chunking",
+      "description": "Structure educational shorts under strict cognitive-load ceilings using concept-anchor, worked visual proof, and active micro-recall beats.",
+      "category": "story",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "microlearning",
+        "microlearning chunking",
+        "mikro öğrenme",
+        "kavram parçalama",
+        "Mikrolernen",
+        "Lernhäppchen strukturieren",
+        "microaprendizaje",
+        "micro-apprentissage"
+      ],
+      "requires": [],
+      "path": "library/story/microlearning-chunking/SKILL.md",
+      "estimated_words": 603,
+      "estimated_tokens": 1513,
+      "sha256": "c3b93e12d0f9fa0e7cbb67174bdee98c4b88a4aebba7066da549ed313a15ccc2",
+      "body_sha256": "eb5ca49880e5e717d826489af8d4ae2acd850b09e0c6e7b22aa8e18c4f298255",
+      "recommended_next": [
+        "reading-speed-audit",
+        "educational-explainer",
+        "caption-segmentation"
+      ],
+      "resources": [
+        "library/story/microlearning-chunking/references/cognitive-load-budget.md"
+      ],
+      "resource_sha256": {
+        "library/story/microlearning-chunking/references/cognitive-load-budget.md": "f43aadd16a206d7ef3543a61aee2d32e3589f2e1532743f70c96c9c29cc325f8"
+      }
+    },
+    {
+      "id": "open-loop-retention",
+      "description": "Plant a concrete unanswered question in the opening beat, advance partial evidence across middle beats, and close the loop cleanly before the final hold.",
+      "category": "story",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "open loop",
+        "open loop retention",
+        "açık döngü kurgusu",
+        "merak boşluğu",
+        "Offene Schleife",
+        "Spannungsbogen halten",
+        "bucle abierto",
+        "boucle ouverte"
+      ],
+      "requires": [],
+      "path": "library/story/open-loop-retention/SKILL.md",
+      "estimated_words": 604,
+      "estimated_tokens": 1422,
+      "sha256": "f7df61c02e83151945ddd8e707553022a25e76d5d2502b69833a4c0e23a4a114",
+      "body_sha256": "9a8280ba78c99aab43ca8ac48a1ebc97789376da6ae588aca1447ed8311df9b7",
+      "recommended_next": [
+        "opening-hook",
+        "ending-payoff"
+      ],
+      "resources": [
+        "library/story/open-loop-retention/references/loop-closure-patterns.md"
+      ],
+      "resource_sha256": {
+        "library/story/open-loop-retention/references/loop-closure-patterns.md": "20fe45671b89f14728dae929eeb1d3aabee171dda46eb453d3e90be17a7ab3b6"
+      }
+    },
+    {
       "id": "opening-hook",
       "description": "Use for opening hook. Show the question, conflict or value through a concrete opening image before explanation.",
       "category": "story",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "ilk saniyeler",
-        "açılış kancası"
+        "açılış kancası",
+        "opening hook",
+        "Eröffnungs-Hook",
+        "erste Sekunden"
       ],
       "requires": [],
       "path": "library/story/opening-hook/SKILL.md",
-      "estimated_words": 396,
-      "estimated_tokens": 979,
-      "sha256": "e43347a07f1851c71ab67d78ec15f6a4ec6af5025e1cdbb386413ca46f9830bb",
+      "estimated_words": 398,
+      "estimated_tokens": 994,
+      "sha256": "0994e7dfdaf0ef49ca6e2e90658a2b0f3e5fb66b989e3a7656f3c58965948ec1",
       "body_sha256": "2be1f5566cc971b15918b4a7f10f988b6ce1e04ab095574171500f90fbd9eff9",
-      "resource_sha256": {}
+      "resources": [
+        "library/story/opening-hook/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/story/opening-hook/references/project-check.md": "3183b9ed1e72aefacc7d44a342eb6ddf04f762cce2e461314fa1e0c1be48110f"
+      }
+    },
+    {
+      "id": "prompt-to-storyboard",
+      "description": "Convert a short natural-language brief into frame-quantized scene cards with visual action, on-screen copy, audio cue, and recipe assignment.",
+      "category": "story",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "prompt to storyboard",
+        "brief to scenes",
+        "istemden öykü panosuna",
+        "metinden sahne planına",
+        "Kurztext zu Storyboard",
+        "Entwurf zu Szenenplan",
+        "texto a guion gráfico",
+        "brief vers scénarimage"
+      ],
+      "requires": [],
+      "path": "library/story/prompt-to-storyboard/SKILL.md",
+      "estimated_words": 620,
+      "estimated_tokens": 1543,
+      "sha256": "2d72da8e5c6f243c259672c1a50d586fd173c18aa49eee35010c6a60258b9fda",
+      "body_sha256": "8f969975760a6ce8f2e088521911e5f7cd07a5b5545cd370f82e67319d029f3c",
+      "dependencies": [
+        "idea-angle-framing"
+      ],
+      "recommended_next": [
+        "frame-clock",
+        "storyboard",
+        "shot-list"
+      ],
+      "resources": [
+        "library/story/prompt-to-storyboard/references/scene-card-allocation.md"
+      ],
+      "resource_sha256": {
+        "library/story/prompt-to-storyboard/references/scene-card-allocation.md": "ffdf26a3d1e4280eb381acfab92cef45599491f230321ecfddd61b625acbe030"
+      }
     },
     {
       "id": "research-script",
@@ -9364,19 +11129,26 @@
       "description": "Use for shot list. Create shot IDs, framing, action, lens intent, duration, asset requirements and continuity notes.",
       "category": "story",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "çekim listesi",
-        "shot list"
+        "shot list",
+        "Einstellungsliste",
+        "Kameraliste"
       ],
       "requires": [],
       "path": "library/story/shot-list/SKILL.md",
       "estimated_words": 393,
-      "estimated_tokens": 969,
-      "sha256": "98661c1e6fa9dc5c4685c352e32326c428167b56a95f595f35998b64dff53b5e",
+      "estimated_tokens": 979,
+      "sha256": "e1a189d5190fd3e835d25eb122b818fd2a64dfda98aacff0429672d7b4dba51d",
       "body_sha256": "e84267c0a5e8da56010bb83cbcee91d6b7557b382a7e72e995749cd62cffae46",
-      "resource_sha256": {}
+      "resources": [
+        "library/story/shot-list/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/story/shot-list/references/project-check.md": "c4efd7226d7f7045372a6402f7abe59c33f1f374267a8c6cd325da2d18574b95"
+      }
     },
     {
       "id": "story-beats",
@@ -9402,19 +11174,27 @@
       "description": "Use for storyboard. Design key panels with framing, staging and motion arrows or notes per shot.",
       "category": "story",
       "stage": "plan",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "storyboard",
-        "sahne çizelgesi"
+        "sahne çizelgesi",
+        "Szenenboard",
+        "Storyboard-Planung",
+        "öykü panosu"
       ],
       "requires": [],
       "path": "library/story/storyboard/SKILL.md",
-      "estimated_words": 393,
-      "estimated_tokens": 968,
-      "sha256": "3d373d9cfe212d29893fbfea3a9aae5e55b168cc7b3b70f4d2fe34b804e893f0",
+      "estimated_words": 394,
+      "estimated_tokens": 983,
+      "sha256": "4f0c44addb7208660e83f028929e85b24590bfed912c7e04241897576915325b",
       "body_sha256": "1c5f4ec529f3dca290ef77e35ecdd86cb2e3957e86827baba5259c9d89676697",
-      "resource_sha256": {}
+      "resources": [
+        "library/story/storyboard/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/story/storyboard/references/project-check.md": "70d57f4892fa11cc2e20a80e6d321e7d5119aea2d6011d51f2729549fdf93383"
+      }
     },
     {
       "id": "three-act-structure",
@@ -9434,6 +11214,41 @@
       "sha256": "18bcf90184323e4a7e568ee315784d54b2d3500443c53d5a49df3c405e286755",
       "body_sha256": "152c7fc13393865d1249446310670ba85f7cf89c224afd3f4e1b0407791401c3",
       "resource_sha256": {}
+    },
+    {
+      "id": "transcreation-tone",
+      "description": "Adapt hooks, imperatives, humor, and formality registers (du/Sie, sen/siz, tú/usted) across languages by rhetorical function and beat budget rather than literal calques.",
+      "category": "story",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "transcreation tone",
+        "formality register adaptation",
+        "yaratıcı çeviri ve hitap tonu",
+        "sen siz resmiyet uyumu",
+        "Transkreation und Anredeform",
+        "Du-Sie-Tonalität anpassen",
+        "transcreación y registro",
+        "transcréation et registre"
+      ],
+      "requires": [],
+      "path": "library/story/transcreation-tone/SKILL.md",
+      "estimated_words": 735,
+      "estimated_tokens": 1838,
+      "sha256": "5590b7a1d05280bbf4756f958e5cfc6c4f6986733e0d7dcd55f599ad25eb2cf3",
+      "body_sha256": "aae80330398c038dbb9e8c9361b48fd885683018ae66a7e9408d2b2454e99aa6",
+      "recommended_next": [
+        "caption-translation",
+        "lang-detect-and-route",
+        "cultural-adaptation-audit"
+      ],
+      "resources": [
+        "library/story/transcreation-tone/references/register-and-imperative-guide.md"
+      ],
+      "resource_sha256": {
+        "library/story/transcreation-tone/references/register-and-imperative-guide.md": "8df9459d7a21f6ce3db3ba4041657728c7297af08ec45e7c0997f5d83c1a2a52"
+      }
     },
     {
       "id": "visual-storytelling",
@@ -9497,19 +11312,27 @@
       "description": "Use for cross dissolve. Blend adjacent shots over explicit shared interval in appropriate color space.",
       "category": "transitions",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "çapraz çözünme",
-        "dissolve"
+        "dissolve",
+        "cross dissolve",
+        "Kreuzblende",
+        "weiche Überblendung"
       ],
       "requires": [],
       "path": "library/transitions/cross-dissolve/SKILL.md",
-      "estimated_words": 399,
-      "estimated_tokens": 987,
-      "sha256": "759a8d5459cc9b6ac04235f689819955d3eb5130e8cd699f92e6370d6135acdd",
+      "estimated_words": 401,
+      "estimated_tokens": 1003,
+      "sha256": "dda6a4b3050da64f70925e8ceaf5cb819139a960e521bbe6426e94da43a8acf5",
       "body_sha256": "f6e1228f52b2aaee62ed6069e8f67a2d0fc306fb696d0cfa850ab0ee242c6b42",
-      "resource_sha256": {}
+      "resources": [
+        "library/transitions/cross-dissolve/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/transitions/cross-dissolve/references/project-check.md": "5d7a3c7e5d4a477cc6253d7256bf65a8b43fb5ab7a415991055c5715aa10b2d1"
+      }
     },
     {
       "id": "exploded-view-shot",
@@ -9839,19 +11662,103 @@
       "description": "Use for wipe transition. Animate geometric matte boundary across source and target layers.",
       "category": "transitions",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "silme geçişi",
-        "wipe"
+        "wipe",
+        "wipe transition",
+        "Wischblende",
+        "Wipe-Übergang"
       ],
       "requires": [],
       "path": "library/transitions/wipe-transition/SKILL.md",
-      "estimated_words": 391,
-      "estimated_tokens": 970,
-      "sha256": "6690dd07b7fa8ab27ca825264da055a7006a9ae29fbe685fa91e21fbf4cceecb",
+      "estimated_words": 392,
+      "estimated_tokens": 985,
+      "sha256": "557974984a9091178db21bd1034fc0ef966d5bce1165d944052f64b69a7c809b",
       "body_sha256": "f2c6140bf84a0dc267f264b3962c0785b23f9c1faa13356a0f20db410fd9a1b2",
-      "resource_sha256": {}
+      "resources": [
+        "library/transitions/wipe-transition/references/project-check.md"
+      ],
+      "resource_sha256": {
+        "library/transitions/wipe-transition/references/project-check.md": "7f54ae9130a553b00f0ee5bde17f3654b0c74802c78258bb55830fcf67fc5773"
+      }
+    },
+    {
+      "id": "bilingual-dual-subtitles",
+      "description": "Stack primary and secondary language subtitle tracks with distinct size/luminance hierarchy, locked shared event timestamps, and <= 3 total lines.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "bilingual subtitles",
+        "dual language captions",
+        "çift dilli altyazı",
+        "iki dilli altyazı yerleşimi",
+        "zweisprachige Untertitel",
+        "Doppel-Untertitel anordnen",
+        "subtítulos bilingües",
+        "sous-titres bilingues"
+      ],
+      "requires": [],
+      "path": "library/typography/bilingual-dual-subtitles/SKILL.md",
+      "estimated_words": 725,
+      "estimated_tokens": 1679,
+      "sha256": "b950df26ac8ebfc4929f5178659a0a59f553cf94b133c8425926c70507d424f2",
+      "body_sha256": "ebbe22df00ddde68e627b022a551c86a9c3dc5a4ae4f41bbf64ec27e6340d27b",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "subtitle-safe-area",
+        "contrast-audit",
+        "multilingual-caption-profiles"
+      ],
+      "resources": [
+        "library/typography/bilingual-dual-subtitles/references/dual-track-stacking.md"
+      ],
+      "resource_sha256": {
+        "library/typography/bilingual-dual-subtitles/references/dual-track-stacking.md": "ed3b0816d5aae1a8f4689285da166a3ce25da54da7cf53043bf3320d0c64686b"
+      }
+    },
+    {
+      "id": "burned-in-caption-styling",
+      "description": "Render legible open burned-in captions with anchored baselines, semi-opaque pill or stroke backing, >= 7:1 contrast, and restrained active-word emphasis.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "burned in captions",
+        "open caption styling",
+        "gömülü altyazı tasarımı",
+        "ekrana işlenmiş altyazı",
+        "eingebrannte Untertitel",
+        "offene Untertitel gestalten",
+        "subtítulos incrustados",
+        "sous-titres incrustés"
+      ],
+      "requires": [],
+      "path": "library/typography/burned-in-caption-styling/SKILL.md",
+      "estimated_words": 734,
+      "estimated_tokens": 1740,
+      "sha256": "0915481314236830fd3ca62a79fcfbd249ebd70a03741a82ba6729200e3ebe80",
+      "body_sha256": "00af0ef023ab05599aabf1f7349bfa897e6e5f25a5ef8e187ef83594f9305b2a",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "contrast-audit",
+        "subtitle-safe-area",
+        "word-timed-captions"
+      ],
+      "resources": [
+        "library/typography/burned-in-caption-styling/references/pill-and-stroke-geometry.md"
+      ],
+      "resource_sha256": {
+        "library/typography/burned-in-caption-styling/references/pill-and-stroke-geometry.md": "61761094152cca7cb3e61a8deb252c1452c24918c0d35f6b472ce950b64e8e51"
+      }
     },
     {
       "id": "caption-segmentation",
@@ -9915,19 +11822,29 @@
       "description": "Lay out Chinese, Japanese or Korean text.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "CJK typography",
-        "CJK tipografi"
+        "CJK tipografi",
+        "CJK-Typografie",
+        "ostasiatischer Satz"
       ],
       "requires": [],
       "path": "library/typography/cjk-typography/SKILL.md",
       "estimated_words": 64,
-      "estimated_tokens": 155,
-      "sha256": "15bbc37b0ec5efcf53d75e757340a9f2917ccc5d0105d07163aeed998a7556c1",
+      "estimated_tokens": 166,
+      "sha256": "4f3fa0164a4b66d83ced55ed3a62b5a99e44216e4b26544eca89416c0df7fa5e",
       "body_sha256": "09790ec89c0a9ffb50fb803b8c6954c763c95f33423e692024da79c4c7aac518",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/cjk-typography/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/cjk-typography/references/project-check.md": "3cab222e87d368cf0a084b9c27ba078c8d7e7c32e821cc241c1e487628f4d43e"
+      }
     },
     {
       "id": "complex-script-shaping",
@@ -9972,19 +11889,30 @@
       "description": "Use for end card. Compose logo, CTA and required copy in a restrained hierarchy with a reading hold.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "kapanış kartı",
-        "end slate"
+        "end slate",
+        "end card",
+        "Abspannkarte",
+        "Endkarte"
       ],
       "requires": [],
       "path": "library/typography/end-card/SKILL.md",
-      "estimated_words": 413,
-      "estimated_tokens": 981,
-      "sha256": "ac632de47409b2a36ad592631af77b37e49ba4b73a89ea6162cf4ff45acf1068",
+      "estimated_words": 414,
+      "estimated_tokens": 991,
+      "sha256": "46f257005a32b01de3799a25bafcd53ee0ed061636ddbe5c79acdd4594c9457c",
       "body_sha256": "f04f0f942ba1f072e115c1ffaf52a1ec3b12c425b91e518eb2ea3d26ccd9fb9b",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/end-card/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/end-card/references/project-check.md": "90049d01889cf45934a6399ec4b7f38293ccfec29703cfd646f84a4d75ee5fa9"
+      }
     },
     {
       "id": "extruded-type",
@@ -10010,19 +11938,30 @@
       "description": "Choose fallback fonts for missing script coverage.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "font fallback",
-        "yedek font zinciri"
+        "yedek font zinciri",
+        "font fallback chain",
+        "Schrift-Fallback-Kette",
+        "Ersatzschrift"
       ],
       "requires": [],
       "path": "library/typography/font-fallback-chain/SKILL.md",
-      "estimated_words": 69,
-      "estimated_tokens": 166,
-      "sha256": "ac7cb321de2d6aa11a913ac953fe01823e70234d4698a3915729584484c38a55",
+      "estimated_words": 70,
+      "estimated_tokens": 185,
+      "sha256": "dcb0bd82edf49bb05563209c5ecb15b9d065fc766f605a76a1ba6c7e7035b2f5",
       "body_sha256": "51bdf37dcce1340290752906466e833a9a68397f089f521cf7fc9bf48057a42f",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/font-fallback-chain/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/font-fallback-chain/references/project-check.md": "2f721a20926162f11ce1df0b36586890dda0a56fbad752c0c1dc7f6d769bb07c"
+      }
     },
     {
       "id": "font-selection",
@@ -10042,6 +11981,43 @@
       "sha256": "c80b4bc269a3080a6ed90336f32a2150d7800115e4953e21319d667dfe2c33bc",
       "body_sha256": "8595e1136a6f0b614c3b7702668264a17e0ff58f3146f28700058f4e2b12ee55",
       "resource_sha256": {}
+    },
+    {
+      "id": "german-compound-linebreak",
+      "description": "Wrap long German and Nordic compound nouns cleanly at morphological constituent seams using explicit hyphens or soft-hyphen hints instead of mid-morpheme clipping.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "german compound linebreak",
+        "compound word hyphenation",
+        "Almanca birleşik kelime satır kırma",
+        "uzun kelime bölme",
+        "Komposita-Zeilenumbruch",
+        "Worttrennung bei Komposita",
+        "división de palabras compuestas",
+        "césure des mots composés"
+      ],
+      "requires": [],
+      "path": "library/typography/german-compound-linebreak/SKILL.md",
+      "estimated_words": 653,
+      "estimated_tokens": 1643,
+      "sha256": "5094d1875f452ddc169ff3d482d9174df58758c187ed059cb93bcb8a8e24b39d",
+      "body_sha256": "5b35b619c912666a5280fac2e258943c87b129e7908c5c05a5598dc2c0fa353d",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "text-overflow-audit",
+        "text-expansion-layout"
+      ],
+      "resources": [
+        "library/typography/german-compound-linebreak/references/compound-seam-rules.md"
+      ],
+      "resource_sha256": {
+        "library/typography/german-compound-linebreak/references/compound-seam-rules.md": "0489f1110b4e73af342c54d3bce44001a402cd002be0b3a8026c827b8e6196a2"
+      }
     },
     {
       "id": "kerning-tracking",
@@ -10089,6 +12065,43 @@
       "resource_sha256": {}
     },
     {
+      "id": "locale-aware-casing",
+      "description": "Transform display headings and kickers using locale-specific uppercase, lowercase, and title-case rules instead of ASCII-biased string methods.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "locale aware casing",
+        "localized uppercase",
+        "yerel büyük küçük harf",
+        "Türkçe İ ı harf dönüşümü",
+        "sprachabhängige Großschreibung",
+        "lokale Großbuchstaben",
+        "mayúsculas según idioma",
+        "casse sensible à la langue"
+      ],
+      "requires": [],
+      "path": "library/typography/locale-aware-casing/SKILL.md",
+      "estimated_words": 595,
+      "estimated_tokens": 1498,
+      "sha256": "0bbcd1aa0578312a217c000ba1c248341bf5431db6bae09867cf5183bc9a453e",
+      "body_sha256": "fd215476ac180870752e987a55a7f2a6331ad687d065bac30a9152a0b94c05e9",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "turkish-glyph-audit",
+        "multilingual-glyph-audit"
+      ],
+      "resources": [
+        "library/typography/locale-aware-casing/references/casing-mapping-table.md"
+      ],
+      "resource_sha256": {
+        "library/typography/locale-aware-casing/references/casing-mapping-table.md": "3f7c2578fda06bf047840d751e3ce6f8634f316f8246c8e2a1d2b7557eaf47f8"
+      }
+    },
+    {
       "id": "locale-formatting",
       "description": "Format dates, quantities and currency for a specified locale.",
       "category": "typography",
@@ -10134,6 +12147,44 @@
       "resource_sha256": {}
     },
     {
+      "id": "multilingual-caption-profiles",
+      "description": "Configure per-language characters-per-second ceilings, line-length limits, minimum hold floors, and shot-cut lead/lag snapping across six languages.",
+      "category": "typography",
+      "stage": "plan",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "multilingual caption profiles",
+        "per language subtitle timing",
+        "çok dilli altyazı profilleri",
+        "dile göre okuma hızı sınırı",
+        "mehrsprachige Untertitelprofile",
+        "Lesegeschwindigkeit je Sprache",
+        "perfiles de subtítulos multilingües",
+        "profils de sous-titres multilingues"
+      ],
+      "requires": [],
+      "path": "library/typography/multilingual-caption-profiles/SKILL.md",
+      "estimated_words": 682,
+      "estimated_tokens": 1685,
+      "sha256": "235df67f8ae8c74b542e368bc7c6b27709a71f05ab3f6857a0724c3660395726",
+      "body_sha256": "b8c3776bb2eab948e763837d3c97c6b8e0caadcb9f546daf2543a7aafe4aa7c3",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "reading-speed-audit",
+        "caption-segmentation",
+        "caption-translation"
+      ],
+      "resources": [
+        "library/typography/multilingual-caption-profiles/references/six-language-timing-matrix.md"
+      ],
+      "resource_sha256": {
+        "library/typography/multilingual-caption-profiles/references/six-language-timing-matrix.md": "5182acc60a3b97d9e2d9b9eca8c3b0bc08336b43d2d925196650157a4710bb39"
+      }
+    },
+    {
       "id": "multilingual-glyph-audit",
       "description": "Test a selected font against localized strings.",
       "category": "typography",
@@ -10153,24 +12204,112 @@
       "resource_sha256": {}
     },
     {
+      "id": "numeric-unit-typography",
+      "description": "Format animated counters, metrics, percentages, currencies, and SI units using tabular lining figures, true minus glyphs, non-breaking spaces, and locale separators.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "numeric unit typography",
+        "tabular figures formatting",
+        "sayı ve birim tipografisi",
+        "rakam hizalama kuralları",
+        "Zahlen- und Einheitentypografie",
+        "Tabellenziffern formatieren",
+        "tipografía numérica y unidades",
+        "typographie des nombres et unités"
+      ],
+      "requires": [],
+      "path": "library/typography/numeric-unit-typography/SKILL.md",
+      "estimated_words": 708,
+      "estimated_tokens": 1666,
+      "sha256": "6bf7844c067b4b3661124a7dc236d71da32fe88f8894a9bc32ed4d69dcc9c235",
+      "body_sha256": "f2f43db5725de1c2ea44cd1fed616007d4cc60f33c856c097836e43029f85f3e",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "variable-font-animation",
+        "locale-formatting",
+        "bar-chart-animation"
+      ],
+      "resources": [
+        "library/typography/numeric-unit-typography/references/locale-number-unit-rules.md"
+      ],
+      "resource_sha256": {
+        "library/typography/numeric-unit-typography/references/locale-number-unit-rules.md": "d56d74867c907ef8c1562bea7aed0dbf53684211f75604a0a3f31f8ce2c52ac4"
+      }
+    },
+    {
+      "id": "orphan-widow-line-balance",
+      "description": "Balance multi-line headings, subheadings, and captions using optical pixel-width ratios and linguistic phrase-break penalties so trailing single-word orphans never appear.",
+      "category": "typography",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "orphan widow balance",
+        "balanced line wrapping",
+        "yetim dul satır dengesi",
+        "dengeli satır kırma",
+        "Hurenkinder und Schusterjungen vermeiden",
+        "ausgewogener Zeilenumbruch",
+        "equilibrio de líneas huérfanas",
+        "équilibre des lignes orphelines"
+      ],
+      "requires": [],
+      "path": "library/typography/orphan-widow-line-balance/SKILL.md",
+      "estimated_words": 686,
+      "estimated_tokens": 1660,
+      "sha256": "13d0ebe6891798b061b6d65e4b0b44956d6d2c12d2dbea4138315daa358cc70c",
+      "body_sha256": "4cf263004920edd8ce813697973113619257c38a65a787812ec93adf50f0501e",
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "recommended_next": [
+        "caption-segmentation",
+        "visual-hierarchy",
+        "text-overflow-audit"
+      ],
+      "resources": [
+        "library/typography/orphan-widow-line-balance/references/dp-line-breaker.md"
+      ],
+      "resource_sha256": {
+        "library/typography/orphan-widow-line-balance/references/dp-line-breaker.md": "b025d94a79997d875e3d1266f0bd6987579294cdaceebf1d899542fe447e9b22"
+      }
+    },
+    {
       "id": "rtl-text-layout",
       "description": "Use for rtl text layout. Use proper bidirectional shaping and isolate mixed-direction tokens.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "arapça",
         "sağdan sola",
-        "rtl"
+        "rtl",
+        "rtl text layout",
+        "Rechts-nach-links-Satz",
+        "RTL-Layout",
+        "sağdan sola metin"
       ],
       "requires": [],
       "path": "library/typography/rtl-text-layout/SKILL.md",
-      "estimated_words": 398,
-      "estimated_tokens": 978,
-      "sha256": "8dbdbb76a20ee45388419655db66962c5286a0148af5e4dc710c74323b648bdf",
+      "estimated_words": 402,
+      "estimated_tokens": 1001,
+      "sha256": "b6853b1e966f48379e3253675043f485864daa5aad7d285084597c716b2965ae",
       "body_sha256": "b3d17706c9d0fda7639f3c1aa00b2bc9b30b82d709346f2ca8202a4f64302c22",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/rtl-text-layout/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/rtl-text-layout/references/project-check.md": "64b31f3a1a119adaed72d22ec32866ecb3d3e4e1003c9f3bb5ae0fb21634432d"
+      }
     },
     {
       "id": "subtitle-format-export",
@@ -10220,19 +12359,30 @@
       "description": "Test translated copy against its allocated region.",
       "category": "typography",
       "stage": "build",
-      "status": "guidance",
+      "status": "validated",
       "version": "1.0.0",
       "aliases": [
         "text expansion",
-        "metin genişlemesi"
+        "metin genişlemesi",
+        "text expansion layout",
+        "Textausdehnung-Layout",
+        "Sprachexpansion"
       ],
       "requires": [],
       "path": "library/typography/text-expansion-layout/SKILL.md",
-      "estimated_words": 71,
-      "estimated_tokens": 174,
-      "sha256": "b5978292451e82f7e6954c2c512ee1f852b79d98b5f1a24c5fae1fcfe0e98790",
+      "estimated_words": 72,
+      "estimated_tokens": 194,
+      "sha256": "f0f749646b0faf5d5d00b4bee0a23b7570638e8da3a9ef141be8dc70913875ce",
       "body_sha256": "8467aa38620100ab938418ff4117bb6921827e6d6c60336d8422568dc8602f57",
-      "resource_sha256": {}
+      "resources": [
+        "library/typography/text-expansion-layout/references/project-check.md"
+      ],
+      "conflicts": [
+        "textless-visual-design"
+      ],
+      "resource_sha256": {
+        "library/typography/text-expansion-layout/references/project-check.md": "bb6872e311cb277dba19575fae566ccd111a62815ddbba610f57b1b83885faef"
+      }
     },
     {
       "id": "text-mask-reveal",
@@ -10653,6 +12803,41 @@
       "resource_sha256": {}
     },
     {
+      "id": "optical-vignette-halation",
+      "description": "Apply subtle natural-lens peripheral falloff and thresholded warm highlight halation in linear light without crushing corners or reducing caption contrast.",
+      "category": "vfx",
+      "stage": "render",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "optical vignette",
+        "halation and vignette",
+        "optik vinyet ve halasyon",
+        "kenar karartma ve ışık halesi",
+        "optische Vignettierung",
+        "Lichtsaum und Randabfall",
+        "viñeteo óptico y halación",
+        "vignettage optique et halation"
+      ],
+      "requires": [],
+      "path": "library/vfx/optical-vignette-halation/SKILL.md",
+      "estimated_words": 673,
+      "estimated_tokens": 1656,
+      "sha256": "d3f2c047c0cc65e6533e3414806ed7642ed2da3e96eb263f23e6b121f4174d02",
+      "body_sha256": "d9513a3a769042c08de8f04214c79745d042b6b7a7514ccdcb2f6b975e0c7f97",
+      "recommended_next": [
+        "contrast-audit",
+        "agx-aces-tonemapping",
+        "debanding"
+      ],
+      "resources": [
+        "library/vfx/optical-vignette-halation/references/cos4-and-halation-shader.md"
+      ],
+      "resource_sha256": {
+        "library/vfx/optical-vignette-halation/references/cos4-and-halation-shader.md": "c9aa7a65725b3019f0520ccd237c0c38cbc1dcdbf2e6535b5bfee178d8faee7c"
+      }
+    },
+    {
       "id": "particle-3d",
       "description": "Use for particle 3d. Seed emitters, define world-space velocities and cap count and lifetime.",
       "category": "vfx",
@@ -10769,6 +12954,44 @@
       ],
       "resource_sha256": {
         "library/vfx/shader-effects/references/offline-webgl2.md": "0ff3fbc1d5f028c0fc9af893e52f697ee854fd20118bb74cc7e362555be2fc69"
+      }
+    },
+    {
+      "id": "shader-loop-art",
+      "description": "Author mathematically seamless periodic GLSL and procedural visual loops using 2*pi*f/N phase clocks, circular 4D noise trajectories, and stutter-free terminal frames.",
+      "category": "vfx",
+      "stage": "build",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "shader loop art",
+        "seamless glsl loop",
+        "kesintisiz gölgelendirici döngüsü",
+        "periyodik prosedürel döngü sanatı",
+        "nahtlose Shader-Schleife",
+        "periodische GLSL-Animation",
+        "arte de bucle en shader",
+        "boucle procédurale shader sans couture"
+      ],
+      "requires": [],
+      "path": "library/vfx/shader-loop-art/SKILL.md",
+      "estimated_words": 828,
+      "estimated_tokens": 1822,
+      "sha256": "bdef39f00cca395009f4c7990b9b800ee16bf72adb8a84e788e0dd4315bc62f6",
+      "body_sha256": "e2548ce27d34ba8fe8d0d4e16a57864e81cd0cac0d62ad66b3512a2cdceb6826",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "loop-seam-audit",
+        "signed-distance-fields",
+        "oklch-perceptual-palettes"
+      ],
+      "resources": [
+        "library/vfx/shader-loop-art/references/periodic-phase-and-noise-math.md"
+      ],
+      "resource_sha256": {
+        "library/vfx/shader-loop-art/references/periodic-phase-and-noise-math.md": "1efcfa10b567eb8b46b8f84cb4ee7cb9e953001528087f55361599ab6aa2ab4f"
       }
     },
     {
@@ -10896,23 +13119,64 @@
       "description": "Use for brand kit workflow. Store approved fonts, logos, palette, layout locks and legal text in reusable manifest.",
       "category": "workflow",
       "stage": "operate",
-      "status": "guidance",
+      "status": "validated",
       "version": "2.0.0",
       "aliases": [
         "brand kit",
-        "marka kiti"
+        "marka kiti",
+        "brand kit workflow",
+        "Markenpaket-Workflow",
+        "Brand-Kit-Anwendung"
       ],
       "requires": [],
       "path": "library/workflow/brand-kit-workflow/SKILL.md",
-      "estimated_words": 400,
-      "estimated_tokens": 991,
-      "sha256": "f48726f83645ebe6bf8dedc97046906d21f64fcb886a17f34abbc3e38b0571fe",
+      "estimated_words": 402,
+      "estimated_tokens": 1011,
+      "sha256": "042e0280938843fbabf881ffd0a0bd8b65d2fd90d3483cd25a22210ea9a19ce0",
       "body_sha256": "fa640db0d8e1e574a27abbf67f9a687c292b5f3affebe7c94150dad1257e66c0",
       "resources": [
         "library/workflow/brand-kit-workflow/references/project-check.md"
       ],
       "resource_sha256": {
         "library/workflow/brand-kit-workflow/references/project-check.md": "ea187c4dc34a4bbe4fe675641897b0dcc81b39ad5b422ed82d94ffc11a51377e"
+      }
+    },
+    {
+      "id": "format-runner-protocol",
+      "description": "Execute step-gated format pipelines (idea, script, look, frames, pilot, full, hero, qc) with approval checkpoints, upstream-edit cache invalidation, and hero render protection.",
+      "category": "workflow",
+      "stage": "operate",
+      "status": "validated",
+      "version": "2.0.0",
+      "aliases": [
+        "format runner protocol",
+        "step gated video pipeline",
+        "biçim yürütücü protokolü",
+        "onay kapılı üretim hattı",
+        "Format-Ausführungsprotokoll",
+        "Stufengesteuerte Render-Pipeline",
+        "protocolo de ejecución de formatos",
+        "protocole d'exécution de format"
+      ],
+      "requires": [],
+      "path": "library/workflow/format-runner-protocol/SKILL.md",
+      "estimated_words": 645,
+      "estimated_tokens": 1776,
+      "sha256": "95d1b2461e9143e7d79ffa8b55557e94792e223620775bd0c57a8fc58842e4b4",
+      "body_sha256": "57094e3413054b632a69ebba87263a56207a88a44321c25ffd89f77ecdc36dca",
+      "dependencies": [
+        "frame-clock"
+      ],
+      "recommended_next": [
+        "partial-render",
+        "resume-render",
+        "revision-diff"
+      ],
+      "resources": [
+        "library/workflow/format-runner-protocol/references/state-machine-and-invalidation.md"
+      ],
+      "resource_sha256": {
+        "library/workflow/format-runner-protocol/references/state-machine-and-invalidation.md": "b7cd9db28aeaebfd7a5dc18278c6e6b7d1d9af9527c943899a595a11e7cc527c"
       }
     },
     {

@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "çubuk grafik,bar chart"
+  aliases: "çubuk grafik,bar chart,bar chart animation,Balkendiagramm-Animation,animiertes Säulendiagramm"
   requires: ""
 ---
 

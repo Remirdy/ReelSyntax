@@ -6,7 +6,7 @@ metadata:
   stage: operate
   status: guidance
   version: "2.0.0"
-  aliases: "brand kit,marka kiti"
+  aliases: "brand kit,marka kiti,brand kit workflow,Markenpaket-Workflow,Brand-Kit-Anwendung"
   requires: ""
 ---
 

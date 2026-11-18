@@ -6,7 +6,7 @@ metadata:
   stage: export
   status: guidance
   version: "2.0.0"
-  aliases: "thumbnail,video kapak"
+  aliases: "thumbnail,video kapak,poster thumbnail,Vorschaubild-Poster,Thumbnail-Standbild"
   requires: ""
 ---
 

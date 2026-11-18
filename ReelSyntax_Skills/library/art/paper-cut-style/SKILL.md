@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "kağıt kesme,paper cut"
+  aliases: "kağıt kesme,paper cut,paper cut style,Scherenschnitt-Stil,Papierschnitt-Optik"
   requires: ""
 ---
 

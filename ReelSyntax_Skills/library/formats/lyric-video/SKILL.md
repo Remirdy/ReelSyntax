@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "şarkı sözü videosu,lyric video"
+  aliases: "şarkı sözü videosu,lyric video,Lyrik-Video,Songtext-Animation"
   requires: ""
 ---
 

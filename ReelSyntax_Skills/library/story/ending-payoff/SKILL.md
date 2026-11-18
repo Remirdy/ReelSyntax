@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "kapanış,final sahne"
+  aliases: "kapanış,final sahne,ending payoff,Abschluss-Pointe,Schlussauflösung"
   requires: ""
 ---
 

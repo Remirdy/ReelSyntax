@@ -1,0 +1,68 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "photo-slideshow-de",
+  "seed": 42,
+  "output": {"width": 1080, "height": 1920, "fps": "30/1"},
+  "delivery": {"language": "deu"},
+  "constraints": {"offline": true, "no_paid_services": true},
+  "scenes": [
+    {
+      "id": "beginn",
+      "duration_frames": 60,
+      "recipe": "prism-monolith",
+      "engine": "pillow",
+      "camera": {"preset": "dolly_in", "focal_mm": 50.0},
+      "params": {
+        "heading": "SPÄTES LICHT",
+        "subheading": "Gesammelte Eindrücke unterwegs.",
+        "background": "#332824",
+        "foreground": "#f7efe8",
+        "accent": "#df7a47"
+      }
+    },
+    {
+      "id": "tafel",
+      "duration_frames": 60,
+      "recipe": "shape-field",
+      "engine": "pillow",
+      "transition": {"type": "cross_dissolve", "duration_frames": 8},
+      "params": {
+        "background": "#332824",
+        "shapes": [
+          {"type": "rounded_rect", "x": 0.09, "y": 0.20, "w": 0.82, "h": 0.60, "radius": 0.03, "fill": "#473934", "stroke": "#df7a47", "stroke_width": 3},
+          {"type": "circle", "cx": 0.50, "cy": 0.44, "r": 0.16, "fill": "#df7a47"}
+        ]
+      }
+    },
+    {
+      "id": "abschluss",
+      "duration_frames": 60,
+      "recipe": "kinetic-type",
+      "engine": "pillow",
+      "transition": {"type": "cross_dissolve", "duration_frames": 8},
+      "params": {
+        "heading": "STILLE BUCHT",
+        "subheading": "Warme Farben vor der Nacht.",
+        "background": "#332824",
+        "foreground": "#f7efe8",
+        "accent": "#df7a47"
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -15,
+    "cues": [
+      {"frame": 0, "frequency": 262, "duration_frames": 20, "instrument": "warm_pad"},
+      {"frame": 60, "frequency": 330, "duration_frames": 20, "instrument": "harmonic_pluck"},
+      {"frame": 120, "frequency": 392, "duration_frames": 22, "instrument": "warm_pad"}
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [[0, 180]],
+      "silence": [[20, 60], [80, 120], [142, 180]]
+    }
+  }
+}

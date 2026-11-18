@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "silme geçişi,wipe"
+  aliases: "silme geçişi,wipe,wipe transition,Wischblende,Wipe-Übergang"
   requires: ""
 ---
 

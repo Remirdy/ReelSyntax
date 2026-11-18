@@ -16,6 +16,7 @@ jobs:
           python-version: '3.13'
       - run: python -m pip install ruff mypy coverage
       - run: ruff check reelsyntax ReelSyntax_Skills/tools tests tools
+      - run: python tools/release_prepare.py verify
       - run: mypy
       - run: coverage run -m unittest discover -s tests
       - run: coverage report --format=markdown >> "$GITHUB_STEP_SUMMARY"
@@ -55,20 +56,68 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - run: docker build -f .devcontainer/Dockerfile -t reelsyntax-media .
       - run: docker run --rm reelsyntax-media python -m reelsyntax doctor --json
-  media:
-    runs-on: ubuntu-latest
+  media-os:
+    name: media (${{ matrix.os }})
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
     env:
-      REELSYNTAX_MEDIA_TESTS: '1'
+      REELSYNTAX_MEDIA_TESTS: ${{ matrix.os == 'ubuntu-latest' && '1' || '' }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
         with:
-          python-version: '3.14'
+          python-version: '3.13'
       - run: python -m pip install '.[render]'
-      - run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - if: runner.os == 'Linux'
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+      - if: runner.os == 'macOS'
+        run: brew install ffmpeg
+      - if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          if (Get-Command ffmpeg -ErrorAction SilentlyContinue) { exit 0 }
+          choco install ffmpeg --no-progress -y
+          if ($LASTEXITCODE -eq 0 -and (Get-Command ffmpeg -ErrorAction SilentlyContinue)) { exit 0 }
+          $zip = Join-Path $env:RUNNER_TEMP 'ffmpeg.zip'
+          $dest = Join-Path $env:RUNNER_TEMP 'ffmpeg'
+          Invoke-WebRequest -Uri 'https://github.com/BtbN/FFmpeg-Builds/releases/download/latest/ffmpeg-master-latest-win64-gpl.zip' -OutFile $zip -MaximumRetryCount 5 -RetryIntervalSec 10
+          Expand-Archive -Path $zip -DestinationPath $dest -Force
+          $exe = Get-ChildItem -Path $dest -Recurse -Filter ffmpeg.exe | Select-Object -First 1
+          if (-not $exe) { throw 'ffmpeg.exe not found in downloaded archive' }
+          $exe.DirectoryName | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+          exit 0
       - run: ffmpeg -version
       - run: ffprobe -version
-      - run: python -m unittest discover -s tests -v
+      - run: reelsyntax doctor --json
+      - name: Verify cross-OS render and QC smoke pipeline
+        shell: python
+        run: |
+          import json
+          import pathlib
+          import subprocess
+          import sys
+          import tempfile
+
+          doc = json.loads(subprocess.check_output([sys.executable, "-m", "reelsyntax", "doctor", "--json"], text=True))
+          assert doc["result"]["render_available"], doc
+
+          proj = pathlib.Path(tempfile.mkdtemp()) / "smoke"
+          subprocess.check_call([sys.executable, "-m", "reelsyntax", "init", str(proj)])
+          subprocess.check_call([sys.executable, "-m", "reelsyntax", "render", str(proj), "--profile", "draft"])
+          qc = subprocess.run([sys.executable, "-m", "reelsyntax", "qc", str(proj), "--profile", "draft", "--json"], capture_output=True, text=True)
+          assert qc.returncode in (0, 2) and "frame_cadence" in qc.stdout, qc.stderr
+      - if: runner.os == 'Linux'
+        run: python -m unittest discover -s tests -v
+  media:
+    needs: [media-os]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all cross-OS media matrix legs to pass
+        run: test "${{ needs.media-os.result }}" = "success"
   docs:
     runs-on: ubuntu-latest
     steps:

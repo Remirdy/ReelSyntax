@@ -6,7 +6,7 @@ metadata:
   stage: export
   status: guidance
   version: "1.0.0"
-  aliases: "safe zones, güvenli alanlar"
+  aliases: "safe zones,güvenli alanlar,vertical safe zones,vertikale Sicherheitszonen,Hochformat-Schutzbereich"
   requires: ""
 ---
 

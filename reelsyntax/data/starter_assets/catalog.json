@@ -1,0 +1,149 @@
+{
+  "schema_version": 1,
+  "pack_id": "reelsyntax-starter-v1",
+  "license": "CC0-1.0",
+  "assets": [
+    {
+      "id": "ambient-focus-bed",
+      "kind": "music",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "bpm": 92,
+      "instrument": "warm_pad",
+      "notes_hz": [220, 262, 330, 392, 330, 294],
+      "gain_db": -16.0,
+      "description": "Calm warm-pad harmonic bed for explainers, tutorials, and minimal typography."
+    },
+    {
+      "id": "editorial-pulse-bed",
+      "kind": "music",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "bpm": 112,
+      "instrument": "harmonic_pluck",
+      "notes_hz": [294, 349, 440, 392, 330, 440],
+      "gain_db": -15.0,
+      "description": "Crisp rhythmic pluck bed for data stories, news tickers, and product walk-throughs."
+    },
+    {
+      "id": "sunrise-acoustic-bed",
+      "kind": "music",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "bpm": 100,
+      "instrument": "harmonic_pluck",
+      "notes_hz": [262, 330, 392, 494, 392, 330],
+      "gain_db": -15.5,
+      "description": "Warm major-seventh arpeggio bed for photo slideshows and personal reels."
+    },
+    {
+      "id": "kinetic-drive-bed",
+      "kind": "music",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "bpm": 124,
+      "instrument": "harmonic_pluck",
+      "notes_hz": [247, 294, 370, 440, 370, 330],
+      "gain_db": -14.5,
+      "description": "Upbeat bar-aligned pulse bed for social hooks, promos, and kinetic typography."
+    },
+    {
+      "id": "soft-whoosh",
+      "kind": "sfx",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "instrument": "whoosh",
+      "frequency_hz": 320,
+      "duration_sec": 0.42,
+      "gain_db": -13.0,
+      "description": "Smooth transition air sweep for slide and wipe cuts."
+    },
+    {
+      "id": "crisp-click",
+      "kind": "sfx",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "instrument": "click_transient",
+      "frequency_hz": 1480,
+      "duration_sec": 0.12,
+      "gain_db": -14.0,
+      "description": "Frame-tight UI transient for kinetic word pops and chapter markers."
+    },
+    {
+      "id": "sub-hit",
+      "kind": "sfx",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "instrument": "sub_impact",
+      "frequency_hz": 68,
+      "duration_sec": 0.65,
+      "gain_db": -12.5,
+      "description": "Grounded low-end accent for hook openings and hero reveals."
+    },
+    {
+      "id": "chime-rise",
+      "kind": "sfx",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "instrument": "harmonic_pluck",
+      "frequency_hz": 587,
+      "duration_sec": 0.50,
+      "gain_db": -14.0,
+      "description": "Clear harmonic bell accent for callouts and summary takeaways."
+    },
+    {
+      "id": "charcoal-editorial",
+      "kind": "palette",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "colors": {"background": "#2b303a", "foreground": "#f4f6f9", "accent": "#5aa6b0"},
+      "description": "Balanced dark slate palette meeting WCAG AA contrast and broadcast luma floor."
+    },
+    {
+      "id": "paper-ink",
+      "kind": "palette",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "colors": {"background": "#efeae1", "foreground": "#202421", "accent": "#b85236"},
+      "description": "Warm archival paper palette for editorial explainers and quotes."
+    },
+    {
+      "id": "warm-terracotta",
+      "kind": "palette",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "colors": {"background": "#332824", "foreground": "#f7efe8", "accent": "#df7a47"},
+      "description": "Earthy warm dark palette for personal stories and product highlights."
+    },
+    {
+      "id": "photo-plate-warm",
+      "kind": "graphic",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "width": 1440,
+      "height": 1440,
+      "colors": {"background": "#342a26", "foreground": "#f5ebe2", "accent": "#d97745"},
+      "motif": "horizon_sun",
+      "description": "Procedural warm geometric plate for immediate photo-slideshow previews."
+    },
+    {
+      "id": "photo-plate-cool",
+      "kind": "graphic",
+      "spdx": "CC0-1.0",
+      "author": "ReelSyntax Procedural Studio",
+      "width": 1440,
+      "height": 1440,
+      "colors": {"background": "#26313d", "foreground": "#ebf2f8", "accent": "#569cc7"},
+      "motif": "ridge_grid",
+      "description": "Procedural cool ridge plate for immediate photo-slideshow and layer-stack previews."
+    },
+    {
+      "id": "editorial-sans",
+      "kind": "font_preset",
+      "spdx": "OFL-1.1",
+      "author": "System / Open Font Stack",
+      "candidates": ["DejaVuSans.ttf", "LiberationSans-Regular.ttf", "HelveticaNeue.ttc", "segoeui.ttf"],
+      "description": "Multilingual sans-serif stack verified for Tier-1 and Tier-2 Latin diacritics."
+    }
+  ]
+}

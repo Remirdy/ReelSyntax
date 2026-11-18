@@ -1,5 +1,7 @@
 from fractions import Fraction
 import json
+from pathlib import Path
+import re
 import struct
 import wave
 
@@ -11,7 +13,22 @@ from .palette import contrast_ratio, hex_to_rgb, relative_luminance
 from .project import load
 from .render import verify_roi_locks
 from .skills import file_digest
-from .typography import check_glyph_coverage, resolve_font
+from .typography import check_glyph_coverage, glyph_sample_for_locale, resolve_font
+
+ISO3_TO_LOCALE = {
+    'eng': 'en',
+    'tur': 'tr',
+    'deu': 'de',
+    'spa': 'es',
+    'fra': 'fr',
+    'por': 'pt',
+    'pol': 'pl',
+    'vie': 'vi',
+    'ara': 'ar',
+    'zho': 'zh',
+    'jpn': 'ja',
+    'kor': 'ko',
+}
 
 
 def _check_typography_and_glyphs(plan: dict) -> tuple[dict, dict]:
@@ -49,6 +66,16 @@ def _check_typography_and_glyphs(plan: dict) -> tuple[dict, dict]:
             {'id': 'typography_contrast', 'status': 'not-applicable', 'observed': [], 'expected': 'no scene text'},
             {'id': 'glyph_coverage', 'status': 'not-applicable', 'observed': {}, 'expected': 'no scene text'},
         )
+    iso_lang = plan.get('delivery', {}).get('language')
+    mapped_locale = ISO3_TO_LOCALE.get(iso_lang) if iso_lang else None
+    if mapped_locale:
+        try:
+            req_sample = glyph_sample_for_locale(mapped_locale)
+            prof_cov = check_glyph_coverage(req_sample, resolve_font(24))
+            if not prof_cov['ok']:
+                missing_glyphs[f'lang_profile.{mapped_locale}'] = prof_cov['missing_chars']
+        except ValueError:
+            pass
     contrast_ok = all(x['ok'] for x in contrast_observations)
     glyph_ok = len(missing_glyphs) == 0
     return (
@@ -112,7 +139,180 @@ def _check_temporal_continuity(root, manifest: dict) -> dict:
     }
 
 
-def check(project, profile='draft', *, loop=False, html=False):
+QUANTITATIVE_CLAIM_RE = re.compile(r'(?:\b\d+(?:[.,]\d+)?\s*(?:%|x\b|times\b|kat\b|fach\b)|#\s*1\b)', re.IGNORECASE)
+
+
+def check_reading_speed(plan: dict, rules: set[str] | None = None) -> dict:
+    from .lang.profiles import load_profile
+
+    fps_val = float(Fraction(plan['output']['fps']))
+    iso_lang = plan.get('delivery', {}).get('language')
+    loc = ISO3_TO_LOCALE.get(iso_lang, 'en') if iso_lang else 'en'
+    try:
+        max_cps = float(load_profile(loc)['caption']['max_cps'])
+    except ValueError:
+        max_cps = 20.0
+
+    pass_cap = max_cps * 1.85
+    fail_cap = max_cps * 2.75
+    observations = []
+    for scene in plan['scenes']:
+        params = scene.get('params', {})
+        text_joined = ' '.join(str(params.get(k, '')).strip() for k in ('heading', 'subheading') if params.get(k)).strip()
+        if not text_joined:
+            continue
+        dur_sec = max(1e-3, scene['duration_frames'] / fps_val)
+        cps = round(len(text_joined) / dur_sec, 2)
+        observations.append({
+            'scene': scene['id'],
+            'chars': len(text_joined),
+            'duration_sec': round(dur_sec, 3),
+            'cps': cps,
+            'ok': cps <= pass_cap,
+            'severe': cps > fail_cap,
+        })
+    if not observations:
+        return {'id': 'reading_speed', 'status': 'not-applicable', 'observed': [], 'expected': 'no timed text'}
+    if rules is not None and 'reading-speed' not in rules:
+        st = 'pass' if all(x['ok'] for x in observations) else 'measured'
+    elif any(x['severe'] for x in observations):
+        st = 'fail'
+    elif any(not x['ok'] for x in observations):
+        st = 'review'
+    else:
+        st = 'pass'
+    return {
+        'id': 'reading_speed',
+        'status': st,
+        'observed': observations,
+        'expected': f'card CPS <= {round(pass_cap, 1)} for locale {loc}',
+    }
+
+
+def check_vertical_safe_zones(root: Path, plan: dict, manifest: dict) -> dict:
+    out_settings = manifest.get('output_settings', plan['output'])
+    w = float(out_settings['width'])
+    h = float(out_settings['height'])
+    if h <= w:
+        return {'id': 'vertical_safe_zones', 'status': 'not-applicable', 'observed': 'landscape_or_square', 'expected': 'vertical canvas'}
+
+    violations = []
+    checked_boxes = 0
+    for s_entry in manifest.get('scenes', []):
+        cache_manifest = contained_path(root, f".reelsyntax/cache/{s_entry['cache_key']}/manifest.json", must_exist=False)
+        if not cache_manifest.is_file():
+            continue
+        c_doc = read_json(cache_manifest)
+        for sample in c_doc.get('layout_samples', []):
+            for item in sample.get('text', []):
+                b = item.get('bounds', [])
+                if len(b) == 4:
+                    checked_boxes += 1
+                    x0, y0, x1, y1 = (float(v) for v in b)
+                    if x0 < w * 0.02 or x1 > w * 0.98 or y0 < h * 0.04 or y1 > h * 0.94:
+                        violations.append({'scene': s_entry['id'], 'field': item.get('field'), 'bounds': b})
+    if checked_boxes == 0:
+        return {'id': 'vertical_safe_zones', 'status': 'not-applicable', 'observed': [], 'expected': 'vertical text bounds'}
+    return {
+        'id': 'vertical_safe_zones',
+        'status': 'fail' if violations else 'pass',
+        'observed': {'checked_boxes': checked_boxes, 'violations': violations},
+        'expected': 'text bounds inside [2%..98% width, 4%..94% height]',
+    }
+
+
+def check_opening_hook_window(plan: dict, rules: set[str]) -> dict:
+    if 'opening-hook' not in rules:
+        return {'id': 'opening_hook', 'status': 'not-applicable', 'observed': None, 'expected': 'opening-hook rule inactive'}
+    fps_val = float(Fraction(plan['output']['fps']))
+    first = plan['scenes'][0]
+    dur_sec = round(first['duration_frames'] / fps_val, 3)
+    params = first.get('params', {})
+    has_visual_hook = bool(params.get('heading') or params.get('kicker') or first['recipe'] != 'title')
+    ok = dur_sec <= 2.5 and has_visual_hook
+    return {
+        'id': 'opening_hook',
+        'status': 'pass' if ok else 'fail',
+        'observed': {'first_scene_sec': dur_sec, 'has_visual_hook': has_visual_hook},
+        'expected': 'first scene <= 2.5s with immediate visual hook',
+    }
+
+
+def check_claims_sourced(root: Path, plan: dict, rules: set[str]) -> dict:
+    if 'claims-must-be-sourced' not in rules:
+        return {'id': 'claims_sourced', 'status': 'not-applicable', 'observed': [], 'expected': 'claims rule inactive'}
+    claims_found = []
+    for scene in plan['scenes']:
+        params = scene.get('params', {})
+        for field in ('heading', 'subheading', 'kicker'):
+            val = str(params.get(field, ''))
+            for m in QUANTITATIVE_CLAIM_RE.finditer(val):
+                claims_found.append({'scene': scene['id'], 'field': field, 'claim': m.group(0)})
+    if not claims_found:
+        return {'id': 'claims_sourced', 'status': 'pass', 'observed': [], 'expected': 'zero unsourced quantitative claims'}
+
+    sources_ok = False
+    sources_file = contained_path(root, 'sources.json', must_exist=False)
+    if sources_file.is_file():
+        s_doc = read_json(sources_file)
+        sources_ok = bool(s_doc)
+    if not sources_ok:
+        prov_file = contained_path(root, 'prompt.json', must_exist=False)
+        if prov_file.is_file():
+            p_doc = read_json(prov_file)
+            sources_ok = bool(isinstance(p_doc, dict) and p_doc.get('sources'))
+    return {
+        'id': 'claims_sourced',
+        'status': 'pass' if sources_ok else 'fail',
+        'observed': {'claims': claims_found, 'has_sources': sources_ok},
+        'expected': 'quantitative marketing/data claims backed by sources.json or prompt.json sources',
+    }
+
+
+def check_asset_licenses(root: Path, plan: dict) -> dict:
+    ledger_file = contained_path(root, '.reelsyntax/asset-licenses.json', must_exist=False)
+    if not ledger_file.is_file():
+        return {'id': 'asset_licenses', 'status': 'not-applicable', 'observed': None, 'expected': 'no asset license ledger'}
+    from .assets.license import audit_project_licenses
+
+    res = audit_project_licenses(root)
+    return {
+        'id': 'asset_licenses',
+        'status': 'pass' if res['ok'] else 'fail',
+        'observed': {'missing': res['missing_licenses'], 'mismatches': res['hash_mismatches']},
+        'expected': 'all referenced file assets registered with approved SPDX licenses and matching digests',
+    }
+
+
+def check_mouth_sync(plan: dict) -> dict:
+    synced_scenes = [s for s in plan['scenes'] if isinstance(s.get('params', {}).get('mouth_envelope'), list)]
+    if not synced_scenes:
+        return {'id': 'mouth_sync', 'status': 'not-applicable', 'observed': [], 'expected': 'no character mouth envelope'}
+    mismatches = [
+        s['id']
+        for s in synced_scenes
+        if abs(len(s['params']['mouth_envelope']) - int(s['duration_frames'])) > 2
+    ]
+    return {
+        'id': 'mouth_sync',
+        'status': 'fail' if mismatches else 'pass',
+        'observed': {'checked_scenes': [s['id'] for s in synced_scenes], 'mismatches': mismatches},
+        'expected': 'mouth envelope length matches scene duration within <= 2 frames',
+    }
+
+
+def _resolve_active_qc_rules(root: Path, explicit_rules: list[str] | set[str] | None) -> set[str]:
+    if explicit_rules is not None:
+        return set(explicit_rules)
+    fstate = contained_path(root, '.formats/state.json', must_exist=False)
+    if fstate.is_file():
+        doc = read_json(fstate)
+        if isinstance(doc, dict) and isinstance(doc.get('manifest'), dict):
+            return set(doc['manifest'].get('qc_rules', []))
+    return set()
+
+
+def check(project, profile='draft', *, loop=False, html=False, rules=None):
     root, plan, metadata = load(project)
     manifest = read_json(contained_path(root, f'output/{profile}-manifest.json'))
     if manifest['plan_sha256'] != metadata['plan_sha256']:
@@ -130,6 +330,8 @@ def check(project, profile='draft', *, loop=False, html=False):
         'audio_required': plan['audio']['enabled'], 'audio_forbidden': not plan['audio']['enabled'], 'sample_rate': 48000,
     }
     allowed = {key: [[float(Fraction(a, 1) / fps), float(Fraction(b, 1) / fps)] for a, b in intervals] for key, intervals in plan.get('quality', {}).get('exceptions', {}).items()}
+    if manifest.get('reduced_motion'):
+        allowed.setdefault('freeze', []).append([0.0, float(Fraction(metadata['frames'], 1) / fps)])
     checks = audit(artifact, expected, allowed, tools={'ffmpeg': executable('ffmpeg'), 'ffprobe': executable('ffprobe')})
     timestamp_data = json.loads(run([
         executable('ffprobe'), '-v', 'error', '-select_streams', 'v:0', '-show_frames',
@@ -150,6 +352,13 @@ def check(project, profile='draft', *, loop=False, html=False):
     checks.append(glyph_cov_check)
     checks.append(_check_cue_onset_alignment(root, plan, profile, fps))
     checks.append(_check_temporal_continuity(root, manifest))
+    active_rules = _resolve_active_qc_rules(root, rules)
+    checks.append(check_reading_speed(plan, active_rules))
+    checks.append(check_vertical_safe_zones(root, plan, manifest))
+    checks.append(check_opening_hook_window(plan, active_rules))
+    checks.append(check_claims_sourced(root, plan, active_rules))
+    checks.append(check_asset_licenses(root, plan))
+    checks.append(check_mouth_sync(plan))
 
     from .review import html_report, motion_checks
     checks.extend(motion_checks(artifact, fps, metadata['frames'], loop))

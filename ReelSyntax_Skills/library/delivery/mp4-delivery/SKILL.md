@@ -6,7 +6,7 @@ metadata:
   stage: export
   status: guidance
   version: "2.0.0"
-  aliases: "mp4 çıktı,h264"
+  aliases: "mp4 çıktı,h264,mp4 delivery,MP4-Auslieferung,H.264-Webmaster"
   requires: ""
 ---
 

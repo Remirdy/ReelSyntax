@@ -1,0 +1,62 @@
+[
+  {
+    "name": "good first issue",
+    "color": "7057ff",
+    "description": "Self-contained starter task for new contributors (formats, aliases, locale fixtures)"
+  },
+  {
+    "name": "help wanted",
+    "color": "008672",
+    "description": "Community contributions and native-speaker reviews welcome"
+  },
+  {
+    "name": "format",
+    "color": "1d76db",
+    "description": "Declarative prompt-to-video format recipes and templates"
+  },
+  {
+    "name": "i18n",
+    "color": "0e8a16",
+    "description": "Locale catalogs, language profiles, glyph coverage, and multilingual routing"
+  },
+  {
+    "name": "skills",
+    "color": "5319e7",
+    "description": "Specialist production skills, relations, and routing benchmark cases"
+  },
+  {
+    "name": "render",
+    "color": "d93f0b",
+    "description": "Pillow, Chromium, Blender, and FFmpeg rendering engines"
+  },
+  {
+    "name": "qc",
+    "color": "fbca04",
+    "description": "Technical quality control, loudness, cadence, contrast, and visual checks"
+  },
+  {
+    "name": "security",
+    "color": "b60205",
+    "description": "Path boundaries, untrusted prompt handling, dependency audits, and sandboxing"
+  },
+  {
+    "name": "docs",
+    "color": "0075ca",
+    "description": "Documentation, setup guides, schemas, and prompt cookbook"
+  },
+  {
+    "name": "windows",
+    "color": "bfdadc",
+    "description": "Windows path discovery, subprocess management, and CI"
+  },
+  {
+    "name": "macos",
+    "color": "c5def5",
+    "description": "macOS binary discovery, Metal/Blender integration, and CI"
+  },
+  {
+    "name": "linux",
+    "color": "d4c5f9",
+    "description": "Linux packages, container builds, and headless rendering"
+  }
+]

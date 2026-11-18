@@ -1,0 +1,111 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "news-ticker-en",
+  "seed": 42,
+  "output": {
+    "width": 1080,
+    "height": 1920,
+    "fps": "30/1"
+  },
+  "delivery": {
+    "language": "eng"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true,
+    "camera_locked": true
+  },
+  "scenes": [
+    {
+      "id": "story-1",
+      "duration_frames": 90,
+      "recipe": "news-ticker",
+      "engine": "pillow",
+      "params": {
+        "kicker": "BRIEFING",
+        "heading": "LOCAL BUILD READY",
+        "subheading": "Queue clear • Offline render green",
+        "background": "#1e2430",
+        "foreground": "#f4f6f9",
+        "accent": "#e06246"
+      }
+    },
+    {
+      "id": "story-2",
+      "duration_frames": 90,
+      "recipe": "news-ticker",
+      "engine": "pillow",
+      "params": {
+        "kicker": "UPDATE",
+        "heading": "CACHE ENGINE SYNCED",
+        "subheading": "Draft fast • Hero profile locked",
+        "background": "#1e2430",
+        "foreground": "#f4f6f9",
+        "accent": "#e06246"
+      }
+    },
+    {
+      "id": "story-3",
+      "duration_frames": 90,
+      "recipe": "news-ticker",
+      "engine": "pillow",
+      "params": {
+        "kicker": "UPDATE",
+        "heading": "SAFE ZONE VERIFIED",
+        "subheading": "Clean frames • Ready for export",
+        "background": "#1e2430",
+        "foreground": "#f4f6f9",
+        "accent": "#e06246"
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 294,
+        "duration_frames": 16,
+        "instrument": "click_transient"
+      },
+      {
+        "frame": 90,
+        "frequency": 330,
+        "duration_frames": 18,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 180,
+        "frequency": 392,
+        "duration_frames": 18,
+        "instrument": "warm_pad"
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [
+        [
+          0,
+          270
+        ]
+      ],
+      "silence": [
+        [
+          16,
+          90
+        ],
+        [
+          108,
+          180
+        ],
+        [
+          198,
+          270
+        ]
+      ]
+    }
+  }
+}

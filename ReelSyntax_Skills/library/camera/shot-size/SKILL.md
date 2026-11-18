@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "plan ölçeği,yakın çekim"
+  aliases: "plan ölçeği,yakın çekim,shot size,Einstellungsgröße,Kamera-Einstellungsgröße"
   requires: ""
 ---
 

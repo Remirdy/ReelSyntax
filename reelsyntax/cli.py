@@ -12,18 +12,130 @@ def parser():
     root = argparse.ArgumentParser(prog='reelsyntax', description='Local skill routing, unified MCP gateway, and deterministic video production.')
     root.add_argument('--version', action='version', version=__version__)
     root.add_argument('--config', type=Path, help='Explicit reelsyntax.toml configuration file')
+    root.add_argument('--ui-lang', help='Interface locale code (for example en, tr, de)')
     commands = root.add_subparsers(dest='command', required=True)
 
     schema = commands.add_parser('schema', help='Print the editor JSON Schema')
-    schema.add_argument('--kind', choices=['reel', 'config'], default='reel')
+    schema.add_argument('--kind', choices=['reel', 'config', 'format'], default='reel')
     schema.add_argument('--schema-version', type=int, default=1)
     schema.add_argument('--output', type=Path)
+
+    comp = commands.add_parser('completion', help='Generate shell tab-completion script')
+    comp.add_argument('shell', choices=['bash', 'zsh', 'fish', 'powershell'])
+    comp.add_argument('--output', type=Path)
+
+    make_cmd = commands.add_parser('make', help='Create a video project from a natural-language prompt')
+    make_cmd.add_argument('prompt')
+    make_cmd.add_argument('--format', dest='format_id')
+    make_cmd.add_argument('--out', dest='out_dir', type=Path)
+    make_cmd.add_argument('--provider')
+    make_cmd.add_argument('--model')
+    make_cmd.add_argument('--lang')
+    make_cmd.add_argument('--aspect', choices=['9:16', '1:1', '16:9', '4:5'])
+    make_cmd.add_argument('--duration', type=int)
+    make_cmd.add_argument('--seed', type=int, default=42)
+    make_cmd.add_argument('-y', '--yes', action='store_true')
+    make_cmd.add_argument('--dry-run', action='store_true')
+    make_cmd.add_argument('--allow-network', action='store_true')
+    make_cmd.add_argument('--attribution', action='store_true')
+    make_cmd.add_argument('--json', action='store_true')
+
+    step_cmd = commands.add_parser('step', help='Inspect, approve, edit, or step back a format workflow step')
+    step_cmd.add_argument('project', type=Path)
+    step_cmd.add_argument('step_id')
+    step_cmd.add_argument('--approve', action='store_true')
+    step_cmd.add_argument('--edit')
+    step_cmd.add_argument('--back', action='store_true')
+    step_cmd.add_argument('-y', '--yes', action='store_true')
+    step_cmd.add_argument('--provider')
+    step_cmd.add_argument('--model')
+    step_cmd.add_argument('--allow-network', action='store_true')
+    step_cmd.add_argument('--json', action='store_true')
+
+    revise_cmd = commands.add_parser('revise', help='Apply a targeted revision to unlocked scenes in a project')
+    revise_cmd.add_argument('project', type=Path)
+    revise_cmd.add_argument('instruction')
+    revise_cmd.add_argument('--scene')
+    revise_cmd.add_argument('--provider')
+    revise_cmd.add_argument('--model')
+    revise_cmd.add_argument('--allow-network', action='store_true')
+    revise_cmd.add_argument('--render', action='store_true')
+    revise_cmd.add_argument('--profile', choices=['draft', 'production', 'hero'])
+    revise_cmd.add_argument('--json', action='store_true')
 
     migrate = commands.add_parser('migrate', help='Upgrade a legacy or unversioned reel.json to the current schema version')
     migrate.add_argument('project', type=Path)
     migrate.add_argument('--dry-run', action='store_true')
     migrate.add_argument('--remote-schema', action='store_true')
     migrate.add_argument('--json', action='store_true')
+
+    lang_cmd = commands.add_parser('lang', help='Inspect, scaffold, or validate language profiles and UI locale catalogs')
+    lang_sub = lang_cmd.add_subparsers(dest='action', required=True)
+    lang_list = lang_sub.add_parser('list')
+    lang_list.add_argument('--json', action='store_true')
+    lang_show = lang_sub.add_parser('show')
+    lang_show.add_argument('locale')
+    lang_show.add_argument('--json', action='store_true')
+    lang_new = lang_sub.add_parser('new')
+    lang_new.add_argument('locale')
+    lang_new.add_argument('--root', type=Path)
+    lang_new.add_argument('--json', action='store_true')
+    lang_val = lang_sub.add_parser('validate')
+    lang_val.add_argument('locale', nargs='?')
+    lang_val.add_argument('--root', type=Path)
+    lang_val.add_argument('--json', action='store_true')
+
+    fmt_cmd = commands.add_parser('formats', help='List, inspect, scaffold, or validate prompt-to-video formats')
+    fmt_sub = fmt_cmd.add_subparsers(dest='action', required=True)
+    fmt_list = fmt_sub.add_parser('list')
+    fmt_list.add_argument('--category')
+    fmt_list.add_argument('--json', action='store_true')
+    fmt_show = fmt_sub.add_parser('show')
+    fmt_show.add_argument('id')
+    fmt_show.add_argument('--json', action='store_true')
+    fmt_new = fmt_sub.add_parser('new')
+    fmt_new.add_argument('target')
+    fmt_new.add_argument('--category', default='social')
+    fmt_new.add_argument('--base-dir', type=Path)
+    fmt_new.add_argument('--json', action='store_true')
+    fmt_val = fmt_sub.add_parser('validate')
+    fmt_val.add_argument('target')
+    fmt_val.add_argument('--json', action='store_true')
+    fmt_inst = fmt_sub.add_parser('install')
+    fmt_inst.add_argument('source')
+    fmt_inst.add_argument('--subdir')
+    fmt_inst.add_argument('--ref')
+    fmt_inst.add_argument('--allow-network', action='store_true')
+    fmt_inst.add_argument('--force', action='store_true')
+    fmt_inst.add_argument('--json', action='store_true')
+    fmt_uninst = fmt_sub.add_parser('uninstall')
+    fmt_uninst.add_argument('id')
+    fmt_uninst.add_argument('--json', action='store_true')
+    fmt_installed = fmt_sub.add_parser('installed')
+    fmt_installed.add_argument('--json', action='store_true')
+
+    assets_cmd = commands.add_parser('assets', help='List starter assets, materialize procedural beds/plates, register files, or audit licenses')
+    assets_sub = assets_cmd.add_subparsers(dest='action', required=True)
+    assets_list = assets_sub.add_parser('list')
+    assets_list.add_argument('--kind', choices=['music', 'sfx', 'palette', 'graphic', 'font_preset'])
+    assets_list.add_argument('--json', action='store_true')
+    assets_mat = assets_sub.add_parser('materialize')
+    assets_mat.add_argument('project', type=Path)
+    assets_mat.add_argument('--id', action='append', dest='asset_ids')
+    assets_mat.add_argument('--duration', type=float, default=8.0)
+    assets_mat.add_argument('--seed', type=int, default=42)
+    assets_mat.add_argument('--json', action='store_true')
+    assets_reg = assets_sub.add_parser('register')
+    assets_reg.add_argument('project', type=Path)
+    assets_reg.add_argument('source', type=Path)
+    assets_reg.add_argument('--spdx', default='User-Provided')
+    assets_reg.add_argument('--author', default='Project Owner')
+    assets_reg.add_argument('--attribution', default='')
+    assets_reg.add_argument('--json', action='store_true')
+    assets_lic = assets_sub.add_parser('licenses')
+    assets_lic.add_argument('project', type=Path)
+    assets_lic.add_argument('--write', action='store_true')
+    assets_lic.add_argument('--json', action='store_true')
 
     cfg_cmd = commands.add_parser('config', help='Inspect, initialize, or validate reelsyntax.toml configuration')
     cfg_sub = cfg_cmd.add_subparsers(dest='action', required=True)
@@ -69,6 +181,11 @@ def parser():
     plugin.add_argument('--output', required=True, type=Path)
     plugin.add_argument('--allow-plugin', action='store_true')
     doctor = commands.add_parser('doctor', help='Report installed media and first-party MCP dependencies without installing anything')
+    doctor.add_argument('--providers', action='store_true', help='Include local and configured LLM provider diagnostics')
+    doctor.add_argument('--blender', action='store_true', help='Run headless Blender runtime probe when binary is present')
+    doctor.add_argument('--tts', action='store_true', help='Measure per-language local speech synthesis availability')
+    doctor.add_argument('--stt', action='store_true', help='Measure local speech-to-text runtime availability')
+    doctor.add_argument('--report', action='store_true', help='Emit a path-redacted diagnostic report suitable for bug reports')
     doctor.add_argument('--json', action='store_true')
 
     integrations_cmd = commands.add_parser('integrations', help='Inspect first-party BlenderMCP and AfterEffectsMCP submodule and runtime status')
@@ -93,6 +210,13 @@ def parser():
     update_cmd.add_argument('--apply', action='store_true', help='Apply validated upstream submodule update instead of check-only')
     update_cmd.add_argument('--rollback', action='store_true', help='Roll submodule back to last known working commit')
     update_cmd.add_argument('--json', action='store_true')
+
+    ui_cmd = commands.add_parser('ui', help='Start the offline localhost web studio for formats, projects, approvals, and revisions')
+    ui_cmd.add_argument('--host', default='127.0.0.1', help='Bind address; loopback only unless --allow-non-loopback is given')
+    ui_cmd.add_argument('--port', type=int, default=8765, help='TCP port (0 picks a free ephemeral port)')
+    ui_cmd.add_argument('--project', type=Path, help='Project or workspace directory to browse; defaults to the current directory')
+    ui_cmd.add_argument('--no-open', action='store_true', help='Do not open a browser window')
+    ui_cmd.add_argument('--allow-non-loopback', action='store_true', help='Explicitly allow binding a non-loopback address')
 
     mcp = commands.add_parser('mcp', help='Start the Unified MCP Gateway stdio server')
     mcp.add_argument('--workspace', type=Path, default=Path.cwd(), help='Authorized project root; defaults to the current directory')
@@ -119,7 +243,13 @@ def parser():
             command.add_argument('--set', action='append', default=[], metavar='SCENE.FIELD=TEXT')
             command.add_argument('--brand', help='Project-relative brand kit JSON')
             command.add_argument('--queue', help='Project-relative delivery jobs JSON')
+        else:
+            command.add_argument('-y', '--yes', action='store_true')
+            command.add_argument('--provider')
+            command.add_argument('--model')
+            command.add_argument('--allow-network', action='store_true')
         command.add_argument('--allow-browser-module', action='store_true')
+        command.add_argument('--reduced-motion', action='store_true', help='Replace rapid wipes/glitches with dissolves and lock moving cameras')
         command.add_argument('--max-frames', type=int, default=18000)
         command.add_argument('--timeout', type=int, help='Per media process timeout in seconds')
         command.add_argument('--fallback', choices=['pillow', 'browser'], help='Graceful fallback engine when optional Blender is absent')
@@ -142,6 +272,7 @@ def parser():
     qc.add_argument('--profile', choices=['draft', 'production', 'hero'])
     qc.add_argument('--loop', action='store_true')
     qc.add_argument('--html', action='store_true')
+    qc.add_argument('--rule', action='append', dest='qc_rules', help='Explicitly activate format QC rule (for example opening-hook or claims-must-be-sourced)')
     audio = commands.add_parser('audio').add_subparsers(dest='operation', required=True)
     analyze = audio.add_parser('analyze', help='Find frame-aligned transients in a PCM WAV')
     analyze.add_argument('source', type=Path)
@@ -316,10 +447,186 @@ def execute(args):
         return _execute_with_config(args, load_config)
 
 
+def lang_command(args):
+    from .lang import list_profiles, load_locale_status, load_profile, scaffold_language, validate_language
+
+    if args.action == 'list':
+        status = load_locale_status()
+        profiles = set(list_profiles())
+        items = []
+        for code, meta in sorted(status['locales'].items()):
+            items.append({
+                'locale': code,
+                'tier': meta['tier'],
+                'name': meta['name'],
+                'native_name': meta['native_name'],
+                'maintainer': meta['maintainer'],
+                'verified_by_owner': meta['verified_by_owner'],
+                'draft_translation': not meta['verified_by_owner'] and code != status.get('source_locale', 'en'),
+                'has_profile': code in profiles,
+            })
+        return {'source_locale': status['source_locale'], 'locales': items}
+    if args.action == 'show':
+        status = load_locale_status()
+        prof = load_profile(args.locale)
+        meta = status['locales'].get(prof['id'], {})
+        return {'profile': prof, 'status': meta}
+    if args.action == 'new':
+        target_root = args.root if args.root is not None else Path.cwd()
+        return scaffold_language(args.locale, root=target_root)
+    if args.action == 'validate':
+        if args.locale:
+            return validate_language(args.locale, root=args.root)
+        status = load_locale_status(root=args.root)
+        checked = [validate_language(code, root=args.root) for code in sorted(status['locales'])]
+        return {'validated_count': len(checked), 'locales': checked}
+    raise ValueError('Unsupported lang action')
+
+
+def formats_command(args):
+    from .config import load_config
+    from .formats import (
+        discover_formats,
+        get_format,
+        install_format,
+        list_installed_formats,
+        scaffold_format,
+        uninstall_format,
+        validate_format_directory,
+    )
+
+    if args.action == 'list':
+        rows = discover_formats(category=args.category)
+        return {
+            'total': len(rows),
+            'formats': [
+                {
+                    'id': r['id'],
+                    'version': r['version'],
+                    'category': r['category'],
+                    'title': r['title'],
+                    'aspect': r['aspect'],
+                    'engines': r['engines'],
+                }
+                for r in rows
+            ],
+        }
+    if args.action == 'show':
+        return get_format(args.id)
+    if args.action == 'new':
+        return scaffold_format(args.target, category=args.category, base_dir=args.base_dir)
+    if args.action == 'validate':
+        target_path = Path(args.target)
+        if target_path.is_dir():
+            return validate_format_directory(target_path)
+        info = get_format(args.target)
+        return validate_format_directory(Path(info['path']))
+    if args.action == 'install':
+        net = bool(args.allow_network or load_config().general.allow_network)
+        return install_format(
+            args.source,
+            subdir=args.subdir,
+            ref=args.ref,
+            allow_network=net,
+            force=args.force,
+        )
+    if args.action == 'uninstall':
+        return uninstall_format(args.id)
+    if args.action == 'installed':
+        rows = list_installed_formats()
+        return {'total': len(rows), 'installed': rows}
+    raise ValueError('Unsupported formats action')
+
+
+def assets_command(args):
+    from .assets import (
+        audit_project_licenses,
+        list_starter_assets,
+        materialize_starter_pack,
+        register_local_asset,
+        write_licenses_markdown,
+    )
+
+    if args.action == 'list':
+        rows = list_starter_assets(kind=args.kind)
+        return {'total': len(rows), 'assets': rows}
+    if args.action == 'materialize':
+        return materialize_starter_pack(
+            args.project,
+            asset_ids=args.asset_ids,
+            duration_sec=args.duration,
+            seed=args.seed,
+        )
+    if args.action == 'register':
+        return register_local_asset(
+            args.project,
+            args.source,
+            spdx=args.spdx,
+            author=args.author,
+            attribution=args.attribution,
+        )
+    if args.action == 'licenses':
+        audit = audit_project_licenses(args.project)
+        if args.write:
+            out = write_licenses_markdown(args.project)
+            audit['licenses_markdown'] = out.relative_to(Path(args.project).resolve(strict=True)).as_posix()
+        return audit
+    raise ValueError('Unsupported assets action')
+
+
 def _execute_with_config(args, load_config):
     from . import project
     if args.command == 'config':
         return config_command(args)
+    if args.command == 'lang':
+        return lang_command(args)
+    if args.command == 'formats':
+        return formats_command(args)
+    if args.command == 'assets':
+        return assets_command(args)
+    if args.command == 'make':
+        from .make import make_video
+        return make_video(
+            args.prompt,
+            format_id=args.format_id,
+            out_dir=args.out_dir,
+            provider_name=args.provider,
+            model=args.model,
+            video_lang=args.lang,
+            ui_lang=getattr(args, 'ui_lang', None),
+            aspect=args.aspect,
+            duration_sec=args.duration,
+            seed=args.seed,
+            yes=args.yes,
+            dry_run=args.dry_run,
+            allow_network=args.allow_network,
+            attribution=args.attribution,
+        )
+    if args.command == 'step':
+        from .make import step_project
+        return step_project(
+            args.project,
+            args.step_id,
+            approve=args.approve,
+            edit=args.edit,
+            back=args.back,
+            yes=args.yes,
+            provider_name=args.provider,
+            model=args.model,
+            allow_network=args.allow_network,
+        )
+    if args.command == 'revise':
+        from .make import revise_project
+        return revise_project(
+            args.project,
+            args.instruction,
+            scene_id=args.scene,
+            provider_name=args.provider,
+            model=args.model,
+            allow_network=args.allow_network,
+            render_after=args.render,
+            profile=args.profile,
+        )
     if args.command == 'migrate':
         from .migration import migrate_project
         return migrate_project(args.project, dry_run=args.dry_run, remote_schema=args.remote_schema)
@@ -344,8 +651,21 @@ def _execute_with_config(args, load_config):
         from .authoring import from_source
         return from_source(args.command[5:], args.source, args.output)
     if args.command == 'doctor':
-        from .media import doctor
-        return doctor()
+        from .media import doctor, redact_diagnostic_payload
+        report = doctor(probe_blender_headless=bool(getattr(args, 'blender', False)), redact=False)
+        if getattr(args, 'providers', False) or getattr(args, 'report', False):
+            from .prompt.providers import probe_providers
+            report['providers'] = probe_providers()
+        if getattr(args, 'tts', False) or getattr(args, 'report', False):
+            from .audio.tts import probe_tts_status
+            report['tts'] = probe_tts_status()
+        if getattr(args, 'stt', False) or getattr(args, 'report', False):
+            from .audio.tts import probe_stt_status
+            report['stt'] = probe_stt_status()
+        if getattr(args, 'report', False):
+            report = redact_diagnostic_payload(report)
+            report['redacted'] = True
+        return report
     if args.command == 'integrations':
         from .gateway import McpGateway
         with McpGateway() as gw:
@@ -391,6 +711,16 @@ def _execute_with_config(args, load_config):
             start += scene['duration_frames']
         return {**metadata, 'scenes': scenes, 'constraints': plan.get('constraints', {}), 'network': 'no render networking is implemented'}
     if args.command in {'render', 'resume'}:
+        if args.command == 'resume' and args.profile is None:
+            from .make import has_active_format_state, resume_format_project
+            if has_active_format_state(args.project):
+                return resume_format_project(
+                    args.project,
+                    yes=args.yes,
+                    provider_name=args.provider,
+                    model=args.model,
+                    allow_network=args.allow_network,
+                )
         from .render import render
         cfg = load_config()
         profile = args.profile or cfg.render.default_profile
@@ -399,12 +729,14 @@ def _execute_with_config(args, load_config):
             raise ValueError('Timeout must be between 1 and 3600 seconds')
         budget_mib = args.cache_budget_mib if args.cache_budget_mib is not None else (cfg.render.cache_budget_mib or None)
         budget = budget_mib * 1024 * 1024 if budget_mib is not None else None
+        eff_reduced = bool(getattr(args, 'reduced_motion', False) or cfg.render.reduced_motion)
         if args.command == 'render' and any((args.aspect, args.target, args.locale, args.set, args.brand, args.queue)):
             from .variants import render_variants
             args.profile = profile
             return render_variants(args, dict(profile=profile, max_frames=args.max_frames, timeout=timeout,
-                                              fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module))
-        return render(args.project, profile, args.max_frames, timeout, recover=args.command == 'resume', fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module)
+                                              fallback_engine=args.fallback, cache_budget_bytes=budget,
+                                              allow_browser_module=args.allow_browser_module, reduced_motion=eff_reduced))
+        return render(args.project, profile, args.max_frames, timeout, recover=args.command == 'resume', fallback_engine=args.fallback, cache_budget_bytes=budget, allow_browser_module=args.allow_browser_module, reduced_motion=eff_reduced)
 
     if args.command == 'cache':
         from .cache import prune_cache
@@ -419,7 +751,7 @@ def _execute_with_config(args, load_config):
     if args.command == 'qc':
         from .quality import check
         profile = args.profile or load_config().render.default_profile
-        return check(args.project, profile, loop=args.loop, html=args.html)
+        return check(args.project, profile, loop=args.loop, html=args.html, rules=args.qc_rules)
     if args.command == 'lock':
         from .render import lock
         return lock(args.project, args.scene, roi_profile=args.roi_profile)
@@ -467,6 +799,28 @@ def main(argv=None):
             else:
                 print(document)
             return 0
+        if args.command == 'completion':
+            from .completion import generate_completion
+            script = generate_completion(args.shell)
+            if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                args.output.write_text(script, encoding='utf-8')
+            else:
+                sys.stdout.write(script)
+            return 0
+        if args.command == 'ui':
+            from .config import config_context
+            from .ui import serve
+            with config_context(args.config, args.project):
+                return serve(
+                    args.project,
+                    host=args.host,
+                    port=args.port,
+                    open_browser=not args.no_open,
+                    allow_non_loopback=args.allow_non_loopback,
+                    locale=args.ui_lang,
+                    config_file=args.config,
+                )
         if args.command == 'mcp':
             from .config import config_context
             from .mcp_server import serve_stdio
@@ -478,10 +832,13 @@ def main(argv=None):
             ok = False
         if args.command == 'skills' and args.action == 'test':
             ok = result['hard_constraint_violation_rate'] == 0
-        if args.command == 'doctor' and not args.json:
+        if args.command == 'doctor' and not args.json and not getattr(args, 'report', False):
             for name, tool in result['tools'].items():
                 detail = tool.get('version') or tool.get('diagnostic') or ('available' if tool['available'] else 'unavailable')
                 print(f'{name:15} {detail}')
+            missing_core = [r for r in result.get('remediation', []) if r['tool'] in {'ffmpeg', 'ffprobe', 'pillow'}]
+            for item in missing_core:
+                print(f"setup ({item['tool']}): {item['summary']} -> {item['doc_url']}")
             return 0
         print(json.dumps({'ok': ok, 'command': args.command, 'result': result}, ensure_ascii=False, indent=2, allow_nan=False))
         return 0 if ok else 2

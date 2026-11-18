@@ -6,7 +6,7 @@ metadata:
   stage: build
   status: guidance
   version: "2.0.0"
-  aliases: "karakter devamlılığı,aynı karakter"
+  aliases: "karakter devamlılığı,aynı karakter,character continuity,Charakter-Kontinuität,Figuren-Konsistenz"
   requires: ""
 ---
 

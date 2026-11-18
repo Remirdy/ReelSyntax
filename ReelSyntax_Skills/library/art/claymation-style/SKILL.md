@@ -6,7 +6,7 @@ metadata:
   stage: plan
   status: guidance
   version: "2.0.0"
-  aliases: "kil animasyon,claymation"
+  aliases: "kil animasyon,claymation,claymation style,Knetanimations-Stil,Stop-Motion-Tonstil"
   requires: ""
 ---
 

@@ -1,0 +1,37 @@
+name: reelsyntax
+
+x-reelsyntax: &reelsyntax
+  image: ghcr.io/remirdy/reelsyntax:${REELSYNTAX_TAG:-latest}
+  build:
+    context: .
+    dockerfile: Dockerfile
+    target: runtime
+  user: "${REELSYNTAX_UID:-10001}:${REELSYNTAX_GID:-10001}"
+  working_dir: /workspace
+  volumes:
+    - type: bind
+      source: ${REELSYNTAX_WORKSPACE:-./workspace}
+      target: /workspace
+      bind:
+        create_host_path: true
+  environment:
+    HOME: /tmp/reelsyntax-home
+  network_mode: none
+  read_only: true
+  tmpfs:
+    - /tmp:mode=1777
+  cap_drop:
+    - ALL
+  security_opt:
+    - no-new-privileges:true
+
+services:
+  reelsyntax:
+    <<: *reelsyntax
+    command: ["doctor", "--json"]
+
+  mcp:
+    <<: *reelsyntax
+    profiles: ["mcp"]
+    stdin_open: true
+    command: ["mcp", "--workspace", "/workspace"]

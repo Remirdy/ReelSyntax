@@ -519,12 +519,14 @@
   "flash-safety": {
     "resources": [
       "library/qa/flash-safety/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "beat-synced-editing": {
     "resources": [
       "library/editing/beat-synced-editing/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "template-parameterization": {
     "resources": [
@@ -534,27 +536,32 @@
   "poster-thumbnail": {
     "resources": [
       "library/delivery/poster-thumbnail/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "gif-preview": {
     "resources": [
       "library/delivery/gif-preview/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "webm-export": {
     "resources": [
       "library/delivery/webm-export/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "mp4-delivery": {
     "resources": [
       "library/delivery/mp4-delivery/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "loop-design": {
     "resources": [
       "library/motion/loop-design/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "batch-production": {
     "resources": [
@@ -569,12 +576,14 @@
   "audio-stem-export": {
     "resources": [
       "library/music/audio-stem-export/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "caption-delivery-package": {
     "resources": [
       "library/delivery/caption-delivery-package/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "multilingual-variants": {
     "resources": [
@@ -584,7 +593,8 @@
   "brand-kit-workflow": {
     "resources": [
       "library/workflow/brand-kit-workflow/references/project-check.md"
-    ]
+    ],
+    "status": "validated"
   },
   "resolve-interchange": {
     "resources": [
@@ -594,6 +604,945 @@
   "premiere-interchange": {
     "resources": [
       "library/delivery/premiere-interchange/references/project-check.md"
+    ]
+  },
+  "idea-angle-framing": {
+    "status": "validated",
+    "recommended_next": [
+      "prompt-to-storyboard",
+      "message-hierarchy",
+      "opening-hook"
+    ],
+    "resources": [
+      "library/direction/idea-angle-framing/references/angle-matrix.md"
+    ]
+  },
+  "prompt-to-storyboard": {
+    "status": "validated",
+    "dependencies": [
+      "idea-angle-framing"
+    ],
+    "recommended_next": [
+      "frame-clock",
+      "storyboard",
+      "shot-list"
+    ],
+    "resources": [
+      "library/story/prompt-to-storyboard/references/scene-card-allocation.md"
+    ]
+  },
+  "open-loop-retention": {
+    "status": "validated",
+    "recommended_next": [
+      "opening-hook",
+      "ending-payoff"
+    ],
+    "resources": [
+      "library/story/open-loop-retention/references/loop-closure-patterns.md"
+    ]
+  },
+  "comedic-timing-beats": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "j-cut",
+      "l-cut"
+    ],
+    "resources": [
+      "library/story/comedic-timing-beats/references/frame-offset-recipes.md"
+    ]
+  },
+  "microlearning-chunking": {
+    "status": "validated",
+    "recommended_next": [
+      "reading-speed-audit",
+      "educational-explainer",
+      "caption-segmentation"
+    ],
+    "resources": [
+      "library/story/microlearning-chunking/references/cognitive-load-budget.md"
+    ]
+  },
+  "procedural-broll-planner": {
+    "status": "validated",
+    "recommended_next": [
+      "b-roll-placement",
+      "procedural-patterns"
+    ],
+    "resources": [
+      "library/direction/procedural-broll-planner/references/claim-to-plate-mapping.md"
+    ]
+  },
+  "prompt-injection-guard": {
+    "status": "validated",
+    "dependencies": [
+      "reelguard-policy"
+    ],
+    "recommended_next": [
+      "schema-json-repair",
+      "secure-local-execution"
+    ],
+    "resources": [
+      "library/skills/prompt-injection-guard/references/untrusted-brief-patterns.md"
+    ]
+  },
+  "schema-json-repair": {
+    "status": "validated",
+    "recommended_next": [
+      "prompt-injection-guard",
+      "frame-clock"
+    ],
+    "resources": [
+      "library/skills/schema-json-repair/references/repair-stages.md"
+    ]
+  },
+  "lang-detect-and-route": {
+    "status": "validated",
+    "recommended_next": [
+      "turkish-glyph-audit",
+      "multilingual-glyph-audit",
+      "locale-formatting"
+    ],
+    "resources": [
+      "library/skills/lang-detect-and-route/references/language-signatures.md"
+    ]
+  },
+  "cross-shot-grade-consistency": {
+    "status": "validated",
+    "recommended_next": [
+      "contrast-audit",
+      "oklch-perceptual-palettes"
+    ],
+    "resources": [
+      "library/lighting/cross-shot-grade-consistency/references/bt709-matching-tolerances.md"
+    ]
+  },
+  "pattern-interrupt-cadence": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "open-loop-retention",
+      "j-cut"
+    ],
+    "resources": [
+      "library/editing/pattern-interrupt-cadence/references/interrupt-taxonomy.md"
+    ]
+  },
+  "silence-as-punctuation": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "silence-audit",
+      "comedic-timing-beats"
+    ],
+    "resources": [
+      "library/editing/silence-as-punctuation/references/pause-envelope-spec.md"
+    ]
+  },
+  "rhythm-density-map": {
+    "status": "validated",
+    "recommended_next": [
+      "beat-synced-editing",
+      "frame-clock",
+      "scene-duration-floor-ceiling"
+    ],
+    "resources": [
+      "library/editing/rhythm-density-map/references/quarter-tempo-curves.md"
+    ]
+  },
+  "scene-duration-floor-ceiling": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "reading-speed-audit",
+      "freeze-detection"
+    ],
+    "resources": [
+      "library/editing/scene-duration-floor-ceiling/references/shot-bound-table.md"
+    ]
+  },
+  "eyeline-headroom-grammar": {
+    "status": "validated",
+    "recommended_next": [
+      "vertical-safe-zones",
+      "shot-reverse-shot",
+      "camera-continuity"
+    ],
+    "resources": [
+      "library/camera/eyeline-headroom-grammar/references/aspect-eyeline-coordinates.md"
+    ]
+  },
+  "depth-of-field-budget": {
+    "status": "validated",
+    "recommended_next": [
+      "lens-selection",
+      "rack-focus"
+    ],
+    "resources": [
+      "library/camera/depth-of-field-budget/references/coc-and-sample-table.md"
+    ]
+  },
+  "ken-burns-photo-choreography": {
+    "status": "validated",
+    "conflicts": [
+      "locked-camera"
+    ],
+    "recommended_next": [
+      "cross-shot-grade-consistency",
+      "shutter-angle-judder"
+    ],
+    "resources": [
+      "library/motion/ken-burns-photo-choreography/references/subpixel-pan-math.md"
+    ]
+  },
+  "kinetic-layout-choreography": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "kinetic-typography",
+      "easing-design",
+      "swiss-grid-motion"
+    ],
+    "resources": [
+      "library/motion/kinetic-layout-choreography/references/stagger-timing-sheet.md"
+    ]
+  },
+  "color-script-progression": {
+    "status": "validated",
+    "recommended_next": [
+      "oklch-perceptual-palettes",
+      "cross-shot-grade-consistency",
+      "contrast-audit"
+    ],
+    "resources": [
+      "library/lighting/color-script-progression/references/oklch-story-arcs.md"
+    ]
+  },
+  "optical-vignette-halation": {
+    "status": "validated",
+    "recommended_next": [
+      "contrast-audit",
+      "agx-aces-tonemapping",
+      "debanding"
+    ],
+    "resources": [
+      "library/vfx/optical-vignette-halation/references/cos4-and-halation-shader.md"
+    ]
+  },
+  "locale-aware-casing": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "turkish-glyph-audit",
+      "multilingual-glyph-audit"
+    ],
+    "resources": [
+      "library/typography/locale-aware-casing/references/casing-mapping-table.md"
+    ]
+  },
+  "german-compound-linebreak": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "text-overflow-audit",
+      "text-expansion-layout"
+    ],
+    "resources": [
+      "library/typography/german-compound-linebreak/references/compound-seam-rules.md"
+    ]
+  },
+  "burned-in-caption-styling": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "contrast-audit",
+      "subtitle-safe-area",
+      "word-timed-captions"
+    ],
+    "resources": [
+      "library/typography/burned-in-caption-styling/references/pill-and-stroke-geometry.md"
+    ]
+  },
+  "multilingual-caption-profiles": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "reading-speed-audit",
+      "caption-segmentation",
+      "caption-translation"
+    ],
+    "resources": [
+      "library/typography/multilingual-caption-profiles/references/six-language-timing-matrix.md"
+    ]
+  },
+  "orphan-widow-line-balance": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "caption-segmentation",
+      "visual-hierarchy",
+      "text-overflow-audit"
+    ],
+    "resources": [
+      "library/typography/orphan-widow-line-balance/references/dp-line-breaker.md"
+    ]
+  },
+  "numeric-unit-typography": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "variable-font-animation",
+      "locale-formatting",
+      "bar-chart-animation"
+    ],
+    "resources": [
+      "library/typography/numeric-unit-typography/references/locale-number-unit-rules.md"
+    ]
+  },
+  "bilingual-dual-subtitles": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "subtitle-safe-area",
+      "contrast-audit",
+      "multilingual-caption-profiles"
+    ],
+    "resources": [
+      "library/typography/bilingual-dual-subtitles/references/dual-track-stacking.md"
+    ]
+  },
+  "transcreation-tone": {
+    "status": "validated",
+    "recommended_next": [
+      "caption-translation",
+      "lang-detect-and-route",
+      "cultural-adaptation-audit"
+    ],
+    "resources": [
+      "library/story/transcreation-tone/references/register-and-imperative-guide.md"
+    ]
+  },
+  "cultural-adaptation-audit": {
+    "status": "validated",
+    "recommended_next": [
+      "locale-formatting",
+      "brief-compliance-audit",
+      "transcreation-tone"
+    ],
+    "resources": [
+      "library/qa/cultural-adaptation-audit/references/localization-hazard-checklist.md"
+    ]
+  },
+  "accessibility-caption-ad-check": {
+    "status": "validated",
+    "recommended_next": [
+      "audio-description-track",
+      "contrast-audit",
+      "reading-speed-audit",
+      "flash-safety"
+    ],
+    "resources": [
+      "library/qa/accessibility-caption-ad-check/references/wcag-media-parity-matrix.md"
+    ]
+  },
+  "tts-phonetic-pronunciation": {
+    "status": "validated",
+    "recommended_next": [
+      "local-text-to-speech",
+      "voiceover-alignment"
+    ],
+    "resources": [
+      "library/audio/tts-phonetic-pronunciation/references/dual-text-lexicon-schema.md"
+    ]
+  },
+  "voice-fx-flat-synth": {
+    "status": "validated",
+    "recommended_next": [
+      "dialogue-editing",
+      "true-peak-limiting",
+      "burned-in-caption-styling"
+    ],
+    "resources": [
+      "library/audio/voice-fx-flat-synth/references/dsp-voice-presets.md"
+    ]
+  },
+  "sfx-layering-transient-tail": {
+    "status": "validated",
+    "recommended_next": [
+      "foley-design",
+      "multitrack-mixing",
+      "true-peak-limiting"
+    ],
+    "resources": [
+      "library/audio/sfx-layering-transient-tail/references/three-band-sfx-recipes.md"
+    ]
+  },
+  "platform-loudness-targets": {
+    "status": "validated",
+    "requires": [
+      "ffmpeg"
+    ],
+    "recommended_next": [
+      "loudness-normalization",
+      "ebu-r128-dialogue-gating",
+      "true-peak-limiting"
+    ],
+    "resources": [
+      "library/audio/platform-loudness-targets/references/delivery-loudness-presets.md"
+    ]
+  },
+  "bar-grid-music-alignment": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "beat-synced-editing",
+      "music-looping"
+    ],
+    "resources": [
+      "library/music/bar-grid-music-alignment/references/integer-frame-bpm-table.md"
+    ]
+  },
+  "stepped-clay-lookdev": {
+    "status": "validated",
+    "requires": [
+      "blender"
+    ],
+    "dependencies": [
+      "claymation-style"
+    ],
+    "recommended_next": [
+      "blender-cycles",
+      "three-point-lighting",
+      "depth-of-field-budget"
+    ],
+    "resources": [
+      "library/modeling/stepped-clay-lookdev/references/blender-clay-node-and-fcurve-spec.md"
+    ]
+  },
+  "paper-cutout-layering": {
+    "status": "validated",
+    "dependencies": [
+      "paper-cut-style"
+    ],
+    "recommended_next": [
+      "alpha-compositing-2d",
+      "depth-of-field-budget",
+      "contrast-audit"
+    ],
+    "resources": [
+      "library/graphics/paper-cutout-layering/references/z-plane-shadow-and-parallax-math.md"
+    ]
+  },
+  "shader-loop-art": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "loop-seam-audit",
+      "signed-distance-fields",
+      "oklch-perceptual-palettes"
+    ],
+    "resources": [
+      "library/vfx/shader-loop-art/references/periodic-phase-and-noise-math.md"
+    ]
+  },
+  "retro-cutscene-directing": {
+    "status": "validated",
+    "recommended_next": [
+      "low-poly-style",
+      "eyeline-headroom-grammar",
+      "lip-sync",
+      "voice-fx-flat-synth"
+    ],
+    "resources": [
+      "library/formats/retro-cutscene-directing/references/cutscene-shot-grammar.md"
+    ]
+  },
+  "news-ticker-hierarchy": {
+    "status": "validated",
+    "conflicts": [
+      "textless-visual-design"
+    ],
+    "recommended_next": [
+      "lower-thirds",
+      "shutter-angle-judder",
+      "contrast-audit",
+      "reading-speed-audit"
+    ],
+    "resources": [
+      "library/formats/news-ticker-hierarchy/references/ticker-speed-and-zone-spec.md"
+    ]
+  },
+  "claims-must-be-sourced": {
+    "status": "validated",
+    "recommended_next": [
+      "scientific-source-audit",
+      "brief-compliance-audit"
+    ],
+    "resources": [
+      "library/qa/claims-must-be-sourced/references/sources-ledger-schema.md"
+    ]
+  },
+  "content-policy-boundaries": {
+    "status": "validated",
+    "dependencies": [
+      "reelguard-policy"
+    ],
+    "recommended_next": [
+      "content-credentials-labeling",
+      "prompt-injection-guard",
+      "asset-license-ledger"
+    ],
+    "resources": [
+      "library/qa/content-policy-boundaries/references/boundary-decision-table.md"
+    ]
+  },
+  "anti-aliasing-thin-lines": {
+    "status": "validated",
+    "recommended_next": [
+      "temporal-flicker-audit",
+      "shutter-angle-judder",
+      "chroma-subsampling-text-guard"
+    ],
+    "resources": [
+      "library/qa/anti-aliasing-thin-lines/references/stroke-width-and-ssaa-rules.md"
+    ]
+  },
+  "chroma-subsampling-text-guard": {
+    "status": "validated",
+    "requires": [
+      "ffmpeg"
+    ],
+    "recommended_next": [
+      "contrast-audit",
+      "mp4-delivery",
+      "anti-aliasing-thin-lines"
+    ],
+    "resources": [
+      "library/delivery/chroma-subsampling-text-guard/references/yuv420p-luminance-and-swscale-guide.md"
+    ]
+  },
+  "golden-frame-regression": {
+    "status": "validated",
+    "recommended_next": [
+      "render-artifact-validation",
+      "revision-diff",
+      "font-render-audit"
+    ],
+    "resources": [
+      "library/qa/golden-frame-regression/references/cross-os-tolerance-spec.md"
+    ]
+  },
+  "asset-license-ledger": {
+    "status": "validated",
+    "recommended_next": [
+      "license-compatibility",
+      "font-licensing",
+      "asset-provenance"
+    ],
+    "resources": [
+      "library/ingest/asset-license-ledger/references/spdx-allowlist-and-ledger-format.md"
+    ]
+  },
+  "format-runner-protocol": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "partial-render",
+      "resume-render",
+      "revision-diff"
+    ],
+    "resources": [
+      "library/workflow/format-runner-protocol/references/state-machine-and-invalidation.md"
+    ]
+  },
+  "safe-community-format-package": {
+    "status": "validated",
+    "dependencies": [
+      "reelguard-policy"
+    ],
+    "recommended_next": [
+      "skill-security-review",
+      "secure-local-execution",
+      "asset-license-ledger"
+    ],
+    "resources": [
+      "library/skills/safe-community-format-package/references/package-allowlist-spec.md"
+    ]
+  },
+  "showreel-direction": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "bar-grid-music-alignment",
+      "cross-shot-grade-consistency",
+      "brand-sting-remirdy"
+    ],
+    "resources": [
+      "library/direction/showreel-direction/references/showreel-sequencing-grid.md"
+    ]
+  },
+  "brand-sting-remirdy": {
+    "status": "validated",
+    "dependencies": [
+      "frame-clock"
+    ],
+    "recommended_next": [
+      "end-card",
+      "platform-loudness-targets",
+      "contrast-audit"
+    ],
+    "resources": [
+      "library/direction/brand-sting-remirdy/references/attribution-flag-and-sting-spec.md"
+    ]
+  },
+  "opening-hook": {
+    "status": "validated",
+    "resources": [
+      "library/story/opening-hook/references/project-check.md"
+    ]
+  },
+  "ending-payoff": {
+    "status": "validated",
+    "resources": [
+      "library/story/ending-payoff/references/project-check.md"
+    ]
+  },
+  "storyboard": {
+    "status": "validated",
+    "resources": [
+      "library/story/storyboard/references/project-check.md"
+    ]
+  },
+  "shot-list": {
+    "status": "validated",
+    "resources": [
+      "library/story/shot-list/references/project-check.md"
+    ]
+  },
+  "end-card": {
+    "status": "validated",
+    "resources": [
+      "library/typography/end-card/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "font-fallback-chain": {
+    "status": "validated",
+    "resources": [
+      "library/typography/font-fallback-chain/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "rtl-text-layout": {
+    "status": "validated",
+    "resources": [
+      "library/typography/rtl-text-layout/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "cjk-typography": {
+    "status": "validated",
+    "resources": [
+      "library/typography/cjk-typography/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "text-expansion-layout": {
+    "status": "validated",
+    "resources": [
+      "library/typography/text-expansion-layout/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "vertical-safe-zones": {
+    "status": "validated",
+    "resources": [
+      "library/delivery/vertical-safe-zones/references/project-check.md"
+    ]
+  },
+  "easing-design": {
+    "status": "validated",
+    "resources": [
+      "library/motion/easing-design/references/project-check.md"
+    ]
+  },
+  "render-lookdev": {
+    "status": "validated",
+    "resources": [
+      "library/lighting/render-lookdev/references/project-check.md"
+    ]
+  },
+  "audio-ducking": {
+    "status": "validated",
+    "resources": [
+      "library/audio/audio-ducking/references/project-check.md"
+    ]
+  },
+  "local-text-to-speech": {
+    "status": "validated",
+    "resources": [
+      "library/audio/local-text-to-speech/references/project-check.md"
+    ]
+  },
+  "local-speech-to-text": {
+    "status": "validated",
+    "resources": [
+      "library/audio/local-speech-to-text/references/project-check.md"
+    ]
+  },
+  "true-peak-limiting": {
+    "status": "validated",
+    "resources": [
+      "library/audio/true-peak-limiting/references/project-check.md"
+    ]
+  },
+  "music-looping": {
+    "status": "validated",
+    "resources": [
+      "library/music/music-looping/references/project-check.md"
+    ]
+  },
+  "lip-sync": {
+    "status": "validated",
+    "resources": [
+      "library/character/lip-sync/references/project-check.md"
+    ]
+  },
+  "facial-expression": {
+    "status": "validated",
+    "resources": [
+      "library/character/facial-expression/references/project-check.md"
+    ]
+  },
+  "character-continuity": {
+    "status": "validated",
+    "resources": [
+      "library/character/character-continuity/references/project-check.md"
+    ]
+  },
+  "idle-animation": {
+    "status": "validated",
+    "resources": [
+      "library/character/idle-animation/references/project-check.md"
+    ]
+  },
+  "shot-size": {
+    "status": "validated",
+    "resources": [
+      "library/camera/shot-size/references/project-check.md"
+    ]
+  },
+  "match-cut-design": {
+    "status": "validated",
+    "resources": [
+      "library/camera/match-cut-design/references/project-check.md"
+    ]
+  },
+  "speed-ramping-design": {
+    "status": "validated",
+    "resources": [
+      "library/motion/speed-ramping-design/references/project-check.md"
+    ]
+  },
+  "staggered-animation": {
+    "status": "validated",
+    "resources": [
+      "library/motion/staggered-animation/references/project-check.md"
+    ]
+  },
+  "social-media-reel": {
+    "status": "validated",
+    "resources": [
+      "library/formats/social-media-reel/references/project-check.md"
+    ]
+  },
+  "educational-explainer": {
+    "status": "validated",
+    "resources": [
+      "library/formats/educational-explainer/references/project-check.md"
+    ]
+  },
+  "lyric-video": {
+    "status": "validated",
+    "resources": [
+      "library/formats/lyric-video/references/project-check.md"
+    ],
+    "conflicts": [
+      "textless-visual-design"
+    ]
+  },
+  "music-visualizer": {
+    "status": "validated",
+    "resources": [
+      "library/formats/music-visualizer/references/project-check.md"
+    ]
+  },
+  "product-commercial": {
+    "status": "validated",
+    "resources": [
+      "library/formats/product-commercial/references/project-check.md"
+    ]
+  },
+  "bar-chart-animation": {
+    "status": "validated",
+    "resources": [
+      "library/data/bar-chart-animation/references/project-check.md"
+    ]
+  },
+  "line-chart-animation": {
+    "status": "validated",
+    "resources": [
+      "library/data/line-chart-animation/references/project-check.md"
+    ]
+  },
+  "accessible-data-design": {
+    "status": "validated",
+    "resources": [
+      "library/data/accessible-data-design/references/project-check.md"
+    ]
+  },
+  "palette-design": {
+    "status": "validated",
+    "resources": [
+      "library/art/palette-design/references/project-check.md"
+    ]
+  },
+  "visual-hierarchy": {
+    "status": "validated",
+    "resources": [
+      "library/art/visual-hierarchy/references/project-check.md"
+    ]
+  },
+  "low-poly-style": {
+    "status": "validated",
+    "resources": [
+      "library/art/low-poly-style/references/project-check.md"
+    ]
+  },
+  "claymation-style": {
+    "status": "validated",
+    "resources": [
+      "library/art/claymation-style/references/project-check.md"
+    ]
+  },
+  "paper-cut-style": {
+    "status": "validated",
+    "resources": [
+      "library/art/paper-cut-style/references/project-check.md"
+    ]
+  },
+  "cross-dissolve": {
+    "status": "validated",
+    "resources": [
+      "library/transitions/cross-dissolve/references/project-check.md"
+    ]
+  },
+  "wipe-transition": {
+    "status": "validated",
+    "resources": [
+      "library/transitions/wipe-transition/references/project-check.md"
+    ]
+  },
+  "loop-seam-audit": {
+    "status": "validated",
+    "resources": [
+      "library/delivery/loop-seam-audit/references/project-check.md"
+    ]
+  },
+  "reading-speed-audit": {
+    "status": "validated",
+    "resources": [
+      "library/delivery/reading-speed-audit/references/project-check.md"
+    ]
+  },
+  "asset-provenance": {
+    "status": "validated",
+    "resources": [
+      "library/ingest/asset-provenance/references/project-check.md"
+    ]
+  },
+  "font-licensing": {
+    "status": "validated",
+    "resources": [
+      "library/ingest/font-licensing/references/project-check.md"
+    ]
+  },
+  "license-compatibility": {
+    "status": "validated",
+    "resources": [
+      "library/ingest/license-compatibility/references/project-check.md"
+    ]
+  },
+  "debanding": {
+    "status": "validated",
+    "resources": [
+      "library/qa/debanding/references/project-check.md"
+    ]
+  },
+  "brief-compliance-audit": {
+    "status": "validated",
+    "resources": [
+      "library/qa/brief-compliance-audit/references/project-check.md"
+    ]
+  },
+  "preview-render": {
+    "status": "validated",
+    "resources": [
+      "library/render/preview-render/references/project-check.md"
+    ]
+  },
+  "render-preflight": {
+    "status": "validated",
+    "resources": [
+      "library/render/render-preflight/references/project-check.md"
+    ]
+  },
+  "resource-budget": {
+    "status": "validated",
+    "resources": [
+      "library/render/resource-budget/references/project-check.md"
     ]
   }
 }
