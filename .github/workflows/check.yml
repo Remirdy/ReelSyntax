@@ -56,7 +56,8 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
       - run: docker build -f .devcontainer/Dockerfile -t reelsyntax-media .
       - run: docker run --rm reelsyntax-media python -m reelsyntax doctor --json
-  media:
+  media-os:
+    name: media (${{ matrix.os }})
     strategy:
       fail-fast: false
       matrix:
@@ -110,6 +111,13 @@ jobs:
           assert qc.returncode in (0, 2) and "frame_cadence" in qc.stdout, qc.stderr
       - if: runner.os == 'Linux'
         run: python -m unittest discover -s tests -v
+  media:
+    needs: [media-os]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Require all cross-OS media matrix legs to pass
+        run: test "${{ needs.media-os.result }}" = "success"
   docs:
     runs-on: ubuntu-latest
     steps:
