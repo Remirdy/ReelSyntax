@@ -127,6 +127,7 @@ class Tier2LanguagesTests(unittest.TestCase):
             [sys.executable, '-m', 'reelsyntax', 'lang', 'validate', '--json'],
             capture_output=True,
             text=True,
+            encoding='utf-8',
             timeout=20,
             check=False,
         )
