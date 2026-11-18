@@ -1,0 +1,76 @@
+:root {
+  --rs-gold: #c3a16e;
+  --rs-ink: #1b232a;
+  --rs-paper: #f6f2ea;
+  --md-text-font: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+  --md-code-font: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-default-bg-color: #161c21;
+  --md-default-bg-color--light: #1b232a;
+  --md-default-fg-color: #ece8de;
+  --md-default-fg-color--light: #b9b4a8;
+  --md-primary-fg-color: #1b232a;
+  --md-primary-bg-color: #ece8de;
+  --md-accent-fg-color: #c3a16e;
+  --md-typeset-a-color: #d6b985;
+  --md-code-bg-color: #11161a;
+  --md-footer-bg-color: #11161a;
+  --md-footer-bg-color--dark: #0d1114;
+}
+
+[data-md-color-scheme="default"] {
+  --md-default-bg-color: #f6f2ea;
+  --md-primary-fg-color: #1b232a;
+  --md-primary-bg-color: #ece8de;
+  --md-accent-fg-color: #8a6a2f;
+  --md-typeset-a-color: #7a5b25;
+  --md-code-bg-color: #ece6d8;
+  --md-footer-bg-color: #1b232a;
+  --md-footer-bg-color--dark: #151b20;
+}
+
+.md-header { box-shadow: none; border-bottom: 1px solid rgba(195, 161, 110, 0.22); }
+.md-header__button.md-logo img { height: 1.6rem; width: auto; }
+.md-tabs { border-bottom: 1px solid rgba(195, 161, 110, 0.12); }
+.md-typeset h1, .md-typeset h2 { letter-spacing: -0.01em; font-weight: 650; }
+.md-typeset h2 { border-bottom: 1px solid rgba(195, 161, 110, 0.18); padding-bottom: 0.3em; }
+.md-typeset code { border-radius: 4px; }
+.md-typeset pre > code { border-radius: 8px; }
+.md-typeset table:not([class]) { border-radius: 8px; overflow: hidden; font-size: 0.8rem; }
+.md-typeset img { border-radius: 8px; }
+
+/* Footer */
+.md-footer-meta { border-top: 1px solid rgba(195, 161, 110, 0.2); }
+.rs-footer { display: flex; flex-wrap: wrap; gap: 0.5rem; align-items: center; padding: 0.6rem 0; font-size: 0.7rem; }
+.rs-footer a { color: var(--rs-gold); font-weight: 600; text-decoration: none; }
+.rs-footer a:hover { text-decoration: underline; }
+.rs-footer__made { color: #ece8de; }
+.rs-footer__sep { opacity: 0.4; }
+
+/* Home */
+.rs-hero { padding: 3.2rem 0 2rem; }
+.rs-eyebrow { color: var(--rs-gold); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; margin: 0 0 0.6rem; }
+.md-typeset .rs-hero h1 { font-size: clamp(2.4rem, 6vw, 4rem); line-height: 1.05; margin: 0 0 1rem; font-weight: 700; letter-spacing: -0.03em; }
+.rs-lead { font-size: 1.05rem; max-width: 40rem; color: var(--md-default-fg-color--light); margin: 0 0 1.6rem; }
+.rs-actions { display: flex; flex-wrap: wrap; gap: 0.7rem; margin-bottom: 2rem; }
+.md-typeset .rs-btn { display: inline-block; padding: 0.65rem 1.25rem; border-radius: 8px; font-weight: 650; font-size: 0.8rem; text-decoration: none; border: 1px solid var(--rs-gold); }
+.md-typeset .rs-btn--primary { background: var(--rs-gold); color: #1b232a; }
+.md-typeset .rs-btn--primary:hover { background: #d6b985; color: #1b232a; }
+.md-typeset .rs-btn--ghost { color: var(--md-typeset-a-color); }
+.md-typeset .rs-btn--ghost:hover { background: rgba(195, 161, 110, 0.12); }
+.rs-badge { display: inline-block; padding: 0.15rem 0.6rem; border: 1px solid rgba(195, 161, 110, 0.5); border-radius: 999px; font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rs-gold); margin-bottom: 1rem; }
+
+.rs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr)); gap: 1rem; margin: 1.5rem 0 2.5rem; }
+.rs-card { padding: 1.2rem 1.25rem; border: 1px solid rgba(195, 161, 110, 0.22); border-radius: 12px; background: rgba(195, 161, 110, 0.04); transition: border-color 0.2s, transform 0.2s; }
+.rs-card:hover { border-color: var(--rs-gold); transform: translateY(-2px); }
+.md-typeset .rs-card h3 { margin: 0 0 0.4rem; font-size: 0.95rem; }
+.rs-card p { margin: 0; font-size: 0.78rem; color: var(--md-default-fg-color--light); }
+
+.rs-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1rem; margin: 1.2rem 0 2rem; }
+.rs-gallery figure { margin: 0; }
+.rs-gallery img { width: 100%; display: block; border: 1px solid rgba(195, 161, 110, 0.2); }
+.rs-gallery figcaption { font-size: 0.7rem; color: var(--md-default-fg-color--light); margin-top: 0.4rem; }
+
+@media (prefers-reduced-motion: reduce) { .rs-card { transition: none; } .rs-card:hover { transform: none; } }

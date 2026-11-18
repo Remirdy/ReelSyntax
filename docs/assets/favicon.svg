@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="ReelSyntax">
+  <rect x="3" y="7" width="42" height="34" rx="7" fill="none" stroke="#c3a16e" stroke-width="3"/>
+  <g fill="#c3a16e">
+    <rect x="8" y="11" width="4" height="4" rx="1"/><rect x="8" y="22" width="4" height="4" rx="1"/><rect x="8" y="33" width="4" height="4" rx="1"/>
+    <rect x="36" y="11" width="4" height="4" rx="1"/><rect x="36" y="22" width="4" height="4" rx="1"/><rect x="36" y="33" width="4" height="4" rx="1"/>
+    <path d="M20 16.5v15l12-7.5z"/>
+  </g>
+</svg>
