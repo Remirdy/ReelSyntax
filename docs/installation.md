@@ -1,5 +1,7 @@
 # Installation
 
+For a step-by-step first-run walkthrough—including `pip install "reelsyntax[render]"`, cross-platform FFmpeg discovery, local language-model hardware sizing, and `reelsyntax doctor` remediation—see [Getting started](getting-started.md).
+
 Run `reelsyntax --help` (or `python -m reelsyntax --help` on Linux/macOS, `py -m reelsyntax --help` on Windows) with Python 3.11 or newer. No third-party dependency is needed for the core router, project validation, configuration, or state operations. For an installed CLI, create a virtual environment and install the package:
 
 - **macOS / Linux:** `python3 -m venv .venv && . .venv/bin/activate && python -m pip install ".[render]"`

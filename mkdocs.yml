@@ -62,6 +62,7 @@ hooks:
   - tools/docs_catalog.py
 nav:
   - Start: index.md
+  - Getting started: getting-started.md
   - Installation: installation.md
   - Project format: project-format.md
   - Authoring and delivery: delivery.md

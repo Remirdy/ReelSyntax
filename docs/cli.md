@@ -13,7 +13,7 @@
 | `lang <list\|show\|new\|validate>` | List supported locales and owner-verification flags, inspect a language profile, scaffold a new locale, or validate key/placeholder parity |
 | `schema [--kind reel\|config\|format] [--schema-version N]` | Print or write the versioned editor JSON Schema for `reel.json`, `reelsyntax.toml`, or `format.json` |
 | `migrate <project> [--dry-run]` | Upgrade legacy or unversioned `reel.json` files to `schema_version: 1` with `.reelsyntax/migrations/` backup |
-| `doctor` | Probe Python, FFmpeg/FFprobe, Pillow, Chromium, Blender, After Effects/`aerender`, and first-party MCP status |
+| `doctor [--providers] [--blender] [--report]` | Probe Python, FFmpeg/FFprobe, Pillow, Chromium, headless Blender (`--blender`), local providers (`--providers`), setup-guide remediation links, and path-redacted reports (`--report`) |
 | `integrations` | Report submodule initialization, pinned commits, package versions, and runtime readiness for `BlenderMCP` and `AfterEffectsMCP` |
 | `capabilities` | Refresh or progressively search namespaced `blender:*` and `after_effects:*` MCP tools without dumping full schemas |
 | `install <blender\|after-effects\|--all>` | Reuse existing compatible local runtimes or initialize submodules and local environments (`--dry-run` supported) |

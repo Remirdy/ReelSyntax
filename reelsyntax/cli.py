@@ -159,6 +159,8 @@ def parser():
     plugin.add_argument('--allow-plugin', action='store_true')
     doctor = commands.add_parser('doctor', help='Report installed media and first-party MCP dependencies without installing anything')
     doctor.add_argument('--providers', action='store_true', help='Include local and configured LLM provider diagnostics')
+    doctor.add_argument('--blender', action='store_true', help='Run headless Blender runtime probe when binary is present')
+    doctor.add_argument('--report', action='store_true', help='Emit a path-redacted diagnostic report suitable for bug reports')
     doctor.add_argument('--json', action='store_true')
 
     integrations_cmd = commands.add_parser('integrations', help='Inspect first-party BlenderMCP and AfterEffectsMCP submodule and runtime status')
@@ -577,11 +579,14 @@ def _execute_with_config(args, load_config):
         from .authoring import from_source
         return from_source(args.command[5:], args.source, args.output)
     if args.command == 'doctor':
-        from .media import doctor
-        report = doctor()
-        if getattr(args, 'providers', False):
+        from .media import doctor, redact_diagnostic_payload
+        report = doctor(probe_blender_headless=bool(getattr(args, 'blender', False)), redact=False)
+        if getattr(args, 'providers', False) or getattr(args, 'report', False):
             from .prompt.providers import probe_providers
             report['providers'] = probe_providers()
+        if getattr(args, 'report', False):
+            report = redact_diagnostic_payload(report)
+            report['redacted'] = True
         return report
     if args.command == 'integrations':
         from .gateway import McpGateway
@@ -734,10 +739,13 @@ def main(argv=None):
             ok = False
         if args.command == 'skills' and args.action == 'test':
             ok = result['hard_constraint_violation_rate'] == 0
-        if args.command == 'doctor' and not args.json:
+        if args.command == 'doctor' and not args.json and not getattr(args, 'report', False):
             for name, tool in result['tools'].items():
                 detail = tool.get('version') or tool.get('diagnostic') or ('available' if tool['available'] else 'unavailable')
                 print(f'{name:15} {detail}')
+            missing_core = [r for r in result.get('remediation', []) if r['tool'] in {'ffmpeg', 'ffprobe', 'pillow'}]
+            for item in missing_core:
+                print(f"setup ({item['tool']}): {item['summary']} -> {item['doc_url']}")
             return 0
         print(json.dumps({'ok': ok, 'command': args.command, 'result': result}, ensure_ascii=False, indent=2, allow_nan=False))
         return 0 if ok else 2
