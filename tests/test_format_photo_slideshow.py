@@ -1,8 +1,7 @@
+import importlib.util
 from pathlib import Path
 import tempfile
 import unittest
-
-from PIL import Image
 
 from ReelSyntax_Skills.tools.registry import load_index, read_json
 from reelsyntax.assets import audit_project_licenses
@@ -18,6 +17,8 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 
 
 def _ffmpeg_ready() -> bool:
+    if importlib.util.find_spec("PIL") is None:
+        return False
     try:
         return bool(executable("ffmpeg")) and bool(executable("ffprobe"))
     except ValueError:
@@ -82,6 +83,8 @@ class PhotoSlideshowFormatTests(unittest.TestCase):
                     self.assertTrue(lic_audit["ok"])
                     qc_res = check(pdir, profile="draft")
                     self.assertEqual(qc_res["technical_status"], "pass")
+
+            from PIL import Image
 
             custom_dir = root / "custom-user-slides"
             (custom_dir / "assets").mkdir(parents=True, exist_ok=True)
