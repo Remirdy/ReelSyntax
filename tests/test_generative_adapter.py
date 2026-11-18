@@ -333,7 +333,7 @@ class GenerativeAdapterTests(unittest.TestCase):
             "print(json.dumps({'enabled': cfg.generative.enabled, 'err': err}))\n"
         )
         env = {**os.environ, "PYTHONPATH": os.pathsep.join(filter(None, [str(REPO_ROOT), os.environ.get("PYTHONPATH", "")]))}
-        res = subprocess.run([sys.executable, "-c", script], cwd=str(REPO_ROOT), env=env, capture_output=True, text=True, timeout=60)
+        res = subprocess.run([sys.executable, "-c", script], cwd=str(REPO_ROOT), env=env, capture_output=True, text=True, encoding="utf-8", timeout=60)
         self.assertEqual(res.returncode, 0, res.stderr)
         payload = json.loads(res.stdout.strip().splitlines()[-1])
         self.assertFalse(payload["enabled"])
