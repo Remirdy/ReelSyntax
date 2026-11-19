@@ -7,8 +7,8 @@ from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_p
 
 from .contracts import Project, ProjectMetadata
 
-RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art'}
-RECIPES_3D = {'prism-monolith', 'aperture', 'cassette'}
+RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art', 'character-stage'}
+RECIPES_3D = {'prism-monolith', 'aperture', 'cassette', 'character-stage'}
 ENGINES = {'pillow', 'browser', 'blender', 'ffmpeg'}
 CAMERA_PRESETS = {'locked', 'dolly_in', 'orbit', 'crane_rise', 'dolly_zoom'}
 TRANSITIONS = {'cut', 'cross_dissolve', 'fade_black', 'wipe_left', 'slide_left', 'slide_right', 'fade_white', 'radial', 'glitch'}
@@ -134,7 +134,7 @@ def validate(plan: Project) -> ProjectMetadata:
         if scene['engine'] == 'blender' and scene['recipe'] not in RECIPES_3D:
             raise ValueError(f'{sid}: blender engine requires a 3D recipe ({sorted(RECIPES_3D)})')
         params = scene['params']
-        fields(params, {'heading', 'subheading', 'kicker', 'background', 'foreground', 'accent', 'series', 'font_mode', 'shot', 'samples', 'source', 'in_frame', 'layers', 'shapes', 'speed', 'hdr_to_sdr', 'fragment_file', 'module_file'}, set(), sid + '.params')
+        fields(params, {'heading', 'subheading', 'kicker', 'background', 'foreground', 'accent', 'series', 'font_mode', 'shot', 'samples', 'source', 'in_frame', 'layers', 'shapes', 'speed', 'hdr_to_sdr', 'fragment_file', 'module_file', 'character', 'partner_character', 'expression', 'partner_expression', 'mouth_envelope', 'speaker', 'dialogue', 'shot_role', 'character_pos', 'blink_offset'}, set(), sid + '.params')
         for key, value in params.items():
             if key in {'heading', 'subheading', 'kicker'}:
                 text(value, sid + '.' + key)
@@ -150,6 +150,37 @@ def validate(plan: Project) -> ProjectMetadata:
             elif key == 'font_mode':
                 if value not in {'default', 'system'}:
                     raise ValueError(f'{sid}.font_mode: expected default or system')
+        char_keys = {'character', 'partner_character', 'expression', 'partner_expression', 'mouth_envelope', 'speaker', 'dialogue', 'shot_role', 'character_pos', 'blink_offset'}
+        if scene['recipe'] == 'character-stage':
+            from .character import CHARACTER_POSITIONS, CHARACTER_PRESETS, EXPRESSIONS, SHOT_ROLES
+            for c_key in ('character', 'partner_character'):
+                if c_key in params and params[c_key] not in CHARACTER_PRESETS:
+                    raise ValueError(f'{sid}.{c_key}: unsupported character preset')
+            for e_key in ('expression', 'partner_expression'):
+                if e_key in params and params[e_key] not in EXPRESSIONS:
+                    raise ValueError(f'{sid}.{e_key}: unsupported expression')
+            if 'shot_role' in params and params['shot_role'] not in SHOT_ROLES:
+                raise ValueError(f'{sid}.shot_role: unsupported shot role')
+            if 'character_pos' in params and params['character_pos'] not in CHARACTER_POSITIONS:
+                raise ValueError(f'{sid}.character_pos: unsupported character position')
+            if 'blink_offset' in params:
+                integer(params['blink_offset'], 0, 10000, f'{sid}.blink_offset')
+            if 'speaker' in params:
+                text(params['speaker'], f'{sid}.speaker', 48)
+                if constraints.get('no_text') and params['speaker']:
+                    raise ValueError('no_text conflicts with scene speaker label: ' + sid)
+            if 'dialogue' in params:
+                text(params['dialogue'], f'{sid}.dialogue', 160)
+                if constraints.get('no_text') and params['dialogue']:
+                    raise ValueError('no_text conflicts with scene dialogue: ' + sid)
+            if 'mouth_envelope' in params:
+                env = params['mouth_envelope']
+                if not isinstance(env, list) or not 1 <= len(env) <= 10000:
+                    raise ValueError(f'{sid}.mouth_envelope: expected 1–10000 samples')
+                for v in env:
+                    number(v, 0.0, 1.0, f'{sid}.mouth_envelope')
+        elif char_keys.intersection(params):
+            raise ValueError(f'{sid}: character fields require the character-stage recipe')
         native_shots = {'aperture': ('macro', 'iris', 'assembly', 'hero'), 'cassette': ('label', 'drive', 'edge', 'hero')}
         recipe = scene['recipe']
         if recipe in native_shots:
