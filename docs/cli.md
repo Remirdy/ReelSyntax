@@ -12,7 +12,7 @@
 | `config <show\|path\|init\|validate>` | Inspect merged `reelsyntax.toml` settings, print user/project config paths, create a starter TOML, or validate syntax and bounds |
 | `brand <init\|validate\|apply>` | Initialize a starter `brand.json` kit, verify WCAG `>= 4.5:1` contrast and relative assets, or apply validated brand styling to a project |
 | `formats <list\|show\|new\|validate\|install\|uninstall\|installed>` | Browse available formats, scaffold or validate data-only format packages, or install/remove community formats from local paths, `.zip` archives, or git URLs (`--allow-network`) |
-| `assets <list\|materialize\|register\|licenses>` | Browse CC0/MIT starter music beds, SFX, palettes, and graphics; materialize starter `.wav`/`.png` packs; register local assets; or audit SPDX licenses and emit `LICENSES.md` |
+| `assets <list\|materialize\|register\|licenses\|generate>` | Browse CC0/MIT starter music beds, SFX, palettes, and graphics; materialize starter `.wav`/`.png` packs; register local assets; audit SPDX licenses and emit `LICENSES.md`; or invoke the opt-in `[generative]` adapter (`enabled = false` by default) with synthetic-origin provenance |
 | `lang <list\|show\|new\|validate>` | List supported locales and owner-verification flags, inspect a language profile, scaffold a new locale, or validate key/placeholder parity |
 | `schema [--kind reel\|config\|format] [--schema-version N]` | Print or write the versioned editor JSON Schema for `reel.json`, `reelsyntax.toml`, or `format.json` |
 | `migrate <project> [--dry-run]` | Upgrade legacy or unversioned `reel.json` files to `schema_version: 1` with `.reelsyntax/migrations/` backup |

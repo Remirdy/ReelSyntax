@@ -53,12 +53,22 @@ class RenderConfig:
 
 
 @dataclass(frozen=True)
+class GenerativeConfig:
+    enabled: bool = False
+    endpoint: str = ""
+    timeout_sec: int = 60
+    spdx: str = "User-Provided"
+    attribution: str = ""
+
+
+@dataclass(frozen=True)
 class ResolvedConfig:
     config_version: int
     general: GeneralConfig
     provider: ProviderConfig
     paths: PathsConfig
     render: RenderConfig
+    generative: GenerativeConfig
     sources: tuple[str, ...]
 
     def to_dict(self) -> dict[str, Any]:
@@ -106,8 +116,28 @@ def _check_executable_path(value: Any, label: str) -> str:
     return str(candidate)
 
 
+def _check_endpoint(value: Any, label: str) -> str:
+    if not isinstance(value, str) or len(value) > 512 or (value != "" and not ENDPOINT_RE.fullmatch(value)):
+        raise ValueError(f"{label}: expected http(s) URL or empty string")
+    return value
+
+
+def _check_spdx(value: Any, label: str) -> str:
+    from .assets.license import APPROVED_SPDX_LICENSES
+
+    if not isinstance(value, str) or value not in APPROVED_SPDX_LICENSES:
+        raise ValueError(f"{label}: unsupported SPDX license")
+    return value
+
+
+def _check_text(value: Any, max_len: int, label: str) -> str:
+    if not isinstance(value, str) or len(value) > max_len or any(ord(c) < 32 for c in value):
+        raise ValueError(f"{label}: expected single-line string of at most {max_len} characters")
+    return value
+
+
 def validate_config_data(raw: dict[str, Any], source_label: str = CONFIG_FILENAME) -> dict[str, Any]:
-    top = _check_keys(raw, {"config_version", "general", "provider", "paths", "render"}, source_label)
+    top = _check_keys(raw, {"config_version", "general", "provider", "paths", "render", "generative"}, source_label)
     version = top.get("config_version", 1)
     if type(version) is not int or version != 1:
         raise ValueError(f"{source_label}.config_version: only version 1 is supported")
@@ -179,6 +209,25 @@ def validate_config_data(raw: dict[str, Any], source_label: str = CONFIG_FILENAM
         if "timeout_sec" in sec:
             rend["timeout_sec"] = _check_int(sec["timeout_sec"], 1, 3600, f"{source_label}.render.timeout_sec")
         normalized["render"] = rend
+
+    if "generative" in top:
+        sec = _check_keys(
+            top["generative"],
+            {"enabled", "endpoint", "timeout_sec", "spdx", "attribution"},
+            f"{source_label}.generative",
+        )
+        gen_cfg: dict[str, Any] = {}
+        if "enabled" in sec:
+            gen_cfg["enabled"] = _check_bool(sec["enabled"], f"{source_label}.generative.enabled")
+        if "endpoint" in sec:
+            gen_cfg["endpoint"] = _check_endpoint(sec["endpoint"], f"{source_label}.generative.endpoint")
+        if "timeout_sec" in sec:
+            gen_cfg["timeout_sec"] = _check_int(sec["timeout_sec"], 1, 600, f"{source_label}.generative.timeout_sec")
+        if "spdx" in sec:
+            gen_cfg["spdx"] = _check_spdx(sec["spdx"], f"{source_label}.generative.spdx")
+        if "attribution" in sec:
+            gen_cfg["attribution"] = _check_text(sec["attribution"], 256, f"{source_label}.generative.attribution")
+        normalized["generative"] = gen_cfg
 
     return normalized
 
@@ -254,6 +303,9 @@ def _apply_env_overrides(merged: dict[str, dict[str, Any]], env: dict[str, str])
         ("REELSYNTAX_FFPROBE", "paths", "ffprobe", lambda v: _check_executable_path(v, "REELSYNTAX_FFPROBE")),
         ("REELSYNTAX_BLENDER", "paths", "blender", lambda v: _check_executable_path(v, "REELSYNTAX_BLENDER")),
         ("REELSYNTAX_DEFAULT_PROFILE", "render", "default_profile", lambda v: v if v in PROFILE_NAMES else (_ for _ in ()).throw(ValueError("REELSYNTAX_DEFAULT_PROFILE: invalid profile"))),
+        ("REELSYNTAX_GENERATIVE_ENDPOINT", "generative", "endpoint", lambda v: _check_endpoint(v, "REELSYNTAX_GENERATIVE_ENDPOINT")),
+        ("REELSYNTAX_GENERATIVE_SPDX", "generative", "spdx", lambda v: _check_spdx(v, "REELSYNTAX_GENERATIVE_SPDX")),
+        ("REELSYNTAX_GENERATIVE_ATTRIBUTION", "generative", "attribution", lambda v: _check_text(v, 256, "REELSYNTAX_GENERATIVE_ATTRIBUTION")),
     )
     for env_key, section, field, validator in str_mappings:
         raw_val = env.get(env_key)
@@ -265,6 +317,7 @@ def _apply_env_overrides(merged: dict[str, dict[str, Any]], env: dict[str, str])
         ("REELSYNTAX_ALLOW_NETWORK", "general", "allow_network"),
         ("REELSYNTAX_ATTRIBUTION", "general", "attribution"),
         ("REELSYNTAX_REDUCED_MOTION", "render", "reduced_motion"),
+        ("REELSYNTAX_GENERATIVE_ENABLED", "generative", "enabled"),
     )
     for env_key, section, field in bool_mappings:
         raw_val = env.get(env_key)
@@ -277,6 +330,7 @@ def _apply_env_overrides(merged: dict[str, dict[str, Any]], env: dict[str, str])
         ("REELSYNTAX_MAX_REPAIRS", "provider", "max_repairs", 0, 3),
         ("REELSYNTAX_CACHE_BUDGET_MIB", "render", "cache_budget_mib", 0, 1_048_576),
         ("REELSYNTAX_RENDER_TIMEOUT", "render", "timeout_sec", 1, 3600),
+        ("REELSYNTAX_GENERATIVE_TIMEOUT", "generative", "timeout_sec", 1, 600),
     )
     for env_key, section, field, low, high in int_mappings:
         raw_val = env.get(env_key)
@@ -302,13 +356,14 @@ def load_config(
         "provider": asdict(ProviderConfig()),
         "paths": asdict(PathsConfig()),
         "render": asdict(RenderConfig()),
+        "generative": asdict(GenerativeConfig()),
     }
     sources: list[str] = []
 
     u_path = user_config_path(env)
     if u_path.is_file():
         u_data = read_toml_file(u_path)
-        for sec in ("general", "provider", "paths", "render"):
+        for sec in ("general", "provider", "paths", "render", "generative"):
             merged[sec].update(u_data.get(sec, {}))
         sources.append(str(u_path))
 
@@ -318,14 +373,14 @@ def load_config(
 
     if explicit is not None:
         exp_data = read_toml_file(explicit)
-        for sec in ("general", "provider", "paths", "render"):
+        for sec in ("general", "provider", "paths", "render", "generative"):
             merged[sec].update(exp_data.get(sec, {}))
         sources.append(str(explicit.resolve()))
     else:
         p_path = discover_project_config(project=project, cwd=cwd)
         if p_path is not None and str(p_path) not in sources:
             p_data = read_toml_file(p_path)
-            for sec in ("general", "provider", "paths", "render"):
+            for sec in ("general", "provider", "paths", "render", "generative"):
                 merged[sec].update(p_data.get(sec, {}))
             sources.append(str(p_path))
 
@@ -338,6 +393,7 @@ def load_config(
         provider=ProviderConfig(**merged["provider"]),
         paths=PathsConfig(**merged["paths"]),
         render=RenderConfig(**merged["render"]),
+        generative=GenerativeConfig(**merged["generative"]),
         sources=tuple(sources),
     )
 
@@ -371,6 +427,7 @@ def render_starter_toml() -> str:
         provider=ProviderConfig(),
         paths=PathsConfig(),
         render=RenderConfig(),
+        generative=GenerativeConfig(),
         sources=(),
     )
     lines = [f"config_version = {cfg.config_version}", ""]
@@ -379,6 +436,7 @@ def render_starter_toml() -> str:
         ("provider", cfg.provider),
         ("paths", cfg.paths),
         ("render", cfg.render),
+        ("generative", cfg.generative),
     ):
         lines.append(f"[{section_name}]")
         for key, value in asdict(section_obj).items():

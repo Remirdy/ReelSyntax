@@ -138,6 +138,18 @@ def parser():
     assets_lic.add_argument('project', type=Path)
     assets_lic.add_argument('--write', action='store_true')
     assets_lic.add_argument('--json', action='store_true')
+    assets_gen = assets_sub.add_parser('generate', help='Invoke the opt-in external generative media adapter (disabled by default)')
+    assets_gen.add_argument('project', type=Path)
+    assets_gen.add_argument('prompt')
+    assets_gen.add_argument('--kind', choices=['image', 'audio', 'video'], default='image')
+    assets_gen.add_argument('--out', dest='dest_rel')
+    assets_gen.add_argument('--endpoint')
+    assets_gen.add_argument('--aspect', choices=['9:16', '1:1', '16:9', '4:5'], default='9:16')
+    assets_gen.add_argument('--seed', type=int, default=42)
+    assets_gen.add_argument('--spdx')
+    assets_gen.add_argument('--attribution')
+    assets_gen.add_argument('--allow-network', action='store_true')
+    assets_gen.add_argument('--json', action='store_true')
 
     cfg_cmd = commands.add_parser('config', help='Inspect, initialize, or validate reelsyntax.toml configuration')
     cfg_sub = cfg_cmd.add_subparsers(dest='action', required=True)
@@ -598,6 +610,7 @@ def formats_command(args):
 def assets_command(args):
     from .assets import (
         audit_project_licenses,
+        generate_media_asset,
         list_starter_assets,
         materialize_starter_pack,
         register_local_asset,
@@ -628,6 +641,19 @@ def assets_command(args):
             out = write_licenses_markdown(args.project)
             audit['licenses_markdown'] = out.relative_to(Path(args.project).resolve(strict=True)).as_posix()
         return audit
+    if args.action == 'generate':
+        return generate_media_asset(
+            args.project,
+            args.prompt,
+            kind=args.kind,
+            dest_rel=args.dest_rel,
+            endpoint=args.endpoint,
+            aspect=args.aspect,
+            seed=args.seed,
+            spdx=args.spdx,
+            attribution=args.attribution,
+            allow_network=args.allow_network,
+        )
     raise ValueError('Unsupported assets action')
 
 

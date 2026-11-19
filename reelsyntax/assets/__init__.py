@@ -2,6 +2,7 @@ from .license import (
     APPROVED_SPDX_LICENSES,
     ATTRIBUTION_REQUIRED_SPDX,
     audit_project_licenses,
+    collect_synthetic_origin,
     load_license_ledger,
     record_asset_license,
     render_licenses_markdown,
@@ -10,11 +11,14 @@ from .license import (
 )
 from .resolver import resolve_project_asset
 from .sources import (
+    generate_media_asset,
     list_starter_assets,
     load_starter_catalog,
     materialize_starter_asset,
     materialize_starter_pack,
     register_local_asset,
+    resolve_generative_policy,
+    stamp_synthetic_origin,
     verify_open_catalog_candidate,
 )
 
@@ -22,6 +26,8 @@ __all__ = [
     "APPROVED_SPDX_LICENSES",
     "ATTRIBUTION_REQUIRED_SPDX",
     "audit_project_licenses",
+    "collect_synthetic_origin",
+    "generate_media_asset",
     "list_starter_assets",
     "load_license_ledger",
     "load_starter_catalog",
@@ -30,7 +36,9 @@ __all__ = [
     "record_asset_license",
     "register_local_asset",
     "render_licenses_markdown",
+    "resolve_generative_policy",
     "resolve_project_asset",
+    "stamp_synthetic_origin",
     "validate_license_entry",
     "verify_open_catalog_candidate",
     "write_licenses_markdown",

@@ -47,16 +47,30 @@ def validate_license_entry(entry: dict[str, Any]) -> dict[str, Any]:
     sha = entry.get("sha256")
     if not isinstance(sha, str) or len(sha) != 64:
         raise ValueError(f"Invalid asset SHA-256 digest for {rel_path!r}")
-    return {
+    source_kind = str(entry.get("source_kind", "user_local"))
+    synthetic_origin = entry.get("synthetic_origin")
+    if source_kind == "generative":
+        if not attribution:
+            raise ValueError(f"Synthetic media asset {rel_path!r} requires non-empty disclosure attribution")
+        if (
+            not isinstance(synthetic_origin, dict)
+            or synthetic_origin.get("synthetic") is not True
+            or synthetic_origin.get("disclosed") is not True
+        ):
+            raise ValueError(f"Synthetic media asset {rel_path!r} requires valid synthetic_origin provenance")
+    out = {
         "path": Path(rel_path).as_posix(),
         "spdx": spdx,
-        "source_kind": str(entry.get("source_kind", "user_local")),
+        "source_kind": source_kind,
         "author": author or "Unspecified",
         "attribution": attribution,
         "source_url": str(entry.get("source_url", "")),
         "sha256": sha,
         "recorded_at": str(entry.get("recorded_at") or datetime.now(timezone.utc).isoformat()),
     }
+    if isinstance(synthetic_origin, dict):
+        out["synthetic_origin"] = dict(synthetic_origin)
+    return out
 
 
 def load_license_ledger(project_dir: Path | str) -> dict[str, Any]:
@@ -79,11 +93,12 @@ def record_asset_license(
     author: str = "",
     attribution: str = "",
     source_url: str = "",
+    synthetic_origin: dict[str, Any] | None = None,
 ) -> dict[str, Any]:
     root = Path(project_dir).resolve(strict=True)
     target = contained_path(root, rel_path)
     normalized_rel = target.relative_to(root).as_posix()
-    entry = validate_license_entry({
+    raw_entry: dict[str, Any] = {
         "path": normalized_rel,
         "spdx": spdx,
         "source_kind": source_kind,
@@ -92,11 +107,39 @@ def record_asset_license(
         "source_url": source_url,
         "sha256": file_digest(target),
         "recorded_at": datetime.now(timezone.utc).isoformat(),
-    })
+    }
+    if synthetic_origin is not None:
+        raw_entry["synthetic_origin"] = dict(synthetic_origin)
+    entry = validate_license_entry(raw_entry)
     ledger = load_license_ledger(root)
     ledger["assets"][normalized_rel] = entry
     atomic_json(ledger_path(root), ledger)
     return entry
+
+
+def collect_synthetic_origin(project_dir: Path | str, *, paths: set[str] | None = None) -> dict[str, Any]:
+    root = Path(project_dir).resolve(strict=True)
+    ledger = load_license_ledger(root)
+    assets: list[dict[str, Any]] = []
+    for rel, raw in sorted(ledger.get("assets", {}).items()):
+        if paths is not None and rel not in paths:
+            continue
+        if not isinstance(raw, dict) or raw.get("source_kind") != "generative":
+            continue
+        entry = validate_license_entry(raw)
+        origin = entry.get("synthetic_origin") or {}
+        record: dict[str, Any] = {
+            "path": entry["path"],
+            "spdx": entry["spdx"],
+            "sha256": entry["sha256"],
+            "attribution": entry["attribution"],
+            "disclosed": True,
+        }
+        for key in ("kind", "adapter", "endpoint", "generator", "seed"):
+            if key in origin and origin[key] is not None:
+                record[key] = origin[key]
+        assets.append(record)
+    return {"present": bool(assets), "assets": assets}
 
 
 def audit_project_licenses(project_dir: Path | str) -> dict[str, Any]:
@@ -118,6 +161,7 @@ def audit_project_licenses(project_dir: Path | str) -> dict[str, Any]:
 
     missing_entries: list[str] = []
     hash_mismatches: list[str] = []
+    invalid_entries: list[str] = []
     verified: list[dict[str, Any]] = []
 
     for rel in sorted(referenced):
@@ -127,20 +171,27 @@ def audit_project_licenses(project_dir: Path | str) -> dict[str, Any]:
         if rec is None:
             missing_entries.append(rel)
             continue
-        validated = validate_license_entry(rec)
+        try:
+            validated = validate_license_entry(rec)
+        except ValueError:
+            invalid_entries.append(rel)
+            continue
         if validated["sha256"] != current_sha:
             hash_mismatches.append(rel)
             continue
         verified.append(validated)
 
-    ok = not missing_entries and not hash_mismatches
+    synthetic_assets = [item["path"] for item in verified if item.get("source_kind") == "generative"]
+    ok = not missing_entries and not hash_mismatches and not invalid_entries
     return {
         "ok": ok,
         "technical_status": "pass" if ok else "fail",
         "referenced_count": len(referenced),
         "verified": verified,
+        "synthetic_assets": synthetic_assets,
         "missing_licenses": missing_entries,
         "hash_mismatches": hash_mismatches,
+        "invalid_entries": invalid_entries,
     }
 
 
@@ -165,10 +216,11 @@ def render_licenses_markdown(project_dir: Path | str) -> str:
         "| --- | --- | --- | --- | --- |",
     ])
     for item in items:
-        attrib = item["attribution"] or item["author"]
+        attrib = (item["attribution"] or item["author"]).replace("|", "\\|").replace("\n", " ").replace("\r", " ")
+        source_col = f"`{item['source_kind']}` (synthetic)" if item["source_kind"] == "generative" else f"`{item['source_kind']}`"
         short_sha = f"`{item['sha256'][:16]}`"
         lines.append(
-            f"| `{item['path']}` | `{item['spdx']}` | `{item['source_kind']}` | {attrib} | {short_sha} |"
+            f"| `{item['path']}` | `{item['spdx']}` | {source_col} | {attrib} | {short_sha} |"
         )
     lines.append("")
     return "\n".join(lines)

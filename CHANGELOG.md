@@ -4,6 +4,7 @@
 
 ### Added
 
+- Add default-disabled optional generative media adapter (`reelsyntax.assets.sources.generative`, `reelsyntax assets generate`, `[generative]` in `reelsyntax.toml` / `config.v1.schema.json`) with opt-in endpoint & `--allow-network` enforcement, `contained_path` output validation, SPDX/disclosure ledger checks, and `"synthetic_origin"` provenance stamping in `prompt.json` and `manifest.json`.
 - Add `docs/cookbook.md` (wired into `mkdocs.yml`) with EN, TR, and DE weak-vs-strong prompt recipes, diagnosis notes, and repair tips across all 15 ReelSyntax formats.
 - Add production container image (`Dockerfile` with pinned `python:3.12-slim`, FFmpeg, Pillow, non-root user, `/workspace` volume), hardened offline `docker-compose.yml`, Codespaces dev container, `docs/containers.md`, and `.github/workflows/container.yml` with GHCR publishing gated to `v*` tags and manual dispatch.
 - Add MCP format tools (`reelsyntax_format_list`, `reelsyntax_format_show`, `reelsyntax_format_make` with `dry_run`/`step`/`yes`/`video_lang`/`ui_lang`/`attribution`, and `reelsyntax_format_revise`) with closed schemas, workspace path containment, and offline-by-default providers.

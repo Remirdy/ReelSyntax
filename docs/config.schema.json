@@ -117,6 +117,42 @@
       },
       "required": [],
       "additionalProperties": false
+    },
+    "generative": {
+      "type": "object",
+      "properties": {
+        "enabled": {
+          "type": "boolean"
+        },
+        "endpoint": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "timeout_sec": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 600
+        },
+        "spdx": {
+          "enum": [
+            "Apache-2.0",
+            "BSD-2-Clause",
+            "BSD-3-Clause",
+            "CC-BY-4.0",
+            "CC0-1.0",
+            "ISC",
+            "MIT",
+            "OFL-1.1",
+            "User-Provided"
+          ]
+        },
+        "attribution": {
+          "type": "string",
+          "maxLength": 256
+        }
+      },
+      "required": [],
+      "additionalProperties": false
     }
   },
   "required": [],

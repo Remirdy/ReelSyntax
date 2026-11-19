@@ -85,6 +85,7 @@ def project_schema():
 
 
 def config_schema():
+    from .assets.license import APPROVED_SPDX_LICENSES
     from .config import LANG_TAG_RE, PROFILE_NAMES, PROVIDER_NAMES
 
     lang_prop = {
@@ -131,6 +132,15 @@ def config_schema():
                         'cache_budget_mib': {'type': 'integer', 'minimum': 0, 'maximum': 1_048_576},
                         'reduced_motion': {'type': 'boolean'},
                         'timeout_sec': {'type': 'integer', 'minimum': 1, 'maximum': 3600},
+                    }
+                ),
+                'generative': object_schema(
+                    {
+                        'enabled': {'type': 'boolean'},
+                        'endpoint': {'type': 'string', 'maxLength': 512},
+                        'timeout_sec': {'type': 'integer', 'minimum': 1, 'maximum': 600},
+                        'spdx': {'enum': sorted(APPROVED_SPDX_LICENSES)},
+                        'attribution': {'type': 'string', 'maxLength': 256},
                     }
                 ),
             }
