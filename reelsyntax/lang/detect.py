@@ -5,6 +5,9 @@ TR_CHARS = frozenset("çğıöşüÇĞİÖŞÜ")
 TR_UNIQUE_CHARS = frozenset("ğışĞİŞ")
 DE_CHARS = frozenset("äöüßÄÖÜẞ")
 DE_UNIQUE_CHARS = frozenset("ßẞ")
+ES_UNIQUE_CHARS = frozenset("ñÑ¿¡")
+FR_UNIQUE_CHARS = frozenset("èùîïœæÈÙÎÏŒÆ")
+PT_UNIQUE_CHARS = frozenset("ãõÃÕ")
 
 STOPWORDS_BY_LANG: dict[str, frozenset[str]] = {
     "tr": frozenset({
@@ -25,20 +28,26 @@ STOPWORDS_BY_LANG: dict[str, frozenset[str]] = {
     }),
     "es": frozenset({
         "con", "sin", "para", "una", "por", "del", "las", "los", "cámara", "camara",
-        "fija", "texto", "música", "musica", "fotogramas",
+        "fija", "texto", "música", "musica", "fotogramas", "consejos", "colores",
+        "tranquilos", "subtítulos", "subtitulos", "corto", "escena", "ritmo", "vídeo",
     }),
     "fr": frozenset({
         "avec", "sans", "pour", "une", "des", "les", "dans", "caméra", "camera",
-        "fixe", "texte", "musique", "images", "cadence",
+        "fixe", "texte", "musique", "images", "cadence", "vidéo", "couleurs",
+        "calmes", "conseils", "courte", "court", "scène", "rythme", "sous-titres",
     }),
     "pt": frozenset({
         "com", "sem", "para", "uma", "dos", "das", "câmera", "camera",
-        "fixa", "texto", "música", "musica", "quadros",
+        "fixa", "texto", "música", "musica", "quadros", "vídeo", "cores",
+        "calmas", "dicas", "curto", "cena", "ritmo", "legendas", "passos",
     }),
 }
 
 TR_SUFFIX_RE = re.compile(r"(?:ları|leri|ların|lerin|sız|siz|suz|süz|lığı|liği|luğu|lüğü|dan|den|tan|ten)\b")
 DE_SUFFIX_RE = re.compile(r"(?:ung|ungen|keit|keiten|schaft|schaften|isch|ische|ischen)\b")
+ES_SUFFIX_RE = re.compile(r"(?:ción|ciones|miento|mientos|dad|dades)\b")
+FR_SUFFIX_RE = re.compile(r"(?:tion|tions|ement|ements|ment)\b")
+PT_SUFFIX_RE = re.compile(r"(?:ção|ções|mento|mentos|dade|dades)\b")
 
 
 def normalize_nfc(text: str) -> str:
@@ -101,12 +110,17 @@ def detect_language(text: str, default: str = "en") -> str:
             scores["de"] += 4.0
         elif ch in DE_CHARS:
             scores["de"] += 1.4
-        if ch in "ñ¿¡":
+        if ch in ES_UNIQUE_CHARS:
             scores["es"] += 3.5
-        if ch in "çœæ":
-            scores["fr"] += 1.2
-        if ch in "ãõ":
-            scores["pt"] += 3.0
+        if ch in FR_UNIQUE_CHARS:
+            scores["fr"] += 3.0
+        elif ch in "éêàÉÊÀ":
+            scores["fr"] += 0.6
+        if ch in PT_UNIQUE_CHARS:
+            scores["pt"] += 3.5
+        if ch in "çÇ":
+            scores["fr"] += 0.4
+            scores["pt"] += 0.4
 
     tokens = re.findall(r"[^\W\d_]+", cleaned.lower(), flags=re.UNICODE)
     for tok in tokens:
@@ -117,6 +131,12 @@ def detect_language(text: str, default: str = "en") -> str:
             scores["tr"] += 1.5
         if DE_SUFFIX_RE.search(tok) and len(tok) >= 6:
             scores["de"] += 1.5
+        if ES_SUFFIX_RE.search(tok) and len(tok) >= 6:
+            scores["es"] += 1.2
+        if FR_SUFFIX_RE.search(tok) and len(tok) >= 6:
+            scores["fr"] += 1.2
+        if PT_SUFFIX_RE.search(tok) and len(tok) >= 6:
+            scores["pt"] += 1.2
 
     best_lang, best_score = max(scores.items(), key=lambda item: (item[1], item[0] == default))
     if best_score < 1.5:

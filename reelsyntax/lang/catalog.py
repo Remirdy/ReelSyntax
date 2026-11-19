@@ -9,6 +9,9 @@ PKG_DIR = Path(__file__).resolve().parents[1]
 REPO_ROOT = PKG_DIR.parent
 BUNDLED_LOCALES_DIR = PKG_DIR / "data/locales"
 LOCALE_TAG_RE = re.compile(r"^[a-z]{2,3}(?:-[A-Za-z0-9]{2,8})*$")
+TIER1_LOCALES = ("en", "tr", "de")
+TIER2_LOCALES = ("es", "fr", "pt")
+SUPPORTED_LOCALES = TIER1_LOCALES + TIER2_LOCALES
 
 PSEUDO_MAP = str.maketrans({
     "a": "à", "e": "ë", "i": "ï", "o": "ô", "u": "ü",
