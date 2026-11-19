@@ -87,24 +87,50 @@ bpy.ops.mesh.primitive_plane_add(size=16.0, location=(0.0, 0.0, -0.78))
 plane = bpy.context.active_object
 plane.data.materials.append(mat_ground)
 
-slabs = []
-for idx in range(4):
-    bpy.ops.mesh.primitive_cube_add(size=1.0, location=(0.45, 0.0, -0.35 + idx * 0.34))
-    obj = bpy.context.active_object
-    obj.scale = (0.64 - idx * 0.07, 0.44 - idx * 0.04, 0.12)
-    bpy.ops.object.modifier_add(type='BEVEL')
-    obj.modifiers['Bevel'].width = 0.02
-    obj.modifiers['Bevel'].segments = 2
-    obj.data.materials.append(mat_accent if idx == 2 else mat_primary)
-    slabs.append(obj)
-
-bpy.ops.mesh.primitive_torus_add(major_radius=0.92, minor_radius=0.035, location=(0.45, 0.0, 0.18))
-ring = bpy.context.active_object
-ring.data.materials.append(mat_accent)
-
 def point_at(obj, target):
     d = Vector(target) - obj.location
     obj.rotation_euler = d.to_track_quat('-Z', 'Y').to_euler()
+
+slabs = []
+ring = None
+char_objs = []
+if cfg.get('recipe') == 'character-stage':
+    repo_root = cfg.get('repo_root')
+    if repo_root and repo_root not in sys.path:
+        sys.path.insert(0, repo_root)
+    from reelsyntax.character import blink_aperture, build_blender_character, get_character_preset
+    char_id = cfg.get('character', 'scout')
+    shot_role = cfg.get('shot_role', 'speaker_a')
+    char_pos = cfg.get('character_pos', 'duo' if shot_role in ('establishing', 'two_shot') else ('right' if shot_role == 'speaker_b' else 'left'))
+    if char_pos == 'duo' or shot_role in ('establishing', 'two_shot'):
+        p_a = get_character_preset(char_id)
+        p_b = get_character_preset(cfg.get('partner_character', 'archivist'))
+        o_a = build_blender_character(char_id, expression=cfg.get('expression', 'neutral'), mouth_open=(cfg.get('mouth_envelope') or [0.0])[0], blink_open=blink_aperture(0, blink_period=p_a['blink_period'], blink_offset=p_a['blink_offset']), yaw_deg=24.0, location=(-0.9, 0.0, 0.0), scale=0.9, name_prefix='RS_A', bpy_module=bpy)
+        o_b = build_blender_character(cfg.get('partner_character', 'archivist'), expression=cfg.get('partner_expression', 'neutral'), mouth_open=0.0, blink_open=blink_aperture(0, blink_period=p_b['blink_period'], blink_offset=p_b['blink_offset']), yaw_deg=-24.0, location=(0.9, 0.0, 0.0), scale=0.9, name_prefix='RS_B', bpy_module=bpy)
+        char_objs = [o for o in (o_a, o_b) if o is not None]
+    else:
+        cx = -0.55 if char_pos == 'left' else (0.55 if char_pos == 'right' else 0.0)
+        yaw = 22.0 if char_pos == 'left' else (-22.0 if char_pos == 'right' else 0.0)
+        p_a = get_character_preset(char_id)
+        o_a = build_blender_character(char_id, expression=cfg.get('expression', 'neutral'), mouth_open=(cfg.get('mouth_envelope') or [0.0])[0], blink_open=blink_aperture(0, blink_period=p_a['blink_period'], blink_offset=p_a['blink_offset']), yaw_deg=yaw, location=(cx, 0.0, 0.0), scale=1.0, name_prefix='RS_A', bpy_module=bpy)
+        if o_a is not None:
+            char_objs = [o_a]
+    light_target = (0.0, 0.0, 0.28)
+else:
+    for idx in range(4):
+        bpy.ops.mesh.primitive_cube_add(size=1.0, location=(0.45, 0.0, -0.35 + idx * 0.34))
+        obj = bpy.context.active_object
+        obj.scale = (0.64 - idx * 0.07, 0.44 - idx * 0.04, 0.12)
+        bpy.ops.object.modifier_add(type='BEVEL')
+        obj.modifiers['Bevel'].width = 0.02
+        obj.modifiers['Bevel'].segments = 2
+        obj.data.materials.append(mat_accent if idx == 2 else mat_primary)
+        slabs.append(obj)
+
+    bpy.ops.mesh.primitive_torus_add(major_radius=0.92, minor_radius=0.035, location=(0.45, 0.0, 0.18))
+    ring = bpy.context.active_object
+    ring.data.materials.append(mat_accent)
+    light_target = (0.45, 0.0, 0.1)
 
 for lname, energy, loc in [
     ('Key', 220.0, (2.8, -3.0, 3.2)),
@@ -117,7 +143,7 @@ for lname, energy, loc in [
     lobj = bpy.data.objects.new(lname, ldata)
     scene.collection.objects.link(lobj)
     lobj.location = loc
-    point_at(lobj, (0.45, 0.0, 0.1))
+    point_at(lobj, light_target)
 
 cdata = bpy.data.cameras.new('RSCam')
 cdata.lens = float(cfg.get('focal_mm', 52.0))
@@ -133,19 +159,29 @@ preset = cfg.get('camera_preset', 'locked')
 for f in range(frames):
     u = f / max(1, frames - 1)
     s = u * u * (3.0 - 2.0 * u)
-    for idx, obj in enumerate(slabs):
-        obj.rotation_euler = (0.04 * math.cos(u * math.tau + idx), 0.0, 0.28 + idx * 0.2 + 0.32 * math.sin(u * math.pi + idx * 0.4))
-        obj.location.z = -0.35 + idx * 0.34 + 0.04 * math.sin(u * math.tau + idx)
-    ring.rotation_euler = (0.42 + 0.18 * math.sin(u * math.tau), 0.22, u * math.pi)
-    if preset == 'orbit':
-        ang = -0.28 + 0.56 * s
-        cam.location = (0.45 + 4.2 * math.sin(ang), -4.2 * math.cos(ang), 1.35)
-    elif preset == 'dolly_in':
-        k = 1.0 - 0.16 * s
-        cam.location = (0.45 + 1.5 * k, -4.1 * k, 1.35 * k)
+    if cfg.get('recipe') == 'character-stage':
+        for idx, cobj in enumerate(char_objs):
+            cobj.location.z = 0.02 * math.sin(u * math.tau + idx)
+        if preset == 'dolly_in':
+            k = 1.0 - 0.14 * s
+            cam.location = (0.0, -3.55 * k, 0.36)
+        else:
+            cam.location = (0.0, -3.55, 0.36)
+        point_at(cam, (0.0, 0.0, 0.24))
     else:
-        cam.location = (1.85, -4.05, 1.35)
-    point_at(cam, (0.1, 0.0, 0.12))
+        for idx, obj in enumerate(slabs):
+            obj.rotation_euler = (0.04 * math.cos(u * math.tau + idx), 0.0, 0.28 + idx * 0.2 + 0.32 * math.sin(u * math.pi + idx * 0.4))
+            obj.location.z = -0.35 + idx * 0.34 + 0.04 * math.sin(u * math.tau + idx)
+        ring.rotation_euler = (0.42 + 0.18 * math.sin(u * math.tau), 0.22, u * math.pi)
+        if preset == 'orbit':
+            ang = -0.28 + 0.56 * s
+            cam.location = (0.45 + 4.2 * math.sin(ang), -4.2 * math.cos(ang), 1.35)
+        elif preset == 'dolly_in':
+            k = 1.0 - 0.16 * s
+            cam.location = (0.45 + 1.5 * k, -4.1 * k, 1.35 * k)
+        else:
+            cam.location = (1.85, -4.05, 1.35)
+        point_at(cam, (0.1, 0.0, 0.12))
     scene.render.filepath = os.path.join(out_dir, f'{f:06d}.png')
     bpy.ops.render.render(write_still=True)
 """
@@ -163,6 +199,8 @@ def render_blender_scene(scene: dict, output: dict, profile: str, destination_di
     params = scene.get('params', {})
     cam_cfg = scene.get('camera') or {}
     payload = {
+        'recipe': scene['recipe'],
+        'repo_root': str(Path(__file__).resolve().parents[1]),
         'width': output['width'],
         'height': output['height'],
         'fps_num': fps.numerator,
@@ -172,10 +210,17 @@ def render_blender_scene(scene: dict, output: dict, profile: str, destination_di
         'background': params.get('background', '#181d21' if scene['recipe'] == 'aperture' else '#16191e'),
         'foreground': params.get('foreground', '#20262a' if scene['recipe'] == 'aperture' else '#ece8df'),
         'accent': params.get('accent', '#bd9a66' if scene['recipe'] == 'aperture' else '#c8643b'),
-        'focal_mm': cam_cfg.get('focal_mm', 52.0),
+        'focal_mm': cam_cfg.get('focal_mm', 44.0 if scene['recipe'] == 'character-stage' else 52.0),
         'camera_preset': cam_cfg.get('preset', 'locked'),
         'out_dir': str(destination_dir),
         'shot': params.get('shot', 'hero'),
+        'character': params.get('character', 'scout'),
+        'partner_character': params.get('partner_character', 'archivist'),
+        'expression': params.get('expression', 'neutral'),
+        'partner_expression': params.get('partner_expression', 'neutral'),
+        'shot_role': params.get('shot_role', 'speaker_a'),
+        'character_pos': params.get('character_pos', 'left'),
+        'mouth_envelope': params.get('mouth_envelope', []),
     }
     if scene['recipe'] == 'cassette':
         payload.update(samples=params.get('samples', 16 if profile == 'draft' else 36),
@@ -212,7 +257,29 @@ def render_blender_scene(scene: dict, output: dict, profile: str, destination_di
         with Image.open(frame_file) as im:
             rgb = im.convert('RGB')
         bounds = []
-        if scene['recipe'] not in ('aperture', 'cassette'):
+        if scene['recipe'] == 'character-stage':
+            from .character import _draw_beveled_dialogue_hud
+            canvas = ImageDraw.Draw(rgb)
+            unit = min(output['width'] / 960.0, output['height'] / 540.0)
+            u_val = f / max(1, scene['duration_frames'] - 1)
+            speaker = str(params.get('speaker') or params.get('kicker') or '').strip()
+            dialogue = str(params.get('dialogue') or params.get('subheading') or params.get('heading') or '').strip()
+            bounds = _draw_beveled_dialogue_hud(
+                canvas,
+                w=output['width'],
+                h=output['height'],
+                unit=unit,
+                scale=1,
+                speaker=speaker,
+                dialogue=dialogue,
+                preset_id=str(params.get('character', 'scout')),
+                u=u_val,
+                background=payload['background'],
+                foreground=payload['foreground'],
+                accent=payload['accent'],
+            )
+            rgb.save(frame_file)
+        elif scene['recipe'] not in ('aperture', 'cassette'):
             canvas = ImageDraw.Draw(rgb)
             bounds = apply_typography_and_hud(canvas, scene, f, output['width'], output['height'], scale=1)
             rgb.save(frame_file)

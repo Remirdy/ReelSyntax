@@ -28,7 +28,6 @@ EXCLUDED_DIR_NAMES = frozenset({
 UNMODIFIED_LEGACY_DIGESTS: dict[str, str] = {
     "ReelSyntax_Skills/examples/hero-fixture/render.py": "a2f73da384702a8afee446c346716e13228d93f612e1e6809d47569260c1fffd",
     "docs/stylesheets/extra.css": "cba7c0a65edc47eb28ebc288a54af81d4975be04dbb8be1682069ca64b56e3cc",
-    "reelsyntax/drawing.py": "db68ca323e35d5b6fd05f4cf4ba7fb66d3c5c47ab3e0b7d44a7690f818fc6d79",
     "reelsyntax/palette.py": "81961d4ba1fd88f3beacd29119ba46feded24d4e9abf54b20df6db41673c2f29",
     "tests/test_production_features.py": "e80911969a42cd5a2500b1472949846c9ee91a46fed4de5f00b06ec533b136a1",
 }

@@ -26,6 +26,16 @@ class SceneParams(TypedDict, total=False):
     in_frame: int
     shapes: list[dict[str, Any]]
     layers: list[dict[str, Any]]
+    character: Literal['scout', 'archivist', 'relay']
+    partner_character: Literal['scout', 'archivist', 'relay']
+    expression: Literal['neutral', 'focused', 'surprised', 'happy']
+    partner_expression: Literal['neutral', 'focused', 'surprised', 'happy']
+    mouth_envelope: list[float]
+    speaker: str
+    dialogue: str
+    shot_role: Literal['establishing', 'speaker_a', 'speaker_b', 'insert', 'two_shot']
+    character_pos: Literal['left', 'right', 'center', 'duo']
+    blink_offset: int
 
 
 class CameraConfig(TypedDict, total=False):
@@ -43,7 +53,7 @@ class TransitionConfig(TypedDict, total=False):
 class Scene(TypedDict):
     id: str
     duration_frames: int
-    recipe: Literal['assembly', 'rings', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art']
+    recipe: Literal['assembly', 'rings', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art', 'character-stage']
     engine: Literal['pillow', 'browser', 'blender', 'ffmpeg']
     params: SceneParams
     camera: NotRequired[CameraConfig]

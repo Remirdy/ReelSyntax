@@ -65,6 +65,8 @@ def project_schema():
     params = definitions['SceneParams']['properties']
     for key in ('heading', 'subheading', 'kicker'):
         params[key]['maxLength'] = 120
+    params['speaker']['maxLength'] = 48
+    params['dialogue']['maxLength'] = 160
     for key in ('background', 'foreground', 'accent'):
         params[key] = COLOR
     params['shapes'] = {
