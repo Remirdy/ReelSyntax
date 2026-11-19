@@ -10,6 +10,7 @@ import uuid
 from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_path, digest, read_json
 
 from . import revisions
+from .brand import append_closing_sting, apply_brand_kit, load_brand_kit, resolve_attribution
 from .config import ResolvedConfig, load_config
 from .formats.registry import discover_formats, get_format
 from .formats.runner import FormatRunner, load_runner_state, state_file_path
@@ -309,14 +310,17 @@ def make_video(
     yes: bool = False,
     dry_run: bool = False,
     allow_network: bool = False,
-    attribution: bool = False,
+    attribution: bool | str | None = None,
+    loop: bool = False,
+    brand: Path | str | None = None,
     extra_format_roots: tuple[Path, ...] = (),
     dry_run_render: bool = False,
 ) -> dict[str, Any]:
     cfg = load_config()
     resolved_ui = resolve_ui_locale(explicit=ui_lang or (cfg.general.ui_lang if cfg.general.ui_lang != "auto" else None))
     cfg_video_lang = video_lang or (cfg.general.video_lang if cfg.general.video_lang != "auto" else None)
-    effective_attribution = bool(attribution or cfg.general.attribution)
+    effective_attribution = resolve_attribution(attribution, cfg.general.attribution)
+    resolved_brand_kit = load_brand_kit(brand).to_dict() if brand is not None else None
     provider = _resolve_provider(cfg, provider_name=provider_name, model=model, allow_network=allow_network)
 
     initial_intent = parse_intent(
@@ -345,6 +349,15 @@ def make_video(
     if dry_run:
         storyboard = build_storyboard(bounded_intent, provider, seed=seed)
         compiled = compile_storyboard_to_project(storyboard, bounded_intent, project_id=slug, seed=seed)
+        if resolved_brand_kit is not None:
+            compiled = apply_brand_kit(compiled, resolved_brand_kit)
+        compiled = append_closing_sting(
+            compiled,
+            attribution=effective_attribution,
+            video_lang=bounded_intent.video_lang,
+            format_id=manifest["id"],
+            loop=loop,
+        )
         budget = estimate_render_budget(compiled, manifest)
         return {
             "dry_run": True,
@@ -384,6 +397,9 @@ def make_video(
         video_lang=bounded_intent.video_lang,
         aspect=bounded_intent.aspect,
         duration_sec=bounded_intent.duration_sec,
+        attribution=effective_attribution,
+        loop=loop,
+        brand_kit=resolved_brand_kit,
     )
     write_prompt_provenance(
         target_dir,

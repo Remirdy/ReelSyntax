@@ -7,7 +7,7 @@ from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_p
 
 from .contracts import Project, ProjectMetadata
 
-RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'cinematic-3d', 'stepped-clay', 'paper-cutout', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art', 'character-stage'}
+RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'cinematic-3d', 'stepped-clay', 'paper-cutout', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art', 'character-stage', 'brand-sting'}
 RECIPES_3D = {'prism-monolith', 'cinematic-3d', 'stepped-clay', 'paper-cutout', 'aperture', 'cassette', 'character-stage'}
 ENGINES = {'pillow', 'browser', 'blender', 'ffmpeg'}
 CAMERA_PRESETS = {'locked', 'dolly_in', 'orbit', 'crane_rise', 'dolly_zoom'}
@@ -95,13 +95,15 @@ def validate(plan: Project) -> ProjectMetadata:
     if not 1 <= fps <= 120:
         raise ValueError('output.fps: supported range is 1–120')
     delivery = plan.get('delivery', {})
-    fields(delivery, {'target', 'language', 'font', 'logo', 'margin'}, set(), 'delivery')
+    fields(delivery, {'target', 'language', 'font', 'logo', 'margin', 'attribution'}, set(), 'delivery')
     if 'target' in delivery:
         from .variants import TARGETS
         if delivery['target'] not in TARGETS:
             raise ValueError('Unknown delivery target')
     if 'language' in delivery and not re.fullmatch('[a-z]{3}', delivery['language']):
         raise ValueError('delivery.language: expected a three-letter language code')
+    if 'attribution' in delivery and delivery['attribution'] not in {'remirdy-sting-v1', 'metadata-only-loop'}:
+        raise ValueError('delivery.attribution: unsupported attribution marker')
     number(delivery.get('margin', 0), 0, 0.25, 'delivery.margin')
     for key in ('font', 'logo'):
         if key in delivery:

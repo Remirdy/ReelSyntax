@@ -497,6 +497,9 @@ class FormatRunner:
         video_lang: str | None = None,
         aspect: str | None = None,
         duration_sec: int | None = None,
+        attribution: bool = False,
+        loop: bool = False,
+        brand_kit: dict[str, Any] | None = None,
     ) -> dict[str, Any]:
         root = Path(project_dir).absolute()
         if root.is_symlink():
@@ -522,6 +525,9 @@ class FormatRunner:
             "seed": int(seed) & 0xFFFFFFFF,
             "prompt": prompt,
             "intent": bounded_intent.to_dict(),
+            "attribution": bool(attribution),
+            "loop": bool(loop),
+            "brand_kit": copy.deepcopy(brand_kit) if brand_kit is not None else None,
             "current_step_index": 0,
             "status": "initialized",
             "step_seeds": {},
@@ -722,6 +728,8 @@ class FormatRunner:
                     )
                     plan = read_json(root / "reel.json")
                     for scene in plan["scenes"]:
+                        if scene["recipe"] == "brand-sting":
+                            continue
                         scene["params"]["background"] = bg
                         if scene["recipe"] not in {"layer-stack", "shape-field", "footage"}:
                             scene["params"]["foreground"] = fg
@@ -744,6 +752,17 @@ class FormatRunner:
             elif self.manifest["id"] == "retro-lowpoly-cutscene":
                 compiled = _attach_cutscene_voice_chirps(root, compiled, state["seed"])
             _record_brief_derived_sources(root, compiled, self.manifest["id"], list(self.manifest.get("qc_rules", [])))
+            from ..brand import append_closing_sting, apply_brand_kit
+
+            if state.get("brand_kit") is not None:
+                compiled = apply_brand_kit(compiled, state["brand_kit"], project_root=root)
+            compiled = append_closing_sting(
+                compiled,
+                attribution=bool(state.get("attribution", False)),
+                video_lang=step_intent.video_lang,
+                format_id=self.manifest["id"],
+                loop=bool(state.get("loop", False)),
+            )
             atomic_json(root / "reel.json", compiled)
             return {
                 "scene_count": len(compiled["scenes"]),
@@ -762,6 +781,17 @@ class FormatRunner:
                 elif self.manifest["id"] == "retro-lowpoly-cutscene":
                     compiled = _attach_cutscene_voice_chirps(root, compiled, state["seed"])
                 _record_brief_derived_sources(root, compiled, self.manifest["id"], list(self.manifest.get("qc_rules", [])))
+                from ..brand import append_closing_sting, apply_brand_kit
+
+                if state.get("brand_kit") is not None:
+                    compiled = apply_brand_kit(compiled, state["brand_kit"], project_root=root)
+                compiled = append_closing_sting(
+                    compiled,
+                    attribution=bool(state.get("attribution", False)),
+                    video_lang=step_intent.video_lang,
+                    format_id=self.manifest["id"],
+                    loop=bool(state.get("loop", False)),
+                )
                 atomic_json(root / "reel.json", compiled)
             fb_engine = "pillow" if "pillow" in self.manifest.get("engines", ()) else None
             return _execute_render_step(root, step, dry_run_render=self.dry_run_render, fallback_engine=fb_engine)

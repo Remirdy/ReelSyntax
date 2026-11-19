@@ -249,7 +249,7 @@ def _draw_hud_lock(canvas, scene, frame, w, h, seed, background, foreground, acc
     draw_tracked_text(canvas, (w * 0.07, bar_top + (h - bar_top) * 0.34), 'REELSYNTAX  //  PROTECTED LOWER REGION LOCKED', lock_font, bar_fg, tracking_px=1.4 * unit)
 
 
-def draw(scene, frame, output, seed, supersampling=1, look_mode='agx'):
+def draw(scene, frame, output, seed, supersampling=1, look_mode='agx', reduced_motion=False):
     from fractions import Fraction
     from PIL import Image, ImageDraw
     width, height = output['width'], output['height']
@@ -258,6 +258,12 @@ def draw(scene, frame, output, seed, supersampling=1, look_mode='agx'):
     w, h = width * scale, height * scale
     params = scene['params']
     recipe = scene['recipe']
+    if recipe == 'brand-sting':
+        from .brand import render_brand_sting_frame
+        image, bounds = render_brand_sting_frame(scene, frame, w, h, fps_val, scale=scale, reduced_motion=reduced_motion)
+        if scale > 1:
+            image = image.resize((width, height), Image.Resampling.LANCZOS)
+        return image, bounds
     default_bg = '#14171c' if recipe == 'prism-monolith' else '#eee9df'
     default_fg = '#ede8de' if recipe == 'prism-monolith' else '#252925'
     background, foreground, accent = (params.get(k, v) for k, v in [('background', default_bg), ('foreground', default_fg), ('accent', '#bb5537')])
