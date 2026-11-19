@@ -7,8 +7,8 @@ from ReelSyntax_Skills.tools.registry import atomic_json, canonical, contained_p
 
 from .contracts import Project, ProjectMetadata
 
-RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art', 'character-stage'}
-RECIPES_3D = {'prism-monolith', 'aperture', 'cassette', 'character-stage'}
+RECIPES = {'rings', 'assembly', 'signal', 'title', 'prism-monolith', 'cinematic-3d', 'stepped-clay', 'paper-cutout', 'kinetic-type', 'data-horizon', 'hud-lock', 'aperture', 'cassette', 'footage', 'layer-stack', 'shader-sculpture', 'custom-shader', 'three-scene', 'shape-field', 'news-ticker', 'loop-art', 'character-stage'}
+RECIPES_3D = {'prism-monolith', 'cinematic-3d', 'stepped-clay', 'paper-cutout', 'aperture', 'cassette', 'character-stage'}
 ENGINES = {'pillow', 'browser', 'blender', 'ffmpeg'}
 CAMERA_PRESETS = {'locked', 'dolly_in', 'orbit', 'crane_rise', 'dolly_zoom'}
 TRANSITIONS = {'cut', 'cross_dissolve', 'fade_black', 'wipe_left', 'slide_left', 'slide_right', 'fade_white', 'radial', 'glitch'}

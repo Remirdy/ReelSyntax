@@ -38,8 +38,8 @@ def _check_typography_and_glyphs(plan: dict) -> tuple[dict, dict]:
     for scene in plan['scenes']:
         params = scene.get('params', {})
         recipe = scene['recipe']
-        default_bg = '#14171c' if recipe == 'prism-monolith' else '#eee9df'
-        default_fg = '#ede8de' if recipe == 'prism-monolith' else '#252925'
+        default_bg = '#14171c' if recipe in {'prism-monolith', 'cinematic-3d', 'stepped-clay'} else '#eee9df'
+        default_fg = '#ede8de' if recipe in {'prism-monolith', 'cinematic-3d', 'stepped-clay'} else '#252925'
         bg_rgb = hex_to_rgb(params.get('background', default_bg))
         fg_rgb = hex_to_rgb(params.get('foreground', default_fg))
         ac_rgb = hex_to_rgb(params.get('accent', '#bb5537'))

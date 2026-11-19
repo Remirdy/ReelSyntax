@@ -1,0 +1,13 @@
+{
+  "locale": "tr",
+  "poses_per_sec": 12,
+  "pose_step_frames_24fps": 2,
+  "pose_step_frames_30fps": 3,
+  "roughness": 0.72,
+  "subsurface_weight": 0.22,
+  "palette": {
+    "background": "#292421",
+    "foreground": "#f4ede3",
+    "accent": "#df7c52"
+  }
+}

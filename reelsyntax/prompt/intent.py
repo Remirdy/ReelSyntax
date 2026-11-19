@@ -13,6 +13,9 @@ FPS_RE = re.compile(r"\b(24|25|30|60)\s*fps\b", re.IGNORECASE)
 
 FORMAT_KEYWORD_HINTS: tuple[tuple[str, tuple[str, ...]], ...] = (
     ("retro-lowpoly-cutscene", ("cutscene", "low-poly", "lowpoly", "ara sahne", "zwischensequenz")),
+    ("stepped-clay-look", ("stepped clay", "stepped-clay", "claymation", "clay", "kil", "knet", "knetanimation")),
+    ("paper-cutout", ("paper cutout", "paper-cutout", "cutout", "paper cut", "papercut", "kağıt kesme", "kâğıt kesme", "papierschnitt", "scherenschnitt", "2.5d")),
+    ("cinematic-3d", ("cinematic 3d", "cinematic-3d", "3d", "monolith", "monolit", "lookdev", "cycles", "blender", "three-point", "sinematik 3b")),
     ("photo-slideshow", ("slideshow", "photo", "photos", "fotoğraf", "slayt", "fotos", "diashow")),
     ("social-hook-reel", ("hook", "reels", "shorts", "tiktok", "kanca", "dikey kısa")),
     ("data-story", ("chart", "data", "metrics", "grafik", "veri", "statistik", "diagramm")),

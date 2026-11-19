@@ -1,0 +1,12 @@
+{
+  "locale": "de",
+  "light_azimuth_deg": 130,
+  "shadow_px_per_z": 4.0,
+  "parallax_px_per_z": 8.5,
+  "reduced_motion_mode": "static_unfold",
+  "palette": {
+    "background": "#eee6d8",
+    "foreground": "#22252a",
+    "accent": "#b84f32"
+  }
+}

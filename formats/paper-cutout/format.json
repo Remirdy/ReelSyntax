@@ -1,0 +1,101 @@
+{
+  "$schema": "https://remirdy.github.io/ReelSyntax/schemas/format.v1.schema.json",
+  "id": "paper-cutout",
+  "version": "1.0.0",
+  "title": {
+    "en": "Paper Cutout",
+    "tr": "Kâğıt Kesme Katman",
+    "de": "Scherenschnitt 2.5D"
+  },
+  "category": "art",
+  "aspect": [
+    "9:16",
+    "1:1",
+    "16:9",
+    "4:5"
+  ],
+  "duration_sec": {
+    "min": 6,
+    "max": 60
+  },
+  "languages": [
+    "en",
+    "tr",
+    "de",
+    "es",
+    "fr",
+    "pt"
+  ],
+  "engines": [
+    "pillow",
+    "ffmpeg",
+    "blender"
+  ],
+  "needs": [
+    "subject_or_scene"
+  ],
+  "optional": [
+    "tone",
+    "palette",
+    "parallax_depth"
+  ],
+  "skills": [
+    "paper-cutout-layering",
+    "paper-cut-style",
+    "alpha-compositing-2d",
+    "color-script-progression",
+    "contrast-audit",
+    "frame-clock"
+  ],
+  "steps": [
+    {
+      "id": "idea",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "script",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "look",
+      "type": "llm",
+      "gate": "approve"
+    },
+    {
+      "id": "frames",
+      "type": "render",
+      "profile": "snapshot",
+      "gate": "approve"
+    },
+    {
+      "id": "pilot",
+      "type": "render",
+      "scope": "first_5s",
+      "profile": "draft",
+      "gate": "approve"
+    },
+    {
+      "id": "full",
+      "type": "render",
+      "profile": "draft",
+      "gate": "approve"
+    },
+    {
+      "id": "hero",
+      "type": "render",
+      "profile": "hero"
+    },
+    {
+      "id": "qc",
+      "type": "qc"
+    }
+  ],
+  "qc_rules": [
+    "contrast",
+    "safe-area",
+    "required-glyphs",
+    "loudness"
+  ]
+}

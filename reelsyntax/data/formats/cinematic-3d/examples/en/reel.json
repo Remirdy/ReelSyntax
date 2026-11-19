@@ -1,0 +1,130 @@
+{
+  "$schema": "../../../docs/reel.schema.json",
+  "schema_version": 1,
+  "id": "cinematic-3d-en",
+  "seed": 42,
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": "24/1"
+  },
+  "delivery": {
+    "language": "eng"
+  },
+  "constraints": {
+    "offline": true,
+    "no_paid_services": true
+  },
+  "scenes": [
+    {
+      "id": "stage",
+      "duration_frames": 48,
+      "recipe": "cinematic-3d",
+      "engine": "pillow",
+      "camera": {
+        "preset": "orbit",
+        "focal_mm": 50.0
+      },
+      "params": {
+        "kicker": "01",
+        "heading": "KEY LIGHT",
+        "subheading": "Three-point studio contrast.",
+        "background": "#232834",
+        "foreground": "#f4f6f9",
+        "accent": "#5eb8c4"
+      }
+    },
+    {
+      "id": "depth",
+      "duration_frames": 48,
+      "recipe": "cinematic-3d",
+      "engine": "pillow",
+      "camera": {
+        "preset": "dolly_in",
+        "focal_mm": 50.0
+      },
+      "params": {
+        "kicker": "02",
+        "heading": "CLEAN DOF",
+        "subheading": "Soft background bokeh separation.",
+        "background": "#232834",
+        "foreground": "#f4f6f9",
+        "accent": "#5eb8c4"
+      },
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      }
+    },
+    {
+      "id": "finish",
+      "duration_frames": 48,
+      "recipe": "cinematic-3d",
+      "engine": "pillow",
+      "camera": {
+        "preset": "crane_rise",
+        "focal_mm": 50.0
+      },
+      "params": {
+        "kicker": "03",
+        "heading": "AGX FINISH",
+        "subheading": "Clean highlights and subtle grain.",
+        "background": "#232834",
+        "foreground": "#f4f6f9",
+        "accent": "#5eb8c4"
+      },
+      "transition": {
+        "type": "cross_dissolve",
+        "duration_frames": 8
+      }
+    }
+  ],
+  "audio": {
+    "enabled": true,
+    "gain_db": -14,
+    "cues": [
+      {
+        "frame": 0,
+        "frequency": 220,
+        "duration_frames": 16,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 48,
+        "frequency": 294,
+        "duration_frames": 16,
+        "instrument": "harmonic_pluck"
+      },
+      {
+        "frame": 96,
+        "frequency": 370,
+        "duration_frames": 16,
+        "instrument": "warm_pad"
+      }
+    ]
+  },
+  "quality": {
+    "exceptions": {
+      "freeze": [
+        [
+          0,
+          144
+        ]
+      ],
+      "silence": [
+        [
+          16,
+          48
+        ],
+        [
+          64,
+          96
+        ],
+        [
+          112,
+          144
+        ]
+      ]
+    }
+  }
+}
