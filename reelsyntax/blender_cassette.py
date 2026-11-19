@@ -256,10 +256,10 @@ def build(cfg):
 
 
 SHOTS = {
-    'label': ((-1.65, -2.50, 2.96), (-1.03, -2.27, 2.88), (-0.68, 0.60, 0.40), 46, 6.3),
-    'drive': ((1.63, -1.39, 1.60), (1.46, -1.18, 1.51), (1.01, 0.04, 0.31), 58, 4.5),
-    'edge': ((-2.5, -3.2, 1.12), (-1.68, -3.0, 1.24), (-0.57, -0.93, 0.31), 52, 5.6),
-    'hero': ((2.38, -5.06, 7.92), (1.44, -4.82, 8.14), (0, -0.06, 0.21), 45, 8.0),
+    'label': ((-1.82, -2.42, 2.74), (-0.68, -2.10, 3.03), (-0.68, 0.60, 0.40), 46, 6.3),
+    'drive': ((1.93, -1.64, 1.50), (1.18, -1.25, 1.66), (1.01, 0.04, 0.31), 58, 4.5),
+    'edge': ((-2.85, -3.17, 0.92), (-1.48, -3.02, 1.34), (-0.57, -0.93, 0.31), 52, 5.6),
+    'hero': ((2.62, -4.88, 6.35), (0.76, -5.30, 9.45), (0, -0.06, 0.21), 45, 8.0),
 }
 
 
@@ -271,15 +271,16 @@ def render(cfg):
     scene.render.fps_base = cfg['fps_den']
     for f in cfg.get('selected', range(cfg['frames'])):
         t = f / max(1, cfg['frames'] - 1)
-        u = t * t * (3 - 2 * t)
+        u = 1 - (1 - t) ** 2 if cfg['shot'] == 'hero' else t
         camera.location = Vector(a).lerp(Vector(b), u)
         target = Vector(center)
         camera.data.lens = lens
         camera.data.dof.aperture_fstop = aperture
         point_at(camera, target)
         camera.data.dof.focus_distance = (camera.location - target).length
+        seconds = f * cfg['fps_den'] / cfg['fps_num']
         for i, pivot in enumerate(rotors):
-            pivot.rotation_euler.z = (0.28 + i + 0.97 * t) * (1 if i else 0.88)
+            pivot.rotation_euler.z = (0.28 + i + 2.1 * seconds) * (1 if i else 0.88)
         scene.render.filepath = str(output / f'{f:06d}.png')
         bpy.ops.render.render(write_still=True)
     (output / 'cassette-render.json').write_text(

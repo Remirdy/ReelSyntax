@@ -15,12 +15,12 @@
   },
   "scenes": [
     {
-      "id": "label",
+      "id": "edge",
       "recipe": "cassette",
       "engine": "blender",
       "duration_frames": 32,
       "params": {
-        "shot": "label",
+        "shot": "edge",
         "samples": 24
       }
     },
@@ -28,19 +28,19 @@
       "id": "drive",
       "recipe": "cassette",
       "engine": "blender",
-      "duration_frames": 28,
+      "duration_frames": 36,
       "params": {
         "shot": "drive",
         "samples": 24
       }
     },
     {
-      "id": "edge",
+      "id": "label",
       "recipe": "cassette",
       "engine": "blender",
-      "duration_frames": 26,
+      "duration_frames": 28,
       "params": {
-        "shot": "edge",
+        "shot": "label",
         "samples": 24
       }
     },
@@ -48,7 +48,7 @@
       "id": "hero",
       "recipe": "cassette",
       "engine": "blender",
-      "duration_frames": 46,
+      "duration_frames": 48,
       "params": {
         "shot": "hero",
         "samples": 24
@@ -57,15 +57,15 @@
   ],
   "audio": {
     "enabled": true,
-    "gain_db": -15,
+    "gain_db": -6,
     "cues": [
       {
         "frame": 0,
-        "duration_frames": 132,
+        "duration_frames": 144,
         "frequency": 60,
         "instrument": "warm_pad",
         "pan": 0,
-        "gain_offset_db": -6
+        "gain_offset_db": -5
       },
       {
         "frame": 0,
@@ -73,7 +73,7 @@
         "frequency": 210,
         "instrument": "click_transient",
         "pan": -0.35,
-        "gain_offset_db": -3
+        "gain_offset_db": 1
       },
       {
         "frame": 32,
@@ -81,31 +81,31 @@
         "frequency": 85,
         "instrument": "sub_impact",
         "pan": 0.15,
-        "gain_offset_db": -1
+        "gain_offset_db": 2
       },
       {
-        "frame": 60,
+        "frame": 66,
         "duration_frames": 14,
         "frequency": 280,
         "instrument": "whoosh",
         "pan": -0.35,
-        "gain_offset_db": -6
+        "gain_offset_db": -2
       },
       {
-        "frame": 86,
+        "frame": 96,
         "duration_frames": 24,
         "frequency": 117,
         "instrument": "harmonic_pluck",
         "pan": 0.15,
-        "gain_offset_db": -3
+        "gain_offset_db": 1
       },
       {
-        "frame": 91,
+        "frame": 102,
         "duration_frames": 30,
         "frequency": 175,
         "instrument": "harmonic_pluck",
         "pan": -0.15,
-        "gain_offset_db": -5
+        "gain_offset_db": -1
       }
     ]
   },
