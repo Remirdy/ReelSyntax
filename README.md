@@ -120,10 +120,12 @@ python3 -m reelsyntax handoff ./my-film
 
 ## Example gallery
 
+**FERRO 60** is a six-second cassette film. The camera tracks along the ribbed shell, cuts inside the turning hub, then crosses the printed label before pulling back to reveal the whole cassette. [Watch the 1080p film with sound](docs/media/cinematic-study.mp4).
+
 | Project | Preview | Poster |
 | --- | --- | --- |
 | [foundation](examples/foundation/) | ![foundation animation](docs/media/foundation.gif) | [Still frame](docs/media/foundation.png) |
-| [cinematic-study](examples/cinematic-study/) | ![cinematic-study animation](docs/media/cinematic-study.gif) | [Still frame](docs/media/cinematic-study.png) |
+| [cinematic-study](examples/cinematic-study/) | [![FERRO 60 cassette film preview](docs/media/cinematic-study.webp)](docs/media/cinematic-study.mp4) | [Still frame](docs/media/cinematic-study.png) |
 | [editorial-study](examples/editorial-study/) | ![editorial-study animation](docs/media/editorial-study.gif) | [Still frame](docs/media/editorial-study.png) |
 | [shader-study](examples/shader-study/) | ![shader-study animation](docs/media/shader-study.gif) | [Still frame](docs/media/shader-study.png) |
 

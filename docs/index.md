@@ -75,7 +75,7 @@ A unified MCP gateway routes across a searchable skill catalog, BlenderMCP and A
 </figure>
 
 <figure markdown>
-![Cinematic study](media/cinematic-study.gif)
+![Cinematic study](media/cinematic-study.webp)
 <figcaption>Cinematic study · cassette</figcaption>
 </figure>
 

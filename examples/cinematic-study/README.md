@@ -1,22 +1,27 @@
-# Cinematic and editorial production study
+# FERRO 60
 
-An eight-second (192 frames at `24/1` fps, `1280x720`) four-scene showcase exercising:
+A six-second product film of a compact cassette, built from geometry and lit with studio area lights in Blender Cycles. The shallow camera angle in the opening shot picks out the grip ribs. The cut to the rotating hub reveals the mechanism under the acrylic window. The camera then tracks across the paper label and pulls back for the first full view of the cassette.
 
-- **`prism-monolith`**: scene-referred linear three-point shading, AgX highlight rolloff, grounded contact shadow, and inertial `dolly_in` 3D camera projection.
-- **`kinetic-type`**: Swiss-grid typography with Turkish (`ÇĞİÖŞÜ`) glyph coverage verification, optical tracking, and a deterministic Verlet pendulum ribbon.
-- **`data-horizon`**: staggered multi-bar and spline data visualization.
-- **`hud-lock`**: protected lower-region (`locked_regions`) compliance bar verified losslessly across revisions.
-- **Cross-dissolve editorial transitions**, **multi-stem stereo procedural audio** (`sub_impact`, `whoosh`, `harmonic_pluck`, `warm_pad`), **Hero lookdev A/B + motion extrema contact sheets**, **OTIO / FCPXML / WebVTT exports**, and **first-party BlenderMCP / AfterEffectsMCP handoff packaging**.
+[![Four moving views of the FERRO 60 cassette](../../docs/media/cinematic-study.webp)](../../docs/media/cinematic-study.mp4)
+
+[Watch the 1080p film with stereo sound](../../docs/media/cinematic-study.mp4) · [View the poster](../../docs/media/cinematic-study.png)
+
+| Frames at 24 fps | Shot | Sound |
+| --- | --- | --- |
+| 0–31 | Low tracking shot along the shell | Transport click over a low hum |
+| 32–67 | Macro shot of the rotating drive | Low impact on the cut |
+| 68–95 | Move across the printed label | A short whoosh leads into the cut |
+| 96–143 | Pullback to the full cassette | Two plucked tones across the reveal |
+
+## Render the film
+
+From the repository root, install the render extra and make Blender, FFmpeg and FFprobe available. Set `REELSYNTAX_BLENDER` to the Blender executable if it is outside your path.
 
 ```sh
+python3 -m pip install -e '.[render]'
 python3 -m reelsyntax validate examples/cinematic-study
-python3 -m reelsyntax render examples/cinematic-study --profile draft
-python3 -m reelsyntax render examples/cinematic-study --profile hero
-python3 -m reelsyntax lock examples/cinematic-study --scene lockup --roi-profile hero
+python3 -m reelsyntax render examples/cinematic-study --profile hero --timeout 2400
 python3 -m reelsyntax qc examples/cinematic-study --profile hero
-python3 -m reelsyntax diff examples/cinematic-study --base draft --target hero
-python3 -m reelsyntax export examples/cinematic-study --format otio --profile hero
-python3 -m reelsyntax export examples/cinematic-study --format fcpxml --profile hero
-python3 -m reelsyntax export examples/cinematic-study --format vtt --profile hero
-python3 -m reelsyntax handoff examples/cinematic-study
 ```
+
+The master is written to `output/hero.mp4` inside the example. All 144 frames are rendered at 1920 × 1080. The cassette, camera moves, lights and sounds are generated locally.
