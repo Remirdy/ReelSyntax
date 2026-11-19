@@ -12,6 +12,7 @@ DURATION_RE = re.compile(r"\b(\d{1,3})\s*(?:s|sec|secs|seconds|sn|saniye|sek|sek
 FPS_RE = re.compile(r"\b(24|25|30|60)\s*fps\b", re.IGNORECASE)
 
 FORMAT_KEYWORD_HINTS: tuple[tuple[str, tuple[str, ...]], ...] = (
+    ("retro-lowpoly-cutscene", ("cutscene", "low-poly", "lowpoly", "ara sahne", "zwischensequenz")),
     ("photo-slideshow", ("slideshow", "photo", "photos", "fotoğraf", "slayt", "fotos", "diashow")),
     ("social-hook-reel", ("hook", "reels", "shorts", "tiktok", "kanca", "dikey kısa")),
     ("data-story", ("chart", "data", "metrics", "grafik", "veri", "statistik", "diagramm")),
@@ -117,13 +118,16 @@ def parse_intent(
     p_lang = detect_language(sanitized, default="en")
     v_lang = (video_lang.strip() if video_lang and video_lang != "auto" else p_lang)
 
+    inferred_fmt = _infer_format_hint(sanitized, format_id)
     aspect_match = ASPECT_RE.search(sanitized)
-    chosen_aspect = aspect or (aspect_match.group(1) if aspect_match else "9:16")
+    default_aspect = "16:9" if inferred_fmt == "retro-lowpoly-cutscene" else "9:16"
+    chosen_aspect = aspect or (aspect_match.group(1) if aspect_match else default_aspect)
     if chosen_aspect not in {"9:16", "16:9", "1:1", "4:5"}:
         raise ValueError(f"Unsupported aspect ratio: {chosen_aspect!r}")
 
     dur_match = DURATION_RE.search(sanitized)
-    raw_dur = duration_sec if duration_sec is not None else (int(dur_match.group(1)) if dur_match else 12)
+    default_dur = 24 if inferred_fmt == "retro-lowpoly-cutscene" else 12
+    raw_dur = duration_sec if duration_sec is not None else (int(dur_match.group(1)) if dur_match else default_dur)
     chosen_dur = max(4, min(180, int(raw_dur)))
 
     fps_match = FPS_RE.search(sanitized)
@@ -155,7 +159,7 @@ def parse_intent(
         tone=tone or _infer_tone(sanitized),
         formality=formality or default_formality,
         palette=_infer_palette(sanitized),
-        format_hint=_infer_format_hint(sanitized, format_id),
+        format_hint=inferred_fmt,
         constraints=constraints,
         routed_skills=routed_ids,
     )
