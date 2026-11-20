@@ -73,9 +73,9 @@ def diagram(source):
         raise ValueError('Expected a Mermaid LR/TD/TB flowchart')
     nodes, edges = {}, []
     for line in lines[1:]:
-        parts = re.split(r'\s*-->\s*', line)
         previous = None
-        for part in parts:
+        for part in line.split('-->'):
+            part = part.strip()
             match = re.fullmatch(node, part)
             if not match:
                 raise ValueError('Unsupported Mermaid expression: ' + part)
